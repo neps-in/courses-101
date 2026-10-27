@@ -34,5 +34,6 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | — | Capstone: Launch Your Creator Site (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-10-27: wordpress-101 outline revised — 13 non-negotiables (added accessibility, day-one safety net), backups/2FA moved to M01, privacy policy moved to M06, module capstones + scope sections added. Next: `/plan-module 1`.
 - 2026-10-28: Repo set up (CLAUDE.md, framework, skills, outline). Next: `/plan-module 1`.
 - 2026-10-27: Scaffolded wordpress-101 (content creators). Next: `/plan-module 1` for wordpress-101.
