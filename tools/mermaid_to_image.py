@@ -14,12 +14,14 @@ and ImageMagick (`convert`) with WebP support.
 import os
 import re
 import shlex
+import shutil
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
 
-MMDC = shlex.split(os.environ.get("MMDC", "npx -y -p @mermaid-js/mermaid-cli@11.4.2 mmdc"))
+MMDC = shlex.split(os.environ.get("MMDC") or (
+    "mmdc" if shutil.which("mmdc") else "npx -y -p @mermaid-js/mermaid-cli@11.4.2 mmdc"))
 FENCE_OPEN = re.compile(r"^```mermaid\s*$")
 FENCE_CLOSE = re.compile(r"^```\s*$")
 IMAGE_LINE = re.compile(r"^!\[[^\]]*\]\((?P<src>[^)]+-diagram-\d+\.webp)\)\s*$")
