@@ -43,6 +43,61 @@ If a creator skips any of these, they lose traffic, money, content or legal stan
 
 ---
 
+## Non-negotiable plugin stack
+
+Each row is a **job**, not a brand. Install **exactly one plugin per job**: two SEO plugins, two caching plugins or two security plugins conflict, duplicate output (double meta tags, double sitemaps) and slow the site. If your host or WordPress core already does the job, skip the plugin. That's lean plugin hygiene (NN #10) in practice.
+
+| # | Job | Why it's non-negotiable | Pick one (free option first) | Skip if… | Taught |
+|---|-----|-------------------------|------------------------------|----------|--------|
+| P1 | **Off-site backups** | One bad update or hack without a backup = years of content gone | UpdraftPlus · Jetpack VaultPress Backup · BlogVault | Your host does daily **off-site** backups *and* you've tested a restore | M01 → M07 |
+| P2 | **Login security & 2FA** | Brute-forced or reused passwords are the most common way creator sites get taken over | Two Factor (WordPress.org) + host firewall · Wordfence · Solid Security | Your host enforces 2FA and a web application firewall | M01 → M07 |
+| P3 | **SEO** | Titles, meta descriptions, XML sitemap, schema, canonical URLs | Yoast SEO · Rank Math · All in One SEO (AIOSEO) | Never skip; core's built-in sitemap alone isn't enough | M05 |
+| P4 | **Redirects** | Changed slugs and deleted posts turn into 404s that lose traffic and backlinks | Redirection · your SEO plugin's redirect manager | Your SEO plugin already has redirects (e.g. Rank Math free, Yoast Premium) | M05 → M07 |
+| P5 | **Image optimisation** | Uncompressed images are the #1 cause of slow creator sites | Modern Image Formats (WordPress Performance Team) · ShortPixel · EWWW Image Optimizer · Imagify | You compress/convert *before* upload every time (most people don't) | M03 |
+| P6 | **Caching / performance** | Page caching is the biggest single Core Web Vitals win on most hosts | Your host's cache · LiteSpeed Cache (LiteSpeed servers only) · WP Super Cache · WP Rocket (paid) | Your managed host already does page caching; adding a second cache causes conflicts | M07 |
+| P7 | **Email capture** | Social reach is rented; your list is owned | Your email provider's official plugin (e.g. Kit, MailPoet) · Jetpack Forms + newsletter | Your email provider gives you an embed code and you're happy pasting it into a block | M06 |
+| P8 | **Contact form** | Sponsors, brands and readers need a way to reach you without exposing your email | Jetpack Forms · WPForms Lite · Fluent Forms | P7 plugin already includes general forms | M04 / M06 |
+| P9 | **Anti-spam** | Comment and form spam buries real readers and can tank trust | Akismet (free for personal sites) · Antispam Bee | Comments are off *and* your form plugin has its own spam protection | M06 |
+| P10 | **Analytics** | You can't grow what you don't measure | Site Kit by Google (GA4 + Search Console) · Jetpack Stats · Independent Analytics · Plausible / Fathom (paid, privacy-friendly) | Never skip; pick one and review it monthly | M08 |
+| P11 | **Cookie consent** *(where required)* | Required in the EU/UK (GDPR/ePrivacy) when you set non-essential cookies, e.g. GA4 or ad pixels | Complianz · CookieYes | You use only cookieless analytics and no ad/affiliate trackers; confirm for your region | M08 |
+
+### Core already does these, so don't add plugins for them
+- **Privacy policy page:** Settings → Privacy generates a starter page (M06)
+- **Content export:** Tools → Export (M07)
+- **Lazy loading images** (core since 5.5) and **responsive image sizes** (M03)
+- **Basic XML sitemap** at `/wp-sitemap.xml` (core since 5.5); your SEO plugin replaces it (M05)
+- **Reusable CTAs / author boxes:** synced patterns, no plugin needed (M02)
+
+### Nice-to-have plugins (only once the stack above is in place)
+Affiliate link management (Pretty Links, ThirstyAffiliates) · social sharing buttons · table of contents · broken link checker run as an occasional audit, not left always on.
+
+### How to choose and add a plugin
+
+```mermaid
+flowchart TD
+  A[Need a feature]:::cream --> B{Does core or<br/>your host do it?}:::sky
+  B -- Yes --> Z[Use that, no plugin]:::pink
+  B -- No --> C{Already have a<br/>plugin for this job?}:::sky
+  C -- Yes --> D[Configure the existing one<br/>or replace it, never stack]:::pink
+  C -- No --> E[Shortlist 2–3 from<br/>wordpress.org/plugins]:::blue
+  E --> F{Passes the M06 checklist?<br/>updated recently · tested with your WP version<br/>active installs · support replies · no bloat}:::sky
+  F -- No --> E
+  F -- Yes --> G[Install on staging / Playground]:::blue
+  G --> H[Check speed + conflicts]:::blue
+  H --> I[Install on live site<br/>and note it in your plugin log]:::cream
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+**Rule of thumb:** a creator site rarely needs more than **10–12 active plugins**. Delete deactivated ones, because they can still be exploited.
+
+> ⚠️ **Freshness flag:** plugins change owners, pricing tiers and features, and some get closed on wordpress.org. Before teaching or recommending any name above, re-check its wordpress.org page (last updated, "tested up to", active installs, open support threads) and note the check date in the lesson. Free-tier limits (e.g. Akismet and Jetpack Stats for commercial sites) change often.
+
+---
+
 ## Learning path
 
 ```mermaid
