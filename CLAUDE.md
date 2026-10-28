@@ -28,6 +28,11 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
   ```
+- After writing or editing any Mermaid block, run `python3 tools/mermaid_to_image.py <file.md>`.
+  It renders each block to a lossless WebP (`<file-stem>-diagram-<N>.webp`) in the same folder
+  as the Markdown and inserts `![alt](...)` below the block (re-runs update, never duplicate).
+  Give every block a `%% alt: <one-sentence summary>` line (≤150 chars) for the alt text.
+  Commit the .webp files with the Markdown; upload them with the lesson to Drive/WordPress.
 - Every lesson ends with an exercise and a 5–8 question quiz (with explanations and hints).
 - Cite primary sources; flag anything that may be outdated (SEO/AI search changes fast).
 - After each lesson, update `progress.md` (module, lesson, status, date) and commit:

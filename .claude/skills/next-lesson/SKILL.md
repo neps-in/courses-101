@@ -18,6 +18,8 @@ description: Draft the next todo lesson and its quiz for the active course, foll
    hands-on walkthrough with expected outputs, common mistakes, exercise, takeaways, further reading.
 5. Write the quiz to `...-quiz.md`: 5–8 questions, ~40% recall / ~40% scenario / ~20% spot-the-error,
    each with answer, explanation and hint.
+   Then run `python3 tools/mermaid_to_image.py <lesson.md>` so each Mermaid block gets a WebP image
+   below it (see CLAUDE.md).
 6. Self-check against the framework's quality bar; fix gaps before saving.
 7. Update the row in `progress.md` to `draft` with today's date, add a log line.
 8. `git add` the new files and commit: `<course>: mNN-lNN draft`.

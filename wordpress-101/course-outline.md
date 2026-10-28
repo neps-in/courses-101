@@ -75,6 +75,7 @@ Affiliate link management (Pretty Links, ThirstyAffiliates) · social sharing bu
 
 ```mermaid
 flowchart TD
+  %% alt: Plugin decision flowchart: use core or host features first, never stack two plugins for one job, vet a shortlist against the M06 checklist, test on staging, then install live.
   A[Need a feature]:::cream --> B{Does core or<br/>your host do it?}:::sky
   B -- Yes --> Z[Use that, no plugin]:::pink
   B -- No --> C{Already have a<br/>plugin for this job?}:::sky
@@ -102,6 +103,7 @@ flowchart TD
 
 ```mermaid
 flowchart LR
+  %% alt: Course learning path from M01 Own your platform through M08 Measure and stay legal to the M09 launch capstone.
   M1[M01 Own your platform]:::cream --> M2[M02 Publish with blocks]:::sky
   M2 --> M3[M03 Media & accessibility]:::sky
   M3 --> M4[M04 Design without code]:::blue
