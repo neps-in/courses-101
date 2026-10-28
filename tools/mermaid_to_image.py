@@ -22,7 +22,9 @@ from pathlib import Path
 
 MMDC = shlex.split(os.environ.get("MMDC") or (
     "mmdc" if shutil.which("mmdc") else "npx -y -p @mermaid-js/mermaid-cli@11.4.2 mmdc"))
-FENCE_OPEN = re.compile(r"^```mermaid\s*$")
+# Ubuntu blocks Chrome's sandbox; safe to disable since we only render our own local diagrams.
+PUPPETEER_CONFIG = Path(__file__).with_name("puppeteer-config.json")
+FENCE_OPEN =re.compile(r"^```mermaid\s*$")
 FENCE_CLOSE = re.compile(r"^```\s*$")
 IMAGE_LINE = re.compile(r"^!\[[^\]]*\]\((?P<src>[^)]+-diagram-\d+\.webp)\)\s*$")
 NODE_LABEL = re.compile(r"[\[{(]+([^\[\]{}()]+?)[\]})]+")
@@ -50,7 +52,8 @@ def render(source: str, out: Path) -> None:
     with tempfile.TemporaryDirectory() as tmp:
         mmd, png = Path(tmp, "d.mmd"), Path(tmp, "d.png")
         mmd.write_text(source)
-        subprocess.run([*MMDC, "-q", "-i", str(mmd), "-o", str(png), "-s", "2", "-b", "white"], check=True)
+        subprocess.run([*MMDC, "-q", "-i", str(mmd), "-o", str(png), "-s", "2", "-b", "white",
+                        "-p", str(PUPPETEER_CONFIG)], check=True)
         subprocess.run(
             ["convert", str(png), "-strip",
              "-define", "webp:lossless=true", "-define", "webp:method=6", str(out)],

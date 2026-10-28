@@ -93,6 +93,8 @@ flowchart TD
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
 
+![Plugin decision flowchart: use core or host features first, never stack two plugins for one job, vet a shortlist against the M06 checklist, test on staging, then install live.](course-outline-diagram-1.webp)
+
 **Rule of thumb:** a creator site rarely needs more than **10–12 active plugins**. Delete deactivated ones, because they can still be exploited.
 
 > ⚠️ **Freshness flag:** plugins change owners, pricing tiers and features, and some get closed on wordpress.org. Before teaching or recommending any name above, re-check its wordpress.org page (last updated, "tested up to", active installs, open support threads) and note the check date in the lesson. Free-tier limits (e.g. Akismet and Jetpack Stats for commercial sites) change often.
@@ -118,6 +120,8 @@ flowchart LR
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
+
+![Course learning path from M01 Own your platform through M08 Measure and stay legal to the M09 launch capstone.](course-outline-diagram-2.webp)
 
 Each module adds to **one practice site** the learner builds from M01 and launches in M09. Hands-on work goes on a local or staging copy (WordPress Playground or Local) until M09.
 
