@@ -8,7 +8,8 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 # Mxx.Lyy — <Lesson title>
 > After this lesson you can <one-line promise>.
 
-**Time:** ~<n> min · **Level:** beginner | intermediate | advanced · **Prereqs:** <lessons>
+**Time:** ~<n> min reading + ~<n> min exercise · **Level:** beginner | intermediate | advanced · **Prereqs:** <lessons>
+**Verified against:** <product / tool versions> on YYYY-MM-DD
 
 ## Learning objectives
 1. <measurable verb: build / explain / compare / configure>
@@ -27,8 +28,18 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 ## Hands-on walkthrough
 <numbered steps; code, commands or tool screens; expected output after each key step>
 
+## When to use / when not to
+<the decision this lesson helps make, with one trade-off>
+
+## Use AI for this
+<one example prompt, what AI does well here, where it gets it wrong, and how to check its output>
+
 ## Common mistakes
 - ...
+
+## Troubleshooting
+| Symptom | Likely cause | Fix |
+|---|---|---|
 
 ## Exercise
 **Task:** ...
@@ -38,6 +49,12 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 ## Key takeaways
 - (max 5)
 
+## Teach it back
+<prompt: "Explain ___ to a friend in 3 sentences.">
+
+## Glossary terms added
+- <term> — added to `<course>/glossary.md`
+
 ## Further reading
 - <primary sources only: Google Search Central, schema.org, official docs, papers>
 ```
@@ -46,6 +63,7 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 - 5–8 multiple-choice questions, 1 correct + 3 plausible distractors.
 - Mix: ~40% recall, ~40% scenario/application, ~20% "spot the error".
 - Each question: options a–d, answer, explanation, hint.
+- Include 1–2 spaced-review questions from earlier lessons (mark them `(review: mNN-lNN)`).
 
 ```markdown
 ### Q1. <question>
@@ -60,7 +78,9 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 ```
 
 ## Module capstone (`capstones/mNN-capstone.md`)
-- One practical project using the module's skills.
+- One practical project using the module's skills, adding a piece of the course's running example.
+- Include one break-it-and-fix-it task per module (here or in a lesson exercise).
+- End the module with a one-page cheat sheet: `cheatsheets/mNN-<slug>.md`.
 - Rubric: 4–5 criteria × 4 levels (Excellent / Good / Needs work / Missing).
 
 ## Status values (progress.md)
