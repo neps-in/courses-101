@@ -14,11 +14,12 @@ description: Draft the next todo lesson and its quiz for the active course, foll
 3. Research anything that changes over time (Google guidance, AI search behaviour, tool
    features, APIs) with web search and prefer primary sources. Note the check date in Further reading.
 4. Write the lesson to the file path in `progress.md` using the lesson template exactly:
-   objectives, why it matters, core concept, an image placeholder with alt text and image prompt
-   (see CLAUDE.md; no Mermaid), hands-on walkthrough with expected outputs, common mistakes,
-   exercise, takeaways, further reading.
+   objectives, why it matters, core concept, Mermaid flowchart in the house palette,
+   hands-on walkthrough with expected outputs, common mistakes, exercise, takeaways, further reading.
 5. Write the quiz to `...-quiz.md`: 5–8 questions, ~40% recall / ~40% scenario / ~20% spot-the-error,
    each with answer, explanation and hint.
+   Then run `python3 tools/mermaid_to_image.py <lesson.md>` so each Mermaid block gets a WebP image
+   below it (see CLAUDE.md).
 6. Self-check against the framework's quality bar; fix gaps before saving.
 7. Update the row in `progress.md` to `draft` with today's date, add a log line.
 8. `git add` the new files and commit: `<course>: mNN-lNN draft`.

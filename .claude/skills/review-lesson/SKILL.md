@@ -12,7 +12,7 @@ Argument: lesson file path. If missing, review the most recent `draft` row in `p
    - **Accuracy:** wrong or unsupported claims; verify time-sensitive claims with web search.
    - **Currency:** guidance that may be outdated (SEO / AI search changes fast).
    - **Depth:** does every objective get taught and practised? Missing steps in the walkthrough?
-   - **Template:** missing sections, image placeholder missing alt text or prompt (or prompt off-palette), quiz mix off.
+   - **Template:** missing sections, flowchart not in house palette, quiz mix off.
    - **Quiz quality:** ambiguous questions, weak distractors, answers given away.
    - **Readability:** filler, jargon without definition, too long (>25 min).
 3. Show the findings to me (or, when unattended, apply them directly).

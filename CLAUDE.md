@@ -15,18 +15,7 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
 - Never repeat or skip a lesson; work in outline order unless I say otherwise.
 - Courses are open to anyone. Write for the course's own audience and personas (in its
   `course-outline.md`): plain language, practical, example-first, no fluff.
-- No Mermaid and no rendered diagrams (don't run `tools/mermaid_to_image.py`). Where a process
-  needs a visual, add an **image placeholder** with alt text and an image-generation prompt:
-
-  ```markdown
-  > 🖼️ **Image placeholder: <name>**  
-  > _Alt text:_ <one-sentence summary, ≤150 chars>  
-  > _Image prompt:_ Clean, flat, minimal <flowchart/infographic> … labelled exactly: "<step>" → "<step>" …
-  > <colours from the palette below>, dark navy #111844 text, outlines and arrows. Plain white background,
-  > modern sans-serif font, no icons, no extra text, no shadows, 16:9.
-  ```
-  Also describe the process in words below the placeholder. Only add one where it helps.
-  Palette for image prompts (use only these):
+- Include a flowchart for every process (Mermaid in Markdown), using only this palette:
 
   | Background | Text    |
   |------------|---------|
@@ -34,6 +23,20 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
   | #BFDDF0    | #1F150C |
   | #8CC0EB    | #111844 |
   | #F9B2D7    | #000000 |
+
+  Mermaid example:
+  ```
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+  ```
+- After writing or editing any Mermaid block, run `python3 tools/mermaid_to_image.py <file.md>`.
+  It renders each block to a lossless WebP (`<file-stem>-diagram-<N>.webp`) in the same folder
+  as the Markdown and inserts `![alt](...)` below the block (re-runs update, never duplicate).
+  Give every block a `%% alt: <one-sentence summary>` line (≤150 chars) for the alt text.
+  Never replace or delete Mermaid blocks (e.g. with image placeholders); keep them as they are.
+  Commit the .webp files with the Markdown; upload them with the lesson to WordPress.
 - Every lesson ends with an exercise and a 5–8 question quiz (with explanations and hints).
 - Cite primary sources; flag anything that may be outdated (SEO/AI search changes fast).
 - After each lesson, update `progress.md` (module, lesson, status, date) and commit:
