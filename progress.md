@@ -27,7 +27,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L02 | Domains, DNS and creator-friendly hosting | wordpress-101/lessons/m01-l02-domain-dns-hosting.md | draft | 2026-10-29 |
 | M01 | L03 | Install WordPress, turn on HTTPS and tour the dashboard | wordpress-101/lessons/m01-l03-install-https-dashboard.md | draft | 2026-10-29 |
 | M01 | L04 | First-day settings: permalinks, reading and discussion | wordpress-101/lessons/m01-l04-first-day-settings.md | draft | 2026-10-29 |
-| M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | todo | — |
+| M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | draft | 2026-10-29 |
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | todo | — |
 | M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | todo | — |
 | M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-29: wordpress-101 m01-l05 draft (lesson + 7-question quiz incl. 1 review; 9 glossary terms; safety-net flowchart rendered). Sources: WordPress backups + roles docs, UpdraftPlus/Two Factor listings, NIST SP 800-63B-4. All M01 lessons now drafted. Next: `/next-lesson` → M01 capstone.
 - 2026-10-29: ⏸ DEFERRED DECISION (neps.in course 2608): LearnPress deletes curriculum links to non-published lessons on every course save (`delete_item_not_in_tb_post`). 9 sections exist with 0 lessons attached; 53 draft lessons (IDs 2615–2667) exist unattached. Options: 1) attach each lesson as it's synced + published (recommended), 2) publish all 53 now, 3) publish all + set course Pending, 4) patch LearnPress (no). Lesson content (L01–L04) not yet synced to WordPress.
 - 2026-10-29: wordpress-101 m01-l04 draft (lesson + 7-question quiz incl. 1 review; 6 glossary terms; settings-order flowchart rendered). Labels and install default (Day and name) checked in WP core source; Google URL guide cited. Next: `/review-lesson wordpress-101/lessons/m01-l04-first-day-settings.md` or `/next-lesson` (M01.L05).
 - 2026-10-29: wordpress-101 m01-l03 draft (lesson + 7-question quiz incl. 1 review; 7 glossary terms; install/HTTPS flowchart rendered). Menus checked against WordPress 7.1 (7.0 Field Guide). Practice site moves to Local from here. Next: `/review-lesson wordpress-101/lessons/m01-l03-install-https-dashboard.md` or `/next-lesson` (M01.L04).
