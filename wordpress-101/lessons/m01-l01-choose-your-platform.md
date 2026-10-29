@@ -49,9 +49,22 @@ Priya writes a cooking newsletter. In three years she has gathered 8,000 readers
 
 ## How it works
 
-> 🖼️ **Image placeholder: platform decision flowchart**  
-> _Alt text:_ Platform decision flowchart: own domain and list first, then plugins and income needs, then how much maintenance you can handle.  
-> _Image prompt:_ Clean, flat, minimal vertical decision flowchart infographic, top to bottom, rounded rectangles for steps and diamonds for questions, joined by simple labelled arrows. Start box "Where should I publish?" → diamond "Must you own your domain and email list?" (No → box "Medium: borrow an audience, but cross-post from your own site") → Yes → diamond "Need plugins, ads, affiliates, a shop or custom pages?" (No → box "Substack or Ghost: newsletter-first") → Yes → diamond "Happy to handle updates and backups?" (Yes → final box "Self-hosted WordPress.org"; No → final box "WordPress.com paid plan or managed WordPress hosting"). Questions in light sky blue #BFDDF0, steps in cream #FFF9D2 and medium blue #8CC0EB, the two WordPress end boxes in pink #F9B2D7. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
+```mermaid
+flowchart TD
+  %% alt: Platform decision flowchart: own domain and list first, then plugins and income needs, then how much maintenance you can handle.
+  A[Where should I publish?]:::cream --> B{Must you own your<br/>domain and email list?}:::sky
+  B -- No --> M[Medium: borrow an audience,<br/>but cross-post from your own site]:::blue
+  B -- Yes --> C{Need plugins, ads, affiliates,<br/>a shop or custom pages?}:::sky
+  C -- No --> N[Substack or Ghost:<br/>newsletter-first]:::blue
+  C -- Yes --> D{Happy to handle<br/>updates and backups?}:::sky
+  D -- Yes --> W[Self-hosted WordPress.org]:::pink
+  D -- No --> X[WordPress.com paid plan or<br/>managed WordPress hosting]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
 
 **In words:** start with ownership. If you need your own domain and list (most creators who want to earn do), choose by features: plugins and many income streams point to WordPress. Then choose by effort: self-hosted if you'll handle maintenance, a managed WordPress option if you won't. This course teaches self-hosted WordPress. Almost everything also works on a WordPress.com paid plan.
 

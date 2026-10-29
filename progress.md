@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-29: m01-l01 platform flowchart changed from image placeholder to Mermaid; WebP render skipped on request (run `python3 tools/mermaid_to_image.py wordpress-101/lessons/m01-l01-choose-your-platform.md` later).
 - 2026-10-29: wordpress-101 m01-l01 draft (lesson + 6-question quiz + glossary started); verified against WordPress 7.1.4. Active course switched to wordpress-101 (modern-seo/ folder doesn't exist yet). Next: `/review-lesson wordpress-101/lessons/m01-l01-choose-your-platform.md`.
 - 2026-10-29: wordpress-101 planned M01–M09 (44 lessons + 9 capstones) in syllabus.md. Course 2608 on neps.in has details + syllabus overview; curriculum upload (draft lessons) next.
 - 2026-10-29: Added templates/course-outline-template.md + course-design-guide.md; lesson template gains verified-on stamp, when-to-use, AI co-pilot, troubleshooting, teach-back, spaced review.
