@@ -7,11 +7,14 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
 1. Read `progress.md` to see what is done and what is next.
 2. Read the active course's `course-outline.md` (and `syllabus.md` if it exists).
 3. Read `course-framework.md` for templates before writing anything.
+4. For a new or revised course outline, follow `templates/course-outline-template.md`
+   and `course-design-guide.md` (formats, common gaps, what makes our courses different).
 
 ## Always
 - Follow the lesson and quiz templates in `course-framework.md`.
 - Never repeat or skip a lesson; work in outline order unless I say otherwise.
-- Write for working developers and marketers: practical, example-first, no fluff.
+- Courses are open to anyone. Write for the course's own audience and personas (in its
+  `course-outline.md`): plain language, practical, example-first, no fluff.
 - Include a flowchart for every process (Mermaid in Markdown), using only this palette:
 
   | Background | Text    |
@@ -49,6 +52,8 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
 ```
 <course>/course-outline.md     # modules + topics (source of truth)
 <course>/syllabus.md           # lessons per module (from /plan-module)
+<course>/glossary.md
+<course>/cheatsheets/m01-<slug>.md
 <course>/lessons/m01-l01-<slug>.md
 <course>/lessons/m01-l01-<slug>-quiz.md
 <course>/capstones/m01-capstone.md

@@ -19,6 +19,8 @@ Resume your last session in this folder with `claude --continue`.
 
 ## Files
 - `CLAUDE.md` — instructions Claude reads every session
+- `templates/course-outline-template.md` — what every course must contain
+- `course-design-guide.md` — course formats, what most courses miss, what makes ours different
 - `course-framework.md` — lesson, quiz and capstone templates
 - `progress.md` — status of every lesson (the course's memory)
 - `.claude/skills/` — the slash commands above
