@@ -24,22 +24,9 @@ Times below are **hands-on** estimates (on top of reading time). Every lesson st
 
 **Goal:** a correctly configured, protected WordPress install before a single post exists. · NN #1, #2, #3
 
-```mermaid
-flowchart LR
-  %% alt: M01 lesson path: choose a platform, get a domain and host, install WordPress, set first-day settings, add the safety net, then the module capstone.
-  L1[L01 Choose your platform]:::cream --> L2[L02 Domain, DNS & hosting]:::sky
-  L2 --> L3[L03 Install & HTTPS]:::sky
-  L3 --> L4[L04 First-day settings]:::blue
-  L4 --> L5[L05 Day-one safety net]:::blue
-  L5 --> C[M01 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M01 lesson path: choose a platform, get a domain and host, install WordPress, set first-day settings, add the safety net, then the module capstone.](syllabus-diagram-1.webp)
+> 🖼️ **Image placeholder: M01 lesson path**  
+> _Alt text:_ M01 lesson path: choose a platform, get a domain and host, install WordPress, set first-day settings, add the safety net, then the module capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Choose your platform" → "L02 Domain, DNS & hosting" → "L03 Install & HTTPS" → "L04 First-day settings" → "L05 Day-one safety net" → "M01 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M01.L01 — Choose your platform: WordPress.org vs WordPress.com vs Substack, Medium and Ghost
 - **File:** `lessons/m01-l01-choose-your-platform.md`
@@ -94,22 +81,9 @@ flowchart LR
 
 **Goal:** publish quickly and consistently with a repeatable workflow. · NN #4, #5
 
-```mermaid
-flowchart LR
-  %% alt: M02 lesson path: posts vs pages and blocks, patterns, categories and tags, editorial workflow, embeds, then the module capstone.
-  L1[L01 Posts, pages & blocks]:::cream --> L2[L02 Patterns]:::sky
-  L2 --> L3[L03 Categories & tags]:::sky
-  L3 --> L4[L04 Editorial workflow]:::blue
-  L4 --> L5[L05 Embeds]:::blue
-  L5 --> C[M02 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M02 lesson path: posts vs pages and blocks, patterns, categories and tags, editorial workflow, embeds, then the module capstone.](syllabus-diagram-2.webp)
+> 🖼️ **Image placeholder: M02 lesson path**  
+> _Alt text:_ M02 lesson path: posts vs pages and blocks, patterns, categories and tags, editorial workflow, embeds, then the module capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Posts, pages & blocks" → "L02 Patterns" → "L03 Categories & tags" → "L04 Editorial workflow" → "L05 Embeds" → "M02 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M02.L01 — Posts vs pages, and getting fast in the block editor
 - **File:** `lessons/m02-l01-posts-pages-blocks.md`
@@ -164,22 +138,9 @@ flowchart LR
 
 **Goal:** every image and video helps the page instead of slowing it down. · NN #6, #7
 
-```mermaid
-flowchart LR
-  %% alt: M03 lesson path: media library and image sizes, compression and formats, accessible media, featured and social images, video and audio, then the capstone.
-  L1[L01 Media Library & sizes]:::cream --> L2[L02 Compress & convert]:::sky
-  L2 --> L3[L03 Accessible media]:::sky
-  L3 --> L4[L04 Featured & social images]:::blue
-  L4 --> L5[L05 Video & audio]:::blue
-  L5 --> C[M03 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M03 lesson path: media library and image sizes, compression and formats, accessible media, featured and social images, video and audio, then the capstone.](syllabus-diagram-3.webp)
+> 🖼️ **Image placeholder: M03 lesson path**  
+> _Alt text:_ M03 lesson path: media library and image sizes, compression and formats, accessible media, featured and social images, video and audio, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Media Library & sizes" → "L02 Compress & convert" → "L03 Accessible media" → "L04 Featured & social images" → "L05 Video & audio" → "M03 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M03.L01 — The Media Library and the image sizes WordPress creates
 - **File:** `lessons/m03-l01-media-library-image-sizes.md`
@@ -234,22 +195,9 @@ flowchart LR
 
 **Goal:** a branded, mobile-friendly, accessible site without touching code. · NN #7 (reinforced)
 
-```mermaid
-flowchart LR
-  %% alt: M04 lesson path: choose a block theme, use the Site Editor, set navigation, build creator pages, run mobile and accessibility checks, then the capstone.
-  L1[L01 Choose a theme]:::cream --> L2[L02 Site Editor & styles]:::sky
-  L2 --> L3[L03 Navigation & layout]:::sky
-  L3 --> L4[L04 Creator pages]:::blue
-  L4 --> L5[L05 Mobile & a11y checks]:::blue
-  L5 --> C[M04 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M04 lesson path: choose a block theme, use the Site Editor, set navigation, build creator pages, run mobile and accessibility checks, then the capstone.](syllabus-diagram-4.webp)
+> 🖼️ **Image placeholder: M04 lesson path**  
+> _Alt text:_ M04 lesson path: choose a block theme, use the Site Editor, set navigation, build creator pages, run mobile and accessibility checks, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Choose a theme" → "L02 Site Editor & styles" → "L03 Navigation & layout" → "L04 Creator pages" → "L05 Mobile & a11y checks" → "M04 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M04.L01 — Block themes vs classic themes: choosing a lightweight, maintained theme
 - **File:** `lessons/m04-l01-choose-a-theme.md`
@@ -306,22 +254,9 @@ flowchart LR
 
 > ⚠️ Freshness flag: AI-search features and rich-result eligibility change often — cite Google Search Central with check dates.
 
-```mermaid
-flowchart LR
-  %% alt: M05 lesson path: how search and AI find content, set up an SEO plugin, write for intent, add schema, connect Search Console, then the capstone.
-  L1[L01 How search & AI find you]:::cream --> L2[L02 SEO plugin setup]:::sky
-  L2 --> L3[L03 Write for intent]:::sky
-  L3 --> L4[L04 Schema basics]:::blue
-  L4 --> L5[L05 Search Console & Bing]:::blue
-  L5 --> C[M05 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M05 lesson path: how search and AI find content, set up an SEO plugin, write for intent, add schema, connect Search Console, then the capstone.](syllabus-diagram-5.webp)
+> 🖼️ **Image placeholder: M05 lesson path**  
+> _Alt text:_ M05 lesson path: how search and AI find content, set up an SEO plugin, write for intent, add schema, connect Search Console, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 How search & AI find you" → "L02 SEO plugin setup" → "L03 Write for intent" → "L04 Schema basics" → "L05 Search Console & Bing" → "M05 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M05.L01 — How search engines and AI answer engines find, index and cite your content
 - **File:** `lessons/m05-l01-how-search-and-ai-find-you.md`
@@ -376,23 +311,9 @@ flowchart LR
 
 **Goal:** turn readers into subscribers and subscribers into income. · NN #9
 
-```mermaid
-flowchart LR
-  %% alt: M06 lesson path: plugin checklist, email capture, lawful capture, comments and spam, repurposing, monetization, then the capstone.
-  L1[L01 Plugin checklist]:::cream --> L2[L02 Email capture]:::sky
-  L2 --> L3[L03 Lawful capture]:::sky
-  L3 --> L4[L04 Comments & spam]:::blue
-  L4 --> L5[L05 Repurposing & RSS]:::blue
-  L5 --> L6[L06 Monetization]:::blue
-  L6 --> C[M06 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M06 lesson path: plugin checklist, email capture, lawful capture, comments and spam, repurposing, monetization, then the capstone.](syllabus-diagram-6.webp)
+> 🖼️ **Image placeholder: M06 lesson path**  
+> _Alt text:_ M06 lesson path: plugin checklist, email capture, lawful capture, comments and spam, repurposing, monetization, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 7 rounded rectangles joined by simple arrows, labelled exactly: "L01 Plugin checklist" → "L02 Email capture" → "L03 Lawful capture" → "L04 Comments & spam" → "L05 Repurposing & RSS" → "L06 Monetization" → "M06 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M06.L01 — Choose plugins you can trust: the evaluation checklist
 - **File:** `lessons/m06-l01-plugin-evaluation-checklist.md`
@@ -456,22 +377,9 @@ flowchart LR
 
 **Goal:** a site that stays up, stays fast and can survive anything. · NN #3, #6, #10, #11
 
-```mermaid
-flowchart LR
-  %% alt: M07 lesson path: updates and staging, backups and restore, security hardening, performance, content ownership, then the capstone.
-  L1[L01 Updates & staging]:::cream --> L2[L02 Backups & restore]:::sky
-  L2 --> L3[L03 Security hardening]:::sky
-  L3 --> L4[L04 Performance & CWV]:::blue
-  L4 --> L5[L05 Export & migrate]:::blue
-  L5 --> C[M07 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M07 lesson path: updates and staging, backups and restore, security hardening, performance, content ownership, then the capstone.](syllabus-diagram-7.webp)
+> 🖼️ **Image placeholder: M07 lesson path**  
+> _Alt text:_ M07 lesson path: updates and staging, backups and restore, security hardening, performance, content ownership, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Updates & staging" → "L02 Backups & restore" → "L03 Security hardening" → "L04 Performance & CWV" → "L05 Export & migrate" → "M07 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M07.L01 — Updates: core, themes and plugins, auto vs manual, testing on staging
 - **File:** `lessons/m07-l01-updates-staging.md`
@@ -528,22 +436,9 @@ flowchart LR
 
 > ⚠️ Not legal advice; laws vary by country — every legal lesson links to primary regulators.
 
-```mermaid
-flowchart LR
-  %% alt: M08 lesson path: choose analytics, read the data, cookie consent, disclosures, copyright and AI content, then the capstone.
-  L1[L01 Choose analytics]:::cream --> L2[L02 Read the data]:::sky
-  L2 --> L3[L03 Cookie consent]:::sky
-  L3 --> L4[L04 Disclosures]:::blue
-  L4 --> L5[L05 Copyright & AI]:::blue
-  L5 --> C[M08 Capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M08 lesson path: choose analytics, read the data, cookie consent, disclosures, copyright and AI content, then the capstone.](syllabus-diagram-8.webp)
+> 🖼️ **Image placeholder: M08 lesson path**  
+> _Alt text:_ M08 lesson path: choose analytics, read the data, cookie consent, disclosures, copyright and AI content, then the capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 6 rounded rectangles joined by simple arrows, labelled exactly: "L01 Choose analytics" → "L02 Read the data" → "L03 Cookie consent" → "L04 Disclosures" → "L05 Copyright & AI" → "M08 Capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M08.L01 — Choose your analytics: GA4 via Site Kit or a privacy-friendly alternative
 - **File:** `lessons/m08-l01-choose-analytics.md`
@@ -598,20 +493,9 @@ flowchart LR
 
 **Goal:** go live with every non-negotiable in place. · NN #1–#13
 
-```mermaid
-flowchart LR
-  %% alt: M09 lesson path: run the pre-launch checklist, build a content plan, launch and start the 30-day routine, then the final capstone.
-  L1[L01 Pre-launch checklist]:::cream --> L2[L02 Content plan]:::sky
-  L2 --> L3[L03 Launch & 30-day routine]:::blue
-  L3 --> C[Final capstone]:::pink
-
-  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
-  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
-  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
-  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
-```
-
-![M09 lesson path: run the pre-launch checklist, build a content plan, launch and start the 30-day routine, then the final capstone.](syllabus-diagram-9.webp)
+> 🖼️ **Image placeholder: M09 lesson path**  
+> _Alt text:_ M09 lesson path: run the pre-launch checklist, build a content plan, launch and start the 30-day routine, then the final capstone.  
+> _Image prompt:_ Clean, flat, minimal horizontal flowchart infographic reading left to right, 4 rounded rectangles joined by simple arrows, labelled exactly: "L01 Pre-launch checklist" → "L02 Content plan" → "L03 Launch & 30-day routine" → "Final capstone". Fill the boxes in a soft palette of cream #FFF9D2, light sky blue #BFDDF0 and medium blue #8CC0EB; make the last box (the capstone) pink #F9B2D7 so it stands out. Dark navy #111844 text, outlines and arrows. Plain white background, modern sans-serif font, generous spacing, no icons, no extra text, no shadows, 16:9.
 
 ### M09.L01 — Pre-launch checklist: the 13 non-negotiables
 - **File:** `lessons/m09-l01-pre-launch-checklist.md`
