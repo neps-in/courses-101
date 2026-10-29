@@ -29,7 +29,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L04 | First-day settings: permalinks, reading and discussion | wordpress-101/lessons/m01-l04-first-day-settings.md | draft | 2026-10-29 |
 | M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | draft | 2026-10-29 |
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | draft | 2026-10-29 |
-| M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | todo | — |
+| M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | draft | 2026-10-29 |
 | M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | todo | — |
 | M02 | L03 | Categories vs tags: design a content structure for your niche | wordpress-101/lessons/m02-l03-categories-tags.md | todo | — |
 | M02 | L04 | Drafts, revisions, scheduling and an editorial workflow | wordpress-101/lessons/m02-l04-editorial-workflow.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-29: wordpress-101 m02-l01 draft (lesson + 7-question quiz incl. 1 review; 7 glossary terms; post-vs-page flowchart rendered). Shortcuts read from WP core registered shortcuts (7.0 source) with Shift+Alt+H fallback. Next: `/next-lesson` → M02.L02.
 - 2026-10-29: wordpress-101 M01 capstone draft (Site Foundations Report, lockout drill as break-it lab, 5×4 rubric for NN #1–#3) + cheatsheets/m01-own-your-platform.md. Module 1 fully drafted. Next: `/review-lesson` passes on M01, or `/next-lesson` → M02.L01.
 - 2026-10-29: wordpress-101 m01-l05 draft (lesson + 7-question quiz incl. 1 review; 9 glossary terms; safety-net flowchart rendered). Sources: WordPress backups + roles docs, UpdraftPlus/Two Factor listings, NIST SP 800-63B-4. All M01 lessons now drafted. Next: `/next-lesson` → M01 capstone.
 - 2026-10-29: ⏸ DEFERRED DECISION (neps.in course 2608): LearnPress deletes curriculum links to non-published lessons on every course save (`delete_item_not_in_tb_post`). 9 sections exist with 0 lessons attached; 53 draft lessons (IDs 2615–2667) exist unattached. Options: 1) attach each lesson as it's synced + published (recommended), 2) publish all 53 now, 3) publish all + set course Pending, 4) patch LearnPress (no). Lesson content (L01–L04) not yet synced to WordPress.
