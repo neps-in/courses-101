@@ -1,6 +1,6 @@
 # Progress
 
-Active course: **modern-seo**
+Active course: **wordpress-101**
 
 Status values: `todo` → `draft` → `reviewed` → `published`.
 Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` row.
@@ -23,7 +23,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | L01 | Choose your platform: WordPress.org vs WordPress.com vs Substack, Medium and Ghost | wordpress-101/lessons/m01-l01-choose-your-platform.md | todo | — |
+| M01 | L01 | Choose your platform: WordPress.org vs WordPress.com vs Substack, Medium and Ghost | wordpress-101/lessons/m01-l01-choose-your-platform.md | draft | 2026-10-29 |
 | M01 | L02 | Domains, DNS and creator-friendly hosting | wordpress-101/lessons/m01-l02-domain-dns-hosting.md | todo | — |
 | M01 | L03 | Install WordPress, turn on HTTPS and tour the dashboard | wordpress-101/lessons/m01-l03-install-https-dashboard.md | todo | — |
 | M01 | L04 | First-day settings: permalinks, reading and discussion | wordpress-101/lessons/m01-l04-first-day-settings.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-29: wordpress-101 m01-l01 draft (lesson + 6-question quiz + glossary started); verified against WordPress 7.1.4. Active course switched to wordpress-101 (modern-seo/ folder doesn't exist yet). Next: `/review-lesson wordpress-101/lessons/m01-l01-choose-your-platform.md`.
 - 2026-10-29: wordpress-101 planned M01–M09 (44 lessons + 9 capstones) in syllabus.md. Course 2608 on neps.in has details + syllabus overview; curriculum upload (draft lessons) next.
 - 2026-10-29: Added templates/course-outline-template.md + course-design-guide.md; lesson template gains verified-on stamp, when-to-use, AI co-pilot, troubleshooting, teach-back, spaced review.
 - 2026-10-27: wordpress-101 outline revised — 13 non-negotiables (added accessibility, day-one safety net), backups/2FA moved to M01, privacy policy moved to M06, module capstones + scope sections added. Next: `/plan-module 1`.
