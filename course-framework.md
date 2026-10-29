@@ -23,7 +23,7 @@ Course → Modules (4–9) → Lessons (3–6 per module) → Quiz per lesson + 
 <plain explanation → analogy → precise definition>
 
 ## How it works
-<Mermaid flowchart in the house palette>
+<image placeholder: alt text + image prompt in the house palette (see CLAUDE.md), then the process in words>
 
 ## Hands-on walkthrough
 <numbered steps; code, commands or tool screens; expected output after each key step>
