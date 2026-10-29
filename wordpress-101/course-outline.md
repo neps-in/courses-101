@@ -3,7 +3,7 @@
 **Audience:** bloggers, newsletter writers, podcasters, YouTubers and solo marketers who want to own their publishing home base. No coding required.
 **Level:** beginner → confident self-publisher
 **Outcome:** you launch, run and grow a fast, secure, search-ready WordPress site that you fully own — and you can publish, repurpose and monetize content on it without hiring a developer.
-**Length:** 8 modules + capstone · ~34 lessons · each lesson 10–25 min · one module capstone per module
+**Length:** 8 modules + capstone · 44 lessons (see syllabus.md) · each lesson 10–25 min · one module capstone per module
 
 > ⚠️ **Freshness flag:** WordPress ships ~3 major releases a year. Screens, block names and Site Editor menus change. Every lesson must state the WordPress version it was checked against and link to the matching page on wordpress.org/documentation. AI features (core and plugin) and SEO/AI-search plugin settings change fastest — re-verify before publishing.
 
