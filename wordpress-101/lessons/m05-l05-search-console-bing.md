@@ -6,7 +6,7 @@
 
 > Note: both tools only work with a site that's **live on the internet**. A Local site can't be verified. If your site isn't live yet, read this lesson now and do the walkthrough on launch day (M09). It takes about 20 minutes.
 
-> ⚠️ **Freshness flag:** Search Console and Bing Webmaster Tools change their menus and report names from time to time (Google renamed "Coverage" to **Pages** in 2022). If a label differs, search the tool's help for the report name.
+> ⚠️ **Freshness flag:** Search Console and Bing Webmaster Tools change their menus and report names from time to time (the old **Coverage** report is now **Pages**). If a label differs, search the tool's help for the report name.
 
 ## Learning objectives
 1. **Verify** your site in Google Search Console and Bing Webmaster Tools.
@@ -75,18 +75,18 @@ Use your **live** site, logged in as an administrator, and a Google account you'
 3. **URL prefix only:** in WordPress, go to **Yoast SEO → Settings → Site connections**, paste the code into **Google**, and click **Save changes**. Back in Search Console, click **Verify**.
    **Expected:** *Ownership verified*. View your homepage source and you'll find `<meta name="google-site-verification" content="…" />`.
 4. **Keep the verification in place.** Search Console checks it periodically; if you delete the TXT record, or the tag disappears (e.g. you change SEO plugins), you lose access after a grace period. Note in your site docs which method you used.
-5. Optional: **Settings → Users and permissions** → add a second **Owner** (a second account of yours) or give a helper **Full** or **Restricted** access instead of sharing your password.
+5. Optional: **Settings → Users and permissions** → add a second **Owner** (a second account of yours) or give a helper **Full** or **Restricted** access instead of sharing your password. (Restricted users can view most data but can't request indexing.)
 
    > 🖼️ **Image prompt:** Screenshot of Google Search Console's Add property dialog with the two options Domain and URL prefix, with example.com typed in the Domain box, 1280 × 800. Highlight the Domain option with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Search Console's Add property dialog showing the Domain and URL prefix choices with a domain typed in.
 
 ### Part B — Submit your sitemap (~3 min)
 6. In Search Console, open **Indexing → Sitemaps**. Under **Add a new sitemap**, type `sitemap_index.xml` (Yoast/Rank Math) and click **Submit**.
-   **Expected:** a row with your sitemap, **Status: Success** and a count of **Discovered pages**. *Couldn't fetch* right after submitting sometimes clears within a day. If it persists, open the sitemap URL in a private window: it should load without a login.
+   **Expected:** a row with your sitemap, **Status: Success** and a count of **Discovered pages**. *Couldn't fetch* right after submitting often clears within a day (observed practice). If it persists, open the sitemap URL in a private window: it should load without a login.
 7. Submit **only** your sitemap index, not each child sitemap, and not core's `/wp-sitemap.xml` if your plugin replaced it (M05.L02).
 
 ### Part C — Bing Webmaster Tools (~4 min)
-8. Go to **bing.com/webmasters** and sign in (a Microsoft or Google account works). On the welcome screen, choose **Import** from Google Search Console, allow access, select your site and **Import**.
+8. Go to **bing.com/webmasters** and sign in (a Microsoft account works; Bing also offers other sign-in options). On the welcome screen, choose **Import** from Google Search Console, allow access, select your site and **Import**.
    **Expected:** your site appears, verified, with its sitemap already listed.
    **Can't import?** (e.g. you used another Google account) Add the site manually and use **HTML meta tag** verification: copy the `msvalidate.01` code into **Yoast SEO → Settings → Site connections → Bing**, save, then verify.
 9. Look at the left menu: **Sitemaps** (check yours is there), **URL Inspection**, **URL Submission**, **IndexNow** and **AI Performance** (where your pages are cited in Microsoft's AI answers, M05.L01). Data appears after a few days.
@@ -116,7 +116,7 @@ Use your **live** site, logged in as an administrator, and a Google account you'
 13. Paste a post's full URL into the **Inspect any URL** box at the top of Search Console.
     **Expected:** *URL is on Google* (indexed) or *URL is not on Google* with a reason, plus details on discovery, crawl and the canonical Google chose.
 14. For a **new or significantly updated** post, click **Test live URL** to check Google can fetch it now, then **Request indexing**.
-    **Expected:** *Indexing requested*. It can take from a day to a couple of weeks; Google says requesting doesn't guarantee indexing, and there's a quota: repeat requests for the same URL won't speed it up.
+    **Expected:** *Indexing requested*. Google says "crawling can take anywhere from a few days to a few weeks", and a request "does not guarantee that inclusion in search results will happen instantly or even at all". There's also a quota, and repeat requests for the same URL won't speed it up. Only an **Owner** or **Full user** can request indexing.
 15. **Don't** request indexing for every post or every small edit. Your sitemap and internal links already tell Google about them. Save requests for important new posts and real fixes.
 16. In **Bing**, use **URL Inspection** or **URL Submission** for the same job. (IndexNow, if you've set it up, does this automatically, M05.L02.)
 
