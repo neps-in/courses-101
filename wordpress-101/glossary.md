@@ -71,7 +71,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **MX record** — a DNS record that says which server receives email for your domain. [M01.L02]
 - **Nameservers** — the servers that hold your domain's DNS records; your registrar settings say which ones your domain uses. [M01.L02]
 - **Navigation block** — the block that shows a menu; its menus are saved separately (Appearance → Editor → Navigation) and can be reused in the header, footer or mobile overlay. [M04.L03]
-- **Navigation fallback** — what the Navigation block shows when it has no menu: an imported classic menu if one exists, otherwise a Page List of all published pages. [M04.L03]
+- **Navigation fallback** — what a Navigation block shows when it isn't set to a menu: your most recently published menu; if none exists, an imported classic menu or a Page List of all published pages. [M04.L03]
 - **Notes (editor)** — comments attached to blocks inside the editor (WordPress 6.9+), for feedback such as "check this link"; readers never see them. [M02.L04]
 - **oEmbed (provider)** — the standard WordPress uses to ask a site like YouTube how to display a link; core has a built-in list of trusted providers. [M02.L05]
 - **Off-site backup** — a backup stored with a different company from your host (e.g. Google Drive, Dropbox), so it survives if the server fails. [M01.L05]
