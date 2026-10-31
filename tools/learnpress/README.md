@@ -3,7 +3,7 @@
 Run on the server that hosts `/var/www/neps.in`. Back up first:
 `wp db export backup.sql --tables=wp_posts,wp_postmeta,wp_learnpress_sections,wp_learnpress_section_items,wp_learnpress_quiz_questions,wp_learnpress_question_answers,wp_learnpress_courses`
 
-## Upload a module (used for M02 on 2026-10-31)
+## Upload a module (used for M02 and M03 on 2026-10-31)
 1. `python3 build_module.py <N> <first lesson ID> mNN.json`: Markdown → JSON (lesson HTML, durations, quizzes).
    Strips image prompts, `.webp` links and "Glossary terms added"; Mermaid becomes `<pre class="mermaid">` plus a CDN loader;
    bare URLs become links; the module cheat sheet is inlined in the capstone.
@@ -15,7 +15,7 @@ Run on the server that hosts `/var/www/neps.in`. Back up first:
 |---|---|---|---|
 | M01 | 32 | 2615 | live (uploaded with the one-off `upload_m01.php`) |
 | M02 | 33 | 2621 | live |
-| M03 | 34 | 2627 | drafts |
+| M03 | 34 | 2627 | live |
 | M04 | 35 | 2633 | drafts |
 | M05 | 36 | 2639 | drafts |
 | M06 | 37 | 2645 | drafts |
@@ -26,3 +26,7 @@ Run on the server that hosts `/var/www/neps.in`. Back up first:
 ## ⚠️ Saving the course detaches drafts
 Saving course 2608 in wp-admin removes every attached lesson that isn't published (it happened on 2026-10-31).
 Re-attach them with `wp eval-file reattach_drafts.php --user=118`.
+
+## Checking a live lesson
+Lesson URLs work only inside the course: `https://neps.in/courses/wordpress-101-for-content-creators/lessons/<slug>/` (the bare `/lessons/<slug>/` returns 404). Logged-out visitors see the enrol prompt, so check content with
+`wp eval 'echo apply_filters("the_content", get_post(<ID>)->post_content);' --user=118`.
