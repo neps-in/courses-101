@@ -20,7 +20,7 @@
 - d) A Vimeo video
 
 **Answer:** c
-**Explanation:** Instagram and Facebook were removed from core's oEmbed providers in WordPress 5.5.2, because Meta changed its embed rules. Spotify, Bluesky (added in 6.6) and Vimeo still embed by pasting the link.
+**Explanation:** Instagram and Facebook were removed from core's oEmbed providers in WordPress 5.5.2, because Meta began requiring an access token for its embed service. Spotify, Bluesky (added in 6.6) and Vimeo still embed by pasting the link.
 **Hint:** It's owned by Meta.
 
 ### Q3. What does YouTube's Privacy Enhanced Mode (`youtube-nocookie.com`) do?
@@ -44,10 +44,10 @@
 **Hint:** Which embeds do readers actually need to play?
 
 ### Q5. Mei pastes `https://x.com/brand/status/123…` on its own line and gets "Sorry, this content could not be embedded." What's the most likely reason, and a good fix?
-- a) X posts can't be shown on websites at all, so she should delete the reference
-- b) Core only recognises `twitter.com` links for X; she can change the domain and retry, or use **Convert to link** and add a screenshot
-- c) Her site needs HTTPS before embeds work, so she should go back to M01.L03
-- d) Her role must be Administrator to embed social posts; she should ask for a role change
+- a) X no longer allows its posts to be shown on other websites, so she should remove the reference
+- b) Core only recognises `twitter.com` links, so she should swap the domain and retry, or convert it to a link
+- c) Embeds only work on sites served over HTTPS, so her Local site needs SSL turned on first
+- d) Only Administrators can embed social posts, so she should ask an Administrator to paste the link
 
 **Answer:** b
 **Explanation:** Core's X/Twitter provider matches `twitter.com` addresses, not `x.com`. Changing the domain often works; if not, a screenshot with a link is the reliable choice. Embeds don't depend on HTTPS or on the Administrator role (only Custom HTML code does).

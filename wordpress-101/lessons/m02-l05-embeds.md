@@ -36,7 +36,7 @@ Ravi reviews budget phones. Each review embedded his YouTube video, two X posts 
 | Bluesky, Reddit, Tumblr, TikTok, Pinterest | ✅ | Post card |
 | X (Twitter) | ⚠️ only `twitter.com/…/status/…` links | Core doesn't recognise `x.com` links; change `x.com` to `twitter.com` in the link, or use a screenshot |
 | Instagram, Facebook | ❌ removed in WordPress 5.5.2 | Use the platform's own embed code in a Custom HTML block, or a screenshot + link |
-| Apple Podcasts | ❌ not a core provider | Use the embed code Apple provides in a Custom HTML block, or link to the episode |
+| Apple Podcasts | ❌ not a core provider | Link to the episode, or embed the same episode from Spotify, Pocket Casts or SoundCloud |
 | Newsletter sign-up (Substack, Kit, etc.) | ❌ | Paste the tool's embed code into a Custom HTML block (M06.L02 covers sign-up forms properly) |
 
 ## How it works
@@ -104,14 +104,14 @@ Work on your **Local** practice site, in **Chrome, Edge or Firefox** on a comput
    **Expected:** the embed post makes several times more requests and downloads more data, almost all of it from other companies. (Exact numbers vary by browser, network and embed.)
 
 **Part D: swap one embed for a screenshot + link (2 min)**
-1. Take a screenshot of the social post (only your own post, or one you have permission to show; see M08.L05).
-2. In *Embed test*, replace the social embed with an **Image** block: upload the screenshot, write alt text that says what the post says, and link the image to the original post (**Ctrl+K** with the image selected).
+1. Take a screenshot of **your own** social post. (For other people's posts, quote one short line and link to it instead: screenshots of others' work raise copyright questions, covered in M08.L05.)
+2. In *Embed test*, replace the social embed with an **Image** block: upload the screenshot, write alt text that says what the post says, and link the image to the original post with the **Link** button in the image block's toolbar.
 3. Add a one-line caption, e.g. *Via @priyacooks on Bluesky*. **Save draft**, preview, and measure again.
    **Expected:** fewer requests and fewer third-party domains, and the content is still there.
 
 ## When to use / when not to
 - **Embed** your own videos and podcast episodes when readers are likely to play them on the page. Usually one main embed per post is plenty.
-- **Use a screenshot or quote + link** for social posts that are just "evidence" (a brand's announcement, a funny reply), anything from platforms that need extra code (Instagram, Facebook), and posts that could be deleted. Screenshots don't break if the original is deleted, and they don't load trackers.
+- **Use a screenshot (of your own posts) or a short quote + link (for other people's)** for social posts that are just "evidence" (a brand's announcement, a funny reply), anything from platforms that need extra code (Instagram, Facebook), and posts that could be deleted. Screenshots don't break if the original is deleted, and they don't load trackers.
 - **Use Privacy Enhanced Mode** (`youtube-nocookie.com`) for YouTube if you care about privacy or want to reduce what your cookie notice must cover (M08). Core's YouTube embed uses `youtube.com`; for no-cookie mode, paste YouTube's embed code with the domain changed in a Custom HTML block, or use a privacy plugin (vetting plugins is M06.L01).
 - **Trade-off:** embeds keep readers on your page and update automatically; screenshots are faster, private and permanent but static, and readers must click to play. WordPress adds `loading="lazy"` to iframes in your content (since 5.7), so embeds further down a post usually load only when readers scroll near them, but an embed near the top always loads straight away.
 

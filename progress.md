@@ -33,7 +33,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | draft | 2026-10-31 |
 | M02 | L03 | Categories vs tags: design a content structure for your niche | wordpress-101/lessons/m02-l03-categories-tags.md | reviewed | 2026-10-31 |
 | M02 | L04 | Drafts, revisions, scheduling and an editorial workflow | wordpress-101/lessons/m02-l04-editorial-workflow.md | reviewed | 2026-10-31 |
-| M02 | L05 | Embeds: YouTube, podcasts, social posts and newsletters | wordpress-101/lessons/m02-l05-embeds.md | draft | 2026-10-31 |
+| M02 | L05 | Embeds: YouTube, podcasts, social posts and newsletters | wordpress-101/lessons/m02-l05-embeds.md | reviewed | 2026-10-31 |
 | M02 | Capstone | M02 capstone | wordpress-101/capstones/m02-capstone.md | todo | — |
 | M03 | L01 | The Media Library and the image sizes WordPress creates | wordpress-101/lessons/m03-l01-media-library-image-sizes.md | todo | — |
 | M03 | L02 | Compress, convert and right-size: WebP, AVIF and image plugins | wordpress-101/lessons/m03-l02-compress-convert-images.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m02-l05 reviewed: confirmed X oEmbed works with twitter.com links (publish.x.com); removed unsourced Apple Podcasts embed-code claim; image linking via toolbar Link button; screenshots for own posts, short quote + link for others' (copyright, M08.L05); balanced Q5 options, precise Q2 reason. Next: `/next-lesson` → M02 capstone.
 - 2026-10-31: wordpress-101 m02-l05 draft (lesson + 7-question quiz incl. 1 review from M02.L03; 6 glossary terms; embed-vs-screenshot flowchart; 3 image prompts, no images). Provider list from WP 7.0 `class-wp-oembed.php` (Instagram/Facebook removed 5.5.2, Bluesky 6.6, core matches twitter.com not x.com); iframe lazy loading since 5.7; YouTube Privacy Enhanced Mode wording from YouTube Help. Next: `/next-lesson` → M02 capstone.
 - 2026-10-31: wordpress-101 m02-l04 reviewed: corrected post-slug claim (WordPress redirects old post slugs via _wp_old_slug), fixed schedule confirmation text (pre- vs post-schedule messages), removed unverifiable timezone-display step; confirmed Add note is in the block ⋮ menu and Revisions needs 2+ revisions; balanced Q4/Q5 options, stronger Q2 distractor. Next: `/next-lesson` → M02.L05.
 - 2026-10-31: wordpress-101 m02-l04 draft (lesson + 7-question quiz incl. 1 review from M02.L02; 7 glossary terms; editorial-workflow flowchart; 2 image prompts, no images). Status descriptions, Schedule/pre-publish/revisions/Notes labels and WP_POST_REVISIONS/AUTOSAVE_INTERVAL defaults checked in WP 7.0 core; WP-Cron page-load behaviour from developer.wordpress.org. Next: `/next-lesson` → M02.L05.
