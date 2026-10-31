@@ -1,5 +1,9 @@
-"""Convert M01 lesson/quiz/capstone Markdown into a JSON payload for the LearnPress upload."""
-import html, json, re, sys
+"""Convert one module's lessons, quizzes and capstone into a JSON payload for the LearnPress upload.
+
+Usage: python3 build_module.py <module number> <first WP lesson id> <out.json>
+WP lesson IDs are consecutive in outline order (lessons, then the capstone).
+"""
+import glob, html, json, os, re, sys
 from markdown_it import MarkdownIt
 
 MD = MarkdownIt("commonmark").enable("table")
@@ -8,14 +12,20 @@ ROOT = "/home/ubuntu/courses-101/wordpress-101"
 MERMAID_JS = ('<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";'
               'mermaid.initialize({startOnLoad:true});</script>')
 
-LESSONS = [  # (wp lesson id, lesson md, quiz md or None)
-    (2615, "lessons/m01-l01-choose-your-platform.md", "lessons/m01-l01-choose-your-platform-quiz.md"),
-    (2616, "lessons/m01-l02-domain-dns-hosting.md", "lessons/m01-l02-domain-dns-hosting-quiz.md"),
-    (2617, "lessons/m01-l03-install-https-dashboard.md", "lessons/m01-l03-install-https-dashboard-quiz.md"),
-    (2618, "lessons/m01-l04-first-day-settings.md", "lessons/m01-l04-first-day-settings-quiz.md"),
-    (2619, "lessons/m01-l05-day-one-safety-net.md", "lessons/m01-l05-day-one-safety-net-quiz.md"),
-    (2620, "capstones/m01-capstone.md", None),
-]
+MODULE, FIRST_ID, OUT = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
+
+
+def module_files(n):
+    """(wp lesson id, lesson md, quiz md or None) in outline order: lessons, then the capstone."""
+    lessons = sorted(f for f in glob.glob(f"{ROOT}/lessons/m{n:02d}-l*.md") if not f.endswith("-quiz.md"))
+    files = [(os.path.relpath(f, ROOT), os.path.relpath(f[:-3] + "-quiz.md", ROOT)) for f in lessons]
+    files.append((f"capstones/m{n:02d}-capstone.md", None))
+    for path, quiz in files:
+        assert os.path.exists(f"{ROOT}/{path}") and (quiz is None or os.path.exists(f"{ROOT}/{quiz}")), path
+    return [(FIRST_ID + i, path, quiz) for i, (path, quiz) in enumerate(files)]
+
+
+LESSONS = module_files(MODULE)
 
 
 def md(text):
@@ -52,11 +62,12 @@ def lesson_html(path):
     text = re.sub(r"^\s*> 🖼️ \*\*Image prompt:\*\*.*\n\s*> \*\*Alt text:\*\*.*\n", "", text, flags=re.M)
     text = re.sub(r"!\[[^\]]*\]\([^)]*\.webp\)\n?", "", text, flags=re.S)      # no images on the site
     text = drop_section(text, "Glossary terms added")                           # repo-internal
-    if "## Module 1 cheat sheet" in text:                                       # inline the cheat sheet
-        sheet = open(f"{ROOT}/cheatsheets/m01-own-your-platform.md").read()
+    cheat = re.search(r"^(## Module \d+ cheat sheet)\n.*?`wordpress-101/(cheatsheets/[^`]+)`", text, re.S | re.M)
+    if cheat:                                                                   # inline the cheat sheet
+        sheet = open(f"{ROOT}/{cheat.group(2)}").read()
         sheet = re.sub(r"^# .*\n", "", sheet, count=1)
         sheet = re.sub(r"^## ", "### ", sheet, flags=re.M)
-        text = re.sub(r"^## Module 1 cheat sheet\n.*\Z", "## Module 1 cheat sheet\n" + sheet, text, flags=re.S | re.M)
+        text = text[:cheat.start()] + cheat.group(1) + "\n" + sheet
     out = md(text)
 
     def mermaid(m):
@@ -120,7 +131,7 @@ for lid, lpath, qpath in LESSONS:
         item["quiz"] = {"title": qtitle, "questions": qs}
     payload.append(item)
 
-json.dump(payload, open(sys.argv[1], "w"), ensure_ascii=False, indent=1)
+json.dump(payload, open(OUT, "w"), ensure_ascii=False, indent=1)
 for p in payload:
     q = p["quiz"]
     print(p["lesson_id"], p["duration"], len(p["content"]), "chars", (q["title"], len(q["questions"])) if q else "no quiz")
