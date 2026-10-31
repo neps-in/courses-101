@@ -50,7 +50,7 @@ Google says plainly that it **doesn't guarantee** it will crawl, index or show a
 
 ```mermaid
 flowchart TD
-  %% alt: A post is discovered via links and sitemap, crawled unless blocked, indexed unless noindex, then ranked in search or retrieved and cited by AI answers.
+  %% alt: A post is found via links and sitemap, crawled unless blocked, indexed unless noindex, then ranked in search or retrieved and cited by AI answers.
   A[You publish a post]:::cream --> B[Discovery: links,<br/>sitemap, Search Console]:::sky
   B --> C{robots.txt allows<br/>this crawler?}:::sky
   C -- No --> X[Not crawled]:::pink
