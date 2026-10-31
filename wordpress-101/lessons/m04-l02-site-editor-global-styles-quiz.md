@@ -1,6 +1,6 @@
 # M04.L02 Quiz — The Site Editor: templates, template parts and global styles
 
-> 7 questions · 3 recall, 2 scenario, 1 spot-the-error · includes 1 spaced-review question from M02.L02.
+> 7 questions · 2 recall, 3 scenario, 1 spot-the-error, 1 spaced-review question from M02.L02.
 > Labels checked against WordPress 7.0 and Twenty Twenty-Five on 2026-10-31.
 
 ### Q1. You want every heading on your site to use your brand font. Where is the best place to set it?

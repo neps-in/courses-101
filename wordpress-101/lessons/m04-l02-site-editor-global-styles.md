@@ -26,9 +26,9 @@ Your posts and pages hold the *content*. Templates and styles hold the *design* 
 
 **Precise definitions:**
 - **Site Editor:** the block editor for your whole site, opened at **Appearance → Editor** when a block theme is active. Its sidebar has **Navigation**, **Styles**, **Pages**, **Templates** and **Patterns**.
-- **Template:** a block layout WordPress uses for a kind of request. Default names include **Single Posts**, **Pages**, **Blog Home**, **Archives**, **Search**, **404** and **Index**. If no specific template exists, WordPress falls back to a more general one, ending at **Index** (the *template hierarchy*).
+- **Template:** a block layout WordPress uses for a kind of request. Default names include **Single Posts**, **Pages**, **Blog Home**, **All Archives**, **Search Results**, **Page: 404** and **Index**. If no specific template exists, WordPress falls back to a more general one, ending at **Index** (the *template hierarchy*).
 - **Template part:** a reusable block area inside templates, assigned to an area such as Header or Footer. In the Site Editor they're listed under **Patterns → Template Parts**. Twenty Twenty-Five ships three headers (**Header**, **Vertical site header**, **Header with large title**) and three footers (**Footer**, **Footer Columns**, **Footer Newsletter**).
-- **Global styles:** site-wide design settings in **Styles**: **Typography**, **Colors**, **Layout**, **Shadows** and per-block styles under **Blocks**. Your choices are saved on top of the theme's `theme.json` (M04.L01).
+- **Global styles:** site-wide design settings in **Styles**: **Typography**, **Colors**, **Background**, **Shadows**, **Layout** and per-block styles under **Blocks**. Your choices are saved on top of the theme's `theme.json` (M04.L01).
 - **Style variation:** a ready-made alternative look shipped by the theme, under **Styles → Browse styles**. Twenty Twenty-Five has eight (Evening, Noon, Dusk, Afternoon, Twilight, Morning, Sunrise, Midnight), plus separate colour palettes and seven font pairings (**Typesets**).
 - **Font Library:** the **Manage fonts** screen in **Styles → Typography**, with **Library**, **Upload** and **Install Fonts** tabs. Fonts you install are copied to your own site (`wp-content/uploads/fonts`), so visitors don't load them from Google.
 
@@ -72,17 +72,19 @@ Work on your **Local** practice site with a block theme active (the steps use Tw
 1. Go to **Appearance → Editor**.
    **Expected:** a preview of your home page with a sidebar: **Navigation**, **Styles**, **Pages**, **Templates**, **Patterns**.
 2. Click **Templates**.
-   **Expected:** a list including **Blog Home**, **Pages**, **Single Posts**, **Index**, **404**, **Search** and **Archives**.
+   **Expected:** a list including **Blog Home**, **Pages**, **Single Posts**, **Index**, **Page: 404**, **Search Results** and **All Archives**.
 3. Click **Patterns**. Under **Template parts**, click **All template parts** (or **Header** / **Footer**).
    **Expected:** **Header**, **Footer** and the theme's other headers and footers.
 
 **Part B: set brand colours and fonts once (10 min)**
-1. Click **Styles**. You'll see the current look plus **Browse styles**, **Typography**, **Colors**, **Layout** and **Blocks**.
+1. Click **Styles**. You'll see the current look plus **Browse styles**, **Typography**, **Colors**, **Background**, **Shadows**, **Layout** and **Blocks**.
 2. *(Optional shortcut)* Open **Browse styles** and click a variation close to your brand. You'll fine-tune it next.
-3. Open **Colors → Palette**. Under **Theme Colors** you'll see Twenty Twenty-Five's slots: **Base** (background), **Contrast** (main text) and **Accent 1–6**.
-   Click a colour to change it: set **Base** to your light colour (`#F4F1DE`), **Contrast** to your dark colour (`#1D3557`) and one accent to your brand accent.
-   > 🖼️ **Image prompt:** Screenshot of the WordPress 7.0 Site Editor with Styles → Colors → Palette open, showing the Theme Colors swatches (Base, Contrast, Accent 1–6) after editing Base to cream and Contrast to navy, with the site preview updating on the right. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+3. Open **Colors**, then click **Edit palette**. In the **Theme** section you'll see Twenty Twenty-Five's slots: **Base** (background), **Contrast** (main text) and **Accent 1–6**.
+   Click a swatch to change it: set **Base** to your light colour (`#F4F1DE`), **Contrast** to your dark colour (`#1D3557`) and one accent to your brand accent.
+   > 🖼️ **Image prompt:** Screenshot of the WordPress 7.0 Site Editor with Styles → Colors → Edit palette open, showing the Theme swatches (Base, Contrast, Accent 1–6) after editing Base to cream and Contrast to navy, with the site preview updating on the right. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** The Styles Palette panel with Base and Contrast colours changed and the site preview updated.
+
+   Changed your mind? The section's **Color options** (⋮) menu has **Reset colors**.
 
    **Why change the theme's slots instead of adding new colours?** Every block in the theme already uses these slots. Change **Contrast** once and every heading, paragraph and border that uses it changes too.
 4. **Contrast check before you save.** Open the free WebAIM Contrast Checker and test each text/background pair you plan to use. Body text needs at least **4.5:1** (WCAG 2.2 AA); large text (24 px, or about 19 px bold) needs **3:1**.
@@ -118,7 +120,7 @@ Work on your **Local** practice site with a block theme active (the steps use Tw
    **Expected:** a prompt: *"Reset to default and clear all customizations?"* Click **Reset**. A notice says **Template reset.** with an **Undo** link.
    Note: **Reset** only appears for templates and parts that come from the theme and that you've customised. A template you created from scratch has **Delete** instead.
 3. View a post: the title is back. Your author box from Part C is gone too, because Reset throws away **all** your changes to that template, not just the last one. Re-add it (that's the trade-off).
-   Shortcut: in the Site Editor, press **Ctrl+K** (**⌘K** on Mac) and type "Reset template" to find the same action.
+   Shortcut: while you're editing a customised template, press **Ctrl+K** (**⌘K** on Mac) and type "Reset template" to find the same action.
 4. **Styles have history too.** In **Styles**, open **Revisions** to see earlier saved versions of your global styles, click one to preview it, and **Apply** it to restore it. To go all the way back to the theme's defaults, use **Reset styles** from the Styles **⋮** menu.
 
 ## When to use / when not to
@@ -152,7 +154,7 @@ Work on your **Local** practice site with a block theme active (the steps use Tw
 | Colour change in Styles doesn't show on some headings | Those blocks have their own colour set (an override) | Select the block → clear its colour in the block settings, so it follows Styles |
 | Change shows in one post but not others | You edited the post, not the template | Make the change in **Templates → Single Posts** |
 | No **Reset** in the template's ⋮ menu | Template wasn't customised, or it's one you created (has **Delete**) | Nothing to reset; delete a custom template if you don't need it |
-| **Install Fonts** tab missing or empty | No connection to Google Fonts yet, or it was refused | Click **Allow access to Google Fonts**, or download the font and use **Upload** |
+| **Install Fonts** shows a permission message, or no fonts load | Access to Google Fonts not allowed yet, or your host blocks the connection | Click **Allow access to Google Fonts**; if it still fails, download the font files and use **Upload** |
 | Font looks right in the editor but not on the site | Not saved, or a caching plugin is serving old pages | Click **Save**, then clear the cache (M07.L04) |
 | Edits vanished after switching themes | Template and style edits belong to the old theme | Switch back to see them, or redo them in the new theme |
 
