@@ -23,12 +23,12 @@ Lena added a sign-up box, imported 300 email addresses from her old work contact
 **What the main laws say** (*summary; check your own country*):
 | Law | Where | Consent for newsletter email? | Key rules |
 |---|---|---|---|
-| **GDPR** (+ ePrivacy rules) | EU/EEA | Yes, for marketing to individuals | Consent must be a clear, informed choice; you "shall be able to demonstrate" consent (Art. 7); withdrawing must be "as easy" as giving it |
-| **UK GDPR + PECR** | UK | Yes, for individuals (a "soft opt-in" exception covers your own past customers for similar products) | The ICO says no pre-ticked boxes, silence or inactivity as consent |
+| **GDPR** (+ ePrivacy rules) | EU/EEA | Yes, for marketing to individuals (with a similar existing-customer exception to the UK's) | Consent must be a clear, informed choice; you "shall be able to demonstrate" consent (Art. 7); withdrawing must be "as easy" as giving it |
+| **UK GDPR + PECR** | UK | Yes, for individuals (a "soft opt-in" exception covers people who gave you their details during a sale or negotiation, for your own similar products, if they could opt out then and in every email) | The ICO says no pre-ticked boxes, silence or inactivity as consent |
 | **CAN-SPAM** | USA | No prior consent required | Accurate sender, honest subject, a valid **postal address**, a working unsubscribe, honour opt-outs within **10 business days** |
 | **CASL** | Canada | Yes (express or limited implied consent) | You must be able to prove consent; unsubscribe works for 60 days and is processed within **10 business days** |
 
-**So is double opt-in legally required?** GDPR and CASL don't name it, but both say **you must be able to prove consent**, and double opt-in is the most common way to do that. In some countries (Germany is the usual example) it's treated as the expected standard. Everywhere, it keeps fake and mistyped addresses off your list. **Recommendation for this course: turn it on.** The cost is that some people never click the confirmation email (so tell them to check their inbox).
+**So is double opt-in legally required?** GDPR and CASL don't name it, but both say **you must be able to prove consent**, and double opt-in is the most common way to do that. In some countries it's treated as the expected standard in practice (Germany is the example most often given; *observed practice, not a rule in the GDPR text*). Everywhere, it keeps fake and mistyped addresses off your list. **Recommendation for this course: turn it on.** The cost is that some people never click the confirmation email (so tell them to check their inbox).
 
 **What WordPress gives you:** **Settings → Privacy** creates a starter **Privacy Policy** page with suggested headings (*Who we are, Comments, Media, Cookies, Embedded content from other websites, Who we share your data with, How long we retain your data, What rights you have over your data, Where your data is sent*) and a **Policy Guide** tab (the **Privacy Policy Guide**) with text suggested by WordPress and your plugins. **Tools → Export Personal Data** and **Tools → Erase Personal Data** help you answer data requests.
 
@@ -94,7 +94,7 @@ Work on **Local** first; repeat Parts A–C on your live site before you promote
     | Route | Where to turn it on |
     |---|---|
     | **Fluent Forms → Mailchimp** | In the form's **Mailchimp Feed**: tick **Enable Double Opt-in** ("Mailchimp will send a confirmation email … and will only add them … upon confirmation") |
-    | **MC4WP** | **MC4WP** menu → your sign-up form → **Settings** tab: **Use double opt-in?** → **Yes** |
+    | **MC4WP** | **MC4WP** menu → your sign-up form → **Settings** tab: **Use double opt-in?** → **Yes** (it's on by default; make sure nobody switched it off) |
     | **MailPoet** | **MailPoet → Settings → Sign-up Confirmation**: **Enable sign-up confirmation** |
     | **Kit, MailerLite, others** | In the provider's form or list settings: look for "double opt-in", "confirmation email" or "incentive email" (names change; check the provider's help page) |
 12. Edit the **confirmation email** if your provider allows it: say who you are, what they signed up for, and "click to confirm". Edit the form's **success message** too: *"Almost done! Check your inbox and click the link to confirm."*

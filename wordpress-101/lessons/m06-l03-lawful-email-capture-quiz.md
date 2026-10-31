@@ -24,10 +24,10 @@
 **Hint:** It's the RSVP to your guest list.
 
 ### Q3. Which statement about US law (**CAN-SPAM**) is correct?
-- a) It requires double opt-in for every subscriber
-- b) It doesn't require prior consent, but emails need honest headers and subjects, a postal address and a working unsubscribe
-- c) It only applies to companies with more than 50 staff
-- d) It requires a cookie banner
+- a) It requires double opt-in for every new subscriber
+- b) It needs no prior consent, but does need a postal address and an unsubscribe
+- c) It applies only to companies with more than 50 staff
+- d) It requires consent but lets you pre-tick the box
 
 **Answer:** b
 **Explanation:** CAN-SPAM is an opt-out law: no prior consent, but the FTC guide requires accurate sender details, honest subject lines, a valid postal address and an unsubscribe honoured within 10 business days. EU, UK and Canadian law go further and require consent.

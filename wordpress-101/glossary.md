@@ -147,7 +147,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Social Icons block** — a row of icon links to your profiles (Bluesky, Instagram, YouTube, TikTok, Mastodon, RSS feed and more). [M04.L03]
 - **Social share image (OG image)** — the image in og:image; at least 1200 × 630 px (~1.91:1), JPEG or PNG, text inside a safe central area. [M03.L04]
 - **Soft 404** — a URL that returns success or redirects somewhere unhelpful (e.g. the homepage) when the content is really gone; Google may treat it as not found. [M05.L02]
-- **Soft opt-in** — a UK (PECR) exception letting you email your own past customers about similar products without fresh consent, if they could opt out at collection and in every email. [M06.L03]
+- **Soft opt-in** — a UK (PECR) exception, with a similar EU rule: you may email people who gave you their details during a sale or negotiation about your own similar products without fresh consent, if they could opt out then and in every email. [M06.L03]
 - **srcset and sizes** — image attributes listing the available copies and how wide the image displays, so the browser downloads the smallest copy that looks sharp. [M03.L01]
 - **Staging site** — a private copy of your site where you test updates and changes before readers see them. [M01.L02]
 - **Start Here page** — a guided tour for new visitors that routes them by goal to a few of your best posts and your newsletter. [M04.L04]
