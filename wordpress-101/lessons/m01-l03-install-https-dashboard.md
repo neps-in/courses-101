@@ -70,6 +70,8 @@ flowchart TD
    - Username: **not** `admin`. Use something unguessable.
    - Password: let your password manager generate it (M01.L05 covers this properly).
    **Expected:** after a minute, the site shows as running with **Open site** and **WP Admin** buttons.
+   > 🖼️ **Image prompt:** Screenshot of the Local app (localwp.com) Overview tab for a site named `priyacooks`, status running, with the Open site and WP Admin buttons and the SSL "Trust" control outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Local app overview of the priyacooks site, showing Open site, WP Admin and the SSL Trust button.
 4. In the site's **Overview**, find **SSL** and click **Trust** (Local may ask for your computer password).
    **Expected:** SSL shows as trusted, and **Open site** loads `https://priyacooks.local` with a padlock.
 
@@ -87,6 +89,8 @@ flowchart TD
    **Expected:** a padlock (or "connection is secure" icon) left of the address, and the address starts with `https://`.
 2. Go to **Settings → General**.
    **Expected:** **WordPress Address (URL)** and **Site Address (URL)** both start with `https://`.
+   > 🖼️ **Image prompt:** Screenshot of Settings → General in WordPress 7.1, cropped to the WordPress Address (URL) and Site Address (URL) fields, both reading `https://priyacooks.local`, with the `https://` part outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Settings → General with WordPress Address and Site Address both starting with https://.
 3. Go to **Tools → Site Health**.
    **Expected:** no critical issue about HTTPS. If WordPress detects a working certificate but your addresses still use `http://`, Site Health may offer a button to **update your site to use HTTPS**. Use it, or change both addresses yourself (exactly the same URL, `https://`, no trailing slash).
 4. Type your address with `http://` instead of `https://`.
@@ -110,6 +114,8 @@ Log in at `/wp-admin/` and find each item. Tick it off and write down the menu p
 
 **Bonus:** press **Ctrl+K** (Windows/Linux) or **⌘+K** (Mac) anywhere in the dashboard and type "permalinks".
 **Expected:** the command palette offers Permalinks. Use it whenever a menu has moved.
+> 🖼️ **Image prompt:** Screenshot of the WordPress 7.1 command palette (Ctrl+K) open over the dashboard, with "permalinks" typed and the Permalinks result selected. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+> **Alt text:** The command palette open with permalinks typed and the Permalinks result highlighted.
 
 ## When to use / when not to
 - **Use Local** for your practice site while you learn. It's free, private and permanent. **Trade-off:** nobody else can see it, so you can't share a link or test real search traffic.

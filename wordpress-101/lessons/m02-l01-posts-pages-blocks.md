@@ -103,11 +103,15 @@ Use your **Local** practice site. In this walkthrough, try to **insert every blo
 **Step 3: edit with the toolbar and list view (5 min)**
 1. Press **Shift+Alt+O** to open **list view**.
    **Expected:** an outline: Paragraph, Heading, List, Image, Quote, Buttons.
+   > 🖼️ **Image prompt:** Desktop screenshot of the WordPress 7.1 block editor with list view open on the left, showing Paragraph, Heading, List, Image, Quote and Buttons, and the matching post on the right. Outline the list view panel. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Block editor with list view open, showing the post's six blocks in order next to the post.
 2. Select the **Quote** in list view and press **Ctrl+Shift+Alt+T** twice to move it up above the image.
    **Expected:** the quote now sits above the image, in the outline and in the post.
 3. Select the **Heading**, press **Ctrl+Shift+D** to duplicate it, change the copy's text to *What's coming next*, then delete it with **Shift+Alt+Z**.
 4. Click the heading block and use the **block toolbar**: change it from H2 to H3 and back.
    **Expected:** the heading level changes; the list view label updates.
+   > 🖼️ **Image prompt:** Close-up screenshot of the block toolbar above a Heading block, with the heading-level dropdown open showing H1–H6 and H3 being selected. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Block toolbar on a heading with the level menu open and H3 selected.
 
 **Step 4: post settings and publish (3 min)**
 1. Press **Ctrl+Shift+,** to open the settings sidebar and choose the **Post** tab.

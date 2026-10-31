@@ -63,6 +63,8 @@ Work on your **Local** practice site, in the post you published in M02.L01.
 **Part A: insert and customise a theme pattern (5 min)**
 1. Open your post. Click the **+** (block inserter) in the top bar and choose the **Patterns** tab.
    **Expected:** pattern categories from your theme (e.g. Call to action, Text, Gallery).
+   > 🖼️ **Image prompt:** Screenshot of the block inserter's Patterns tab in WordPress 7.1, listing theme pattern categories (Call to action, Text, Gallery…) with a pattern preview showing on hover. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Block inserter Patterns tab listing pattern categories with a preview of a call-to-action pattern.
 2. Pick any **Call to action** or **Text** pattern and click it.
    **Expected:** a group of blocks appears in your post.
 3. Change its text and swap its image. Open **list view** (**Shift+Alt+O**).
@@ -77,6 +79,8 @@ Work on your **Local** practice site, in the post you published in M02.L01.
 2. In list view, select all three blocks (click the first, **Shift**+click the last).
 3. Open the **⋮ Options** menu in the block toolbar and choose **Create pattern**.
 4. Name it *Newsletter CTA*, pick a category (e.g. Call to action), and leave **Synced** turned **on** ("Sync this pattern across multiple locations"). Click **Add/Create**.
+   > 🖼️ **Image prompt:** Screenshot of the Create pattern dialog in WordPress 7.1: Name "Newsletter CTA", Category "Call to action", and the "Synced" toggle switched on and outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Create pattern dialog with the name Newsletter CTA, category Call to action and Synced turned on.
    **Expected:** the three blocks now sit inside one **synced pattern** block, shown with a distinct (often purple) outline and icon.
 5. **Update** the post.
 
@@ -85,6 +89,8 @@ Work on your **Local** practice site, in the post you published in M02.L01.
 2. In either post, select the CTA and choose **Edit original**. Change the link to `https://example.com/newsletter` and the button text to *Subscribe free*. Save.
 3. View both posts.
    **Expected:** both show *Subscribe free* with the new link. You edited once; every copy changed.
+   > 🖼️ **Image prompt:** Side-by-side screenshots of two different posts, each ending with the same synced Newsletter CTA showing the button "Subscribe free"; a small inset shows the Edit original button in the pattern's toolbar. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Two posts showing the same updated Subscribe free call to action, with the Edit original button inset.
 
 **Part D: an author box (5 min)**
 1. In your first post, add a **Group** containing an **Image** (your photo), a **Heading** (your name) and a **Paragraph** (one line about you).

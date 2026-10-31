@@ -95,10 +95,14 @@ You'll score the platforms for *your* situation, then start a free WordPress pra
    **Expected:** a full WordPress site loads in the browser, with the admin toolbar at the top.
 2. Click the WordPress logo or go to `/wp-admin/`. You're logged in as `admin` automatically.
    **Expected:** the WordPress dashboard, with Posts, Pages, Media and Settings in the left menu.
+   > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of the WordPress 7.1 dashboard inside WordPress Playground (playground.wordpress.net), full left admin menu visible. Outline Posts, Pages, Media and Settings. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** WordPress dashboard in Playground with Posts, Pages, Media and Settings highlighted in the left menu.
 3. Go to **Posts → Add New Post**, type the title "Hello from my own site" and a one-line paragraph, then click **Publish** (twice: Publish, then confirm).
    **Expected:** a "Post published" notice and a **View Post** link.
 4. Go to **Tools → Export**, choose **All content**, then **Download Export File**.
    **Expected:** an `.xml` file downloads. This is your whole site's content in a portable format. You've just proved you can leave in one minute.
+   > 🖼️ **Image prompt:** Screenshot of Tools → Export in WordPress 7.1 with "All content" selected and the Download Export File button outlined; the browser's download bar shows a file ending in `.xml`. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Tools → Export screen with All content selected and the downloaded .xml export file.
 5. Save your Playground so it survives a browser restart. Use the **Save** option in the Playground toolbar (it saves to your browser). Or install **Local** (localwp.com, free) for a permanent local site.
    **Expected:** the site is still there when you reopen Playground.
 

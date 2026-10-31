@@ -76,6 +76,8 @@ Work on your **Local** practice site. On a live site, do exactly the same steps.
    - **Files backup schedule:** Weekly, retain **4** backups.
    - **Database backup schedule:** Daily, retain **14** backups.
    - **Remote storage:** choose **Google Drive** or **Dropbox** (both free in UpdraftPlus).
+   > 🖼️ **Image prompt:** Screenshot of the UpdraftPlus Settings tab: Files backup schedule Weekly, retain 4; Database backup schedule Daily, retain 14; Google Drive selected as remote storage. Outline the schedule and storage choices. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** UpdraftPlus settings with weekly file backups kept 4 times, daily database backups kept 14 times, and Google Drive selected.
 3. Scroll down, click **Save Changes**, and follow the prompt to **authenticate** with your cloud account.
    **Expected:** a success message saying UpdraftPlus is connected to your account.
 4. Go to **Backup / Restore** and click **Backup Now** (database + files, send to remote storage).
@@ -94,6 +96,8 @@ Work on your **Local** practice site. On a live site, do exactly the same steps.
    - Enable **Backup verification codes** and **generate** them. Save them in your password manager.
    - Make TOTP the **primary** method. **Update Profile.**
    **Expected:** TOTP shows as configured, and you have 10 backup codes saved.
+   > 🖼️ **Image prompt:** Screenshot of Users → Profile → Two-Factor Options (Two Factor plugin) with Authenticator app (TOTP) enabled and set as primary, and Backup verification codes enabled. Blur the QR code and every code. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Two-Factor Options with the authenticator app enabled as primary and backup codes generated (codes blurred).
 4. Log out and log in again.
    **Expected:** after your password, WordPress asks for an authentication code. Enter the code from your app.
 
@@ -106,6 +110,8 @@ Work on your **Local** practice site. On a live site, do exactly the same steps.
    **Expected:** a much shorter menu: Posts, Media, Profile. No Plugins, Appearance, Settings or Users.
 3. Back as yourself, change `test-author` to **Contributor** and log in again as them. Start a post.
    **Expected:** the button says **Submit for Review**, not Publish.
+   > 🖼️ **Image prompt:** Screenshot of the block editor logged in as a Contributor, top bar cropped to show the Submit for Review button outlined where Publish would normally be. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Block editor for a Contributor showing a Submit for Review button instead of Publish.
 4. Delete `test-author` when done (attribute any content to yourself).
 
 ## When to use / when not to

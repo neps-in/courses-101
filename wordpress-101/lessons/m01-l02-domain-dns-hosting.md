@@ -90,6 +90,8 @@ flowchart LR
    nslookup wordpress.org
    ```
    **Expected output:** a "Server:" line (your DNS resolver), then a "Name: wordpress.org" line followed by one or more "Address:" lines. Those addresses come from wordpress.org's **A** and **AAAA** records.
+   > 🖼️ **Image prompt:** Terminal screenshot (dark theme, large monospace font) of `nslookup wordpress.org` output, annotated with callouts: "Server = your DNS resolver" and "Address lines = A/AAAA records". Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** nslookup output for wordpress.org with the resolver line and the A/AAAA address lines labelled.
 3. Run `nslookup -type=MX gmail.com`.
    **Expected output:** several "mail exchanger =" lines. That's an **MX** record telling the world where Gmail's email goes.
 
@@ -100,6 +102,8 @@ flowchart LR
 2. Cross out anything with hyphens, numbers, hard spellings or someone else's trademark.
 3. Check your top 3 at a registrar's search box.
    **Expected:** each shows **available** with a first-year price and (on good registrars) the renewal price, or **taken**.
+   > 🖼️ **Image prompt:** Generic, unbranded registrar search result mock-up for `priyacooks.in`: an "Available" badge, the first-year price, and the renewal price circled, plus one alternative marked "Taken". No real registrar logos. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Domain search result showing priyacooks.in available, with first-year and renewal prices; the renewal price is circled.
 4. For a taken name, look it up at **https://lookup.icann.org** to see when it was registered and by which registrar.
    **Expected:** registration and expiry dates and the registrar name (personal details are usually redacted).
 5. Pick one available name and note its first-year and renewal price. **Don't buy yet** unless you're ready; you'll use it at the latest when you launch in M09.

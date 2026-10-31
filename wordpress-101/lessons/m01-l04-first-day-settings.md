@@ -76,6 +76,8 @@ Work on your **Local** practice site from M01.L03.
 1. Note which structure is selected now (Day and name, Plain or Post name).
 2. Select **Post name** and click **Save Changes**.
    **Expected:** "Permalink structure updated." The example under Post name shows `https://yoursite/sample-post/`.
+   > 🖼️ **Image prompt:** Screenshot of Settings → Permalinks in WordPress 7.1 with the "Permalink structure updated." notice, the Post name option selected, and its example URL `/sample-post/` outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Permalinks settings with Post name selected and the example URL ending in /sample-post/.
 3. Open any post or page on the site.
    **Expected:** its address ends in a readable slug, e.g. `/sample-page/`. If you get a "Not Found" error, see Troubleshooting.
 
@@ -96,6 +98,8 @@ Decide first: **do you want comments?** (M06.L04 covers this properly.) Either w
 6. If you don't want comments at all, untick **Allow people to submit comments on new posts**.
 7. **Save Changes.**
    **Expected:** "Settings saved."
+   > 🖼️ **Image prompt:** Screenshot of Settings → Discussion in WordPress 7.1 with the safe defaults from this step: link-notification and pingback boxes unticked; name-and-email and manual approval ticked. Outline the changed checkboxes. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Discussion settings with pingbacks off, name and email required and manual comment approval on.
 
 **Step 5: delete the sample content (2 min)**
 1. **Posts → All Posts:** move **Hello world!** to Trash, then empty the trash.

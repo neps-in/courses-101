@@ -20,6 +20,6 @@ Argument: module number N (e.g. `/plan-module 1`). If missing, plan the first mo
 5. In `progress.md`, replace the module's "not yet planned" row with one `todo` row per lesson
    (file path `<course>/lessons/mNN-lNN-<slug>.md`) plus a `Capstone` row.
 6. Add a Mermaid flowchart of the module's lesson sequence to the syllabus section, using the
-   palette classDefs in CLAUDE.md, then run `python3 tools/mermaid_to_image.py <course>/syllabus.md`.
+   palette classDefs in CLAUDE.md (no rendered image).
 7. Add a log line to `progress.md`, then commit: `git commit -am "<course>: plan M<NN>"` (git add new files first).
 8. Reply with the lesson list and ask whether to start `/next-lesson`.
