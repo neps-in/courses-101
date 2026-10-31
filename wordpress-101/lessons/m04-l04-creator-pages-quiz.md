@@ -34,8 +34,8 @@
 **Hint:** Check the form's own settings before blaming the server.
 
 ### Q4. Ivy writes about budget travel, packing and solo safety, with 40 posts. What makes the best Start Here page?
-- a) Three reader goals, each with her 3 best posts and a category link
-- b) All 40 posts in one long list, so nothing is left out
+- a) Three reader goals, each with three of her best posts
+- b) All 40 posts in one long list, so nothing gets left out
 - c) Her About page text copied again, with a bigger photo
 - d) A contact form, so new readers can ask where to begin
 

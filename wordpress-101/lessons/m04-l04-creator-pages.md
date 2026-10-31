@@ -4,7 +4,7 @@
 **Time:** ~14 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M04.L03, M02.L02, M03.L03
 **Verified against:** WordPress 7.0 and Twenty Twenty-Five 1.5; Fluent Forms 6.2.16 (plugin code and WordPress.org listing); WPForms Lite 2.0.3.1 and Jetpack 16.3.1 listings; Local's Mailpit docs, all on 2026-10-31
 
-> Note: the walkthrough uses **Fluent Forms** because its free version stores every message in your dashboard as well as emailing you, so a sponsor's message isn't lost if an email fails. **WPForms Lite** and **Jetpack Forms** (the other P8 options) work too; the steps are similar. Install only **one** form plugin.
+> Note: the walkthrough uses **Fluent Forms** because its free version stores every message in your dashboard as well as emailing you, so a sponsor's message isn't lost if an email fails. **WPForms Lite** works the same way on Local. **Jetpack Forms** (the third P8 option) is set up by connecting Jetpack to a WordPress.com account, which a Local practice site can't fully do (Jetpack runs in offline mode there), so try it on a live site instead. Install only **one** form plugin.
 
 ## Learning objectives
 1. **Write** an About page that speaks to the reader first: who it's for, what they get, why to trust you, and what to do next.
@@ -130,7 +130,7 @@ Create a page **Work With Me** and save it as a **draft** with these headings (y
 | Form submits but no email arrives | **Admin Notification Email** is off | **Settings & Integrations → Email Notifications** → switch it on |
 | Notification is on, still no email (live site) | Your host's mail isn't trusted, so it's blocked or sent to spam | Check **Entries** so nothing is lost; set up SMTP with your email provider (e.g. via an SMTP plugin; M07) |
 | No email in Mailpit on Local | Mailpit only catches mail sent through PHP `mail()` | Check **Entries**; on Windows with Apache, see Local's Mailpit troubleshooting |
-| Real people see "Sorry! You can not submit this form at this moment!" | A caching or optimisation plugin is serving a stale page or stripping the hidden fields | Exclude the Contact page from caching, then retest |
+| Real people's messages are rejected as spam | A page cache is serving an old copy of the Contact page, so the anti-spam token has expired, or an optimisation plugin strips hidden fields | Exclude the Contact page from page caching (M07.L04), then retest |
 | Lots of spam despite the honeypot | Smarter bots | Add Cloudflare Turnstile (free keys) in **Global Settings**, or Akismet (M06.L04) |
 | Start Here links show "Page not found" | Linked to drafts, or post slugs changed | Link only published posts; re-pick links from the link search |
 
