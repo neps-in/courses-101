@@ -87,7 +87,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **oEmbed (provider)** — the standard WordPress uses to ask a site like YouTube how to display a link; core has a built-in list of trusted providers. [M02.L05]
 - **Off-site backup** — a backup stored with a different company from your host (e.g. Google Drive, Dropbox), so it survives if the server fails. [M01.L05]
 - **Open Graph (OG) tags** — `og:` meta tags in a page's head (og:title, og:description, og:image, og:url) that platforms read to build link previews; added by an SEO plugin, not core. [M03.L04]
-- **Orphan post** — a published post that no other page on your site links to, so readers and crawlers struggle to find it. [M05.L03]
+- **Orphan post** — a published post that no other post or page links to in its content (only archives, which push it back over time), so readers and crawlers struggle to find it. [M05.L03]
 - **Overlay menu** — the menu button (☰) that opens the menu full-screen; the Navigation block's Overlay Visibility is Mobile by default. [M04.L03]
 - **Overrides (synced patterns)** — an option that lets chosen Paragraph, Heading, Image or Button blocks inside a synced pattern hold different content in each copy, while the design stays synced. [M02.L02]
 - **Owned vs rented audience** — readers you can reach directly and take with you (your email list, your domain) vs followers who exist only inside a platform and can be lost when its rules or algorithm change. [M01.L01]

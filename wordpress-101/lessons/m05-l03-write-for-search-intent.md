@@ -25,7 +25,7 @@ Then shape the post for that job:
 **What Google says** (primary sources, not rumours):
 - Google's systems aim to reward **people-first** content. Its own warning signs of "search engine-first" content include writing to a word count ("No, we don't" have a preferred one), and content that leaves readers needing to search again.
 - Use headings and break content into sections "to help users navigate your pages" (SEO Starter Guide).
-- Good **anchor text** is descriptive, reasonably concise and relevant to the target page. Google lists "Click here", "Read more" and "website" as too generic, and says internal anchor text helps "people and Google make sense of your site".
+- Good **anchor text** is "descriptive, reasonably concise, and relevant to the page that it's on and to the page it links to". Google lists "Click here", "Read more" and "website" as too generic, says internal anchor text helps "both people and Google make sense of your site", and adds: "Every page you care about should have a link from at least one other page on your site."
 - For AI Overviews and AI Mode, Google says the same SEO fundamentals apply, including "making your content easily findable through internal links".
 
 **Four intents** (from Google's guidelines for its human quality raters. Google says their ratings "do not directly impact ranking", but the categories are a useful lens):
@@ -71,7 +71,7 @@ flowchart TD
 Use one **published post** on your Local site (or a draft), and a real query someone might type to find it. We'll use Hira's *Miso Ramen* post and the query **easy miso ramen recipe**.
 
 ### Part A — Read the results page (~6 min)
-1. Open a **private/incognito window** (so your history doesn't personalise results) and search the query on Google.
+1. Open a **private/incognito window** (so your search history doesn't shape the results) and search the query on Google. Results still vary by country, language and device, so check from where your readers are, on mobile too if most of them use it.
 2. Look at the **top 5–8 results** and the features above them, and note in a small table:
    | Signal | What you see |
    |---|---|
@@ -128,10 +128,10 @@ Use one **published post** on your Local site (or a draft), and a real query som
     > **Alt text:** The link popover's Search or type URL box suggesting a matching post for the selected anchor text "soft-boiled ramen egg".
 
 11. **Links in (1+):** open an **older, related post** (e.g. *Japanese pantry staples*) and add a link **to** this post where it fits naturally, with descriptive anchor text (*a 20-minute miso ramen*). Update the older post.
-    New posts start with no links pointing to them. Links from your existing posts are how readers and crawlers find them, and they signal which posts matter most.
+    Your blog page and category archive link to a new post at first, but it slides to page 2, 3, 10 as you publish more. Links **in the content** of related posts stay put. They're how readers and crawlers keep finding a post, and they signal which posts matter most.
 12. **Check:** view the post, hover each link (the status bar shows its URL), and click one.
     **Expected:** each link opens the right post in the same tab, and the anchor text alone tells you where it goes.
-13. **Optional (live site with Yoast):** **Posts → All Posts** shows two link columns: *Number of outgoing internal links in this post* and *Number of internal links linking to this post*. Posts with **0** incoming links are "orphans". Link to them from related posts. (Yoast fills these counts only after **SEO data optimization** has run, which it skips on Local, M05.L02. Yoast's automatic link suggestions are a Premium feature.)
+13. **Optional (live site with Yoast):** **Posts → All Posts** shows two link-count columns with icons; hover them to see *Number of outgoing internal links in this post* and *Number of internal links linking to this post*. Posts with **0** incoming links from other content are "orphans". Link to them from related posts. (Yoast fills these counts only after **SEO data optimization** has run, which it skips on Local, M05.L02. Yoast's automatic link suggestions are a Premium feature.)
 
 ## When to use / when not to
 - **Use** this process for posts you want found in search: guides, recipes, how-tos, reviews, comparisons. Do it before writing a new post and when updating an old one.
@@ -154,7 +154,7 @@ Use one **published post** on your Local site (or a draft), and a real query som
 - **Skipping heading levels or using headings for styling** (an H4 because it "looks smaller"). Use the right level; change the look in Styles (M04.L02).
 - **Writing to a word count.** Google says it has no preferred length. Cover what the searcher needs, then stop.
 - **Generic anchors** ("click here", "this post") or **the same anchor for different pages**.
-- **Orphan posts:** a new post that nothing links to. Add at least one link from an older related post.
+- **Orphan posts:** a post that no other post or page links to in its content, only the archives. Add at least one link from an older related post.
 - **Too many links**, e.g. linking every other phrase. Link where it helps the reader take the next step.
 
 ## Troubleshooting

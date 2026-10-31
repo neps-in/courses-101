@@ -10,7 +10,7 @@
 - d) Check how many times the query appears in your post's text
 
 **Answer:** b
-**Explanation:** Google ranks what satisfies most searchers, so the top results show the intent, format and angle that work today. AI tools can't reliably see current results in your country, and your existing post or keyword count says nothing about what searchers want.
+**Explanation:** The top results are the best clue to what Google is rewarding for that query today: the intent, format and angle that work. AI tools can't reliably see current results in your country, and your existing post or keyword count says nothing about what searchers want.
 **Hint:** Where can you see what Google already rewards for that query?
 
 ### Q2. What does Google say about word count?
@@ -34,23 +34,23 @@
 **Hint:** Could a reader guess the target page from the linked words alone?
 
 ### Q4. Tomás's post *Best budget microphones* opens with two paragraphs about how he started podcasting. The top results for "best budget microphone for podcasting" are comparison lists with prices. What's the best first change?
-- a) Add the query to every H2 so Google sees the match
-- b) Open with the answer: his top pick, the price range, and who each mic suits, then the story
-- c) Make the post longer than every competing result
-- d) Delete the post, because comparison lists can't rank on a blog
+- a) Add the exact query to every H2 so Google sees the match clearly
+- b) Open with his top picks, their prices and who each suits; story after
+- c) Make the post longer than every competing result, adding more history
+- d) Delete the post, because blogs can't rank against shopping comparison sites
 
 **Answer:** b
-**Explanation:** The intent is "Do/choose", and the format is a comparison. An answer-first opening gives searchers (and AI answers) the verdict straight away; the story can follow. Keyword-stuffed headings and extra length don't fix a mismatch, and blogs can rank with good comparisons.
+**Explanation:** Searchers want to compare and choose, and the winning format is a comparison list. An answer-first opening gives searchers (and AI answers) the verdict straight away; the story can follow. Keyword-stuffed headings and extra length don't fix a mismatch, and blogs can rank with good comparisons.
 **Hint:** What does the searcher want in the first few seconds?
 
 ### Q5. Ama publishes a new guide, *How to repot a snake plant*. Which action best helps readers and Google discover it through internal links?
 - a) Add a link to it from her older, related post *Snake plant care for beginners*
 - b) Add ten links from the new guide to her homepage
 - c) Set every link in the guide to open in a new tab
-- d) Add the guide's URL as a tag on all her posts
+- d) Nothing: the SEO plugin's sitemap already lists it, so links aren't needed
 
 **Answer:** a
-**Explanation:** A new post starts with no links pointing to it (an "orphan"). A link **to** it from a related older post with descriptive anchor text gives readers and crawlers a path and signals it matters. Links from the guide help other pages, not the guide itself; new tabs and tags don't help discovery.
+**Explanation:** Archive pages link to a new post only until newer posts push it back. A link **to** it from a related older post, with descriptive anchor text, gives readers and crawlers a lasting path and signals it matters. Google says every page you care about should have a link from at least one other page. A sitemap helps discovery but doesn't replace links; links *from* the guide help other pages; new tabs don't help.
 **Hint:** Links *in* vs links *out*.
 
 ### Q6. Spot the error: Leo's checklist for rewriting a post says:
