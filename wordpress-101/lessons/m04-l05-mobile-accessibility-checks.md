@@ -65,7 +65,7 @@ Work on your **Local** site. Test three pages: **Home**, one **post** with image
 **Part A: phone and device mode (5 min)**
 1. In Chrome, open your homepage, press **F12** (or right-click → **Inspect**) and click **Toggle device toolbar** (the phone-and-tablet icon). Leave **Dimensions** on **Responsive** and drag the width down to **320**.
    **Expected:** no sideways scrolling, text still readable, images shrink, the menu collapses into the menu button (M04.L03).
-   Firefox: **Responsive Design Mode** in the same Tools menu works the same way.
+   Firefox: **Browser Tools → Responsive Design Mode**, or press **Ctrl+Shift+M** (**⌘⌥M** on Mac); it works the same way.
 2. Tap targets: in device mode, look at the menu button, social icons, footer links and form buttons. Anything that looks smaller than a fingertip, or crammed against another link, needs a check (24 × 24 px minimum).
 3. Zoom: close device mode and press **Ctrl +** (**⌘ +** on Mac) until 200%.
    **Expected:** everything still fits and nothing overlaps or gets cut off.

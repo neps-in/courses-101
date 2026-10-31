@@ -46,7 +46,7 @@
 ### Q5. Mina tests her site with only the keyboard. She can Tab to the mobile menu button, but pressing Enter does nothing. What's the most likely cause and fix?
 - a) Keyboards can't open mobile menus; that's expected behaviour
 - b) Her contrast is too low; darken the menu button's colour
-- c) A plugin or custom code replaced the core menu button; remove it and retest
+- c) A plugin replaced the core menu button; remove it and retest
 - d) Her Skip to content link is missing; add one to the header
 
 **Answer:** c
