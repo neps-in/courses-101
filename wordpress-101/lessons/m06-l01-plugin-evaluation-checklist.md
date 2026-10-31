@@ -16,7 +16,7 @@ Sam needed a newsletter sign-up box. He installed the first plugin in the search
 
 ## Core concept
 **Plain version:** before you install a plugin, ask two questions:
-1. **Do I need a new plugin at all?** WordPress core, your host or a plugin you already use may do the job. That's the **one plugin per job** rule from the course's plugin stack (M01): one plugin per job, and none if the job is already covered.
+1. **Do I need a new plugin at all?** WordPress core, your host or a plugin you already use may do the job. That's the **one plugin per job** rule from the course's plugin stack (and M05.L02's "one SEO plugin"): one plugin per job, and none if the job is already covered.
 2. **Can I trust this one?** Its WordPress.org page tells you most of what you need: how recently it was updated, which WordPress version it's been tested with, how many sites use it, what users say, and whether support questions get answered.
 
 **What the directory page shows** (right-hand **Details** box and below):
@@ -94,7 +94,7 @@ flowchart TD
 
 **Read the score:** **12–16** good choice · **8–11** use with care (note why) · **under 8** look for another.
 
-**Worked example (2026-10-31, directory data only; check the live pages):**
+**Worked example (2026-10-31, from the WordPress.org Plugins API and plugin pages; check the live pages):**
 | Plugin | Last updated | Tested up to | Installs | Rating | Support (last 2 months) |
 |---|---|---|---|---|---|
 | **MailPoet** (newsletters sent from WordPress) | 2026-10-27 | 7.1.4 | 500,000+ | 4.4★ (1,435) | 14 of 36 resolved |
@@ -120,7 +120,7 @@ From the directory alone, all three score 2 on Last updated, Tested up to, Insta
 | Plugin | Job | Why this one (score) | Version | Installed | Source | Auto-updates | Last reviewed | Notes / exit plan |
 |---|---|---|---|---|---|---|---|---|
 | Yoast SEO | SEO (titles, meta, sitemap, schema) | Most used; __/16 | 28.8 | 2026-10-31 | WordPress.org | On | 2026-10-31 | Settings stay in DB if removed |
-| Redirection | Redirects + 404 log | Free redirects; __/16 | 5.10.1 | 2026-10-31 | WordPress.org | On | 2026-10-31 | Export redirects before removing |
+| Redirection | Redirects + 404 log | Free redirects; __/16 | 5.10.1 | 2026-10-31 | WordPress.org | On | 2026-10-31 | **Deleting it deletes all redirects**: export them first (**Export redirects**, as JSON or CSV) |
 | Fluent Forms | Contact form (+ Mailchimp) | M04.L04 | 6.2.16 | … | WordPress.org | On | … | Entries stored in WordPress |
 
 (Fill in the scores and dates from your own checks.)
