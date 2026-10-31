@@ -14,9 +14,9 @@
 **Hint:** Why is this photo in this step?
 
 ### Q2. What's the difference between empty alt (`alt=""`) and missing alt?
-- a) None: browsers and screen readers treat them the same way
-- b) Empty alt tells screen readers to skip a decorative image; missing alt can make them read out the file name
-- c) Empty alt hides the image from sighted visitors; missing alt shows it normally
+- a) None: browsers and screen readers treat both in exactly the same way
+- b) Empty alt says "skip this"; missing alt may get the file name read aloud
+- c) Empty alt hides the image from sighted visitors; missing alt shows it
 - d) Missing alt is the recommended way to mark an image as decorative
 
 **Answer:** b

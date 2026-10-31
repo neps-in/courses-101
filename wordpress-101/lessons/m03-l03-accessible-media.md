@@ -12,7 +12,7 @@
 3. **Name files descriptively** for accessibility and image search.
 
 ## Why it matters
-Rosa runs a gardening blog. One of her readers, Ben, is blind and uses a screen reader. On her old posts it announced "image, IMG underscore 4471 dot JPG" twelve times per post. After she added short alt text ("Tomato seedlings two weeks after transplanting, leaves just turning dark green"), Ben emailed to say it was the first gardening blog he could follow. Her podcast episodes got transcripts, which were quoted in search results and in AI answers. Accessible media isn't a nice extra: about 1 in 6 people live with a significant disability (WHO), many readers watch video with the sound off, and search engines rely on the same text to understand your images.
+Rosa runs a gardening blog. One of her readers, Ben, is blind and uses a screen reader. On her old posts it announced "image, IMG underscore 4471 dot JPG" twelve times per post. After she added short alt text ("Tomato seedlings two weeks after transplanting, leaves just turning dark green"), Ben emailed to say it was the first gardening blog he could follow. Her podcast episodes got transcripts, so every tip she said out loud became text that readers could skim and search engines could index. Accessible media isn't a nice extra: about 1 in 6 people live with a significant disability (WHO), many readers watch video with the sound off, and search engines rely on the same text to understand your images.
 
 ## Core concept
 **Plain version:** every piece of media needs a **text version** for people who can't see or hear it:
@@ -70,7 +70,7 @@ Use your **Local** practice site and the draft post from M03.L01/L02.
 **Part A: name files before you upload (3 min)**
 1. On your computer, rename three photos from camera names (`IMG_4471.jpg`) to short descriptive names with hyphens: `sourdough-first-rise.jpg`, `tomato-seedlings-week-two.jpg`.
 2. Upload them to **Media → Library**.
-   **Expected:** the file URL uses your name, and WordPress fills the **Title** field with it (`sourdough-first-rise`), unless the photo has a title embedded by your camera or editing app. WordPress can't rename a file after upload without a plugin, so name files **first**.
+   **Expected:** the file URL uses your name, and WordPress fills the **Title** field with it (`sourdough-first-rise`), unless the photo has a title embedded by your camera or editing app. WordPress can't rename a file after upload without a plugin, so name files **first**. Keep expectations realistic: Google calls file names "very light clues" about an image; alt text and the surrounding text matter far more.
 
 **Part B: write alt text in the Image block (5 min)**
 1. Insert one photo in your draft with an **Image** block. In the block sidebar (**Settings**), find **Alternative text**.
