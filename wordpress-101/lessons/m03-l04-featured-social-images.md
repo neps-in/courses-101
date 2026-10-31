@@ -12,7 +12,7 @@
 3. **Create** a reusable social image template at the recommended size.
 
 ## Why it matters
-Chen shared his new budgeting guide in three WhatsApp groups and on LinkedIn. The preview showed his site logo, squashed, with the title "Home". Almost nobody clicked. His friend Ama's posts always show a clear image with her title in big letters, and her shares get several times the clicks. The difference wasn't talent: Ama has a **featured image** on every post and an SEO plugin that turns it into **Open Graph** tags, built from one reusable template. A link preview is often the first, and only, thing people see of your post.
+Chen shared his new budgeting guide in three WhatsApp groups and on LinkedIn. The preview showed his site logo, squashed, with the title "Home". Almost nobody clicked. His friend Ama's posts always show a clear image with her title in big letters, and her shares get far more clicks. The difference wasn't talent: Ama has a **featured image** on every post and an SEO plugin that turns it into **Open Graph** tags, built from one reusable template. A link preview is often the first, and only, thing people see of your post.
 
 ## Core concept
 **Plain version:** the **featured image** is the main picture for a post. Your theme shows it at the top of the post and on your blog and category pages. When someone shares the link, platforms read hidden **Open Graph tags** in the page to decide which image, title and description to show. WordPress doesn't add those tags by itself; an SEO plugin does, usually using your featured image.
@@ -23,7 +23,7 @@ Chen shared his new budgeting guide in three WhatsApp groups and on LinkedIn. Th
 - **Featured image (post thumbnail):** the image set in the post's **Featured image** panel in the editor sidebar. Block themes have it switched on automatically. Your theme decides where and how it appears through the **Post Featured Image** block in its templates.
 - **Crop / aspect ratio:** themes often display featured images at a fixed shape. **Twenty Twenty-Five** crops them to **3:2** on single posts and in post lists, so a tall photo loses its top and bottom.
 - **Open Graph (OG) tags:** `<meta property="og:…">` tags in the page's `<head>`, a protocol created by Facebook and now read by most platforms (Facebook, LinkedIn, WhatsApp, Slack, Discord, iMessage and others). The key ones are `og:title`, `og:description`, `og:image` and `og:url`.
-- **Twitter/X cards:** X has its own `twitter:` tags but falls back to Open Graph tags when they're missing.
+- **X cards:** X uses its own `twitter:` tags (e.g. `twitter:card` set to `summary_large_image`). SEO plugins add these alongside the Open Graph tags, so you set the image once.
 - **Social share image (OG image):** the image in `og:image`. Meta recommends **at least 1200 × 630 px** (about **1.91:1**), with a file under **8 MB**. Google Discover recommends large images **at least 1200 px wide**, and reads `og:image` too.
 - **Sharing debugger:** a tool that shows what a platform sees for your URL and makes it re-read the page, such as Facebook's **Sharing Debugger** and **LinkedIn Post Inspector**.
 
@@ -92,7 +92,7 @@ Use your **Local** site for Parts A–B. Part C needs a **public** URL: Facebook
 4. If you changed the image and the old preview still shows, click **Scrape Again**. For LinkedIn, use **Post Inspector** (linkedin.com/post-inspector), which also refreshes LinkedIn's copy.
 
 ## When to use / when not to
-- **Always** set a featured image on posts: themes, archives, related-post lists, RSS readers and SEO plugins all rely on it.
+- **Always** set a featured image on posts: themes, archives, related-post lists and SEO plugins all rely on it.
 - **Use a designed 1200 × 630 social image** for posts you'll actively share (guides, launches, newsletters). For quick posts, a well-cropped featured photo is enough.
 - **Don't** put essential text in the featured image if your theme crops it; keep text for the social version or within the safe area.
 - **Don't** set featured images on pages that don't show them (check your page template) just because you can; but **do** set a social image for key pages such as the home and About pages once your SEO plugin is in place.
@@ -152,6 +152,6 @@ Explain to a friend in 3 sentences why their shared link showed the wrong pictur
 - Meta for Developers — Images in link shares (sizes and requirements): https://developers.facebook.com/docs/sharing/webmasters/images/
 - Facebook Sharing Debugger: https://developers.facebook.com/tools/debug/
 - LinkedIn Post Inspector: https://www.linkedin.com/post-inspector/
-- X Developer — Summary card with large image: https://developer.x.com/en/docs/x-for-websites/cards/overview/summary-card-with-large-image
+- X Developer Platform — Cards markup reference: https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
 - Google Search Central — Get on Discover (image recommendations): https://developers.google.com/search/docs/appearance/google-discover
 - WordPress Developer Resources — Featured images and post thumbnails: https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
