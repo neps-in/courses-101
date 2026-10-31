@@ -4,10 +4,10 @@
 > Checked against Google Search Central (structured data guidelines, Search Gallery, AI features, documentation updates), Yoast SEO 28.8 and schema.org on 2026-10-31.
 
 ### Q1. What does Google say about structured data and rankings?
-- a) Valid structured data gives a page a small ranking boost
-- b) It helps Google understand pages and makes them eligible for rich results, with no guarantee
-- c) Pages without structured data can't appear in AI Overviews
-- d) Structured data only matters for sites with more than 500 pages
+- a) Valid structured data gives every page a small, steady ranking boost
+- b) It aids understanding and rich-result eligibility, with no guarantee
+- c) Pages without structured data can't be cited in AI Overviews or AI Mode
+- d) It only matters for sites with more than 500 pages in their sitemap
 
 **Answer:** b
 **Explanation:** Google says it doesn't guarantee your structured data will show up, even when it's correct, and a structured data manual action "doesn't affect how the page ranks in Google web search". For AI Overviews and AI Mode there's "no special schema.org structured data that you need to add".
@@ -34,9 +34,9 @@
 **Hint:** Check Google's "Latest documentation updates" page.
 
 ### Q4. In the Schema Markup Validator, Hira's Person item shows `"name":"hira_admin_22"` and no `sameAs`. What should she change?
-- a) Paste new Person JSON-LD into every post with her real name
-- b) Set her name and **Display name publicly as** in **Users → Profile**, and fill in her Website and social profile fields
-- c) Switch to a second SEO plugin with better author schema
+- a) Paste hand-written Person JSON-LD with her real name into every post
+- b) Fix her display name, Website and social fields in **Users → Profile**
+- c) Install a second SEO plugin that has better author schema settings
 - d) Nothing: the Person item doesn't matter as long as the Article is valid
 
 **Answer:** b

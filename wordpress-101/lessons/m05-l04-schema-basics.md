@@ -33,7 +33,7 @@ Dev read that "schema is the secret to AI search" and pasted an FAQ markup gener
 |---|---|---|---|
 | **Article** (BlogPosting) | A post: headline, dates, image, author | Your SEO plugin, automatically | Helps Google show the right title, image and date; no required properties |
 | **Person** | You as author: name, photo, bio, profiles (`sameAs`) | SEO plugin, from your user profile | No separate rich result; linked from Article and ProfilePage |
-| **Organization / Person (site)** | Who's behind the site: name, logo | SEO plugin, **Site representation** (M05.L02) | Can help Google show your logo and site name |
+| **Organization / Person (site)** + **WebSite** | Who's behind the site (name, logo); the site itself (site name) | SEO plugin, **Site representation** (M05.L02) | Organization logo can be used for your logo; WebSite helps Google show your site name |
 | **BreadcrumbList** | Where the page sits | SEO plugin (M05.L02) | Breadcrumbs in results (desktop) |
 | **VideoObject** | A video *on the page*: name, thumbnail, upload date | Optional: Rank Math's free Schema Generator, Yoast's paid Video SEO add-on | Video features; Google also tries to detect videos automatically |
 | **PodcastEpisode** | A podcast episode | Rarely needed (schema.org type) | **None** in Google Search; directories read your **RSS feed** |
@@ -86,7 +86,7 @@ Use your **Local** site with Yoast SEO from M05.L02 (Rank Math notes are at the 
    > **Alt text:** The WordPress profile screen with website, social profile fields and a short biography filled in for author schema.
 
 4. Check that your **byline is visible**: Google's guidance is that markup should describe what's on the page. Twenty Twenty-Five's Single Posts template shows *Written by [author] in [category]* (its **Written by** pattern). If you removed it in M04.L02, add the **Post Author Name** block back (or the **Author Biography** block below the post).
-5. Optional but useful: Google recommends `author.url` points to a page that identifies the author. Yoast uses your **author archive** URL (`/author/your-name/`) and marks it up as a **ProfilePage**. Your About page is linked through **Website** → `sameAs`. That's enough for a creator site.
+5. Optional but useful: Google recommends `author.url` points to a page that identifies the author. Yoast uses your **author archive** URL (`/author/your-name/`), which it marks up as a **ProfilePage**, **if author archives are enabled**. If you disabled them in M05.L02, Yoast leaves `url` out. That's fine: your **Website** field (your About page) is the first entry in `sameAs`, so the link to who you are is still there.
 6. Reload the post's source and search for `"@type":"Person"`.
    **Expected:**
    ```json
@@ -112,12 +112,12 @@ Both tools are free, need no account, and give you different answers to differen
 | **Schema Markup Validator** (validator.schema.org) | Is all the **schema.org** markup valid, including types Google doesn't use? |
 
 9. A Local site isn't on the internet, so neither tool can fetch its URL. Use the **code** option instead: open the post, **View Page Source**, select all (Ctrl+A), copy, then in the Rich Results Test choose **Code** and paste. Click **Test code**.
-   **Expected:** a list of detected items with a green tick, typically **Articles** and **Breadcrumbs**, each "valid". Expand **Articles** to see the headline, image, dates and author name the test read. **Warnings** for optional missing fields are fine; **errors** (red) mean that item isn't eligible.
+   **Expected:** a list of valid detected items, such as **Article** and **Breadcrumbs** (exact labels vary). Expand the Article item to see the headline, image, dates and author name the test read. **Warnings** for optional missing fields are fine; **errors** (red) mean that item isn't eligible.
 
    > 🖼️ **Image prompt:** Screenshot of Google's Rich Results Test after testing pasted code, showing detected valid items Articles and Breadcrumbs with green ticks, 1280 × 800. Highlight the detected items list with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** The Rich Results Test result listing valid Articles and Breadcrumbs items detected from pasted page code.
 
-10. Paste the same source into the **Schema Markup Validator** (**Code Snippet** tab → **Run test**).
+10. Paste the same source into the **Schema Markup Validator** (choose the code option instead of a URL, then run the test).
     **Expected:** the full graph, with `Article`, `WebPage`, `Person`, `BreadcrumbList`, `WebSite`, `ImageObject`, and **0 errors, 0 warnings** (or only minor warnings). Click **Person** and check your name, bio and `sameAs` links.
 11. On a **live** site, paste the post's URL instead, and later use Search Console's **Enhancements** reports (M05.L05) to see schema issues across all posts.
 
@@ -171,7 +171,7 @@ Both tools are free, need no account, and give you different answers to differen
 3. Validate one post in **both** the Rich Results Test and the Schema Markup Validator (code option on Local).
 4. Record in your site's SEO settings log (M05.L02): which items each tool detected, any errors or warnings, and what you changed to fix them.
 
-**Expected outcome:** the Rich Results Test shows valid **Articles** (and **Breadcrumbs**) items with no errors; the Schema Markup Validator shows one graph with a **Person** whose name, description and `sameAs` match your profile; your log lists the results and fixes.
+**Expected outcome:** the Rich Results Test shows valid Article (and Breadcrumbs) items with no errors; the Schema Markup Validator shows one graph with a **Person** whose name, description and `sameAs` match your profile; your log lists the results and fixes.
 
 **Stretch goal (break it and fix it):** add a **Yoast FAQ** block with one question to a test post, validate it, and see that both tools detect **FAQPage** markup as valid. Write one sentence explaining why "valid" here doesn't mean "will get a rich result" (check the Search Gallery). Then delete the block, or keep it only if the Q&A genuinely helps readers.
 
