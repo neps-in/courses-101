@@ -16,11 +16,11 @@
 ### Q2. You try to delete the **Uncategorized** category, but there's no Delete option. Why?
 - a) It still contains posts
 - b) It's the default category, and the default category can't be deleted
-- c) Only the site owner's first account can delete categories
+- c) You're logged in as an Editor, and only Administrators can delete categories
 - d) Categories can never be deleted in WordPress
 
 **Answer:** b
-**Explanation:** WordPress needs a default category for posts saved without one, so the default can't be deleted. Rename it to a real pillar, or pick another default in **Settings → Writing → Default Post Category**; then Uncategorized can be deleted. Categories that contain posts can be deleted: their posts move to the default.
+**Explanation:** WordPress needs a default category for posts saved without one, so the default can't be deleted. Rename it to a real pillar, or pick another default in **Settings → Writing → Default Post Category**; then Uncategorized can be deleted. Categories that contain posts can be deleted (their posts move to the default), and Editors can manage categories too.
 **Hint:** Where does a post go when you don't choose a category?
 
 ### Q3. What happens to the posts in a category when you delete that category?
@@ -34,23 +34,23 @@
 **Hint:** WordPress never deletes posts just because you tidied up a category.
 
 ### Q4. Arjun runs a music-production site with these planned posts: mixing tutorials, plugin reviews, gear reviews, interviews with producers, and "my studio diary". Which category plan is best?
-- a) 18 categories, one for each software plugin and instrument he reviews
-- b) Four categories: *Tutorials*, *Reviews* (plugins and gear), *Interviews* and *Studio Diary*, plus tags for specific tools that appear in several posts (e.g. *ableton*)
-- c) One category, *Music*, with every detail as a tag
-- d) No categories, only tags
+- a) Eighteen categories, one for each plugin and instrument he reviews, so every product has its own section
+- b) Four categories (*Tutorials*, *Reviews*, *Interviews*, *Studio Diary*), plus tags for tools that recur across posts, e.g. *ableton*
+- c) One category, *Music*, with mixing, reviews, interviews and the diary all added as tags instead
+- d) Seven categories: *Tutorials*, *Reviews*, *Plugin Reviews*, *Gear Reviews*, *Interviews*, *Diary* and *Studio Diary*
 
 **Answer:** b
-**Explanation:** Four broad pillars give readers clear menu sections, and every post fits exactly one (plugin and gear reviews share *Reviews*). Specific tools that recur across tutorials and reviews are ideal tags. Eighteen narrow categories would be thin; one category tells readers nothing, and every post must have a category anyway.
+**Explanation:** Four broad pillars give readers clear menu sections, and every post fits exactly one (plugin and gear reviews share *Reviews*). Specific tools that recur across tutorials and reviews are ideal tags. Eighteen narrow categories would be thin; one catch-all category tells readers nothing; and option d overlaps (*Reviews* vs *Plugin Reviews*, *Diary* vs *Studio Diary*), so posts would fit two sections.
 **Hint:** 4–7 sections; specifics become tags only if they recur.
 
 ### Q5. Meera is publishing her first post about Kerala houseboats. *kerala* doesn't exist as a tag yet. She plans two more Kerala posts next month. Following the lesson's tag rule, what should she do?
-- a) Skip tags forever; they're bad for SEO
+- a) Wait until the third Kerala post is published before creating the tag
 - b) Create the tag *kerala*, because 3+ posts will use it within a few months
 - c) Create a new category called *Kerala*
 - d) Add 10 tags (*kerala*, *houseboat*, *backwaters*, *india*, *travel*, …) to be found more easily
 
 **Answer:** b
-**Explanation:** The rule is: reuse an existing tag first, and create a new one only if 3+ posts will use it soon. *kerala* qualifies. A category for one destination would be too narrow (it belongs under *Destinations*), and ten tags per post creates one-off tag pages.
+**Explanation:** The rule is: reuse an existing tag first, and create a new one only if 3+ posts will use it soon. *kerala* qualifies, and creating it now saves going back to retag the first post. A category for one destination would be too narrow (it belongs under *Destinations*), and ten tags per post creates one-off tag pages.
 **Hint:** How many posts will this tag collect soon?
 
 ### Q6. Spot the error: Priya's structure plan says:

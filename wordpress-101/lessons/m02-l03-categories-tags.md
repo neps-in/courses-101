@@ -4,7 +4,7 @@
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** M02.L01
 **Verified against:** WordPress 7.0 core source (screen labels and help text in `edit-tags.php`, taxonomy labels, editor tag hint) and WordPress documentation on 2026-10-31
 
-> ⚠️ **Freshness flag:** WordPress 7.0 shortened some labels (e.g. **Add Category** and **Add Tag**, formerly "Add New Category" / "Add New Tag"). If a label differs in your version, press **Ctrl+K / ⌘+K** and type "categories".
+> ⚠️ **Freshness flag:** recent versions (checked in 7.0) say **Add Category** and **Add Tag**; older versions say "Add New Category" / "Add New Tag". If a label differs in your version, press **Ctrl+K / ⌘+K** and type "categories".
 
 ## Learning objectives
 1. **Distinguish** categories (the main sections of your site) from tags (cross-cutting topics).
@@ -12,7 +12,7 @@
 3. **Set** a simple tagging rule that avoids thin tag archives.
 
 ## Why it matters
-Meera started a travel blog and tagged everything: *beach*, *beaches*, *Goa beaches*, *sunset*, *budget*, *cheap travel*… Two years later she had 38 posts and 410 tags, most used once. Her site had hundreds of tag pages showing a single post each, her menu had nothing sensible to link to, and readers who loved her Kerala posts couldn't find the rest. Her friend Tomás set up six categories on day one (*Destinations*, *Itineraries*, *Budget Travel*, *Food*, *Gear*, *Tips*) and a short tag rule. His menu links to six clear sections, and every section page fills up month by month. Structure decided on day one costs ten minutes; fixing it after 100 posts costs a weekend.
+Meera started a travel blog and tagged everything: *beach*, *beaches*, *Goa beaches*, *sunset*, *budget*, *cheap travel*… Two years later she had 38 posts and 410 tags, most used once. Her site had hundreds of tag pages showing a single post each, her menu had nothing sensible to link to, and readers who loved her Kerala posts couldn't find the rest. Her friend Kwame set up six categories on day one (*Destinations*, *Itineraries*, *Budget Travel*, *Food*, *Gear*, *Tips*) and a short tag rule. His menu links to six clear sections, and every section page fills up month by month. Structure decided on day one costs ten minutes; fixing it after 100 posts costs a weekend.
 
 ## Core concept
 **Plain version:** **categories** are the main sections of your site, like the sections of a newspaper. Every post goes in one. **Tags** are optional labels for specific topics that cut across sections, like an index at the back of a book.
@@ -32,7 +32,7 @@ Meera started a travel blog and tagged everything: *beach*, *beaches*, *Goa beac
 | Purpose | Main sections (your content pillars) | Specific cross-cutting topics |
 | Required? | Yes: every post has at least one | No |
 | How many on the site | 4–7 to start | Grows slowly, by your tag rule |
-| How many per post | 1 (occasionally 2) | 0–5 |
+| How many per post | 1 (occasionally 2) | 0–3 |
 | Hierarchy | Can have parents and children | Flat |
 | Typical use | Menu items, section pages | "More on this topic" links, series |
 
@@ -66,7 +66,7 @@ flowchart TD
 ## Hands-on walkthrough
 Work on your **Local** practice site, using the posts you published in M02.L01 and M02.L02.
 
-**Part A: sketch your category map (6 min)**
+**Part A: sketch your category map (5 min)**
 1. List 10–15 post ideas you'll realistically write in the next six months.
 2. Group them into piles of similar posts. Aim for **4–7 piles**; merge piles with fewer than ~5 ideas.
 3. Name each pile with a short, plain noun that a reader would understand from your menu. Fill in this table:
@@ -99,15 +99,15 @@ Work on your **Local** practice site, using the posts you published in M02.L01 a
 **Part D: file a post and tag it (5 min)**
 1. Open *My first real post* from M02.L01. Open the settings sidebar (**Ctrl+Shift+,**) and choose the **Post** tab.
 2. In the **Categories** panel, tick the one category it belongs to, and make sure no other category is ticked.
-3. In the **Tags** panel, type a tag (e.g. *paneer*) and press **Enter** (the hint says "Separate with commas or the Enter key."). Add at most one or two.
+3. In the **Tags** panel, start typing a tag (e.g. *pan…*). WordPress suggests matching tags that already exist: pick one instead of creating a near-duplicate. If none fits and your tag rule allows a new one, finish typing *paneer* and press **Enter** (the hint says "Separate with commas or the Enter key."). Add at most one or two.
    **Expected:** the tags appear as small chips under the field.
    > 🖼️ **Image prompt:** Screenshot of the WordPress 7.0 block editor's settings sidebar, Post tab, with the Categories panel (one category ticked) and the Tags panel showing two tag chips, "paneer" and "weeknight". Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Post settings sidebar with one category ticked and two tags added.
 4. Click **Save** (or **Update**), then visit `/category/recipes/` (use your own slug) and `/tag/paneer/`.
    **Expected:** each archive page lists the post. Your theme may also show the category description at the top.
 
-**Part E: write your tagging rule (1 min)**
-Write this somewhere you'll see it every time you publish (e.g. a pinned note or your publishing checklist):
+**Part E: write your tagging rule (2 min)**
+To see which tags you already have and how many posts each holds, open **Posts → Tags** and sort by the **Count** column. Then write this somewhere you'll see it every time you publish (e.g. a pinned note or your publishing checklist):
 > **Tag rule:** reuse an existing tag first. Create a new tag only if 3+ posts will use it within a few months. Max 3 tags per post. Singular, lowercase (*paneer*, not *Paneer Recipes*).
 
 ## When to use / when not to
@@ -129,7 +129,7 @@ Write this somewhere you'll see it every time you publish (e.g. a pinned note or
 - **Too many categories.** Fifteen categories with two posts each is a tag list in disguise. Start with 4–7.
 - **Ticking several categories per post** "to be safe". The post then shows up in several sections and your sections stop meaning anything. One is the default; two is the exception.
 - **Tag sprawl:** near-duplicates (*recipe*, *recipes*, *Recipe Ideas*) and one-off tags. Reuse before you create.
-- **Using the same word as a category and a tag** (category *Recipes*, tag *recipes*). That creates two archive pages competing for the same thing.
+- **Using the same word as a category and a tag** (category *Recipes*, tag *recipes*). You get two archive pages listing almost the same posts, which confuses readers. Pick one.
 - **Renaming a category's slug after launch** without a redirect. The category archive URL changes and old links to it break (your post URLs don't change, thanks to Post name permalinks). M05 covers redirects.
 
 ## Troubleshooting
@@ -139,7 +139,7 @@ Write this somewhere you'll see it every time you publish (e.g. a pinned note or
 | A post still shows in Uncategorized | It's ticked alongside your real category, or no category was ticked so WordPress added the default | Untick it in the post's Categories panel, or use **Quick Edit** in **Posts → All Posts** |
 | `/category/your-slug/` shows "Not Found" | A typo in the slug, or permalinks need refreshing | Check the slug in **Posts → Categories**; then **Settings → Permalinks → Save Changes** |
 | The category description doesn't show on the archive page | Your theme doesn't display it ("some themes may display it", per WordPress) | Fine for now; with a block theme you can add the **Term Description** block to the Archive template (M04) |
-| Duplicate tags (*recipe* and *recipes*) | No tag rule | In **Posts → All Posts**, filter by the tag you'll delete, select all, **Bulk actions → Edit**, add the tag you're keeping, **Update**; then delete the duplicate in **Posts → Tags** |
+| Duplicate tags (*recipe* and *recipes*) | No tag rule | In **Posts → All Posts**, click the tag you'll delete in the **Tags** column to list its posts, select all, **Bulk actions → Edit**, add the tag you're keeping, **Update**; then delete the duplicate in **Posts → Tags** |
 | You want to turn some tags into categories (or vice versa) | Structure changed as the site grew | **Tools → Import → Categories and Tags Converter** (installs a free WordPress.org importer) |
 
 ## Exercise
