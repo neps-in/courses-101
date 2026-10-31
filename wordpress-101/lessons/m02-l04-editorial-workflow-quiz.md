@@ -17,10 +17,10 @@
 - a) Only the last one
 - b) The last 5
 - c) All of them, unless your host or `wp-config.php` sets a limit
-- d) None: you must install a revisions plugin
+- d) The last 25
 
 **Answer:** c
-**Explanation:** `WP_POST_REVISIONS` defaults to `true`, which keeps every revision. A host or developer can set a number (e.g. 5) or `0` to turn them off. No plugin is needed.
+**Explanation:** `WP_POST_REVISIONS` defaults to `true`, which keeps every revision. A host or developer can set a number (e.g. 5) or `0` to turn them off. There's no built-in limit of 5 or 25.
 **Hint:** The default constant is set to `true`.
 
 ### Q3. Why can a scheduled post publish late on a site with very few visitors?
@@ -34,20 +34,20 @@
 **Hint:** WP-Cron isn't a clock; it needs something to wake it up.
 
 ### Q4. Tom accidentally deleted half of a published post, clicked **Save**, and closed the tab an hour ago. What's the fastest fix?
-- a) Restore last night's full-site backup
-- b) Open the post, click **Revisions**, drag to the version before the deletion, and click **Restore This Revision**
-- c) Rewrite the missing half from memory and save again
-- d) Unpublish the post, then republish it so WordPress reloads the original
+- a) Restore last night's full-site backup from UpdraftPlus, which brings the whole post back as it was
+- b) Open **Revisions**, pick the version from before the deletion, and restore it
+- c) Rewrite the missing half from memory straight away, while it's still fresh, and save again
+- d) Switch the post to Draft and back to Published, so WordPress reloads the last published version
 
 **Answer:** b
 **Explanation:** Every save created a revision, so the earlier version is one click away, and restoring it can itself be undone. A full-site backup restore would roll back everything else on the site too. Rewriting wastes time, and unpublishing doesn't bring content back.
 **Hint:** WordPress kept a snapshot of every save.
 
 ### Q5. Aisha agreed with a sponsor that their review goes live on 12 March at 09:00 India time. She finishes it on 8 March. What should she do?
-- a) Publish it on 8 March and change the date shown on the post to 12 March
-- b) Check her site's timezone is an Indian city, run the checklist, set Publish to 12 March 09:00, and click **Schedule**
-- c) Keep it as a draft and set a phone alarm to publish it manually
-- d) Set it to Private until 12 March, then switch it to Public
+- a) Publish it on 8 March, then edit the post's date to 12 March 09:00 so it looks as if it went out on time
+- b) Confirm the site timezone, set the publish date to 12 March 09:00, and schedule it
+- c) Leave it as a draft and set a phone alarm for 09:00 on 12 March so she remembers to publish it by hand
+- d) Publish it as Private now, then switch it to Public on the morning of 12 March
 
 **Answer:** b
 **Explanation:** Scheduling publishes it at the agreed time in the site's timezone, which must be right (M01.L04). Publishing early breaks the embargo and sends it out by RSS; the alarm works but depends on her being free at 09:00; Private hides it but she'd still have to publish it by hand.

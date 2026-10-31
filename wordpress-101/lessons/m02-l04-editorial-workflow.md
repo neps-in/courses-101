@@ -60,7 +60,7 @@ Work on your **Local** practice site.
 1. **Posts → Add New Post.** Title: *5 pantry staples for weeknight curries*. Write two short paragraphs. Press **Ctrl+S**.
    **Expected:** "Saved" appears near the top, and the post stays a **Draft**.
 2. Add a third paragraph and press **Ctrl+S**. Then **delete the first paragraph** (pretend it was a mistake) and press **Ctrl+S** again.
-   **Expected:** in the settings sidebar (**Ctrl+Shift+,**), **Post** tab, a **Revisions** item now appears with a count (e.g. 3). If you don't see it yet, save once more; it appears after there's more than one saved version.
+   **Expected:** in the settings sidebar (**Ctrl+Shift+,**), **Post** tab, a **Revisions** item now appears with a count (e.g. 3). If you don't see it yet, save once more: it only appears once the post has at least two revisions.
 
 **Part B: restore a revision (4 min)**
 1. Click **Revisions** in the sidebar.
@@ -73,7 +73,7 @@ Work on your **Local** practice site.
 4. Optional: tick **Compare any two revisions** to compare any two versions, not just neighbours.
 
 **Part C: leave a note for later (2 min)**
-1. Select the second paragraph. Open its **⋮ Options** menu and choose **Add note** (or use the note button in the block toolbar if your version shows one).
+1. Select the second paragraph. Open its **⋮ Options** menu in the block toolbar and choose **Add note**.
 2. Type *Check the price of garam masala before publishing*, and post the note.
    **Expected:** the paragraph shows a note marker. Notes are visible only in the editor, to people who can edit the post.
 3. When you've dealt with it, mark the note as **resolved**.
@@ -95,10 +95,10 @@ Copy this checklist somewhere you'll use it every time (a pinned note, or a draf
 
 **Part E: schedule it (2 min)**
 1. In the sidebar's **Post** tab, find **Publish** (it says **Immediately**). Click it.
-2. In the date picker, choose **tomorrow at 07:00**. Check the time zone shown matches the city you chose in M01.L04.
+2. In the date picker, choose **tomorrow at 07:00**. This is your **site's** time (the timezone you set in **Settings → General** in M01.L04), not necessarily your computer's.
    **Expected:** the main button in the top bar changes from **Publish** to **Schedule**.
-3. Click **Schedule**. In the panel that opens ("Are you ready to schedule?"), click **Schedule** again.
-   **Expected:** "Your work will be published at the specified date and time." and the status shows **Scheduled**.
+3. Click **Schedule**. A panel opens: "Are you ready to schedule?" / "Your work will be published at the specified date and time." Click **Schedule** again.
+   **Expected:** "*5 pantry staples for weeknight curries* is now scheduled. It will go live on" followed by tomorrow's date and time.
 4. Go to **Posts → All Posts**.
    **Expected:** the post is listed as **Scheduled** with tomorrow's date and time.
    > 🖼️ **Image prompt:** Screenshot of Posts → All Posts in WordPress 7.0, showing the post "5 pantry staples for weeknight curries" with the status "Scheduled" and tomorrow's date at 7:00 am in the Date column. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
@@ -126,7 +126,7 @@ Copy this checklist somewhere you'll use it every time (a pinned note, or a draf
 - **Clicking Publish "just to see how it looks".** Use **Preview** instead: once published, the post goes out in your RSS feed and to any newsletter that sends new posts automatically.
 - **Scheduling in the wrong timezone.** If your site still uses a UTC offset or the wrong city, the post goes out hours early or late. Fix the timezone first (M01.L04).
 - **Panicking after a bad edit** and rewriting from memory. Open **Revisions** and restore.
-- **Changing the slug after publishing.** The URL changes, so shared links can break. Get it right in the checklist (redirects are in M05).
+- **Changing the slug after publishing.** WordPress usually redirects the old address to the new one, but your newsletter, social posts and other people's links keep showing the old URL, and redirect chains build up if you do it often. Get it right in the checklist (redirects are covered in M05).
 - **Treating Private as a draft.** Private posts look "published" to logged-in editors and can confuse your workflow; keep unfinished work as **Draft**.
 
 ## Troubleshooting
