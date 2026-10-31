@@ -2,11 +2,11 @@
 > After this lesson you can set up one SEO plugin so that every post gets a clean title, a description, a sitemap entry and breadcrumbs, and you can make sure old URLs land on the right new page.
 
 **Time:** ~16 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M05.L01, M01.L04
-**Verified against:** WordPress 7.0 (core Breadcrumbs block, old-slug redirects), Yoast SEO 28.8 (updated 2026-10-27), Rank Math 1.0.280, All in One SEO 5.0.4, Redirection 5.10.1; Google Search Central ("Influencing title links", updated 2025-12-10; "Control your snippets", 2026-04-20; "Breadcrumb structured data", 2026-09-08; "Redirects and Google Search", 2026-04-14; "Site moves with URL changes", 2026-08-20; "Learn about sitemaps", 2025-12-10), all on 2026-10-31
+**Verified against:** WordPress 7.0 (core Breadcrumbs block, old-slug redirects), Yoast SEO 28.8 (updated 2026-10-27), Rank Math 1.0.280, All in One SEO 5.0.4, Redirection 5.10.1, IndexNow plugin 1.0.4; Search Console Help ("404 (Page Not Found) errors"); Google Search Central ("Influencing title links", updated 2025-12-10; "Control your snippets", 2026-04-20; "Breadcrumb structured data", 2026-09-08; "Redirects and Google Search", 2026-04-14; "Site moves with URL changes", 2026-08-20; "Learn about sitemaps", 2025-12-10), all on 2026-10-31
 
 > ⚠️ **Freshness flag:** SEO plugins release updates every few weeks and rename screens often. This lesson's labels come from the plugin versions above. If a label differs, use the plugin's settings search box (Yoast has one at the top of **Settings**).
 
-> Note: this lesson uses **Yoast SEO (free)** for the walkthrough, because it has the most installs and its free version covers titles, meta, sitemap, breadcrumb schema and IndexNow. Yoast's redirect manager is a Premium feature, so you'll use the free **Redirection** plugin for redirects. If you choose **Rank Math** instead, use its built-in **Redirections** module and skip Redirection. The ideas and the checks are the same.
+> Note: this lesson uses **Yoast SEO (free)** for the walkthrough, because it has the most installs and its free version covers titles, meta, the sitemap and breadcrumb schema. Yoast's redirect manager and IndexNow are Premium features, so you'll use the free **Redirection** plugin for redirects. If you choose **Rank Math** instead, use its built-in **Redirections** module and skip Redirection. The ideas and the checks are the same.
 
 ## Learning objectives
 1. **Choose and install** one SEO plugin (Yoast SEO, Rank Math or All in One SEO), and only one, and complete its setup.
@@ -65,6 +65,7 @@ flowchart TD
 | Active installs (WordPress.org, 2026-10-31) | 10+ million | 4+ million | 2+ million |
 | Minimum WordPress / PHP | **7.0** / 7.4 | 6.7 / 7.4 | 5.7 / 7.4 |
 | Redirects in the free version | ✗ (Premium) → add **Redirection** | ✓ Redirections + 404 monitor | ✗ (Pro) → add **Redirection** |
+| IndexNow (tells Bing about updates) | Premium → or Microsoft's free **IndexNow** plugin | ✓ **Instant Indexing** module | Check its current docs |
 | Free account or connection prompts | Optional | Asks you to connect a free Rank Math account (you can skip) | Optional |
 | Good fit | Simple, widely documented | Most features free | Guided setup, many add-ons |
 
@@ -72,6 +73,8 @@ All three are mature and well rated. The choice matters far less than **using on
 
 ## Hands-on walkthrough
 Work on your **Local** site. Take a backup or snapshot first (M01).
+
+> **Using Rank Math instead?** The same jobs live in **Rank Math SEO → Titles & Meta** (title and description templates per post type), **Sitemap Settings**, **General Settings → Breadcrumbs**, **Redirections** and **Instant Indexing** (IndexNow). Turn on modules in **Rank Math SEO → Dashboard** first. Then run the same checks: page source, `/sitemap_index.xml`, `curl -I`.
 
 ### Part A — Install and set up Yoast SEO (~8 min)
 1. Go to **Plugins → Add Plugin**, search for **Yoast SEO**, then click **Install Now** → **Activate**. Check the author is **Team Yoast**.
@@ -107,7 +110,7 @@ Work on your **Local** site. Take a backup or snapshot first (M01).
 ### Part C — Sitemap, IndexNow and other settings (~4 min)
 8. Open **Settings → Site features**. Check that **XML sitemaps** is on, then click **View the XML sitemap**.
    **Expected:** `/sitemap_index.xml` lists `post-sitemap.xml`, `page-sitemap.xml`, `category-sitemap.xml` and similar, each with a last-modified date. Yoast switches off core's `/wp-sitemap.xml` (visiting it redirects to Yoast's) and adds a `Sitemap:` line for the new address to your `robots.txt`. Open `/robots.txt` to confirm.
-9. While you're in **Site features**, check **IndexNow** (pings Bing and other IndexNow engines when you publish or update; it doesn't affect Google, M05.L01). Leave it on. Turn off features you won't use. For example, turn off **AI title & description generator** if you'd rather write your own.
+9. While you're in **Site features**, turn off features you won't use. For example, turn off **AI title & description generator** if you'd rather write your own. You'll also see an **IndexNow** card. IndexNow tells Bing and other IndexNow engines straight away when you publish, update or delete a post; it doesn't affect Google (M05.L01). In Yoast it only works with **Premium**. On the free version, you can add Microsoft's free **IndexNow** plugin (author: *bingwebmastertools*) on your live site, or skip it: Bing still finds updates through your sitemap. Rank Math's free **Instant Indexing** module does the same job.
 10. In **Settings → Advanced → Author archives**: on a **single-author** site, your author archive duplicates your blog. Turn off **Show author archives in search results** (or disable author archives). Leave **Date archives** off in search results too.
     **Expected (sitemap check):** after saving, `author-sitemap.xml` no longer appears in `/sitemap_index.xml`.
 
@@ -152,7 +155,7 @@ Breadcrumbs are the small trail above a post, like *Home / Blog / Recipes / Easy
     X-Redirect-By: redirection
     ```
     (A core old-slug redirect shows `X-Redirect-By: WordPress`.) Then change the page slug back to `start-here`, and **delete** the now-pointless redirect so it can't loop.
-18. **Deleted posts:** if you delete a post that has a close replacement (an updated version, or a broader guide covering it), add a 301 to that page. If nothing matches, let it return 404, or 410 to say it's gone for good. Don't redirect everything to the homepage: Google may treat a redirect to an unrelated page as a **soft 404**, and readers are confused.
+18. **Deleted posts:** if you delete a post that has a close replacement (an updated version, or a broader guide covering it), add a 301 to that page. If nothing matches, let it return 404, or 410 to say it's gone for good. Don't redirect everything to the homepage: Google's Search Console Help calls a redirect to another page, such as the homepage, instead of a 404 a **soft 404**: "confusing to both users and search engines". Google currently treats 410 the same as 404.
 
 ## When to use / when not to
 - **Use** exactly one SEO plugin on every public site. Core's sitemap and titles work, but you can't set descriptions, hide thin archives from the sitemap, or add social tags and schema without one.
@@ -231,7 +234,8 @@ Explain to a friend, in 3 sentences, why they should use only one SEO plugin, an
 - Google Search Central — [Breadcrumb (BreadcrumbList) structured data](https://developers.google.com/search/docs/appearance/structured-data/breadcrumb) (updated 2026-09-08; feature available on desktop)
 - Google Search Central — [Redirects and Google Search](https://developers.google.com/search/docs/crawling-indexing/301-redirects) (updated 2026-04-14)
 - Google Search Central — [Site moves with URL changes](https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes) (updated 2026-08-20; "keep the redirects for as long as possible, generally at least 1 year")
-- Google Search Central — [How HTTP status codes affect Google Search](https://developers.google.com/search/docs/crawling-indexing/http-network-errors) (soft 404s)
+- Search Console Help — [404 (Page Not Found) errors](https://support.google.com/webmasters/answer/2445990) (let deleted URLs return 404/410; redirecting to the homepage is a soft 404)
+- Microsoft Bing — [IndexNow plugin](https://wordpress.org/plugins/indexnow/) and [IndexNow.org](https://www.indexnow.org/)
 - WordPress.org plugin pages — [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/) · [Rank Math](https://wordpress.org/plugins/seo-by-rank-math/) · [All in One SEO](https://wordpress.org/plugins/all-in-one-seo-pack/) · [Redirection](https://wordpress.org/plugins/redirection/)
 - Yoast — [Yoast SEO help center](https://yoast.com/help/) (settings and first-time configuration)
 - Rank Math — [Redirections module](https://rankmath.com/kb/setting-up-redirections/)

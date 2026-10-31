@@ -24,20 +24,20 @@
 **Hint:** Permanent vs temporary.
 
 ### Q3. According to Google, how does it create the snippet (the text under a result's title)?
-- a) It always shows your meta description word for word
-- b) Mainly from the page content; it may use your meta description if that describes the page better
-- c) Only from the first 160 characters of the post, ignoring meta descriptions
-- d) From the description in your SEO plugin's sitemap
+- a) It always shows your meta description, cut to about 160 characters
+- b) Mainly from page content, sometimes from the meta description
+- c) Only from the post's first paragraph; meta descriptions are ignored
+- d) From the description your SEO plugin adds to the XML sitemap
 
 **Answer:** b
 **Explanation:** Google says snippets are created primarily from the page content, and it may use the meta description when it describes the page better than other parts of the content. That's why a good description is worth writing for key pages, but you can't force it to show.
 **Hint:** Google says "may", not "will".
 
 ### Q4. Hira changes a published **post's** slug from `miso-ramen` to `easy-miso-ramen`. She hasn't installed any redirect plugin. What happens when someone visits the old URL?
-- a) They see a 404, because WordPress never redirects old URLs
+- a) A 404, because WordPress only redirects when the permalink structure changes
 - b) WordPress redirects them to the new URL, because it remembers old post slugs
-- c) They see the old version of the post from WordPress's cache
-- d) Google automatically updates every link to the new URL
+- c) A 404 until she adds a redirect, because Yoast's free version has no redirects
+- d) A 302 temporary redirect that expires after the post is crawled again
 
 **Answer:** b
 **Explanation:** For published posts (non-hierarchical post types), WordPress stores the old slug and sends a 301 to the new URL. It doesn't do this for **pages** or categories, which is why you add redirects for those. Test it with a private window or `curl -I` anyway.
@@ -50,7 +50,7 @@
 - d) Recreate an empty post at the same URL
 
 **Answer:** c
-**Explanation:** Redirect a deleted post only to a **close replacement**. With no match, a 404 or 410 is honest. Google may treat a redirect to an unrelated page (like the homepage) as a soft 404, and readers end up somewhere they didn't expect. An empty post is thin content.
+**Explanation:** Redirect a deleted post only to a **close replacement**. With no match, Google's advice is to let the URL return 404 or 410 (it currently treats them the same). Redirecting to another page such as the homepage creates a soft 404, which confuses readers and search engines. An empty post is thin content.
 **Hint:** Would the new page actually answer what the old link promised?
 
 ### Q6. Spot the error: Mai's SEO setup notes say:
