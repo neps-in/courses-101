@@ -1,7 +1,7 @@
 # M02 Capstone — Three posts, one reusable CTA, a clean structure and a scheduled post
 > By the end of this capstone your practice site has a real content structure, three finished posts sharing one synced call to action, and a post scheduled for your publishing slot. You'll write a one-page **Publishing Workflow Report** to prove it.
 
-**Time:** ~75–100 min · **Level:** beginner · **Prereqs:** M02.L01–M02.L05
+**Time:** ~75–100 min (setup ~15, writing ~45, drills and scheduling ~15, report ~15) · **Level:** beginner · **Prereqs:** M02.L01–M02.L05
 **Non-negotiables assessed:** #4 The block editor (posts vs pages, blocks, patterns, scheduling) · #5 Categories, tags and site structure
 **Verified against:** WordPress 7.0 core source (labels used in M02.L01–L05) on 2026-10-31
 
@@ -42,17 +42,18 @@ flowchart TD
 
 ### 3. Three posts (from M02.L01 and M02.L05)
 Each post:
-- 400+ words on a real topic in your niche, with at least **two H2 headings**, a list, an image and the synced CTA at the end.
+- 400+ words on a real topic in your niche, with at least **two H2 headings**, a list, an image, and the synced **CTA** and **author box** at the end. Don't polish forever: aim for ~15 minutes of writing per post.
 - Exactly **one** category; tags only by your rule.
 - One post also uses your unsynced pattern, and one has **one** embed (video or podcast episode) chosen on purpose.
-- For the embed post, record page weight with and without the embed (requests and data transferred, M02.L05 Part C).
+- For the embed post, record page weight **without** the embed (measure the preview before adding it, or temporarily use **Convert to link**) and **with** it: requests and data transferred, as in M02.L05 Part C.
 
 ### 4. Break it and fix it
 **a) The bad edit.** In one finished post, select all the content and replace it with a single line, *Oops*. Save.
 1. Open **Revisions**, find the last good version and **Restore This Revision**.
    **Expected:** the full post is back, and the restore itself shows as a new revision.
 
-**b) The CTA that didn't update.** In your second post, select the synced CTA and choose **Detach** (pretend it was an accident). Now **Edit original** in another post and change the button text to *Get the Friday email*. Save.
+**b) The CTA that didn't update.** In your second post, select the synced CTA and choose **Detach**, then confirm in the "Detach pattern?" dialog (pretend it was an accident). Now **Edit original** in another post and change the button text to *Get the Friday email*. Save.
+   > If you enabled overrides on the CTA's **Button** in M02.L02, posts where you changed it keep their own text. Use a block without overrides for this drill (e.g. the paragraph).
 1. View all three posts.
    **Expected:** two show the new text; the detached one still shows the old text.
 2. Fix it: delete the detached blocks from that post and insert the synced *Newsletter CTA* again.

@@ -26,7 +26,7 @@
 | Use for | Newsletter CTA, author box, disclaimers | Recipe card, episode notes, pros/cons |
 - Create: select blocks → **⋮ Options → Create pattern** → name, category, **Synced** on/off.
 - **Overrides:** per-post text in Paragraph, Heading, Image and Button blocks (**Advanced → Enable overrides**).
-- **Detach** = that copy stops updating. Manage all: **Appearance → Editor → Patterns**.
+- **Detach** (confirm "Detach pattern?") = that copy stops updating. Manage all: **Appearance → Editor → Patterns** (block themes) or **Manage patterns** in the inserter's Patterns tab.
 
 ## Categories and tags (M02.L03)
 - **Categories** = 4–7 site sections (content pillars), **one per post**, each with a description. Rename **Uncategorized** (the default can't be deleted; change it in **Settings → Writing**).
