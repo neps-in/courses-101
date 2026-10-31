@@ -67,11 +67,11 @@ Audit **Home**, **About**, **Start Here** and **Contact**:
    > **Alt text:** WAVE summary for the About page showing zero errors and zero contrast errors.
 
 ### 6. Break it and fix it
-**a) The block-level colour override.** On your **About** page, select one paragraph and give it a light text colour from your palette (e.g. a pale accent such as Twenty Twenty-Five's yellow **Accent 1** on a white background). Update the page and run WAVE.
+**a) The block-level colour override.** On your **About** page, select one paragraph and give it a light text colour from your palette (e.g. a pale accent such as Twenty Twenty-Five's yellow **Accent 1** on a white background). In the block settings you may see WordPress's own warning, *"This color combination may be hard for people to read."* Update the page anyway and run WAVE.
 1. Record the **Contrast Errors** count and the ratio WAVE (or the WebAIM checker) reports for that paragraph.
    **Expected:** at least one new contrast error (yellow `#FFEE58` on white is about **1.2:1**).
 2. Now change your **Contrast** colour in **Styles** and view the page.
-   **Expected:** every other paragraph changes, but the overridden one doesn't: a block-level setting beats global styles.
+   **Expected:** every other paragraph changes, but the overridden one doesn't: a block-level setting beats global styles. Then set **Contrast** back (or use **Styles → Revisions** to restore the previous version).
 3. Fix it: select the paragraph and **clear** its text colour so it follows Styles. Rerun WAVE.
    **Expected:** the contrast error is gone.
 4. Write one sentence on why styling blocks one by one makes rebrands and accessibility harder.
