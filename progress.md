@@ -31,7 +31,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | draft | 2026-10-29 |
 | M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | draft | 2026-10-29 |
 | M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | draft | 2026-10-31 |
-| M02 | L03 | Categories vs tags: design a content structure for your niche | wordpress-101/lessons/m02-l03-categories-tags.md | todo | — |
+| M02 | L03 | Categories vs tags: design a content structure for your niche | wordpress-101/lessons/m02-l03-categories-tags.md | draft | 2026-10-31 |
 | M02 | L04 | Drafts, revisions, scheduling and an editorial workflow | wordpress-101/lessons/m02-l04-editorial-workflow.md | todo | — |
 | M02 | L05 | Embeds: YouTube, podcasts, social posts and newsletters | wordpress-101/lessons/m02-l05-embeds.md | todo | — |
 | M02 | Capstone | M02 capstone | wordpress-101/capstones/m02-capstone.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m02-l03 draft (lesson + 7-question quiz incl. 1 review from M01.L03; 6 glossary terms; filing-a-post flowchart; 2 image prompts, no images). Labels checked in WP 7.0 core source (Add Category/Add Tag, default-category rules, Terms List block, Categories and Tags Converter). Next: `/next-lesson` → M02.L04.
 - 2026-10-31: neps.in course 2608: M01 live. Lessons 2615–2620 filled from the repo and published (image prompts, glossary sections and .webp links stripped; Mermaid kept as `<pre class="mermaid">` + CDN loader; cheat sheet inlined in the capstone). 5 LearnPress quizzes created (IDs 2677, 2685, 2694, 2703, 2712; 35 single-choice questions with hints/explanations; pass 70%, unlimited retakes). All 53 lessons attached to sections 32–40 (58 items). ✅ Resolves the 10-29 deferred decision with option 1: M02–M09 lessons are attached as drafts via LearnPress models, so **saving the course in wp-admin drops them** (re-run the attach step, or publish each lesson as it's synced). Scripts: `tools/learnpress/`. Also: images are no longer generated; lessons get image prompts instead (20 added). Next: `/next-lesson` → M02.L03.
 - 2026-10-31: wordpress-101 m02-l02 draft (lesson + 7-question quiz incl. 1 review from M01.L04; 6 glossary terms; synced-vs-unsynced pattern flowchart rendered). Pattern labels (Create pattern, Synced, Edit original, Detach, Enable overrides) per WP 7.1; overrides limited to Paragraph/Heading/Image/Button. Next: `/next-lesson` → M02.L03.
 - 2026-10-29: wordpress-101 m02-l01 draft (lesson + 7-question quiz incl. 1 review; 7 glossary terms; post-vs-page flowchart rendered). Shortcuts read from WP core registered shortcuts (7.0 source) with Shift+Alt+H fallback. Next: `/next-lesson` → M02.L02.
