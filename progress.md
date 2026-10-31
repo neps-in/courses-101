@@ -39,7 +39,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M03 | L02 | Compress, convert and right-size: WebP, AVIF and image plugins | wordpress-101/lessons/m03-l02-compress-convert-images.md | reviewed | 2026-10-31 |
 | M03 | L03 | Accessible media: alt text, captions, transcripts and file names | wordpress-101/lessons/m03-l03-accessible-media.md | reviewed | 2026-10-31 |
 | M03 | L04 | Featured images and social share images (Open Graph) | wordpress-101/lessons/m03-l04-featured-social-images.md | reviewed | 2026-10-31 |
-| M03 | L05 | Video and audio: embed vs self-host | wordpress-101/lessons/m03-l05-video-audio-hosting.md | draft | 2026-10-31 |
+| M03 | L05 | Video and audio: embed vs self-host | wordpress-101/lessons/m03-l05-video-audio-hosting.md | reviewed | 2026-10-31 |
 | M03 | Capstone | M03 capstone | wordpress-101/capstones/m03-capstone.md | todo | — |
 | M04 | L01 | Block themes vs classic themes: choosing a lightweight, maintained theme | wordpress-101/lessons/m04-l01-choose-a-theme.md | todo | — |
 | M04 | L02 | The Site Editor: templates, template parts and global styles | wordpress-101/lessons/m04-l02-site-editor-global-styles.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m03-l05 reviewed: autoplay claims corrected per Chrome autoplay policy (muted always allowed; with sound allowed after user interaction), LCP/TBT defined inline, "Analyze page load" label confirmed in Lighthouse docs, Q1/Q4 options balanced (correct answer was longest). Next: `/next-lesson` → M03 capstone.
 - 2026-10-31: wordpress-101 m03-l05 draft (lesson + 7-question quiz incl. 1 review from M03.L04; 6 glossary terms; media-home decision flowchart; 1 image prompt, no images). Checked in WP 7.0: iframe lazy-loading (5.7) with wp_omit_loading_attr_threshold 3, Video block preload default metadata + settings labels incl. Set poster image, no core facade; Lighthouse facades doc (lite-youtube-embed); Apple feed requirements (enclosure, byte-range). Hands-on uses DevTools Lighthouse (works on Local). Next: `/next-lesson` → M03 capstone.
 - 2026-10-31: wordpress-101 m03-l04 reviewed: removed unverified "X falls back to OG tags" claim (not in current docs.x.com; now: SEO plugins add twitter: tags alongside og:), removed "RSS readers rely on featured image" (core feed-rss2.php doesn't include it), softened click claim, X link updated to the developer.x.com Cards markup reference. Next: `/next-lesson` → M03.L05.
 - 2026-10-31: wordpress-101 m03-l04 draft (lesson + 7-question quiz incl. 1 review from M03.L03; 5 glossary terms; featured-to-OG flowchart; 3 image prompts, no images). Checked in WP 7.0: no og: tags in core, block themes get post-thumbnails automatically, Post Featured Image block aspectRatio + linked-image alt = post title; TT5 single/query loop crop 3:2, template "Single Posts"; Meta: ≥1200×630, 1.91:1, 8 MB, 600×315 min for large card; Google Discover ≥1200 px wide. Next: `/next-lesson` → M03.L05.

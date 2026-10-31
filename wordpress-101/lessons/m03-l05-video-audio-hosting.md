@@ -75,7 +75,7 @@ Use your **Local** site and Chrome. **Lighthouse** in Chrome DevTools works on L
 
 **Part B: measure with Lighthouse (7 min)**
 1. Open **"Test: embed"** in Chrome, in an **Incognito** window (so extensions don't skew results). Press **F12** → **Lighthouse** tab → **Mode: Navigation**, **Device: Mobile**, category **Performance** → **Analyze page load**.
-2. Note the **Performance** score, **Largest Contentful Paint (LCP)**, **Total Blocking Time (TBT)**, and in **Network** (reload with DevTools open) the total **transferred** size.
+2. Note the **Performance** score, **Largest Contentful Paint (LCP)** (how long until the biggest thing on screen appears), **Total Blocking Time (TBT)** (how long the page was too busy running scripts to respond; M07 goes deeper), and in **Network** (reload with DevTools open) the total **transferred** size.
 3. Repeat for **"Test: self-hosted"**.
    **Expected (typical, your numbers will differ):** the embed page transfers far more data before anyone presses play (the YouTube player's scripts) and may show more blocking time and a third-party or facade warning. The self-hosted page is light **until** the video plays, because `preload` metadata only fetches the first bytes. Local sites are fast because they run on your computer, so compare the two pages with each other, not with other websites.
 4. Fill in:
@@ -111,7 +111,7 @@ WordPress core has no built-in facade. Pick one route:
 - **Uploading long videos to the Media Library.** It eats storage and bandwidth and streams poorly on slow connections.
 - **Hosting podcast MP3s on your WordPress site.** You lose app distribution and reliable stats, and risk bandwidth limits when an episode takes off.
 - **Several YouTube embeds at the top of a page with no facade.** Each loads its own heavy player code.
-- **Autoplaying video with sound.** Browsers block it, and readers find it annoying; autoplay works only when **Muted** is on.
+- **Autoplaying video with sound.** Browsers usually block it (Chrome allows it only after a visitor has interacted with your site), and readers find it annoying. Muted autoplay is always allowed, so turn on **Muted** if you autoplay at all.
 - **No poster image on a self-hosted video.** Readers see a black box or a random first frame.
 - **Measuring Local sites against live ones.** Local runs on your computer; compare pages with each other.
 
@@ -121,7 +121,7 @@ WordPress core has no built-in facade. Pick one route:
 | Upload fails for a video | File bigger than the upload limit (M03.L01) | Compress or trim it, or host it on YouTube/Vimeo instead |
 | Self-hosted video stutters on phones | Large single file, no adaptive streaming | Export at 720p and a lower bitrate, or move it to a video platform |
 | Lighthouse warns about third-party code or facades | YouTube/Vimeo player scripts loading on page load | Add a facade (Part C), or move the embed lower on the page |
-| Autoplay doesn't start | Browsers block autoplay with sound | Turn on **Muted** (and **Play inline** for iPhones), or don't autoplay |
+| Autoplay doesn't start | Browsers usually block autoplay with sound, especially on a first visit | Turn on **Muted** (and **Play inline** for iPhones), or don't autoplay |
 | Host warns about bandwidth | Self-hosted media getting lots of views | Move videos to YouTube/Vimeo, podcasts to a podcast host |
 | Podcast episodes not appearing in Apple Podcasts | Feed missing required tags or episode file problems | Use your podcast host's feed and validator rather than a hand-made feed |
 
