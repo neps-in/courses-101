@@ -14,20 +14,20 @@
 **Hint:** Look at the Appearance menu.
 
 ### Q2. Which of these does a WordPress.org theme page show?
-- a) A "Tested up to" WordPress version, like plugin pages
-- b) The number of sites hacked through the theme
-- c) The theme's page speed score from PageSpeed Insights
-- d) Last updated, Active installations and Minimum WordPress and PHP versions
+- a) A "Tested up to" WordPress version, exactly like plugin pages show
+- b) A security score based on known vulnerabilities in past versions
+- c) The theme demo's Performance score from PageSpeed Insights
+- d) Last updated, active installs and minimum WordPress/PHP
 
 **Answer:** d
 **Explanation:** Theme pages list Version, Last updated, Active installations, Minimum WordPress version and Minimum PHP version, plus ratings and tags. Unlike plugin pages, they don't show "Tested up to", so **Last updated** is your best sign of active maintenance.
 **Hint:** Plugins and themes show slightly different details.
 
 ### Q3. What does the **accessibility-ready** tag on a theme mean?
-- a) The theme is certified to meet WCAG 2.2 AA on any site
-- b) The theme passed a manual review against the Themes Team's minimum accessibility requirements
-- c) The theme automatically writes alt text for every image
-- d) The theme's developer has filled in an accessibility questionnaire
+- a) The theme is certified to meet WCAG 2.2 AA on any site that uses it
+- b) It passed a manual review against minimum accessibility requirements
+- c) The theme automatically writes alt text for every image you upload
+- d) The developer filled in a self-assessment accessibility questionnaire
 
 **Answer:** b
 **Explanation:** Themes get the tag only after a manual review against requirements such as keyboard navigation, skip links and contrast. The Themes Team says it doesn't mean the theme meets WCAG AA, and your content and colour choices can still create problems.
@@ -45,9 +45,9 @@
 
 ### Q5. Ines installs a new block theme and wants to see how her real posts look before visitors see any change. What should she click?
 - a) **Activate**, then switch back quickly if she doesn't like it
-- b) **Live Preview**, which opens her site in the new theme without activating it
+- b) **Live Preview**, which shows her content without activating
 - c) **Delete** on her current theme so the new one loads automatically
-- d) **Appearance → Customize**, which applies every theme at once
+- d) **Appearance → Customize**, which previews all installed themes
 
 **Answer:** b
 **Explanation:** For block themes, **Live Preview** opens the Site Editor with her own content in the new theme; nothing changes for visitors until she clicks **Activate**. Activating to "test" changes the live site, and she can't delete the active theme anyway.

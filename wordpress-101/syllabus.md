@@ -255,7 +255,7 @@ flowchart LR
 - **File:** `lessons/m04-l01-choose-a-theme.md`
 - **Objectives:**
   1. Distinguish block themes from classic themes and explain why block themes suit creators.
-  2. Vet a theme on the directory: last updated, tested-up-to version, active installs, accessibility-ready tag.
+  2. Vet a theme on the directory: last updated, minimum WordPress and PHP version, active installs, accessibility-ready tag.
   3. Install and preview a theme without breaking the live site.
 - **Prerequisites:** M01–M03
 - **Hands-on:** shortlist three block themes, score them and activate one. (~20 min)

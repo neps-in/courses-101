@@ -6,7 +6,7 @@
 
 > ⚠️ **Freshness flag:** the theme numbers quoted below (versions, update dates, installs) are a snapshot from 2026-10-31 and change every week. Always check the theme's own page on the day you choose.
 
-> Note: the syllabus mentions a theme's "tested up to" version. Theme directory pages don't show one (plugin pages do); they show **Last updated** and **Minimum WordPress version**, so this lesson uses those instead.
+> Note: theme directory pages don't show a "tested up to" version (plugin pages do); they show **Last updated** and **Minimum WordPress/PHP version**, so this lesson uses those.
 
 ## Learning objectives
 1. **Distinguish** block themes from classic themes, and explain why block themes suit creators.
@@ -25,7 +25,7 @@ Maya picked the most beautiful theme in a marketplace demo. It came with 14 bund
 
 **Precise definitions:**
 - **Block theme:** a theme whose templates are made of blocks (HTML template files plus `theme.json`). WordPress shows **Appearance → Editor** when one is active. Tag in the directory: **Full Site Editing**.
-- **Classic theme:** a PHP-template theme. WordPress shows **Appearance → Customize**, and usually **Widgets** and **Menus**. Some newer classic themes add `theme.json` and get a limited **Appearance → Design** screen.
+- **Classic theme:** a PHP-template theme. WordPress shows **Appearance → Customize**, and usually **Widgets** and **Menus**. Classic themes that add `theme.json` (or support editor styles) also get a limited **Appearance → Design** screen.
 - **Hybrid / "block-ready" theme:** a classic theme that supports blocks in posts and some Site Editor features (e.g. patterns), but not full template editing.
 - **`theme.json`:** the settings file that defines a theme's colours, fonts, spacing and layout widths. It's what powers **Styles** in the Site Editor (M04.L02).
 - **Default theme:** the free "Twenty Twenty-X" theme made by WordPress contributors each year. **Twenty Twenty-Five** is a block theme, accessibility-ready and maintained by the WordPress project.
@@ -95,13 +95,15 @@ Work on your **Local** practice site. You'll shortlist three block themes, score
 
 **Snapshot (2026-10-31, from the WordPress.org themes API; check the live pages yourself):**
 
-| Theme | Type | Last updated | Installs | Accessibility-ready |
-|---|---|---|---|---|
-| Twenty Twenty-Five (WordPress.org) | Block | 2026-05-20 (v1.5) | 1+ million | ✅ |
-| Ollie (Mike McAlister) | Block | 2026-10-08 | 7,000+ | — |
-| Blockbase (Automattic) | Block | 2026-09-15 | 2,000+ | — |
-| Frost (WP Engine) | Block | 2025-03-12 | 3,000+ | — |
-| Kadence, Astra | Classic (hybrid) | 2026-07 / 2026-10 | 500,000+ / 1+ million | Kadence ✅ / Astra — |
+| Theme | Type | Last updated | Min WP / PHP | Installs | Accessibility-ready |
+|---|---|---|---|---|---|
+| Twenty Twenty-Five (WordPress.org) | Block | 2026-05-20 (v1.5) | 6.7 / 7.2 | 1+ million | ✅ |
+| Ollie (Mike McAlister) | Block | 2026-10-08 | not listed / 7.3 | 7,000+ | — |
+| Blockbase (Automattic) | Block | 2026-09-15 | 6.1 / 5.7 | 2,000+ | — |
+| Frost (WP Engine) | Block | 2025-03-12 | 6.7 / 7.2 | 3,000+ | — |
+| Kadence, Astra | Classic (hybrid) | 2026-07 / 2026-10 | 6.3 / 7.4 · 5.3 / 5.3 | 500,000+ / 1+ million | Kadence ✅ / Astra — |
+
+   If a theme lists no minimum WordPress version (like Ollie), score that row on PHP alone and lean on **Last updated** as your compatibility signal.
 
    Frost shows how quickly a good theme can drift: a well-known publisher, but no update for over 18 months at the time of checking.
 
@@ -111,7 +113,7 @@ Work on your **Local** practice site. You'll shortlist three block themes, score
    **Expected:** for a block theme, the Site Editor opens a preview of your site in the new theme, with your real posts and pages, and an **Activate** button. Nothing changes for visitors until you activate. (Classic themes open a Customizer preview instead.)
    > 🖼️ **Image prompt:** Screenshot of the WordPress 7.0 Site Editor in Live Preview mode for a newly installed block theme, showing the practice site's home page with real posts, the left navigation panel, and the "Activate" button highlighted at the top. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** The Site Editor previewing an installed block theme with the practice site's posts and an Activate button.
-3. Look at your **home page**, a **single post** with images (from M03), the **blog page** and a **page**. Use the device preview (desktop/tablet/mobile icon) to check the phone view.
+3. Look at your **home page**, a **single post** with images (from M03), the **blog page** and a **page**. Open the **View** menu (desktop icon in the top bar) and pick **Mobile** to check the phone view, then **Desktop** to switch back.
 4. If you're happy: back up (M01.L05), then **Activate**. On a live site, do this on a staging copy first (M07), or at a quiet time with a fresh backup.
 5. Visit **Appearance → Themes** again.
    **Expected:** the new theme is **Active** and the Appearance menu shows **Editor**.
