@@ -77,14 +77,14 @@ Work on your **Local** practice site (Twenty Twenty-Five, branded in M04.L02). H
    > **Alt text:** Reading Settings with a static page chosen, Home as the homepage and Blog as the posts page.
 
    **Shortcut in the Site Editor:** **Appearance → Editor → Pages**, open a page's **⋮** menu and choose **Set as homepage** or **Set as posts page**. WordPress asks you to confirm (e.g. *"This will replace the current homepage which is set to display latest posts."*).
-4. Your homepage probably shows a big "Home" title. Open the Home page in the editor, and in the page settings under **Template** choose **Page No Title** (a Twenty Twenty-Five template). Save.
+4. Your homepage probably shows a big "Home" title. Open the Home page in the editor, and in the page settings click the **Template** name, choose **Change template** and pick **Page No Title** (a Twenty Twenty-Five template). Save.
    **Expected:** the homepage starts with your heading, not the word "Home".
 
 **Part B: a curated header menu (7 min)**
 1. Go to **Appearance → Editor → Patterns → Header** (or click the header on any template and choose **Edit**).
 2. Select the **Navigation** block (the menu links on the right). Look at what it shows.
    **Expected:** probably every published page, including old ones like "Sample Page". That's the automatic fallback menu.
-3. In the block settings sidebar, open the menu's **⋮** options and choose **Create new Menu**. Then type **Main menu** in the **Menu name** field (in the block settings; check **Advanced** if you don't see it), so you can find it later.
+3. In the block settings sidebar, open the menu's **⋮** options and choose **Create new Menu**. Then open the block settings' **Advanced** section and type **Main menu** in **Menu name**, so you can find it later.
 4. Use **+** inside the Navigation block (or in the menu list in the sidebar) to add items:
    - **Add page** → **Blog**.
    - **Add link** → type the name of one of your main categories from M02.L03 and pick it from the results. Add a second category if you have one.
@@ -109,7 +109,7 @@ Work on your **Local** practice site (Twenty Twenty-Five, branded in M04.L02). H
    **Expected:** no link goes to `#`, a 404 or a draft.
 2. Shrink the window (or use your phone): open the menu button, tap a link, close the overlay.
 3. Click in the address bar and press **Tab** repeatedly.
-   **Expected:** a visible focus outline moves through the header links in order. (You'll do a fuller keyboard check in M04.L05.)
+   **Expected:** the first stop is a **Skip to content** link (block themes add it automatically so keyboard users can jump past the menu), then a visible focus outline moves through the header links in order. (You'll do a fuller keyboard check in M04.L05.)
 
 ## When to use / when not to
 - **Use a static homepage** if you cover several topics, want new readers to start with your best work, or have a newsletter, product or service to introduce. That's most creators.
@@ -139,7 +139,7 @@ Work on your **Local** practice site (Twenty Twenty-Five, branded in M04.L02). H
 |---|---|---|
 | Homepage still shows latest posts | Reading setting not saved, or Homepage left at "— Select —" | **Settings → Reading** → pick **Home** and **Save Changes** |
 | `/blog/` shows a blank page | Blog isn't set as **Posts page**, or it isn't published | Publish it and set it as **Posts page** |
-| Homepage shows a big "Home" title | The Pages template shows page titles | Choose **Page No Title** in the page's **Template** setting |
+| Homepage shows a big "Home" title | The Pages template shows page titles | Page settings → **Template** → **Change template** → **Page No Title** |
 | Every page appears in the menu | Navigation block is using the fallback Page List | **Create new Menu** and add items by hand |
 | Menu changes don't show on some pages | You edited a different menu than the header uses | **Appearance → Editor → Navigation**: check which menu is in the Header, edit that one |
 | Old classic menu items appeared after a theme switch | The fallback imported your classic menu | Edit the imported menu, or create a new one |
