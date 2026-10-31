@@ -169,7 +169,7 @@ Each module adds to **one practice site** the learner builds from M01 and launch
 - How search engines and AI answer engines find, index and cite WordPress content
 - Configuring one SEO plugin (Yoast, Rank Math or AIOSEO): titles, meta, XML sitemap, breadcrumbs
 - Writing for search intent: headings, internal links, answer-first paragraphs
-- Schema basics for creators (Article, Person, VideoObject, PodcastEpisode; FAQ/HowTo only where still eligible)
+- Schema basics for creators (Article, Person, VideoObject, PodcastEpisode; FAQ and HowTo rich results no longer shown: FAQ deprecated 2026-05-07, HowTo 2023)
 - Connecting Google Search Console & Bing Webmaster Tools; submitting sitemaps
 - ⚠️ Flag: AI-search features and rich-result eligibility change often — cite Google Search Central with dates
 - **Module capstone:** configure an SEO plugin, verify Search Console, and fully optimise one cornerstone post
