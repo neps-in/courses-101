@@ -40,9 +40,9 @@ Google says plainly that it **doesn't guarantee** it will crawl, index or show a
 |---|---|---|---|
 | **Google AI Overviews / AI Mode** | Google's search index | **Googlebot** (normal robots.txt) | Must be indexed and eligible for a snippet; "no additional requirements" or special optimisations. Limit with `nosnippet`, `data-nosnippet`, `max-snippet` or `noindex`. Traffic counts in Search Console's Performance report (Web). |
 | **Google-Extended** | — | robots.txt token only | Controls use for Gemini training/grounding in *other* Google products; **doesn't affect** Google Search or ranking. |
-| **ChatGPT search** | OpenAI's search crawler | **OAI-SearchBot** | Allow it to appear in ChatGPT search. **GPTBot** is separate (training); blocking GPTBot doesn't remove you from search. **ChatGPT-User** fetches a page when a user asks. |
+| **ChatGPT search** | OpenAI's search crawler | **OAI-SearchBot** | Allow it to appear in ChatGPT search answers (opted-out sites can still show as plain navigational links; robots.txt changes take ~24 hours). **GPTBot** is separate (training); blocking GPTBot doesn't remove you from search. **ChatGPT-User** fetches a page when a user asks. |
 | **Perplexity** | Perplexity's index | **PerplexityBot** | Used to surface and link sites, not to train models. **Perplexity-User** fetches pages for live questions. |
-| **Microsoft Copilot / Bing AI** | Bing's index | **Bingbot** | **Bing Webmaster Tools → AI Performance** shows how often your pages are cited (public preview since 2026-02-10; M05.L05). |
+| **Microsoft Copilot / Bing AI** | Bing's index | **Bingbot** | **Bing Webmaster Tools → AI Performance** shows how often your indexed pages are cited (public preview since 2026-02-10; M05.L05). Microsoft recommends **IndexNow** to keep updated pages fresh in AI answers (M05.L02). |
 
 **What gets cited?** No engine publishes its full selection method. Google says the same SEO best practices apply. What practitioners observe (observed practice, not a guarantee): pages that answer a specific question clearly near the top, stay on one topic, show who wrote them and why they're credible, and are easy to quote get cited more often. You'll write that way in M05.L03.
 
@@ -133,7 +133,7 @@ If your site is live and verified in Google Search Console, do this now; otherwi
 - **Treating `site:` as a full count.** It's a sample; use URL Inspection for one URL and the Page indexing report (M05.L05) for the site.
 - **Blocking the wrong bot.** Blocking OAI-SearchBot or PerplexityBot removes you from those engines' answers; GPTBot and Google-Extended are about training.
 - **Expecting a "special AI optimisation".** Google says there are no extra requirements for AI Overviews or AI Mode beyond being indexed and snippet-eligible.
-- **Clicking Request indexing over and over.** It doesn't speed things up.
+- **Clicking Request indexing over and over.** There's a quota, and Google says repeat requests for the same URL won't get it crawled any faster.
 - **Copying robots.txt rules from forums.** One wrong `Disallow: /` hides your whole site.
 
 ## Troubleshooting

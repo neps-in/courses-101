@@ -23,14 +23,14 @@
 **Explanation:** Google says there are "no additional requirements" for AI Overviews or AI Mode: the page must be indexed and eligible to be shown with a snippet. Google-Extended doesn't affect Google Search, and no paid account or special file is required.
 **Hint:** Google says the same SEO basics apply.
 
-### Q3. Which robots.txt change would remove a site from **ChatGPT search** results?
+### Q3. Which robots.txt change would keep a site's pages out of **ChatGPT search** answers?
 - a) Disallowing **GPTBot**
 - b) Disallowing **OAI-SearchBot**
 - c) Disallowing **Google-Extended**
 - d) Disallowing **PerplexityBot**
 
 **Answer:** b
-**Explanation:** OpenAI uses **OAI-SearchBot** for ChatGPT search. **GPTBot** is about training and is controlled separately; OpenAI says a site can allow OAI-SearchBot while disallowing GPTBot. Google-Extended and PerplexityBot belong to other companies.
+**Explanation:** OpenAI uses **OAI-SearchBot** for ChatGPT search; opted-out sites aren't shown in search answers (they may still appear as plain navigational links). **GPTBot** is about training and is controlled separately; OpenAI says a site can allow OAI-SearchBot while disallowing GPTBot. Google-Extended and PerplexityBot belong to other companies.
 **Hint:** Search bot vs training bot.
 
 ### Q4. Paolo launched his site a month ago. `/robots.txt` has no `Sitemap:` line, and his posts' source shows `noindex, nofollow`. What's the most likely cause?
