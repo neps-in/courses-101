@@ -35,7 +35,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L04 | Drafts, revisions, scheduling and an editorial workflow | wordpress-101/lessons/m02-l04-editorial-workflow.md | reviewed | 2026-10-31 |
 | M02 | L05 | Embeds: YouTube, podcasts, social posts and newsletters | wordpress-101/lessons/m02-l05-embeds.md | reviewed | 2026-10-31 |
 | M02 | Capstone | M02 capstone | wordpress-101/capstones/m02-capstone.md | reviewed | 2026-10-31 |
-| M03 | L01 | The Media Library and the image sizes WordPress creates | wordpress-101/lessons/m03-l01-media-library-image-sizes.md | draft | 2026-10-31 |
+| M03 | L01 | The Media Library and the image sizes WordPress creates | wordpress-101/lessons/m03-l01-media-library-image-sizes.md | reviewed | 2026-10-31 |
 | M03 | L02 | Compress, convert and right-size: WebP, AVIF and image plugins | wordpress-101/lessons/m03-l02-compress-convert-images.md | todo | — |
 | M03 | L03 | Accessible media: alt text, captions, transcripts and file names | wordpress-101/lessons/m03-l03-accessible-media.md | todo | — |
 | M03 | L04 | Featured images and social share images (Open Graph) | wordpress-101/lessons/m03-l04-featured-social-images.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m03-l01 reviewed: confirmed sub-sizes are generated from and named after the original, error strings match core; explained why Full Size over-downloads (sizes up to 2560 px); balanced Q1/Q4 options. Next: `/next-lesson` → M03.L02.
 - 2026-10-31: wordpress-101 m03-l01 draft (lesson + 7-question quiz incl. 1 review from M02.L04; 6 glossary terms; upload-to-srcset flowchart; 1 image prompt, no images). Default sizes, 2560 big-image threshold, srcset max 2048 + same-ratio rule, HEIC→JPEG (6.7), sizes=auto, MEDIA_TRASH=false and Media labels checked in WP 7.0 core; TT5 content width 645/1340 from theme.json. Next: `/next-lesson` → M03.L02.
 - 2026-10-31: neps.in course 2608: M02 live. Lessons 2621–2626 published; 5 quizzes created (2731, 2740, 2749, 2758, 2767; 35 questions); section 33 laid out lesson → quiz → … → capstone (cheat sheet inlined). The course had been saved in wp-admin at 08:35, which detached the 47 draft lessons; M03–M09 drafts re-attached with `tools/learnpress/reattach_drafts.php`. Scripts generalised: `build_module.py` + `upload_module.php` (M01 payload rebuilds identically). Next: `/next-lesson` → M03.L01.
 - 2026-10-31: wordpress-101 m02-capstone reviewed: author box now required in Task 3 (matched rubric), "Detach pattern?" confirmation (WP 7.0), overrides caveat for the detach drill, how to measure page weight without the embed, time split; cheat sheet notes Patterns screen is block-theme only. Next: upload M02 to neps.in, or `/next-lesson` → M03.L01.

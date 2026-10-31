@@ -137,7 +137,7 @@ Recommended upload sizes (observed practice for typical creator themes; check yo
 ## Common mistakes
 - **Uploading straight from the camera.** 12 MB originals stay on the server forever, even though WordPress scales them for display.
 - **Changing Settings → Media sizes and expecting old images to change.** New sizes apply to new uploads only; old images need regenerating (a job for later, with a vetted plugin).
-- **Choosing "Full Size" for every image block.** On big screens the browser may still download a huge file. **Large** is usually right for content-width images.
+- **Choosing "Full Size" for every image block.** The `sizes` attribute then tells browsers the image may display up to 2560 px wide, so large screens fetch the biggest copy (2048 px) even inside a 645 px column. **Large** is usually right for content-width images.
 - **Deleting a file you think is unused.** Check **Uploaded to** in list view and search your posts first. There's no trash for media.
 - **Using a cropped thumbnail where a full image belongs.** The 150 × 150 square cuts off the edges of the photo.
 

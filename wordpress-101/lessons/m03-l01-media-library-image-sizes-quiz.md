@@ -4,10 +4,10 @@
 > Defaults checked against WordPress 7.0 core source on 2026-10-31.
 
 ### Q1. You upload a 4000 × 3000 pixel photo. What does WordPress use as its "full" size?
-- a) The 4000 × 3000 original, unchanged
-- b) A `-scaled` copy with a maximum of 2560 pixels, while the original is kept on the server
-- c) A 1024 × 768 copy, and the original is deleted to save space
-- d) A WebP version that replaces the JPEG
+- a) The 4000 × 3000 original, unchanged, with smaller copies made alongside it
+- b) A `-scaled` copy of at most 2560 pixels, with the original kept on the server
+- c) A 1024 × 768 "large" copy, with the original deleted to save storage
+- d) A WebP copy at the same 4000 × 3000 size that replaces the JPEG
 
 **Answer:** b
 **Explanation:** Since WordPress 5.3, images over 2560 pixels get a `-scaled` copy used as "full". The original stays on the server (shown as **Original image:** in Attachment details). WordPress doesn't delete it or convert to WebP by default.
@@ -34,13 +34,13 @@
 **Hint:** It's about choosing between files.
 
 ### Q4. Sam's theme has a 645 px content column. He'll publish step-by-step photos that sit inside the text (normal width, not wide). Which upload width makes most sense?
-- a) 600 px, matching the column so nothing is wasted
-- b) About 1300–1600 px, roughly 2× the column so photos stay sharp on high-density screens
-- c) The camera's full 6000 px, so WordPress has the most to work with
-- d) 150 px, because WordPress enlarges images to fit
+- a) About 650 px, matching the column exactly so no pixels are wasted
+- b) About 1300–1600 px, roughly twice the column width
+- c) The camera's full 6000 px, so WordPress has the most detail to work with
+- d) About 300 px, since WordPress enlarges smaller images to fill the column
 
 **Answer:** b
-**Explanation:** High-density (Retina) screens need about twice the display width to look sharp, so ~1300–1600 px suits a 645 px column. At 600 px the photos look soft on those screens; 6000 px wastes storage and backup space because the original is kept; and WordPress never enlarges images.
+**Explanation:** High-density (Retina) screens need about twice the display width to look sharp, so ~1300–1600 px suits a 645 px column. At ~650 px the photos look soft on those screens; 6000 px wastes storage and backup space because the original is kept; and WordPress never enlarges images.
 **Hint:** Think "twice the column", not "exactly the column".
 
 ### Q5. Priya deletes an old photo from **Media → Library** to tidy up. A week later a reader reports a broken image in a 2023 post. What happened, and what's the fix?
