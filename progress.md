@@ -37,7 +37,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | Capstone | M02 capstone | wordpress-101/capstones/m02-capstone.md | reviewed | 2026-10-31 |
 | M03 | L01 | The Media Library and the image sizes WordPress creates | wordpress-101/lessons/m03-l01-media-library-image-sizes.md | reviewed | 2026-10-31 |
 | M03 | L02 | Compress, convert and right-size: WebP, AVIF and image plugins | wordpress-101/lessons/m03-l02-compress-convert-images.md | reviewed | 2026-10-31 |
-| M03 | L03 | Accessible media: alt text, captions, transcripts and file names | wordpress-101/lessons/m03-l03-accessible-media.md | todo | — |
+| M03 | L03 | Accessible media: alt text, captions, transcripts and file names | wordpress-101/lessons/m03-l03-accessible-media.md | draft | 2026-10-31 |
 | M03 | L04 | Featured images and social share images (Open Graph) | wordpress-101/lessons/m03-l04-featured-social-images.md | todo | — |
 | M03 | L05 | Video and audio: embed vs self-host | wordpress-101/lessons/m03-l05-video-audio-hosting.md | todo | — |
 | M03 | Capstone | M03 capstone | wordpress-101/capstones/m03-capstone.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m03-l03 draft (lesson + 7-question quiz incl. 1 review from M03.L02; 6 glossary terms; alt/caption/transcript decision flowchart; 1 image prompt, no images). Checked in WP 7.0: Image block Alternative text + "Leave empty if decorative.", Video block Text tracks (Label/Source language/Kind), .vtt allowed, Audio block has no tracks, title from filename unless EXIF title; W3C WAI, WCAG 1.2.1/1.2.2, Google image guidance, WHO 1 in 6. Next: `/next-lesson` → M03.L04.
 - 2026-10-31: wordpress-101 m03-l02 reviewed: menu label fixed to **Plugins → Add Plugin** (WP 7.0 menu.php) here and in m01-l03/m01-l05 (repo only; M01 on neps.in still shows the old label until re-pushed); clarified quality 82 also applies to the -scaled copy; Squoosh labels and readout softened (couldn't verify its lazy-loaded UI); SVG upload block confirmed (not in core mime list). Next: `/next-lesson` → M03.L03.
 - 2026-10-31: wordpress-101 m03-l02 draft (lesson + 7-question quiz incl. 1 review from M03.L01; 6 glossary terms; format-choice-to-upload flowchart; 1 image prompt, no images). Checked in WP 7.0 core: WebP 5.8 / AVIF 6.5 support, quality 82 JPEG / 86 WebP, no core JPEG→WebP conversion; Modern Image Formats 2.7.1 listing (new uploads only, Output fallback images option, skips larger WebP); MDN format guide. Next: `/next-lesson` → M03.L03.
 - 2026-10-31: wordpress-101 m03-l01 reviewed: confirmed sub-sizes are generated from and named after the original, error strings match core; explained why Full Size over-downloads (sizes up to 2560 px); balanced Q1/Q4 options. Next: `/next-lesson` → M03.L02.
