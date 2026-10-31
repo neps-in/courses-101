@@ -59,7 +59,7 @@ flowchart TD
 - **Headings:** one H1 (the title), then H2/H3 that match the format searchers expect; **Document Overview → Outline** shows no warnings. Include one H2 for your "what's missing" extra value.
 - **Title and description:** check the SEO title (unique, descriptive, close to the H1, not stuffed) and write a custom meta description for this post (who it's for + what they get).
 - **Slug:** short and descriptive. If you change it on a published post, confirm the old URL redirects (WordPress does this for posts; test with `curl -I` or a private window).
-- **Internal links:** at least **3 links in** from related posts and **2 links out** to related posts or a category page, all with descriptive anchor text. Add the post to your **Start Here** page if it fits (M04.L04).
+- **Internal links:** at least **3 links in** (from related posts **or pages**: your **Start Here** page, Home, or a category description all count) and **2 links out** to related posts or a category page, all with descriptive anchor text. On a small practice site, add a related draft post if you need one more source.
 - **Images:** a featured image (with a 1200 × 630 social image if needed, M03.L04) and alt text that describes each image's purpose (M03.L03).
 - **Re-read as the searcher:** did you get the answer in the first screen on a phone?
 
@@ -81,7 +81,7 @@ flowchart TD
 
 ### 6. Break it and fix it
 **a) The "invisible site" switch.** On your **Local** site (never on a live one), tick **Settings → Reading → Discourage search engines from indexing this site** and save.
-1. Look at the dashboard: Yoast shows **"Huge SEO Issue: You're blocking access to robots."**
+1. Look at the dashboard (or any Yoast SEO screen): Yoast shows **"Huge SEO Issue: You're blocking access to robots."**
 2. View your cornerstone post's source and search for `robots`.
    **Expected:** the robots meta tag now contains `noindex`. Every page on the site now asks search engines not to index it.
 3. On a live site, this is exactly what Search Console would show weeks later as pages marked `noindex` in the **Pages** report (M05.L05), and why Kemi had no visitors (M05.L01).
@@ -93,7 +93,7 @@ flowchart TD
    **Expected:** your theme's 404 page. Then open **Tools → Redirection → 404s**: the hit is logged with the old URL.
 2. Decide: is there a close replacement? If yes, add a **301** from the old URL to it in **Tools → Redirection**, and update the link in your cornerstone post to point **directly** at the new target (no redirect hop). If no, remove or replace the link.
    **Expected:** `curl -I` on the old URL returns `301` with the new `Location:`, or the link is gone.
-3. Restore the trashed post if you still want it (**Posts → Trash → Restore**) and remove the now-unneeded redirect, so it can't loop.
+3. Restore the trashed post if you still want it (**Posts → Trash → Restore**). Since WordPress 5.6 a restored post comes back as a **draft**, so open it, check its slug is the original one, and **Publish** it again. Then delete the now-unneeded redirect, so it can't loop, and point your cornerstone link back at it if that's still the best target.
 4. Write one sentence on why you update the link itself as well as adding a redirect.
 
 ## Deliverable: SEO Setup & Cornerstone Report
@@ -149,7 +149,7 @@ Score each criterion; **Good** or better on all five completes the module.
 |---|---|---|---|---|
 | **SEO plugin and site plumbing** (NN #8) | Exactly one SEO plugin; representation, templates (Excerpt description), hand-written key-page descriptions; sitemap index loads and is in robots.txt with thin archives excluded; core Breadcrumbs block in Single Posts; Redirection (or equivalent) monitoring and 404 log on; redirects table started | One SEO plugin with templates, sitemap and breadcrumbs working; redirects tool installed | Plugin installed but defaults unchecked, or a second plugin still writes titles/schema | No SEO plugin, or two |
 | **Search intent and on-page structure** | Real query with a complete results table; post fits intent, format and angle and adds a clear extra; answer-first opening; clean H1→H2→H3 outline; unique title and custom description | Results table done; answer-first opening; clean outline; title and description checked | Query chosen without checking results, or opening still story-first, or heading levels skipped | Post not optimised |
-| **Internal links and URLs** | ≥3 links in and ≥2 out, all with descriptive anchors; post linked from Start Here (if it fits); slug clean, any change tested with a 301; no links to redirects or 404s | ≥3 in and ≥2 out with descriptive anchors; slug checked | Fewer links, or generic anchors ("click here") | No internal links added |
+| **Internal links and URLs** | ≥3 links in (posts or pages) and ≥2 out, all with descriptive anchors; post linked from Start Here (if it fits); slug clean, any change tested with a 301; no links to redirects or 404s | ≥3 in and ≥2 out with descriptive anchors; slug checked | Fewer links, or generic anchors ("click here") | No internal links added |
 | **Schema and validation** | Person schema has real name, bio, About page and profiles; byline visible; both tools run with results recorded; errors fixed at the source; no FAQ/How-to or hand-pasted JSON-LD | Person schema fixed; both tools run, no errors | One tool only, or "admin"/username still the author, or errors left | No validation |
 | **Search Console, Bing and drills** | Live: both verified, sitemap Success, post inspected, Pages reasons sorted correctly. Local: complete 6-step launch-day card. Both drills done with evidence and correct "why" sentences | Live verification or a complete launch-day card; both drills done | Card incomplete, sitemap not submitted, or one drill only | Nothing done |
 
