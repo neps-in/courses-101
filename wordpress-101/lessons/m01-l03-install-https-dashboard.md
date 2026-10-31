@@ -106,7 +106,7 @@ Log in at `/wp-admin/` and find each item. Tick it off and write down the menu p
 | 3 | Every image you've uploaded | **Media → Library** |
 | 4 | Where you change your site's design | **Appearance → Editor** (block themes) or **Themes** |
 | 5 | Where fonts are managed | **Appearance → Fonts** |
-| 6 | Installed plugins, and how to add one | **Plugins → Installed Plugins / Add New Plugin** |
+| 6 | Installed plugins, and how to add one | **Plugins → Installed Plugins / Add Plugin** |
 | 7 | Your own profile and password | **Users → Profile** |
 | 8 | Export your content (from M01.L01) and Site Health | **Tools → Export**, **Tools → Site Health** |
 | 9 | Site title, timezone and addresses | **Settings → General** |

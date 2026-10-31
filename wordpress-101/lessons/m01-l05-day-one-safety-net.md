@@ -70,7 +70,7 @@ flowchart TD
 Work on your **Local** practice site. On a live site, do exactly the same steps.
 
 **Part A: off-site backups with UpdraftPlus (12 min)**
-1. **Plugins → Add New Plugin**, search **UpdraftPlus**, check the listing (recently updated, tested with your WordPress version, many active installs), then **Install Now → Activate**.
+1. **Plugins → Add Plugin**, search **UpdraftPlus**, check the listing (recently updated, tested with your WordPress version, many active installs), then **Install Now → Activate**.
    **Expected:** a new **Settings → UpdraftPlus Backups** screen.
 2. Open **Settings → UpdraftPlus Backups → Settings**.
    - **Files backup schedule:** Weekly, retain **4** backups.
@@ -90,7 +90,7 @@ Work on your **Local** practice site. On a live site, do exactly the same steps.
 **Part B: password manager + 2FA (8 min)**
 1. In your password manager, generate a new **20+ character** password for this site's admin account. Go to **Users → Profile**, set it under **Account Management → Set New Password**, then **Update Profile**.
    **Expected:** "Profile updated." Log out and back in with the saved password.
-2. **Plugins → Add New Plugin**, search **Two Factor** (by WordPress.org contributors), **Install → Activate**.
+2. **Plugins → Add Plugin**, search **Two Factor** (by WordPress.org contributors), **Install → Activate**.
 3. Go to **Users → Profile** and find the **Two-Factor Options** section.
    - Enable **Authenticator app (TOTP)**. Scan the QR code with an authenticator app (e.g. Google Authenticator, Microsoft Authenticator, or your password manager's built-in one), and type the 6-digit code to confirm.
    - Enable **Backup verification codes** and **generate** them. Save them in your password manager.

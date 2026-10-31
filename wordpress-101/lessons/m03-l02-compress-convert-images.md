@@ -25,7 +25,7 @@ Kofi's travel posts each had 15 phone photos. Even after WordPress made smaller 
 **Precise definitions:**
 - **Lossy compression:** shrinks a file by discarding some detail. The **quality** setting (0–100) controls how much. JPEG, WebP and AVIF can all be lossy.
 - **Lossless compression:** shrinks a file without changing a single pixel. PNG is lossless; WebP and AVIF have lossless modes too.
-- **Quality setting:** WordPress uses quality **82** for the JPEG copies it makes and **86** for WebP copies. It doesn't re-compress your original upload.
+- **Quality setting:** WordPress uses quality **82** for the JPEG copies it makes (including the `-scaled` copy of a huge photo) and **86** for WebP copies. The original file you uploaded is stored as-is, so whatever you upload stays on the server at that size.
 - **WebP:** a modern format supported by all current major browsers. MDN calls it "an excellent choice" for photos and graphics.
 - **AVIF:** a newer format with even better compression. It's supported in current Chrome, Edge, Firefox and Safari, but MDN still advises a **fallback** for older browsers.
 - **Fallback image:** a JPEG or PNG version kept alongside a WebP/AVIF file, for browsers or tools that can't read the modern format.
@@ -76,10 +76,10 @@ You need the large phone photo from M03.L01 (or any photo 3000+ px wide), a brow
 **Part B: compress three ways with Squoosh (10 min)**
 1. Open **https://squoosh.app** (free, by Google Chrome Labs; the image is processed in your browser, not uploaded). Drag in your photo.
 2. In the right-hand panel, open **Resize**, set **Width** to **1600** (keep **Maintain aspect ratio** on).
-3. Version 1: under **Compress**, choose **MozJPEG**, quality **75**. Use the slider in the middle of the image and zoom to **100%** to compare with the original. Note the file size shown, then **download**.
+3. Version 1: under **Compress**, choose **MozJPEG**, quality **75**. (Squoosh's labels can change; look for the format menu and the **Quality** slider.) Use the slider in the middle of the image and zoom to **100%** to compare with the original. Note the file size shown, then **download**.
 4. Version 2: change to **WebP**, quality **75**. Compare, note the size, download.
 5. Version 3: change to **AVIF**, quality **55** (AVIF numbers aren't comparable with JPEG's). Compare, note the size, download.
-   > 🖼️ **Image prompt:** Screenshot of squoosh.app comparing a food photo: original on the left, WebP at quality 75 on the right, the split slider in the middle, Resize set to width 1600, and the file size readouts at the bottom (e.g. "4.8 MB" vs "182 kB, 96% smaller"). Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > 🖼️ **Image prompt:** Screenshot of squoosh.app comparing a food photo: original on the left, WebP at quality 75 on the right, the split slider in the middle, Resize set to width 1600, and the file size readouts at the bottom of each side (original vs compressed, with the percentage saved). Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Squoosh comparing an original photo with a WebP version, showing a file 96% smaller with no visible difference.
 6. Fill in this table:
 
@@ -96,12 +96,12 @@ You need the large phone photo from M03.L01 (or any photo 3000+ px wide), a brow
 **Part C: set up one image plugin (6 min)**
 Pick **one** route. Never run two image-optimisation plugins at once.
 - **Route 1, Modern Image Formats** (free, by the WordPress Performance Team):
-  1. **Plugins → Add New Plugin**, search **Modern Image Formats**, check the listing (author WordPress Performance Team, tested with your WordPress version, recently updated), then **Install Now → Activate**.
+  1. **Plugins → Add Plugin**, search **Modern Image Formats**, check the listing (author WordPress Performance Team, tested with your WordPress version, recently updated), then **Install Now → Activate**.
   2. Go to **Settings → Media** and find the plugin's options.
      **Expected:** an output-format choice (AVIF or WebP, if your server supports both) and an **Output fallback images** checkbox.
   3. Choose **WebP** for the widest compatibility (or AVIF if Part A listed it and you want the smallest files). Tick **Output fallback images** if you want JPEG copies kept too, e.g. for email newsletters that pull your images. **Save Changes**.
   4. Upload your **Version 1** JPEG from Part B. In your uploads folder, look at the new files.
-     **Expected:** your JPEG original plus **WebP** (or AVIF) copies for each size (and JPEG copies too if you ticked the fallback option). The plugin only affects **new** uploads, and skips a conversion if the modern file would be larger.
+     **Expected:** a new folder listing with your JPEG original plus **WebP** (or AVIF) copies for each size (and JPEG copies too if you ticked the fallback option). The plugin only affects **new** uploads, and skips a conversion if the modern file would be larger.
 - **Route 2, your host does it:** some managed hosts and CDNs convert and compress images automatically. Check your host's documentation for "WebP", "image optimisation" or "Polish". If it's on, **don't** add a plugin; just compress before upload.
 - **Route 3, a full optimiser** (ShortPixel, EWWW Image Optimizer, Imagify): these also compress your originals and existing images, often with a free monthly quota and paid plans. Vet them with the M06.L01 checklist before choosing.
 
