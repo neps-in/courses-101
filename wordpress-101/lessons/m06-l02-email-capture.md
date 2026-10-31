@@ -22,7 +22,7 @@ Ana had 20,000 monthly visitors from search and social, and almost no way to rea
 **Three ways to connect them:**
 | Method | How | Good when | Watch out |
 |---|---|---|---|
-| **Provider's plugin or block** | Install the official plugin, connect with an API key, add its block | Your ESP has a well-maintained plugin (score it, M06.L01) | One more plugin to keep updated |
+| **Provider's plugin or block** | Install the official plugin, connect your account (sign-in or API key, depending on the provider), add its block | Your ESP has a well-maintained plugin (score it, M06.L01) | One more plugin to keep updated |
 | **An integration you already have** | e.g. **Fluent Forms** (M04.L04) → free **Mailchimp** integration | You already run a form plugin your ESP works with | Check the integration is in the free version |
 | **Embed code** | Copy the ESP's HTML form into a **Custom HTML** block | No plugin wanted; any ESP works | Styling may not match your theme; test on mobile |
 
@@ -75,7 +75,7 @@ Pick **one** path:
 
 **Path 1: Official plugin (Kit shown; others are similar)**
 1. Score the plugin first (M06.L01). Then **Plugins → Add Plugin** → search **Kit** (formerly ConvertKit) → **Install Now** → **Activate**.
-2. Follow its setup screen to connect your Kit account (sign in or paste your API key from your Kit account settings).
+2. Go to **Settings → Kit** (or follow the **Setup Wizard**) and click **Connect**. You sign in to Kit in your browser and approve access; there's no API key to copy.
 3. In Kit, create a simple **inline form** (email field + button) if you don't have one.
    **Expected:** the plugin shows your Kit forms in a dropdown; the editor now has a **Kit Form** block.
    *Other providers' blocks:* MailPoet → **MailPoet Subscription Form** (forms are built in MailPoet inside WordPress); MC4WP → **Mailchimp for WordPress Form**; Jetpack → **Subscribe** (needs a WordPress.com connection, so it won't work on Local).
@@ -88,7 +88,7 @@ Pick **one** path:
 
 **Path 3: Embed code**
 1. In your provider, create an embedded (inline) form and copy its **HTML embed code**.
-2. In WordPress you'll paste it into a **Custom HTML** block (Part B). Only administrators can save unfiltered HTML on a normal site, which is fine for you.
+2. In WordPress you'll paste it into a **Custom HTML** block (Part B). On a normal single site, only **Administrators** and **Editors** can save raw HTML like this; Authors and Contributors get it stripped.
    **Expected:** in the editor, **Preview** in the Custom HTML block shows the form.
 
 ### Part B — Put the form in your synced Newsletter CTA (~6 min)
@@ -148,9 +148,9 @@ Pick **one** path:
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Form submits but no subscriber appears | Wrong list/audience/form selected, API key wrong, or double opt-in waiting for confirmation | Check the plugin/integration settings and the provider's "unconfirmed" list; confirm the test email |
+| Form submits but no subscriber appears | Wrong list/audience/form selected, plugin not connected (or API key wrong), or double opt-in waiting for confirmation | Check the plugin/integration settings and the provider's "unconfirmed" list; confirm the test email |
 | Jetpack Subscribe block doesn't work on Local | Jetpack needs a WordPress.com connection (offline on Local) | Test on a live site, or use another route on Local |
-| Custom HTML form shows as code or is stripped | Your account can't post unfiltered HTML, or the code was pasted into a Paragraph block | Use the **Custom HTML** block as an administrator; or use the provider's plugin |
+| Custom HTML form shows as code or is stripped | Your account can't post unfiltered HTML, or the code was pasted into a Paragraph block | Use the **Custom HTML** block as an Administrator or Editor; or use the provider's plugin |
 | Form looks broken on mobile | Embed code with fixed widths | Use the provider's block or plugin, or edit the embed's style in your provider |
 | CTA change didn't appear everywhere | Some copies aren't the synced pattern (detached) | Replace them with the synced **Newsletter CTA** |
 | Spam sign-ups | Bots | Turn on the provider's/form's spam protection (honeypot, Turnstile/reCAPTCHA) and double opt-in (M06.L03) |

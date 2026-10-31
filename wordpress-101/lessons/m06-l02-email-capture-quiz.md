@@ -24,9 +24,9 @@
 **Hint:** Think back to what "synced" meant in M02.L02.
 
 ### Q3. What does Google's Search Central guidance say about full-page promotional popups?
-- a) They're required for newsletter sites
-- b) Intrusive interstitials can make content hard to understand and may lead to poor search performance; small banners are preferred
-- c) They have no effect on users or search
+- a) Newsletter sites should show one on every page
+- b) They may lead to poor search performance; use small banners instead
+- c) They affect users but never search performance
 - d) They're fine as long as they appear only on mobile
 
 **Answer:** b
