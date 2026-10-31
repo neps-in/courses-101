@@ -40,7 +40,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M03 | L03 | Accessible media: alt text, captions, transcripts and file names | wordpress-101/lessons/m03-l03-accessible-media.md | reviewed | 2026-10-31 |
 | M03 | L04 | Featured images and social share images (Open Graph) | wordpress-101/lessons/m03-l04-featured-social-images.md | reviewed | 2026-10-31 |
 | M03 | L05 | Video and audio: embed vs self-host | wordpress-101/lessons/m03-l05-video-audio-hosting.md | reviewed | 2026-10-31 |
-| M03 | Capstone | M03 capstone | wordpress-101/capstones/m03-capstone.md | draft | 2026-10-31 |
+| M03 | Capstone | M03 capstone | wordpress-101/capstones/m03-capstone.md | reviewed | 2026-10-31 |
 | M04 | L01 | Block themes vs classic themes: choosing a lightweight, maintained theme | wordpress-101/lessons/m04-l01-choose-a-theme.md | todo | — |
 | M04 | L02 | The Site Editor: templates, template parts and global styles | wordpress-101/lessons/m04-l02-site-editor-global-styles.md | todo | — |
 | M04 | L03 | Navigation, header and footer, homepage vs blog index | wordpress-101/lessons/m04-l03-navigation-homepage.md | todo | — |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-10-31: wordpress-101 m03-capstone reviewed: drill (a) expectation corrected per wp_calculate_image_sizes (Full Size → sizes up to 2560 px, browser picks 1536/2048 copy; -scaled isn't in srcset above 2048), HEIC note added; rubric, template, cheat sheet and labels checked against M03 lessons. M03 complete (all reviewed). Next: `/next-lesson` → M04.L01, or upload M03 to neps.in.
 - 2026-10-31: wordpress-101 m03-capstone draft (Media Audit Report brief: baseline → audit 10 images → fix/replace → alt → featured + social → 2 break-it drills (camera upload at Full Size with empty alt; Media Library alt not updating block) → transcript/captions → re-measure; 5×4 rubric for NN #6/#7; 1 flowchart, 1 image prompt) + cheatsheets/m03-media.md. Next: `/review-lesson wordpress-101/capstones/m03-capstone.md`, then `/next-lesson` → M04.L01 (M04 already planned in syllabus.md).
 - 2026-10-31: wordpress-101 m03-l05 reviewed: autoplay claims corrected per Chrome autoplay policy (muted always allowed; with sound allowed after user interaction), LCP/TBT defined inline, "Analyze page load" label confirmed in Lighthouse docs, Q1/Q4 options balanced (correct answer was longest). Next: `/next-lesson` → M03 capstone.
 - 2026-10-31: wordpress-101 m03-l05 draft (lesson + 7-question quiz incl. 1 review from M03.L04; 6 glossary terms; media-home decision flowchart; 1 image prompt, no images). Checked in WP 7.0: iframe lazy-loading (5.7) with wp_omit_loading_attr_threshold 3, Video block preload default metadata + settings labels incl. Set poster image, no core facade; Lighthouse facades doc (lite-youtube-embed); Apple feed requirements (enclosure, byte-range). Hands-on uses DevTools Lighthouse (works on Local). Next: `/next-lesson` → M03 capstone.

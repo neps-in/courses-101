@@ -60,9 +60,9 @@ For every image with a problem:
 - For **one** post, make a **1200 × 630** social image from your template (JPEG or PNG, text inside the safe margin), uploaded with alt text and ready for your SEO plugin in M05.
 
 ### 5. Break it and fix it
-**a) The camera upload.** Take a photo straight from your phone (no resizing), upload it to one post as a content-width **Image** block, set **Resolution** to **Full Size**, and leave **Alternative text** empty. Save, then run the Network check again.
+**a) The camera upload.** Take a photo straight from your phone (no resizing; iPhone HEIC photos are converted to JPEG on upload if your server supports it, otherwise export as JPEG first), upload it to one post as a content-width **Image** block, set **Resolution** to **Full Size**, and leave **Alternative text** empty. Save, then run the Network check again.
 1. Record the transferred size and the image's file name in the Network tab.
-   **Expected:** a large jump in transferred data, and a `-scaled` file of up to 2560 px being downloaded for a ~645 px column.
+   **Expected:** a noticeable jump in transferred data. With **Full Size**, WordPress tells the browser the image may display up to 2560 px wide (`sizes="(max-width: 2560px) 100vw, 2560px"`), so a desktop browser usually downloads the **1536 or 2048 px** copy for a ~645 px column. Your 12 MB original also now sits on the server.
 2. In DevTools, right-click the image → **Inspect**.
    **Expected:** `alt=""`: a screen reader would skip a photo that matters to the post.
 3. Fix it: set **Resolution** back to **Large**, add useful alt text, and ideally replace it with a resized, compressed export. Re-check.
