@@ -22,7 +22,7 @@ Leo grabbed a photo from Google Images for a 2023 post. Two years later an agenc
 |---|---|---|---|
 | **Public domain** (incl. **CC0**, Public Domain Mark) | No copyright, or the owner waived it | None legally (crediting is still polite) | Openverse (WordPress's built-in search), museum open-access collections, many government works (US federal) |
 | **Creative Commons** (CC BY, BY-SA, BY-NC, BY-ND…) | Free licence with conditions | **BY:** credit the creator. **SA:** share your changes under the same licence. **NC:** no commercial use. **ND:** no changes (no cropping with text overlays) | Openverse (full search), Wikimedia Commons, Flickr |
-| **Free-to-use platform licences** (Unsplash, Pexels) | The platform's own licence, **not** CC | Free for commercial use, no credit needed, **but** e.g. Unsplash bans selling unaltered copies and building a competing image service; logos, trademarks, recognisable people and artworks in the photo aren't covered by the licence | Unsplash, Pexels |
+| **Free-to-use platform licences** (Unsplash, Pexels) | The platform's own licence, **not** CC | Free for commercial use, no credit needed, **but** e.g. Unsplash bans selling unaltered copies and building a competing image service; logos, trademarks, recognisable people and artworks in the photo aren't covered by the licence. Pexels has similar terms; read each platform's licence page, as they change | Unsplash, Pexels |
 | **Royalty-free / rights-managed stock** | You **pay** once (royalty-free) or per use (rights-managed) | The licence terms: number of uses, print limits, "editorial use only" | Adobe Stock, Shutterstock, Getty |
 
 **"Royalty-free" doesn't mean free:** it means you pay once and don't pay royalties per use.
@@ -42,7 +42,7 @@ Leo grabbed a photo from Google Images for a 2023 post. Two years later an agenc
 1. **Can you use it?** Check the AI tool's terms (commercial use, ownership of output). Don't prompt for a living artist's style or a brand's characters and logos.
 2. **Do you own it?** In the US, the Copyright Office (2025) and the courts (*Thaler v. Perlmutter*; the Supreme Court declined review in March 2026) say **purely AI-generated material isn't protected by copyright**. Your human contribution can be: your own writing, edits, selection and arrangement. So others may be able to reuse a purely AI image of yours. UK law has a "computer-generated works" rule (CDPA s9(3)) that is under review.
 3. **Do you have to say so?**
-   - **EU AI Act Art. 50** (from 2 August 2026): **deepfakes** (realistic AI images, audio or video of real people, places or events that could be mistaken for real) must be labelled. AI-generated **text published to inform the public on matters of public interest** must be disclosed, **unless** a human reviewed it and someone takes editorial responsibility.
+   - **EU AI Act Art. 50** (from 2 August 2026) applies to people using AI professionally, which includes a monetised blog. **Deepfakes** (realistic AI images, audio or video of real people, places or events that could be mistaken for real) must be labelled; for evidently artistic, satirical or fictional work, a lighter disclosure that doesn't spoil the work is enough. AI-generated **text published to inform the public on matters of public interest** must be disclosed, **unless** a human reviewed it and someone takes editorial responsibility.
    - **Google:** using AI isn't against its guidelines; **scaled, low-value AI pages** made to rank are spam. Google suggests explaining **how** content was made where readers would reasonably wonder, and warns against **fake personas** (AI headshots, invented credentials).
    - **Readers:** trust. Say what you use AI for, and that a human checks everything.
 
@@ -80,7 +80,7 @@ flowchart TD
 1. In any post, open the **+** inserter → **Media** tab → **Openverse** → **Search Openverse** for your topic (e.g. *sourdough*).
    **Expected:** a grid of images. WordPress only searches **public domain and CC0** images here (checked in WordPress 7.1.4 core), so they're free for commercial use and edits.
 2. Click one to insert it.
-   **Expected:** the Image block gets an automatic **caption** with title, creator and licence, e.g. *"Sourdough" by Jane Doe/ CC0 1.0*. Keep it. CC0 doesn't require credit, but it's honest and records the source. Write alt text (M03.L03).
+   **Expected:** WordPress uploads it to your Media Library (snackbar: *"Image uploaded and inserted."*), and the Image block gets an automatic **caption** with title, creator and licence, e.g. *"Sourdough" by Jane Doe/ CC0 1.0*. Keep it. CC0 doesn't require credit, but it's honest and records the source. Write alt text (M03.L03).
 
    > 🖼️ **Image prompt:** Screenshot of the WordPress 7.1 block inserter, Media tab, Openverse category with a search for "sourdough" showing a grid of results, 1280 × 800. Highlight the Openverse category label with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Block inserter Media tab with Openverse selected and a grid of sourdough image results.

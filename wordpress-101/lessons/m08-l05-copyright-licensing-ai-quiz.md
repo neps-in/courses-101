@@ -44,10 +44,10 @@
 **Hint:** What would prove he had permission?
 
 ### Q5. Mei made a realistic AI image of a crowded street market for a travel post, and most of her readers are in the EU. What should she do?
-- a) Nothing, as long as she is the one who wrote the prompt
-- b) Label it clearly as AI-generated in the caption, so it isn't mistaken for a photo
+- a) Nothing, as long as she was the one who wrote the prompt
+- b) Label it as AI-generated in the caption so it isn't taken for a photo
 - c) Present it as her own photo, since nobody can own AI images
-- d) Remove the caption so readers don't notice it was AI-made
+- d) Leave out any caption so the image blends in with her photos
 
 **Answer:** b
 **Explanation:** Realistic AI images of places or events that could be mistaken for real are "deepfakes" under EU AI Act Art. 50, which must be labelled (from August 2026). The lesson labels every AI image anyway, for reader trust. Passing it off as a photo is misleading.
