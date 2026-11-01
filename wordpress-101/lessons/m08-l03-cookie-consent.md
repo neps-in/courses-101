@@ -2,9 +2,9 @@
 > After this lesson you know whether your site needs a cookie banner, you've listed every cookie it sets, and you've either set up one consent plugin properly or written down why you don't need one.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** M08.L01 (your analytics choice), M06.L03 (privacy policy), M04/M06 (embeds, forms, affiliate links)
-**Verified against:** WordPress 7.1.4 (core code: comment cookie opt-in), Complianz 7.5.6 (plugin code: **Wizard** steps, **Website Scan**, banner buttons, Site Kit integration), CookieYes 3.5.8 and WP Consent API 2.1.0 (WordPress.org listings), EU ePrivacy Directive Art. 5(3), EDPB Guidelines 2/2023 and Cookie Banner Taskforce report, UK ICO storage and access guidance, California AG CCPA page, all on 2026-11-01
+**Verified against:** WordPress 7.1.4 (core code: comment cookie opt-in), Complianz 7.5.6 (plugin code: **Wizard** steps, **Website Scan**, banner buttons, Site Kit integration), CookieYes 3.5.8 and WP Consent API 2.1.0 (WordPress.org listings), EU ePrivacy Directive Art. 5(3), EDPB Guidelines 2/2023 and Cookie Banner Taskforce report, UK ICO storage and access guidance, California AG CCPA page (applicability thresholds), Council of the EU Digital Omnibus press release, all on 2026-11-01
 
-> ⚠️ **Freshness flag:** cookie rules are changing. The EU's **Digital Omnibus** proposals (2025–2026) would add some consent-free purposes, possibly including first-party aggregated audience measurement. As of 2026-11-01 these are **still being negotiated, not law**. The UK added a narrow statistics exception in the Data (Use and Access) Act 2025. Re-check both before relying on an exception. **This is not legal advice.** For a business with real risk, ask a privacy professional.
+> ⚠️ **Freshness flag:** cookie rules are changing. The EU's **Digital Omnibus** would add some consent-free purposes, such as audience measurement and device security. The Council agreed its negotiating position on 2026-10-21; talks with the Parliament haven't started yet. As of 2026-11-01 this is **a proposal, not law**, and the final wording may differ. The UK added a narrow statistics exception in the Data (Use and Access) Act 2025. Re-check both before relying on an exception. **This is not legal advice.** For a business with real risk, ask a privacy professional.
 
 ## Learning objectives
 1. **Explain** when GDPR/ePrivacy (and similar laws) require cookie consent.
@@ -28,7 +28,7 @@ The UK also has a narrow exception for some statistics cookies (M08.L01). Everyt
 - **Specific and informed:** grouped by purpose (statistics, marketing), with a cookie policy listing each cookie.
 - **Withdrawable:** a "Manage consent" link stays available on every page.
 
-**Elsewhere (short version):** in the **US** there's generally no prior-consent rule for cookies. California's CCPA instead gives visitors the right to **opt out of the "sale" or "sharing"** of their data, which covers ad pixels used for cross-site advertising. If that applies to you, you need a "Do Not Sell or Share" link and must honour **Global Privacy Control** browser signals. Many other US states have similar laws. Canada, Brazil and others have their own rules. If your readers are mostly in the EU or UK, set up for those rules. They're the strictest, and one setup covers most visitors.
+**Elsewhere (short version):** in the **US** there's generally no prior-consent rule for cookies. California's CCPA instead gives visitors the right to **opt out of the "sale" or "sharing"** of their data, which covers ad pixels used for cross-site advertising. It only applies to for-profit businesses above a size threshold: over $25 million revenue (adjusted for inflation), buying, selling or sharing data on **100,000+** California residents or households, or earning half their revenue from selling data. Most small creator sites fall below it. If you're covered, you need a "Do Not Sell or Share" link and must honour **Global Privacy Control** browser signals. Many other US states have similar laws with their own thresholds. Canada, Brazil and others have their own rules. If your readers are mostly in the EU or UK, set up for those rules. They're the strictest, and one setup covers most visitors.
 
 **Analogy:** strictly necessary cookies are the shop's door handle and till: nobody asks permission for them. Everything else is someone with a clipboard at the door. They must ask first, accept "no" just as easily, and leave once you've said no.
 
@@ -43,7 +43,8 @@ The UK also has a narrow exception for some statistics cookies (M08.L01). Everyt
 | YouTube / Vimeo embeds | Yes, when loaded. YouTube's **privacy-enhanced mode** (`youtube-nocookie.com`) reduces personalisation but still uses device storage | **Usually yes.** Use click-to-load placeholders |
 | Ad networks, Meta/TikTok pixels, affiliate scripts that drop cookies on your page | Yes | **Yes** |
 | Plain affiliate *links* (cookie set on the merchant's site after the click) | Not on your site | Not on your site; disclose them (M08.L04) |
-| Google Fonts loaded from Google, reCAPTCHA, maps | Often send data or set storage | Often; host fonts locally, prefer consent-friendly spam protection (M06.L04) |
+| Google Fonts loaded from Google's servers | No cookies, but sends each visitor's IP address to Google (a GDPR issue, not a cookie one; a German court fined a site for it in 2022) | Host fonts locally instead of asking for consent |
+| reCAPTCHA, Google Maps embeds | Yes, usually | **Usually yes.** Prefer consent-friendly spam protection (M06.L04) and click-to-load maps |
 
 ## How it works
 
@@ -110,7 +111,7 @@ flowchart TD
 11. **Test both choices** (new private window each time, DevTools open):
     - Click **Deny**, reload. **Expected:** no `_ga` or other non-necessary cookies; YouTube shows a placeholder.
     - New window, click **Accept**, reload. **Expected:** `_ga` appears and embeds load.
-    - Find the **Manage consent** link (Complianz adds it to the Cookie Policy; add it to your footer too) and change your choice. **Expected:** the banner reopens.
+    - Open your **Cookie Policy** page and use its consent section (Complianz inserts it with the `[cmplz-manage-consent]` shortcode; you can also place that shortcode in a footer widget) to change your choice. **Expected:** your choice updates and non-necessary cookies follow it.
 
 ### Part C — Record it (~3 min)
 12. **Plugin log:** add **Cookie consent (P11)**, or *"P11 not needed: see cookie rationale"*.
@@ -187,4 +188,4 @@ In 3 sentences, explain to a friend why a banner that only says "OK" isn't enoug
 - France CNIL — [Use analytics on your websites and applications](https://www.cnil.fr/en/sheet-ndeg16-use-analytics-your-websites-and-applications)
 - US — [California Attorney General: CCPA](https://oag.ca.gov/privacy/ccpa) (opt-out of sale/sharing, Global Privacy Control)
 - Tools — [Complianz](https://wordpress.org/plugins/complianz-gdpr/) · [CookieYes](https://wordpress.org/plugins/cookie-law-info/) · [WP Consent API](https://wordpress.org/plugins/wp-consent-api/) · [Chrome DevTools: view and edit cookies](https://developer.chrome.com/docs/devtools/application/cookies) · [YouTube: embed videos (privacy-enhanced mode)](https://support.google.com/youtube/answer/171780)
-- Pending EU change (secondary summary, check the Council/Parliament text): [Osborne Clarke on the Digital Omnibus cookie rules](https://www.osborneclarke.com/insights/digital-omnibus-reshapes-eu-cookie-rules-leaves-banner-fatigue-largely-intact)
+- Pending EU change — [Council press release: position on the digital rulebook (2026-10-21)](https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/digital-rulebook-council-agrees-position-to-simplify-data-protection-privacy-and-cyber-reporting-rules/) · [Council mandate text ST 14756/26](https://data.consilium.europa.eu/doc/document/ST-14756-2026-INIT/en/pdf) · plain-English summary: [Osborne Clarke](https://www.osborneclarke.com/insights/digital-omnibus-reshapes-eu-cookie-rules-leaves-banner-fatigue-largely-intact)

@@ -24,10 +24,10 @@
 **Hint:** Is saying no as easy as saying yes?
 
 ### Q3. Why does the lesson tell you to audit cookies in a **private window, logged out, before clicking anything**?
-- a) DevTools only shows cookies in private windows
-- b) That's what a new visitor's browser stores, without your login cookies or past choices
+- a) DevTools can only list cookies when the window is private
+- b) It shows what a new visitor gets, without your login or past choices
 - c) Logged-out visitors never receive any third-party cookies at all
-- d) WordPress deletes all cookies whenever an admin is logged in
+- d) WordPress hides every cookie from DevTools while an admin is logged in
 
 **Answer:** b
 **Explanation:** You want to see what a first-time visitor gets before making a choice. Logged-in sessions add `wordpress_logged_in_…` cookies and may already hold your earlier consent choice, which hides the problem.
@@ -35,32 +35,32 @@
 
 ### Q4. Ravi's site uses Independent Analytics, no ads and no embeds. His logged-out DevTools audit shows no cookies or storage at all. What should he do?
 - a) Install a consent banner anyway, just to be on the safe side
-- b) Write and file a dated no-consent rationale and summarise it in his privacy policy
-- c) Switch to GA4 so his consent banner has something to manage
-- d) Remove his privacy policy, since a cookieless site doesn't need one
+- b) File a dated no-consent rationale and mention it in his privacy policy
+- c) Switch to GA4 so that a consent banner has something to manage
+- d) Delete his privacy policy, since cookieless sites don't need one
 
 **Answer:** b
 **Explanation:** With only necessary cookies (or none), no consent banner is needed. A written rationale records what he checked and when, and he re-checks quarterly. He still needs a privacy policy for analytics, comments and email sign-ups.
 **Hint:** Document the evidence, don't add clutter.
 
 ### Q5. Emma set up Complianz. She clicks **Deny**, reloads, and DevTools still shows a `_ga` cookie. What's the most likely cause?
-- a) `_ga` is strictly necessary, so Complianz is right to leave it
-- b) GA4 is also being inserted outside the consent plugin, e.g. by her theme or another plugin
-- c) Deny only takes effect after 24 hours have passed
-- d) DevTools always shows cookies from earlier visits to other sites
+- a) `_ga` is strictly necessary, so Complianz is right to leave it alone
+- b) GA4 is also added outside the consent plugin, e.g. by her theme
+- c) Clicking Deny only takes effect once 24 hours have passed
+- d) DevTools lists cookies left over from her visits to other sites
 
 **Answer:** b
 **Explanation:** If GA4 is added in a way the consent plugin doesn't control (theme header code, a second analytics plugin), it runs regardless of the choice. Remove duplicates, let one plugin insert GA4, and test Deny again in a new private window.
 **Hint:** Who else is adding the GA4 script?
 
-### Q6. Tom's readers are mostly in the US. He runs a Meta pixel for ad retargeting. Which requirement is he most likely to face under California's CCPA?
-- a) Prior opt-in consent before any cookie, exactly as under EU law
-- b) An opt-out of "sale or sharing", such as a "Do Not Sell or Share" link, honouring Global Privacy Control
-- c) No requirements at all, because US law never covers cookies
-- d) A ban on all advertising pixels on sites with California readers
+### Q6. Tom runs a large US recipe site. His Meta retargeting pixel shares data on over 100,000 California visitors a year, so the CCPA covers him. What does it most likely require for that pixel?
+- a) Opt-in consent before any cookie is set, exactly as under EU law
+- b) A "Do Not Sell or Share" opt-out that also honours Global Privacy Control
+- c) Nothing, because US privacy law never applies to cookies or pixels
+- d) Removing every advertising pixel for visitors located in California
 
 **Answer:** b
-**Explanation:** The US generally has no prior-consent rule for cookies, but CCPA gives Californians the right to opt out of their data being sold or shared for cross-context advertising, and businesses must honour GPC signals. Other states have similar laws. If he also has EU/UK readers, their opt-in rules apply to them.
+**Explanation:** The US generally has no prior-consent rule for cookies, but CCPA gives Californians the right to opt out of their data being sold or shared for cross-context advertising, and covered businesses must honour GPC signals. It only applies above its thresholds (Tom's 100,000+ residents qualifies; most small blogs don't). If he also has EU/UK readers, their opt-in rules apply to them.
 **Hint:** Opt-in vs opt-out.
 
 ### Q7. Spot the error in Lucy's consent setup:
