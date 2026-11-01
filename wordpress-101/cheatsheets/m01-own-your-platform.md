@@ -1,11 +1,11 @@
 # Module 1 cheat sheet — Own your platform
-*WordPress 101 for Content Creators · checked against WordPress 7.1.4 on 2026-10-29*
+*WordPress 101 for Content Creators · checked against WordPress 7.1 on 2026-10-29; re-checked 2026-11-01*
 
 ## Choose (M01.L01–L02)
 - **Ownership first:** your own domain + an email list you can export. Followers on platforms aren't yours.
 - **WordPress.org** = you host and control it · **WordPress.com** = same software, they run it · **Substack/Ghost** = newsletter-first · **Medium** = distribution, not a home.
 - **Domain:** short, sayable, no hyphens or numbers, auto-renew on. Compare **renewal** prices. New registrations and transfers are usually locked for **60 days** (ICANN has approved 30; check).
-- **Host checklist:** PHP **8.3+** · MySQL 8.0+/MariaDB 10.6+ · free auto-renewing SSL · daily **off-site** backups · staging · server caching · WordPress-savvy support · clear **renewal** price · full backup download.
+- **Host checklist:** PHP **8.3+** · MySQL 8.0+/MariaDB 10.11+ · free auto-renewing SSL · daily **off-site** backups · staging · server caching · WordPress-savvy support · clear **renewal** price · full backup download.
 - **Compare 3-year cost** = first year + 2 × renewal.
 
 ## DNS in one line each (M01.L02)
@@ -44,5 +44,5 @@
 | Posts show "Not Found" after permalinks change | Settings → Permalinks → Save Changes again |
 | Scheduled posts at the wrong hour | Timezone → choose a city |
 | Site not in Google after launch | Untick "Discourage search engines" |
-| Locked out of 2FA | Use a saved backup code; otherwise host disables the Two Factor plugin |
+| Locked out of 2FA | **Use a recovery code** (saved backup code); otherwise host disables the Two Factor plugin |
 | Backups missing from cloud | Re-authenticate remote storage, run Backup Now, check the folder |

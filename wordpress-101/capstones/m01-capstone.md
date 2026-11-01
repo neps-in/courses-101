@@ -3,7 +3,7 @@
 
 **Time:** ~60–90 min · **Level:** beginner · **Prereqs:** M01.L01–M01.L05
 **Non-negotiables assessed:** #1 Own your platform · #2 Permalinks before the first post · #3 Day-one safety net
-**Verified against:** WordPress 7.1.4, Local, UpdraftPlus and Two Factor on 2026-10-29
+**Verified against:** WordPress 7.1, Local, UpdraftPlus 1.26.14 and Two Factor 0.17.0 on 2026-10-29; labels re-checked 2026-11-01
 
 ## The brief
 You're about to start publishing. Before you do, a friend who's a web developer offers to check your setup, but only if you send a one-page report showing what you chose and proof it works. Build the site to that standard and write the report.
@@ -58,10 +58,10 @@ flowchart TD
 
 ### 5. Break it and fix it: the lockout drill
 Pretend you've lost your phone.
-1. Log out. At the 2FA prompt, choose to use a **backup code** instead of your app, and log in with one.
+1. Log out. At the 2FA prompt, click **Use a recovery code** instead of your app, and log in with one of your saved codes.
    **Expected:** you're in. That code is now used up.
    > 🖼️ **Image prompt:** Screenshot of the WordPress login 2FA prompt (Two Factor plugin) asking for an authentication code, with the "Use a recovery code" link outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
-   > **Alt text:** WordPress two-factor login prompt with the option to use a backup code highlighted.
+   > **Alt text:** WordPress two-factor login prompt with the Use a recovery code link highlighted.
 2. Go to **Users → Profile → Two-Factor Options** and click **Generate new recovery codes**. Replace the old set in your password manager.
    **Expected:** a fresh set of codes; the old ones no longer work.
 3. In one sentence, write what would have happened without saved backup codes, and how you'd recover (from the M01.L05 troubleshooting table).
