@@ -9,7 +9,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | Module | Level | Lessons | Non-negotiables taught | Planned |
 |--------|-------|---------|------------------------|---------|
 | M01 How the Web Works | L1 | 5 | #1 | ✅ |
-| M02 HTML: The Structure of Content | L1 | 5 | #2, #3, #8 | — |
+| M02 HTML: The Structure of Content | L1 | 5 | #2, #3, #8 | ✅ |
 | M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | — |
 | M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | — |
 | M05 JavaScript for Marketers | L2 | 4 | #3 (reinforced) | — |
@@ -82,3 +82,71 @@ flowchart LR
 ### M01 Capstone — "How this site works"
 - **File:** `capstones/m01-capstone.md` + `cheatsheets/m01-how-the-web-works.md`
 - One-page breakdown of a brand site you admire: domain and registrar, DNS host, web host/CDN, CMS or builder, HTTPS status, redirects, page weight and request count, with screenshots of DevTools evidence. Rubric: accuracy, evidence, clear explanation, decision insight.
+
+---
+
+## M02 — HTML: The Structure of Content (L1)
+
+**Goal:** write clean, meaningful HTML for real marketing content. · NN #2, #3, #8
+**Zero install:** a free browser playground (CodePen; no account needed to try, a free account to save) plus the W3C validator's paste-in checker. Local files arrive in Module 4.
+**Running project:** each lesson adds one block of the learner's launch page; the capstone assembles the full content skeleton.
+
+```mermaid
+flowchart LR
+  %% alt: M02 lesson path: page anatomy, text links and media, semantic structure, lead-capture forms, meta tags, then the capstone skeleton.
+  L1[L01 Anatomy of<br/>an HTML page]:::cream --> L2[L02 Text, links,<br/>images & media]:::sky
+  L2 --> L3[L03 Semantic HTML<br/>& headings]:::sky
+  L2 --> L4[L04 Forms for<br/>lead capture]:::blue
+  L3 --> L4
+  L4 --> L5[L05 Meta tags &<br/>social previews]:::blue
+  L5 --> C[M02 Capstone:<br/>launch-page skeleton]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M02.L01 — Anatomy of an HTML Page
+- **File:** `lessons/m02-l01-html-page-anatomy.md` · **Prereqs:** M01.L01, M01.L05 · **Remediate to:** M01.L05 · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Build** a valid HTML page with `<!DOCTYPE html>`, `html` (with `lang`), `head` (charset, viewport, title) and `body`.
+  2. **Explain** elements, tags, attributes and nesting, and which tags are empty (void) elements.
+  3. **Validate** a page with the W3C Nu HTML Checker and fix the errors it reports.
+- **Hands-on idea:** first pen in CodePen; deliberately break nesting and a missing `lang`, then fix from the validator's messages (break-it-and-fix-it).
+
+### M02.L02 — Text, Links, Images & Media
+- **File:** `lessons/m02-l02-text-links-images-media.md` · **Prereqs:** M02.L01 · **Remediate to:** M02.L01 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Mark up** headings, paragraphs, lists, emphasis and quotes for real marketing copy.
+  2. **Create** links (absolute, relative, anchor, `mailto:`/`tel:`, new tab with safe `rel`) with descriptive link text.
+  3. **Add** images with useful `alt` text, width/height, and embed video safely (`<video>`, YouTube `iframe` with `title`).
+- **Hands-on idea:** mark up Nila Coffee's benefits and testimonial block, then the learner's own hero and benefits.
+
+### M02.L03 — Semantic HTML & Heading Structure
+- **File:** `lessons/m02-l03-semantic-html-headings.md` · **Prereqs:** M02.L02 · **Remediate to:** M02.L02 · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Use** landmarks (`header`, `nav`, `main`, `section`, `article`, `aside`, `footer`) instead of generic `div`s where they fit.
+  2. **Write** one `h1` and a logical H2–H6 outline that matches the page's content, not its font sizes.
+  3. **Check** structure with a heading-outline view and a screen reader's landmark list.
+- **Hands-on idea:** convert a "div soup" landing page to semantic HTML; audit its outline with a free browser extension or the validator's outline view.
+
+### M02.L04 — Forms for Lead Capture
+- **File:** `lessons/m02-l04-lead-capture-forms.md` · **Prereqs:** M02.L02, M02.L03 · **Remediate to:** M02.L02 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Build** a sign-up form with `form`, `label`, the right `input` types, `autocomplete` and a real `button`.
+  2. **Apply** built-in validation (`required`, `type="email"`, `minlength`, `pattern`) and accessible error hints.
+  3. **Decide** which fields to ask for (data minimisation) and add a consent checkbox and privacy-note link.
+- **Hands-on idea:** a newsletter sign-up for the launch page; keyboard-only test (Tab, Enter) and a screen-reader label check. Sending the data comes in M05.L04.
+
+### M02.L05 — Meta Tags & Social Previews
+- **File:** `lessons/m02-l05-meta-tags-social-previews.md` · **Prereqs:** M02.L01 · **Remediate to:** M02.L01 · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Write** a title and meta description that match search intent and fit typical display lengths.
+  2. **Add** Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:type`) and Twitter/X card tags with a correctly sized share image.
+  3. **Test** link previews with free tools (Facebook Sharing Debugger, LinkedIn Post Inspector) and explain why previews cache.
+- **Hands-on idea:** write meta tags for the launch page; inspect a brand's preview tags in DevTools and run them through the preview debuggers.
+
+### M02 Capstone — Launch-page content skeleton
+- **File:** `capstones/m02-capstone.md` + `cheatsheets/m02-html.md`
+- Hand-code the full content skeleton of your launch page (hero, benefits, testimonials, FAQ, sign-up form) with correct semantics and share-ready meta tags, unstyled. Rubric: validity, semantics and headings, accessibility of images and forms, meta completeness, content clarity.

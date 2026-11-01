@@ -87,7 +87,12 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | reviewed | 2026-11-02 |
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | reviewed | 2026-11-02 |
 | M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | reviewed | 2026-11-02 |
-| M02 | — | HTML: The Structure of Content (not yet planned) | — | todo | — |
+| M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | todo | — |
+| M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | todo | — |
+| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | todo | — |
+| M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | todo | — |
+| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | todo | — |
+| M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | todo | — |
 | M03 | — | CSS: Design, Brand & Layout (not yet planned) | — | todo | — |
 | M04 | — | Publish It: Tools, Hosting & Domains (not yet planned) | — | todo | — |
 | M05 | — | JavaScript for Marketers (not yet planned) | — | todo | — |
@@ -96,6 +101,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 planned M02 (5 lessons + capstone) in syllabus.md; CodePen + W3C Nu checker as the zero-install toolset. Loop running; stops after M02 capstone for user review. Next: `/next-lesson` → M02.L01.
 - 2026-11-02: webdev-101 m01-capstone reviewed: triage task C gets an httpforever.com fallback; rubric, typo-domain safety (.example) and running-project checkpoint checked against M01 lessons. Module 1 fully reviewed. Next: `/next-lesson` → plans M02.
 - 2026-11-02: webdev-101 m01-l05 reviewed: Chrome/Edge share DevTools because both are Chromium (not just Blink); device toolbar needs DevTools open (lesson + cheat sheet); Q4/Q5/Q6 rebalanced (correct options were 8–19 chars longest).
 - 2026-11-02: webdev-101 m01-l04 reviewed: fixed troubleshooting tip (view-source: prefix is blocked by the same admin policy as DevTools); Shopify cost wording; Q2/Q5/Q6 rebalanced (correct options were 15–18 chars longest).
