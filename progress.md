@@ -27,7 +27,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L02 | Domains, DNS and creator-friendly hosting | wordpress-101/lessons/m01-l02-domain-dns-hosting.md | reviewed | 2026-11-01 |
 | M01 | L03 | Install WordPress, turn on HTTPS and tour the dashboard | wordpress-101/lessons/m01-l03-install-https-dashboard.md | reviewed | 2026-11-01 |
 | M01 | L04 | First-day settings: permalinks, reading and discussion | wordpress-101/lessons/m01-l04-first-day-settings.md | reviewed | 2026-11-01 |
-| M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | draft | 2026-10-29 |
+| M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | reviewed | 2026-11-01 |
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | draft | 2026-10-29 |
 | M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | draft | 2026-10-29 |
 | M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | reviewed | 2026-11-01 |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-11-01: wordpress-101 m01-l05 reviewed: Two Factor 0.17.0 labels (tested up to 7.1) — 'Authenticator App', 'Recovery Codes' + 'Generate new recovery codes', 'Primary Method'; passkey add-on is 'Two-Factor Provider: WebAuthn'; 'Users → Add User' (WP 7.x); UpdraftPlus tabs/labels and free Google Drive/Dropbox confirmed in 1.26.14 code; M01 capstone 2FA step updated to match; quiz re-lettered d,c,a,c,b,b,c and option lengths evened.
 - 2026-11-01: wordpress-101 m01-l04 reviewed: Discussion labels checked in 7.0 and 7.1 code; 7.1 replaced 'Hold a comment in the queue if it contains 2 or more links' with 'Number of links to allow in a comment before holding for moderation' (default 2) — both labels now given here and in M06.L04; quiz re-lettered c,a,d,b,a,c,d (was 5 of 7 b; Q6 steps reordered) and option lengths evened.
 - 2026-11-01: wordpress-101 m01-l03 reviewed: dashboard table checked against WP 7.1 wp-admin/menu.php (Add Page, Add Plugin, Fonts, Library, Profile); Site Health button label 'Update your site to use HTTPS'; 7.0 (May 20) and 7.1 (Aug 19) release dates confirmed; quiz re-lettered d,a,c,b,a,d,c (was 6 of 7 b; Q6 'admin' step moved to 4) and option lengths evened.
 - 2026-11-01: wordpress-101 m01-l02 reviewed: WordPress requirements now MariaDB 10.11+ (was 10.6+); PHP 8.3+ and PHP 8.2 security end 31 Dec 2026 confirmed on php.net; ICANN 30-day transfer lock still without an effective date; quiz re-lettered c,a,d,b,d,c,a (was mostly b/c) and option lengths evened.

@@ -2,7 +2,7 @@
 > After this lesson your practice site backs itself up somewhere safe, your login needs more than a password, and you know which role to give anyone who helps you.
 
 **Time:** ~18 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M01.L04
-**Verified against:** WordPress 7.1.4, UpdraftPlus and Two Factor plugin listings on wordpress.org, WordPress Roles and Capabilities documentation and NIST SP 800-63B-4 on 2026-10-29
+**Verified against:** WordPress 7.1 admin code, UpdraftPlus 1.26.14 and Two Factor 0.17.0 (plugin code and wordpress.org listings), WordPress Roles and Capabilities documentation and NIST SP 800-63B-4 on 2026-10-29; labels re-checked 2026-11-01
 
 > ⚠️ **Freshness flag:** plugin names, free-tier limits and storage options change. This lesson teaches the **job** (off-site backups, 2FA) and uses UpdraftPlus and Two Factor as free examples. If your host already does a job well, use that instead. Re-check each plugin's wordpress.org page (last updated, tested-up-to version) before installing.
 
@@ -92,19 +92,19 @@ Work on your **Local** practice site. On a live site, do exactly the same steps.
    **Expected:** "Profile updated." Log out and back in with the saved password.
 2. **Plugins → Add Plugin**, search **Two Factor** (by WordPress.org contributors), **Install → Activate**.
 3. Go to **Users → Profile** and find the **Two-Factor Options** section.
-   - Enable **Authenticator app (TOTP)**. Scan the QR code with an authenticator app (e.g. Google Authenticator, Microsoft Authenticator, or your password manager's built-in one), and type the 6-digit code to confirm.
-   - Enable **Backup verification codes** and **generate** them. Save them in your password manager.
-   - Make TOTP the **primary** method. **Update Profile.**
-   **Expected:** TOTP shows as configured, and you have 10 backup codes saved.
-   > 🖼️ **Image prompt:** Screenshot of Users → Profile → Two-Factor Options (Two Factor plugin) with Authenticator app (TOTP) enabled and set as primary, and Backup verification codes enabled. Blur the QR code and every code. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   - Enable **Authenticator App**. Scan the QR code with an authenticator app (e.g. Google Authenticator, Microsoft Authenticator, or your password manager's built-in one), and type the 6-digit code to confirm.
+   - Enable **Recovery Codes** and click **Generate new recovery codes**. Use **Download Codes** or **Copy Codes** and save them in your password manager (they're shown only once).
+   - Set **Primary Method** to **Authenticator App**. **Update Profile.**
+   **Expected:** the authenticator app shows as configured, and you have 10 recovery codes saved.
+   > 🖼️ **Image prompt:** Screenshot of Users → Profile → Two-Factor Options (Two Factor plugin) with Authenticator App enabled and set as the Primary Method, and Recovery Codes enabled. Blur the QR code and every code. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Two-Factor Options with the authenticator app enabled as primary and backup codes generated (codes blurred).
 4. Log out and log in again.
    **Expected:** after your password, WordPress asks for an authentication code. Enter the code from your app.
 
-> **Prefer passkeys?** The companion plugin **WebAuthn Provider for Two Factor** adds passkeys and hardware keys (Windows Hello, Touch ID, YubiKey) as a second factor. Set it up *in addition to* backup codes.
+> **Prefer passkeys?** The companion plugin **Two-Factor Provider: WebAuthn** adds passkeys and hardware keys (Windows Hello, Touch ID, YubiKey) as a second factor. Set it up *in addition to* backup codes.
 
 **Part C: create a least-privilege test user (5 min)**
-1. **Users → Add New User.** Username `test-author`, a test email (on Local, emails are caught by Local's built-in mail tool, so any address works), Role **Author**. **Add New User.**
+1. **Users → Add User.** Username `test-author`, a test email (on Local, emails are caught by Local's built-in mail tool, so any address works), Role **Author**. **Add User.**
    **Expected:** `test-author` appears in Users with role Author.
 2. Open a private browser window and log in as `test-author`.
    **Expected:** a much shorter menu: Posts, Media, Profile. No Plugins, Appearance, Settings or Users.

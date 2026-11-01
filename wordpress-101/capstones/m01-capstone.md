@@ -60,9 +60,9 @@ flowchart TD
 Pretend you've lost your phone.
 1. Log out. At the 2FA prompt, choose to use a **backup code** instead of your app, and log in with one.
    **Expected:** you're in. That code is now used up.
-   > 🖼️ **Image prompt:** Screenshot of the WordPress login 2FA prompt (Two Factor plugin) asking for an authentication code, with the link to use a backup verification code instead outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > 🖼️ **Image prompt:** Screenshot of the WordPress login 2FA prompt (Two Factor plugin) asking for an authentication code, with the "Use a recovery code" link outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** WordPress two-factor login prompt with the option to use a backup code highlighted.
-2. Go to **Users → Profile → Two-Factor Options** and **generate new backup codes**. Replace the old set in your password manager.
+2. Go to **Users → Profile → Two-Factor Options** and click **Generate new recovery codes**. Replace the old set in your password manager.
    **Expected:** a fresh set of codes; the old ones no longer work.
 3. In one sentence, write what would have happened without saved backup codes, and how you'd recover (from the M01.L05 troubleshooting table).
 
