@@ -25,7 +25,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 |--------|--------|-------|------|--------|------|
 | M01 | L01 | Choose your platform: WordPress.org vs WordPress.com vs Substack, Medium and Ghost | wordpress-101/lessons/m01-l01-choose-your-platform.md | reviewed | 2026-11-01 |
 | M01 | L02 | Domains, DNS and creator-friendly hosting | wordpress-101/lessons/m01-l02-domain-dns-hosting.md | reviewed | 2026-11-01 |
-| M01 | L03 | Install WordPress, turn on HTTPS and tour the dashboard | wordpress-101/lessons/m01-l03-install-https-dashboard.md | draft | 2026-10-29 |
+| M01 | L03 | Install WordPress, turn on HTTPS and tour the dashboard | wordpress-101/lessons/m01-l03-install-https-dashboard.md | reviewed | 2026-11-01 |
 | M01 | L04 | First-day settings: permalinks, reading and discussion | wordpress-101/lessons/m01-l04-first-day-settings.md | draft | 2026-10-29 |
 | M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | draft | 2026-10-29 |
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | draft | 2026-10-29 |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-11-01: wordpress-101 m01-l03 reviewed: dashboard table checked against WP 7.1 wp-admin/menu.php (Add Page, Add Plugin, Fonts, Library, Profile); Site Health button label 'Update your site to use HTTPS'; 7.0 (May 20) and 7.1 (Aug 19) release dates confirmed; quiz re-lettered d,a,c,b,a,d,c (was 6 of 7 b; Q6 'admin' step moved to 4) and option lengths evened.
 - 2026-11-01: wordpress-101 m01-l02 reviewed: WordPress requirements now MariaDB 10.11+ (was 10.6+); PHP 8.3+ and PHP 8.2 security end 31 Dec 2026 confirmed on php.net; ICANN 30-day transfer lock still without an effective date; quiz re-lettered c,a,d,b,d,c,a (was mostly b/c) and option lengths evened.
 - 2026-11-01: wordpress-101 m01-l01 reviewed: re-checked prices (Substack $50 domain + 10% still current; WordPress.com plugins on every paid plan since April 2026; Medium custom domain needs membership; Ghost(Pro) Starter ~$15/mo yearly, $18 monthly); menu label 'Posts → Add Post' (WP 7.x, was 'Add New Post'); quiz re-lettered c,a,d,b,d,c and option lengths evened.
 - 2026-11-01: wordpress-101 m02-l02 reviewed: labels re-checked in WP 7.1 code (Create pattern dialog button is 'Add', not 'Add/Create'); overrides list updated (List item added in 7.1; Navigation links/Post date also bindable); Mac shortcuts added; quiz answers re-lettered d,c,a,b,d,b,a (were 5 of 7 b) and distractor lengths evened out.

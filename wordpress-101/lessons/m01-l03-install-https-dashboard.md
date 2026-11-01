@@ -2,7 +2,7 @@
 > After this lesson you have a permanent WordPress practice site, you've confirmed it runs on `https://`, and you can find your way around the dashboard.
 
 **Time:** ~15 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M01.L02
-**Verified against:** WordPress 7.1.4, Local (localwp.com) and WordPress Playground on 2026-10-29
+**Verified against:** WordPress 7.1 admin menu code, Local (localwp.com) and WordPress Playground on 2026-10-29; menu labels and release dates re-checked 2026-11-01
 
 > ⚠️ **Freshness flag:** WordPress 7.0 (May 2026) gave the dashboard its biggest refresh in years, and 7.1 (August 2026) changed more. Menu names and positions in this lesson match WordPress 7.1. If a menu has moved, use the command palette (**Ctrl+K** / **⌘+K**) to search for it by name.
 
@@ -92,7 +92,7 @@ flowchart TD
    > 🖼️ **Image prompt:** Screenshot of Settings → General in WordPress 7.1, cropped to the WordPress Address (URL) and Site Address (URL) fields, both reading `https://priyacooks.local`, with the `https://` part outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Settings → General with WordPress Address and Site Address both starting with https://.
 3. Go to **Tools → Site Health**.
-   **Expected:** no critical issue about HTTPS. If WordPress detects a working certificate but your addresses still use `http://`, Site Health may offer a button to **update your site to use HTTPS**. Use it, or change both addresses yourself (exactly the same URL, `https://`, no trailing slash).
+   **Expected:** no critical issue about HTTPS. If WordPress detects a working certificate but your addresses still use `http://`, Site Health may offer an **Update your site to use HTTPS** button. Use it, or change both addresses yourself (exactly the same URL, `https://`, no trailing slash).
 4. Type your address with `http://` instead of `https://`.
    **Expected:** you land on the `https://` version. If not, ask your host to turn on an HTTP→HTTPS redirect (on Local, this isn't needed).
 
@@ -102,7 +102,7 @@ Log in at `/wp-admin/` and find each item. Tick it off and write down the menu p
 | # | Find… | Where it lives in WordPress 7.1 |
 |---|---|---|
 | 1 | The screen listing all your posts | **Posts → All Posts** |
-| 2 | Where you'd create an About page | **Pages → Add New Page** |
+| 2 | Where you'd create an About page | **Pages → Add Page** |
 | 3 | Every image you've uploaded | **Media → Library** |
 | 4 | Where you change your site's design | **Appearance → Editor** (block themes) or **Themes** |
 | 5 | Where fonts are managed | **Appearance → Fonts** |
