@@ -2,7 +2,7 @@
 > After this lesson you can drop ready-made layouts into any post, and change a newsletter call-to-action once to update it on every post.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** M02.L01
-**Verified against:** WordPress 7.1.4 block editor (pattern labels checked in WordPress core) and WordPress documentation on patterns, 2026-10-29
+**Verified against:** WordPress 7.1 block editor code (pattern labels, overrides support, shortcuts) and WordPress documentation on patterns, 2026-10-29; re-checked 2026-11-01
 
 > ⚠️ **Freshness flag:** pattern features have changed in most recent releases (reusable blocks became synced patterns in 6.3; overrides arrived in 6.6). Menu positions may differ in your version: press **Ctrl+K / ⌘+K** and type "patterns".
 
@@ -23,7 +23,7 @@ Sofia ends every recipe post with "Get my weekly meal plan → Subscribe". When 
 - **Pattern:** a saved arrangement of blocks (e.g. a heading, paragraph and button). Themes and plugins ship patterns; you can make your own.
 - **Synced pattern:** a pattern where every inserted copy shows the same content and design. Editing it (via **Edit original**) updates every post and page that uses it. Formerly called a *reusable block*.
 - **Unsynced (regular) pattern:** a pattern copied into the post as normal blocks; changes to one copy don't affect others.
-- **Overrides:** an option inside a synced pattern that lets chosen **Paragraph, Heading, Image or Button** blocks have different content in each copy, while the layout and design stay synced.
+- **Overrides:** an option inside a synced pattern that lets chosen **Paragraph, Heading, Image or Button** blocks (and, since WordPress 7.1, **List item**) have different content in each copy, while the layout and design stay synced.
 - **Detach:** turns a copy of a synced pattern back into ordinary blocks, cutting the link to the original.
 
 | | **Synced** | **Unsynced** |
@@ -67,9 +67,9 @@ Work on your **Local** practice site, in the post you published in M02.L01.
    > **Alt text:** Block inserter Patterns tab listing pattern categories with a preview of a call-to-action pattern.
 2. Pick any **Call to action** or **Text** pattern and click it.
    **Expected:** a group of blocks appears in your post.
-3. Change its text and swap its image. Open **list view** (**Shift+Alt+O**).
+3. Change its text and swap its image. Open **list view** (**Shift+Alt+O**; Mac: **Ctrl+Option+O**).
    **Expected:** the pattern shows as ordinary blocks (often inside a **Group**), not linked to anything. That's an **unsynced** pattern.
-4. Delete it (select the Group in list view, **Shift+Alt+Z**).
+4. Delete it (select the Group in list view, **Shift+Alt+Z**; Mac: **Ctrl+Option+Z**).
 
 **Part B: build a synced newsletter CTA (7 min)**
 1. At the end of your post, add:
@@ -78,7 +78,7 @@ Work on your **Local** practice site, in the post you published in M02.L01.
    - a **Buttons** block: *Subscribe*, linked to `https://example.com/subscribe`
 2. In list view, select all three blocks (click the first, **Shift**+click the last).
 3. Open the **⋮ Options** menu in the block toolbar and choose **Create pattern**.
-4. Name it *Newsletter CTA*, pick a category (e.g. Call to action), and leave **Synced** turned **on** ("Sync this pattern across multiple locations"). Click **Add/Create**.
+4. Name it *Newsletter CTA*, pick a category (e.g. Call to action), and leave **Synced** turned **on** ("Sync this pattern across multiple locations"). Click **Add**.
    > 🖼️ **Image prompt:** Screenshot of the Create pattern dialog in WordPress 7.1: Name "Newsletter CTA", Category "Call to action", and the "Synced" toggle switched on and outlined. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Create pattern dialog with the name Newsletter CTA, category Call to action and Synced turned on.
    **Expected:** the three blocks now sit inside one **synced pattern** block, shown with a distinct (often purple) outline and icon.
@@ -110,7 +110,7 @@ Work on your **Local** practice site, in the post you published in M02.L01.
 > "I run a [niche] site. Suggest 5 reusable content blocks I should save as WordPress patterns (e.g. newsletter CTA, author box, disclaimer). For each, say whether it should be synced or unsynced and why, and draft the text in under 40 words, in a friendly tone for [audience]."
 
 **What AI does well here:** spotting repeated content worth turning into patterns, and drafting short CTA and author-box copy.
-**Where it gets it wrong:** it may describe "reusable blocks" menus from older WordPress versions, or claim every block supports overrides (in WordPress 7.x it's Paragraph, Heading, Image and Button in core).
+**Where it gets it wrong:** it may describe "reusable blocks" menus from older WordPress versions, or claim every block supports overrides (in core it's Paragraph, Heading, Image and Button, plus List item from WordPress 7.1, and a few site-building blocks such as Navigation links).
 **How to check:** follow the labels in your own editor (**Create pattern**, **Synced**, **Edit original**), and press **Ctrl+K** to find the patterns screen. Edit AI copy for your voice and check any claims (e.g. "1,000 subscribers") are true.
 
 ## Common mistakes
@@ -138,7 +138,7 @@ Work on your **Local** practice site, in the post you published in M02.L01.
 - A **pattern** is a saved group of blocks; **synced** copies update together, **unsynced** copies are independent.
 - Make repeated, must-be-identical content (CTAs, author boxes, disclaimers) **synced**.
 - Make fill-in layouts (recipe cards, episode notes) **unsynced**.
-- **Overrides** let chosen Paragraph, Heading, Image and Button blocks differ per post while the design stays synced.
+- **Overrides** let chosen Paragraph, Heading, Image, Button (and from 7.1, List item) blocks differ per post while the design stays synced.
 - **Edit original** changes every copy at once, so preview before saving.
 
 ## Teach it back

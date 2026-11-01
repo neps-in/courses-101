@@ -30,7 +30,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L05 | Your day-one safety net: backups, 2FA, passwords and user roles | wordpress-101/lessons/m01-l05-day-one-safety-net.md | draft | 2026-10-29 |
 | M01 | Capstone | M01 capstone | wordpress-101/capstones/m01-capstone.md | draft | 2026-10-29 |
 | M02 | L01 | Posts vs pages, and getting fast in the block editor | wordpress-101/lessons/m02-l01-posts-pages-blocks.md | draft | 2026-10-29 |
-| M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | draft | 2026-10-31 |
+| M02 | L02 | Patterns and synced patterns for reusable content | wordpress-101/lessons/m02-l02-patterns-synced-patterns.md | reviewed | 2026-11-01 |
 | M02 | L03 | Categories vs tags: design a content structure for your niche | wordpress-101/lessons/m02-l03-categories-tags.md | reviewed | 2026-10-31 |
 | M02 | L04 | Drafts, revisions, scheduling and an editorial workflow | wordpress-101/lessons/m02-l04-editorial-workflow.md | reviewed | 2026-10-31 |
 | M02 | L05 | Embeds: YouTube, podcasts, social posts and newsletters | wordpress-101/lessons/m02-l05-embeds.md | reviewed | 2026-10-31 |
@@ -78,6 +78,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
 
 ## Log
+- 2026-11-01: wordpress-101 m02-l02 reviewed: labels re-checked in WP 7.1 code (Create pattern dialog button is 'Add', not 'Add/Create'); overrides list updated (List item added in 7.1; Navigation links/Post date also bindable); Mac shortcuts added; quiz answers re-lettered d,c,a,b,d,b,a (were 5 of 7 b) and distractor lengths evened out.
 - 2026-11-01: wordpress-101 m09-l03 reviewed: Google 'Ask Google to recrawl' quotes added (quota for individual URLs; repeat requests no faster; crawling 'a few days to a few weeks'); IA Campaigns report confirmed Pro (readme 2.16.2); exercise now practises objective 2 (first weekly care session logged on day 7); quiz Q2 explanation no longer cites option letters; 'MOT' → annual safety inspection; coming-soon glossary hedged. Answer letters a c d b c a d b, no longest-correct. Next: `/next-lesson` → M09 capstone.
 - 2026-11-01: wordpress-101 m09-l03 draft (lesson + 8-question quiz incl. 1 review from M09.L02; 4 glossary terms; launch-day flowchart; 2 image prompts). Launch morning re-checks + coming-soon off; Search Console sitemap + Bing import + Request indexing for homepage and one cornerstone only; announce to consented subscribers and own accounts with UTM tags (GA4 Help 10917952); 48-hour watch; four recurring calendar events (weekly 25 min, monthly 45, quarterly 60, yearly 90) + day 1/3/7/14/30 checks. Quiz answers a c d b c a d b; no correct option longest. Next: `/review-lesson wordpress-101/lessons/m09-l03-launch-maintenance-routine.md`.
 - 2026-11-01: wordpress-101 quiz answer letters rebalanced in M08.L01–L05 and M09.L01 (were all or mostly (b)); options and Answer lines moved together with scratchpad reletter.py; verified against HEAD that each question keeps the same correct text, option set, stem, explanation and hint. M08–M09 answer keys now spread across a–d. Next: `/next-lesson` → M09.L03.
