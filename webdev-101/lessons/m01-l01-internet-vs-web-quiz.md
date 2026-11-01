@@ -2,7 +2,7 @@
 
 > 7 questions · 3 recall, 3 scenario, 1 spot-the-error · pass mark 70% (5 of 7). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
 > This is the course's first lesson, so there are no spaced-review questions yet; they start in M01.L02.
-> Facts checked 2026-11-02 against MDN and CERN.
+> Facts checked 2026-11-02 against MDN and CERN. Reviewed 2026-11-02.
 
 ### Q1. Which statement best describes the difference between the Internet and the Web? *(O1 · recall)*
 - a) They are two names for the same network of connected computers
@@ -26,12 +26,12 @@
 
 ### Q3. Kwame is checking which of his activities today were "the Web". Which one is the clearest example of the Web, using the course's working rule? *(O1 · scenario)*
 - a) A voice call with a client using the WhatsApp phone app
-- b) Sending an email from the Outlook desktop app
+- b) Sending an email from Thunderbird with an IMAP account
 - c) Playing an online racing game on his games console
 - d) Reading his bank's help article in the Edge browser
 
 **Answer:** d
-**Explanation:** The help article has a URL and opens in a browser, so it is clearly the Web. The call, the desktop email and the console game all use the Internet, but with their own protocols, not web pages.
+**Explanation:** The help article has a URL and opens in a browser, so it is clearly the Web. The call, the IMAP email and the console game all use the Internet, but with their own protocols, not web pages.
 **Hint:** Working rule: has a URL + opens in a browser = Web.
 
 ### Q4. Lina types her company's address and gets a plain page in her browser's own style saying "This site can't be reached". A colleague in another city loads the site fine. Where should Lina look first? *(O2 · scenario)*
@@ -54,25 +54,25 @@
 **Explanation:** The page has the shop's own logo and design, so the shop's server sent it. The server got your request and answered "not found" (a 404). A dropped connection or an offline server would give your browser's own error page instead.
 **Hint:** Whose logo is on the error page?
 
-### Q6. Which of these was invented at CERN by Tim Berners-Lee, starting with a proposal in 1989? *(O1 · recall)*
-- a) The Internet and its TCP/IP rules
-- b) The first email program
-- c) The first search engine
-- d) The World Wide Web
+### Q6. A colleague's slide says: "Tim Berners-Lee invented the Internet in 1989." What's the most accurate correction? *(O1 · recall)*
+- a) It was 1969, when he built ARPANET
+- b) He invented email, not the Internet
+- c) He invented the first search engine
+- d) He made the Web, not the Internet
 
 **Answer:** d
 **Explanation:** Berners-Lee proposed the Web at CERN in 1989, and the first website, `info.cern.ch`, went live at the end of 1990. The Internet already existed: it began as ARPANET in 1969 and adopted TCP/IP in 1983. AI tools and even some articles often mix this up.
-**Hint:** He built something that *runs on* a network that already existed.
+**Hint:** He built something that *runs on* a network that already existed. ARPANET was built by others in the US.
 
 ### Q7. Spot the error. A marketer tests this in the address bar: *(O3 · spot-the-error)*
 ```
 data:text/html,<h1>Nila Coffee<p>Fresh beans every month.</p>
 ```
 The whole page, including the sentence, shows up big and bold. What went wrong?
-- a) The line must start with `https://`, not `data:`
-- b) The closing `</h1>` tag is missing after "Nila Coffee"
+- a) The line must start with `https://`, not with `data:`
+- b) There is no closing `</h1>` after "Nila Coffee"
 - c) The `<p>` tag is not allowed inside a data URL
-- d) The browser needs a server to render any HTML
+- d) The browser needs a web server to render any HTML
 
 **Answer:** b
 **Explanation:** Without `</h1>`, the browser has to guess where the heading ends, and it treats the sentence as part of the heading. It doesn't show an error, because browsers are forgiving. `data:` URLs need no server and can contain any HTML tags.

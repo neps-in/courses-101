@@ -62,7 +62,7 @@ Ask: **who edits, how often, how do we leave?**
 | Open DevTools | F12 / Ctrl+Shift+I | Cmd+Option+I |
 | Inspect element | Ctrl+Shift+C | Cmd+Shift+C |
 | Console | Ctrl+Shift+J | Cmd+Option+J |
-| View Source | Ctrl+U | Cmd+Option+U |
+| View Source | Ctrl+U | Cmd+Option+U (Chrome/Edge) · Cmd+U (Firefox) |
 | Device toolbar | Ctrl+Shift+M | Cmd+Shift+M |
 Edits change only your **DOM**; reload resets. **Page weight:** Network → Disable cache → reload → read *transferred*; sort by Size.
 

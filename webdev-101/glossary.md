@@ -65,5 +65,5 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **TXT record** — a DNS record holding text, used for ownership verification and email protection (SPF, DKIM, DMARC). [M01.L02]
 - **URL** — the full address of one page or file: `scheme://subdomain.domain.TLD/path?query#fragment`. [M01.L02]
 - **UTM tags** — `utm_source`, `utm_medium`, `utm_campaign` (and others) added to a link's query string so analytics can tell which campaign brought a visitor. [M01.L02]
-- **View source** — the browser view of the raw HTML a server sent (Ctrl+U / Cmd+Option+U, or the `view-source:` prefix). [M01.L04]
+- **View source** — the browser view of the raw HTML a server sent (Ctrl+U; Mac: Cmd+Option+U in Chrome/Edge, Cmd+U in Firefox; or the `view-source:` prefix). [M01.L04]
 - **World Wide Web (the Web)** — a system of linked pages and apps, each with a URL, sent over HTTP(S) and shown in a browser; proposed by Tim Berners-Lee at CERN in 1989. [M01.L01]

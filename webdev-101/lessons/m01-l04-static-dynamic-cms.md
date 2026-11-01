@@ -65,7 +65,7 @@ flowchart TD
 
 ## Hands-on walkthrough
 
-Zero install. Desktop is easier because you'll use **View Source** (Ctrl+U / Cmd+Option+U, Lesson 1.1) and **Find** (Ctrl+F / Cmd+F).
+Zero install. Desktop is easier because you'll use **View Source** (Ctrl+U; on a Mac Cmd+Option+U in Chrome/Edge or Cmd+U in Firefox, Lesson 1.1) and **Find** (Ctrl+F / Cmd+F).
 
 **Part A: static or dynamic? (5 min)**
 Sort these six pages in your notes as **Static**, **Dynamic** or **Static + dynamic parts**, with a one-line reason:
@@ -79,7 +79,7 @@ Sort these six pages in your notes as **Static**, **Dynamic** or **Static + dyna
 **Expected output:** 1 Static · 2 Dynamic (different for every user) · 3 Dynamic (built from a product database per search) · 4 Static + dynamic parts (the page is static; the form service runs elsewhere) · 5 Dynamic (or cached dynamic) · 6 Static.
 
 **Part B: be a website detective (10 min)**
-1. Open a brand site you know. Press **Ctrl+U** / **Cmd+Option+U** to view its source.
+1. Open a brand site you know. Press **Ctrl+U** (Mac: **Cmd+Option+U** in Chrome/Edge, **Cmd+U** in Firefox) to view its source.
 2. Press **Ctrl+F** / **Cmd+F** and search for each clue below, one at a time.
 
    | Search the source for… | Strongly suggests |

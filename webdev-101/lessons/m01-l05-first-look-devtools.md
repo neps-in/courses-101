@@ -34,7 +34,7 @@ Nadia manages a campaign landing page built by an agency. The client wants to se
 | Open DevTools (last panel used) | **F12** or **Ctrl+Shift+I** | **Cmd+Option+I** |
 | Inspect one element | Right-click it → **Inspect**, or **Ctrl+Shift+C** then click | Right-click → **Inspect**, or **Cmd+Shift+C** then click |
 | Open the Console | **Ctrl+Shift+J** | **Cmd+Option+J** |
-| View page source | **Ctrl+U** | **Cmd+Option+U** |
+| View page source | **Ctrl+U** | **Cmd+Option+U** (Chrome/Edge) · **Cmd+U** (Firefox) |
 
 **Safari:** first turn on Safari → Settings → Advanced → **Show features for web developers**. Then use **Cmd+Option+I**.
 
@@ -80,7 +80,7 @@ Use desktop Chrome or Edge. Pick a brand site with a clear headline and a button
 4. Take a screenshot of your "redesign".
 
 **Part C: source vs live page (5 min)**
-1. Press **Ctrl+U** / **Cmd+Option+U** to open View Source in a new tab. Press **Ctrl+F** / **Cmd+F** and search for the *new* headline you typed in Part A.
+1. Press **Ctrl+U** (Mac: **Cmd+Option+U** in Chrome/Edge, **Cmd+U** in Firefox) to open View Source in a new tab. Press **Ctrl+F** / **Cmd+F** and search for the *new* headline you typed in Part A.
    **Expected:** **no match.** The source is what the server sent; your edit only exists in the DOM.
 2. Search the source for the *original* headline.
    **Expected:** it's there (unless the site builds its content with JavaScript, in which case it may be missing from the source too. That's the "mostly `<script>` tags" case from Lesson 1.4).

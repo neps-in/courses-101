@@ -2,7 +2,7 @@
 > After this lesson you can explain the difference between the Internet and the Web, say what clients, servers and browsers each do, and you'll have made your first web page with nothing but your browser.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** none · **Remediate to:** — (entry point: see `webdev-101/glossary.md`)
-**Verified against:** MDN Learn web development ("How the web works", "How does the Internet work?", "What is a web server?") and CERN's "A short history of the Web" on 2026-11-02. Browser steps are written for current desktop Chrome, Edge, Firefox and Safari.
+**Verified against:** Mozilla Support keyboard-shortcuts page, MDN Learn web development ("How the web works", "How does the Internet work?", "What is a web server?") and CERN's "A short history of the Web" on 2026-11-02. Browser steps are written for current desktop Chrome, Edge, Firefox and Safari.
 
 ## Learning objectives
 1. **Distinguish** the Internet (the network) from the Web (one service that runs on it), using everyday examples. *(O1)*
@@ -19,7 +19,7 @@ Amara runs social media for a skincare brand. On launch day the landing page "is
 
 **Precise definitions:**
 - **Internet:** a worldwide network of networks. Computers connect through cables, Wi-Fi, mobile networks and routers, and they share data using common rules called **TCP/IP**. It began as ARPANET in 1969 and switched to TCP/IP on 1 January 1983.
-- **World Wide Web (the Web):** a system of linked documents and apps. Each one has an address (**URL**), is sent using **HTTP or HTTPS**, and is usually written in **HTML, CSS and JavaScript**. Tim Berners-Lee proposed it at CERN in 1989. The first website (`info.cern.ch`) went live at the end of 1990, and CERN made the software free for everyone on 30 April 1993.
+- **World Wide Web (the Web):** a system of linked documents and apps. Each one has an address (**URL**), is sent using **HTTP or HTTPS**, and is usually written in **HTML, CSS and JavaScript**. Tim Berners-Lee proposed it at CERN in 1989. The first website (`info.cern.ch`) was running at CERN by the end of 1990 and opened to the public in 1991, and CERN made the software free for everyone on 30 April 1993. (You'll see both 1990 and 1991 quoted as the "first website" date for this reason.)
 - **Client:** the device and software that *asks* for something. On the Web it's usually your browser.
 - **Server:** a computer (and its software) that *answers* requests by sending files or data. MDN notes that "web server" can mean the hardware, the software, or both together.
 - **Browser:** the program that requests pages and then **renders** them. It reads the HTML, CSS and JavaScript and draws the page on screen. Examples: Chrome, Edge, Firefox, Safari, Samsung Internet. Underneath they use a few **browser engines** (Blink, Gecko, WebKit), which is why a page can look slightly different from one browser to the next.
@@ -29,7 +29,7 @@ Amara runs social media for a skincare brand. On launch day the landing page "is
 |---|---|---|---|
 | Read a news site in Chrome | ✅ | ✅ | A URL, HTTP(S), shown in a browser |
 | Open Gmail in a browser tab | ✅ | ✅ | Gmail is a *web app*; it talks to email servers for you |
-| Send email from the Outlook or Apple Mail app | ✅ | ❌ | Email uses its own protocols (SMTP, IMAP), not web pages |
+| Send email from Thunderbird or a phone's built-in Mail app (IMAP account) | ✅ | ❌ | Classic email uses its own protocols (SMTP, IMAP), not web pages |
 | Video call on WhatsApp or Zoom app | ✅ | ❌ | Real-time voice/video protocols, not web pages |
 | Play an online game on a console | ✅ | ❌ | Game traffic, not pages |
 | Scroll Instagram in the app | ✅ | 🟡 grey area | The app isn't a browser, but it fetches data over HTTPS from web servers |
@@ -65,7 +65,7 @@ No installs and no accounts. Use a laptop or desktop browser. Phones work for Pa
 2. Next to each, write **Web** (has a URL, opened in a browser), **Internet, not Web**, or **Grey area** (an app using web servers behind the scenes). Use the sorting guide above.
    **Expected output:** a list of 10 with labels. Most people find that half or more of their day is "the Web" in a browser, and that many apps are grey areas.
 
-**Part B: be the browser's author (7 min)**
+**Part B: make a web page with no tools (7 min)**
 1. Open a new tab in Chrome, Edge or Firefox. Click the address bar, paste the line below exactly, then press **Enter**:
    ```
    data:text/html,<h1>Nila Coffee</h1><p>Fresh beans every month. Launching soon.</p>
@@ -77,7 +77,7 @@ No installs and no accounts. Use a laptop or desktop browser. Phones work for Pa
    **Expected:** the heading changes. The browser re-reads your code and redraws the page.
 3. Now remove the closing `</h1>` and press **Enter**.
    **Expected:** the paragraph is probably big and bold too. The browser didn't show an error. It *guessed* where the heading ended, and guessed wrong. Browsers are forgiving, which is why broken HTML often "looks fine" in one place and breaks in another. Module 2 teaches you to write it correctly.
-4. Open any real website, for example `https://info.cern.ch` (the first website, restored by CERN). Press **Ctrl+U** (Windows/Linux) or **Cmd+Option+U** (Mac, Chrome/Firefox) to view its source.
+4. Open any real website, for example `https://info.cern.ch` (the first website, restored by CERN). Press **Ctrl+U** (Windows/Linux) to view its source. On a Mac use **Cmd+Option+U** in Chrome or Edge, or **Cmd+U** in Firefox.
    **Expected:** a tab full of code with the same kind of tags (`<h1>`, `<p>`, `<a>`). Every site you visit arrives as code like this. Real sites just have more of it.
 
 **Part C: who is talking, the browser or the server? (5 min)**
@@ -88,6 +88,8 @@ No installs and no accounts. Use a laptop or desktop browser. Phones work for Pa
    > 🖼️ **Image prompt:** Two browser screenshots side by side (each 640×400): left, MDN's styled 404 "Page not found" page; right, Chrome's offline error page "No internet". Label them "Server answered (404)" and "No server reached (offline)". Highlight the page titles with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Side by side: a website's own 404 page, where the server answered, and a browser offline error, where no server was reached.
 3. Turn Wi-Fi back on.
+4. Now answer the developer's question from *Why it matters*: "Is it down for everyone, or just you?" Open the same page on your phone using **mobile data** (Wi-Fi off), or ask someone on another network to try it.
+   **Expected:** if it loads there but not on your laptop, the problem is on your side (your network or device). If it fails everywhere with the site's own error, the problem is the server's.
 
 **Part D: set up your running project (3 min)**
 1. Create a note or document called **"Web Dev 101 — my project"**.
@@ -97,7 +99,7 @@ No installs and no accounts. Use a laptop or desktop browser. Phones work for Pa
 
 ## When to use / when not to
 This lesson is about *naming the layer* where something happens. Use the model like this:
-- **Browser-style error page** (offline, "site can't be reached") → the problem is the connection or the address, *before* the server. Check Wi-Fi, the URL, or later (Lesson 1.2) DNS.
+- **Browser-style error page** (offline, "site can't be reached") → the problem is the connection or the address, *before* the server. Check Wi-Fi, the URL, or later (Lesson 1.2) DNS. Then try another network (Part C, step 4) to tell "just me" from "everyone".
 - **The site's own error page** (404, styled "oops") → the server is fine and reachable. The page or link is wrong.
 - **The page loads but looks broken** → the server sent files, but something in the HTML, CSS or JavaScript is off (Modules 2–5).
 
@@ -124,12 +126,12 @@ This lesson is about *naming the layer* where something happens. Use the model l
 | Typing the `data:` line runs a web search instead | The browser treated it as search text (common on mobile and in Safari) | Paste it into a desktop Chrome, Edge or Firefox address bar, and make sure it starts exactly with `data:text/html,` |
 | The page shows only part of your text | You used a `#` character; browsers treat everything after `#` as a fragment, not page content | Avoid `#` in Part B (no colour codes or hashtags) |
 | Page shows the code as plain text | The start was typed as `data:text/plain` or has a space before `data:` | Re-paste the line exactly as shown |
-| Ctrl+U / Cmd+Option+U does nothing in Safari | Safari hides developer features by default | Safari → Settings → Advanced → turn on "Show features for web developers", then use Develop → Show Page Source |
+| The view-source shortcut does nothing in Safari | Safari hides developer features by default | Safari → Settings → Advanced → turn on "Show features for web developers", then use Develop → Show Page Source |
 | Offline test still loads the site | The browser showed a saved (cached) copy of a page you visited earlier | Try a site you haven't visited today, or hard-refresh (Ctrl+Shift+R / Cmd+Shift+R) while offline |
 
 ## Exercise
 **Task:** write a 3-sentence explanation of how *your* chosen brand site reaches your screen, using the words **client**, **server**, **Internet** and **browser** correctly. Then make a `data:` page that shows your launch-page idea as an `<h1>` heading and one `<p>` sentence, and take a screenshot of it.
-**Expected outcome:** three accurate sentences, for example: "When I type nike.com, my browser (the client) sends a request across the Internet to Nike's server. The server sends back HTML, CSS, JavaScript and images. My browser renders those files into the page I see." Plus a screenshot of your own heading in the browser.
+**Expected outcome:** three accurate sentences, for example: "When I type wikipedia.org, my browser (the client) sends a request across the Internet to Wikipedia's server. The server sends back HTML, CSS, JavaScript and images. My browser renders those files into the page I see." Plus a screenshot of your own heading in the browser.
 **Stretch goal:** add a link to your `data:` page with `<a href="https://info.cern.ch">The first website</a>` and click it. You've just used the Web's original idea: linking one page to another.
 
 ## Key takeaways
