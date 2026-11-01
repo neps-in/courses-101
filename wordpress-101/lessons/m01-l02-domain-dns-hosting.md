@@ -2,7 +2,7 @@
 > After this lesson you can explain how someone typing your address reaches your site, and pick a domain and a host that won't hold you back.
 
 **Time:** ~18 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M01.L01
-**Verified against:** WordPress 7.1.4 server requirements (wordpress.org/requirements), php.net supported versions and ICANN transfer rules on 2026-10-29
+**Verified against:** WordPress server requirements (wordpress.org/requirements), php.net supported versions and ICANN transfer rules on 2026-10-29; re-checked 2026-11-01
 
 > ⚠️ **Freshness flag:** domain prices, hosting plans and PHP support dates change every year, and ICANN has approved changes to transfer locks that weren't in force when this lesson was checked. Re-check the links in Further reading before you buy.
 
@@ -63,13 +63,13 @@ flowchart LR
 - **Avoid hyphens, numbers and trademarks** (a brand name in your domain can get it taken away).
 - **Turn on auto-renew and registrant privacy** (most registrars include privacy free; `.in` and some country endings have their own rules).
 - **Typical cost:** about $10–15 (₹800–1,200) a year for `.com`; `.in` often ₹200–900 the first year, more on renewal. Always check the **renewal** price, not just the first-year deal.
-- **Transfer lock:** after you register or transfer a domain, ICANN rules generally block moving it to another registrar for **60 days**. ICANN has approved a shorter 30-day lock, but it had no effective date when this lesson was checked. Choose a registrar you're happy to stay with for a couple of months.
+- **Transfer lock:** after you register or transfer a domain, ICANN rules generally block moving it to another registrar for **60 days**. ICANN has approved a shorter 30-day lock, but it still had no effective date when this lesson was re-checked on 2026-11-01. Choose a registrar you're happy to stay with for a couple of months.
 
 ### Choosing a host: the creator checklist
 | Criterion | What "good" looks like | Why it matters for creators |
 |---|---|---|
 | **PHP version** | PHP **8.3 or newer** available, and you can switch versions yourself | WordPress recommends 8.3+; PHP 8.2 loses security support at the end of 2026 |
-| **Database** | MySQL 8.0+ or MariaDB 10.6+ | WordPress's recommended minimum |
+| **Database** | MySQL 8.0+ or MariaDB 10.11+ | WordPress's recommendation (checked 2026-11-01) |
 | **HTTPS** | Free SSL certificate (e.g. Let's Encrypt), auto-renewed | Required for every WordPress site; browsers warn readers without it |
 | **Backups** | Daily, stored **off-site**, kept 14–30 days, one-click restore | Your safety net if an update or hack breaks the site (M01.L05) |
 | **Staging** | One-click staging copy | Test updates and theme changes before readers see them (M07) |
@@ -178,7 +178,7 @@ Explain to a friend in 3 sentences what happens between typing a web address and
 - Staging site — added to `wordpress-101/glossary.md`
 
 ## Further reading
-*All checked 2026-10-29.*
+*All checked 2026-10-29; requirements and PHP dates re-checked 2026-11-01.*
 - WordPress.org — Server requirements: https://wordpress.org/requirements/
 - WordPress documentation — Before you install: https://developer.wordpress.org/advanced-administration/before-install/
 - PHP — Supported versions: https://www.php.net/supported-versions.php
