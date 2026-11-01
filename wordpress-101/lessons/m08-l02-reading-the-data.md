@@ -2,7 +2,7 @@
 > After this lesson you can find your best posts, where readers come from and what they searched, count email sign-ups as a conversion, and turn 30 minutes a month into three concrete actions.
 
 **Time:** ~15 min reading + ~30 min exercise · **Level:** beginner · **Prereqs:** M08.L01 (one analytics tool installed), M06.L02 (sign-up form), M05.L05 (Search Console)
-**Verified against:** Search Console Help (Performance report, Generative AI performance report, branded queries filter), GA4 Analytics Help (key events, create events, reports), Site Kit by Google 1.190.0 (plugin code: plugin conversion tracking providers), Independent Analytics 2.16.2 (plugin code: **Forms** report requires Pro), Fluent Forms (plugin code: **Confirmation Type**), Kit Help (form **Redirect to another page**), all on 2026-11-01
+**Verified against:** Yoast SEO 28.8 (plugin code: **Advanced → Allow search engines to show this content in search results?**), Search Console Help (Performance report, Generative AI performance report, branded queries filter), GA4 Analytics Help (key events, create events, reports), Site Kit by Google 1.190.0 (plugin code: plugin conversion tracking providers), Independent Analytics 2.16.2 (plugin code: **Forms** report requires Pro), Fluent Forms (plugin code: **Confirmation Type**), Kit Help (form **Redirect to another page**), all on 2026-11-01
 
 > ⚠️ **Freshness flag:** Search Console added a **Generative AI performance report** (AI Overviews and AI Mode impressions, rolled out to all sites on 2026-08-31) and a **Branded queries** filter (2025-11). Menu names in GA4 and Search Console move often; if a label below differs, search the tool's help for the report name.
 
@@ -66,7 +66,7 @@ flowchart TD
 
 ### Part A — Set up sign-up tracking (~10 min, once)
 1. **Create the thank-you page.** **Pages → Add Page**, title *"Thanks — check your inbox"*, slug `thanks`. Say what happens next (*"I've sent you a confirmation email. Click the link to get [lead magnet]. Check spam if it's not there in 5 minutes."*) and link to your Start Here page. **Publish.**
-2. **Keep it out of search and menus.** In your SEO plugin's settings for this page (M05), set it to **noindex** so it's left out of the sitemap. Don't add it to any menu. (Search Console then won't count it, and it won't be visited by people who never signed up.)
+2. **Keep it out of search and menus.** In the page editor's Yoast SEO panel (M05.L02): **Advanced → Allow search engines to show this content in search results? → No**. Yoast then leaves it out of the sitemap too. (Rank Math/AIOSEO have a similar **No Index** robots option per page.) Don't add it to any menu. That way only people who just submitted the form reach it, so its views are a fair sign-up count.
 3. **Point your form at it:**
    | Your M06.L02 route | Setting |
    |---|---|
@@ -86,7 +86,7 @@ flowchart TD
 5. Do one more logged-out test sign-up. **Expected:** GA4 **Realtime** shows a `generate_lead` event, or your cookieless tool shows a view of **Thanks**. Then confirm it from the email so your provider shows a confirmed subscriber.
 
 ### Part B — Find the numbers (~12 min)
-6. **Search Console → Performance → Search results.** Set the date to **Compare → Last 28 days vs previous period**. Tick all four boxes: **Total clicks, Total impressions, Average CTR, Average position**.
+6. **Search Console → Performance → Search results.** Click the **Date** filter, open the **Compare** tab and choose last 28 days compared with the previous period. Tick all four boxes: **Total clicks, Total impressions, Average CTR, Average position**.
    - **Queries** tab: sort by **Impressions**. Note your top 5 queries and any query with **high impressions but CTR under ~2%**. Those are titles and meta descriptions to rewrite.
    - **Pages** tab: note your top 5 pages by clicks, and any page whose clicks dropped by a lot.
    - If available, add the **Non-branded** filter and note non-branded clicks.
@@ -94,7 +94,7 @@ flowchart TD
    > 🖼️ **Image prompt:** Screenshot of the Search Console Performance report, Queries tab, comparing last 28 days with the previous period, all four metrics ticked, sorted by impressions, 1280 × 800. Highlight a row with high impressions and low CTR with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Search Console Queries table with a high-impression, low-CTR query highlighted.
 
-7. **Generative AI report** (Performance section of the Search Console sidebar): note which pages get AI Overview or AI Mode impressions. Remember they're already inside the totals from step 6.
+7. **Generative AI report** (listed with the other Performance reports in the Search Console sidebar; Google rolled it out to all sites on 2026-08-31): note which pages get AI Overview or AI Mode impressions. Remember they're already inside the totals from step 6.
 8. **Analytics, top content.** GA4: **Reports → Engagement → Pages and screens** (views by page title). Independent Analytics: the **Pages** table. Note the top 5 and whether each has a sign-up form.
 9. **Analytics, sources.** GA4: **Reports → Acquisition → Traffic acquisition** (Organic Search, Direct, Referral, Organic Social, Email…). Independent Analytics: **Referrers**. Note the top 3 sources and their share.
 10. **Sign-ups.** Analytics: thank-you page views or `generate_lead` count for the month. To see which source drove them, GA4's Traffic acquisition table has a **Key events** column; pick `generate_lead`. Email provider: **new confirmed subscribers** and **unsubscribes** this month.

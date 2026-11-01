@@ -24,20 +24,20 @@
 **Hint:** Clicks divided by impressions.
 
 ### Q3. Why does the lesson send sign-ups to a **thank-you page** instead of relying on Site Kit's plugin conversion tracking?
-- a) Site Kit's tracking only works for sites with more than 1,000 visitors
-- b) Site Kit only tracks certain form plugins (e.g. WPForms, Mailchimp for WP); Kit and Fluent Forms aren't on its list
-- c) Thank-you pages are required by GDPR for every sign-up form
-- d) Site Kit's conversion tracking costs extra each month
+- a) Site Kit's tracking only starts once a site passes 1,000 monthly visitors
+- b) Site Kit only supports some form plugins, and Kit and Fluent Forms aren't among them
+- c) GDPR requires a separate thank-you page after every sign-up form
+- d) Site Kit's conversion tracking is a paid add-on billed every month
 
 **Answer:** b
 **Explanation:** Site Kit 1.190.0 tracks forms from Contact Form 7, Mailchimp for WP, Ninja Forms, OptinMonster, Popup Maker and WPForms. Visits to a thank-you page can be counted by any analytics tool, whichever form you use.
 **Hint:** Which form plugins did Site Kit's code list?
 
 ### Q4. Last month Marta's analytics showed **40 thank-you page views**, but her email provider shows only **26 new confirmed subscribers**. What's the most likely explanation?
-- a) Her analytics tool double-counts every visit
-- b) She uses double opt-in, and some people submitted the form but never clicked the confirmation link
-- c) Her email provider deletes a third of new subscribers
-- d) Search Console removed 14 of her visitors
+- a) Her analytics tool counts every thank-you visit twice by design
+- b) With double opt-in, some people submitted but never confirmed
+- c) Her email provider quietly deletes a third of new subscribers
+- d) Search Console filtered 14 of her visitors out as bots
 
 **Answer:** b
 **Explanation:** The thank-you page counts form submissions; the provider counts confirmed subscribers (M06.L03). The gap is unconfirmed sign-ups. Confirmed subscribers are the number that counts; if the gap is large, improve the confirmation email and "check your inbox" message. Also check the page is noindex and not in a menu.
@@ -69,20 +69,20 @@
 > 3. Turn on **Send subscriber data to thank you page** so the page can greet readers by name.
 > 4. In GA4, create a `generate_lead` event for page views where `page_location` contains `/thanks` and mark it as a key event.
 
-- a) Step 1: thank-you pages must be indexed so Google can count them
-- b) Step 3: it adds the reader's name, email and ID to the URL, which then lands in analytics reports
+- a) Step 1: the thank-you page must be indexed so Google can count it
+- b) Step 3: it puts the reader's email in the URL, which analytics records
 - c) Step 4: you should mark `page_view` itself as the key event instead
-- d) Step 2: Kit forms can't redirect to another page
+- d) Step 2: Kit forms can only show a message, never redirect elsewhere
 
 **Answer:** b
 **Explanation:** Analytics records page URLs, so personal data in the URL ends up in your reports, and Google's terms forbid sending it to GA4. Leave that option off. Steps 1, 2 and 4 follow the lesson; marking `page_view` would count every page view as a sign-up.
 **Hint:** What does analytics record about each page view?
 
 ### Q8. (review: m06-l03) Why does the lesson recommend **double opt-in** for your sign-up form?
-- a) It doubles the number of sign-ups you get
-- b) It records that each subscriber confirmed, which helps you prove consent and keeps fake addresses off your list
-- c) WordPress refuses to send emails without it
-- d) It lets you skip the privacy notice next to the form
+- a) It roughly doubles the number of sign-ups each form collects
+- b) The confirmation click proves consent and filters out fake addresses
+- c) WordPress won't send any newsletter emails unless it's turned on
+- d) It lets you leave out the privacy notice next to the sign-up form
 
 **Answer:** b
 **Explanation:** GDPR and CASL require you to be able to prove consent, and the confirmation click (with its date and source) is the most common way to do that. It also filters out typos and bots. The trade-off is that some people never confirm, which is the gap you see in Q4.
