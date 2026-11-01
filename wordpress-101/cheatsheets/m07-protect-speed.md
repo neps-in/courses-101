@@ -47,7 +47,7 @@
 - Pass = 75% of real visits good on all three. **Field** (top of PSI, real Chrome users, 28 days) vs **lab** (Lighthouse; **TBT** stands in for INP).
 - Measure: Mobile, **3 runs, middle result**, same tool before and after. Local → Lighthouse (DevTools, Incognito); live → pagespeed.web.dev.
 - Core already: lazy-loads all but the first 3 images/iframes · `fetchpriority="high"` on the first large image · prefetches links for logged-out visitors (6.8+).
-- **One page cache:** host's → LiteSpeed Cache (LiteSpeed servers only) → WP Super Cache (**Easy → Caching On → Update Status**, **Test Cache** → *"The timestamps on both pages match!"*). Test **logged out**. **Delete Cache** after settings/menu/style changes.
+- **One page cache:** host's → LiteSpeed Cache (LiteSpeed servers only) → WP Super Cache (**Easy → Caching On → Update Status**, **Test Cache** → *"The timestamps on both pages match!"*). Test **logged out**. **Delete Cache** after site-wide changes it doesn't detect (Settings → General, global styles, widgets) and after a restore; post edits, comments, classic menus and theme switches clear it automatically.
 | Insight | Usual fix |
 |---|---|
 | Improve image delivery / slow LCP image | Resize + compress to your M03 rule (e.g. 1600 px WebP) |

@@ -87,7 +87,7 @@ flowchart TD
    - Switch to a different theme in **Appearance → Themes**.
    - Deactivate every plugin **except UpdraftPlus**.
 3. **Start a timer.** Restore the backup you just made: **Restore** → tick **Plugins, Themes, Uploads, Others** and **Database** → **Next** → **Restore**. This time UpdraftPlus *doesn't* call it a migration, because it's the same site address.
-   **Expected:** **Restore successful!** You may need to log in again (same login as before). The deleted post is back, your theme is active, and every plugin is active again, because the restored database brought back the list of active plugins.
+   **Expected:** **Restore successful!** You may need to log in again (same login and 2FA as before). The deleted post is back, your theme is active, and every plugin is active again, because the restored database brought back the list of active plugins. If a page cache is on, click **Delete Cache** before you check, so logged-out views don't show pages cached during the bad morning.
 4. **Stop the timer** after your 5-minute check (homepage, the restored post, forms, editor). Add the time to your restore log as an **in-place restore** and compare it with Task 2's restore to a test site.
 5. Write one sentence: what would you have lost if your last backup had been **a week** old instead of five minutes old? (That's your recovery point.)
 
@@ -95,7 +95,7 @@ flowchart TD
 1. Open your homepage in a **logged-out** private window and note your site title in the header. Reload it once so the cached copy exists.
 2. In your normal (logged-in) window, change **Settings → General → Site Title** (e.g. add " — test") and **Save Changes**.
 3. Reload the homepage in the logged-out window.
-   **Expected:** with WP Super Cache, the **old** title is still there. The plugin clears a post's page when you edit the post, but not when you change a general setting like this. (If the new title already shows, your cache was cleared or expired, or your host's cache works differently. Note which.)
+   **Expected:** with WP Super Cache, the **old** title is still there. The plugin clears pages when you publish or edit a post, change a comment, update a classic menu or switch theme, but not when you change a general setting like this. Its cached pages otherwise expire after an hour by default. (If the new title already shows, your cache was cleared or expired, or your host's cache works differently. Note which.)
 4. Fix it: **Settings → WP Super Cache → Delete Cache** (and purge your host or CDN cache on a live site), then reload logged out.
    **Expected:** the new title shows. Change the title back, delete the cache again, and check once more.
 5. Write one sentence on when you'll clear the cache by hand (e.g. after changing settings, menus that don't refresh, widgets or the theme's global styles), and add it to your weekly update routine.
