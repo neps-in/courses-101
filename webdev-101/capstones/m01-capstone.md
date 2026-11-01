@@ -62,7 +62,7 @@ Trigger each failure on purpose, screenshot it, and write **which layer failed a
 |---|---|---|
 | A | Open a domain that can't exist, using the reserved `.example` ending, e.g. `https://<brandname>-typo-test.example`. **Don't** mistype the real brand's domain: typo domains are often registered by scammers. | Error text and code (e.g. `DNS_PROBE_FINISHED_NXDOMAIN`). Layer: DNS. No server reached. |
 | B | Open a made-up page on the brand's real domain (`/this-page-does-not-exist`) | Status code (Network panel) and whether the 404 page helps the visitor. Layer: server answered, page missing. |
-| C | Open `http://neverssl.com` (or any HTTP-only site) | What the browser shows (warning page / "Not secure"). Layer: no HTTPS, so no privacy, integrity or identity. |
+| C | Open `http://neverssl.com` (or `http://httpforever.com` if it doesn't load) | What the browser shows (warning page / "Not secure"). Layer: no HTTPS, so no privacy, integrity or identity. |
 
 Then, for each one, write the **first fix** you'd try if this were your own site (e.g. "A: check the domain hasn't expired and the A record exists").
 
