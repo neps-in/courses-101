@@ -10,18 +10,19 @@ Run on the server that hosts `/var/www/neps.in`. Back up first:
 2. `wp eval-file upload_module.php mNN.json <section ID> --user=118`: publishes the lessons, creates a quiz after each
    lesson, and lays out the section in order (lesson, quiz, …, capstone). Refuses to run if a lesson is already published.
 3. `wp eval-file update_content.php mNN.json --user=118`: re-push lesson content only (after edits).
+4. `wp eval-file refresh_quizzes.php mNN.json [apply] --user=118`: update published quizzes in place (question text, hint, explanation, answers, correct answer). Dry run without `apply`; keeps all IDs; skips quizzes whose question or option count changed.
 
 | Module | Section ID | First lesson ID | Status |
 |---|---|---|---|
 | M01 | 32 | 2615 | live (uploaded with the one-off `upload_m01.php`) |
 | M02 | 33 | 2621 | live |
 | M03 | 34 | 2627 | live |
-| M04 | 35 | 2633 | drafts |
-| M05 | 36 | 2639 | drafts |
-| M06 | 37 | 2645 | drafts |
-| M07 | 38 | 2652 | drafts |
-| M08 | 39 | 2658 | drafts |
-| M09 | 40 | 2664 | drafts |
+| M04 | 35 | 2633 | live |
+| M05 | 36 | 2639 | live |
+| M06 | 37 | 2645 | live |
+| M07 | 38 | 2652 | live |
+| M08 | 39 | 2658 | live |
+| M09 | 40 | 2664 | live |
 
 ## ⚠️ Saving the course detaches drafts
 Saving course 2608 in wp-admin removes every attached lesson that isn't published (it happened on 2026-10-31).
