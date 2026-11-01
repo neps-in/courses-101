@@ -72,7 +72,7 @@ flowchart TD
 ## Hands-on walkthrough
 
 ### Part A — Audit your cookies (~8 min)
-1. Open your site logged out in a fresh window (logged-in cookies would confuse the results). Don't click anything yet. Chrome's **Incognito** blocks third-party cookies by default, which hides embed and ad cookies, so use a **Chrome Guest window** (profile menu → **Guest**) or a **Firefox private window** instead. Your duty still applies to the many browsers that allow those cookies.
+1. Open your site logged out in a fresh window (logged-in cookies would confuse the results). Don't click anything yet. Use a Chrome **Incognito** window, but note that Incognito **blocks third-party cookies by default**, which hides embed and ad cookies. Click the **eye icon** in the address bar and **allow third-party cookies** for your site for this session (Google's help: *Delete, allow and manage cookies in Chrome*). Your duty still applies to browsers that allow those cookies.
 2. Open DevTools (**F12**, or right-click → **Inspect**) → **Application** tab (Chrome/Edge; in Firefox it's **Storage**) → **Storage → Cookies** → your domain. Also check **Local storage** and **Session storage**.
 3. Load the homepage, a post with an embed, and the page with your sign-up form. For each cookie or storage item, write a row:
 

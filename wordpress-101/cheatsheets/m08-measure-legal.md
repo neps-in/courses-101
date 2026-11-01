@@ -33,7 +33,7 @@
 - EU/UK: only **strictly necessary** storage without consent; everything else **consent first**. UK: narrow statistics exception (DUAA 2025). EU Digital Omnibus: **proposal, not law** (2026-11).
 - Valid: before trackers run · **Reject as easy as Accept** on layer one · no pre-ticks · changeable later.
 - US (CCPA, only above thresholds: >$25M revenue, 100,000+ CA residents, or 50% revenue from data): opt-out of sale/sharing + honour **GPC**.
-- **Audit logged out** in a Chrome **Guest** or Firefox private window (Chrome Incognito blocks third-party cookies): DevTools → **Application → Storage → Cookies** + local/session storage.
+- **Audit logged out** in Chrome Incognito **with third-party cookies allowed for your site** (eye icon; blocked by default): DevTools → **Application → Storage → Cookies** + local/session storage.
 - No non-essential storage? → **dated rationale**. Otherwise **one** plugin (Complianz **Wizard → Website Scan → Statistics → Services/Plugins/Advertising → Documents → Finish**). **Deny test:** no `_ga`, embeds show placeholders.
 - Remove before you manage: cookieless analytics, click-to-load embeds, local fonts. Re-scan quarterly and after any new embed/plugin/pixel.
 

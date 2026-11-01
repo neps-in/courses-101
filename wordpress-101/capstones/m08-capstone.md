@@ -3,7 +3,7 @@
 
 **Time:** ~120–150 min (analytics and sign-up tracking ~25, monthly dashboard ~30, cookie audit and consent ~25, disclosures ~20, image log and AI statement ~20, drills ~20, report ~10) · **Level:** beginner · **Prereqs:** M08.L01–M08.L05
 **Non-negotiables assessed:** #13 Analytics you actually review · #12 Disclosures & legal pages (privacy, cookie consent where required, affiliate/sponsor disclosure) · #9 Email capture with a privacy notice (reinforced: sign-ups measured) · #8 Search Console (reinforced)
-**Verified against:** Site Kit by Google 1.190.0, Independent Analytics 2.16.2, Complianz 7.5.6, WordPress 7.1.4 (synced patterns, Openverse), Search Console and GA4 help pages, FTC, ASA/CAP and CMA guidance, EU ePrivacy/EDPB, ICO and CCPA pages (labels and rules used in M08.L01–L05), on 2026-11-01
+**Verified against:** Site Kit by Google 1.190.0, Independent Analytics 2.16.2, Complianz 7.5.6, WordPress 7.1.4 (synced patterns, Openverse), Search Console and GA4 help pages, FTC, ASA/CAP and CMA guidance, EU ePrivacy/EDPB, ICO and CCPA pages (labels and rules used in M08.L01–L05), Chrome Help (Incognito blocks third-party cookies by default; per-site allow), on 2026-11-01
 
 > Note: Search Console, GA4, Plausible and Fathom need a **live** site. On **Local**, use Independent Analytics (or Koko) for analytics and sign-ups, fill the Search Console columns of your dashboard with "launch", and write any live-only step as a **launch-day card** item for M09. The rubric gives full credit for either path. **Not legal advice.**
 
@@ -50,7 +50,7 @@ flowchart TD
    **Evidence:** `/thanks/` URL + noindex screenshot; the test sign-up counted in analytics and confirmed in the provider; the dashboard row; three dated actions; the calendar entry.
 
 ### 3. Cookies you can account for (from M08.L03)
-1. Audit cookies in DevTools (**Application → Storage → Cookies**, plus local and session storage) in a **Chrome Guest** or **Firefox private** window (not Chrome Incognito, which blocks third-party cookies) as a **logged-out** visitor on the homepage, a post with an embed and the sign-up page. Fill in the cookie table (Name, Domain, Set by, Purpose, Strictly necessary?).
+1. Audit cookies in DevTools (**Application → Storage → Cookies**, plus local and session storage) in a Chrome **Incognito** window with **third-party cookies allowed for your site** (eye icon in the address bar; Incognito blocks them by default) as a **logged-out** visitor on the homepage, a post with an embed and the sign-up page. Fill in the cookie table (Name, Domain, Set by, Purpose, Strictly necessary?).
 2. Remove or swap at least one non-essential tracker if you can (cookieless analytics, click-to-load embed, locally hosted fonts, delete an unused pixel), then re-scan.
 3. **Path 1:** if only strictly necessary cookies remain, file the dated **no-consent rationale** and summarise it in your privacy policy. **Path 2:** otherwise set up **one** consent plugin (Complianz: **Wizard → Website Scan → Statistics → Services/Plugins/Advertising → Documents → Finish**), with **Accept**, **Deny** and **View preferences** equally prominent, and the Cookie Policy in your footer. With Site Kit, switch on **Enable consent mode**.
 4. **Path 2 only:** run the **Deny test** (new private window, Deny, reload: no `_ga` or other non-necessary cookies; embeds show placeholders) and the **Accept test**.
@@ -75,7 +75,7 @@ flowchart TD
 **a) The embed that breaks your cookie promise.** Work on your **Local practice site**.
 1. Make sure Task 3 is finished: either your **Deny test** passes (Path 2) or your rationale says *"no cookies before a click"* (Path 1).
 2. In a test post, add a **YouTube** block with any public video. **Publish**.
-3. In a new **Chrome Guest** or **Firefox private** window (logged out; Chrome Incognito would block YouTube's third-party cookies and hide the problem), open the post. Path 2: click **Deny** and reload. Open DevTools → **Application → Storage → Cookies** and look at the **youtube.com** entry, plus **Local storage**.
+3. In a new Incognito window (logged out), open the post and **allow third-party cookies for your site** with the eye icon in the address bar (otherwise Incognito blocks YouTube's cookies and hides the problem). Path 2: click **Deny** and reload. Open DevTools → **Application → Storage → Cookies** and look at the **youtube.com** entry, plus **Local storage**.
    **Expected:** Path 1 sites now set YouTube cookies or storage on page view, so your rationale is no longer true. Path 2 sites do too if YouTube isn't ticked in the consent plugin, because the embed loads before any choice.
 4. Fix it. Path 1: replace the embed with a thumbnail image linking to the video (or a click-to-load embed), and re-scan. Path 2: **Complianz → Wizard → Consent → Services**, tick **YouTube**, finish, then Deny and reload.
    **Expected:** after Deny (or with no banner on Path 1), no YouTube cookies or storage until the reader chooses to play; Complianz shows a placeholder.
