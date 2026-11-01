@@ -53,7 +53,7 @@ Analytics is job **P10** in the course plugin stack: **one tool, reviewed monthl
 
 ```mermaid
 flowchart TD
-  %% alt: Pick analytics: need Google Ads or deep funnels? GA4 via Site Kit plus consent. Otherwise cookieless: in-WordPress free or hosted paid. Install, test logged out.
+  %% alt: Need Google Ads or funnels? GA4 via Site Kit plus consent. If not, a free or paid cookieless tool. Install one and test logged out.
   A[Choose one analytics tool]:::cream --> B{Need Google Ads, AdSense<br/>or deep funnels?}:::blue
   B -- Yes --> C[GA4 via Site Kit]:::sky
   C --> D{Readers in EU/UK?}:::blue

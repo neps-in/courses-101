@@ -44,7 +44,7 @@ Site Kit can track form sign-ups by itself, but only for certain plugins: **Cont
 
 ```mermaid
 flowchart TD
-  %% alt: Monthly review: Search Console queries, analytics top pages and sources, sign-ups from thank-you page and email provider, compare months, pick 3 actions, log.
+  %% alt: Monthly review: Search Console, top pages and sources, sign-ups; compare months, pick 3 actions and log them.
   A[First Monday: open last month<br/>vs the month before]:::cream --> B[Search Console:<br/>queries, pages, CTR]:::sky
   B --> C[Analytics:<br/>top pages, sources]:::sky
   C --> D[Sign-ups: thank-you page visits<br/>+ confirmed subscribers]:::sky

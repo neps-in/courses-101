@@ -50,7 +50,7 @@ The UK also has a narrow exception for some statistics cookies (M08.L01). Everyt
 
 ```mermaid
 flowchart TD
-  %% alt: Cookie consent decision: scan logged out; only strictly necessary cookies means no banner, write rationale; otherwise set one consent plugin, block until accept, test.
+  %% alt: Scan logged out. Only necessary cookies: no banner, write a rationale. Otherwise remove trackers or set up one consent plugin and test.
   A[Scan site logged out,<br/>before clicking anything]:::cream --> B{Only strictly necessary<br/>cookies or storage?}:::blue
   B -- Yes --> C[No banner needed:<br/>write a no-consent rationale]:::sky
   B -- No --> D{Can you remove or swap<br/>the tracker? e.g. cookieless analytics}:::blue
