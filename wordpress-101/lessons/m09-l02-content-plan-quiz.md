@@ -5,31 +5,31 @@
 
 ### Q1. What's the difference between a **cornerstone** post and a **supporting** post?
 - a) A cornerstone is always longer than 5,000 words; supporting posts are short news items
-- b) A cornerstone fully answers a big question; supporting posts answer smaller ones and link to it
-- c) A cornerstone sits on a page; supporting posts are always in the sidebar
+- b) A cornerstone sits on a page; supporting posts are always in the sidebar
+- c) A cornerstone answers a big question; supporting posts answer smaller ones
 - d) A cornerstone is sponsored; supporting posts are your own content
 
-**Answer:** b
+**Answer:** c
 **Explanation:** The cornerstone is your best, most complete answer to a big topic. Supporting posts cover the narrower questions around it and link up to it, and the cornerstone links back down. Together they form a topic cluster.
 **Hint:** Big question vs smaller questions.
 
 ### Q2. Which is the **best** starting point for choosing cornerstone topics?
-- a) Whatever topics a keyword tool shows with the highest volume
-- b) Real questions from readers, Search Console and the results page
+- a) Real questions from readers, Search Console and the results page
+- b) Whatever topics a keyword tool shows with the highest volume
 - c) The ten most popular posts on a competitor's site
 - d) A list of trending topics an AI tool suggests for any niche
 
-**Answer:** b
+**Answer:** a
 **Explanation:** The lesson starts from real questions in your readers' own words, confirmed in more than one source. Volume-only or copied topics often don't match your audience or your experience.
 **Hint:** Whose words should a topic come from?
 
 ### Q3. In Yoast SEO 28.8, what does switching on **Mark as cornerstone content** do?
 - a) It publishes the post to Google straight away
-- b) It flags the post as cornerstone and checks it more strictly
-- c) It moves the post to the top of your homepage automatically
-- d) It adds internal links to the post from every other post for free
+- b) It moves the post to the top of your homepage automatically
+- c) It adds internal links to the post from every other post for free
+- d) It flags the post as cornerstone and checks it more strictly
 
-**Answer:** b
+**Answer:** d
 **Explanation:** Yoast's description: *"Mark and filter your cornerstone content… we'll assess your text more strictly."* Internal-linking suggestions are a Premium feature, and nothing is linked or published automatically.
 **Hint:** Mark, filter, assess.
 
@@ -44,22 +44,22 @@
 **Hint:** Every shelf needs a guidebook.
 
 ### Q5. Kai can realistically write about four posts a month. What's the best month-one plan?
-- a) Four cornerstone guides on four different topics
-- b) One cornerstone (or a major update) plus three supporting posts in its cluster
+- a) One cornerstone (or a major update) plus three supporting posts in its cluster
+- b) Four cornerstone guides on four different topics
 - c) Daily short posts for two weeks, then a break to catch up
 - d) Ten supporting posts across ten clusters, with no cornerstone yet
 
-**Answer:** b
+**Answer:** a
 **Explanation:** One cluster per month builds a cornerstone and the posts that link to it at a cadence he can keep. Four big guides or a burst of daily posts usually stalls.
 **Hint:** One cluster, a steady pace.
 
 ### Q6. Zara's topic "best flour for sourdough" scores high on demand, but she has never tested different flours. How should she score and handle it?
 - a) Score Experience high anyway, because demand matters most
-- b) Score Experience low; test flours first or make it a supporting post later
-- c) Write it from other sites' reviews, since readers won't notice
+- b) Write it from other sites' reviews, since readers won't notice
+- c) Score Experience low; test flours first or make it a supporting post later
 - d) Ask an AI tool to invent test results for her post
 
-**Answer:** b
+**Answer:** c
 **Explanation:** First-hand experience is what makes content helpful (Google's *who, how, why*) and what AI summaries can't copy. She can plan the testing and write it once she has her own results. Inventing results breaks trust and the AI-use promise from M08.L05.
 **Hint:** Can she show it from her own kitchen?
 
@@ -70,11 +70,11 @@
 > 4. Schedule two posts and review the plan monthly.
 
 - a) Step 1: 40 questions is far too many to start with
-- b) Step 3: supporting posts should link up to the cornerstone, and it links back down
-- c) Step 2: business fit shouldn't be part of the score at all
-- d) Step 4: scheduled posts should never be reviewed afterwards
+- b) Step 2: business fit shouldn't be part of the score at all
+- c) Step 4: scheduled posts should never be reviewed afterwards
+- d) Step 3: supporting posts should link up to the cornerstone, and it links back down
 
-**Answer:** b
+**Answer:** d
 **Explanation:** The links are what make a topic cluster: they help readers find the full guide, spread link value and show search engines how your posts relate. Steps 1, 2 and 4 follow the lesson.
 **Hint:** What turns separate posts into a cluster?
 

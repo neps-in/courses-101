@@ -32,7 +32,7 @@ After launch, Tom wrote whatever came to mind: a recipe, a kitchen-tour post, a 
 ### What makes a good cornerstone topic
 Score each candidate 1–3 on four questions:
 1. **Demand:** do real people ask this (in more than one source)?
-2. **Experience:** can you write it from first-hand experience, with your own photos and results? (Google's helpful-content guidance asks *who, how, why*; first-hand experience is what AI summaries can't copy.)
+2. **Experience:** can you write it from first-hand experience, with your own photos and results? (Google's helpful-content guidance asks *who, how, why* and values first-hand experience; your own tests and photos are also what a generic AI summary can't supply.)
 3. **Depth:** is it big enough for a full guide with 3+ supporting posts?
 4. **Business fit:** does it lead naturally to your sign-up, product or affiliate links (M06)?
 
@@ -68,9 +68,9 @@ flowchart TD
 ### Part B — Build the content plan (~10 min)
 4. Copy this template into your site docs (spreadsheet works best):
 
-   | # | Cornerstone topic (working title) | Category | Intent (M05.L03) | Supporting posts (3–5) | Sign-up / offer it leads to | Status | Publish date |
+   | # | Cornerstone topic (working title) | Category | Intent (M05.L03: Know / Do / Website / Visit) | Supporting posts (3–5) | Sign-up / offer it leads to | Status | Publish date |
    |---|---|---|---|---|---|---|---|
-   | 1 | The complete beginner's guide to sourdough starter | Bread | Learn (how-to guide) | Why isn't my starter rising? · Best flour for starters · Feeding schedule printable · Starter vs yeast | "7-day starter plan" lead magnet | Planned | 2026-11-11 |
+   | 1 | The complete beginner's guide to sourdough starter | Bread | Know (how-to guide) | Why isn't my starter rising? · Best flour for starters · Feeding schedule printable · Starter vs yeast | "7-day starter plan" lead magnet | Planned | 2026-11-11 |
 
 5. For each cornerstone, list **3–5 supporting posts** from the questions in that group. Each supporting post must link **up** to its cornerstone, and the cornerstone links **down** to each supporting post once it's published.
 6. Mark any **existing** posts that already fit: change their category if needed (keeping the URL the same, M01.L04) and add them as supporting posts.
