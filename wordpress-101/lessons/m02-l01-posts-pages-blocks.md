@@ -2,7 +2,7 @@
 > After this lesson you know where each piece of content belongs, and you can build a full post with your hands on the keyboard.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** Module 1 (your Local practice site)
-**Verified against:** WordPress 7.1.4 block editor; keyboard shortcuts read from WordPress core's registered shortcut list, on 2026-10-29
+**Verified against:** WordPress 7.1 block editor; keyboard shortcuts read from WordPress core's registered shortcut list, on 2026-10-29; re-checked against the 7.1 code on 2026-11-01
 
 > ⚠️ **Freshness flag:** the block editor changes with every WordPress release. If a shortcut or button here doesn't match your screen, press **Shift+Alt+H** (Mac: **Ctrl+Option+H**) in the editor to see the shortcut list for your version.
 
@@ -82,7 +82,7 @@ On a Mac, read **Ctrl** as **⌘ (Cmd)** and **Alt** as **⌥ (Option)**, except
 Use your **Local** practice site. In this walkthrough, try to **insert every block from the keyboard**: `/` commands and the markdown-style shortcuts.
 
 **Step 1: create the post (2 min)**
-1. **Posts → Add New Post**. Type the title: *My first real post*. Press **Enter**.
+1. **Posts → Add Post**. Type the title: *My first real post*. Press **Enter**.
    **Expected:** the cursor moves to an empty paragraph block below the title.
 
 **Step 2: write with the keyboard (8 min)**
@@ -120,7 +120,7 @@ Use your **Local** practice site. In this walkthrough, try to **insert every blo
    **Expected:** "Post published" with a **View Post** link. Open it: every block appears in order.
 
 **Step 5: a page, for contrast (2 min)**
-1. **Pages → Add New Page**, title *Contact*, one paragraph, **Publish**.
+1. **Pages → Add Page**, title *Contact*, one paragraph, **Publish**.
 2. Visit your site's blog index and RSS feed (`/feed/`).
    **Expected:** *My first real post* appears in both; *Contact* appears in neither.
 
