@@ -2,7 +2,7 @@
 > After this lesson you can read any URL part by part, explain how a domain name finds its server, and look up the DNS records and registration details of a real domain.
 
 **Time:** ~18 min reading + ~25 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L01 · **Remediate to:** M01.L01
-**Verified against:** MDN "What is a URL?" and "What is a domain name?", ICANN's RDAP announcement (27 Jan 2025) and lookup.icann.org, Google Admin Toolbox Dig, and the GA4 campaign-URL help page, on 2026-11-02.
+**Verified against:** live `dig` lookups (CNAME `www.github.com`, wikipedia.org MX/TXT/NS) and MDN "What is a URL?" and "What is a domain name?", ICANN's RDAP announcement (27 Jan 2025) and lookup.icann.org, Google Admin Toolbox Dig, and the GA4 campaign-URL help page, on 2026-11-02.
 
 > Note: the course's demo brand uses `nilacoffee.example`. Domains ending in `.example` are reserved for documentation (RFC 2606), so they never point at a real business.
 
@@ -32,7 +32,7 @@ Read it left to right: **`https`** (scheme) · **`shop`** (subdomain) · **`nila
 | **Scheme** | `https` | Which protocol to use. `https` is encrypted (Lesson 1.3). Others exist, e.g. `mailto:` or the `data:` you used in L01. |
 | **Subdomain** | `shop` | An optional label before the domain, often for a section or a different service: `www`, `shop`, `blog`, `help`. |
 | **Domain** (registrable domain) | `nilacoffee` + `.example` | The name you buy and renew from a **registrar**. It's the part that's yours. |
-| **Top-level domain (TLD)** | `.example`, `.com`, `.in`, `.com.br` | The last part. Generic TLDs (`.com`, `.org`, `.shop`, `.coffee`) and country-code TLDs (`.in`, `.ng`, `.br`, `.uk`). Some countries use second-level endings like `.co.uk` or `.com.br`. |
+| **Top-level domain (TLD)** | `.example`, `.com`, `.in`, `.uk` | The last part. Generic TLDs (`.com`, `.org`, `.shop`, `.coffee`) and country-code TLDs (`.in`, `.ng`, `.br`, `.uk`). Some countries add a second level that people buy under, like `.co.uk` or `.com.br`; the TLD is still `.uk` or `.br`. |
 | **Path** | `/subscriptions/monthly` | Which page on that site. Readable paths help people and search engines (Module 7). |
 | **Query string** | `?utm_source=instagram&utm_medium=social&utm_campaign=launch` | Starts with `?`; `key=value` pairs joined by `&`. The server or scripts can read them. **UTM tags** live here; analytics tools use them to tell which campaign brought a visitor. |
 | **Fragment** | `#pricing` | Starts with `#`; jumps to a spot on the page. **It is never sent to the server**, which is why the `#` in Lesson 1.1's `data:` page cut your text short. |
@@ -94,7 +94,7 @@ All free and in the browser. Parts A, D and E work on a phone; B and C are easie
    | `http://blog.example.org/?p=42` | | | | | | |
 
    **Expected output:**
-   - Row 1: `https` · `www` · `bbc.co.uk` (TLD `.co.uk`) · `/news/technology` · — · —
+   - Row 1: `https` · `www` · `bbc.co.uk` (TLD `.uk`, bought under `.co.uk`) · `/news/technology` · — · —
    - Row 2: `https` · `shop` · `nilacoffee.example` · `/subscriptions/monthly` · the three `utm_` pairs · `pricing`
    - Row 3: `http` (not encrypted, a warning sign) · `blog` · `example.org` · `/` · `p=42` · —
 2. Look at Row 2's query string. Write the three UTM tags as plain sentences, for example "source = Instagram".
@@ -107,7 +107,7 @@ All free and in the browser. Parts A, D and E work on a phone; B and C are easie
    > 🖼️ **Image prompt:** Desktop screenshot (1280×720) of Google Admin Toolbox Dig with `wikipedia.org` in the Name box, record type A selected, and the result line showing `IN A` and an IPv4 address. Outline the TTL number and the IP address. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Google Admin Toolbox Dig showing the A record for wikipedia.org with its TTL and IPv4 address highlighted.
 3. Now choose **AAAA**, then **MX**, then **NS**, then **TXT**, noting one result from each.
-   **Expected:** AAAA shows an IPv6 address; MX lists mail servers with a priority number; NS lists nameservers; TXT shows text lines, often starting with `v=spf1` (email protection) or `google-site-verification=` (proof of ownership).
+   **Expected:** AAAA shows an IPv6 address; MX lists mail servers with a priority number (for Wikipedia, its own `wikimedia.org` servers); NS lists nameservers; TXT shows text lines, often starting with `v=spf1` (email protection) or `google-site-verification=` (proof of ownership).
 4. Try `www.github.com` with record type **CNAME**.
    **Expected:** a CNAME answer pointing `www.github.com` to `github.com`. That's an alias: one name pointing to another name, not to an IP.
 
@@ -155,7 +155,7 @@ All free and in the browser. Parts A, D and E work on a phone; B and C are easie
 |---|---|---|
 | `DNS_PROBE_FINISHED_NXDOMAIN` | Typo in the domain, the domain has expired, or it has no records yet | Check the spelling; look up the domain in ICANN Lookup; check its A/CNAME records in Dig |
 | Dig shows a new record, but your browser still shows the old site | Your device or resolver cached the old answer | Wait for the TTL, try another network or phone data, or flush Google Public DNS's cache at `https://developers.google.com/speed/public-dns/cache` |
-| ICANN Lookup returns nothing for a `.in`, `.de` or other country domain | Some country-code registries don't offer RDAP through ICANN | Use the country registry's own lookup (for example `registry.in` for `.in`) |
+| ICANN Lookup returns nothing for a `.in`, `.de` or other country domain | Some country-code registries don't offer RDAP through ICANN | Use the country registry's own lookup; find the registry for any TLD in IANA's Root Zone Database (Further reading) |
 | Dig shows no CNAME for a `www` name | It has an A record instead, or the brand uses a different setup | Try record type **A**; both are valid ways to point a name |
 | A campaign link opens the right page but analytics shows "direct" | UTMs were removed by a link shortener, put after `#`, or misspelt (`utm-source`) | Test the final link: the address bar must still show `?utm_source=…` |
 
@@ -165,7 +165,7 @@ All free and in the browser. Parts A, D and E work on a phone; B and C are easie
 2. Look up its domain's **A**, **MX** and **TXT** records in Dig, and its **registrar** and **expiry date** in ICANN Lookup.
 3. Write two sentences: who registered the domain through which registrar, and which email service the domain uses (hint: the MX servers' names often give it away, e.g. `google.com` or `outlook.com`).
 
-**Expected outcome:** a URL table, three DNS findings and two sentences. Example: "nilacoffee.example is registered through Example Registrar until 2027-03-10. Its MX records point to `aspmx.l.google.com`, so it uses Google Workspace for email."
+**Expected outcome:** a URL table, three DNS findings and two sentences. Example (for a made-up domain): "kemibakes.com is registered through Namecheap until 2027-03-10. Its MX records point to `aspmx.l.google.com`, so it uses Google Workspace for email."
 **Stretch goal:** find a TXT record starting with `v=spf1` on any brand domain and list the services it names (for example `include:_spf.google.com`, `include:spf.brevo.com`). These are the services allowed to send email as that brand.
 
 ## Key takeaways

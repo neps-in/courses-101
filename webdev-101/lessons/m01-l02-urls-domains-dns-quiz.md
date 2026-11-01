@@ -1,7 +1,7 @@
 # M01.L02 Quiz — URLs, Domains & DNS
 
 > 7 questions · 2 recall, 3 scenario, 1 spot-the-error, 1 spaced review · pass mark 70% (5 of 7). Questions are tagged with the objective they test (O1–O3).
-> Facts checked 2026-11-02 (MDN, ICANN RDAP announcement, Google Admin Toolbox).
+> Facts checked 2026-11-02 (MDN, ICANN RDAP announcement, Google Admin Toolbox). Reviewed 2026-11-02.
 
 ### Q1. In `https://blog.nilacoffee.example/recipes/cold-brew?utm_source=email#step-3`, which part is the path? *(O1 · recall)*
 - a) `blog.nilacoffee.example`
@@ -36,7 +36,7 @@
 ### Q4. Joon is about to share this link in a newsletter: `https://nilacoffee.example/launch#offer?utm_source=newsletter&utm_campaign=launch`. Analytics later shows almost none of these clicks as "newsletter". Why? *(O1 · scenario)*
 - a) Newsletters can't carry UTM tags, so analytics ignores them
 - b) The `https` scheme hides UTM tags from analytics tools
-- c) The UTMs sit after the `#`, so they're part of the fragment, not the query
+- c) The UTMs come after the `#`, inside the fragment
 - d) `utm_campaign` must always come before `utm_source`
 
 **Answer:** c
@@ -54,7 +54,7 @@
 **Hint:** The freshness flag at the top of the lesson names the change.
 
 ### Q6. Spot the error. A marketer types `https://nilacofee.example` and sees "This site can't be reached — DNS_PROBE_FINISHED_NXDOMAIN". They conclude: "The server crashed. I'll ask the host to restart it." What's wrong with this conclusion? *(O2 · spot-the-error)*
-- a) NXDOMAIN means DNS found no such domain, so no server was contacted at all
+- a) NXDOMAIN means no such domain; no server was ever contacted
 - b) NXDOMAIN always means the domain has expired and must be renewed
 - c) The error proves the host's server is fine but the page was deleted
 - d) The error only happens on Chrome, so it isn't a real problem

@@ -82,7 +82,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
 | M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | reviewed | 2026-11-02 |
-| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | draft | 2026-11-02 |
+| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | reviewed | 2026-11-02 |
 | M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | draft | 2026-11-02 |
 | M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | draft | 2026-11-02 |
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | draft | 2026-11-02 |
@@ -96,6 +96,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m01-l02 reviewed: verified CNAME www.github.com→github.com and wikipedia.org MX/TXT/NS with live dig; fixed TLD wording (.co.uk/.com.br are under .uk/.br); replaced impossible registered-.example exercise example with a made-up .com; replaced unverified registry.in tip with IANA Root Zone lookup; Q4/Q6 correct options no longer the longest.
 - 2026-11-02: webdev-101 m01-l01 reviewed: fixed Firefox-on-Mac view-source shortcut (Cmd+U, per Mozilla Support; also fixed in m01-l04, m01-l05, M01 cheat sheet, glossary); replaced Outlook example (uses HTTPS to Exchange, not plain IMAP) with Thunderbird/IMAP in lesson and Q3; added 1990-vs-1991 first-website note; added "just me or everyone?" mobile-data step to Part C (answers the Why-it-matters question); renamed Part B; neutral exercise example (wikipedia.org); Q6 rewritten as a misconception correction; Q7 correct option no longer longest. Next: `/review-lesson webdev-101/lessons/m01-l02-urls-domains-dns.md`.
 - 2026-11-02: webdev-101 M01 capstone draft ("How this site works" Site Breakdown, three-failure triage as break-it lab, 5×4 rubric for NN #1, running-project checkpoint) + cheatsheets/m01-how-the-web-works.md. Typo-domain tests switched to reserved `.example` (typosquatting risk), also in m01-l02. Module 1 fully drafted. ⏸ Loop stopped for user review of M01. Next: user review / `/review-lesson` on M01, then `/next-lesson` → plans M02.
 - 2026-11-02: webdev-101 m01-l05 draft (lesson + 7-question quiz incl. 1 review from M01.L02; 7 glossary terms; source-vs-DOM flowchart kept as Mermaid; 2 image prompts, no images; break-it-and-fix-it task = delete an element, undo/reload). Chrome DevTools docs checked. All M01 lessons drafted. Next: `/next-lesson` → M01 capstone.
