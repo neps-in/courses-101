@@ -86,7 +86,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | draft | 2026-11-02 |
 | M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | draft | 2026-11-02 |
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | draft | 2026-11-02 |
-| M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | todo | — |
+| M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | draft | 2026-11-02 |
 | M02 | — | HTML: The Structure of Content (not yet planned) | — | todo | — |
 | M03 | — | CSS: Design, Brand & Layout (not yet planned) | — | todo | — |
 | M04 | — | Publish It: Tools, Hosting & Domains (not yet planned) | — | todo | — |
@@ -96,6 +96,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 M01 capstone draft ("How this site works" Site Breakdown, three-failure triage as break-it lab, 5×4 rubric for NN #1, running-project checkpoint) + cheatsheets/m01-how-the-web-works.md. Typo-domain tests switched to reserved `.example` (typosquatting risk), also in m01-l02. Module 1 fully drafted. ⏸ Loop stopped for user review of M01. Next: user review / `/review-lesson` on M01, then `/next-lesson` → plans M02.
 - 2026-11-02: webdev-101 m01-l05 draft (lesson + 7-question quiz incl. 1 review from M01.L02; 7 glossary terms; source-vs-DOM flowchart kept as Mermaid; 2 image prompts, no images; break-it-and-fix-it task = delete an element, undo/reload). Chrome DevTools docs checked. All M01 lessons drafted. Next: `/next-lesson` → M01 capstone.
 - 2026-11-02: webdev-101 m01-l04 draft (lesson + 7-question quiz incl. 1 review from M01.L03; 10 glossary terms; static-vs-dynamic flowchart kept as Mermaid; 1 image prompt, no images). WordPress share stated as ~40% (W3Techs, autumn 2026; secondary sources conflict). Detection taught via view-source clues because tool free limits are inconsistent. Next: `/next-lesson` → M01.L05.
 - 2026-11-02: webdev-101 m01-l03 draft (lesson + 7-question quiz incl. 1 review from M01.L02; 13 glossary terms; page-load flowchart kept as Mermaid; 2 image prompts, no images). Chrome 154 "Ask before HTTP" default confirmed in release notes; certificate lifetimes per CA/B SC-081v3 and ISRG. Next: `/next-lesson` → M01.L04.

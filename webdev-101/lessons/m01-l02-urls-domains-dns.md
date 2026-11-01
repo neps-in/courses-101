@@ -121,7 +121,7 @@ All free and in the browser. Parts A, D and E work on a phone; B and C are easie
    **Expected:** they match. The registry tells the world which nameservers hold the records, and those nameservers answer.
 
 **Part D: break it and read the error (3 min)**
-1. In your browser, open `https://nilacoffee.example` and then a misspelt real domain such as `https://wikipediaa-typo-test.org`.
+1. In your browser, open `https://nilacoffee.example` and then `https://wikipedia-typo-test.example`. (Use the reserved `.example` ending for tests like this. Don't mistype real brand domains: scammers register common typos, a trick called typosquatting.)
    **Expected:** a browser-style error. Chrome and Edge show "This site can't be reached" with **`DNS_PROBE_FINISHED_NXDOMAIN`**; Firefox says "Hmm. We're having trouble finding that site." NXDOMAIN means **"no such domain"**: DNS found no record, so no request was ever sent to a server.
 2. Write one sentence in your notes: "NXDOMAIN means …".
 
