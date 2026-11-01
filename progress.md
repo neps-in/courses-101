@@ -82,7 +82,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
 | M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | draft | 2026-11-02 |
-| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | todo | — |
+| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | draft | 2026-11-02 |
 | M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | todo | — |
 | M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | todo | — |
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | todo | — |
@@ -96,6 +96,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m01-l02 draft (lesson + 7-question quiz incl. 1 review from M01.L01; 23 glossary terms, glossary sorted A–Z; DNS lookup flowchart kept as Mermaid; 2 image prompts, no images). RDAP-replaces-WHOIS (ICANN, 28 Jan 2025) and Dig/ICANN Lookup tools checked; demo domain uses reserved `.example`. Next: `/next-lesson` → M01.L03.
 - 2026-11-02: webdev-101 m01-l01 draft (lesson + 7-question quiz tagged O1–O3; 12 glossary terms; client/server flowchart kept as Mermaid; 2 image prompts, no images; refresher card for remediation). Sources: MDN Learn web development, CERN history. Next: `/review-lesson webdev-101/lessons/m01-l01-internet-vs-web.md` or `/next-lesson` → M01.L02.
 - 2026-11-02: webdev-101 planned M01 (5 lessons + capstone) in syllabus.md. Mermaid kept as code blocks (no rendered images). Next: `/next-lesson` → M01.L01.
 - 2026-11-02: Scaffolded webdev-101 around the existing outline: added outcomes, tools & costs (free path), 12 non-negotiables, running example (Nila Coffee demo + learner launch page), diagnostic plan, accessibility, freshness, licence/changelog; alt line on outline flowchart. Active course switched to webdev-101.
