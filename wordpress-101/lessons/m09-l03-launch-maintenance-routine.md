@@ -24,7 +24,7 @@ Ben launched with a big social post and then did nothing for two months. By the 
 | **Quarterly** | 60 min | Test restore (timed) · user and plugin audit · cookie re-scan · image log spot-check · check affiliate programme terms | M07.L02–L03, M08.L03–L05 |
 | **Yearly** | 90 min | Domain and hosting renewals (and renewal prices) · review privacy, cookie and disclosure pages · rebuild the content plan · full pre-launch checklist again | M01.L02, M08, M09.L01–L02 |
 
-**Analogy:** a car. Launch is driving it out of the showroom. Weekly is checking the tyres and fuel, monthly is the dashboard warning lights, quarterly is a service, yearly is the MOT or inspection. Nobody remembers these without reminders.
+**Analogy:** a car. Launch is driving it out of the showroom. Weekly is checking the tyres and fuel, monthly is the dashboard warning lights, quarterly is a service, yearly is the annual safety inspection. Nobody remembers these without reminders.
 
 ### Who you can announce to
 - **Your email list:** only people who signed up (M06.L03). Don't import your phone contacts, LinkedIn connections or a customer list into your newsletter "just for launch": they didn't consent, and it can break your provider's terms and email laws.
@@ -66,7 +66,7 @@ flowchart TD
    > **Alt text:** Search Console Sitemaps report with sitemap_index.xml submitted and Status Success.
 4. **Bing Webmaster Tools:** **Import** from Google Search Console (M05.L05).
    **Expected:** your site is listed and verified, with its sitemap.
-5. **URL Inspection:** in Search Console, paste your **homepage** URL in the top search bar, then **Request indexing**. Do the same for **one cornerstone post**. Don't do it for every page: the sitemap covers them, and there's a daily limit.
+5. **URL Inspection:** in Search Console, paste your **homepage** URL in the top search bar, then **Request indexing**. Do the same for **one cornerstone post**. Don't do it for every page: the sitemap covers them. Google says *"there's a quota for submitting individual URLs"*, and requesting the same URL again *"won't get it crawled any faster"*.
 6. If you use GA4 via Site Kit, connect it now (M08.L01) and check **Realtime** with a phone on mobile data.
 
 ### Part C — Tell people (~5 min)
@@ -87,7 +87,7 @@ flowchart TD
     | Day | Do |
     |---|---|
     | Day 1 | Sitemap still **Success**; any errors in **Pages**? |
-    | Day 3 | URL Inspection on the homepage: is it **URL is on Google**? (Often not yet; check again on day 7) |
+    | Day 3 | URL Inspection on the homepage: is it **URL is on Google**? (Often not yet: Google says crawling *"can take anywhere from a few days to a few weeks"*. Check again on day 7) |
     | Day 7 | First weekly care session |
     | Day 14 | Halfway check: are scheduled posts publishing? Any sign-ups? |
     | Day 30 | First monthly review: fill dashboard row 1 with live numbers (M08.L02) |
@@ -135,8 +135,9 @@ flowchart TD
 2. Submit your sitemap in Search Console, import into Bing, and request indexing for your homepage and one cornerstone.
 3. Announce to your list (consented subscribers only) and your own social accounts, with utm-tagged links.
 4. Create the four recurring calendar events with their checklists, and the five one-off events for days 1–30.
+5. On day 7, run your first **weekly care** session from the event's checklist and log what you did (backup status, updates applied, comments moderated) in your plugin log.
 
-**Expected outcome:** a live site with **Status: Success** for the sitemap; an import into Bing; a sent launch email and posts with tagged links; four recurring routines and five launch-month checks in your calendar; launch date recorded.
+**Expected outcome:** a live site with **Status: Success** for the sitemap; an import into Bing; a sent launch email and posts with tagged links; four recurring routines and five launch-month checks in your calendar; launch date recorded; one weekly care session logged.
 
 **Stretch goal:** after 30 days, compare traffic sources for your tagged links (GA4 **Traffic acquisition**, or your tool's referrers) and write which announcement brought the most engaged readers.
 

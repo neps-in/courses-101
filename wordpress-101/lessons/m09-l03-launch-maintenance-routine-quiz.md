@@ -10,7 +10,7 @@
 - d) Email Google support with a list of your new URLs and ask them to add them
 
 **Answer:** a
-**Explanation:** The sitemap tells Google about every URL at once. **Request indexing** has a daily limit and is meant for a few key or updated pages, not the whole site.
+**Explanation:** The sitemap tells Google about every URL at once. Google says there's *"a quota for submitting individual URLs"*, so **Request indexing** is for a few key or updated pages, not the whole site.
 **Hint:** One file for everything, a button for a few.
 
 ### Q2. Which list is the **weekly** routine in the lesson?
@@ -20,7 +20,7 @@
 - d) Data review with three actions, Site Health and an offline backup
 
 **Answer:** c
-**Explanation:** Weekly care is short: backups ran, updates done safely, comments moderated, the planned post published. Option a is quarterly, b is yearly and d is monthly.
+**Explanation:** Weekly care is short: backups ran, updates done safely, comments moderated, the planned post published. The restore and audit list is quarterly, renewals and legal pages are yearly, and the data review is monthly.
 **Hint:** What needs checking every few days, not every few months?
 
 ### Q3. What do campaign tags like `?utm_source=newsletter&utm_medium=email&utm_campaign=launch` do?

@@ -45,7 +45,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Click-through rate (CTR)** — clicks ÷ impressions in Search Console; high impressions with low CTR usually means the title or meta description needs rewriting. [M08.L02]
 - **Closed plugin** — a plugin removed from the WordPress.org directory ("This plugin has been closed as of … Reason: …"), often for a security issue; it gets no updates there, so replace it. [M06.L01]
 - **CNAME record** — a DNS record that points one name to another name, e.g. `www` → your main domain. [M01.L02]
-- **Coming-soon mode** — a host or plugin setting that shows visitors a placeholder page instead of your site; it also blocks search engines, so turn it off at launch. [M09.L03]
+- **Coming-soon mode** — a host or plugin setting that shows visitors a placeholder page instead of your site; it usually hides the site from search engines too, so turn it off at launch. [M09.L03]
 - **Command palette** — a search box opened with Ctrl+K / ⌘+K anywhere in the WordPress dashboard to jump to any screen or tool by name. [M01.L03]
 - **Comment moderation** — reviewing comments before they appear (Settings → Discussion → Before a comment appears, plus the Comment Moderation word list). [M06.L04]
 - **Consent (email marketing)** — a clear, informed, freely given choice to receive your emails (e.g. typing an email under wording that says what they'll get); never a pre-ticked box or silence. [M06.L03]
