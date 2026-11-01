@@ -21,7 +21,7 @@ Dev ignored the update badge for eight months because "the site works fine". A s
 | Release | Example | What changes | Default in WordPress |
 |---|---|---|---|
 | **Maintenance / security** (minor) | 7.1.3 → 7.1.4 | Bug and security fixes | **Automatic** for everyone |
-| **Major** | 7.0 → 7.1 | New features, editor changes | Your choice: **Dashboard → Updates** shows either *"This site is automatically kept up to date with each new version of WordPress"* or *"…with maintenance and security releases of WordPress only"* |
+| **Major** | 7.0 → 7.1 | New features, editor changes | **On for sites installed fresh since WordPress 5.6** (most new sites, including Local ones); **off** for older sites that were upgraded. Either way you can change it: **Dashboard → Updates** shows *"This site is automatically kept up to date with each new version of WordPress"* or *"…with maintenance and security releases of WordPress only"* |
 
 **Plugins and themes:** each one has an **Enable auto-updates / Disable auto-updates** link on **Plugins** and **Appearance → Themes** (M06.L01).
 
@@ -80,7 +80,7 @@ flowchart TD
 ### Part A — Set your auto-update policy (~6 min)
 1. Go to **Dashboard → Updates**. Note your **current WordPress version** and the automatic-updates line.
    **Expected:** a line such as *"This site is automatically kept up to date with maintenance and security releases of WordPress only."* and a link to switch (*"Enable automatic updates for all new versions of WordPress."* or *"Switch to automatic updates for maintenance and security releases only."*). If it says *"This site appears to be under version control. Automatic updates are disabled."*, ask whoever set up the site.
-2. Choose: **maintenance and security only** (recommended while you're learning; you update majors after a staging test) or **all versions** (fine for simple sites with good backups). Click the matching link.
+2. Choose: **maintenance and security only** (recommended while you're learning; you update majors after a staging test) or **all versions** (fine for simple sites with good backups). Click the matching link. A freshly installed site is usually already on **all versions**, so this is a deliberate switch, not a check.
 3. Go to **Plugins → Installed Plugins**. Using the table above and your **plugin log** (M06.L01), click **Enable auto-updates** for low-risk plugins and leave high-risk ones manual. Add an **Auto-updates** column value to every log row.
 4. **Appearance → Themes**: enable auto-updates for your active default theme; delete themes you don't use (keep one default theme as a fallback).
    **Expected:** every plugin and theme has a deliberate auto-update choice recorded in your log.

@@ -10,7 +10,7 @@
 - d) Every release, and this can't be changed
 
 **Answer:** b
-**Explanation:** WordPress applies maintenance and security releases in the background. Whether **major** versions also update automatically is your choice in **Dashboard → Updates** ("…each new version" vs "…maintenance and security releases of WordPress only").
+**Explanation:** WordPress applies maintenance and security releases in the background. Major versions also auto-update by default on sites installed since WordPress 5.6 (not on older upgraded sites), and you can switch either way in **Dashboard → Updates** ("…each new version" vs "…maintenance and security releases of WordPress only").
 **Hint:** The small, urgent ones.
 
 ### Q2. A plugin auto-update causes a fatal error. What does WordPress 7.0 do?

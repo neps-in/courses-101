@@ -87,7 +87,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Lossless compression** — shrinking a file without changing any pixels (PNG, lossless WebP/AVIF). [M03.L02]
 - **Lossy compression** — shrinking a file by discarding detail the eye is unlikely to notice, controlled by a quality setting (JPEG, WebP, AVIF). [M03.L02]
 - **Mailpit** — the tool in Local that catches emails your practice site sends, so you can read them without sending real mail (Tools → Mailpit → Open Mailpit). [M04.L04]
-- **Major vs minor (maintenance) release** — a major release (7.0 → 7.1) adds features; a minor one (7.1.3 → 7.1.4) fixes bugs and security holes and auto-installs by default. [M07.L01]
+- **Major vs minor (maintenance) release** — a major release (7.0 → 7.1) adds features; a minor one (7.1.3 → 7.1.4) fixes bugs and security holes. Minor releases auto-install by default; majors do too on sites installed since 5.6. [M07.L01]
 - **Managed WordPress hosting** — hosting that adds WordPress-specific updates, backups, caching, security and support on top of the server. [M01.L02]
 - **Media kit** — a page or one-page PDF for brands: your audience, dated reach numbers, offers and rates, past partners and how to enquire. [M04.L04]
 - **Media Library** — Media → Library, where every uploaded file lives and can be searched, edited and inserted into posts. [M03.L01]
