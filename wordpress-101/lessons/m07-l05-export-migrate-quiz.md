@@ -14,13 +14,13 @@
 **Hint:** It's your writing, not your whole site.
 
 ### Q2. When you import a WXR file, how do your images get into the new site?
-- a) They're inside the XML file
-- b) They never come across; you must upload them all by hand
-- c) The importer downloads them from the old site's web addresses, if **Download and import file attachments** is ticked and the old site is reachable
-- d) WordPress emails them to the admin
+- a) They're packed inside the XML file, so they arrive with the posts
+- b) The importer fetches them from the old site's addresses, if that site is online and public
+- c) They never come across; WordPress has no way to move images
+- d) WordPress copies them from your backup plugin's latest Uploads zip
 
-**Answer:** c
-**Explanation:** The export lists each attachment's URL (`<wp:attachment_url>`), and the importer fetches the files from there. If the old site is offline, or unreachable (e.g. a `.local` site from Playground), the images fail to import.
+**Answer:** b
+**Explanation:** The export lists each attachment's URL (`<wp:attachment_url>`), and with **Download and import file attachments** ticked the importer fetches the files from there. If the old site is offline, or on a local or private address such as a Local site, WordPress won't download them and the images fail to import.
 **Hint:** Look for `attachment_url` in the file.
 
 ### Q3. You're moving to a new host but keeping the **same domain**. What does Google's guidance say about redirects?
@@ -44,23 +44,23 @@
 **Hint:** What does the export **not** include?
 
 ### Q5. Tom switched DNS to his new host this morning. When should he cancel the old host?
-- a) Immediately, to avoid paying twice
-- b) After checking the new site, watching 404s, forms and email for 1–2 weeks, once all traffic reaches the new host
-- c) Before switching DNS, so there's no confusion
-- d) Never; keep both forever
+- a) Today, as soon as the new site loads for him, to avoid paying twice
+- b) After 1–2 weeks of checks, once all traffic is reaching the new host
+- c) Before he switched DNS, so visitors couldn't reach two versions
+- d) Never; he should keep both hosts running as permanent mirrors
 
 **Answer:** b
 **Explanation:** DNS caches expire gradually, so some visitors (and Googlebot) may still reach the old host for a while. The old host is also your fallback if something's wrong. Google's guide says to shut it down only when no one is using it.
 **Hint:** Some visitors still have the old address cached.
 
 ### Q6. Paul's 6,000 subscribers are stored in a WordPress newsletter plugin. Which step best protects them?
-- a) Run Tools → Export monthly; it includes subscribers
-- b) Export the list (CSV with consent fields) from the plugin monthly and keep it on a secure drive
-- c) Take screenshots of the subscriber screen
-- d) Nothing; plugins never lose data
+- a) Run Tools → Export monthly, since All content includes plugin data
+- b) Export a CSV with consent fields from the plugin monthly; store it securely
+- c) Take monthly screenshots of the plugin's subscriber screen as a record
+- d) Nothing extra; his daily database backup already keeps them safe enough
 
 **Answer:** b
-**Explanation:** Subscriber lists in plugins live in their own tables, which Tools → Export doesn't include. A regular CSV export, with consent dates and sources (M06.L03), lets you email readers and prove consent even if the site goes down.
+**Explanation:** Subscriber lists in plugins live in their own tables, which Tools → Export doesn't include. A database backup does contain them, but only as part of a WordPress restore. A regular CSV export, with consent dates and sources (M06.L03), lets you email readers and prove consent even if the site is down or you change provider.
 **Hint:** Where does the plugin keep its data?
 
 ### Q7. Spot the error in Ana's migration plan:

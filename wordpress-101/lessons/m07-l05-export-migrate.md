@@ -2,9 +2,9 @@
 > After this lesson you can export everything you've written, know exactly what that export leaves behind, plan a move to a new host without downtime or broken links, and keep your email list and media safe outside WordPress.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** M07.L02 (backups and migration restore), M01.L02 (DNS and TTL), M06.L02–L03 (email list and consent)
-**Verified against:** WordPress 7.1.4 core code (**Tools → Export** labels, WXR 1.2 contents, which post types are exportable, **Tools → Import**); WordPress Importer 0.9.7 plugin code; Google Search Central site-move guides, all on 2026-11-01
+**Verified against:** WordPress 7.1.4 core code (**Tools → Export** labels, WXR 1.2 contents, which post types are exportable, **Tools → Import**); WordPress Importer 0.9.7 plugin code (incl. how it downloads media: `wp_safe_remote_get()`, which WordPress blocks for local/private addresses); Google Search Central site-move guides, all on 2026-11-01
 
-> ⚠️ **Freshness flag:** on 2026-11-01 the official **WordPress Importer** plugin (by WordPress.org contributors, last updated 2026-10-20) was listed as *tested up to* WordPress 6.8, so the directory may show its "hasn't been tested with the latest 3 major releases" warning. It's still the standard importer and worked with WordPress 7.1 in these steps. Check its page before relying on it, and use a full-site migration (M07.L02) for real moves.
+> ⚠️ **Freshness flag:** on 2026-11-01 the official **WordPress Importer** plugin (by WordPress.org contributors, last updated 2026-10-20) was listed as *tested up to* WordPress 6.8, so the directory may show its "hasn't been tested with the latest 3 major releases" warning. It's still the standard importer, and its code uses ordinary WordPress functions. These steps were checked by reading its code, not by a live import on 7.1. Check its page before relying on it, and use a full-site migration (M07.L02) for real moves.
 
 ## Learning objectives
 1. **Export** all content with **Tools → Export** and **explain** what the file does and doesn't include.
@@ -22,9 +22,9 @@ Dele's host went out of business with two weeks' notice. Because he had a recent
 **What Tools → Export ("All content") includes** (*checked in WordPress 7.1.4 code*): the file uses a format called **WXR** (WordPress eXtended RSS). WordPress describes it as *"all of your posts, pages, comments, custom fields, terms, navigation menus, and custom posts"*. In practice that means:
 | Included | Not included |
 |---|---|
-| Posts, pages, comments, categories, tags | **Media files themselves.** Only their records and web addresses are included; the importer downloads the files from the old site **if it's still online** |
+| Posts, pages, comments, categories, tags | **Media files themselves.** Only their records and web addresses are included; the importer downloads the files from the old site **if it's online at a public address** |
 | Custom fields (e.g. many SEO plugins' per-post titles and descriptions) | **Themes and plugins** (the code) |
-| Navigation menus, synced patterns, and Site Editor templates, template parts and styles (all exportable post types) | **Site settings**: Settings screens, permalinks, plugin settings |
+| Navigation menus, synced patterns, and Site Editor templates, template parts and styles (all exportable post types; templates and styles only apply if the same theme is active) | **Site settings**: Settings screens, permalinks, plugin settings |
 | Authors' names and emails | **User passwords and roles.** Only authors of content come along, as new users or assigned to existing ones |
 | Media library entries (title, alt text, caption) | **Data plugins keep in their own tables**: redirects (Redirection), form entries, subscriber lists in MailPoet, shop orders |
 | | **Revisions** (not exportable) |
@@ -75,7 +75,7 @@ flowchart TD
 **In words:** lower your TTL ahead of time and take a fresh full backup. Restore it on the new host and check it on the temporary URL while the old site is still live. Freeze changes, re-sync if needed, then point DNS at the new host and confirm HTTPS. Keep the old host as a fallback for a week or two, fix anything that turns up, and only then cancel it.
 
 ## Hands-on walkthrough
-You'll export your **Local** practice site and import it into a fresh Local site, then write down what didn't come across. (You can use **WordPress Playground** instead for the import site, but Playground runs in your browser and usually can't fetch images from a `.local` address, so only text content will arrive.)
+You'll export your **Local** practice site and import it into a fresh Local site, then write down what didn't come across. **Heads-up:** on Local, the **images won't import**. Local sites live at your computer's own address (`127.0.0.1`), and for safety WordPress refuses to download files from local or private addresses (*checked in WordPress 7.1.4 code*). That's not a fault, and it gives you a clear demonstration of "media is referenced, not included". From a live site at a public address, the image download works. (**WordPress Playground** as the import site behaves the same way: text only.)
 
 ### Part A — Export all content (~3 min)
 1. On your practice site, go to **Tools → Export**.
@@ -89,11 +89,11 @@ You'll export your **Local** practice site and import it into a fresh Local site
    > **Alt text:** Tools → Export screen with All content selected and the Download Export File button.
 
 ### Part B — Import into a fresh site (~10 min)
-5. Keep your practice site **running** in Local (the importer downloads images from it). Create a new site: **+ → Create a new site**, name it `import-test`, default settings.
+5. Keep your practice site **running** in Local for now. Create a new site: **+ → Create a new site**, name it `import-test`, default settings.
 6. On `import-test`, go to **Tools → Import**. Under **WordPress** (*"Import posts, pages, comments, custom fields, categories, and tags from a WordPress export file."*) click **Install Now**, then **Run Importer**.
 7. *"Choose a WXR (.xml) file to upload, then click Upload file and import."* Choose your export file → **Upload file and import**.
 8. On **Assign Authors**, for each author choose **or assign posts to an existing user:** → your `import-test` admin (simplest), or create a new user. Under **Import Attachments**, tick **Download and import file attachments**. Click **Submit**.
-   **Expected:** a list of what was imported, ending with **All done.** **Have fun!** and possibly *"Remember to update the passwords and roles of imported users."* Some *"Failed to import…"* lines for media are common if the source site wasn't reachable.
+   **Expected:** a list of what was imported, ending with **All done.** **Have fun!** and possibly *"Remember to update the passwords and roles of imported users."* On Local you'll also see a *"Failed to import Media …"* line for each image, with *"Request failed due to an error: A valid URL was not provided. (http_request_failed)"*. That's the local-address block described above.
 
    > 🖼️ **Image prompt:** Screenshot of the WordPress Importer's Assign Authors step showing one author mapped with "or assign posts to an existing user:" set to the admin, and the "Download and import file attachments" checkbox ticked, 1280 × 800. Highlight the checkbox with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** WordPress Importer Assign Authors screen with the existing-user dropdown and the download attachments option ticked.
@@ -112,13 +112,15 @@ You'll export your **Local** practice site and import it into a fresh Local site
    | Redirects | | | |
    | Settings: site title, permalinks, reading settings | | | |
    | Email subscribers | | | |
-   **Expected:** writing, comments, terms, menus and (if downloads worked) images came across. Themes, plugins, settings, redirects, and anything kept in plugin tables didn't. That gap is why moving hosts uses a **full-site migration**, not an export.
-10. Delete `import-test` when you're done, or keep it as a scratch site.
+   **Expected:** writing, comments, terms and menus came across. Themes, plugins, settings, redirects, anything kept in plugin tables, and (on Local) the media files and featured images didn't. That gap is why moving hosts uses a **full-site migration**, not an export.
+10. **See "referenced, not included" for yourself:** open an imported post on `import-test`. Images *inside* the post may still show, because the post's HTML still points at your practice site's address. Now **stop** your practice site in Local and reload the post.
+    **Expected:** those images break, and **Media → Library** on `import-test` is empty. The images never moved; they were borrowed from the old site. The same happens after a real move if you shut the old host down before the media is copied.
+11. Start your practice site again. Delete `import-test` when you're done, or keep it as a scratch site.
 
 ### Part D — Keep your list and media outside WordPress (~2 min)
-11. In your email provider (M06.L02), find **Export** for your subscribers (usually CSV) and download the full list **with** status and consent fields. If your list lives in a WordPress plugin such as MailPoet, use the plugin's own export, because Tools → Export doesn't include it.
-12. Save the CSV in your offline backup folder. It contains personal data: keep it on an encrypted drive or in a password-protected cloud account, and delete old copies you don't need (M06.L03).
-13. Write a one-page **move-out kit** note in your site docs: where your latest full backup, WXR export, subscriber CSV and media originals are; your accounts list (registrar, DNS, host, email provider), with logins kept in your password manager; and the date each was last refreshed.
+12. In your email provider (M06.L02), find **Export** for your subscribers (usually CSV) and download the full list **with** status and consent fields. If your list lives in a WordPress plugin such as MailPoet, use the plugin's own export, because Tools → Export doesn't include it.
+13. Save the CSV in your offline backup folder. It contains personal data: keep it on an encrypted drive or in a password-protected cloud account, and delete old copies you don't need (M06.L03).
+14. Write a one-page **move-out kit** note in your site docs: where your latest full backup, WXR export, subscriber CSV and media originals are; your accounts list (registrar, DNS, host, email provider), with logins kept in your password manager; and the date each was last refreshed.
 
 ## When to use / when not to
 - **Use Tools → Export** monthly as a portable copy of your writing, before trying another platform, or to rebuild a messy site from clean content.
@@ -148,7 +150,7 @@ You'll export your **Local** practice site and import it into a fresh Local site
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Imported posts have no images (*"Failed to import"* media lines) | Source site offline or unreachable (e.g. Playground can't reach `.local`) | Keep the source running and re-run the import (existing posts are skipped), or move media with a full-site migration |
+| Imported posts have no images (*"Failed to import Media…"*, *"A valid URL was not provided."*) | Source site is on a local or private address (Local, Playground, a staging site on an internal network), which WordPress won't download from; or the source is offline | From a live public site: make sure it's online and re-run the import (posts that exist are skipped as *"already exists"*). From Local: move media with a full-site migration (M07.L02) instead |
 | Import stops or times out | Large export file or low server limits | Export by **Posts** and **Pages** separately, or split by date range, and import each |
 | New host shows an old version of the site | DNS still cached, or the content freeze was skipped | Wait for the TTL to expire; re-sync the final changes from the old host |
 | "Not secure" warning after switching | No SSL certificate yet on the new host | Issue the certificate in the new host's dashboard (M01.L03); some need DNS to point there first |
@@ -158,12 +160,12 @@ You'll export your **Local** practice site and import it into a fresh Local site
 ## Exercise
 **Task:**
 1. Export **All content** from your practice site and store it in your offline backup folder.
-2. Import it into a fresh `import-test` site with **Download and import file attachments** ticked.
+2. Import it into a fresh `import-test` site with **Download and import file attachments** ticked, then stop the practice site and see which images break.
 3. Fill in the "came across?" table and list three things that didn't move.
 4. Export your email list (CSV with consent fields) and store it safely.
 5. Write a dated migration checklist for moving your live site to a new host on the same domain, using the six steps above.
 
-**Expected outcome:** a WXR file and subscriber CSV in your offline folder; an `import-test` site showing your posts and images; a completed table naming at least three things a content export doesn't carry; and a written six-step migration checklist with dates.
+**Expected outcome:** a WXR file and subscriber CSV in your offline folder; an `import-test` site showing your posts, pages, comments and menus (and images missing on Local, with the reason noted); a completed table naming at least three things a content export doesn't carry; and a written six-step migration checklist with dates.
 
 **Stretch goal:** do a real rehearsal. Use UpdraftPlus's migration (M07.L02) to move your Local site to a second Local site, as if it were a new host. Then compare the result with the `import-test` site. Which would you use to move hosts, and why?
 
