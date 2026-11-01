@@ -24,10 +24,10 @@
 **Hint:** Which one doesn't need an account elsewhere?
 
 ### Q3. Why might choosing GA4 mean you need a cookie banner, when a tool like Plausible usually doesn't?
-- a) GA4 is slower, and slow tools need banners
-- b) GA4 sets cookies on readers' devices for a third party; EU/UK rules generally need consent for non-essential cookies, while cookieless tools avoid them
-- c) Plausible pays for readers' consent on your behalf
-- d) Banners are only needed for paid analytics tools
+- a) GA4 loads more slowly, and the law requires banners for slow scripts
+- b) GA4 stores cookies on readers' devices, which EU/UK rules generally need consent for
+- c) Plausible holds a licence that collects readers' consent on your behalf
+- d) Banners are only required when you pay for your analytics tool
 
 **Answer:** b
 **Explanation:** Consent rules attach to storing or reading information on the reader's device. GA4 sets cookies; cookieless tools don't, so they usually need no analytics banner. You still name every tool in your privacy policy. Details are in M08.L03.
@@ -44,20 +44,20 @@
 **Hint:** Simple, cookieless, one tool.
 
 ### Q5. Omar installed Site Kit and connected GA4 an hour ago. He's browsing his own site while logged in, and GA4 shows **0 users**. What's the most likely reason?
-- a) GA4 never works on WordPress sites
-- b) Site Kit excludes all logged-in users from Analytics by default, so his own visits aren't tracked
-- c) He needs to wait a year for the first data
-- d) Site Kit only tracks pages, never posts
+- a) GA4 needs at least a week before it records its first visit
+- b) Site Kit ignores all logged-in users by default, so his visits aren't counted
+- c) Site Kit only tracks pages, so his posts are never recorded
+- d) He must turn on consent mode before GA4 can count anyone
 
 **Answer:** b
 **Explanation:** Site Kit's default **Exclude Analytics** setting is **All logged-in users**. He should test from a logged-out private window or his phone and check **Reports → Realtime**, since standard reports take a day or two.
 **Hint:** Who is Site Kit ignoring?
 
 ### Q6. Priya's site earns from affiliate links and sponsored posts. She wants free, simple stats and already uses Jetpack. What should she check before relying on Jetpack Stats?
-- a) Nothing; Jetpack Stats is free for every site
-- b) Whether her commercial site needs a paid Jetpack Stats plan, since the free tier is for non-commercial sites
-- c) Whether Jetpack Stats works on Local
-- d) Whether Jetpack Stats includes Search Console
+- a) Nothing, because Jetpack Stats is free for every kind of site
+- b) Whether her commercial site needs a paid plan, as free is non-commercial
+- c) Whether Jetpack Stats needs a cookie banner in every country
+- d) Whether her theme supports Jetpack before Stats can count visits
 
 **Answer:** b
 **Explanation:** Jetpack says its core features, including Stats, are free for **non-commercial** sites; commercial sites need a paid plan. Affiliate and sponsored income makes a site commercial. Alternatively she could use a free cookieless plugin.
