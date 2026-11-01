@@ -75,9 +75,10 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | L01 | Pre-launch checklist: the 13 non-negotiables | wordpress-101/lessons/m09-l01-pre-launch-checklist.md | reviewed | 2026-11-01 |
 | M09 | L02 | Content plan: 10 cornerstone topics mapped to categories | wordpress-101/lessons/m09-l02-content-plan.md | reviewed | 2026-11-01 |
 | M09 | L03 | Launch day and your 30-day maintenance routine | wordpress-101/lessons/m09-l03-launch-maintenance-routine.md | reviewed | 2026-11-01 |
-| M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | todo | — |
+| M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | draft | 2026-11-01 |
 
 ## Log
+- 2026-11-01: wordpress-101 M09 final capstone draft (Launch Report scored on all 13 non-negotiables; 7 tasks: checklist, go live, five posts with a–g per-post checks, live re-test of sign-up/legal/backups, launch, routine, drills (a) Discourage search engines found 3 ways, (b) silent sign-up failure; rubric 5×4 grouping NN #1–#13; Local fallback capped at Good) + cheatsheets/m09-launch.md. UpdraftPlus free restore-to-new-URL confirmed via bundled Migrator Lite.
 - 2026-11-01: wordpress-101 m02-l01 reviewed: all 13 shortcuts confirmed against WP 7.1 registered shortcuts; menu labels 'Posts → Add Post' / 'Pages → Add Page' (WP 7.x); quiz re-lettered d,a,c,b,d,d,a (was 6 of 7 b; Q6 steps reordered) and option lengths evened.
 - 2026-11-01: wordpress-101 m01-capstone reviewed: lockout drill uses Two Factor 0.17.0 labels ('Use a recovery code', 'Generate new recovery codes'); verified-against line updated; M01 cheat sheet: MariaDB 10.11+ and recovery-code wording.
 - 2026-11-01: wordpress-101 m01-l05 reviewed: Two Factor 0.17.0 labels (tested up to 7.1) — 'Authenticator App', 'Recovery Codes' + 'Generate new recovery codes', 'Primary Method'; passkey add-on is 'Two-Factor Provider: WebAuthn'; 'Users → Add User' (WP 7.x); UpdraftPlus tabs/labels and free Google Drive/Dropbox confirmed in 1.26.14 code; M01 capstone 2FA step updated to match; quiz re-lettered d,c,a,c,b,b,c and option lengths evened.
