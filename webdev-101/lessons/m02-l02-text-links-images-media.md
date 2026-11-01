@@ -121,7 +121,7 @@ Work in the `launch.html` file from Lesson 2.1 (or a fresh copy of the skeleton)
    <p>We roast with beans from <a href="https://www.example.org/farm">our partner farm in Coorg</a>.</p>
    <p>Our favourite grinder: <a href="https://shop.example/grinder" rel="sponsored">Burr Grinder 200 (affiliate link)</a>.</p>
    ```
-   Note the visible "(affiliate link)" too. Lesson 6.4 and WordPress 101's disclosure lesson explain why readers must be told, not just search engines.
+   Note the visible "(affiliate link)" too. Lesson 6.4 and WordPress 101 M08.L04 (affiliate and sponsor disclosures) explain why readers must be told, not just search engines.
 
 **Part C: an image, and a break-it-and-fix-it (8 min)**
 1. Inside your `webdev-101` folder, create a folder `images`. Put one photo in it that you have the right to use (your own photo is best), and rename it to a short, lowercase name with hyphens, e.g. `beans.jpg`.

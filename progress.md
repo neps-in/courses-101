@@ -91,7 +91,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | draft | 2026-11-02 |
 | M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | draft | 2026-11-02 |
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | draft | 2026-11-02 |
-| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | todo | — |
+| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | todo | — |
 | M03 | — | CSS: Design, Brand & Layout (not yet planned) | — | todo | — |
 | M04 | — | Publish It: Tools, Hosting & Domains (not yet planned) | — | todo | — |
@@ -101,6 +101,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m02-l05 draft (lesson + 7-question quiz incl. 1 review from M02.L04; 11 glossary terms; preview-cache flowchart kept as Mermaid; 3 image prompts, no images). Meta image sizes (1200×630 best, 600×315 min, 8 MB) and Google title/snippet 'no limit, truncated' read from primary docs; <head> validated live (0 errors). Hands-on tests the debuggers on the M01 brand site (learner page not public until M04). Fixed M02 cross-refs to match the outline (4.3, 3.2, WP101 M05.L02, WP101 M08.L04). Next: M02 capstone.
 - 2026-11-02: webdev-101 m02-l04 draft (lesson + 7-question quiz incl. 1 review from M02.L03; 12 glossary terms; field-decision flowchart kept as Mermaid; 2 image prompts, no images). Lesson form validated live (0 errors; empty action="" confirmed as an error). GDPR Recital 32 + Art 5(1)(c) cited; DPDP Rules 2025 phased dates (core duties ~May 2027) flagged as law that may change; not legal advice. Sending data deferred to M05.L04. Next: `/next-lesson` → M02.L05.
 - 2026-11-02: webdev-101 m02-l03 draft (lesson + 7-question quiz incl. 1 review from M02.L02; 8 glossary terms; choose-the-element flowchart kept as Mermaid; 2 image prompts, no images). Div-soup and semantic examples run live through W3C Nu 26.11.1 with outline: skipped levels are now an error, outline shows [missing]. Outline algorithm removal (2022) flagged. Also fixed m02-l01 validator success wording ("The document validates according to the specified schema(s)."). Next: `/next-lesson` → M02.L04.
 - 2026-11-02: webdev-101 m02-l02 draft (lesson + 7-question quiz incl. 1 review from M01.L03; 13 glossary terms; alt-text decision flowchart (from W3C WAI tree) kept as Mermaid; 2 image prompts, no images; break-it = misspelt image path → alt text + 404). All lesson code validated live (0 errors). target=_blank implicit noopener (MDN) and rel=sponsored (Google) checked. Next: `/next-lesson` → M02.L03.
