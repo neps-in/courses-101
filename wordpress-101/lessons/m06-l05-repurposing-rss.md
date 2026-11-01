@@ -104,7 +104,7 @@ Use your **M05 cornerstone post** (or your best post). Have a plain document ope
    | **Hook** | 1–3 s | *"This $40 mic beat my $200 one."* |
    | **One point** | 20–45 s | Show the mic, say why, show the result (before/after audio) |
    | **Call to action** | 3–5 s | *"Full comparison on my blog, link in bio."* |
-9. Note the **visuals** next to each line (what's on screen) and add on-screen text, since many people watch with the sound off.
+9. Note the **visuals** next to each line (what's on screen) and add on-screen text, since many people watch with the sound off (*observed practice*).
    **Expected:** a script you could read aloud in under a minute. YouTube now counts square or vertical videos up to **3 minutes** as Shorts, but shorter is usually easier to finish and watch (*observed practice*).
 
    > 🖼️ **Image prompt:** A two-column video script laid out in a document: left column "Say" with Hook, Point and Call to action lines; right column "Show" with shot notes, 1280 × 800. Highlight the three beat labels with a 3px #F9B2D7 outline; blur any personal details.
@@ -114,12 +114,12 @@ Use your **M05 cornerstone post** (or your best post). Have a plain document ope
 
 ### Part E — Connect your RSS feeds (~3 min)
 11. Open `yoursite.com/feed/` in your browser. **Expected:** an XML page (or a download) listing your latest posts. Try a category feed: `yoursite.com/category/<your-category>/feed/`.
-12. In **Settings → Reading**, check **For each post in a feed, include**: **Excerpt** sends readers to your site to read the rest; **Full text** lets them read everything in a feed reader. Most creators choose Excerpt.
+12. In **Settings → Reading**, check **For each post in a feed, include**: **Excerpt** sends readers to your site to read the rest; **Full text** lets them read everything in a feed reader. Many creators choose Excerpt (*observed practice*); either is fine.
 13. **Optional: RSS-to-email.** Point your email provider at your feed so new posts are emailed automatically:
     | Provider | Feature (names change; check the help page) |
     |---|---|
     | **MailPoet** | **Post Notifications** (inside WordPress) |
-    | **Kit** | Connect an RSS feed: drafts a broadcast for each new post or a digest; send automatically or review first |
+    | **Kit** | Connect an RSS feed: **Single** (one email per post) or a digest. Emails are drafted as Broadcasts; with **Send automatically** on they go out 30 minutes later, otherwise they wait for you |
     | **MailerLite** | **RSS campaign** (paid plans) |
     | **Mailchimp** | RSS automation; check which plans include it |
     | **Jetpack Newsletter** | Sends posts as emails directly (no feed needed) |
@@ -156,7 +156,7 @@ Use your **M05 cornerstone post** (or your best post). Have a plain document ope
 |---|---|---|
 | `/feed/` shows an error or 404 | Permalinks need refreshing, or a plugin disabled feeds | **Settings → Permalinks → Save Changes**; check SEO/security plugin settings |
 | Feed shows full posts but you wanted excerpts | **Full text** selected | **Settings → Reading → For each post in a feed, include: Excerpt** |
-| RSS email didn't send | Nothing new, the post went out too close to send time, or the plan doesn't include RSS | Check the provider's RSS settings and plan; publish earlier (Mailchimp, for example, says to publish a few hours before send time) |
+| RSS email didn't send | Nothing new, the post went out too close to send time, Kit's **Send automatically** is off (draft waiting), or the plan doesn't include RSS | Check the provider's RSS settings and plan; publish earlier (Mailchimp, for example, says to publish a few hours before send time) |
 | Social link preview shows the wrong image or no image | Missing featured image or OG tags, or a cached preview | Set the featured image; check Yoast **Social** settings; use the platform's preview/debug tool if it has one |
 | Category feed is empty | Wrong slug in the URL | Copy the category slug from **Posts → Categories** |
 | A copy of your post outranks you | Full republication elsewhere | Ask the other site to noindex its copy, or replace it with a summary and link |
