@@ -34,20 +34,20 @@
 **Hint:** Where does each one do its checking?
 
 ### Q4. Nadia added `ass` to **Disallowed Comment Keys** to block rude comments. Now a reader says their comment about "my cooking class" vanished. Why?
-- a) Akismet deleted it
-- b) WordPress matches disallowed words inside other words, and matches go straight to Trash
-- c) The comment had too many links
-- d) Comments on that post were closed
+- a) Akismet flagged "cooking" as a spam word and deleted it
+- b) Disallowed words also match inside words, and matches go to Trash
+- c) The comment had two links, so it was held and then expired
+- d) Comments on that post closed after 30 days
 
 **Answer:** b
 **Explanation:** WordPress checks each listed word anywhere in the comment, name, email, URL, IP and browser string, so `ass` matches *class*. Disallowed matches go to Trash without telling anyone. Use only words that are never legitimate, and use the **Comment Moderation** list (hold for review) for anything borderline.
 **Hint:** Look closely at the letters in "class".
 
 ### Q5. Leo turned comments off on his whole site but still gets dozens of junk messages a day through his contact form. What's the best next step?
-- a) Turn comments back on so Akismet can run
-- b) Delete the contact form
-- c) Turn on his form plugin's honeypot, adding a CAPTCHA only if spam continues
-- d) Add more words to Disallowed Comment Keys
+- a) Turn comments back on so his anti-spam plugin starts running
+- b) Remove the contact form and list his email address instead
+- c) Turn on the form's honeypot; add a CAPTCHA only if spam continues
+- d) Add the spammers' words to Disallowed Comment Keys
 
 **Answer:** c
 **Explanation:** Comment settings don't protect forms. Fluent Forms has **Enable Honeypot Security**, which catches most bots with no extra step for humans; Turnstile, hCaptcha or reCAPTCHA can be added if needed (and named in the privacy policy). Disallowed Comment Keys only apply to comments.

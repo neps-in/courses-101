@@ -70,6 +70,7 @@ Work on your **Local** site.
    - **Attempt to notify any blogs linked to from the post** and **Allow link notifications from other blogs (pingbacks and trackbacks) on new posts**: unticked.
    - **Allow people to submit comments on new posts**: ticked if your decision is "on"; unticked if "off".
    - **Comment author must fill out name and email**: ticked.
+   - **Show comments cookies opt-in checkbox, allowing comment author cookies to be set**: ticked. It lets commenters choose whether their name and email are remembered, which fits the consent rules from M06.L03.
    - **Automatically close comments on old posts**: tick it and set **Close comments when post is how many days old** to 30–90 if older posts mostly attract spam. Leave it off if readers still ask useful questions on old posts.
 3. Note the line under these settings: *"Individual posts may override these settings. Changes here will only be applied to new posts."* Existing posts keep their current setting (Part D fixes that).
 
@@ -91,7 +92,7 @@ Work on your **Local** site.
 10. **Akismet:** **Plugins → Add Plugin** → **Akismet Anti-spam** → **Install Now** → **Activate**. Go to **Settings → Akismet Anti-spam** → **Set up your Akismet account** (or **Manually enter an API key**). Choose the plan that fits your site (personal or commercial) and connect.
     Then set **Strictness** to **Always put spam in the Spam folder for review.** for your first weeks, and **Privacy** to **Display a privacy notice under your comment forms.**
     **Or Antispam Bee:** install and activate it, then go to **Settings → Antispam Bee** and keep the defaults; it works without an account.
-11. **Forms:** Akismet can also check some form plugins. For Fluent Forms, open **Fluent Forms → Global Settings** and turn on **Enable Honeypot Security** (an invisible field that humans never fill in but bots do). If spam still gets through, add Turnstile, hCaptcha or reCAPTCHA under **Global Settings → Security**, and add that service to your privacy policy.
+11. **Forms:** Akismet can also check some form plugins: Fluent Forms has its own Akismet option in its global settings, which works once Akismet is active and connected. For Fluent Forms, open **Fluent Forms → Global Settings** and turn on **Enable Honeypot Security** (an invisible field that humans never fill in but bots do). If spam still gets through, add Turnstile, hCaptcha or reCAPTCHA under **Global Settings → Security**, and add that service to your privacy policy.
 12. **Update your privacy policy** (M06.L03): if you use Akismet or a CAPTCHA service, name it under *Who we share your data with*. Akismet adds suggested wording to **Settings → Privacy → Policy Guide**.
 
 ### Part D — Close comments where you don't want them (~2 min)
@@ -128,7 +129,7 @@ Work on your **Local** site.
 - **Two anti-spam plugins**, or an anti-spam plugin plus a CAPTCHA on every form when a honeypot would do.
 - **Forgetting forms.** Turning comments off doesn't stop contact and sign-up form spam.
 - **Not mentioning Akismet or CAPTCHA services** in your privacy policy.
-- **Never emptying Spam.** It fills your database. Empty it weekly (Akismet and Antispam Bee can delete old spam automatically).
+- **Never emptying Spam.** It fills your database. Akismet deletes spam older than **15 days** by itself; with Antispam Bee, turn on **Delete existing spam after n days**, or empty Spam weekly. Skim it before it goes, in case a real comment was caught.
 
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
