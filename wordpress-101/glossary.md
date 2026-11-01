@@ -85,7 +85,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Focus indicator** — the visible outline that shows which link, button or field the keyboard is on; WCAG 2.4.7 requires it to be visible. [M04.L05]
 - **Font Library** — the **Manage fonts** screen in Styles → Typography, with Library, Upload and Install Fonts tabs; installed fonts are stored on your own site (`wp-content/uploads/fonts`). [M04.L02]
 - **Functional image** — an image that is a link or button; its alt says where it goes or what it does. [M03.L03]
-- **Gifted product** — a free product sent by a brand with no payment or control; still a material connection, labelled "Gifted" for UK readers. [M08.L04]
+- **Gifted product** — a free product sent by a brand with no payment or control; still a material connection; UK readers need an "Ad" label (e.g. "Ad — gifted"), because "gifted" alone isn't enough. [M08.L04]
 - **Global Privacy Control (GPC)** — a browser signal saying "don't sell or share my data"; California's CCPA requires businesses it covers to honour it. [M08.L03]
 - **Global styles** — site-wide design settings in the Site Editor's **Styles** (colours, typography, layout, per-block styles), saved on top of the theme's theme.json. [M04.L02]
 - **Google Analytics 4 (GA4)** — Google's free analytics service; detailed (events, conversions, audiences) but sets cookies, so it usually needs consent for EU/UK readers. [M08.L01]

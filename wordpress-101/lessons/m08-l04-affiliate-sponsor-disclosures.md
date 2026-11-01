@@ -2,7 +2,7 @@
 > After this lesson every affiliate link and sponsored post on your site is clearly disclosed where readers see it first, using one synced pattern you can update everywhere, plus a site-wide disclosure page.
 
 **Time:** ~13 min reading + ~15 min exercise · **Level:** beginner · **Prereqs:** M02.L02 (synced patterns), M06.L06 (affiliate links, sponsorships, `rel="sponsored"`)
-**Verified against:** FTC Endorsement Guides (16 CFR Part 255, 2023 revision) and *"FTC's Endorsement Guides: What People Are Asking"*; ASA/CAP *Influencers' guide to making clear that ads are ads* (2023) and ASA affiliate marketing guidance; CMA guidance on the DMCC Act 2024 (in force 2025-04-06); Amazon Associates Operating Agreement and help; WordPress 7.1.4 (core code: **Create pattern**, **Synced**, **Enable overrides**), all on 2026-11-01
+**Verified against:** FTC Endorsement Guides (16 CFR Part 255, 2023 revision) and *"FTC's Endorsement Guides: What People Are Asking"*; ASA/CAP *Influencers' guide to making clear that ads are ads* (2023) and ASA affiliate marketing guidance; CMA guidance on the DMCC Act 2024 (in force 2025-04-06) and *Social media endorsements: guidance for content creators*; Amazon Associates Operating Agreement and help; WordPress 7.1.4 (core code: **Create pattern**, **Synced**, **Enable overrides**), all on 2026-11-01
 
 > ⚠️ **Freshness flag:** disclosure rules are stable in principle but enforcement is rising. The UK's CMA can fine directly since 6 April 2025. Affiliate programmes update their required wording (Amazon's agreement changed in April 2026). Re-read your programmes' terms yearly. **Not legal advice.**
 
@@ -20,9 +20,9 @@ Priya put *"Some links may be affiliate links"* in her footer. Under both FTC an
 ### The rules side by side
 | | US: FTC Endorsement Guides | UK: CAP Code (ASA) + consumer law (CMA) |
 |---|---|---|
-| **Applies when** | You have a material connection the reader wouldn't expect (pay, commission, free product, family/business tie) | **Ads:** you're paid (money, commission, or other payment) **and** the brand has some control, or the content has affiliate links. **Consumer law** also covers gifts with no brand control |
+| **Applies when** | You have a material connection the reader wouldn't expect (pay, commission, free product, family/business tie) | **CAP Code (ASA):** you're paid (money, commission or a gift) **and** the brand has some control, or the content has affiliate links. **Consumer law (CMA)** covers paid or gifted content even with no brand control |
 | **Where** | **Clear and conspicuous**, close to the recommendation, hard to miss. Not only on an About page, at the end of a post, behind "more", or mixed into hashtags | **Upfront**, before people engage. Bios or past posts don't count, and each piece of content needs its own label |
-| **Wording** | Plain: *"I earn a commission if you buy through these links."* | **"Ad"** (or "Advert", "Advertisement", "#ad") for paid or affiliate content. Avoid "Aff" alone, "sponsored", "spon", "in collaboration with" as the only label. Gifts: **"Gifted"** |
+| **Wording** | Plain: *"I earn a commission if you buy through these links."* | **"Ad"** (or "Advert", "Advertisement", "#ad") for paid, affiliate **and gifted** content. The ASA has ruled "#gifted", "aff"/"affiliate" and "I work with them" inadequate as labels; avoid "sponsored", "spon" or "in collaboration with" as the only label too |
 | **Affiliate links** | Disclose on the post, near the links | Treated as advertising. Label the affiliate parts as ads; *"some links **might** earn commission"* isn't enough |
 | **Who's responsible** | You and the brand | You and the brand (jointly) |
 | **Enforcement** | FTC warning letters and orders | ASA rulings (named publicly); **CMA** can fine directly since 2025-04-06 (DMCC Act) |
@@ -34,7 +34,7 @@ Priya put *"Some links may be affiliate links"* in her footer. Under both FTC an
 |---|---|---|
 | **Post with affiliate links** | Top of the post (synced pattern) + label beside each link or product box | *"**Ad — affiliate links.** I earn a commission if you buy through the links marked (ad) below, at no extra cost to you. I only recommend things I've used."* Each link: *"[Product] (ad)"* |
 | **Sponsored post** | Start of the title or first line, plus top-of-post box | Title: *"Ad: 5 ways I use the X grinder"*. Box: *"**Ad.** This post is sponsored by X, who paid me to write it and reviewed it before publishing. Opinions are my own."* |
-| **Gifted product, no payment or control** | Top of the post | *"**Gifted.** X sent me this grinder free. They didn't pay for or review this post."* |
+| **Gifted product, no payment or control** | Top of the post | *"**Ad — gifted.** X sent me this grinder free. They didn't pay for or review this post."* (The CMA treats gifts as payment, so UK readers still need "Ad"; "gifted" alone isn't enough) |
 
 **Also required:**
 - **Amazon Associates** requires the statement *"As an Amazon Associate I earn from qualifying purchases"* (or substantially similar) on your site, **and** a link-level disclosure such as *"(paid link)"* near the link. Other programmes have their own wording; check your agreements.
@@ -83,7 +83,7 @@ flowchart TD
 
 ### Part B — Sponsored and gifted posts (~4 min)
 6. Build an **unsynced** pattern for sponsored posts, because each one names a different brand: Group + Paragraph *"**Ad.** This post is sponsored by [Brand], who paid me to write it [and reviewed it before publishing]. Opinions are my own."* → **Create pattern** → name *Sponsored disclosure*, **Synced off**.
-7. Repeat for *Gifted disclosure* (Synced off): *"**Gifted.** [Brand] sent me [product] free. They didn't pay for or review this post."*
+7. Repeat for *Gifted disclosure* (Synced off): *"**Ad — gifted.** [Brand] sent me [product] free. They didn't pay for or review this post."*
 8. For a sponsored post, also start the **title** with **"Ad:"** and make the post's excerpt/social description start with "Ad" too, so it's labelled wherever it's shared.
    **Expected:** in the inserter you now have three disclosure patterns: one synced, two unsynced templates.
 
@@ -93,7 +93,7 @@ flowchart TD
    |---|---|
    | **Affiliate links** | Which programmes (e.g. Amazon, a course platform); how links are marked *(ad)*; *"As an Amazon Associate I earn from qualifying purchases."* if you're in it |
    | **Sponsored posts** | Always labelled "Ad" in the title and at the top; what sponsors can and can't control |
-   | **Gifted products** | Labelled "Gifted"; when you accept them |
+   | **Gifted products** | Labelled "Ad — gifted"; when you accept them |
    | **Ads** | If you show display ads, which network (and the cookie policy link, M08.L03) |
    | **Editorial promise** | *"I only recommend things I've used. Negative findings stay in."* |
    | **Last updated** | Date |
@@ -124,7 +124,7 @@ flowchart TD
 - **Footer-only or About-page-only disclosure.**
 - **Disclosure at the end of the post,** after readers have clicked.
 - **Vague wording:** *"may contain affiliate links"*, *"aff"*, *"sponsored"* or *"in collaboration with"* as the only label for UK readers.
-- **Forgetting gifts.** Free products are material connections under FTC guidance and need labelling under UK consumer law.
+- **Forgetting gifts, or labelling them only "gifted".** Free products are material connections under FTC guidance, and the CMA treats them as payment: UK readers need "Ad".
 - **Disclosing to Google but not readers:** `rel="sponsored"` alone.
 - **Labelling a sponsored post only inside the post,** while its title and social share say nothing.
 - **Copying one sponsor's box into another post as a synced pattern,** so every post names the same brand.
@@ -170,6 +170,6 @@ In 3 sentences, explain to a friend why a "may contain affiliate links" line in 
 *All checked 2026-11-01.*
 - US FTC — [FTC's Endorsement Guides: What People Are Asking](https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking) · [Endorsement Guides (16 CFR Part 255, 2023)](https://www.ftc.gov/system/files/ftc_gov/pdf/P204500%20Guides%20Concerning%20Endors%20and%20Testimonials.pdf) · [Disclosures 101 for Social Media Influencers](https://www.ftc.gov/system/files/documents/plain-language/1001a-influencer-guide-508_1.pdf) · [Endorsements, Influencers, and Reviews hub](https://www.ftc.gov/business-guidance/advertising-marketing/endorsements-influencers-reviews)
 - UK ASA/CAP — [Influencers' guide to making clear that ads are ads (2023)](https://www.asa.org.uk/static/790d2e01-e3f8-4fea-b3c99ef91a9f04dc/Influencerguidance2023v4-FINAL.pdf) · [Recognising ads: social media and influencer marketing](https://www.asa.org.uk/advice-online/recognising-ads-social-media.html) · [Get yourself affiliated with the rules on affiliate marketing](https://www.asa.org.uk/news/get-yourself-affiliated-with-the-rules-on-affiliate-marketing.html)
-- UK CMA — [Who regulates hidden advertising?](https://assets.publishing.service.gov.uk/media/68b81754536d629f9c82aa16/Who_regulates_hidden_advertising.pdf) · [Direct consumer enforcement guidance (CMA200)](https://assets.publishing.service.gov.uk/media/6808ca0d8c1316be7978e74b/CMA_200_Direct_consumer_enforcement_guidance.pdf)
+- UK CMA — [Social media endorsements: guidance for content creators](https://www.gov.uk/government/publications/social-media-endorsements-guidance-for-content-creators/social-media-endorsements-being-transparent-with-your-followers) · [Who regulates hidden advertising?](https://assets.publishing.service.gov.uk/media/68b81754536d629f9c82aa16/Who_regulates_hidden_advertising.pdf) · [Direct consumer enforcement guidance (CMA200)](https://assets.publishing.service.gov.uk/media/6808ca0d8c1316be7978e74b/CMA_200_Direct_consumer_enforcement_guidance.pdf)
 - Amazon — [Associates Program Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement) (section 5, required statement) · [Associates help: disclosures](https://affiliate-program.amazon.com/help/node/topic/GHQNZAU6669EZS98)
 - Google — [Qualify your outbound links (`rel="sponsored"`)](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)

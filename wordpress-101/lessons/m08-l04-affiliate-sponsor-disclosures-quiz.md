@@ -10,7 +10,7 @@
 - d) A tool you mention because a reader asked about it in the comments
 
 **Answer:** b
-**Explanation:** Anything of value (commission, payment, free products, discounts, trips) is a material connection under FTC guidance, and UK consumer law also expects gifts to be labelled ("Gifted"). Things you bought or borrowed yourself, with no link payment, aren't.
+**Explanation:** Anything of value (commission, payment, free products, discounts, trips) is a material connection under FTC guidance, and the UK's CMA treats gifts as payment, so UK readers need an "Ad" label ("gifted" alone isn't enough). Things you bought or borrowed yourself, with no link payment, aren't material connections.
 **Hint:** Did you receive anything of value?
 
 ### Q2. According to the FTC, which placement is most likely to be **missed** by readers?
@@ -27,10 +27,10 @@
 - a) "Spon" or "#sp" at the end of the post
 - b) "Ad" (or "Advert", "#ad"), shown prominently upfront
 - c) "In collaboration with [Brand]" in the final paragraph
-- d) "Aff", placed in the post's list of tags
+- d) "#gifted" or "aff", placed in the post's list of tags
 
 **Answer:** b
-**Explanation:** The ASA expects a clear "Ad" label upfront, before people engage. It advises against "spon"/"sp", "sponsored" alone, collaboration wording and "Aff" in isolation.
+**Explanation:** The ASA expects a clear "Ad" label upfront, before people engage. It advises against "spon"/"sp", "sponsored" alone and collaboration wording, and has ruled "#gifted" and "aff" inadequate.
 **Hint:** Two letters, at the start.
 
 ### Q4. Nadia's footer says *"Some links on this site may be affiliate links."* Her reviews have Amazon links but no other disclosure. What should she change first?
