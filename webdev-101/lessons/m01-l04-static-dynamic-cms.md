@@ -34,7 +34,7 @@ Tomás leads marketing at a language school in Lisbon. The agency quotes €8,00
 ### Code vs CMS vs no-code at a glance
 | | **Hand-coded** (this course) | **CMS: WordPress** | **Builders: Wix, Squarespace** | **Design builders: Webflow, Framer** | **Shopify** |
 |---|---|---|---|---|---|
-| **Typical cost** | Free hosting (static) + domain | Hosting ≈ $3–35 / ₹200–3,000 a month + domain | ≈ $15–40 a month | ≈ $15–40+ a month per site | ≈ $30+ a month + transaction fees |
+| **Typical cost** | Free hosting (static) + domain | Hosting ≈ $3–35 / ₹200–3,000 a month + domain | ≈ $15–40 a month | ≈ $15–40+ a month per site | ≈ $30–40 a month + payment fees |
 | **Speed to first page** | Hours (once you've learnt it) | Hours | Minutes | Hours | Hours |
 | **Who can edit** | People who can edit code (or via a CMS added later) | Anyone with a login | Anyone with a login | Designers; editors via its CMS | Anyone with a login |
 | **Design control** | Total | High (themes, blocks) | Medium (inside templates) | High (visual, pixel-level) | Medium (themes) |
@@ -135,7 +135,7 @@ Read this brief and pick an approach from the table, with two reasons and one tr
 | Ctrl+F finds nothing for any clue | Custom-built site, clues removed, or you searched the live page instead of the source | Make sure you're in the `view-source:` tab; otherwise record "custom or unknown" |
 | Detection tools disagree with each other | Sites use several services (e.g. a WordPress blog on a Shopify store) | Note both; check which domain or subdomain each one runs on |
 | A detection extension asks you to pay | Free limits were reached or changed | Use the manual method in Part B |
-| View Source is blocked on a school or work computer | Admin policy disables developer features | Try your own device, or prefix the address with `view-source:` (e.g. `view-source:https://info.cern.ch`) |
+| View Source is blocked on a school or work computer | Admin policy disables developer features (this usually blocks the `view-source:` prefix too) | Use your own device, or the optional detection tools in step 5 |
 
 ## Exercise
 **Task:** for your **capstone brand site** (from Lesson 1.1), find out:

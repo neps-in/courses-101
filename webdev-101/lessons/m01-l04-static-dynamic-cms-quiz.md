@@ -1,7 +1,7 @@
 # M01.L04 Quiz — Static vs Dynamic, Code vs CMS vs No-Code
 
 > 7 questions · 2 recall, 3 scenario, 1 spot-the-error, 1 spaced review · pass mark 70% (5 of 7). Questions are tagged with the objective they test (O1–O3).
-> Facts checked 2026-11-02 (MDN, W3Techs). Builder prices and export features change; re-verify before publishing.
+> Reviewed 2026-11-02. Facts checked 2026-11-02 (MDN, W3Techs). Builder prices and export features change; re-verify before publishing.
 
 ### Q1. What makes a page **dynamic**? *(O1 · recall)*
 - a) It has animations, videos or a sliding image carousel
@@ -14,7 +14,7 @@
 **Hint:** Think barista (made fresh per order) versus printed leaflet.
 
 ### Q2. Which statement about lock-in is most accurate? *(O2 · recall)*
-- a) Hand-coded files and WordPress are easy to move; builders vary and are often hardest
+- a) Your own files and WordPress move easily; builders vary most
 - b) All website builders let you export your full site as HTML and CSS
 - c) WordPress sites can only run on WordPress.com's own servers
 - d) Lock-in only matters for sites with more than 100 pages
@@ -44,10 +44,10 @@
 **Hint:** How many clues agree, and how many matches?
 
 ### Q5. Nila Coffee's launch page has one page of text and images, changes about once a month, and sends sign-ups to Formspree. Which description is most accurate? *(O1 · scenario)*
-- a) Fully dynamic, because a form sends data
-- b) Dynamic, because it changes once a month
-- c) A static page with a dynamic part run by an outside service
-- d) Neither, because pages with forms need a CMS
+- a) Fully dynamic, because a form sends data to a server
+- b) Dynamic, because its content changes once a month
+- c) Static, with a dynamic part run by an outside service
+- d) Neither, because any page with a form needs a CMS
 
 **Answer:** c
 **Explanation:** The page itself is the same saved file for everyone, so it's static. The form posts data to Formspree, which runs its own server code. That's the common "static + dynamic parts" pattern. Changing once a month doesn't make it dynamic (you just re-upload the file), and forms don't need a CMS.
@@ -57,8 +57,8 @@
 > "Your site is five pages that change twice a year. Put it on WordPress with shared hosting so it's dynamic, because dynamic sites are always faster and more secure than static ones." *(O2 · spot-the-error)*
 
 What's wrong?
-- a) WordPress can't be installed on shared hosting
-- b) Static sites are usually faster and more secure, since no code runs per request
+- a) WordPress can't be installed on shared hosting at all
+- b) It's backwards: static sites are usually faster and safer
 - c) A five-page site is too small for any kind of hosting
 - d) Shared hosting can only serve sites built with a website builder
 

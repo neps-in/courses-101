@@ -84,7 +84,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | reviewed | 2026-11-02 |
 | M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | reviewed | 2026-11-02 |
 | M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | reviewed | 2026-11-02 |
-| M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | draft | 2026-11-02 |
+| M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | reviewed | 2026-11-02 |
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | draft | 2026-11-02 |
 | M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | draft | 2026-11-02 |
 | M02 | — | HTML: The Structure of Content (not yet planned) | — | todo | — |
@@ -96,6 +96,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m01-l04 reviewed: fixed troubleshooting tip (view-source: prefix is blocked by the same admin policy as DevTools); Shopify cost wording; Q2/Q5/Q6 rebalanced (correct options were 15–18 chars longest).
 - 2026-11-02: webdev-101 m01-l03 reviewed: live curl showed http://wikipedia.org is a 2-hop chain (→https://wikipedia.org/ →https://www.wikipedia.org/), so Part B step 3 rewritten as a real chain example; confirmed www.github.com 301 and MDN 404; added httpforever.com fallback for neverssl.com; Q4 rebalanced (correct option was 16 chars longest).
 - 2026-11-02: webdev-101 m01-l02 reviewed: verified CNAME www.github.com→github.com and wikipedia.org MX/TXT/NS with live dig; fixed TLD wording (.co.uk/.com.br are under .uk/.br); replaced impossible registered-.example exercise example with a made-up .com; replaced unverified registry.in tip with IANA Root Zone lookup; Q4/Q6 correct options no longer the longest.
 - 2026-11-02: webdev-101 m01-l01 reviewed: fixed Firefox-on-Mac view-source shortcut (Cmd+U, per Mozilla Support; also fixed in m01-l04, m01-l05, M01 cheat sheet, glossary); replaced Outlook example (uses HTTPS to Exchange, not plain IMAP) with Thunderbird/IMAP in lesson and Q3; added 1990-vs-1991 first-website note; added "just me or everyone?" mobile-data step to Part C (answers the Why-it-matters question); renamed Part B; neutral exercise example (wikipedia.org); Q6 rewritten as a misconception correction; Q7 correct option no longer longest. Next: `/review-lesson webdev-101/lessons/m01-l02-urls-domains-dns.md`.
