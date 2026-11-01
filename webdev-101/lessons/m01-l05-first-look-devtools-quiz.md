@@ -1,7 +1,7 @@
 # M01.L05 Quiz — Your First Look at DevTools
 
 > 7 questions · 2 recall, 3 scenario, 1 spot-the-error, 1 spaced review · pass mark 70% (5 of 7). Questions are tagged with the objective they test (O1–O3).
-> Facts checked 2026-11-02 (Chrome for Developers DevTools docs, MDN).
+> Reviewed 2026-11-02. Facts checked 2026-11-02 (Chrome for Developers DevTools docs, MDN).
 
 ### Q1. You change a headline in the DevTools **Elements** panel. Who sees the new headline? *(O1 · recall)*
 - a) Every visitor, as soon as you press Enter
@@ -36,7 +36,7 @@
 ### Q4. Priyanka's client wants to see three button colours on the live landing page before approving a change. What's the fastest suitable approach? *(O1 · scenario)*
 - a) Ask the developer to publish each colour to the live site in turn
 - b) Edit the site's CSS file on the server three times
-- c) Change the colour in DevTools **Styles**, screenshot each, label them mock-ups
+- c) Try each colour in DevTools Styles and screenshot it
 - d) Use the Network panel to swap the button image
 
 **Answer:** c
@@ -44,7 +44,7 @@
 **Hint:** Safe, instant and nothing is saved.
 
 ### Q5. You sort the Network panel by **Size** on a brand homepage. The top row is `hero.png`, type **png**, 5.9 MB, out of 7.2 MB transferred in total. What should you tell the developer first? *(O3 · scenario)*
-- a) The hero image alone is most of the page's weight and is worth optimising first
+- a) Optimise the hero image first: it's most of the weight
 - b) The page has too many requests and should be split into two pages
 - c) PNG files are always blocked on mobile, so the image is invisible there
 - d) Nothing, because 7.2 MB is a normal size for any homepage
@@ -58,9 +58,9 @@
 
 What's wrong?
 - a) The Elements panel can only edit styles, not text
-- b) DevTools edits must be saved with Ctrl+S to go live
+- b) DevTools edits must be saved with Ctrl+S before they go live
 - c) Typos can only be fixed from the Console panel
-- d) The fix exists only in their browser; the real site still has the typo
+- d) The fix is only in their browser, not on the real site
 
 **Answer:** d
 **Explanation:** DevTools changes the DOM in that browser tab only. The server still sends the original HTML with the typo to everyone else, including the ad campaign's visitors. The real fix must go into the site's files or CMS. Elements can edit text, and saving in DevTools doesn't publish anything to the site.

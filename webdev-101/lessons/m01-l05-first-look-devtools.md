@@ -20,7 +20,7 @@ Nadia manages a campaign landing page built by an agency. The client wants to se
 **Analogy:** the website is a printed brochure the server mails you (Lesson 1.1). DevTools gives you a pencil and tracing paper over your own copy: you can scribble, rearrange and measure, but the printer's original never changes, and a fresh copy arrives every time you reload.
 
 **Precise definitions:**
-- **DevTools (developer tools):** panels built into Chrome, Edge, Firefox and Safari for inspecting and debugging pages. Chrome and Edge share the same DevTools because both use the Blink engine.
+- **DevTools (developer tools):** panels built into Chrome, Edge, Firefox and Safari for inspecting and debugging pages. Chrome and Edge share the same DevTools because both are built on Chromium.
 - **DOM (Document Object Model):** the browser's live, in-memory version of the page, built from the HTML and then changed by JavaScript and by you. The **Elements** panel (Firefox: **Inspector**) shows the DOM.
 - **Page source:** the original HTML exactly as the server sent it (View Source, Ctrl+U). It doesn't change after it arrives.
 - **Elements panel:** the page's DOM as a tree of elements, plus a **Styles** pane showing the CSS rules for the selected element.
@@ -146,7 +146,7 @@ Use desktop Chrome or Edge. Pick a brand site with a clear headline and a button
 4. One sentence: what you'd ask the brand's developer to look at first, and why.
 
 **Expected outcome:** a labelled mock-up screenshot, three numbers, a top-3 list and one sentence, for example: "Ask them to compress `hero-video.mp4` (4.2 MB), because it's over half the page's 7.8 MB transfer."
-**Stretch goal:** open the **Device toolbar** (**Ctrl+Shift+M** / **Cmd+Shift+M**) and choose a phone size. Does the layout change? Measure the Network numbers again in phone view. Are they smaller, the same or bigger? (Module 3 and Module 7 explain why.)
+**Stretch goal:** with DevTools open, turn on the **Device toolbar** (**Ctrl+Shift+M** / **Cmd+Shift+M**, or the phone-and-tablet icon at the top left of DevTools) and choose a phone size. Does the layout change? Measure the Network numbers again in phone view. Are they smaller, the same or bigger? (Module 3 and Module 7 explain why.)
 
 ## Key takeaways
 - **DevTools** is built into every desktop browser: **F12**, **Ctrl+Shift+I** or **Cmd+Option+I**, or right-click → **Inspect**.

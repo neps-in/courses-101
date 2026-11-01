@@ -63,11 +63,11 @@ Ask: **who edits, how often, how do we leave?**
 | Inspect element | Ctrl+Shift+C | Cmd+Shift+C |
 | Console | Ctrl+Shift+J | Cmd+Option+J |
 | View Source | Ctrl+U | Cmd+Option+U (Chrome/Edge) · Cmd+U (Firefox) |
-| Device toolbar | Ctrl+Shift+M | Cmd+Shift+M |
+| Device toolbar (DevTools open) | Ctrl+Shift+M | Cmd+Shift+M |
 Edits change only your **DOM**; reload resets. **Page weight:** Network → Disable cache → reload → read *transferred*; sort by Size.
 
 ## Free tools
-Google Admin Toolbox Dig `toolbox.googleapps.com/apps/dig/` · ICANN Lookup (RDAP) `lookup.icann.org` · Google Public DNS cache flush `developers.google.com/speed/public-dns/cache` · `neverssl.com` (HTTP test) · `info.cern.ch` (the first website)
+Google Admin Toolbox Dig `toolbox.googleapps.com/apps/dig/` · ICANN Lookup (RDAP) `lookup.icann.org` · Google Public DNS cache flush `developers.google.com/speed/public-dns/cache` · `neverssl.com` / `httpforever.com` (HTTP test) · `info.cern.ch` (the first website)
 
 ## Diagnose fast
 | You see | Layer | First check |
