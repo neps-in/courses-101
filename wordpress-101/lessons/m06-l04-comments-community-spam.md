@@ -78,7 +78,7 @@ Work on your **Local** site.
 4. Under **Before a comment appears**, choose **one**:
    - **Comment author must have a previously approved comment** (recommended): first-timers wait for you; people you've approved before go straight through.
    - **Comment must be manually approved**: everything waits. Safer, but more work.
-5. **Comment Moderation:** keep **Hold a comment in the queue if it contains 2 or more links** (spam is mostly links). In the box, add a few words that should always be held for review, one per line (e.g. `casino`, `crypto`, `loan`).
+5. **Comment Moderation:** keep the link limit at **2** (spam is mostly links). WordPress 7.0 words it *Hold a comment in the queue if it contains 2 or more links*; 7.1 shows a number box, *Number of links to allow in a comment before holding for moderation*. In the box, add a few words that should always be held for review, one per line (e.g. `casino`, `crypto`, `loan`).
 6. **Disallowed Comment Keys:** add only words you're **sure** are never legitimate. Matching comments go **straight to Trash** with no notice, and WordPress matches inside words, so a short word like `ass` would also catch *class* and *passion*.
 7. Under **Email me whenever**, tick **A comment is held for moderation** so you see new comments waiting.
 8. **Save Changes.**

@@ -2,7 +2,7 @@
 > After this lesson your practice site has the right name, clock, web addresses and comment rules, before a single real post exists.
 
 **Time:** ~15 min reading + ~15 min exercise · **Level:** beginner · **Prereqs:** M01.L03
-**Verified against:** WordPress 7.1.4 Settings screens and core install defaults, and Google Search Central's URL structure guide, on 2026-10-29
+**Verified against:** WordPress 7.0 and 7.1 Settings screen code and core install defaults (schema.php), and Google Search Central's URL structure guide, on 2026-10-29; labels re-checked 2026-11-01
 
 ## Learning objectives
 1. **Set** the site title, tagline, timezone and language correctly.
@@ -93,7 +93,7 @@ Decide first: **do you want comments?** (M06.L04 covers this properly.) Either w
 1. **Comment author must fill out name and email:** ticked.
 2. **Automatically close comments on old posts:** ticked if you can't moderate old posts, with **Close comments when post is how many days old** set to 30–90.
 3. **Comment must be manually approved:** ticked (or at least **Comment author must have a previously approved comment**).
-4. **Hold a comment in the queue if it contains 2 or more links:** keep the default; spam is mostly links.
+4. **Number of links to allow in a comment before holding for moderation** (7.1; in 7.0: *Hold a comment in the queue if it contains 2 or more links*): keep the default **2**; spam is mostly links.
 5. **Attempt to notify any blogs linked to from the post** and **Allow link notifications from other blogs (pingbacks and trackbacks)**: untick both. Today they're mostly spam.
 6. If you don't want comments at all, untick **Allow people to submit comments on new posts**.
 7. **Save Changes.**
