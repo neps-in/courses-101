@@ -2,7 +2,7 @@
 > After this lesson your backup schedule matches how often you publish, your copies live away from your host, and you've restored your site once, timed it, and written down how.
 
 **Time:** ~14 min reading + ~30 min exercise · **Level:** beginner · **Prereqs:** M01.L05 (UpdraftPlus + cloud storage set up), M07.L01 (staging)
-**Verified against:** WordPress 7.1.4; UpdraftPlus 1.26.14 (plugin code: Settings, Existing backups, Restore and migration screens); WordPress developer handbook *Backups* page (last modified 2026-10-28), all on 2026-11-01
+**Verified against:** WordPress 7.1.4; UpdraftPlus 1.26.14 (plugin code: Settings, Existing backups, Restore and migration screens, and which settings survive a migration); CISA *#StopRansomware Guide* backup advice; WordPress developer handbook *Backups* page (last modified 2026-10-28), all on 2026-11-01
 
 > ⚠️ **Freshness flag:** backup plugins move features between free and paid tiers. On 2026-11-01 the **free** UpdraftPlus could schedule backups (every 2, 4, 8 or 12 hours, daily, weekly, fortnightly or monthly), send them to Google Drive, Dropbox, S3-compatible storage, FTP and others, restore them, and **migrate** a backup to a different address with a built-in search-and-replace. Incremental backups, extra storage destinations, finer retention rules and automatic backups before updates were **Premium**. Check the plugin's wordpress.org page before you rely on any of these.
 
@@ -23,7 +23,7 @@ Tomás had "daily backups" for two years. When a hacked plugin injected spam lin
 **Analogy:** backups are like photos of your notebook. *Frequency* is how often you take a photo. *Retention* is how many old photos you keep in the album. A *restore test* is checking that the photos are in focus before you lose the notebook.
 
 **Precise definitions:**
-- **Backup set:** one database backup plus the files backups (plugins, themes, uploads, others) taken around the same time. UpdraftPlus shows each set as one row under **Existing backups**.
+- **Backup set:** one database backup plus the files backups (plugins, themes, uploads, others) taken around the same time. UpdraftPlus shows each set as one row under **Existing backups**. **Others** means everything else in `wp-content` that isn't plugins, themes or uploads (for example, folders some plugins create).
 - **Retention:** how many backup sets the plugin keeps before deleting the oldest. In UpdraftPlus, the **"and retain this many scheduled backups"** number next to each schedule. Old sets are pruned only after a new backup completes, so you may briefly see one more than you set.
 - **Recovery point (RPO):** the most data you could lose. Daily database backups mean you could lose up to a day of posts and comments.
 - **Recovery time (RTO):** how long it takes to get back online. Your restore test measures it. (Both terms come from NIST's contingency planning guide, SP 800-34.)
@@ -40,7 +40,7 @@ The database changes every time you publish, someone comments or something sells
 | Publish daily, busy comments, or sell products | Every 12 hours | 60 | Daily | 14 | ~1 month (consider real-time backups such as Jetpack VaultPress Backup, paid, for orders) |
 | **Everyone, extra** | — | — | — | — | **Monthly:** download one full backup set to your computer or an external drive and keep the last 3 |
 
-**Why the monthly copy?** Two reasons. First, hacks and silent mistakes are often noticed weeks later, so you need at least one copy older than the problem. Second, anyone with your WordPress admin login can delete backups from the dashboard, including from remote storage (UpdraftPlus's delete dialog has **"Also delete from remote storage"**). A copy on your own drive, unplugged, can't be deleted that way. This gives you the 3-2-1 rule from M01.L05: live site, cloud copy, offline copy. It's also what the US cybersecurity agency CISA's ransomware guidance recommends: offline backups, tested regularly.
+**Why the monthly copy?** Two reasons. First, hacks and silent mistakes are often noticed weeks later, so you need at least one copy older than the problem. Second, anyone with your WordPress admin login can delete backups from the dashboard, including from remote storage (UpdraftPlus's delete dialog has **"Also delete from remote storage"**). A copy on your own drive, unplugged, can't be deleted that way. This gives you the 3-2-1 rule from M01.L05: live site, cloud copy, offline copy. It matches the first recommendation in the US cybersecurity agency CISA's *#StopRansomware Guide*: *"Maintain offline, encrypted backups of critical data, and regularly test the availability and integrity of backups"*. The guide warns that attackers look for and delete backups they can reach.
 
 **Check your storage space:** a backup set's size × how many you keep must fit in your cloud storage. A free Google account has 15 GB, shared across Gmail, Drive and Photos. 1.5 GB of uploads kept 4 times is 6 GB before you count the database.
 
@@ -50,7 +50,7 @@ The database changes every time you publish, someone comments or something sells
 flowchart TD
   %% alt: Restore test: download or rescan the latest backup set onto a separate test site, restore all parts, log in, check key pages, record the time.
   A[Pick latest backup set<br/>note its date]:::cream --> B[Create a separate test site<br/>Local or host staging]:::sky
-  B --> C[Install UpdraftPlus<br/>connect the same cloud storage]:::sky
+  B --> C[Install UpdraftPlus, schedules on Manual<br/>connect the same cloud storage]:::sky
   C --> D[Existing backups →<br/>Rescan remote storage]:::blue
   D --> E{Backup set found?}:::blue
   E -- No --> F[Download set from cloud<br/>→ Upload backup files]:::pink
@@ -93,7 +93,8 @@ Use your **Local** practice site (the "source") from M01.L05. If you work on a l
 7. **Start a timer.** Note the date and time of the backup set you'll restore.
 8. Create an **empty test site**: in Local, **+ → Create a new site**, name it `restore-test`, keep the defaults. (Live site? Use your host's staging, or a fresh test install your host gives you.)
    **Expected:** a brand-new WordPress site with the default theme and the "Hello world!" post.
-9. On `restore-test`, install and activate **UpdraftPlus**, open **Settings → UpdraftPlus Backups → Settings**, choose the **same remote storage** as your source site, **Save Changes** and authenticate.
+9. On `restore-test`, install and activate **UpdraftPlus**, open **Settings → UpdraftPlus Backups → Settings**, choose the **same remote storage** as your source site, **Save Changes** and authenticate. Leave both schedules on **Manual**: this test site must never run its own scheduled backups into your real backup folder.
+   **Using host staging instead?** A staging copy is a clone of live, so its UpdraftPlus already has your live site's schedule, storage and backup list. Set both schedules to **Manual** on staging *before anything else*. Otherwise staging runs backups into the same folder and its retention can prune your live backups.
 10. Go to **Backup / Restore** → **Existing backups** → **Rescan remote storage**. It looks inside your remote storage *"for any existing backup sets (from any site, if they are stored in the same folder)"*.
     **Expected:** your source site's backup set appears with *(backup set imported from remote location)*.
     **Not found?** Use the files from Part B: **Upload backup files** and drag in all five files from your dated folder.
@@ -103,7 +104,7 @@ Use your **Local** practice site (the "source") from M01.L05. If you work on a l
     > 🖼️ **Image prompt:** Screenshot of the UpdraftPlus restore dialog on the test site showing "Choose the components to restore" with all five components ticked and the "Search and replace site location in the database (migrate)" option checked, 1280 × 800. Highlight the search-and-replace checkbox with a 3px #F9B2D7 outline; blur any personal details.
     > **Alt text:** UpdraftPlus restore dialog with all components ticked and the search and replace site location option checked.
 12. Click **Next**, then **Restore**. Watch **Restoration progress:** until you see **Restore successful!** Then click **Return to UpdraftPlus configuration**.
-13. You'll probably be asked to log in. Use your **source site's** username and password (and its 2FA), not the ones you made for `restore-test`, because the database you just restored replaced the users.
+13. You'll probably be asked to log in. Use your **source site's** username and password (and its 2FA), not the ones you made for `restore-test`, because the database you just restored replaced the users. UpdraftPlus's own settings on `restore-test` stay as you set them in step 9 (*on a migration it keeps the destination's backup settings; checked in UpdraftPlus 1.26.14 code*).
 14. **Stop the timer** after this check:
     | Check | Pass if |
     |---|---|
@@ -127,7 +128,7 @@ Use your **Local** practice site (the "source") from M01.L05. If you work on a l
     | Data lost (RPO) | Anything after 06:00 |
     | Surprises | Had to log in with the old site's login and 2FA |
     | Next test due | 2027-02-01 (every 3 months, and after changing hosts or backup tools) |
-16. Delete the `restore-test` site when you're done (in Local: right-click → **Delete**), or keep it as a staging copy for M07.L03.
+16. Delete the `restore-test` site when you're done (in Local: right-click → **Delete**), or keep it as a staging copy for M07.L03. Deleting the Local site leaves your cloud backups alone. Don't use **Delete this backup set** on the test site: its rows point at your real backups, and **Also delete from remote storage** would remove them.
 
 ## When to use / when not to
 - **Do a full test restore** every **3 months**, after switching backup plugin, storage or host, and before anything risky like a redesign or migration (*observed practice*).
@@ -151,6 +152,7 @@ Use your **Local** practice site (the "source") from M01.L05. If you work on a l
 - **Unticking search-and-replace** on a migration: the test site then sends you back to the original address, or images point at the old site.
 - **Expecting the test site's login to work** after the restore. The database brought your original users along.
 - **Only keeping copies you can delete from the dashboard.** Keep one recent copy offline.
+- **Scheduled backups running on a test or staging copy.** It writes into the same cloud folder, and its retention can prune your live site's backups. Set staging schedules to **Manual**.
 - **Two backup plugins** "for safety". They double the server load and storage, and confuse restores. Use one plugin and one offline copy.
 
 ## Troubleshooting
@@ -161,7 +163,7 @@ Use your **Local** practice site (the "source") from M01.L05. If you work on a l
 | After restore, the site redirects to the old address | Search-and-replace was unticked | Restore the **Database** again with **Search and replace site location** ticked |
 | Images missing, posts present | **Uploads** component not restored, or the uploads backup failed | Check the set has an uploads file; restore **Uploads** |
 | Can't log in after restore | Using the test site's login | Use the source site's username, password and 2FA (or backup codes) |
-| Fewer old backups than expected in the cloud | Retention number lower than you thought, or storage full | Raise retention, free up space, run **Backup Now** and recheck |
+| Fewer old backups than expected in the cloud | Retention number lower than you thought, storage full, or a staging copy running scheduled backups into the same folder | Raise retention, free up space, set staging schedules to **Manual**, run **Backup Now** and recheck |
 
 ## Exercise
 **Task:**
@@ -198,4 +200,4 @@ Explain to a friend in 3 sentences why "I have daily backups" isn't enough, what
 - WordPress developer handbook — [Backups](https://developer.wordpress.org/advanced-administration/security/backup/) (how often, how many copies, database vs files, backup and restore order) · [Backing up your database](https://developer.wordpress.org/advanced-administration/security/backup/database/)
 - UpdraftPlus on wordpress.org: [plugin page, free vs Premium features, changelog](https://wordpress.org/plugins/updraftplus/)
 - NIST SP 800-34 Rev. 1 — [Contingency Planning Guide for Federal Information Systems](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final) (recovery point and recovery time definitions)
-- CISA — [#StopRansomware Guide](https://www.cisa.gov/stopransomware/ransomware-guide) (offline backups, testing restores). *Couldn't be fetched automatically on 2026-11-01; check the wording on the page.*
+- CISA — [#StopRansomware Guide](https://www.cisa.gov/stopransomware/ransomware-guide) ([PDF, October 2023 edition](https://www.cisa.gov/sites/default/files/2025-03/StopRansomware-Guide%20508.pdf)): offline, encrypted backups, tested regularly

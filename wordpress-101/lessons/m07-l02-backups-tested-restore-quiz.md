@@ -1,6 +1,6 @@
 # M07.L02 Quiz — Backups in depth: retention, off-site storage and a tested restore
 
-> 7 questions · 3 recall, 2 scenario, 1 spot-the-error, 1 spaced-review question from M07.L01.
+> 8 questions · 3 recall, 3 scenario, 1 spot-the-error, 1 spaced-review question from M07.L01.
 > Checked against UpdraftPlus 1.26.14 and the WordPress developer handbook *Backups* page on 2026-11-01.
 
 ### Q1. In a backup plugin, what does **retention** control?
@@ -27,17 +27,17 @@
 - a) A clone; "Overwrite wp-config.php"
 - b) A migration; "Search and replace site location in the database (migrate)"
 - c) A rollback; "Restore files only"
-- d) An import; "Delete local backup"
+- d) A restore; "Also delete from remote storage"
 
 **Answer:** b
 **Explanation:** UpdraftPlus warns *"This backup set is from a different site … this is not a restoration, but a migration."* Search-and-replace rewrites the old site address so links, images and logins point at the new one.
 **Hint:** The site address stored in the database has to change.
 
 ### Q4. Tomás keeps **7** daily database backups. He finds spam links that a hacked plugin added **three weeks ago**. What's the problem, and what would have helped most?
-- a) Nothing is wrong; restoring yesterday's backup removes the spam
-- b) Every backup he still has contains the spam. Longer retention (about a month) plus a monthly offline copy would let him go back before the hack
-- c) He needs to back up files hourly
-- d) He should have used two backup plugins
+- a) Nothing is wrong: restoring yesterday's database backup will remove the spam links
+- b) Every backup he still has contains the spam; about a month of retention plus a monthly offline copy would reach back before it
+- c) His backups run too rarely; switching files to hourly backups would have caught the spam
+- d) His plugin is the problem; a second backup plugin running alongside would have kept clean copies
 
 **Answer:** b
 **Explanation:** Retention must be longer than the time it might take to notice a problem. With only 7 days kept, the clean copies were pruned long ago. A month of database backups plus a monthly offline copy covers late discoveries.
@@ -77,3 +77,14 @@
 **Answer:** b
 **Explanation:** When one plugin update broke one thing, roll back that plugin. A full backup restore also undoes every post, comment and setting since the backup, so save it for when you can't tell what broke or the site is down.
 **Hint:** Fix the one thing that changed.
+
+### Q8. Kwame's host made a staging copy of his live site. A week later, his oldest live backups have vanished from Google Drive, even though live retention is 30. What's the most likely cause?
+- a) Google Drive deletes files older than a week on free accounts
+- b) The staging copy kept live's UpdraftPlus schedule and storage, so it ran its own backups into the same folder and pruned old sets
+- c) Search-and-replace removed the old backups during the staging copy
+- d) WordPress core deletes backups when a staging site is created
+
+**Answer:** b
+**Explanation:** Staging is a clone of live, including UpdraftPlus's schedule, remote storage and backup list. Left running, it backs up into the same folder and its retention deletes the oldest sets there. Set both schedules to **Manual** on any staging or test copy first.
+**Hint:** What did the clone copy along with the posts?
+
