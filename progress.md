@@ -1,6 +1,6 @@
 # Progress
 
-Active course: **wordpress-101**
+Active course: **webdev-101**
 
 Status values: `todo` → `draft` → `reviewed` → `published`.
 Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` row.
@@ -77,7 +77,27 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M09 | L03 | Launch day and your 30-day maintenance routine | wordpress-101/lessons/m09-l03-launch-maintenance-routine.md | published | 2026-11-01 |
 | M09 | Capstone | M09 final capstone | wordpress-101/capstones/m09-capstone.md | published | 2026-11-01 |
 
+## webdev-101
+
+| Module | Lesson | Title | File | Status | Date |
+|--------|--------|-------|------|--------|------|
+| M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | todo | — |
+| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | todo | — |
+| M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | todo | — |
+| M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | todo | — |
+| M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | todo | — |
+| M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | todo | — |
+| M02 | — | HTML: The Structure of Content (not yet planned) | — | todo | — |
+| M03 | — | CSS: Design, Brand & Layout (not yet planned) | — | todo | — |
+| M04 | — | Publish It: Tools, Hosting & Domains (not yet planned) | — | todo | — |
+| M05 | — | JavaScript for Marketers (not yet planned) | — | todo | — |
+| M06 | — | Tracking, Analytics & Consent (not yet planned) | — | todo | — |
+| M07 | — | Fast, Accessible & Search-Ready (not yet planned) | — | todo | — |
+| M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
+
 ## Log
+- 2026-11-02: webdev-101 planned M01 (5 lessons + capstone) in syllabus.md. Mermaid kept as code blocks (no rendered images). Next: `/next-lesson` → M01.L01.
+- 2026-11-02: Scaffolded webdev-101 around the existing outline: added outcomes, tools & costs (free path), 12 non-negotiables, running example (Nila Coffee demo + learner launch page), diagnostic plan, accessibility, freshness, licence/changelog; alt line on outline flowchart. Active course switched to webdev-101.
 - 2026-11-01: neps.in course 2608: WHOLE COURSE LIVE. Backup first: /home/ubuntu/backups/neps-in/2026-11-01-before-wp101-publish/ (full DB + course tables). A wp-admin course save at 22:37 had published empty lessons 2646 and 2667 and detached M04–M08 drafts (user confirmed it was them); both set back to draft, then M04–M09 uploaded with upload_module.php (31 lessons; quizzes 2841–3109). M01–M03 refreshed: lesson content via update_content.php and quizzes in place via new tools/learnpress/refresh_quizzes.php (41 questions re-lettered/re-worded; question and answer IDs kept). Verified: 9 sections, 101 items, 319 questions each with one correct answer, no empty lessons. Note: the M09 final capstone went live as a draft that hasn't had /review-lesson yet.
 - 2026-11-01: wordpress-101 M09 final capstone draft (Launch Report scored on all 13 non-negotiables; 7 tasks: checklist, go live, five posts with a–g per-post checks, live re-test of sign-up/legal/backups, launch, routine, drills (a) Discourage search engines found 3 ways, (b) silent sign-up failure; rubric 5×4 grouping NN #1–#13; Local fallback capped at Good) + cheatsheets/m09-launch.md. UpdraftPlus free restore-to-new-URL confirmed via bundled Migrator Lite.
 - 2026-11-01: wordpress-101 m02-l01 reviewed: all 13 shortcuts confirmed against WP 7.1 registered shortcuts; menu labels 'Posts → Add Post' / 'Pages → Add Page' (WP 7.x); quiz re-lettered d,a,c,b,d,d,a (was 6 of 7 b; Q6 steps reordered) and option lengths evened.
