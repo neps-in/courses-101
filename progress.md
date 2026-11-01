@@ -81,7 +81,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | todo | — |
+| M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | draft | 2026-11-02 |
 | M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | todo | — |
 | M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | todo | — |
 | M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | todo | — |
@@ -96,6 +96,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m01-l01 draft (lesson + 7-question quiz tagged O1–O3; 12 glossary terms; client/server flowchart kept as Mermaid; 2 image prompts, no images; refresher card for remediation). Sources: MDN Learn web development, CERN history. Next: `/review-lesson webdev-101/lessons/m01-l01-internet-vs-web.md` or `/next-lesson` → M01.L02.
 - 2026-11-02: webdev-101 planned M01 (5 lessons + capstone) in syllabus.md. Mermaid kept as code blocks (no rendered images). Next: `/next-lesson` → M01.L01.
 - 2026-11-02: Scaffolded webdev-101 around the existing outline: added outcomes, tools & costs (free path), 12 non-negotiables, running example (Nila Coffee demo + learner launch page), diagnostic plan, accessibility, freshness, licence/changelog; alt line on outline flowchart. Active course switched to webdev-101.
 - 2026-11-01: neps.in course 2608: WHOLE COURSE LIVE. Backup first: /home/ubuntu/backups/neps-in/2026-11-01-before-wp101-publish/ (full DB + course tables). A wp-admin course save at 22:37 had published empty lessons 2646 and 2667 and detached M04–M08 drafts (user confirmed it was them); both set back to draft, then M04–M09 uploaded with upload_module.php (31 lessons; quizzes 2841–3109). M01–M03 refreshed: lesson content via update_content.php and quizzes in place via new tools/learnpress/refresh_quizzes.php (41 questions re-lettered/re-worded; question and answer IDs kept). Verified: 9 sections, 101 items, 319 questions each with one correct answer, no empty lessons. Note: the M09 final capstone went live as a draft that hasn't had /review-lesson yet.
