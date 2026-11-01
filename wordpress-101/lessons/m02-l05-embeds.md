@@ -69,7 +69,7 @@ flowchart TD
 Work on your **Local** practice site, in **Chrome, Edge or Firefox** on a computer. Your computer needs to be online (the embeds load from the internet).
 
 **Part A: embed a video and a podcast (4 min)**
-1. **Posts → Add New Post.** Title: *Embed test*. Add one short paragraph.
+1. **Posts → Add Post.** Title: *Embed test*. Add one short paragraph.
 2. On a new empty line, paste a YouTube video link (e.g. one of your own, or any `https://www.youtube.com/watch?v=…` link) and press **Enter**.
    **Expected:** the link turns into a **YouTube** embed block showing the video player.
    > 🖼️ **Image prompt:** Screenshot of the WordPress 7.0 block editor with a YouTube embed block selected, showing the video player in the post, the block toolbar, and the settings sidebar with "Media settings" → "Resize for smaller devices" turned on. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.

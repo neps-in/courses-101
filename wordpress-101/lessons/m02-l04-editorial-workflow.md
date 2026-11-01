@@ -57,7 +57,7 @@ flowchart TD
 Work on your **Local** practice site.
 
 **Part A: create some revisions (4 min)**
-1. **Posts → Add New Post.** Title: *5 pantry staples for weeknight curries*. Write two short paragraphs. Press **Ctrl+S**.
+1. **Posts → Add Post.** Title: *5 pantry staples for weeknight curries*. Write two short paragraphs. Press **Ctrl+S**.
    **Expected:** "Saved" appears near the top, and the post stays a **Draft**.
 2. Add a third paragraph and press **Ctrl+S**. Then **delete the first paragraph** (pretend it was a mistake) and press **Ctrl+S** again.
    **Expected:** in the settings sidebar (**Ctrl+Shift+,**), **Post** tab, a **Revisions** item now appears with a count (e.g. 3). If you don't see it yet, save once more: it only appears once the post has at least two revisions.
