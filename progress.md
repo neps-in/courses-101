@@ -89,7 +89,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | reviewed | 2026-11-02 |
 | M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | draft | 2026-11-02 |
 | M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | draft | 2026-11-02 |
-| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | todo | — |
+| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | draft | 2026-11-02 |
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | todo | — |
 | M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | todo | — |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | todo | — |
@@ -101,6 +101,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m02-l03 draft (lesson + 7-question quiz incl. 1 review from M02.L02; 8 glossary terms; choose-the-element flowchart kept as Mermaid; 2 image prompts, no images). Div-soup and semantic examples run live through W3C Nu 26.11.1 with outline: skipped levels are now an error, outline shows [missing]. Outline algorithm removal (2022) flagged. Also fixed m02-l01 validator success wording ("The document validates according to the specified schema(s)."). Next: `/next-lesson` → M02.L04.
 - 2026-11-02: webdev-101 m02-l02 draft (lesson + 7-question quiz incl. 1 review from M01.L03; 13 glossary terms; alt-text decision flowchart (from W3C WAI tree) kept as Mermaid; 2 image prompts, no images; break-it = misspelt image path → alt text + 404). All lesson code validated live (0 errors). target=_blank implicit noopener (MDN) and rel=sponsored (Google) checked. Next: `/next-lesson` → M02.L03.
 - 2026-11-02: webdev-101 m02-l01 draft (lesson + 7-question quiz incl. 1 review from M01.L05; 12 glossary terms; browser-reads-the-document flowchart kept as Mermaid; 2 image prompts, no images). Validator messages quoted from a live W3C Nu check; CodePen is body-only (per its preview-template docs), so the full skeleton is written in Notepad/TextEdit. Quiz length check script run before saving (3 fixed). Next: `/next-lesson` → M02.L02.
 - 2026-11-02: webdev-101 planned M02 (5 lessons + capstone) in syllabus.md; CodePen + W3C Nu checker as the zero-install toolset. Loop running; stops after M02 capstone for user review. Next: `/next-lesson` → M02.L01.

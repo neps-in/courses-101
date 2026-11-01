@@ -118,7 +118,7 @@ flowchart TD
 **Part C: validate, break it and fix it (10 min, any device)**
 1. Open the **W3C Nu HTML Checker** text box: **https://validator.w3.org/nu/#textarea**.
 2. Paste your whole page and click **Check**.
-   **Expected:** a message that the document checking is complete with **no errors or warnings to show**. If you see messages, fix them using the table in step 4.
+   **Expected:** the message **"The document validates according to the specified schema(s)."** If you see messages instead, fix them using the table in step 4.
 3. Now paste this broken version and click **Check**:
    ```html
    <!DOCTYPE html>
@@ -146,7 +146,7 @@ flowchart TD
    | Consider adding a "lang" attribute to the "html" start tag… | A warning, not an error, but this course treats it as required | `<html lang="en">` |
    | *(not reported: missing viewport)* | The validator doesn't check for it, but phones need it | Add the viewport `<meta>` anyway |
 5. Fix all of them in the text box and check again.
-   **Expected:** no errors or warnings. Note the lesson: **fix the first error first and re-check**, because one mistake can cause several messages.
+   **Expected:** "The document validates according to the specified schema(s)." Note the lesson: **fix the first error first and re-check**, because one mistake can cause several messages.
 
 **Part D: start your launch page (3 min)**
 1. In your `webdev-101` folder, save a second file, `launch.html`, using the same skeleton.
