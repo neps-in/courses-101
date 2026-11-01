@@ -55,7 +55,7 @@
 ## If something goes wrong
 | Problem | First fix |
 |---|---|
-| Privacy link 404 | Page is a draft or trashed → **Publish** / restore |
+| Privacy link 404, or footer link vanished | Page is a draft or trashed (Navigation links to unpublished pages are hidden) → **Publish** / restore |
 | Sign-ups don't appear | Wrong list, not connected, or **pending** confirmation |
 | Real comment vanished | Check **Trash** → Disallowed Comment Keys too broad |
 | Real comment in Spam | **Not Spam** (trains Akismet) |

@@ -49,7 +49,7 @@ flowchart TD
    **Evidence:** screenshots of the CTA in two places (one on mobile); the route you chose and why in one sentence.
 
 ### 3. Lead magnet and welcome email (from M06.L02, M06.L05)
-1. Make the lead magnet you outlined in M06.L02: a small, specific next step from your best post (checklist, printable, template), 1–3 pages.
+1. Make the lead magnet you outlined in M06.L02: a small, specific next step from your best post (checklist, printable, template), 1–3 pages. Export it as a PDF and upload it to **Media → Add Media File** (or your provider's file storage, if it has one); copy the file URL for the welcome email.
 2. Set up the **welcome email** in your provider: thanks, what to expect and how often, the lead magnet link, and a link to Start Here.
 3. Offer it in the CTA and on the post it came from: *"Get the free [thing] and the [weekly] email."*
    **Evidence:** the file (or its first page), the welcome email text, and a screenshot of the offer on the source post.
@@ -83,10 +83,10 @@ flowchart TD
 
 ### 8. Break it and fix it
 **a) The draft privacy policy.** On your **Local** site, open your Privacy Policy page and switch it back to a draft: in the **Page** sidebar, click the **Status** value and choose **Draft** ("Not ready to publish."), then **Save**.
-1. Log out (or use a private window) and click **Privacy Policy** in your footer and under your sign-up form.
-   **Expected:** a 404 page. Every consent line on your site now points to nothing.
+1. Log out (or use a private window) and look at your footer, then click the **Privacy Policy** link under your sign-up form.
+   **Expected:** two different failures. If your footer link is in a **Navigation** block, it simply **disappears**: WordPress doesn't show Navigation links to unpublished pages. The text link in your consent line opens a **404 page**. Either way, every consent line now points to nothing, and the vanishing footer link is easy to miss.
 2. Go to **Settings → Privacy**. Notice that your page is still selected, and the screen offers to **edit** or **preview** it (not *view*), a clue that it isn't public.
-3. Fix it: **Publish** the page again. Confirm both links open it while logged out.
+3. Fix it: **Publish** the page again. Confirm, logged out, that the footer link is back and both links open the page.
 4. Write one sentence on how you'll catch this in future (e.g. a monthly logged-out check of footer links, M09).
 
 **b) The over-eager spam word.** Go to **Settings → Discussion → Disallowed Comment Keys**, add the single word `ass`, and save.
@@ -142,7 +142,7 @@ Score each criterion; **Good** or better on all five completes the module.
 | **Work With Me, earning and drills** | Published page with dated real numbers, clear offers and prices, linked from footer and About; one earning route live with disclosure and policy update; both drills done with evidence and a prevention sentence | Published page with dated numbers and offers; one earning route set up; both drills done | Page unpublished, numbers undated, or one drill missing | No page and no drills |
 
 ## Self-check before you submit
-- [ ] Logged out, every **Privacy Policy** link opens the published page (no 404).
+- [ ] Logged out, every **Privacy Policy** link is visible (footer included) and opens the published page (no 404).
 - [ ] Every sign-up form says what, how often, "unsubscribe any time", and links to the policy. No pre-ticked boxes.
 - [ ] My test subscriber went through **pending → confirmed** before getting the welcome email, and I deleted it afterwards.
 - [ ] Only **one** email route and **one** comment anti-spam plugin are active.
