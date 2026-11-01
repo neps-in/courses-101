@@ -1,8 +1,8 @@
 # M07.L04 — Performance: caching, CDN, lazy loading and Core Web Vitals
 > After this lesson you can read a PageSpeed Insights report, turn on page caching with one tool, decide whether you need a CDN, and fix the usual reasons a creator's page is slow.
 
-**Time:** ~15 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M03 (images, embeds, facades), M07.L03 (lean plugins)
-**Verified against:** web.dev Core Web Vitals pages (thresholds); Chrome for Developers *Lighthouse 13* post and *Performance insights* reference; WordPress 7.1.4 core code (lazy loading, `fetchpriority`, speculative loading, Site Health **Page cache** test); WP Super Cache 3.1.4 plugin code; LiteSpeed Cache 7.9.2 and Performance Lab 4.2.0 directory listings, all on 2026-11-01
+**Time:** ~18 min reading + ~25 min exercise · **Level:** beginner · **Prereqs:** M03 (images, embeds, facades), M07.L03 (lean plugins)
+**Verified against:** web.dev Core Web Vitals pages (thresholds); Chrome for Developers *Lighthouse 13* post and *Performance insights* reference; WordPress 7.1.4 core code (lazy loading, `fetchpriority`, speculative loading, Site Health **Page cache** test); WP Super Cache 3.1.4 plugin code (menu under **Settings**, Easy tab, Cache Tester); PSI section headings checked against published PSI reports; LiteSpeed Cache 7.9.2 and Performance Lab 4.2.0 directory listings, all on 2026-11-01
 
 > ⚠️ **Freshness flag:** Google's thresholds have been stable since INP replaced FID in March 2024, but PageSpeed Insights and Lighthouse regroup and rename their advice often. Lighthouse 13 (October 2025) replaced older audits such as "Properly size images" with **insights** such as **Improve image delivery**. If your report's headings differ from this lesson, look for the same idea under a new name. Claims about rankings change too. On 2026-11-01 Google Search Central said good Core Web Vitals, along with other page experience aspects, *"aligns with what our core ranking systems seek to reward"*: a reason to fix real problems, not a ranking shortcut. Search Console also has a **Core Web Vitals** report, which M08 covers.
 
@@ -37,7 +37,7 @@ A page **passes** when **75%** of real visits are "good" on all three (*web.dev*
 - **Lazy loading:** images and iframes get `loading="lazy"`, except the first three in the content, so the top of the page isn't delayed (M03).
 - **Priority for the main image:** the first large image (at least 50,000 square pixels, e.g. 250 × 200) gets `fetchpriority="high"`, so the browser fetches your likely LCP image first.
 - **Image sizes:** `width`, `height` and `srcset` are added to images, which prevents layout shifts and lets phones download smaller files (M03.L01).
-- **Speculative loading** (since WordPress 6.8): for logged-out visitors on sites with pretty permalinks, WordPress tells the browser to **prefetch** a link when the reader starts clicking it (*"conservative"* mode), so the next page opens faster.
+- **Speculative loading** (since WordPress 6.8): for logged-out visitors on sites with pretty permalinks, WordPress tells the browser to **prefetch** a link the moment the reader presses down on it, before they let go (*"conservative"* mode), so the next page opens faster.
 
 **What you add:**
 - **Page caching:** WordPress normally builds each page from PHP and the database on every visit. A **page cache** saves the finished HTML and hands that copy to the next visitor, which is much faster. It's usually the biggest single win on ordinary hosting (*observed practice*).
@@ -125,7 +125,7 @@ flowchart TD
 12. Use your Part A insights to pick the **two** biggest problems. Most creator sites have these:
    | Insight / symptom | Usual cause on creator sites | Fix |
    |---|---|---|
-   | **Improve image delivery**; LCP is your hero/featured image and slow | Image uploaded at 4000 px and several MB, or in JPEG/PNG when WebP/AVIF would do | Resize and compress before uploading, or convert with your image plugin (M03.L02). Re-upload the hero image at about 1600–2000 px wide |
+   | **Improve image delivery**; LCP is your hero/featured image and slow | Image uploaded at 4000 px and several MB, or in JPEG/PNG when WebP/AVIF would do | Resize and compress before uploading, or convert with your image plugin (M03.L02). Re-upload the hero image following your M03.L02 image rule (e.g. 1600 px wide, WebP) |
    | **LCP request discovery** says the LCP image is lazy-loaded | A theme, builder or plugin lazy-loads everything, overriding core | Turn off that plugin's lazy-load for the first image / above-the-fold area. Let WordPress core handle it |
    | **Third parties**; high TBT | Video embeds, social feeds, chat widgets or ad scripts near the top | Swap the top embed for a facade (M03.L05); remove social feed widgets you don't need; move embeds lower |
    | **Render-blocking requests**; many CSS/JS files from plugins | Plugins loading their scripts on every page (sliders, form plugins, icon packs) | Delete plugins you don't need (M07.L03); in the plugin's settings, load it only where it's used, if it offers that |

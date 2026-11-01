@@ -24,13 +24,13 @@
 **Hint:** One is real people; one is a robot test.
 
 ### Q3. Why does Lighthouse show **Total Blocking Time (TBT)** instead of INP?
-- a) INP was removed from Core Web Vitals
-- b) A lab test doesn't tap or click the page, so it measures how long scripts block the page instead; high TBT usually means poor INP
-- c) TBT is the new name for INP since Lighthouse 13
-- d) INP only applies to desktop pages
+- a) INP was dropped from Core Web Vitals in 2025, and TBT took its place in every tool
+- b) A lab test never taps or clicks, so it measures how long scripts block the page instead
+- c) TBT is simply the name Lighthouse 13 uses for INP; the two numbers are identical
+- d) INP is only measured on desktop, and PSI's lab test runs as a mobile phone
 
 **Answer:** b
-**Explanation:** INP needs real interactions, which only real users provide. TBT measures how long the main thread was too busy to respond during loading, so it's the lab's stand-in.
+**Explanation:** INP needs real interactions, which only real users provide. TBT measures how long scripts kept the page too busy to respond while it loaded, so it's the lab's stand-in: high TBT usually means poor INP.
 **Hint:** What can't a robot do on your page?
 
 ### Q4. Dana's PSI lab report shows LCP 5.8 s on mobile. **LCP breakdown** points at her 3.2 MB, 4000-pixel featured image. What should she fix first?
@@ -54,10 +54,10 @@
 **Hint:** Who is the cache for?
 
 ### Q6. Most of Mia's readers are in Canada, her host's data centre is in Toronto, and page caching is on. Her host offers a free CDN toggle. What's a reasonable decision?
-- a) A CDN is optional for her; caching matters more, though turning on the host's free CDN does no harm
-- b) She must add two CDNs for redundancy
-- c) She must move to a host in another country
-- d) She should turn caching off and use only the CDN
+- a) A CDN is optional; caching matters more, and the free toggle is harmless
+- b) She needs two different CDNs so one can take over if the other fails
+- c) She should move to a host in the US, where most CDNs are based
+- d) She should switch caching off and let the CDN serve every page
 
 **Answer:** a
 **Explanation:** A CDN mostly helps readers far from the server. With a local audience and caching on, it's a nice-to-have. A built-in host CDN is the easy route if she wants it; never stack two.
