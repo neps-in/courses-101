@@ -2,7 +2,7 @@
 > After this lesson every admin on your site logs in with 2FA, password-guessing bots get locked out, every account has only the access it needs, and no unused plugins or themes are left lying around.
 
 **Time:** ~13 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** M01.L05 (2FA, roles), M06.L01 (plugin log), M07.L01 (updates), M07.L02 (backups)
-**Verified against:** WordPress 7.1.4 core code (Users screen, **Change role to…**, delete-user options, Application Passwords, **Log Out Everywhere Else**, **Settings → General → Membership**, Site Health inactive plugin/theme checks); Two Factor 0.17.0 and Limit Login Attempts Reloaded 3.3.10 plugin code; WP 2FA 4.2.1, Wordfence 9.0.2 and Kadence Security 10.0.6 directory listings, all on 2026-11-01
+**Verified against:** WordPress 7.1.4 core code (Users screen, **Change role to…**, delete-user options, Application Passwords, **Log Out Everywhere Else**, **Settings → General → Membership** incl. the 7.0+ default-role dropdown, Site Health inactive plugin/theme checks); Two Factor 0.17.0 and Limit Login Attempts Reloaded 3.3.10 plugin code; WP 2FA 4.2.1, Wordfence 9.0.2 and Kadence Security 10.0.6 directory listings, all on 2026-11-01
 
 > ⚠️ **Freshness flag:** security plugins change names, menus and free features often. On 2026-11-01 the plugin the course outline calls **Solid Security** was listed on WordPress.org as **Kadence Security** (same plugin, slug `better-wp-security`). Check each plugin's wordpress.org page (last updated, tested-up-to) before installing, and score it with your M06.L01 checklist.
 
@@ -79,6 +79,7 @@ Work on your **Local** practice site first. Then repeat on your live site (or do
 2. For every admin showing **Disabled**: if it's you, set up 2FA now (M01.L05 Part B). If it's someone else, ask them to set it up today, or downgrade them in Part B. Do the same for **Editors**, who can publish and change anyone's posts.
 3. Add rate limiting, **unless** your host's firewall or a security plugin you already use (e.g. Wordfence) does it. Check your plugin log first.
    - Score **Limit Login Attempts Reloaded** with the M06.L01 checklist, then **Plugins → Add Plugin → Install Now → Activate**.
+   - A **Welcome** pop-up offers the paid cloud service and an email sign-up. Click **Skip**: the free **Local App** does the rate limiting on your own site.
    - Open the new **Limit Login Attempts** menu → **Settings** tab. Leave the defaults (4 allowed retries, 20 minutes lockout, 4 lockouts increase lockout time to 24 hours) and turn on **Notify on lockout** if you want emails.
    - **Live site:** add your own IP address to the **Safelist** only if it's fixed. Most home connections change their IP, so rely on your password manager instead.
 4. **Test it on Local:** open a private window, go to `/wp-login.php`, and enter a wrong password until you're blocked.
@@ -95,7 +96,7 @@ Work on your **Local** practice site first. Then repeat on your live site (or do
    **Expected:** the user's **Role** column updates. Log in as them in a private window if you want to confirm what they can see (M01.L05 Part C).
 7. **Remove leavers:** hover the user → **Delete**. When asked what to do with their content, choose **Attribute all content to another user.** and pick yourself. **Don't** pick **Delete all content.** unless you mean it: that deletes their posts.
 8. **Revoke stray app access:** for each admin, open **Users → Profile** (or **Edit** on the user) → **Application Passwords**. **Revoke** any password you don't recognise or no longer use. Then, at **Sessions**, click **Log Out Everywhere Else** if you've ever logged in on a shared or lost device.
-9. **Close the side door:** **Settings → General → Membership**. Leave **Anyone can register** **unticked** unless you really run a membership site, and keep **New User Default Role** on **Subscriber**. (If registration is open and the default role is Administrator or Editor, anyone can sign up as one.)
+9. **Close the side door:** **Settings → General → Membership**. Leave **Anyone can register** **unticked** unless you really run a membership site, and keep **New User Default Role** on **Subscriber**. Since WordPress 7.0 the dropdown no longer offers Administrator or Editor, **but** an older site that already had one selected keeps it, and it still shows. If yours says Administrator or Editor, change it now: with registration open, anyone could sign up with that role.
    **Expected:** every account in your audit table has an action done, no leavers remain, and no one has more than their job needs.
 
 ### Part C — Prune (~5 min)
@@ -107,10 +108,10 @@ Work on your **Local** practice site first. Then repeat on your live site (or do
     - Aim for **10–12 active or fewer.**
 12. **Appearance → Themes:** keep your **active** theme and **one default** WordPress theme (e.g. the newest Twenty-something). For every other theme: **Theme Details → Delete**.
 13. **Tools → Site Health → Status.**
-    **Expected:** no *"You should remove inactive plugins"* or *"You should remove inactive themes"* item. *"Have a default theme available"* is satisfied by the default theme you kept.
+    **Expected:** none of these recommendations: *"You should remove inactive plugins"*, *"You should remove inactive themes"* or *"Have a default theme available"*. Under **Passed tests** you'll see *"Your plugins are all up to date"* and *"Your themes are all up to date"* (if any updates are waiting, install them first, M07.L01).
 
-   > 🖼️ **Image prompt:** Screenshot of Tools → Site Health → Status with the "Passed tests" section expanded, showing that no inactive plugins or themes remain and a default theme is available, 1280 × 800. Highlight those passed items with a 3px #F9B2D7 outline; blur any personal details.
-   > **Alt text:** Site Health status showing passed tests for no inactive plugins or themes and a default theme available.
+   > 🖼️ **Image prompt:** Screenshot of Tools → Site Health → Status with "Passed tests" expanded, showing "Your plugins are all up to date" and "Your themes are all up to date", 1280 × 800. Highlight those two items with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Site Health passed tests showing all plugins and all themes up to date, with no inactive plugin or theme warnings.
 
 ### Part D — Write your security log (~2 min)
 14. Add a **Security log** section to your site docs:
@@ -141,7 +142,7 @@ Work on your **Local** practice site first. Then repeat on your live site (or do
 - **Leaving plugins deactivated instead of deleted.** Their files are still on the server.
 - **Deleting a plugin without exporting its data** (redirects, form entries, settings you need).
 - **Deleting every inactive theme,** including the default one WordPress falls back to.
-- **Leaving "Anyone can register" ticked** from an old experiment, especially with a high default role.
+- **Leaving "Anyone can register" ticked** from an old experiment, especially on an older site whose **New User Default Role** is still Editor or Administrator.
 
 ## Troubleshooting
 | Symptom | Likely cause | Fix |

@@ -4,10 +4,10 @@
 > Checked against WordPress 7.1.4 core, Two Factor 0.17.0 and Limit Login Attempts Reloaded 3.3.10 on 2026-11-01.
 
 ### Q1. How many failed login attempts does WordPress core allow before it blocks someone?
-- a) 3, then a 15-minute lockout
-- b) 5, then an email to the admin
-- c) Unlimited; you need a plugin, your host or a firewall to add rate limiting
-- d) 10, then the account is disabled
+- a) 3, then a 15-minute lockout for that IP address
+- b) 5, then an email to the admin and a CAPTCHA
+- c) Unlimited, until you add a plugin, host feature or firewall
+- d) 10, then the user account is disabled
 
 **Answer:** c
 **Explanation:** Core has no login rate limiting, so bots can keep guessing. A plugin such as Limit Login Attempts Reloaded (defaults: 4 retries, 20-minute lockout), a security plugin's login protection, or your host's firewall adds it.
@@ -24,10 +24,10 @@
 **Hint:** Is the code still on the server?
 
 ### Q3. What does an **application password** let someone do, and why should you revoke unused ones?
-- a) Change your main password; it's the same as password reset
-- b) Log in to the dashboard with 2FA turned off for good
-- c) Let an app use your account through the REST API without your 2FA, so a forgotten one is an open side door
-- d) Nothing; they only work on Local
+- a) Reset your main password; a forgotten one lets anyone change it
+- b) Log in to the dashboard without a password; it replaces your normal login
+- c) Let an app use your account through the API without 2FA; a forgotten one is a side door
+- d) Publish posts by email; a forgotten one lets spammers post to your blog
 
 **Answer:** c
 **Explanation:** Application passwords are for apps and automations. They authenticate API requests without the 2FA prompt (with the Two Factor plugin, they're the only way API logins are allowed). Revoke any you don't recognise in **Users → Profile → Application Passwords**.
