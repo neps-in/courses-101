@@ -2,9 +2,9 @@
 > After this lesson you can choose where to publish based on what you own, what it costs and how easily you can leave, and you'll have a free WordPress practice site running.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** none
-**Verified against:** WordPress 7.1.4, WordPress Playground, and the WordPress.com, Substack, Ghost and Medium help pages on 2026-10-29
+**Verified against:** WordPress 7.1 admin labels, WordPress Playground, and the WordPress.com, Substack, Ghost and Medium help pages on 2026-10-29; prices re-checked 2026-11-01
 
-> ⚠️ **Freshness flag:** platform prices, fees and plan features change often. The numbers below were checked on 2026-10-29. Re-check each platform's pricing page before you buy anything.
+> ⚠️ **Freshness flag:** platform prices, fees and plan features change often. The numbers below were checked on 2026-10-29 and re-checked on 2026-11-01. WordPress.com opened plugins to every paid plan only in April 2026, so older guides disagree. Re-check each platform's pricing page before you buy anything.
 
 ## Learning objectives
 1. **Compare** self-hosted WordPress.org, WordPress.com, Substack, Medium and Ghost on ownership, cost, control and export.
@@ -34,10 +34,10 @@ Priya writes a cooking newsletter. In three years she has gathered 8,000 readers
 | **Can you leave in a day?** (full export) | Posts, images, subscribers and redirects must all move without breaking links. |
 | **What does it cost at scale?** | A small monthly fee beats a revenue share once you earn well. A revenue share beats a fee while you earn little. |
 
-### How the platforms compare (checked 2026-10-29)
+### How the platforms compare (checked 2026-11-01)
 | | **WordPress.org** (self-hosted) | **WordPress.com** | **Substack** | **Ghost** | **Medium** |
 |---|---|---|---|---|---|
-| **Software cost** | Free | Free plan, paid plans from a few $ / month | Free | Free (self-host) or Ghost(Pro) from about $15 / month | Free; membership for extras |
+| **Software cost** | Free | Free plan, paid plans from a few $ / month | Free | Free (self-host) or Ghost(Pro) from about $15 / month billed yearly ($18 monthly) | Free; membership for extras |
 | **Revenue share** | 0% | 0% on content | **10%** of paid subscriptions + card fees | 0% | Partner Program pays you |
 | **Your own domain** | Yes (you buy it) | Paid plans | Yes, one-time **$50** fee | Yes | Needs a paid membership |
 | **Plugins and custom features** | Any of 60,000+ | **Any paid plan** (not Free); some types blocked | No | Integrations, no plugins | No |
@@ -97,7 +97,7 @@ You'll score the platforms for *your* situation, then start a free WordPress pra
    **Expected:** the WordPress dashboard, with Posts, Pages, Media and Settings in the left menu.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of the WordPress 7.1 dashboard inside WordPress Playground (playground.wordpress.net), full left admin menu visible. Outline Posts, Pages, Media and Settings. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** WordPress dashboard in Playground with Posts, Pages, Media and Settings highlighted in the left menu.
-3. Go to **Posts → Add New Post**, type the title "Hello from my own site" and a one-line paragraph, then click **Publish** (twice: Publish, then confirm).
+3. Go to **Posts → Add Post**, type the title "Hello from my own site" and a one-line paragraph, then click **Publish** (twice: Publish, then confirm).
    **Expected:** a "Post published" notice and a **View Post** link.
 4. Go to **Tools → Export**, choose **All content**, then **Download Export File**.
    **Expected:** an `.xml` file downloads. This is your whole site's content in a portable format. You've just proved you can leave in one minute.
@@ -164,7 +164,7 @@ Explain to a friend in 3 sentences why a creator with an audience on Substack or
 - WordPress Playground — added to `wordpress-101/glossary.md`
 
 ## Further reading
-*All checked 2026-10-29.*
+*All checked 2026-10-29; pricing pages re-checked 2026-11-01.*
 - WordPress.org — Download & releases: https://wordpress.org/download/
 - WordPress.com support — Plugins (which plans can install them): https://wordpress.com/support/plugins/
 - WordPress documentation — Tools Export Screen: https://wordpress.org/documentation/article/tools-export-screen/

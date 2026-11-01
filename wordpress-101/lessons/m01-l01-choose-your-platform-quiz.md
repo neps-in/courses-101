@@ -1,55 +1,55 @@
 # M01.L01 Quiz — Choose your platform
 
 > 6 questions · ~2 recall, ~3 scenario, ~1 spot-the-error. This is the course's first lesson, so there are no spaced-review questions yet; they start in M01.L02.
-> Facts checked 2026-10-29. Prices and plan features change, so re-verify before publishing.
+> Facts checked 2026-10-29, prices re-checked 2026-11-01. Prices and plan features change, so re-verify before publishing.
 
 ### Q1. What is the main difference between WordPress.org and WordPress.com?
-- a) WordPress.org is for blogs; WordPress.com is for online shops
-- b) They run the same WordPress software, but with WordPress.org you host and control it yourself, while WordPress.com runs it for you under its plans and rules
-- c) WordPress.com is the newer version of WordPress.org
-- d) WordPress.org is paid; WordPress.com is always free
+- a) WordPress.org is for blogs and WordPress.com is for online shops
+- b) WordPress.com is a newer, rewritten version of the WordPress.org software
+- c) Same software; on .org you host and control it, .com runs it for you
+- d) WordPress.org is paid software, while WordPress.com is always free
 
-**Answer:** b
+**Answer:** c
 **Explanation:** Both use the same open-source WordPress software. Self-hosted WordPress.org gives you full control (and the maintenance work). WordPress.com is a hosted service by Automattic whose plans decide what you can do. Neither is "newer", both can run blogs or shops, and WordPress.com has paid plans.
 **Hint:** Think about *who runs the server*, not what the software is.
 
 ### Q2. Which audience asset can a creator take with them if a platform shuts down or changes its rules?
-- a) Their follower count on the platform
-- b) Likes and claps on their posts
-- c) An email list they can export, plus their own domain
+- a) An email list they can export, plus their own domain
+- b) Their follower count and profile on the platform
+- c) The likes, claps and comments on their posts
 - d) Their position in the platform's recommendation feed
 
-**Answer:** c
+**Answer:** a
 **Explanation:** Followers, likes and feed placement live inside the platform. An exportable email list and a domain you own are the assets no platform can take away. That's why this course treats them as non-negotiable.
 **Hint:** Which of these could you download as a file or point somewhere else?
 
 ### Q3. Arjun runs a podcast. He wants show-notes pages, affiliate links to his recording gear, a sponsor "Work With Me" page and a newsletter, and he wants to control his design. He's comfortable following a monthly maintenance checklist. Which platform fits best?
-- a) Medium
-- b) Substack
-- c) Self-hosted WordPress (WordPress.org)
-- d) A free WordPress.com site
+- a) Medium, with a publication for the show notes
+- b) Substack, with its built-in newsletter and podcast tools
+- c) A free WordPress.com site on a subdomain
+- d) Self-hosted WordPress (WordPress.org)
 
-**Answer:** c
+**Answer:** d
 **Explanation:** Arjun needs many income streams, custom pages and design control, and he accepts maintenance. That's what self-hosted WordPress does best. Medium and Substack don't allow plugins or custom pages like this. A free WordPress.com site can't install plugins.
 **Hint:** He's happy to handle maintenance, so look for the option with the most control.
 
 ### Q4. Meera earns ₹60,000 a month from paid newsletter subscriptions on a platform that takes a 10% revenue share (before card fees). Managed WordPress hosting with a newsletter tool would cost her about ₹4,000 a month in total. Looking only at platform costs, what's true?
-- a) Staying is cheaper: the revenue share costs ₹600 a month
-- b) The revenue share costs ₹6,000 a month, ₹2,000 more than the WordPress setup
-- c) The costs are about the same
-- d) You can't compare a revenue share with a fixed fee
+- a) Staying is cheaper: the revenue share costs only ₹600 a month
+- b) The share costs ₹6,000 a month, ₹2,000 more than WordPress
+- c) The two options cost about the same each month
+- d) You can't compare a revenue share with a fixed monthly fee
 
 **Answer:** b
 **Explanation:** 10% of ₹60,000 is ₹6,000 a month, compared with about ₹4,000 a month for her own stack. Revenue shares grow with your income and fixed fees don't. Before switching she should also weigh migration effort and any features she'd lose.
 **Hint:** Work out 10% of her monthly income first.
 
 ### Q5. Sara says: "I'll start on Medium because it has readers, and I'll move to my own site later." What's the strongest way to keep her options open from day one?
-- a) Post only on Medium and download an export once a year
-- b) Publish on her own site first, then cross-post selected articles to Medium with a link back to the original
-- c) Copy each Medium article into a Word document
-- d) Ask readers to follow her on Medium so she can message them later
+- a) Post only on Medium for now and download a full account export once a year
+- b) Copy each Medium article into a Word document as a backup
+- c) Ask readers to follow her on Medium so she can message them later
+- d) Publish on her own site first, then cross-post to Medium with a link back
 
-**Answer:** b
+**Answer:** d
 **Explanation:** Publishing first on a site she owns makes links and rankings build up on her domain, while Medium is still used for reach. Exports and Word copies save the text but not the address, the rankings or the readers. Medium followers stay on Medium.
 **Hint:** Where should the original version of each article live?
 
