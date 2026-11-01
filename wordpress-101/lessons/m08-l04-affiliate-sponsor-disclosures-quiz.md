@@ -5,31 +5,31 @@
 
 ### Q1. Which of these is a **material connection** you need to disclose?
 - a) A product you bought yourself and link to with a plain, non-affiliate link
-- b) A free product a brand sent you to review, even with no payment
-- c) A book you borrowed from your local library and recommend
+- b) A book you borrowed from your local library and recommend
+- c) A free product a brand sent you to review, even with no payment
 - d) A tool you mention because a reader asked about it in the comments
 
-**Answer:** b
+**Answer:** c
 **Explanation:** Anything of value (commission, payment, free products, discounts, trips) is a material connection under FTC guidance, and the UK's CMA treats gifts as payment, so UK readers need an "Ad" label ("gifted" alone isn't enough). Things you bought or borrowed yourself, with no link payment, aren't material connections.
 **Hint:** Did you receive anything of value?
 
 ### Q2. According to the FTC, which placement is most likely to be **missed** by readers?
 - a) A short line directly under the post title, before the first link
-- b) A disclosure only on your About page and at the end of each post
-- c) An "(ad)" label placed right next to each affiliate link
-- d) A highlighted box above the first product recommendation
+- b) An "(ad)" label placed right next to each affiliate link
+- c) A highlighted box above the first product recommendation
+- d) A disclosure only on your About page and at the end of each post
 
-**Answer:** b
+**Answer:** d
 **Explanation:** The FTC says disclosures that appear only on an About page, at the end of posts, or behind "more" are likely to be missed. It should be clear and conspicuous, close to the recommendation.
 **Hint:** Where do readers look before they click?
 
 ### Q3. Which label does the ASA recommend for UK readers when content is paid for or contains affiliate links?
-- a) "Spon" or "#sp" at the end of the post
-- b) "Ad" (or "Advert", "#ad"), shown prominently upfront
+- a) "Ad" (or "Advert", "#ad"), shown prominently upfront
+- b) "Spon" or "#sp" at the end of the post
 - c) "In collaboration with [Brand]" in the final paragraph
 - d) "#gifted" or "aff", placed in the post's list of tags
 
-**Answer:** b
+**Answer:** a
 **Explanation:** The ASA expects a clear "Ad" label upfront, before people engage. It advises against "spon"/"sp", "sponsored" alone and collaboration wording, and has ruled "#gifted" and "aff" inadequate.
 **Hint:** Two letters, at the start.
 
@@ -45,11 +45,11 @@
 
 ### Q5. Joe made his *Sponsored disclosure* a **synced** pattern naming "BrewCo". Now a post sponsored by "BeanLab" also says BrewCo. What's the best fix?
 - a) Edit the original to say BeanLab, so every post now names BeanLab
-- b) Detach it in that post and use an unsynced template for sponsored boxes
-- c) Delete the sponsored box from both posts to avoid naming any brand
+- b) Delete the sponsored box from both posts to avoid naming any brand
+- c) Detach it in that post and use an unsynced template for sponsored boxes
 - d) Add a second synced pattern that says "BrewCo or BeanLab"
 
-**Answer:** b
+**Answer:** c
 **Explanation:** Sponsored boxes differ per post (brand, terms), so they should be unsynced templates. Synced patterns suit text that's the same everywhere, like the affiliate disclosure. Editing the original would mislabel every BrewCo post.
 **Hint:** Same text everywhere, or different per post?
 
@@ -70,20 +70,20 @@
 > 4. Link the box to the "How I make money" page.
 
 - a) Step 1: the box should go at the end of the post
-- b) Step 3: Amazon's agreement requires its statement on the site; `rel` is for Google
-- c) Step 2: affiliate links should use `rel="nofollow"` only
-- d) Step 4: disclosure boxes mustn't link to other pages
+- b) Step 2: affiliate links should use `rel="nofollow"` only
+- c) Step 4: disclosure boxes mustn't link to other pages
+- d) Step 3: Amazon's agreement requires its statement on the site; `rel` is for Google
 
-**Answer:** b
+**Answer:** d
 **Explanation:** Amazon requires *"As an Amazon Associate I earn from qualifying purchases"* (or substantially similar) on your site, plus a link-level disclosure. `rel="sponsored"` is a signal to search engines and isn't seen by readers or programmes. Steps 1, 2 and 4 follow the lesson.
 **Hint:** Who reads `rel` attributes?
 
 ### Q8. (review: m08-l03) A sponsor asks Kai to add their tracking pixel to a sponsored post. Most of his readers are in the EU. What does that mean for consent?
-- a) Nothing; a pixel isn't a cookie, so ePrivacy doesn't apply
-- b) The pixel needs prior consent, like other non-essential trackers
+- a) The pixel needs prior consent, like other non-essential trackers
+- b) Nothing; a pixel isn't a cookie, so ePrivacy doesn't apply
 - c) The "Ad" label at the top of the post counts as consent
 - d) Consent is only needed if the pixel loads after a click
 
-**Answer:** b
+**Answer:** a
 **Explanation:** EU rules cover storing or reading information on the device, including pixels (EDPB Guidelines 2/2023). It must be blocked until the visitor accepts, through your consent plugin. A disclosure label tells readers about payment; it isn't consent.
 **Hint:** Disclosure and consent are different jobs.

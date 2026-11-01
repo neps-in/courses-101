@@ -15,41 +15,41 @@
 
 ### Q2. A photo is licensed **CC BY-NC**. Which use breaks the licence?
 - a) Using it unchanged on a personal hobby blog, with a credit
-- b) Using it on a monetised post full of affiliate links
-- c) Crediting the creator with title, author, source and licence
+- b) Crediting the creator with title, author, source and licence
+- c) Using it on a monetised post full of affiliate links
 - d) Resizing it to fit your theme's content width
 
-**Answer:** b
+**Answer:** c
 **Explanation:** NC means non-commercial. A site earning from affiliate links or sponsorships is commercial, so treat NC images as off-limits. Credit (BY) is required, and resizing is fine unless the licence is ND.
 **Hint:** What does NC stand for?
 
 ### Q3. When you search **Openverse** from the WordPress 7.1 block inserter, which images does it show?
-- a) Every Creative Commons image, including NC and ND licences
-- b) Only public-domain and CC0 images, inserted with an attribution caption
+- a) Only public-domain and CC0 images, inserted with an attribution caption
+- b) Every Creative Commons image, including NC and ND licences
 - c) Only images that you have already uploaded to your Media Library
 - d) Paid stock images that are billed to your WordPress.org account
 
-**Answer:** b
+**Answer:** a
 **Explanation:** WordPress core limits its Openverse search to the Public Domain Mark and CC0, and adds a caption with title, creator and licence. That makes them safe for commercial use and edits.
 **Hint:** WordPress picked the least restrictive licences on purpose.
 
 ### Q4. Leo used a photo from Google Images in a 2023 post, with a credit line. An agency now asks him to pay for it. What's the best first step?
 - a) Ignore the letter, because crediting the photographer made the use legal
-- b) Check his records for a licence; without one, take it down and get advice
-- c) Delete the post and assume that removing it cancels any claim
-- d) Reply that images found through Google Images are public domain
+- b) Delete the post and assume that removing it cancels any claim
+- c) Reply that images found through Google Images are public domain
+- d) Check his records for a licence; without one, take it down and get advice
 
-**Answer:** b
+**Answer:** d
 **Explanation:** Credit isn't permission, and removing the image doesn't erase past use. He should check his image log or proof first, and if there's no licence, remove it and get advice before paying or arguing. That's why the lesson keeps proof for every image.
 **Hint:** What would prove he had permission?
 
 ### Q5. Mei made a realistic AI image of a crowded street market for a travel post, and most of her readers are in the EU. What should she do?
-- a) Nothing, as long as she was the one who wrote the prompt
-- b) Label it as AI-generated in the caption so it isn't taken for a photo
+- a) Label it as AI-generated in the caption so it isn't taken for a photo
+- b) Nothing, as long as she was the one who wrote the prompt
 - c) Present it as her own photo, since nobody can own AI images
 - d) Leave out any caption so the image blends in with her photos
 
-**Answer:** b
+**Answer:** a
 **Explanation:** Realistic AI images of places or events that could be mistaken for real are "deepfakes" under EU AI Act Art. 50, which must be labelled (from August 2026). The lesson labels every AI image anyway, for reader trust. Passing it off as a photo is misleading.
 **Hint:** Could a reader think it's a real photo?
 
@@ -70,20 +70,20 @@
 > 4. Log source, licence, proof and date for every image.
 
 - a) Step 1: Openverse images always need paid licences
-- b) Step 3: a sponsored post is commercial use, which NC licences don't allow
-- c) Step 2: Unsplash requires credit on every photo you use
-- d) Step 4: logging images is only needed for paid stock
+- b) Step 2: Unsplash requires credit on every photo you use
+- c) Step 4: logging images is only needed for paid stock
+- d) Step 3: a sponsored post is commercial use, which NC licences don't allow
 
-**Answer:** b
+**Answer:** d
 **Explanation:** NC forbids commercial use, and a sponsored post is as commercial as it gets. Steps 1, 2 and 4 follow the lesson; Unsplash's licence doesn't require credit, though it's appreciated.
 **Hint:** Which step involves money changing hands?
 
 ### Q8. (review: m08-l04) A brand sends Tess a free blender with no payment and no say over her post. Her readers are in the UK. How should she label the review?
 - a) "Gifted" at the end of the post
-- b) "Ad — gifted" at the top, before any links
-- c) No label, because nobody paid her for the post
+- b) No label, because nobody paid her for the post
+- c) "Ad — gifted" at the top, before any links
 - d) "In collaboration with [Brand]" in the post's tags
 
-**Answer:** b
+**Answer:** c
 **Explanation:** The CMA treats gifts as payment, and the ASA has ruled "gifted" alone inadequate. A clear "Ad" label upfront covers UK readers; she can say it was gifted in the same line.
 **Hint:** Is a free product a material connection?
