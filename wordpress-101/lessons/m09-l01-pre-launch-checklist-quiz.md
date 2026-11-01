@@ -55,8 +55,8 @@
 
 ### Q6. Omar restored his Local backup on live and can't log in with the password he set during the host's one-click install. What should he try?
 - a) Reinstall WordPress from scratch and restore again
-- b) His Local username, password and 2FA, which came across in the database
-- c) The host control panel's password, as WordPress uses it now
+- b) His Local username, password and 2FA from the restored database
+- c) The password for his host's control panel, which WordPress now uses
 - d) A new account with the same email address via Register
 
 **Answer:** b
