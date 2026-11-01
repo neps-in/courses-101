@@ -1,7 +1,7 @@
 # M01.L03 Quiz — Hosting & How a Page Loads
 
 > 7 questions · 2 recall, 3 scenario, 1 spot-the-error, 1 spaced review · pass mark 70% (5 of 7). Questions are tagged with the objective they test (O1–O3).
-> Facts checked 2026-11-02 (MDN status codes, Google "HTTPS by default" and Chrome 154 release notes, ISRG certificate lifetimes).
+> Reviewed 2026-11-02. Facts checked 2026-11-02 (MDN status codes, Google "HTTPS by default" and Chrome 154 release notes, ISRG certificate lifetimes).
 
 ### Q1. A server answers a request with status code **404**. What does that mean? *(O1 · recall)*
 - a) The page has moved to a new address for good
@@ -34,8 +34,8 @@
 **Hint:** Permanent or temporary move?
 
 ### Q4. Rahul needs a one-page product launch page: text, images, a sign-up form handled by an outside form service. No logins, no database, a tiny budget. Which hosting fits best? *(O3 · scenario)*
-- a) Static hosting on a free tier, such as Netlify or Cloudflare Pages
-- b) A cloud virtual server he configures himself
+- a) Free static hosting, e.g. Netlify or Cloudflare Pages
+- b) A cloud virtual server that he sets up and configures himself
 - c) Managed WordPress hosting at about $25 a month
 - d) Shared hosting, so he can install a database later
 

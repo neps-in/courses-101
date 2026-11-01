@@ -2,7 +2,7 @@
 > After this lesson you can describe the request → response cycle, read the status codes marketers meet most, explain what HTTPS adds, and choose a sensible type of hosting for a launch page.
 
 **Time:** ~18 min reading + ~25 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L02 · **Remediate to:** M01.L02
-**Verified against:** MDN HTTP status code reference and redirections guide, Google's "HTTPS by default" announcement (Oct 2025) and Chrome 154 release notes, CA/Browser Forum ballot SC-081v3, and ISRG/Let's Encrypt's "From 90 to 45" post, on 2026-11-02. DevTools steps written for current desktop Chrome and Edge, with Firefox notes.
+**Verified against:** live redirect checks with `curl` (www.github.com, wikipedia.org, MDN 404) and MDN HTTP status code reference and redirections guide, Google's "HTTPS by default" announcement (Oct 2025) and Chrome 154 release notes, CA/Browser Forum ballot SC-081v3, and ISRG/Let's Encrypt's "From 90 to 45" post, on 2026-11-02. DevTools steps written for current desktop Chrome and Edge, with Firefox notes.
 
 > Note: Part A uses the browser's DevTools **Network** panel as a quick preview. Lesson 1.5 teaches DevTools properly, so follow the steps exactly and don't worry about the other panels yet.
 
@@ -104,7 +104,7 @@ Use desktop Chrome or Edge (Firefox works too; its labels are noted). Close othe
 2. Type `https://www.github.com` in the address bar and press **Enter**.
    **Expected:** the first `document` row is `www.github.com` with status **301**, followed by a row for `github.com` with **200**. GitHub has picked one version of its address (without `www`) and permanently redirects the other to it.
 3. Type `http://wikipedia.org` (note: **http**, no **s**) and press **Enter**.
-   **Expected:** a redirect to `https://www.wikipedia.org/`. You may see **301** (the server redirected) or **307 Internal Redirect** (your *browser* upgraded to HTTPS on its own, because Wikipedia told browsers in the past to always use HTTPS). Either way you end up on HTTPS.
+   **Expected:** a **redirect chain** of two hops: `http://wikipedia.org` → **301** → `https://wikipedia.org/` → **301** → `https://www.wikipedia.org/` → **200** (checked 2026-11-02). In Chrome the first hop may show **307 Internal Redirect** instead: your *browser* upgraded to HTTPS on its own, because Wikipedia has told browsers to always use HTTPS (HSTS). Even big sites have chains; see Common mistakes.
 4. Open `https://developer.mozilla.org/en-US/this-page-does-not-exist` (from Lesson 1.1).
    **Expected:** the document row shows **404**. The styled page you see is the server's answer to "not found".
 
@@ -117,7 +117,7 @@ Use desktop Chrome or Edge (Firefox works too; its labels are noted). Close othe
 3. Calculate the lifetime (expiry date minus issue date) and write it down.
 
 **Part D: see what an HTTP-only site looks like (3 min)**
-1. Open `http://neverssl.com`, a site deliberately kept on plain HTTP so people can test this.
+1. Open `http://neverssl.com`, a site deliberately kept on plain HTTP so people can test this. (If it doesn't load, try `http://httpforever.com`, another HTTP-only test site.)
    **Expected:** the address bar says **Not secure**. With "Always Use Secure Connections" on (the Chrome default since version 154), Chrome first shows a warning page and asks whether to continue. Click **Continue to site** only for this test site.
 2. Note in one sentence why you'd never put a sign-up form on a page like this.
 
