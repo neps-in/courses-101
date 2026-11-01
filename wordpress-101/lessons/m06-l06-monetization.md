@@ -81,7 +81,7 @@ Work on your **Local** site, then publish on your live site once your privacy po
    | **Ways to work together** | 2–4 offers: e.g. sponsored post, newsletter feature, workshop, consulting, with **"from" prices** or "rates on request" |
    | **Past partners and results** | Only real ones, with permission. If none yet, leave the section out |
    | **How I disclose** | One line: *"Sponsored content is always labelled."* (details in M08.L04) |
-   | **Next step** | A **Buttons** block to your Contact page, or embed your Fluent Forms contact form with *Collaboration or sponsorship* selected |
+   | **Next step** | A **Buttons** block to your Contact page (asking enquirers to choose *Collaboration or sponsorship* in the form, M04.L04), or embed the contact form on the page |
 6. Add the page to your footer or main menu (M04.L03) and link it from your About page.
 7. **Publish.**
    **Expected:** a published page that a brand could read in a minute and know what you offer, roughly what it costs, and how to start.
@@ -100,7 +100,7 @@ Work on your **Local** site, then publish on your live site once your privacy po
 
 ### Part D — Affiliate links done right (~2 min)
 14. If you chose affiliates: join the programme for a product you **actually use**, read its rules (e.g. Amazon's 180-day / 3-sale rule), and add links only where they help.
-15. Add a clear disclosure **near the link**, before readers click: *"This post contains affiliate links: I earn a small commission if you buy, at no cost to you."* (Full rules in M08.L04.) Google asks for paid and affiliate links to be marked `rel="sponsored"`. The block editor's link settings only offer **Mark as nofollow**, so for `sponsored` use the block's **⋮ → Edit as HTML** and change the link to `rel="sponsored"`, or use your SEO plugin's link option if it shows one.
+15. Add a clear disclosure **near the link**, before readers click: *"This post contains affiliate links: I earn a small commission if you buy, at no cost to you."* (Full rules in M08.L04.) Google asks for paid links (ads and paid placements) to be marked `rel="sponsored"`, and says `nofollow` is still acceptable; affiliate links are usually treated the same way (*common practice*). The quickest option is the block editor's link setting **Mark as nofollow**. For `sponsored`, use the block's **⋮ → Edit as HTML** and set `rel="sponsored"`, or your SEO plugin's link option if it shows one.
 
 ## When to use / when not to
 - **Use** affiliates and one product early; they need trust, not traffic.
@@ -172,4 +172,4 @@ Explain to a friend in 3 sentences which way of earning suits a blog with 2,000 
 - Amazon Associates — [Help: qualifying sales and account closure](https://affiliate-program.amazon.com/help/node/topic/G7MJTPEP9NC3YKMG) · [Operating Agreement](https://affiliate-program.amazon.com/help/operating/agreement)
 - Jetpack — [Monetize transaction fees](https://jetpack.com/support/jetpack-earn-transaction-fees/) · [Payments block](https://jetpack.com/support/jetpack-blocks/payments-block/)
 - Gumroad — [Pricing](https://gumroad.com/pricing) · [EU & UK VAT on Gumroad](https://help.gumroad.com/article/10-dealing-with-vat)
-- Google — [Qualify your outbound links (rel="sponsored")](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links)
+- Google — [Qualify your outbound links (rel="sponsored")](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links) (updated 2025-12-10)

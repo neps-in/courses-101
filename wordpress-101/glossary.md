@@ -8,7 +8,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Accessibility overlay** — a third-party widget or script that promises one-click accessibility compliance; it doesn't fix the site's underlying problems and many disabled users find it gets in the way. [M04.L05]
 - **Accessibility-ready tag** — a WordPress.org theme tag given after manual review against the Themes Team's minimum accessibility requirements; not a WCAG AA guarantee. [M04.L01]
 - **Adaptive streaming** — video services send smaller or larger versions to suit each viewer's connection and screen; a self-hosted file is one fixed size. [M03.L05]
-- **Affiliate link** — a tracked link to someone else's product that pays you a commission when a reader buys; must be disclosed and marked rel="sponsored". [M06.L06]
+- **Affiliate link** — a tracked link to someone else's product that pays you a commission when a reader buys; must be disclosed, and is usually marked rel="sponsored" (or nofollow). [M06.L06]
 - **AI Overviews and AI Mode** — Google Search's AI-generated answers with supporting links; pages must be indexed and snippet-eligible, with no extra requirements. Traffic counts in Search Console's Performance report. [M05.L01]
 - **Alt text (alternative text)** — the image's `alt` attribute, read by screen readers and shown if the image fails; describes its purpose in that post in one short sentence. [M03.L03]
 - **Anchor text** — the clickable words of a link; should describe the target page (not "click here"). [M05.L03]
