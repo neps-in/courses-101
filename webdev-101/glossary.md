@@ -105,7 +105,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Domain name** — the human-friendly, registrable part of an address (e.g. `nilacoffee.example`), rented yearly from a registrar. [M01.L02]
 - **Domain verification (TXT challenge)** — adding a TXT record with a code a host gives you to prove you own a domain; on GitHub Pages it blocks takeovers by other accounts. [M04.L04]
 - **Double opt-in** — new subscribers get a confirmation email and join the list only after clicking its link. [M05.L04]
-- **DPDP Act 2023 / DPDP Rules 2025** — India's personal data law and its rules (notified November 2025, phased in over 12–18 months): consent with clear notice. [M06.L04]
+- **DPDP Act 2023 / DPDP Rules 2025** — India's personal data law and its rules (notified November 2025; consent-manager provisions from about November 2026, most duties about May 2027): consent with clear notice. [M06.L04]
 - **Drip pricing** — revealing fees step by step so the real total only appears at checkout. [M03.L05]
 - **Dynamic site** — a site whose server runs code to build each page per request, often from a database (logins, carts, search). [M01.L04]
 - **Element** — a start tag, its content and its end tag together, e.g. `<p>Hello</p>`. [M02.L01]
