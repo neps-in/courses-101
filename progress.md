@@ -94,7 +94,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | draft | 2026-11-02 |
 | M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | draft | 2026-11-02 |
-| M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | todo | — |
+| M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | draft | 2026-11-02 |
 | M03 | L03 | Layout with Flexbox & Grid | webdev-101/lessons/m03-l03-layout-flexbox-grid.md | todo | — |
 | M03 | L04 | Responsive, Mobile-First Design | webdev-101/lessons/m03-l04-responsive-mobile-first.md | todo | — |
 | M03 | L05 | Conversion-Focused UI Patterns | webdev-101/lessons/m03-l05-conversion-ui-patterns.md | todo | — |
@@ -106,6 +106,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m03-l02 draft (lesson + 7-question quiz incl. 1 review from M03.L01; 12 glossary terms; tokens-to-contrast flowchart kept as Mermaid (labels quoted); 3 image prompts, no images). Nila tokens with every ratio computed by the WCAG 2.2 formula (CTA white on #b45309 5.02:1; break-it caramel #e0a458 2.18:1; field border #8c6e54 4.52:1 vs decorative #d9c7b0 1.59:1). Token stylesheet validated live (W3C CSS: no errors). Google Fonts response checked (display=swap; Lora 600 in 7 unicode-range subsets, Latin ≈ 22 KB). LG München I 3 O 17493/20 (Google Fonts/IP) flagged as one German ruling, not legal advice; WCAG 3/APCA freshness flag. Unsourced colour-blindness statistic removed. Next: `/next-lesson` → M03.L03.
 - 2026-11-02: webdev-101 m03-l01 draft (lesson + 7-question quiz incl. 1 review from M02.L03; 14 glossary terms; cascade-decision flowchart kept as Mermaid; 2 image prompts, no images). Starter styles.css validated live (W3C CSS Validator: "Congratulations! No Error Found."; missing-semicolon message quoted from a live run). Chrome DevTools specificity tooltip confirmed in the CSS features reference. Break-it-and-fix-it: 404 stylesheet, missing semicolon, class beats later type rule. Glossary re-sorted (2 entries moved). Next: `/next-lesson` → M03.L02.
 - 2026-11-02: webdev-101 planned M03 (5 lessons + capstone) in syllabus.md; linked styles.css next to launch.html (Notepad/TextEdit) + CodePen for experiments; WCAG 2.2 contrast, reflow and target size built in. Started by `/loop /next-lesson` while M02 is still at draft (not yet reviewed). Next: `/next-lesson` → M03.L01.
 - 2026-11-02: webdev-101 m02-capstone draft (launch-page content skeleton + hand-over pack; 5×4 rubric; five-bug break-it-and-fix-it incl. relative og:image the validator can't catch; 1 image prompt) + cheatsheets/m02-html.md. Module 2 fully drafted; loop stopped for review. Next: /review-lesson for M02, then /plan-module 3.
