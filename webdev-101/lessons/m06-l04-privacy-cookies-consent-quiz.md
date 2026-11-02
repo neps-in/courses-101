@@ -36,7 +36,7 @@
 ### Q4. A client's banner shows "Accept all" as a big green button and "Manage settings" as small grey text; rejecting needs three more clicks. EU visitors make up a third of the traffic. What do you advise? *(O2 · scenario)*
 - a) Keep it, because any banner at all is enough for EU cookie rules
 - b) Remove the banner and rely on the privacy policy instead of it
-- c) Add Reject next to Accept on the first layer, styled the same
+- c) Add Reject next to Accept on the first layer, styled alike too
 - d) Make "Accept all" flash, so visitors notice it and decide faster
 
 **Answer:** c
@@ -73,7 +73,7 @@ gtag('consent', 'update', { analytics_storage: 'granted' });                   /
 
 ### Q7. *(review: m02-l04)* Your privacy page says "We don't use cookies", but your tag inventory lists GA4's `_ga` cookies and a Formspree form. What should you do? *(O2 of M02.L04 · scenario)*
 - a) Leave it, because only the banner matters to visitors and regulators
-- b) Update it to list each tag, cookie, purpose and how to opt out
+- b) Update it to list each tag, its cookies, purpose and how to opt out
 - c) Delete the privacy page, so there's nothing on the site to be wrong
 - d) Add "this page may be out of date" at the top and leave the content
 
