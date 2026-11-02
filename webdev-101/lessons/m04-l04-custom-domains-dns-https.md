@@ -12,7 +12,7 @@
 3. **Enable** HTTPS with a free auto-renewing certificate, force HTTP → HTTPS and choose one canonical host (`www` or not) (NN #7). *(O3)*
 
 ## Why it matters
-Rahul's bakery site sat at `rahulbakes.github.io/site/` for a year; flyers with that address looked like a hobby. When he finally bought `rahulbakes.in`, he followed a forum post, deleted "all the old records" at his registrar to start clean, and pointed the domain at GitHub. The website worked by evening. His **email** stopped the same afternoon, because the MX records he deleted were the ones routing orders to his inbox. Two days later Chrome showed "Your connection is not private" because he'd ticked a box before the certificate was ready. A custom domain is ten minutes of typing and a lot of waiting. This lesson is about typing the right ten minutes, and knowing what the waiting looks like.
+Rahul's bakery site sat at `rahulbakes.github.io/site/` for a year; flyers with that address looked like a hobby. When he finally bought `rahulbakes.in`, he followed a forum post, deleted "all the old records" at his registrar to start clean, and pointed the domain at GitHub. The website worked by evening. His **email** stopped the same afternoon, because the MX records he deleted were the ones routing orders to his inbox. Then he printed `https://rahulbakes.in` on new flyers before the certificate was ready, and early visitors saw Chrome's "Your connection is not private" warning. A custom domain is ten minutes of typing and a lot of waiting. This lesson is about typing the right ten minutes, and knowing what the waiting looks like.
 
 ## Core concept
 **Plain version:** you **rent** a domain name from a **registrar** for a year at a time. The domain's **DNS records** (Lesson 1.2) say where things live: **A/AAAA** records point the bare domain (`nilacoffee.in`, the **apex**) at the host's IP addresses; a **CNAME** points `www.nilacoffee.in` at another name (`yourname.github.io`); **MX** records route email; **TXT** records prove ownership. Once the records point to GitHub, GitHub asks a certificate authority (Let's Encrypt) for a free certificate for your domain and renews it automatically. You then **enforce HTTPS** and pick one **canonical** address that all the others redirect to.
@@ -28,7 +28,7 @@ Rahul's bakery site sat at `rahulbakes.github.io/site/` for a year; flyers with 
 
 ### Choosing and registering a domain
 - **Short, spellable, yours:** `nilacoffee.in` beats `nila-coffee-beans-online.store`. Say it aloud once; if you have to spell it, think again.
-- **Ending (TLD):** `.com` is understood everywhere; a country ending (`.in`, `.co.uk`) signals where you trade. A domain costs roughly **$10–15 / ₹800–1,200 a year** for `.com`; many endings are cheaper the first year and much dearer on **renewal**: always compare renewal prices.
+- **Ending (TLD):** `.com` is understood everywhere; a country ending (`.in`, `.co.uk`) signals where you trade. A domain costs roughly **$10–20 / ₹800–1,500 a year** for `.com`; many endings are cheaper the first year and much dearer on **renewal**: always compare renewal prices.
 - **Privacy:** most registrars hide your name and address from public lookups (RDAP/WHOIS) for free; make sure it's on.
 - **Security:** turn on two-factor authentication at the registrar, keep **auto-renew** on with a card that won't expire, and register the domain **in your own account**, not a freelancer's.
 - **Free alternative:** keep `yourname.github.io/nila-launch/`. It's HTTPS, fast and free. A custom domain is the course's only optional cost.
@@ -101,8 +101,8 @@ flowchart TD
 **Part D: test HTTPS and the canonical address (8 min)**
 1. Visit all four variants and watch the address bar:
    `http://nilacoffee.in` · `http://www.nilacoffee.in` · `https://nilacoffee.in` · `https://www.nilacoffee.in`
-   **Expected:** every one ends at **`https://www.nilacoffee.in/`**, with the padlock. GitHub creates the apex ↔ `www` redirect itself when both records exist. (Free-subdomain learners: test `http://yourname.github.io/nila-launch/` → `https://…`.)
-2. Click the padlock → **Connection is secure** → **Certificate is valid**. **Expected:** issued **to** your domain, **by** Let's Encrypt, valid for about **90 days**. You'll never renew it by hand: GitHub does, as long as your DNS records still point at GitHub.
+   **Expected:** every one ends at **`https://www.nilacoffee.in/`**, with no security warning. GitHub creates the apex ↔ `www` redirect itself when both records exist. (Free-subdomain learners: test `http://yourname.github.io/nila-launch/` → `https://…`.)
+2. Click the site-information icon at the left of the address bar → **Connection is secure** → **Certificate is valid**. **Expected:** issued **to** your domain, **by** Let's Encrypt, valid for about **90 days**. You'll never renew it by hand: GitHub does, as long as your DNS records still point at GitHub.
    > 🖼️ **Image prompt:** Desktop screenshot (1280×800) of Chrome's certificate viewer for www.nilacoffee.in showing "Issued to: www.nilacoffee.in", "Issued by: Let's Encrypt" and a validity period of about 90 days. Outline the issued-to, issued-by and validity fields. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Chrome certificate viewer showing a Let's Encrypt certificate for the custom domain, valid for about 90 days.
 3. In the DevTools **Network** tab, load `http://nilacoffee.in` with **Preserve log** ticked. **Expected:** a **301** to `https://…`, then **200**. One address, one secure version: NN #7 done.
@@ -113,7 +113,7 @@ flowchart TD
 |---|---|---|---|
 | CNAME value `yuorname.github.io` (typo) | The page loads GitHub's **"Site not found · GitHub Pages"** page: "There isn't a GitHub Pages site here." (status 404) | Dig the `www` CNAME; compare letter by letter with your username | Correct the value; wait for the TTL |
 | CNAME **name** `ww` instead of `www` | `www.nilacoffee.in` gives `DNS_PROBE_FINISHED_NXDOMAIN` | Dig `www`: no answer (NXDOMAIN) | Rename the record to `www` |
-| Ticking Enforce HTTPS (or visiting `https://`) before the certificate exists | `NET::ERR_CERT_COMMON_NAME_INVALID`: GitHub is still showing its own `*.github.io` certificate, not one for your domain | Padlock → certificate "Issued to: *.github.io" | Wait up to an hour after the DNS check passes; remove and re-add the custom domain if it's stuck |
+| Visiting (or sharing) `https://` before the certificate exists | `NET::ERR_CERT_COMMON_NAME_INVALID`: GitHub is still showing its own `*.github.io` certificate, not one for your domain | Site-information icon → certificate "Issued to: *.github.io" | Wait up to an hour after the DNS check passes; remove and re-add the custom domain if it's stuck |
 | Deleting "all old records" | Website fine, **email bounces** | Dig **MX**: empty | Restore MX (and email TXT) from your "before" screenshot |
 
 ## When to use / when not to
@@ -136,7 +136,7 @@ flowchart TD
 - **Old IP addresses** copied from tutorials, or only one of the four A records.
 - **Wildcard records** (`*.yourdomain`), a subdomain-takeover risk.
 - **Skipping domain verification** on GitHub.
-- **Ticking Enforce HTTPS too early,** then panicking at a certificate warning.
+- **Sharing the `https://` address too early,** before the certificate is issued, then panicking at a certificate warning.
 - **Buying on a first-year price** without checking the renewal price, or letting the domain lapse because auto-renew was off or the card expired.
 - **Registering the domain in someone else's account** (an agency's or a former freelancer's).
 - **Forgetting to update** `canonical` and `og:url` to the new address.
@@ -148,7 +148,8 @@ flowchart TD
 | "Site not found · GitHub Pages" on your domain | CNAME points at the wrong `*.github.io` name, or no custom domain set in the repo | Fix the CNAME value; set the custom domain in Settings → Pages |
 | `DNS_PROBE_FINISHED_NXDOMAIN` | No record for that name (typo like `ww`), or the domain lapsed | Dig the exact name; check the registrar's renewal status |
 | `NET::ERR_CERT_COMMON_NAME_INVALID` | Certificate not issued yet (GitHub's `*.github.io` certificate shows) | Wait up to an hour after DNS passes; remove and re-add the custom domain |
-| Enforce HTTPS greyed out | Certificate still being provisioned | Wait (GitHub: up to 24 hours for the option) |
+| Enforce HTTPS greyed out, or "Certificate not yet created" | Certificate still being provisioned | Wait (GitHub: up to 24 hours for the option); if stuck, click **Remove** next to the custom domain, retype it and **Save** to restart provisioning |
+| Site information says the connection isn't fully secure; some images, fonts or scripts don't load | **Mixed content**: the page still loads something over `http://` | Console lists the `http://` URLs; change them to `https://` or relative paths, commit, push |
 | HTTPS never provisions | A CAA record that doesn't allow Let's Encrypt | Add a CAA record with `letsencrypt.org`, or remove restrictive CAA records |
 | Some visitors see a parking page | Registrar's default A record still on `@` | Delete the parking A record |
 | Email stopped arriving | MX records deleted or changed | Restore them from your "before" screenshot or your email provider's setup page |
@@ -191,6 +192,7 @@ Explain to a friend in 3 sentences what they need to change at their registrar t
 - Canonical host (`www` vs apex) — added to `webdev-101/glossary.md`
 - CAA record — added to `webdev-101/glossary.md`
 - Renewal price / auto-renew — added to `webdev-101/glossary.md`
+- Mixed content — added to `webdev-101/glossary.md`
 
 ## Further reading
 *All checked 2026-11-02.*
