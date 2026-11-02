@@ -10,7 +10,7 @@
 - d) An event sent with a `value`, which GA4 then counts as money from sales
 
 **Answer:** b
-**Explanation:** Google defines a key event as "an event that measures an action that's particularly important to the success of your business"; you choose it by starring the event (formerly "conversions"). Enhanced measurement events aren't key events by default, session start sets the source, and `value` is optional.
+**Explanation:** Google defines a key event as "an event that measures an action that's particularly important to the success of your business"; you choose it by starring the event (older tutorials call these "conversions"). Enhanced measurement events aren't key events by default, session start sets the source, and `value` is optional.
 **Hint:** Which events get the gold star?
 
 ### Q2. Where do you see your own test events within a few minutes, event by event, with their parameters? *(O1 · recall)*
@@ -30,7 +30,7 @@
 - d) Because key events stop being counted after the first two months
 
 **Answer:** a
-**Explanation:** Retention controls how long event- and user-level data stays available for explorations; 14 months is the maximum for standard properties. It doesn't delete the property, doesn't speed up processing, and key events keep counting (standard aggregated reports aren't affected).
+**Explanation:** Retention controls how long event- and user-level data stays available for explorations; 14 months is the maximum for standard properties. Google: it "does not affect standard aggregated reports", only explorations and funnel reports. It doesn't delete the property, doesn't speed up processing, and standard reports keep counting key events.
 **Hint:** How far back will you want to look?
 
 ### Q4. GA4 shows 212 key events this month but your email list grew by 61. The key event is `form_submit`. What's the most likely explanation and fix? *(O2 · scenario)*

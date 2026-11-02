@@ -2,7 +2,7 @@
 > After this lesson your launch page is measured in Google Analytics 4: every page view, every real sign-up counted as a key event, your own visits filtered out, and a report that answers "which channel brought sign-ups?".
 
 **Time:** ~22 min reading + ~45 min exercise · **Level:** L2 Practitioner · **Prereqs:** M06.L01 · **Remediate to:** M06.L01
-**Verified against:** Google Analytics Help "Set up Analytics for a website and/or app" (9304153), "Enhanced measurement events" (9216061), "About key events" (9355848), "Mark events as key events" (13128484), "Create or modify key events" (12844695), "DebugView" (7201382), "Filter out internal traffic" (10104470), "Data retention" (7667196), "Data freshness" (11198161); Google Tag Platform "Install the Google tag" and "Configure the Google tag"; GA4 events reference (`generate_lead`); all read 2026-11-03. Live check the same day in headless Chrome 156: with a made-up ID (`G-ZZTYPO9999`), `gtag/js` still loaded (200) and hits were still sent, with no error anywhere on the page; `gtag('event', 'generate_lead', { currency: 'INR', value: 0, lead_source: 'launch-list' })` sent `en=generate_lead`, `cu=INR`, `epn.value=0`, `ep.lead_source=launch-list`.
+**Verified against:** Google Analytics Help "Set up Analytics for a website and/or app" (9304153), "Enhanced measurement events" (9216061), "Key event" glossary (9355848), "About key events" (9267568), "Traffic acquisition report" (12923437), "Mark events as key events" (13128484), "Create or modify key events" (12844695), "DebugView" (7201382), "Filter out internal traffic" (10104470), "Data retention" (7667196), "Data freshness" (11198161); Google Tag Platform "Install the Google tag" and "Configure the Google tag"; GA4 events reference (`generate_lead`); all read 2026-11-03. Live check the same day in headless Chrome 156: with a made-up ID (`G-ZZTYPO9999`), `gtag/js` still loaded (200) and hits were still sent, with no error anywhere on the page; `gtag('event', 'generate_lead', { currency: 'INR', value: 0, lead_source: 'launch-list' })` sent `en=generate_lead`, `cu=INR`, `epn.value=0`, `ep.lead_source=launch-list`.
 
 > ⚠️ **Freshness flag:** GA4's Admin menus are reorganised every year or so. Paths below are as of November 2026; if a name has moved, search the Admin page or the help article named in each step.
 > Note: until you add the consent banner in Lesson 6.4, keep this to testing: your own visits, the internal-traffic filter in **Testing** state, and no campaign links sent to real visitors in the EU/UK. Lesson 6.4 turns the same tag into a consent-aware one.
@@ -16,7 +16,7 @@
 Two weeks after launch, Nila Coffee's GA4 dashboard showed 212 "conversions" and the founder was delighted, until the email list showed 61 subscribers. The agency had marked `form_submit` (an automatic event that fires whenever someone presses the button, even if the email is invalid or the request fails) as the conversion, and the team's own test sign-ups and daily visits were mixed in. Decisions about the ad budget were being made on numbers three times too high. Analytics is only useful if the thing you count is the thing you care about, counted once, at the right moment.
 
 ## Core concept
-**Plain version:** GA4 records **events**. Every interaction is an event with a name and some details (parameters): `page_view` with the page address, `scroll`, `generate_lead` with a lead source. Some events GA4 collects automatically; others you send yourself. A **key event** is an event you tell GA4 matters to your business (Google's definition: "an event that measures an action that's particularly important to the success of your business"). Key events used to be called *conversions* in GA4; Google Ads still uses "conversions" for its own measurement.
+**Plain version:** GA4 records **events**. Every interaction is an event with a name and some details (parameters): `page_view` with the page address, `scroll`, `generate_lead` with a lead source. Some events GA4 collects automatically; others you send yourself. A **key event** is an event you tell GA4 matters to your business (Google's definition: "an event that measures an action that's particularly important to the success of your business"). Older GA4 tutorials (before 2024) call them *conversions*; Google Ads still uses "conversions" for its own measurement, and you can import a GA4 key event into Google Ads as one.
 
 **Analogy:** GA4 is a shop's visitor log. Every footstep is written down (events). You put a gold star next to the entries that pay the rent: "signed up for the launch list" (key events). The reports then tell you which doors (channels) the gold-star visitors came in by.
 
@@ -75,7 +75,7 @@ flowchart TD
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of GA4 Admin, Web stream details for "Launch site" showing the stream URL, the Measurement ID beginning "G-", and the Enhanced measurement section switched on. Outline the Measurement ID. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** GA4 web stream details with the Measurement ID and enhanced measurement turned on.
 4. On the same page, open **Enhanced measurement** (gear icon) and review the list. Leave page views, scrolls and outbound clicks on. **Form interactions** can stay on, but you will **not** star `form_submit` as a key event.
-5. **Admin → Data collection and modification → Data retention** (older layouts: **Data settings → Data retention**): change event and user data retention from 2 months to **14 months** (the maximum for standard properties), so you can compare this launch with next year's. Google applies the change after 24 hours.
+5. **Admin → Data collection and modification → Data retention** (older layouts: **Data settings → Data retention**): change event and user data retention from 2 months to **14 months** (the maximum for standard properties), so you can compare this launch with next year's in explorations and funnel reports. (Google: retention "does not affect standard aggregated reports", only explorations and funnels.) The change applies after 24 hours.
 
 **Part B: install the Google tag (10 min)**
 1. Paste Google's snippet **immediately after `<head>`** on **every page** (your launch page, privacy page, thank-you page), with your own ID:
@@ -117,16 +117,16 @@ flowchart TD
 
 **Part D: filter out your own visits (5 min)**
 1. **Admin → Data streams → Launch site → Configure tag settings → Show more → Define internal traffic → Create:** rule name `Nila team`, `traffic_type` value `internal`, IP address **equals** your public IP (search "what is my IP"; add your team's too).
-2. **Admin → Data collection and modification → Data filters:** a filter called **Internal Traffic** usually exists already in **Testing** state (if not: **Create filter → Internal Traffic → Exclude**). Leave it in **Testing** for now.
+2. **Admin → Data collection and modification → Data filters:** **Create filter → Internal Traffic**, choose **Exclude** and the state **Testing** (if a filter for `traffic_type = internal` is already listed, use that one). Leave it in **Testing** for now.
    **Expected:** in reports, add the comparison or dimension **Test data filter name** and your visits are labelled with it. Switch the filter to **Active** only when you've confirmed it matches only you: Google warns "the effect on the data is permanent".
    (Home and mobile IPs change; if yours does, update the rule. For a small launch, also simply keep test sign-ups to a few, with addresses you can recognise.)
 
 **Part E: answer the business question (5 min)**
 After at least a day of test visits from different UTM links (Lesson 6.1's sheet):
-1. **Reports → Acquisition → Traffic acquisition.** Change the table's first column to **Session source / medium** (then try **Session campaign**). In the **Key events** column, choose `generate_lead`.
-   **Read:** which source/medium has the most `generate_lead` key events, and the **key event rate** (sessions with a key event ÷ sessions).
+1. **Reports → Acquisition → Traffic acquisition.** Change the table's first column to **Session source / medium** (then try **Session campaign**). Use the menu on the **Key events** column (it starts as **All events**) to choose `generate_lead`.
+   **Read:** which source/medium has the most `generate_lead` key events, and the **Session key event rate** (Google: "the percentage of sessions in which a user triggered a key event").
 2. **Reports → Engagement → Pages and screens:** which pages are viewed, and for how long.
-3. **Reports → Engagement → Key events:** `generate_lead` count over time.
+3. **Reports → Engagement → Events** → click `generate_lead`: its count over time and its parameters. (Report collections can be customised, so your menu may differ slightly.)
 4. Write the answer in one sentence: *"In test data, `newsletter / email` brought 3 of 5 sign-ups at a 30% key event rate; Instagram brought visits but no sign-ups."* Real conclusions need real traffic; the capstone asks for this sentence again.
 
 **Part F: break it and fix it (5 min)**
@@ -210,7 +210,9 @@ Explain to a friend in 3 sentences the difference between an event and a key eve
 *All checked 2026-11-03.*
 - Google Analytics Help — Set up Analytics for a website and/or app: https://support.google.com/analytics/answer/9304153
 - Google Analytics Help — [GA4] Enhanced measurement events: https://support.google.com/analytics/answer/9216061
-- Google Analytics Help — [GA4] About key events: https://support.google.com/analytics/answer/9355848
+- Google Analytics Help — [GA4] Key event (glossary): https://support.google.com/analytics/answer/9355848
+- Google Analytics Help — [GA4] About key events: https://support.google.com/analytics/answer/9267568
+- Google Analytics Help — [GA4] Traffic acquisition report: https://support.google.com/analytics/answer/12923437
 - Google Analytics Help — [GA4] Mark events as key events: https://support.google.com/analytics/answer/13128484
 - Google Analytics Help — [GA4] Monitor events in DebugView: https://support.google.com/analytics/answer/7201382
 - Google Analytics Help — [GA4] Filter out internal traffic: https://support.google.com/analytics/answer/10104470
@@ -221,4 +223,4 @@ Explain to a friend in 3 sentences the difference between an event and a key eve
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-Account → property (time zone, currency) → web data stream (Measurement ID `G-…`). Google tag right after `<head>` on every page. Enhanced measurement: `page_view`, `scroll`, outbound `click`, `file_download`, `form_start`/`form_submit` (don't star these). Lead: `gtag('event', 'generate_lead', { lead_source: 'launch-list' })` inside `if (response.ok)`, no personal data. Star it: Admin → Data display → Events (or Key events → New key event). Verify: Network `collect` (`tid`, `en`), Realtime (minutes), DebugView (Tag Assistant). Internal traffic: data stream → Configure tag settings → Define internal traffic; Data filters → Testing first, Active is permanent. Retention 14 months. Reports: Acquisition → Traffic acquisition (Session source/medium, Key events column), Engagement → Pages and screens / Key events; standard reports lag 12–48 h.
+Account → property (time zone, currency) → web data stream (Measurement ID `G-…`). Google tag right after `<head>` on every page. Enhanced measurement: `page_view`, `scroll`, outbound `click`, `file_download`, `form_start`/`form_submit` (don't star these). Lead: `gtag('event', 'generate_lead', { lead_source: 'launch-list' })` inside `if (response.ok)`, no personal data. Star it: Admin → Data display → Events (or Key events → New key event). Verify: Network `collect` (`tid`, `en`), Realtime (minutes), DebugView (Tag Assistant). Internal traffic: data stream → Configure tag settings → Define internal traffic; Data filters → Testing first, Active is permanent. Retention 14 months. Reports: Acquisition → Traffic acquisition (Session source/medium, Key events column → choose `generate_lead`), Engagement → Pages and screens / Events; standard reports lag 12–48 h.
