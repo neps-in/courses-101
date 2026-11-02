@@ -2,9 +2,9 @@
 > After this lesson you can style a clear main call-to-action and a quieter second option, make every button obviously focusable for keyboard users, build honest pricing and testimonial cards, and decide whether a ready-made CSS library is worth adding.
 
 **Time:** ~18 min reading + ~35 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L03, M03.L04 · **Remediate to:** M03.L03
-**Verified against:** MDN `:focus-visible` and Subresource Integrity; W3C WAI Understanding SC 2.4.7 Focus Visible, SC 2.4.11 Focus Not Obscured (Minimum) and SC 1.4.11 Non-text Contrast (WCAG 2.2); India's CCPA Guidelines for Prevention and Regulation of Dark Patterns, 2023 (PIB release); EU Digital Services Act Art. 25; FTC staff report "Bringing Dark Patterns to Light" (2022); Pico CSS v2.1.1 on npm/jsDelivr (MIT licence, SRI hash computed from the file); every contrast ratio computed with the WCAG 2.2 formula; this lesson's stylesheet validated live with the W3C CSS Validation Service, on 2026-11-02.
+**Verified against:** MDN `:focus-visible` and Subresource Integrity; W3C WAI Understanding SC 2.4.7 Focus Visible, SC 2.4.11 Focus Not Obscured (Minimum) and SC 1.4.11 Non-text Contrast (WCAG 2.2); India's CCPA Guidelines for Prevention and Regulation of Dark Patterns, 2023 (PIB release); EU Digital Services Act Art. 25; FTC staff report "Bringing Dark Patterns to Light" (2022); Pico CSS v2.1.1 on npm/jsDelivr (MIT licence, SRI hash computed from the file); every contrast ratio computed with the WCAG 2.2 formula; this lesson's stylesheet validated live with the W3C CSS Validation Service; the Part C focus bugs run in headless Chrome 156 (computed outline on each Tab stop); Pico, Bootstrap and Tailwind versions re-checked on npm and the Pico SRI hash recomputed, on 2026-11-02.
 
-> ⚠️ **Freshness flag:** consumer-protection rules on "dark patterns" are changing fast (India 2023, EU DSA 2024, US state laws; the US FTC's 2024 "click-to-cancel" rule was struck down by a federal appeals court in July 2025). This lesson teaches honest design, which is safe under all of them; it is not legal advice.
+> ⚠️ **Freshness flag:** consumer-protection rules on "dark patterns" are changing fast. India's 2023 guidelines were followed by a June 2025 advisory telling e-commerce platforms to self-audit for dark patterns. The EU DSA has applied in full since 2024. In the US, the FTC's 2024 "click-to-cancel" rule was struck down by a federal appeals court in July 2025; the FTC started a new rulemaking in March 2026 (no new requirements yet) and keeps enforcing existing law, alongside state laws. This lesson teaches honest design, which is safe under all of them; it is not legal advice.
 
 ## Learning objectives
 1. **Style** primary and secondary calls-to-action (CTAs) with clear hierarchy and visible `:hover` and `:focus-visible` states. *(O1)*
@@ -223,16 +223,16 @@ flowchart TD
      color: var(--color-text);
    }
    ```
-   `margin-top: auto` on the button pushes it to the bottom of each card, so buttons line up even when the lists differ in length. The `.plan-featured` rule changes **five tokens** and never names a colour: the card background, text, heading, price, badge, secondary button and focus ring all follow.
+   `margin-top: auto` on the button pushes it to the bottom of each card, so buttons line up even when the lists differ in length. The `.plan-featured` rule changes **four tokens** (and re-sets `color`) and never names a colour: the card background, text, heading, price, badge, secondary button and focus ring all follow.
 3. Reload and check.
    **Expected:** two equal-height cards (stacked on a phone); the Regular card is dark roast with cream text, caramel heading and price, a caramel badge with dark text, and a filled orange button. Tab into the dark card: its focus ring is **caramel**, not brown, because the token changed.
    > 🖼️ **Image prompt:** Desktop screenshot (1280×800) of two Nila Coffee pricing cards side by side: a white "Taster" card with an outline button and a dark-roast "Regular" card with a caramel "Best value: ₹180 per 100 g" badge, caramel price and a filled orange "Choose Regular" button, with the delivery note below. Outline the featured card and the price note. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Two pricing cards, one dark featured card with a best-value badge, and a note showing tax and delivery costs.
-4. Inspect the dark card in DevTools, select it and look at **Styles**: the five overridden tokens are listed on `.plan-featured`. Hover `var(--color-heading)` on the `h3` rule: the tooltip shows `#e0a458`.
+4. Inspect the dark card in DevTools, select it and look at **Styles**: the four overridden tokens are listed on `.plan-featured`. Hover `var(--color-heading)` on the `h3` rule: the tooltip shows `#e0a458`.
 5. Validate. **Expected (checked 2026-11-02):** "Congratulations! No Error Found." plus the usual CSS-variable warnings.
 
 **Part C: break it and fix it (8 min)**
-1. **Invisible focus.** Add `*:focus { outline: none; }` at the end of `styles.css`, reload and Tab through. **Symptom:** you can't see where you are; it fails SC 2.4.7. **Find it:** in DevTools, select a link and tick **:focus** in the Styles pane's **:hov** menu (force element state): the rule removing the outline is listed and wins. **Fix:** delete the rule.
+1. **Invisible focus.** First add `*:focus { outline: none; }` at the end of `styles.css`, reload and Tab through. **Expected:** the ring is still there (checked in Chrome). `*:focus` has specificity 0-1-0 and your `a:focus-visible` rule has 0-1-1, so yours wins: Lesson 3.1's cascade protecting you. Now replace it with the kind of rule templates and resets really ship: `a:focus, button:focus, input:focus { outline: none; }`. **Symptom:** no ring on any link, button or field; you can't see where you are, which fails SC 2.4.7. **Find it:** in DevTools, select a link, open the Styles pane's **:hov** menu (force element state) and tick **:focus** and **:focus-visible**: your `outline` is struck through, beaten by `a:focus` (same specificity, 0-1-1, but later in the file). **Fix:** delete the rule.
 2. **Interface interference.** Under the sign-up button, add `<p><a class="decline" href="#">No thanks, I don't like fresh coffee</a></p>` and style it `.decline { color: #d9c7b0; font-size: 0.7rem; }`.
    **Symptom:** two problems in one line: the text is 1.59:1 on cream (fails 4.5:1) and about 11 px, and the wording shames the visitor (confirmshaming). **Fix:** delete the class rule so it uses the normal link colour, and reword it to "No thanks". Better still, ask whether the page needs a decline link at all.
 3. **Hover-only information.** Imagine the plan's delivery cost appeared only in a tooltip on hover. **Question for your notes:** who never sees it? (Phone and keyboard users. Information that matters must be on the page.)
@@ -276,7 +276,7 @@ flowchart TD
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| No focus ring when tabbing | An `outline: none` rule somewhere (often in a reset or library) | Force **:focus** state in DevTools (**:hov**), find the rule, remove it or add your `:focus-visible` style after it |
+| No focus ring when tabbing | An `outline: none` rule somewhere (often in a reset or library) with equal or higher specificity, or `!important` | Force **:focus** and **:focus-visible** in DevTools (**:hov**), find the rule that wins, and remove it |
 | Focus ring shows on mouse click too | You styled `:focus` instead of `:focus-visible` | Use `:focus-visible` for the visible ring |
 | Focused field hidden behind a sticky header | Sticky element covers it (SC 2.4.11) | Add `scroll-padding-top` equal to the header height on `html`, or don't make the header sticky |
 | Featured card text still dark | Overrode the token but didn't re-set `color` on the card | Add `color: var(--color-text);` to `.plan-featured` (inherited text colour was computed on `body`) |

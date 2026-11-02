@@ -91,7 +91,7 @@ Save a copy as `styles-broken.css`, point a copy of your page (`launch-broken.ht
 |---|---|---|---|
 | A | `.button { background-color: var(--color-CTA); }` | The primary button loses its background (transparent); white text vanishes on a light page | Inspect: the computed `background-color` is `rgba(0, 0, 0, 0)`; compare the token name letter by letter |
 | B | `.hero > * { flex: 0 0 30rem; }` | At 320 px the hero text runs off the right edge and the page scrolls sideways | The Console finder lists the hero's `div`, `h1` and `p`; the flex overlay shows items that can't shrink |
-| C | `a:focus { outline: none; }` | Tabbing through links shows no focus ring (buttons and fields still have one) | Tab test; DevTools **:hov** → force **:focus** on a link: this rule wins over your `:focus-visible` rule because it comes later |
+| C | `a:focus { outline: none; }` | Tabbing through links shows no focus ring (buttons and fields still have one) | Tab test; DevTools **:hov** → force **:focus** and **:focus-visible** on a link: your outline is struck through, beaten by this rule (same specificity, later in the file) |
 | D | In `:root`, change `--color-muted` to `#a07850` | Hints and captions look fine but measure **3.81:1** on cream (fails 4.5:1) | DevTools colour picker or WebAIM on the hint text |
 | E | Move `class="card-grid"` from the benefits `ul` to its `section` (HTML change) | Phone looks normal; at 1280 px the `h2` sits on the left and the benefits become one bulleted card on the right | The **grid** badge is now on the `section`; only direct children (`h2`, `ul`) became grid items |
 

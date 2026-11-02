@@ -17,7 +17,7 @@
 - a) A countdown timer that restarts every time the page is reloaded
 - b) A decline link that reads "No thanks, I don't like saving money"
 - c) A marketing checkbox that is already ticked when the form loads
-- d) Platform and handling fees that only appear at checkout
+- d) Platform and handling fees that are only added at the checkout
 
 **Answer:** d
 **Explanation:** Drip pricing reveals parts of the price late, so the real total only shows at checkout. India's CCPA guidelines name it among the 13 specified dark patterns. The others are also dark patterns, but different ones: false urgency (a), confirmshaming (b) and a pre-ticked box (c, basket sneaking or invalid consent).
