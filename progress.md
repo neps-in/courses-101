@@ -102,7 +102,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | draft | 2026-11-02 |
 | M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | reviewed | 2026-11-02 |
 | M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | reviewed | 2026-11-02 |
-| M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | draft | 2026-11-02 |
+| M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | reviewed | 2026-11-02 |
 | M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | draft | 2026-11-02 |
 | M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | draft | 2026-11-02 |
 | M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | draft | 2026-11-02 |
@@ -112,6 +112,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m04-l03 reviewed: case break-it told learners to rename beans.jpg → Beans.jpg, but Git on Windows/Mac (core.ignorecase) usually ignores case-only renames, so nothing would deploy; now changes only the src, explains why, and gives `git mv -f` (also in troubleshooting); canonical step pointed at "TODO" tags that M02.L05 never used (it used nilacoffee.example placeholders); Netlify rename moved from Domain management to Change project name, deploy previews are per pull request (branch deploys opt-in), credit sentence clarified; default GitHub 404 text re-checked ("404 File not found"); quiz unchanged (c a d b c a d).
 - 2026-11-02: webdev-101 m04-l02 reviewed: revert step said `git log` shows three lines, it shows four (re-run in a scratch repo); the .gitignore exercise had no visible symptom (an ignored-but-tracked file only shows after it is edited again, checked) and its "client phone" commit would have reached GitHub on the next push, so the file now holds harmless text with a warning and an edit step; Q4 stem matched; Git version note now fits Mac's Apple build; Initialize Repository fallback and VS Code's `git.defaultBranchName` = main (checked in VS Code source); all 12 links 200; quiz option lengths rebalanced (Q3–Q5 correct no longer shortest).
 - 2026-11-02: webdev-101 m04 capstone draft + cheatsheets/m04-publish.md (seven tasks mapped to L01–L05; live test table; three planted bugs: case 404, www CNAME typo → "Site not found · GitHub Pages", bad commit → revert redeploy; launch log template; 5×4 rubric with a no-domain path for the domain row; github.io certificate also Let's Encrypt, checked).
 - 2026-11-02: webdev-101 m04-l05 draft (seven-question checklist, who-edits/how-often weighted double; three-year cost sheet incl. hours, renewals and exit; three briefs: café → hand-coded, coach → WordPress (bridge to WordPress 101), spice shop → Shopify; prices are rounded starting ranges with a freshness flag, learners look up vendor pages; quiz b c a b c b; 6 glossary terms; 2 image prompts).

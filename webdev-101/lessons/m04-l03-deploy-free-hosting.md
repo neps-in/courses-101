@@ -83,7 +83,7 @@ flowchart TD
 2. Type the address with `http://` instead of `https://`. **Expected:** you land on `https://…` (a 301 redirect). Click the padlock or site-information icon: "Connection is secure".
 3. Visit a page that doesn't exist: `https://yourname.github.io/nila-launch/nope.html`. **Expected:** GitHub's own 404 page ("File not found"), and status **404** in Network.
 4. Open the page on your **phone**: in Chrome on your computer, use the address bar's share or QR-code option, or just type the address. **Expected:** the mobile layout from Lesson 3.4, fonts loaded, nothing scrolling sideways.
-5. Make the address official. In `index.html`, update the tags you left as TODO in Lesson 2.5 to the live address (or keep them as TODO until Lesson 4.4 if you'll use your own domain):
+5. Make the address official. In `index.html`, replace the placeholder `https://nilacoffee.example/` addresses from Lesson 2.5 with the live address (or wait until Lesson 4.4 if you'll use your own domain):
    ```html
    <link rel="canonical" href="https://yourname.github.io/nila-launch/">
    <meta property="og:url" content="https://yourname.github.io/nila-launch/">
@@ -92,8 +92,9 @@ flowchart TD
    Commit as `Set canonical and Open Graph URLs to live address` and push. **Expected:** a new **pages build and deployment** run in Actions, and the change live within a minute or two.
 
 **Part C: break it and fix it (12 min)**
-1. **The case that only breaks live.** Rename `images/beans.jpg` to `images/Beans.jpg` in VS Code (or change the `src` to `images/Beans.jpg`), commit, push.
+1. **The case that only breaks live.** In `index.html`, change the hero image's `src` to `images/Beans.jpg` (leave the file itself as `beans.jpg`), commit, push.
    **Symptom on Windows/Mac:** the local preview still shows the image. **Live:** after the deploy, the hero image is missing and Network shows **404** for that file. **Find it:** the red request names the exact path; compare its letter case with the file list on GitHub. **Fix:** make the name and the `src` match in lowercase, commit `Fix hero image case`, push. (Lesson 4.1's capital-letter search would have caught it before you pushed.)
+   **Why change the `src`, not the file name?** On Windows and Mac, Git usually doesn't notice a rename that only changes letter case, so renaming `beans.jpg` to `Beans.jpg` in VS Code can leave GitHub with the old name and nothing to commit. If you ever must change a file name's case, use `git mv -f images/Beans.jpg images/beans.jpg` in the terminal, which Git records as a rename.
 2. **The root-relative trap.** Change the stylesheet link to `href="/css/styles.css"`, commit, push.
    **Symptom:** the live page is unstyled, though it worked on your local server. Network shows a 404 for `https://yourname.github.io/css/styles.css`: the `/` jumped to the root of `yourname.github.io`, outside your repo folder. **Fix:** `href="css/styles.css"`, commit, push.
 3. **Roll back a bad deploy.** Commit and push a change you'll regret: delete the whole pricing section. Check it's gone live. Then in the VS Code terminal:
@@ -106,7 +107,7 @@ flowchart TD
    > **Alt text:** GitHub Actions list of Pages deployments, the newest one triggered by a revert commit.
 
 **Part D (optional): the same site on Netlify or Cloudflare (5 min to read, 10 to try)**
-- **Netlify:** sign up with GitHub → **Add new project → Import an existing project → GitHub** → choose `nila-launch` → leave the build command empty and the publish directory as the root → **Deploy**. You get `something.netlify.app`; rename it under **Domain management**. Every pull request or branch gets a **deploy preview** link. Watch the credits meter: on the credit-based Free plan each production deploy costs 15 of your 300 monthly credits, so ~20 pushes a month is the practical limit before bandwidth.
+- **Netlify:** sign up with GitHub → **Add new project → Import an existing project → GitHub** → choose `nila-launch` → leave the build command empty and the publish directory as the root → **Deploy**. You get a random `something.netlify.app` name; change it in the project's configuration (**Change project name**). Every pull request gets a **deploy preview** link (deploys for other branches can be switched on). Watch the credits meter: on the credit-based Free plan each production deploy costs 15 of your 300 monthly credits, so about 20 deploys a month use them all, before any bandwidth is counted.
 - **Cloudflare:** Cloudflare's dashboard now steers new projects to **Workers** with static assets; Pages projects still work and show up under **Workers & Pages**. Connect GitHub, pick the repo, no build command, output directory `/`. You get `name.pages.dev` (or `name.workers.dev`).
 - Only keep **one** host as the official address. If you try a second, note it as a test copy, or delete it, so search engines don't find two versions of your page.
 
@@ -140,7 +141,7 @@ flowchart TD
 | 404 right after turning Pages on | First deploy still running (up to 10 minutes) | Watch the Actions tab; reload when it's green |
 | Site shows the README instead of the page | No `index.html` at the root (e.g. it's `launch.html` or inside a folder) | Rename to `index.html` at the repo root, or choose the folder in Pages settings |
 | Page unstyled live, fine locally | Root-relative `/css/…` path, or letter case | Network → red 404 → read the requested URL; use `css/styles.css` and lowercase |
-| Image missing live only | Letter case, or the image was never committed (ignored or not staged) | Compare with the file list on GitHub; commit the file; match the case |
+| Image missing live only | Letter case, or the image was never committed (ignored or not staged) | Compare with the file list on GitHub; commit the file; match the `src` to the real name (case-only renames need `git mv -f`) |
 | Change not showing | Deploy not finished, or browser cache (`max-age=600`) | Actions tab; DevTools → Disable cache → reload |
 | Red ✗ on the Actions run | Build failed (often a huge file or a broken submodule) | Open the run → read the first error line; remove the cause and push |
 | Netlify site "paused" | Free plan credits used up for the month | Wait for the next cycle, reduce deploys (batch commits), or move to GitHub Pages / Cloudflare |
