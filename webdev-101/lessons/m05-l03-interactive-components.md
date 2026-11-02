@@ -1,7 +1,7 @@
 # M05.L03 — Interactive Components
 > After this lesson your launch page has four interactive pieces that marketing pages use everywhere: an FAQ accordion, plan tabs, a newsletter pop-up and a launch countdown. Each one works with a keyboard and a screen reader, and none of them tricks visitors.
 
-**Time:** ~22 min reading + ~45 min exercise · **Level:** L2 Practitioner · **Prereqs:** M05.L02, M03.L05 · **Remediate to:** M05.L02
+**Time:** ~22 min reading + ~50 min exercise · **Level:** L2 Practitioner · **Prereqs:** M05.L02, M03.L05 · **Remediate to:** M05.L02
 **Verified against:** MDN `<details>` (incl. the `name` attribute for exclusive accordions, Baseline 2024), `<dialog>` (`showModal()`, `show()`, `method="dialog"`, Escape to close), `IntersectionObserver`, `Window.sessionStorage`, `<time>`; WAI-ARIA Authoring Practices Guide "Tabs pattern" and "Dialog (Modal) pattern"; WCAG 2.2 SC 2.2.2 Pause, Stop, Hide and 2.1.2 No Keyboard Trap; FTC and EU guidance on fake urgency (as in Lesson 3.5). Every component below run in headless Chrome 156 on 2026-11-02: two `<details name="faq">` → opening one closes the other; `show()` lets Tab reach links behind the pop-up, `showModal()` keeps Tab inside it and Escape closes it; ArrowRight moves to the next tab and shows its panel; the countdown prints days, hours and minutes to a fixed date, its Pause button toggles to Resume, and a past date shows "Boxes are on sale now!".
 
 ## Learning objectives
@@ -118,7 +118,7 @@ All JavaScript goes in `js/main.js` (deferred); commit after each part.
    ```
    (`IntersectionObserver` tells you when an element scrolls into view, without a scroll listener: lighter than Lesson 5.2's approach. Use your own pricing section's `id`.)
 3. **Test with the keyboard:** reload, scroll to pricing.
-   **Expected (checked):** the dialog opens and focus moves into it; Tab cycles only through the dialog's link and button (never the page behind); **Escape** closes it; **No thanks** closes it (`method="dialog"` closes without sending anything). Reload: it doesn't come back this visit. To test again, close the tab or run `sessionStorage.clear()` in the Console.
+   **Expected (checked):** the dialog opens and focus moves to its first focusable item (the sign-up link); Tab cycles only through the dialog's link and button, plus the browser's own address bar (never the page behind); **Escape** closes it; **No thanks** closes it (`method="dialog"` closes without sending anything). When it closes, Chrome puts focus back where it was before the dialog opened (checked), so keyboard users don't lose their place; the sign-up link closes the dialog and jumps to `#signup`. Reload: it doesn't come back this visit. To test again, close the tab or run `sessionStorage.clear()` in the Console.
    > 🖼️ **Image prompt:** Phone-size screenshot (390×844) of the launch page with the "Get the launch email" dialog open over a dimmed page, showing the "Take me to the sign-up form" link and a clearly visible "No thanks" button with a focus ring. Outline the No thanks button. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** A newsletter dialog over a dimmed launch page on a phone, with a focused No thanks button.
 4. Style the backdrop with your tokens: `.newsletter::backdrop { background: rgb(0 0 0 / 0.5); }` and give the dialog a `max-width` so it never covers a whole phone screen edge to edge.
@@ -158,7 +158,7 @@ All JavaScript goes in `js/main.js` (deferred); commit after each part.
      });
    });
    ```
-3. **Test:** Tab once into the tab list (it's one stop, the selected tab), press **→**. **Expected (checked):** focus and selection move to **Yearly** and its panel shows; Tab again goes **into the panel**, not to the other tab. Style `[aria-selected="true"]` in CSS so the selected tab looks selected, and keep a visible focus ring.
+3. **Test:** Tab once into the tab list (it's one stop, the selected tab), press **→**. **Expected (checked):** focus and selection move to **Yearly** and its panel shows; Tab again goes **into the panel**, not to the other tab. (The WAI-ARIA pattern also suggests **Home**/**End** to jump to the first/last tab; optional with two tabs.) Style `[aria-selected="true"]` in CSS so the selected tab looks selected, and keep a visible focus ring.
    **No-JS check:** with JavaScript disabled, the yearly panel stays `hidden`. If both plans matter, consider showing both cards side by side instead of tabs: tabs are best when panels are alternatives, not when visitors need to compare.
 4. Commit `Add accessible plan tabs`.
 
@@ -203,7 +203,7 @@ All JavaScript goes in `js/main.js` (deferred); commit after each part.
 
    start();
    ```
-   **Expected (checked):** "Boxes go on sale in 28 days 11 hours 17 minutes", the same for every visitor and on every reload, because it counts to a fixed moment (the `+05:30` makes it 9:00 India time for everyone, wherever they are). **Pause countdown** stops the updates and becomes **Resume countdown**.
+   **Expected (checked):** something like "Boxes go on sale in 28 days 11 hours 17 minutes" (on 2 November 2026), the same for every visitor and on every reload, because it counts to a fixed moment (the `+05:30` makes it 9:00 India time for everyone, wherever they are). **Pause countdown** stops the updates and becomes **Resume countdown**.
    **Why a Pause button?** WCAG 2.2 SC 2.2.2 (Pause, Stop, Hide) says content that updates by itself, alongside other content, needs a way to pause, stop or hide it (or control how often it updates). Updating once a minute without seconds keeps it calm, and it's not in a live region, so screen readers aren't interrupted every tick.
 3. **Test the end state:** temporarily change `datetime` to a past date. **Expected (checked):** the line becomes "Boxes are on sale now!". Change it back. After launch day, update or remove the countdown; a timer stuck at zero looks abandoned.
 4. Commit `Add launch countdown to fixed date`.

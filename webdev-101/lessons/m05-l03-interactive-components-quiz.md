@@ -17,7 +17,7 @@
 - a) `dialog.show()`, which opens the dialog without blocking the page
 - b) `dialog.hidden = false`, which reveals it like any other element
 - c) `dialog.style.display = 'block'`, which forces it to be on screen
-- d) `dialog.showModal()`, which opens it as a modal on top of the page
+- d) `dialog.showModal()`, which opens it as a modal above the page
 
 **Answer:** d
 **Explanation:** `showModal()` puts the dialog on top, makes the page behind inert, moves focus in and lets Escape close it (checked). `show()` opens it without any of that, so Tab walks out to the page behind. Changing `hidden` or `display` gives none of the dialog behaviour.
@@ -61,7 +61,7 @@
 setInterval(tick, 60000);
 tick();
 ```
-- a) A way to pause or stop the updates, such as a visible Pause button
+- a) A way to pause or stop the updates, such as a Pause button
 - b) An `aria-live="assertive"` attribute so each minute is announced
 - c) A `tabindex="0"` on the `<time>` so keyboard users can focus it
 - d) A `role="timer"` plus a sound that plays as each minute passes
