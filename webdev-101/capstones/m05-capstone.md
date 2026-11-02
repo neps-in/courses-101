@@ -56,16 +56,16 @@ flowchart TD
 - The newsletter list with **double opt-in**, tested with an address you own.
 
 ### 5. Optional extras (from M05.L02–L03)
-Any of: copy-code button, character counter, plan tabs (WAI-ARIA pattern), launch countdown to a fixed date with a Pause button. Each must meet the same keyboard and honesty tests.
+Any of: copy-code button (hidden until JavaScript runs, with a "Couldn't copy" fallback), character counter (limit read from `maxlength`), plan tabs (WAI-ARIA pattern), launch countdown to a fixed date with a Pause button. Each must meet the same keyboard and honesty tests.
 
 ### 6. Test it
 | Check | Expected |
 |---|---|
-| Keyboard only (Tab, Shift+Tab, Enter, Space, Escape, arrows) | Every control reachable and usable, visible focus throughout, never trapped |
+| Keyboard only (Tab, Shift+Tab, Enter, Space, Escape, arrows) | Every control reachable and usable, visible focus throughout, never trapped; after the pop-up closes, focus returns to where it was |
 | Screen reader quick check (NVDA, VoiceOver or TalkBack) on the FAQ, pop-up and form | Questions announced as expandable; pop-up's heading read on open; errors and the thank-you announced |
-| JavaScript disabled | FAQ readable (answers open on click), form submits via `action`, no pop-up, nothing broken or blank |
+| JavaScript disabled | FAQ readable (answers open on click), form submits via `action`, no pop-up, no dead buttons (script-only buttons stay hidden), any countdown shows the plain date, nothing blank |
 | Form: empty, invalid, valid, broken endpoint | Inline messages; real thanks; real error ("Form not found"); exactly one submission arrives for the valid case |
-| Pop-up: reload twice in one visit | Appears once only |
+| Pop-up: reload twice in one visit | Appears once only (to test again, open a new tab or run `sessionStorage.clear()` in the Console) |
 | Lesson 5.1 script audit of **your** page | Every script listed with size, purpose and owner |
 
 ### 7. Break it and fix it: three planted bugs
