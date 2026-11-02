@@ -106,7 +106,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | reviewed | 2026-11-02 |
 | M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | reviewed | 2026-11-02 |
 | M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | reviewed | 2026-11-02 |
-| M05 | L01 | What JavaScript Does (and Breaks) | webdev-101/lessons/m05-l01-what-javascript-does.md | todo | — |
+| M05 | L01 | What JavaScript Does (and Breaks) | webdev-101/lessons/m05-l01-what-javascript-does.md | draft | 2026-11-02 |
 | M05 | L02 | JS Basics: Variables, Functions, Events | webdev-101/lessons/m05-l02-js-basics-events.md | todo | — |
 | M05 | L03 | Interactive Components | webdev-101/lessons/m05-l03-interactive-components.md | todo | — |
 | M05 | L04 | Forms That Work: Validation & Sending Data | webdev-101/lessons/m05-l04-forms-send-data.md | todo | — |
@@ -116,6 +116,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m05-l01 draft (JS = behaviour; defer/async/blocking/inline/module table from MDN; Console, Network JS filter, More filters → 3rd-party requests, Coverage, Disable JavaScript, Request conditions "Block request" (blocked:devtools) from Chrome docs; errors reproduced in headless Chrome 156: null addEventListener without defer, 404 script "Failed to load resource", page readable with JS off; script audit of a brand site; quiz c d b a b c c, Q7 reviews m04-l03; 11 glossary terms; 2 image prompts).
 - 2026-11-02: webdev-101 plan M05 (4 lessons matching outline 5.1–5.4: what JS does/breaks + script audit, basics and events, native-first components (details, dialog, WAI-ARIA tabs, honest countdown), forms with HTML validation → Formspree/Netlify Forms → Brevo/Mailchimp double opt-in; capstone = interactive launch page + cheatsheets/m05-javascript.md; NN #3/#6/#7/#12 reinforced; lesson-path Mermaid in syllabus).
 - 2026-11-02: webdev-101 m04 capstone reviewed: planted bug B (www CNAME value typo → "Site not found") was wrong: every *.github.io name resolves to the same four GitHub IPs and GitHub routes by host name, so the site keeps loading (checked: jekyllrb.com served 200 via a typo name's IP; an unclaimed host name gets "Site not found", 404). Bug B is now a record-name typo (ww → NXDOMAIN, checked); the same wrong claim fixed in m04-l04 (break-it table, troubleshooting, refresher, verified-against) and cheatsheets/m04-publish.md. Also: padlock → site-information icon, a Console mixed-content check in the live test table, bug A warns against case-only renames.
 - 2026-11-02: webdev-101 m04-l05 reviewed: "Verified against" claimed vendor pricing pages, but those load prices by JavaScript and only third-party (affiliate) comparisons were read, so the line now says so honestly; quiz lacked the framework's spaced-review question, added Q7 (review m04-l04: save a DNS "before" screenshot incl. MX), header now 7 questions / 5 of 7; added WordPress.com (hosted WordPress, ~$4/month, plugins on higher plans) as the middle path for Brief 2; quiz b c a b c b b, no correct option longest.
