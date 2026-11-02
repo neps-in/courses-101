@@ -77,7 +77,7 @@ flowchart TD
 
 **Part A: install Git, introduce yourself, create a GitHub account (10 min)**
 1. **Install Git.** Windows: download **Git for Windows** from **https://git-scm.com/** and accept the defaults (it includes **Git Credential Manager**, which handles GitHub sign-in). Mac: open Terminal, type `git --version` and accept the prompt to install the Command Line Developer Tools. Linux: your package manager (`sudo apt install git`).
-   **Expected:** in VS Code's terminal (**Ctrl+`**), `git --version` prints something like `git version 2.56.0` (any 2.4x or later is fine).
+   **Expected:** in VS Code's terminal (**Ctrl+`**), `git --version` prints something like `git version 2.56.0` (Mac shows an Apple build, e.g. `(Apple Git-…)`; any version from the last few years works for this course).
 2. **Create a free GitHub account** at **https://github.com/**. Choose a professional username: it will appear in your site's free address in Lesson 4.3 (`username.github.io`). GitHub will ask you to turn on **two-factor authentication**; do it now with an authenticator app or passkey, and save the recovery codes.
 3. **Keep your email private.** On GitHub: **Settings → Emails**, tick **Keep my email addresses private**, and copy the address it shows, which looks like `12345678+yourname@users.noreply.github.com`.
 4. **Tell Git who you are** (once per computer). In the VS Code terminal:
@@ -96,7 +96,7 @@ flowchart TD
    # Secrets: never commit these
    .env
    ```
-2. Open the **Source Control** view (**Ctrl+Shift+G** / **Cmd+Shift+G**) and click **Initialize Repository**.
+2. Open the **Source Control** view (**Ctrl+Shift+G** / **Cmd+Shift+G**) and click **Initialize Repository** (not visible? Command Palette → **Git: Initialize Repository**). VS Code names the first branch `main` (its `git.defaultBranchName` setting).
    **Expected:** every file appears under **Changes** with a **U** (untracked). `.DS_Store` or `Thumbs.db` don't appear, because `.gitignore` excludes them. (Terminal equivalent: `git init -b main`, then `git status`.)
 3. Hover **Changes** and click **+** (Stage All Changes). Type the message `Add launch page, styles and images` in the box and click **✓ Commit**.
    **Expected:** the Changes list empties. In the terminal, `git status` says `nothing to commit, working tree clean`, and `git log --oneline` shows one line: a 7-character ID and your message.
@@ -121,11 +121,11 @@ flowchart TD
    git revert HEAD --no-edit
    git push
    ```
-   **Expected (checked 2026-11-02):** `git revert` prints `[main 9c43a37] Revert "Change CTA colour to caramel"` (your ID will differ) and `1 file changed, 1 insertion(+), 1 deletion(-)`. `styles.css` has `#b45309` again, and `git log --oneline` now shows **three** lines: the revert on top, the bad commit, and the ones before it. Nothing was deleted; the mistake and its fix are both on record. (`HEAD` means "the latest commit". To undo an older one, use its ID: `git revert 36ac67c`.)
+   **Expected (checked 2026-11-02):** `git revert` prints `[main 9c43a37] Revert "Change CTA colour to caramel"` (your ID will differ) and `1 file changed, 1 insertion(+), 1 deletion(-)`. `styles.css` has `#b45309` again, and `git log --oneline` now shows **four** lines: the revert on top, the bad commit, and your two earlier commits (checked). Nothing was deleted; the mistake and its fix are both on record. (`HEAD` means "the latest commit". To undo an older one, use its ID: `git revert 36ac67c`.)
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of a GitHub repository's commit history page listing "Revert "Change CTA colour to caramel"", "Change CTA colour to caramel", "Sharpen hero paragraph" and "Add launch page, styles and images", each with author and date. Outline the revert commit. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** GitHub commit history with a revert commit at the top undoing the caramel CTA colour change.
-4. **The file that shouldn't be there.** Create `notes.txt` with "client phone: …", commit it and **don't push**. Now add `notes.txt` to `.gitignore` and run `git status`.
-   **Symptom:** Git still tracks `notes.txt`; `.gitignore` only stops **new** files being added. **Fix:** `git rm --cached notes.txt` (stops tracking, keeps the file on your disk), then commit `Stop tracking notes`.
+4. **The file that shouldn't be there.** Create `notes.txt` containing only `practice note, nothing private` (this commit will stay in your history and reach GitHub on your next push, so never use real data here). Commit it. Now add `notes.txt` to `.gitignore`, then type one more line in `notes.txt`, save, and run `git status`.
+   **Symptom:** Git still lists `notes.txt` as modified (`M`), next to `.gitignore`; `.gitignore` only stops **untracked** files being added. (Ignoring it changes nothing visible until you edit the file: checked.) **Fix:** `git rm --cached notes.txt` (stops tracking, keeps the file on your disk), then commit `Stop tracking notes`.
    **The lesson:** the old commit still contains the notes (`git show HEAD~1:notes.txt` prints them; checked). That's why secrets must never be committed at all. If a password or key ever reaches GitHub, **change the password or key** first; deleting the file isn't enough. GitHub blocks many recognisable secrets from being pushed to public repositories by default, but it can't recognise everything (a client's phone number, for example).
 
 ## When to use / when not to

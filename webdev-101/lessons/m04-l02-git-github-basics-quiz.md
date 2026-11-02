@@ -27,15 +27,15 @@
 - a) Delete the GitHub repository and create a new one from her files
 - b) Run `git reset --hard` and `git push --force` to erase the commit
 - c) Edit the colour back by hand and commit it as "update" with no note
-- d) `git revert HEAD`, then `git push`, so the undo is on record
+- d) `git revert HEAD`, then `git push`, so the undo is on the record
 
 **Answer:** d
 **Explanation:** Revert undoes exactly that commit with a new commit, and pushing it puts the fix live (once deploys are connected in Lesson 4.3). Deleting the repo loses the history, reset plus force-push rewrites history and can destroy work, and a hand edit with a vague message works but hides what happened.
 **Hint:** Which option keeps history and says clearly what was undone?
 
-### Q4. Jun committed `notes.txt`, then added `notes.txt` to `.gitignore`. Git still lists it as changed. Why? *(O3 · scenario)*
+### Q4. Jun committed `notes.txt`, then added `notes.txt` to `.gitignore` and edited the file again. Git still lists it as modified. Why? *(O3 · scenario)*
 - a) `.gitignore` only works after the computer has been restarted
-- b) It only stops new files; tracked ones need `git rm --cached`
+- b) It only stops untracked files; tracked ones need `git rm --cached`
 - c) The file name in `.gitignore` must be written in capital letters
 - d) `.gitignore` files only take effect once they're pushed to GitHub
 
@@ -44,7 +44,7 @@
 **Hint:** What does `.gitignore` do to files Git already knows about?
 
 ### Q5. Diego finds that an API key was pushed to his public GitHub repository last week. What's the most important first step? *(O3 · scenario)*
-- a) Cancel or regenerate the key with the service that issued it
+- a) Cancel or regenerate the key at the service that issued it, today
 - b) Delete the file in a new commit, since that removes it from GitHub
 - c) Make the repository private, which wipes the key from all copies
 - d) Add the file name to `.gitignore`, which hides it from the history
