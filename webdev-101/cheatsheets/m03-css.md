@@ -66,7 +66,7 @@ Test 320 · 768 · 1280 px + 200% zoom. **Reflow (1.4.10):** no sideways scroll 
 ```js
 document.querySelectorAll('body *').forEach(el => { if (el.getBoundingClientRect().right > document.documentElement.clientWidth + 1) console.log(el); });
 ```
-Find, don't hide: no `overflow-x: hidden` on `body`.
+Finder silent but still scrolling? Check `document.documentElement.scrollWidth` (should equal the width): a long word or URL is spilling out; `overflow-wrap: break-word` fixes it. Find, don't hide: no `overflow-x: hidden` on `body`.
 
 ## Conversion UI (L05)
 One filled **primary** CTA per view; secondary = outline button or link; text says what happens.

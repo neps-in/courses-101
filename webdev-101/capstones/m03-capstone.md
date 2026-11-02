@@ -73,7 +73,7 @@ Visual order = HTML order everywhere (no `order`, no `-reverse`).
 
 ### 6. Check it
 - **Contrast:** measure every pair in DevTools' colour picker or WebAIM: body text, headings, muted text, links, CTA label, CTA hover, field border, focus ring (and the same set inside any featured/dark card).
-- **Overflow:** at **320** px, the Console finder from Lesson 3.4 prints nothing:
+- **Overflow:** at **320** px, the Console finder from Lesson 3.4 prints nothing, and `document.documentElement.scrollWidth` returns 320 (the finder can't see a long word or URL spilling out of its box):
   ```js
   document.querySelectorAll('body *').forEach(el => { if (el.getBoundingClientRect().right > document.documentElement.clientWidth + 1) console.log(el); });
   ```

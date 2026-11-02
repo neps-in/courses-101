@@ -2,7 +2,7 @@
 > After this lesson you can make your launch page work on a 320 px phone first, add space and size for bigger screens with media queries, and find and fix the one element that makes a page scroll sideways.
 
 **Time:** ~17 min reading + ~30 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L03 · **Remediate to:** M03.L03
-**Verified against:** MDN "Responsive design", "Media queries", viewport `<meta>`, `clamp()` and `aspect-ratio`; web.dev "Responsive web design basics"; W3C WAI Understanding SC 1.4.10 Reflow, SC 2.5.8 Target Size (Minimum) and SC 1.4.4 Resize Text (WCAG 2.2); Google Search Central "Mobile-first indexing best practices"; Chrome DevTools "Simulate mobile devices with device mode"; this lesson's stylesheet validated live with the W3C CSS Validation Service, on 2026-11-02 (Chrome/Edge and Firefox stable).
+**Verified against:** MDN "Responsive design", "Media queries", viewport `<meta>`, `clamp()` and `aspect-ratio`; web.dev "Responsive web design basics"; W3C WAI Understanding SC 1.4.10 Reflow, SC 2.5.8 Target Size (Minimum) and SC 1.4.4 Resize Text (WCAG 2.2); Google Search Central "Mobile-first indexing best practices"; Chrome DevTools "Simulate mobile devices with device mode"; this lesson's stylesheet validated live with the W3C CSS Validation Service and run in headless Chrome 156 at 320, 768, 1024 and 1280 px (heading sizes, 41.6 px menu links, 24 px checkboxes, hero split, both Part C bugs and what the Console finder does and doesn't catch), on 2026-11-02 (Chrome/Edge and Firefox stable).
 
 ## Learning objectives
 1. **Explain** the viewport meta tag and mobile-first CSS: base styles for small screens, `min-width` media queries that add to them. *(O1)*
@@ -153,10 +153,12 @@ flowchart TD
    document.querySelectorAll('body *').forEach(el => { if (el.getBoundingClientRect().right > document.documentElement.clientWidth + 1) console.log(el); });
    ```
    **Expected:** `<iframe width="560" height="315" …>` in the list. Hover it in the Console and the page highlights it. (If several elements are listed, the **first** one that isn't inside another listed element is usually the cause.)
+
+   **Its blind spot:** the finder checks element **boxes**. Text that spills out of a box that's the right width (a long word, URL or email address) isn't caught. So also paste `document.documentElement.scrollWidth` into the Console: at 320 px it should say **320**. A bigger number with an empty finder means overflowing text (step 4).
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Chrome DevTools at 320 px wide with the Console showing the overflow one-liner and its output, an `<iframe width="560" height="315">` element, highlighted on the page as it overflows the right edge. Outline the Console output and the overflowing iframe. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** DevTools Console listing an iframe 560 pixels wide as the element overflowing a 320 pixel screen.
 3. Uncomment the iframe rules, reload. **Expected:** the video fits the column at 16:9 and the scrollbar is gone; the one-liner prints nothing.
-4. Plant a second classic: in the FAQ, add a sentence with a long unbroken address such as `https://nilacoffee.example/subscriptions/monthly-medium-roast-whole-bean-gift-box`. Temporarily remove `overflow-wrap: break-word;` from `body`. **Symptom:** the address pushes past the edge at 320 px. Put the rule back: it now wraps.
+4. Plant a second classic: in the FAQ, add a sentence with a long unbroken address such as `https://nilacoffee.example/subscriptions/monthly-medium-roast-whole-bean-gift-box`. Temporarily remove `overflow-wrap: break-word;` from `body`. **Symptom:** the address pushes past the edge at 320 px. Run the finder: it prints **nothing**, because the paragraph's box is still 288 px wide and only its text spills out. `document.documentElement.scrollWidth` gives the game away (in Chrome it showed **413** instead of 320). Put the rule back: the address wraps and `scrollWidth` is 320 again.
 
 **Part D: test tap targets and the three widths (7 min)**
 1. At **320** px, inspect a menu link. Hover it in Elements: the tooltip shows its size, e.g. `a 104 × 41.6`. **Expected:** every menu link is at least **24 px** tall, and the gap between links keeps neighbours apart.
@@ -203,7 +205,7 @@ flowchart TD
 **Task:** make **your** launch page mobile-first and prove it.
 1. Fluid `h1`/`h2` tokens with `clamp()`, and media and embed rules (`max-width: 100%`, `aspect-ratio` for iframes).
 2. At most **two** `min-width` media queries in `rem`, each with a comment saying what it adds and why at that width.
-3. Run the overflow finder at 320 px: it must print nothing. Note anything it found and how you fixed it.
+3. At 320 px, the overflow finder prints nothing **and** `document.documentElement.scrollWidth` is 320. Note anything you found and how you fixed it.
 4. A tap-target check: every link in your header, footer and form at least 24 px tall or clearly spaced.
 5. Full-size screenshots at 320, 768 and 1280 px, plus one at 200% zoom.
 6. W3C CSS checker: no errors.
@@ -215,7 +217,7 @@ flowchart TD
 - **Viewport tag + mobile-first CSS:** base styles for phones, `min-width` media queries (in `rem`) that **add** for larger screens.
 - **Fluid beats fixed:** `max-width`, `%`, `rem`, `clamp()` for headings; `max-width: 100%` on images, video and iframes; `aspect-ratio` for embeds.
 - **WCAG 2.2:** no sideways scrolling at 320 px (1.4.10 Reflow); targets ≥ 24 × 24 px or well spaced (2.5.8).
-- **Find, don't hide:** the Console one-liner names the element that overflows; never paper over it with `overflow-x: hidden`.
+- **Find, don't hide:** the Console one-liner names the element that overflows (and `scrollWidth` catches spilling text); never paper over it with `overflow-x: hidden`.
 - Test at **320 · 768 · 1280 px** and at **200% zoom** every time you change layout.
 
 ## Teach it back
@@ -251,4 +253,4 @@ Explain to a friend in 3 sentences why their landing page scrolls sideways on a 
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-Viewport tag `width=device-width, initial-scale=1` (never `user-scalable=no`). Mobile-first: base CSS = phone; `@media (min-width: 48rem) { … }` adds for bigger screens, placed after the base rule. Fluid: `max-width`, `%`, `rem`; `clamp(2rem, 1.75rem + 1vw, 3rem)` for headings only; `img, video, iframe { max-width: 100%; }`, `iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; }`. WCAG: no sideways scroll at 320 px (1.4.10); tap targets ≥ 24 × 24 px or spaced (2.5.8). Find overflow with the Console one-liner, don't hide it with `overflow-x: hidden`. Test 320 · 768 · 1280 px + 200% zoom.
+Viewport tag `width=device-width, initial-scale=1` (never `user-scalable=no`). Mobile-first: base CSS = phone; `@media (min-width: 48rem) { … }` adds for bigger screens, placed after the base rule. Fluid: `max-width`, `%`, `rem`; `clamp(2rem, 1.75rem + 1vw, 3rem)` for headings only; `img, video, iframe { max-width: 100%; }`, `iframe { width: 100%; height: auto; aspect-ratio: 16 / 9; }`. WCAG: no sideways scroll at 320 px (1.4.10); tap targets ≥ 24 × 24 px or spaced (2.5.8). Find overflow with the Console one-liner (plus `document.documentElement.scrollWidth` = 320 for long words and URLs), don't hide it with `overflow-x: hidden`. Test 320 · 768 · 1280 px + 200% zoom.
