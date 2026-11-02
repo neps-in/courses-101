@@ -12,7 +12,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | M02 HTML: The Structure of Content | L1 | 5 | #2, #3, #8 | ✅ |
 | M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | ✅ |
 | M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | ✅ |
-| M05 JavaScript for Marketers | L2 | 4 | #3 (reinforced) | — |
+| M05 JavaScript for Marketers | L2 | 4 | #3, #6, #7, #12 (reinforced) | ✅ |
 | M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 | — |
 | M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 | — |
 | M08 Advanced: AI, Automation & Scale | L3 | 4 | #12 | — |
@@ -283,3 +283,59 @@ flowchart LR
 ### M04 Capstone — Live, versioned launch page
 - **File:** `capstones/m04-capstone.md` + `cheatsheets/m04-publish.md`
 - The launch page is live on a custom domain (or the host's free subdomain) with HTTPS forced and one canonical host, deployed automatically from a public or private GitHub repository with a readable history (at least five meaningful commits, including one revert). Includes a break-it-and-fix-it set: a case-mismatched path, a CNAME typo and a bad commit rolled back. Plus a short written decision on code vs CMS vs no-code for the learner's next project. Rubric: project structure, version control, deployment and testing, domain and HTTPS, build-approach decision.
+
+## M05 — JavaScript for Marketers (L2)
+
+**Goal:** add interactivity to the launch page and understand (and debug) the scripts that marketing tools inject. · NN #3 Alt text, labels and keyboard access (reinforced: every component works with a keyboard and a screen reader), #6 Version control (reinforced: each component is its own commit), #7 HTTPS (reinforced: forms only post to `https://` endpoints), #12 Review AI output (every lesson's "Use AI for this" checks generated JS for accessibility and errors)
+**First installs:** none. The editor, Git and hosting from M04 are enough; a free Formspree (or Netlify Forms) account and a free Brevo or Mailchimp account arrive in L04.
+**Running project:** the live M04 launch page gains an FAQ accordion, a polite newsletter modal and a working lead form that delivers to an email list. All JavaScript lives in one file, `js/main.js`, loaded with `defer`; the page still works (content readable, form submittable) if JavaScript fails.
+
+```mermaid
+flowchart LR
+  %% alt: M05 lesson path: what JavaScript does and breaks, JS basics, interactive components, forms that send data, then the interactive launch page capstone.
+  L1[L01 What JS does<br/>and breaks]:::cream --> L2[L02 Variables,<br/>functions, events]:::sky
+  L2 --> L3[L03 Accordion, tabs,<br/>modal, countdown]:::blue
+  L3 --> L4[L04 Forms that<br/>send data]:::blue
+  L4 --> C[M05 Capstone:<br/>interactive launch page]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M05.L01 — What JavaScript Does (and Breaks)
+- **File:** `lessons/m05-l01-what-javascript-does.md` · **Prereqs:** M01.L05, M04 capstone · **Remediate to:** M01.L05 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Explain** what JavaScript adds to HTML and CSS (changing the DOM, reacting to events, talking to servers) and how a `<script>` loads (`defer`, `async`, inline vs external).
+  2. **Read** the Console (errors, warnings, the red line and its file:line link) and the Network panel's JS requests to **identify** which script broke a page or slowed it down.
+  3. **Audit** the third-party scripts on a marketing page (chat widget, pixel, tag manager) for what they do, their weight and whether the page still works with JavaScript turned off.
+- **Hands-on idea:** add `js/main.js` with `defer` and a one-line `console.log`; audit a brand site's scripts (Network → JS filter, Coverage, disable JavaScript in DevTools); break-it-and-fix-it: a script tag in `<head>` without `defer` that can't find the button yet (`Cannot read properties of null`), and a 404'd script path.
+
+### M05.L02 — JS Basics: Variables, Functions, Events
+- **File:** `lessons/m05-l02-js-basics-events.md` · **Prereqs:** M05.L01 · **Remediate to:** M05.L01 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Write** small scripts with `const`/`let`, strings, numbers, booleans, arrays, `if` statements and functions, and run them in the Console.
+  2. **Select** elements (`querySelector`, `querySelectorAll`) and **change** them safely (`textContent`, `classList`, attributes such as `aria-expanded`) instead of rewriting HTML.
+  3. **Attach** event listeners (click, input, submit, scroll with a cheap check) and **use** event delegation, with keyboard users in mind.
+- **Hands-on idea:** a "copy discount code" button that updates its label and announces "Copied" politely, a sticky header class added after scrolling past the hero, and a live character counter on the message field; break-it-and-fix-it: `=` vs `===`, a typo in a class name, a listener added to a NodeList.
+
+### M05.L03 — Interactive Components
+- **File:** `lessons/m05-l03-interactive-components.md` · **Prereqs:** M05.L02, M03.L05 · **Remediate to:** M05.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Build** an FAQ accordion with native `<details>`/`<summary>` first, and **explain** when a scripted version with `aria-expanded` is worth it.
+  2. **Build** a newsletter modal with the native `<dialog>` element (focus, Escape, a visible close button, shown once per visit or after a delay, never on page load blocking content) and accessible tabs following the WAI-ARIA tabs pattern.
+  3. **Build** a countdown timer to a real launch date that stays honest (time zone, what happens at zero, no fake resets) and **test** every component with keyboard only and a screen reader quick check.
+- **Hands-on idea:** add the FAQ, the modal and the launch countdown to the live page, one commit each; break-it-and-fix-it: a modal that traps no focus (Tab escapes behind it), a countdown that resets on reload (fake urgency, a dark pattern from M03.L05), tabs that only work with a mouse.
+
+### M05.L04 — Forms That Work: Validation & Sending Data
+- **File:** `lessons/m05-l04-forms-send-data.md` · **Prereqs:** M02.L04, M05.L02 · **Remediate to:** M02.L04 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Validate** inputs with built-in HTML first (`required`, `type="email"`, `pattern`), then add friendly JavaScript messages linked with `aria-describedby`, without blocking valid input.
+  2. **Send** form data to a form service (Formspree or Netlify Forms) over HTTPS with a plain `action` (works without JS) and then with `fetch()` for an inline success message; **handle** errors and double submissions.
+  3. **Deliver** leads to an email list (Brevo or Mailchimp embedded form or the service's integration) with double opt-in and a consent line, and **protect** the form from spam (honeypot field; the service's CAPTCHA option).
+- **Hands-on idea:** connect the M02 lead form to Formspree, then to a Brevo or Mailchimp list with double opt-in; break-it-and-fix-it: a form posting to `http://`, an `action` with a typo (404), a missing `name` attribute so the field never arrives.
+
+### M05 Capstone — Interactive launch page
+- **File:** `capstones/m05-capstone.md` + `cheatsheets/m05-javascript.md`
+- The live launch page gains a working FAQ accordion, a timed newsletter modal (polite: delayed or scroll-triggered, dismissible, shown once, keyboard and screen-reader friendly) and a lead form that delivers to an email list with double opt-in. All JS in one deferred `js/main.js`; the content and form still work with JavaScript off. Includes a break-it-and-fix-it set (a `null` element error, a modal focus bug, a form field missing `name`) and a short script audit of the page (own and third-party scripts, weight, purpose). Rubric: JavaScript quality and progressive enhancement, accessibility of components (NN #3), form delivery and consent, honesty (no fake urgency), debugging evidence.
