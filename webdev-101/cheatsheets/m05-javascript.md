@@ -48,7 +48,7 @@ form.addEventListener('submit', async (event) => {
     const res = await fetch(form.action, { method: 'POST', body: new FormData(form),
                                            headers: { Accept: 'application/json' } });
     status.textContent = res.ok ? 'Thanks! Check your inbox.' : 'Error: …';  // service's errors
-  } catch { status.textContent = 'No connection. Try again.'; }
+  } catch { status.textContent = "Couldn't send. Check your connection."; }
   finally { button.disabled = false; }
 });
 ```

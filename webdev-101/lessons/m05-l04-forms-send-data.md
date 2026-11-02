@@ -27,7 +27,7 @@ Arjun's launch page collected 400 sign-ups in its first week. Or so the agency's
 | Job | Easy free option (Nov 2026) | Notes |
 |---|---|---|
 | Contact / lead form emailed to you | **Formspree** Free: 50 submissions a month, unlimited forms, 30-day archive | Endpoint `https://formspree.io/f/<id>`; honeypot `_gotcha`; works on any host |
-| Same, if you deploy with Netlify | **Netlify Forms**: add `data-netlify="true"` | Only on Netlify; submissions count against the plan (Lesson 4.3) |
+| Same, if you deploy with Netlify | **Netlify Forms**: add `data-netlify="true"` | Only on Netlify; submissions count against the plan (Lesson 4.3). Sending it with `fetch()` needs a different request (see Netlify's docs), so this lesson's script is written for Formspree |
 | Newsletter sign-up | **Brevo** or **Mailchimp** free plans: their own embedded sign-up form | Turn on **double opt-in**; the tool sends the confirmation email |
 
 ### Validation: what HTML gives you
@@ -87,7 +87,7 @@ flowchart TD
    ```
    (`novalidate` turns off the browser's pop-up bubbles because Part B shows nicer messages; **remove it for this part** so the built-in checks work without JavaScript. `_gotcha` is Formspree's **honeypot**: a field people never see or fill, but bots often do; Formspree discards submissions where it's filled. Use your M03 `.visually-hidden` class or `display: none`.)
 3. Push, open the **live** page, and submit your own email.
-   **Expected:** the browser leaves your page for Formspree's thank-you page; Formspree emails you the submission (the first time, it asks you to confirm the form). With JavaScript **disabled** (Lesson 5.1), it still works. That's your safety net.
+   **Expected:** the browser leaves your page for Formspree's thank-you page; Formspree emails you the submission (if you haven't verified your account email yet, Formspree asks you to do that first). With JavaScript **disabled** (Lesson 5.1), it still works. That's your safety net.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of a Formspree dashboard showing the "Nila launch sign-up" form with one submission listing an email address and a first name. Outline the submission row. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Formspree dashboard with one test submission for the Nila launch sign-up form.
 
@@ -133,7 +133,7 @@ flowchart TD
            : 'Something went wrong. Please try again.';
        }
      } catch (error) {
-       status.textContent = 'No connection. Please check your internet and try again.';
+       status.textContent = "Couldn't send. Please check your connection and try again.";
      } finally {
        submitButton.disabled = false;
      }
@@ -150,7 +150,7 @@ flowchart TD
 
 **Part C: a real email list with double opt-in (12 min)**
 For the newsletter itself, let your email tool own the list and the consent record.
-1. **Brevo:** create a free account → **Contacts → Forms** → create a sign-up form → choose **Double confirmation** (double opt-in) and the confirmation email template → pick the list → copy the **HTML** embed code or the form's action URL. **Mailchimp:** **Audience → Settings → Audience name and defaults** → turn on **Enable double opt-in** → **Signup forms → Embedded forms** → copy the code.
+1. **Brevo:** create a free account → **Contacts → Forms** → create a sign-up form → choose **Double confirmation** (double opt-in) and the confirmation email template → pick the list → copy the **HTML** embed code or the form's action URL. **Mailchimp:** open your audience's **Settings** and turn on double opt-in (Mailchimp's help also lists an account-wide **Opt-In Settings** page; double opt-in only applies to Mailchimp's own sign-up forms, which includes their embedded form) → **Signup forms → Embedded forms** → copy the code.
 2. Either use their embedded form as your newsletter form, or keep your own HTML and point its `action` at the provider's form URL with matching field `name`s (copy them exactly from the embed code). Keep your consent line and privacy link.
 3. **Test with an address you own:** sign up. **Expected:** the confirmation email arrives; you appear in the list only after clicking its link (status "pending" or "unconfirmed" until then).
 4. Keep Formspree for "contact us" or lead forms that should come to your inbox; use the email tool for the list. One job each.
@@ -158,7 +158,7 @@ For the newsletter itself, let your email tool own the list and the consent reco
 **Part D: break it and fix it (5 min)**
 | Plant this | Symptom (checked 2026-11-02) | Find it | Fix |
 |---|---|---|---|
-| `action="http://formspree.io/f/…"` on your HTTPS page | Chrome warns that the form isn't secure before sending; the service answers the `http` POST with a 301 to `https`, and data can be lost | Read the `action`; Network shows the 301 | Always `https://` (NN #7) |
+| `action="http://formspree.io/f/…"` on your HTTPS page | Without JS, Chrome warns that the form isn't secure before sending, and the service answers the `http` POST with a 301 to `https` (checked), which browsers follow as a GET, so the data is lost. With the `fetch()` script, Chrome blocks the request as mixed content and the status shows "Couldn't send…" | Read the `action`; Network shows the 301, or the Console a "Mixed Content" error | Always `https://` (NN #7) |
 | A typo in the endpoint ID | Without JS: Formspree's "Form not found" page; with your script: "Form not found" in the status | Network: the POST returns **404** | Copy the endpoint again |
 | Remove `name="email"` from the input | Submission arrives **without** the email; no error anywhere | `[...new FormData(form).keys()]` in the Console doesn't list `email` (checked) | Every field you want must have a `name` |
 | Delete the `if (response.ok)` check and always show "Thanks" | Visitors see thanks even when nothing was sent | Break the endpoint again: "Thanks" still appears | Only thank people after a real `ok` reply |
