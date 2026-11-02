@@ -2,7 +2,7 @@
 > After this lesson you can read and write the small scripts marketing pages actually need: store a value, make a decision, find an element, change it safely, and react when someone clicks, types or scrolls, in a way that works for keyboard and screen-reader users too.
 
 **Time:** ~20 min reading + ~40 min exercise · **Level:** L2 Practitioner · **Prereqs:** M05.L01 · **Remediate to:** M05.L01
-**Verified against:** MDN "JavaScript first steps" (variables, strings, numbers, conditionals, functions), `Document.querySelector()` / `querySelectorAll()`, `Element.classList`, `EventTarget.addEventListener()` (the `passive` option), "Event bubbling" and event delegation, `Clipboard.writeText()` (secure contexts only), ARIA `status` role; every snippet in Parts A–D run in headless Chrome 156 on 2026-11-02 (copy button announces "Copied NILA10"; counter shows "195 characters left" after typing "Hello"; `buttons.addEventListener is not a function` on a NodeList; `if (plan = 'monthly')` runs and changes `plan`).
+**Verified against:** MDN "JavaScript first steps" (variables, strings, numbers, conditionals, functions), `Document.querySelector()` / `querySelectorAll()`, `Element.classList`, `EventTarget.addEventListener()` (the `passive` option), "Event bubbling" and event delegation, `Clipboard.writeText()` (secure contexts only), ARIA `status` role; every snippet in Parts A–D run in headless Chrome 156 on 2026-11-02 (copy button announces "Copied NILA10", and a refused clipboard shows the "Couldn't copy" fallback; counter shows "195 characters left" after typing "Hello"; `buttons.addEventListener is not a function` on a NodeList; `if (plan = 'monthly')` runs and changes `plan`).
 
 ## Learning objectives
 1. **Write** small scripts with `const`/`let`, strings, numbers, booleans, arrays, `if` statements and functions, and run them in the Console. *(O1)*
@@ -83,7 +83,7 @@ All code goes in `js/main.js` (loaded with `defer`, Lesson 5.1). Commit after ea
 1. **Copy the discount code.** In `index.html`, near your offer:
    ```html
    <p>Use code <code>NILA10</code> for 10% off your first box.
-     <button type="button" class="copy-button" data-code="NILA10">Copy code</button>
+     <button type="button" class="copy-button" data-code="NILA10" hidden>Copy code</button>
      <span class="copy-status" role="status"></span>
    </p>
    ```
@@ -92,12 +92,18 @@ All code goes in `js/main.js` (loaded with `defer`, Lesson 5.1). Commit after ea
    const copyButton = document.querySelector('.copy-button');
    const copyStatus = document.querySelector('.copy-status');
 
+   copyButton.hidden = false;   // show the button only when JavaScript runs
+
    copyButton.addEventListener('click', async () => {
-     await navigator.clipboard.writeText(copyButton.dataset.code);
-     copyStatus.textContent = `Copied ${copyButton.dataset.code}`;
+     try {
+       await navigator.clipboard.writeText(copyButton.dataset.code);
+       copyStatus.textContent = `Copied ${copyButton.dataset.code}`;
+     } catch (error) {
+       copyStatus.textContent = "Couldn't copy. Select the code and press Ctrl+C (Cmd+C on Mac).";
+     }
    });
    ```
-   **Expected:** click (or Tab to it and press Enter): the text "Copied NILA10" appears, and pasting gives `NILA10`. `role="status"` makes screen readers announce the change politely without moving focus. `data-code` keeps the value in the HTML, so marketing can change it without touching JavaScript. (The Clipboard API only works on secure pages: `https://`, `localhost` or a local file, so it works on your live site from Module 4.)
+   **Expected:** click (or Tab to it and press Enter): the text "Copied NILA10" appears, and pasting gives `NILA10`. `role="status"` makes screen readers announce the change politely without moving focus. `data-code` keeps the value in the HTML, so marketing can change it without touching JavaScript. (The Clipboard API only works on secure pages: `https://`, `localhost` or a local file, so it works on your live site from Module 4.) The button starts `hidden` and the script shows it, so visitors without JavaScript never see a button that does nothing; the code itself stays visible in the sentence. If the browser refuses clipboard access, `catch` shows a plain instruction instead of failing silently (checked: a refused copy shows "Couldn't copy…").
    > 🖼️ **Image prompt:** Desktop screenshot (1280×800) of the launch page offer line "Use code NILA10 for 10% off your first box" with a focused "Copy code" button showing a visible focus ring and the text "Copied NILA10" beside it. Outline the button and the status text. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Launch page offer with a focused Copy code button and the confirmation "Copied NILA10" next to it.
 2. **A live character counter.** On the M02 form's message field (add one if you don't have it):
@@ -111,13 +117,13 @@ All code goes in `js/main.js` (loaded with `defer`, Lesson 5.1). Commit after ea
    const messageCount = document.querySelector('#message-count');
 
    message.addEventListener('input', () => {
-     const left = 200 - message.value.length;
+     const left = message.maxLength - message.value.length;
      messageCount.textContent = `${left} characters left`;
      messageCount.classList.toggle('is-low', left < 20);
    });
    ```
    Add to `styles.css`: `.is-low { color: var(--color-cta); font-weight: 700; }`.
-   **Expected:** type "Hello" → "195 characters left" (checked). Below 20 the text turns bold in your CTA colour. `maxlength` (HTML) still enforces the limit if JavaScript fails; the script only adds feedback. `aria-describedby` links the hint to the field (Lesson 2.4).
+   **Expected:** type "Hello" → "195 characters left" (checked). `message.maxLength` reads the limit from the HTML, so the number lives in one place. Below 20 the text turns bold in your CTA colour. `maxlength` (HTML) still enforces the limit if JavaScript fails; the script only adds feedback. `aria-describedby` links the hint to the field (Lesson 2.4).
 3. **A header that changes after the hero.** In `main.js`:
    ```js
    const header = document.querySelector('.site-header');
@@ -127,8 +133,8 @@ All code goes in `js/main.js` (loaded with `defer`, Lesson 5.1). Commit after ea
      header.classList.toggle('is-stuck', window.scrollY > hero.offsetHeight);
    }, { passive: true });
    ```
-   In `styles.css`: `.site-header.is-stuck { position: sticky; top: 0; box-shadow: 0 2px 6px rgb(0 0 0 / 0.15); }` (use your own class names if your header and hero differ).
-   **Expected:** scroll past the hero: the header sticks and gets a shadow; scroll back: it returns. The check inside is one comparison and one class toggle, so it's cheap, and `{ passive: true }` tells the browser the listener won't block scrolling. (Lesson 5.3 shows `IntersectionObserver`, the even lighter way.)
+   In `styles.css`: `.site-header { position: sticky; top: 0; }` and `.site-header.is-stuck { box-shadow: 0 2px 6px rgb(0 0 0 / 0.15); }` (use your own class names if your header and hero differ). The header is always sticky; the script only adds the shadow, so nothing jumps or re-lays out while scrolling.
+   **Expected (checked):** the header stays at the top as you scroll; past the hero it gets a shadow; scroll back up and the shadow goes. The check inside is one comparison and one class toggle, so it's cheap, and `{ passive: true }` tells the browser the listener won't block scrolling. (Lesson 5.3 shows `IntersectionObserver`, the even lighter way.)
 4. Commit each feature separately: `Add copy-code button`, `Add message character counter`, `Add header shadow after hero`. Push, and test all three on the live site, with a mouse **and** with the keyboard.
 
 **Part C: event delegation (5 min)**
@@ -184,7 +190,7 @@ planList.addEventListener('click', (event) => {
 | `Cannot read properties of null` | Selector found nothing | Test it in the Console; check the class/ID and `defer` |
 | Maths gives `'20010'` | Adding a string and a number | `Number(field.value)` |
 | `if` always runs | `=` instead of `===` | Use `===` |
-| Copy button does nothing on a live site | Page not on HTTPS, or the browser denied clipboard access | Use the HTTPS address; check the Console for `NotAllowedError` |
+| Copy button shows "Couldn't copy…" or does nothing | Page not on HTTPS, the browser denied clipboard access, or no `try`/`catch` | Use the HTTPS address; keep the `catch` message; check the Console for `NotAllowedError` |
 | Works with mouse, not keyboard | Listener on a non-button element | Use `<button type="button">` |
 | Page stutters while scrolling | Heavy scroll handler | One comparison, `{ passive: true }`, or `IntersectionObserver` |
 
