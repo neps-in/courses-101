@@ -2,9 +2,9 @@
 > After this lesson you can turn a brand guide into a short list of CSS variables, give your launch page readable, on-brand type, and prove that every text and button colour passes WCAG contrast before anyone complains.
 
 **Time:** ~18 min reading + ~30 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L01 · **Remediate to:** M03.L01
-**Verified against:** MDN "Using CSS custom properties", "Fundamental text and font styling", "Web fonts" and `font-display`; W3C WCAG 2.2 Understanding docs for 1.4.3 Contrast (Minimum), 1.4.11 Non-text Contrast, 1.4.4 Resize Text and 1.4.12 Text Spacing; Chrome DevTools "Make your website more readable" (contrast); Google Fonts CSS API (live response: `font-display: swap`, Lora 600 split into 7 `unicode-range` subsets, Latin ≈ 22 KB); every contrast ratio in this lesson computed with the WCAG 2.2 relative-luminance formula; the lesson stylesheet validated live with the W3C CSS Validation Service, on 2026-11-02.
+**Verified against:** MDN "Using CSS custom properties", "Fundamental text and font styling", "Web fonts" and `font-display`; W3C WCAG 2.2 Understanding docs for 1.4.3 Contrast (Minimum), 1.4.11 Non-text Contrast, 1.4.4 Resize Text and 1.4.12 Text Spacing; Chrome DevTools "Make your website more readable" (contrast); Google Fonts CSS API (live response: `font-display: swap`, Lora 600 split into 7 `unicode-range` subsets, Latin ≈ 22 KB); every contrast ratio in this lesson computed with the WCAG 2.2 relative-luminance formula; the lesson stylesheet validated live with the W3C CSS Validation Service; the Part B stylesheet and both Part C break-its run in headless Chrome 156 (computed colours, fonts and the white field background), on 2026-11-02.
 
-> ⚠️ **Freshness flag:** the contrast numbers here are WCAG 2.2, the version laws and procurement rules point to in 2026. WCAG 3 (still a draft) is testing a different contrast method (APCA). If your client mentions it, treat it as "coming, not required yet" and re-check this lesson when it becomes a W3C Recommendation.
+> ⚠️ **Freshness flag:** the contrast numbers here are WCAG 2.2, the version laws and procurement rules point to in 2026. WCAG 3 is still a Working Draft (last updated March 2026) and is exploring a different way to measure contrast; the method isn't settled, and you may hear the name APCA. If a client mentions it, treat it as "coming, not required yet" and re-check this lesson when WCAG 3 becomes a W3C Recommendation.
 
 ## Learning objectives
 1. **Turn** a brand guide into CSS custom properties (colour, font, size and spacing tokens) and apply them with `var()`. *(O1)*
@@ -61,8 +61,10 @@ Two common traps: **placeholder text** is text, so grey placeholders need 4.5:1 
 | `--color-heading` | `#6b3f1f` (coffee) | headings, links | 8.58:1 ✅ |
 | `--color-muted` | `#6b5d52` | captions, hints | 6.10:1 ✅ |
 | `--color-cta` + `--color-on-cta` | `#b45309` + `#ffffff` | buttons | 5.02:1 ✅ |
-| `--color-field` | `#8c6e54` | form field borders | 4.52:1 ✅ (needs 3:1) |
+| `--color-field` | `#8c6e54` | form field borders | 4.52:1 on cream, 4.69:1 on the white field ✅ (needs 3:1) |
 | `--color-line` | `#d9c7b0` | decorative section dividers only | 1.59:1 (fine for decoration, **not** for field borders) |
+
+Contrast is always measured **between two colours that touch**. A field border touches the page outside and the field's own background inside, and browsers give text fields a **white** background by default, not your cream. So check the border against both; the lower ratio counts.
 
 ## How it works
 
@@ -107,7 +109,7 @@ flowchart TD
      --color-cta: #b45309;      /* burnt orange: button background */
      --color-on-cta: #ffffff;   /* text on buttons (5.0:1 on cta) */
      --color-line: #d9c7b0;     /* decorative dividers only (1.6:1) */
-     --color-field: #8c6e54;    /* form field borders (4.5:1, needs 3:1) */
+     --color-field: #8c6e54;    /* form field borders (4.5:1 on cream, 4.7:1 on white; needs 3:1) */
 
      /* Type */
      --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -233,12 +235,12 @@ flowchart TD
    - **Darker background, same text:** `--color-cta: #b45309;` → 5.02:1 ✅
    - **Keep caramel, change the text:** keep `--color-cta: #e0a458;` and set `--color-on-cta: #2b1d14;` → 7.47:1 ✅ (dark text on caramel; it still looks on-brand)
    **Expected:** one token edit, every button fixed. Write down which you chose and why.
-5. Second bug, a non-text one: set `--color-field: var(--color-line);` and look at the email field. **Expected:** the border almost disappears (1.59:1 against cream). That fails WCAG 1.4.11, which asks for 3:1 for the parts needed to see a control. Put `#8c6e54` back.
+5. Second bug, a non-text one: set `--color-field: var(--color-line);` and look at the email field. **Expected:** the border almost disappears (1.59:1 against the cream page, 1.65:1 against the white inside of the field). That fails WCAG 1.4.11, which asks for 3:1 for the parts needed to see a control. Put `#8c6e54` back.
 
 **Part D: stress-test the type (5 min)**
 1. Press **Ctrl/Cmd and +** until the zoom is **200%**. **Expected:** text grows and wraps; nothing is cut off or overlapping (WCAG 1.4.4). Lesson 3.4 fixes any layout that breaks.
 2. Press **Ctrl/Cmd + 0** to reset. In DevTools → **Network**, set throttling to **Slow 4G** and tick **Disable cache**, then reload while watching the headings.
-   **Expected:** headings appear first in Georgia (the fallback), then switch to Lora when the font arrives. That's `font-display: swap` working: text is never invisible. In the Network list, filter by **Font**: you'll see one or two small `.woff2` files (Google splits each font by alphabet, and the browser downloads only the parts your text uses; the Latin part of Lora 600 is about 22 KB).
+   **Expected:** headings appear first in a fallback serif (Georgia on Windows and Mac), then switch to Lora when the font arrives. That's `font-display: swap` working: text is never invisible. In the Network list, filter by **Font**: you'll see one or two small `.woff2` files (Google splits each font by alphabet, and the browser downloads only the parts your text uses; the Latin part of Lora 600 is about 22 KB).
 3. Set throttling back to **No throttling**.
 
 ## When to use / when not to
@@ -280,7 +282,7 @@ flowchart TD
 1. Your token table in the project note (6–10 colour tokens by job, 2 font tokens, type scale, spacing), each colour pair with its contrast ratio checked in DevTools or WebAIM.
 2. The `:root` block and the rules above in `styles.css`, using **only** `var()` for colours and fonts (search the file for `#`: the only hex codes left should be inside `:root`).
 3. A web font for headings with one or two weights and `display=swap`, **or** a written reason for using system fonts only.
-4. A **contrast report**: a 5-row table (body text, headings, muted text, CTA label, field border) with ratio, required minimum and pass/fail.
+4. A **contrast report**: a 5-row table (body text, headings, muted text, CTA label, field border against both the page and the field background) with ratio, required minimum and pass/fail.
 5. One break-it-and-fix-it: make your CTA fail, screenshot the DevTools evidence, fix it by changing one token.
 6. The W3C CSS checker shows "Congratulations! No Error Found."
 

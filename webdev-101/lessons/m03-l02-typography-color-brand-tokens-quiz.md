@@ -7,7 +7,7 @@
 - a) 3:1, the same minimum as for large headings and icons
 - b) 7:1, the AA level required for all text on every page
 - c) 2:1, as long as the text is set in a bold font weight
-- d) 4.5:1, with 3:1 allowed only for large text
+- d) 4.5:1, with 3:1 allowed only for large-size text
 
 **Answer:** d
 **Explanation:** SC 1.4.3 Contrast (Minimum) requires 4.5:1 for normal text and 3:1 for large text (at least 24 px, or about 18.66 px bold). 7:1 is the stricter AAA level, not AA. Bold only counts as "large" from about 18.66 px, and 2:1 never passes.
@@ -50,7 +50,7 @@
 - d) 1.4.4 Resize Text: borders must grow with the browser zoom
 
 **Answer:** a
-**Explanation:** The border is the only thing that shows where to type, so it's a visual part needed to identify the control. SC 1.4.11 asks for 3:1 against the colours next to it. 1.4.3 covers text, not borders. A purely decorative divider would be exempt, but a field outline isn't decorative. 1.4.4 is about text resizing.
+**Explanation:** The border is the only thing that shows where to type (and against the field's white background it's still only 1.65:1), so it's a visual part needed to identify the control. SC 1.4.11 asks for 3:1 against the colours next to it. 1.4.3 covers text, not borders. A purely decorative divider would be exempt, but a field outline isn't decorative. 1.4.4 is about text resizing.
 **Hint:** Is this border decoration, or does it show users where a control is?
 
 ### Q6. Spot the error. The buttons show no burnt-orange background at all. Which line is wrong? *(O1 · spot-the-error)*
@@ -72,7 +72,7 @@
 **Explanation:** Custom property names are case-sensitive, so `--color-CTA` and `--color-cta` are two different tokens. `--color-CTA` was never defined (and there's no fallback), so the browser treats the declaration as unset and the background becomes transparent. `:root` is the usual place for tokens, `var()` accepts a fallback after a comma, and the names start with two hyphens.
 **Hint:** Compare the token's spelling letter by letter.
 
-### Q7. *(review: m03-l01)* You add `body { font-family: var(--font-body); }`. Why do paragraphs, lists and links all change font, but not your form buttons? *(O2 of M03.L01 · recall)*
+### Q7. *(review: m03-l01)* On a fresh page with no button rules, you add `body { font-family: var(--font-body); }`. Why do paragraphs, lists and links all change font, but not the form buttons? *(O2 of M03.L01 · recall)*
 - a) Buttons always ignore every rule that uses a `var()` token
 - b) `font-family` doesn't inherit, so paragraphs set it themselves
 - c) Fonts inherit, but form controls set their own font by default
