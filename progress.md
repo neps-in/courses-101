@@ -101,7 +101,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M03 | Capstone | M03 capstone | webdev-101/capstones/m03-capstone.md | reviewed | 2026-11-02 |
 | — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | draft | 2026-11-02 |
 | M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | draft | 2026-11-02 |
-| M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | todo | — |
+| M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | draft | 2026-11-02 |
 | M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | todo | — |
 | M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | todo | — |
 | M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | todo | — |
@@ -112,6 +112,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m04-l02 draft (Git for Windows 2.56 / Git ≥2.4x; GitHub no-reply email, mandatory 2FA, token sign-in; VS Code Initialize → Stage → Commit → Publish to GitHub (public, because free GitHub Pages needs a public repo); every command and output run with Git 2.43: revert of a bad CTA commit, .gitignore not untracking a committed file and `git show` proving history keeps it → rotate secrets; quiz c a d b a c d, Q6 error text captured, Q7 reviews m04-l01; 14 glossary terms; 2 image prompts).
 - 2026-11-02: webdev-101 m04-l01 draft (VS Code 1.144 + Microsoft Live Preview on port 3000; tidy folder with index.html, css/, images/; relative vs root-relative paths verified in headless Chrome from file:// and a local server; capital-letter regex search because case mismatches are invisible on Windows/Mac; 3 break-it bugs; 2 image prompts; quiz b c d a b d a, Q7 reviews m03-l04; 14 glossary terms).
 - 2026-11-02: webdev-101 plan M04 (Publish It: 5 lessons + capstone; NN #6, #7 taught, #1 reinforced; first local installs: VS Code, Git, GitHub account; hosting free, domain optional).
 - 2026-11-02: webdev-101 diagnostic quiz draft (15 questions, 5 per module M01–M03, one spot-the-error each; skip-rule flowchart and score sheet per outline §13; answers c a d a b · d b a c c · b d a b c, 4/4/4/3 per letter; no correct option longest). Written before planning M04 because the outline schedules it "after M03 is drafted". Noticed for the M02 review: m02 cheat sheet says a broken image shows "404 in Network", which is only true on a live server (locally `ERR_FILE_NOT_FOUND`, as fixed in M03.L01). Next: `/plan-module 4`.
