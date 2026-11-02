@@ -38,7 +38,7 @@ A one-page table:
 | Business question | Key event / metric | Where it comes from | Report you'll read |
 |---|---|---|---|
 | Which channel brings sign-ups? | `generate_lead` (key event), session key event rate | Form success branch → `dataLayer` → GTM → GA4 | Traffic acquisition by Session source / medium and Session campaign |
-| Which pages do visitors read before signing up? | `page_view` | Google tag | Pages and screens; stretch: Funnel exploration |
+| Which pages do visitors read before signing up? | `page_view` | Google tag | Pages and screens for totals; stretch: a Path or Funnel exploration ending in `generate_lead` (explorations keep only the retention period's data) |
 | (your own question) | … | … | … |
 
 Keep it to one key event (two at most) and say what you will **not** measure and why.
@@ -67,7 +67,7 @@ Keep it to one key event (two at most) and say what you will **not** measure and
 | Private window, first load, before any choice | No `_ga` cookies; `collect` requests carry `gcs=G100` (advanced) or none at all (basic) |
 | Reject, then reload | Banner stays closed; still no `_ga` cookies |
 | Cookie settings → Accept | `_ga` and `_ga_<ID>` appear; one `page_view` per load in Network |
-| GTM Preview: a real sign-up, then an empty one | `GA4 event – generate_lead` fires once for the real sign-up and not for the empty one |
+| GTM Preview: a real sign-up, then a failed one (DevTools → Network → Offline, as in Lesson 5.4) | `GA4 event – generate_lead` fires once for the real sign-up and not for the failed one (an empty form never sends at all: the browser's `required` check stops it) |
 | GA4 DebugView / Realtime with a UTM link | `generate_lead` with `lead_source`; the right source/medium/campaign |
 | Keyboard and screen reader on the banner | Both buttons reachable and announced; focus visible; Cookie settings reopens with focus inside |
 | Your own visits | Labelled by the internal-traffic filter (Testing) or excluded (Active) |
@@ -85,7 +85,9 @@ The lesson of bug A: **count once**. Of bug B: **consistency beats cleverness; t
 
 ## Deliverable: tracking and privacy report
 1. The live `https://` link, the repo link, and your GTM container's version list (screenshot).
-2. Screenshots: the banner on a phone-size view; Application → Cookies before and after Accept; Tag Assistant with `generate_lead` fired; DebugView with `lead_source`; Traffic acquisition with the Key events column set to `generate_lead` (personal details blurred).
+2. Screenshots (personal details blurred): the banner on a phone-size view; Application → Cookies before and after Accept; Tag Assistant with `generate_lead` fired; DebugView with `lead_source`; Traffic acquisition with the Key events column set to `generate_lead`.
+   > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Chrome with DevTools open on the launch page in a private window after clicking Accept: Application → Cookies showing `_ga` and `_ga_<ID>`, and the banner hidden. Outline the two cookie rows. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** DevTools listing the two Google Analytics cookies that appear only after the visitor clicks Accept.
 3. A short note with these headings:
 
 ```markdown
@@ -111,7 +113,7 @@ The test table above with what actually happened
 A … · B … · C …   (symptom · tool · evidence · fix · commit or GTM version)
 
 ## 7. Answer for the founder
-"Which channel brought sign-ups?" in one or two sentences, with numbers, clearly marked as test data, and what we'd need to be confident (how much traffic, how long)
+"Which channel brought sign-ups?" in one or two sentences, with numbers, clearly marked as test data, and what we'd need to be confident (how much traffic, how long). Say how consent affects the count: visitors who click Reject are missing (basic mode) or only modelled (advanced mode), so the numbers are a sample.
 
 ## 8. AI review (if you used AI)
 What you asked · what you changed and why (NN #12)
@@ -141,7 +143,7 @@ Score each criterion; **Good** or better on all five completes the module.
 - [ ] One `page_view` per load; one `generate_lead` per real sign-up, none for failures.
 - [ ] Every link I post comes from the UTM sheet.
 - [ ] GTM's latest published version is named and contains everything I tested.
-- [ ] My report's answer to the founder says it's test data.
+- [ ] My report's answer to the founder says it's test data and that visitors who reject cookies aren't fully counted.
 
 ## Running project checkpoint
 Before Module 7, your "Web Dev 101 — my project" note should have:
