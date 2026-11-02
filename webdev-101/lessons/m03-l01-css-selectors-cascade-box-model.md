@@ -2,7 +2,7 @@
 > After this lesson you can link a stylesheet to your launch page, write rules that target exactly the elements you mean, predict which rule wins when two rules disagree, and control spacing with padding, border and margin.
 
 **Time:** ~16 min reading + ~30 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L01, M01.L05 · **Remediate to:** M02.L01
-**Verified against:** MDN "CSS styling basics" (selectors, cascade, specificity, inheritance, box model), the CSS Cascading and Inheritance Level 4 spec, Chrome DevTools "CSS features reference" (specificity tooltip, Computed box model), and live W3C CSS Validator checks of this lesson's stylesheet, on 2026-11-02 (Chrome/Edge stable, Firefox stable).
+**Verified against:** MDN "CSS styling basics" (selectors, cascade, specificity, inheritance, box model), the CSS Cascading and Inheritance Level 4 spec, Chrome DevTools "CSS features reference" (specificity tooltip, Computed box model), live W3C CSS Validator checks of this lesson's stylesheet, and a headless Chrome 156 run of Parts A–D (winning colours, 960/992 px box widths, 12/20 px button padding, and the `net::ERR_FILE_NOT_FOUND` message for a missing local stylesheet), on 2026-11-02 (Chrome/Edge stable, Firefox stable).
 
 > Note: you keep working in your `webdev-101` folder with Notepad or TextEdit, as in Module 2. Part A uses CodePen for a quick experiment; Parts B–D use a real `styles.css` file next to `launch.html`. VS Code arrives in Module 4.
 
@@ -26,7 +26,7 @@ Kwame's agency sends him a landing page and asks for one change: "make the Join 
   color: #ffffff;
 }
 ```
-Every declaration ends with a semicolon. Curly braces wrap the block. A missing `;` or `}` makes the browser ignore the broken declaration (or the rest of the block) **silently**, with no error on the page.
+Every declaration ends with a semicolon. Curly braces wrap the block. The browser never shows an error on the page: a missing `;` makes it drop the broken declaration **silently**, and a missing `}` is worse, because the following rules get swallowed into the unfinished block and stop working too.
 
 ### Three ways to connect CSS
 | Way | Example | Use it for |
@@ -52,17 +52,17 @@ Every declaration ends with a semicolon. Curly braces wrap the block. A missing 
 When several rules set the same property on the same element, the browser checks these in order and stops at the first difference:
 1. **Importance and origin.** Your stylesheet beats the browser's built-in defaults. A declaration marked `!important` jumps the queue (avoid it; it starts an arms race).
 2. **Specificity.** The more specific selector wins. Count it as three numbers, **IDs – classes – types** (classes include attributes and pseudo-classes):
-   | Selector | Specificity | |
+   | Selector | Specificity | Why |
    |---|---|---|
    | `button` | 0-0-1 | one type |
    | `.button` | 0-1-0 | one class |
    | `section .button` | 0-1-1 | one class, one type |
    | `#signup button` | 1-0-1 | one ID, one type: beats any number of classes |
-   | `style="…"` (inline) | beats all selectors | |
+   | `style="…"` (inline) | beats all selectors | strictly a separate cascade step, not specificity, but the effect is the same |
    Compare left to right, like version numbers: 1-0-0 beats 0-9-9.
 3. **Order of appearance.** If importance and specificity are equal, the rule that comes **later** wins (later in the file, or in a file linked later).
 
-> Modern CSS also has **cascade layers** (`@layer`), which sit between steps 1 and 2. You won't need them in this course; just know the word if you see it in a library's code.
+> Modern CSS also has **cascade layers** (`@layer`, defined in CSS Cascading and Inheritance Level 5), which sit between steps 1 and 2. You won't need them in this course; just know the word if you see it in a library's code.
 
 ### Inheritance
 Some properties pass down from parent to children; others don't.
@@ -82,7 +82,7 @@ Every element is a rectangular box with four layers, from inside out:
 
 **`box-sizing`:** by default (`content-box`), `width: 300px` means the *content* is 300 px, and padding and border are added on top, so the box ends up wider than you asked. With `box-sizing: border-box`, `width: 300px` is the size of the whole visible box. Almost every modern site sets `border-box` on everything first; so will you.
 
-**Margin collapse:** when two block boxes sit on top of each other, their vertical margins don't add up; the larger one wins. A `margin-bottom: 2rem` on one paragraph and `margin-top: 1rem` on the next gives a 2rem gap, not 3rem. Padding never collapses.
+**Margin collapse:** when two block boxes sit on top of each other, their vertical margins don't add up; the larger one wins. A `margin-bottom: 2rem` on one paragraph and `margin-top: 1rem` on the next gives a 2rem gap, not 3rem. Padding never collapses, and margins don't collapse between flex or grid items (Lesson 3.3).
 
 **Units for now:** `px` for thin borders; `rem` for spacing and text (1rem = the browser's base font size, usually 16 px, and it grows when a visitor raises their default text size). Lesson 3.4 adds fluid units.
 
@@ -131,7 +131,8 @@ flowchart TD
    **Expected:** pale yellow text (`#fde68a`) on dark green. `#signup a` is 1-0-1, which beats `.button` (0-1-0) and `a` (0-0-1) even though it comes first. The background is green because only `.button` sets a background, so there's no contest.
 4. Move the `.button` rule to the bottom. **Expected:** still yellow. Source order only breaks ties; it can't beat higher specificity.
 5. Change the first selector to `.button` (so there are two `.button` rules). **Expected:** now the later `.button` rule wins and the text turns white: equal specificity, later wins.
-6. Right-click the link in the preview → **Inspect**. In the **Styles** pane, hover over a selector.
+6. Now add an inline style to the link in the HTML panel: `<a class="button" href="#form" style="color: #fde68a">`. Then change the first CSS selector back to `#signup a` and give it `color: #ffffff;`. **Expected:** pale yellow. The inline `style` attribute beats even an ID selector, which is exactly why it's so hard to override later. Remove the `style` attribute again.
+7. Right-click the link in the preview → **Inspect**. In the **Styles** pane, hover over a selector.
    **Expected:** a tooltip shows its **Specificity**, e.g. `(0,1,0)`. Losing declarations appear ~~struck through~~.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Chrome DevTools Elements panel inspecting the CodePen link, with the Styles pane showing two `.button` rules: the earlier `color` declaration struck through and a hover tooltip reading "Specificity: (0,1,0)". Outline the tooltip and the struck-through line. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** DevTools Styles pane with a struck-through losing colour rule and a tooltip showing selector specificity 0,1,0.
@@ -208,7 +209,7 @@ flowchart TD
 **Part D: break it and fix it: "why isn't my style applying?" (8 min)**
 Plant each bug, reload, find it with the tool named, then fix it before planting the next.
 1. **Wrong file name.** In `launch.html`, change `href="styles.css"` to `href="style.css"`. Reload.
-   **Symptom:** the page is back to unstyled. **Find it:** DevTools → **Network** → reload → `style.css` shows status **404** in red (in Chrome you may need to filter by **All** or **CSS**). **Fix:** match the file name exactly; names are case-sensitive on most web servers.
+   **Symptom:** the page is back to unstyled. **Find it:** DevTools → **Network** → reload → `style.css` shows in red as **(failed)** with `net::ERR_FILE_NOT_FOUND` (filter by **All** or **CSS** if you don't see it), and the **Console** says "Failed to load resource: net::ERR_FILE_NOT_FOUND". Once the page is on a real web server (Module 4), the same mistake shows as status **404**. **Fix:** match the file name exactly. Watch letter case too: Windows and Mac usually ignore it on your computer (`Styles.css` still loads), but most web servers don't, so a case mismatch breaks only after you publish.
 2. **Missing semicolon.** In `body`, delete the `;` after `color: #1f2933`. Reload.
    **Symptom:** hard to see! The text turns pure black instead of dark blue-grey, and the background rule is lost too (you can't tell, because the default is also white). The browser reads `color: #1f2933 background-color: #ffffff` as **one** declaration with an invalid value and drops it. Silent bugs like this are why you validate. **Find it:** the W3C CSS checker reports "Missing a semicolon before the property name "background-color"". In DevTools, the broken declaration shows struck through with a warning icon (invalid property value). **Fix:** add the `;`.
 3. **A more specific rule wins.** Add this at the **bottom** of `styles.css`: `a { background-color: #b91c1c; }` (you want the hero button red for a sale). Reload.
@@ -230,7 +231,7 @@ Plant each bug, reload, find it with the tool named, then fix it before planting
 **How to check:** inspect the element in DevTools and look for the struck-through rule yourself; run the CSS through the W3C checker; reject any fix that uses `!important` or an ID unless you know why.
 
 ## Common mistakes
-- **The `<link>` points to the wrong file or folder** (`style.css` vs `styles.css`, `css/styles.css` when the file isn't in a `css` folder). Always check the Network panel for a 404.
+- **The `<link>` points to the wrong file or folder** (`style.css` vs `styles.css`, `css/styles.css` when the file isn't in a `css` folder). Always check the Network panel for a red, failed request (`ERR_FILE_NOT_FOUND` on your computer, 404 on a live site).
 - **A missing `;` or `}`.** The browser skips the broken part silently. Validate.
 - **Styling with IDs and `!important`,** then needing even stronger rules to change anything.
 - **Expecting margin or border to inherit.** Only text-related properties pass down.
@@ -241,7 +242,7 @@ Plant each bug, reload, find it with the tool named, then fix it before planting
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| No styles at all | `<link>` wrong (`href` typo, missing `rel="stylesheet"`), or file saved as `styles.css.txt` | Network panel: look for a 404; show file extensions; fix the `href` |
+| No styles at all | `<link>` wrong (`href` typo, missing `rel="stylesheet"`), or file saved as `styles.css.txt` | Network panel or Console: a red failed request (`ERR_FILE_NOT_FOUND` locally, 404 live); show file extensions; fix the `href` |
 | One property ignored, others work | Typo in the property or value, or a missing `;` on the line before | DevTools shows it struck through with a ⚠ icon; W3C CSS checker names the line |
 | Rule exists but loses | A more specific selector or a later rule sets the same property | Inspect the element; hover selectors for specificity; make your selector match the winner's specificity or edit the winning rule |
 | Change shows in DevTools but not after reload | DevTools edits are temporary | Copy the change into `styles.css` and save |
@@ -258,7 +259,7 @@ Plant each bug, reload, find it with the tool named, then fix it before planting
 5. Plant one of the Part D bugs, take a screenshot of the DevTools evidence, fix it, and write two lines on how you found it.
 6. Run `styles.css` through the W3C CSS checker.
 
-**Expected outcome:** `launch.html` loads `styles.css` (no 404), uses one system font, has a centred content column, separated sections and one shared button style; the CSS checker says "Congratulations! No Error Found."; your note has the specificity table and one bug write-up.
+**Expected outcome:** `launch.html` loads `styles.css` (no failed request in the Network panel), uses one system font, has a centred content column, separated sections and one shared button style; the CSS checker says "Congratulations! No Error Found."; your note has the specificity table and one bug write-up.
 **Stretch goal:** open your Module 1 brand site, inspect its main call-to-action button, and count how many rules in the Styles pane set its `background-color`. Write down the winning selector and its specificity, and guess why the others lost.
 
 ## Key takeaways
@@ -266,7 +267,7 @@ Plant each bug, reload, find it with the tool named, then fix it before planting
 - When rules disagree, the cascade decides: **importance → specificity (IDs–classes–types) → later wins**.
 - Text properties **inherit** from parents; box properties (margin, padding, border, background) don't.
 - Box model: **content → padding → border → margin**; set `box-sizing: border-box` on everything first.
-- "My CSS doesn't work" = not loading (Network 404), typo (struck through ⚠, validator), or losing (struck through, specificity tooltip). DevTools tells you which.
+- "My CSS doesn't work" = not loading (red failed request in Network), typo (struck through ⚠, validator), or losing (struck through, specificity tooltip). DevTools tells you which.
 
 ## Teach it back
 Explain to a friend in 3 sentences why their `button { background: red; }` at the bottom of the stylesheet doesn't turn the "Buy now" button red, and how they'd find out what's winning.
@@ -294,9 +295,10 @@ Explain to a friend in 3 sentences why their `button { background: red; }` at th
 - MDN — The box model: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model
 - MDN — Mastering margin collapsing: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Mastering_margin_collapsing
 - W3C — CSS Cascading and Inheritance Level 4 (the cascade sort order): https://www.w3.org/TR/css-cascade-4/
+- W3C — CSS Cascading and Inheritance Level 5 (cascade layers): https://www.w3.org/TR/css-cascade-5/
 - Chrome for Developers — CSS features reference (specificity tooltip, Computed tab): https://developer.chrome.com/docs/devtools/css/reference
 - W3C CSS Validation Service: https://jigsaw.w3.org/css-validator/
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-Rule = `selector { property: value; }`. Link one file: `<link rel="stylesheet" href="styles.css">` in `<head>`. Selectors: `p` (type), `.button` (class), `#signup` (ID, avoid for styling), `footer a` (descendant), `input[type="email"]` (attribute). Conflicts: `!important` → specificity (IDs–classes–types, e.g. 0-1-0 beats 0-0-3) → later rule wins. Text properties inherit; box properties don't. Box model: content → padding → border → margin; start with `* { box-sizing: border-box; }`. Debug: Network 404 (not loading), struck through + ⚠ (typo), struck through (lost; hover for specificity).
+Rule = `selector { property: value; }`. Link one file: `<link rel="stylesheet" href="styles.css">` in `<head>`. Selectors: `p` (type), `.button` (class), `#signup` (ID, avoid for styling), `footer a` (descendant), `input[type="email"]` (attribute). Conflicts: `!important` → specificity (IDs–classes–types, e.g. 0-1-0 beats 0-0-3) → later rule wins. Text properties inherit; box properties don't. Box model: content → padding → border → margin; start with `* { box-sizing: border-box; }`. Debug: red failed request in Network (not loading: `ERR_FILE_NOT_FOUND` locally, 404 live), struck through + ⚠ (typo), struck through (lost; hover for specificity).

@@ -47,10 +47,10 @@
 - a) Retype every rule in the stylesheet with `!important` added to the end of each line
 - b) Move each rule into an inline `style` attribute on the matching element
 - c) Run the page's HTML through the W3C HTML checker and read the warnings
-- d) Open DevTools → Network, reload, and look for the CSS file with a 404 error
+- d) Open DevTools → Network, reload, and look for the CSS file in red
 
 **Answer:** d
-**Explanation:** When *nothing* applies, the file usually isn't loading: a typo in `href`, a wrong folder, or a file saved as `styles.css.txt`. The Network panel shows the request in red with status 404. `!important` and inline styles don't help a file the browser never received, and the HTML checker doesn't open linked files.
+**Explanation:** When *nothing* applies, the file usually isn't loading: a typo in `href`, a wrong folder, or a file saved as `styles.css.txt`. The Network panel shows that request in red as failed: `net::ERR_FILE_NOT_FOUND` for a file on your computer, or status 404 on a live web server. `!important` and inline styles don't help a file the browser never received, and the HTML checker doesn't open linked files.
 **Hint:** No styles at all means the browser probably never got the file.
 
 ### Q6. Spot the error. The padding on this button works, but neither the white text nor the green background shows. Which line causes it? *(O2 · spot-the-error)*
