@@ -10,7 +10,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 |--------|-------|---------|------------------------|---------|
 | M01 How the Web Works | L1 | 5 | #1 | ✅ |
 | M02 HTML: The Structure of Content | L1 | 5 | #2, #3, #8 | ✅ |
-| M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | — |
+| M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | ✅ |
 | M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | — |
 | M05 JavaScript for Marketers | L2 | 4 | #3 (reinforced) | — |
 | M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 | — |
@@ -150,3 +150,71 @@ flowchart LR
 ### M02 Capstone — Launch-page content skeleton
 - **File:** `capstones/m02-capstone.md` + `cheatsheets/m02-html.md`
 - Hand-code the full content skeleton of your launch page (hero, benefits, testimonials, FAQ, sign-up form) with correct semantics and share-ready meta tags, unstyled. Rubric: validity, semantics and headings, accessibility of images and forms, meta completeness, content clarity.
+
+---
+
+## M03 — CSS: Design, Brand & Layout (L1)
+
+**Goal:** turn the skeleton into an on-brand page that works on every screen. · NN #4, #5 (taught), #3 (reinforced: focus styles, target size)
+**Zero install:** CodePen's CSS panel for quick experiments; the real work is a `styles.css` file next to `launch.html` in the `webdev-101` folder, edited in Notepad/TextEdit and checked in the browser's DevTools. VS Code arrives in Module 4.
+**Running project:** each lesson styles one layer of the learner's launch page (base text and spacing → brand tokens → layout → responsive → CTAs); the capstone finishes and tests it.
+
+```mermaid
+flowchart LR
+  %% alt: M03 lesson path: how CSS works, brand tokens and type, Flexbox and Grid, mobile-first responsive design, conversion UI, then the styled-page capstone.
+  L1[L01 Selectors, cascade<br/>& box model]:::cream --> L2[L02 Typography, colour<br/>& brand tokens]:::sky
+  L1 --> L3[L03 Layout with<br/>Flexbox & Grid]:::sky
+  L2 --> L3
+  L3 --> L4[L04 Responsive,<br/>mobile-first design]:::blue
+  L4 --> L5[L05 Conversion-focused<br/>UI patterns]:::blue
+  L5 --> C[M03 Capstone:<br/>styled, responsive page]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M03.L01 — How CSS Works: Selectors, Cascade, Box Model
+- **File:** `lessons/m03-l01-css-selectors-cascade-box-model.md` · **Prereqs:** M02.L01, M01.L05 · **Remediate to:** M02.L01 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Connect** CSS to a page (linked stylesheet, `<style>`, inline) and explain why a linked file is the default.
+  2. **Write** rules with type, class, ID, descendant and attribute selectors, and **predict** which rule wins using the cascade, specificity and inheritance.
+  3. **Control** spacing with the box model (content, padding, border, margin, `box-sizing: border-box`) and inspect it in DevTools.
+- **Hands-on idea:** link `styles.css` to `launch.html`, set base text and spacing; "why isn't my style applying?" break-it-and-fix-it (wrong file path, typo, a more specific rule winning) solved in the Styles pane.
+
+### M03.L02 — Typography, Color & Brand Tokens
+- **File:** `lessons/m03-l02-typography-color-brand-tokens.md` · **Prereqs:** M03.L01 · **Remediate to:** M03.L01 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Turn** a brand guide into CSS custom properties (colour, font and spacing tokens) and apply them with `var()`.
+  2. **Set** readable type: a system or web font with `font-display: swap`, sizes in `rem`, line height and line length.
+  3. **Check** text and UI contrast against WCAG 2.2 AA (4.5:1 text, 3:1 large text and UI parts) and fix failing pairs.
+- **Hands-on idea:** Nila Coffee's tokens first, then the learner's own; a failing-contrast CTA found with DevTools and a contrast checker, then fixed by changing one token.
+
+### M03.L03 — Layout with Flexbox & Grid
+- **File:** `lessons/m03-l03-layout-flexbox-grid.md` · **Prereqs:** M03.L01, M03.L02 · **Remediate to:** M03.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** normal flow and **choose** Flexbox (one direction) or Grid (rows and columns) for a layout job.
+  2. **Build** a header/nav bar and a hero with Flexbox (`gap`, `justify-content`, `align-items`, `flex-wrap`).
+  3. **Build** a card grid that adapts without media queries (`repeat(auto-fit, minmax(…))`) and check it with the DevTools grid/flex overlays, keeping visual order the same as source order.
+- **Hands-on idea:** Nila's nav and benefits cards; the learner's header, hero and benefits; overlays on in DevTools.
+
+### M03.L04 — Responsive, Mobile-First Design
+- **File:** `lessons/m03-l04-responsive-mobile-first.md` · **Prereqs:** M03.L03 · **Remediate to:** M03.L03 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Explain** the viewport meta tag and mobile-first CSS (small-screen base, `min-width` media queries add to it).
+  2. **Use** fluid sizing (`%`, `rem`, `max-width`, `clamp()`) and flexible images (`max-width: 100%; height: auto`).
+  3. **Test** at 320, 768 and 1280 px in the DevTools device toolbar and fix horizontal scrolling and small tap targets (WCAG 1.4.10 Reflow, 2.5.8 Target Size).
+- **Hands-on idea:** make the launch page mobile-first; break-it-and-fix-it: find the one fixed-width element that makes the page scroll sideways on a phone.
+
+### M03.L05 — Conversion-Focused UI Patterns
+- **File:** `lessons/m03-l05-conversion-ui-patterns.md` · **Prereqs:** M03.L03, M03.L04 · **Remediate to:** M03.L03 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Style** primary and secondary CTAs with clear hierarchy and visible `:hover` and `:focus-visible` states.
+  2. **Build** honest testimonial and pricing-card patterns (no dark patterns: fake timers, hidden costs, confirmshaming).
+  3. **Decide** when a ready-made CSS library helps, and add one safely (pinned version, licence, contrast re-check).
+- **Hands-on idea:** Nila's two-plan pricing table and CTA states; the learner's CTA and testimonials; compare the page with and without a classless library.
+
+### M03 Capstone — Styled, responsive launch page
+- **File:** `capstones/m03-capstone.md` + `cheatsheets/m03-css.md`
+- Style the launch page to a brand guide (tokens in `:root`, one linked stylesheet). It must pass a 320 / 768 / 1280 px check with no sideways scroll, AA contrast on every text and CTA pair, and visible keyboard focus. Includes a break-it-and-fix-it set of planted CSS bugs. Rubric: brand tokens and consistency, responsive layout, contrast and focus, CSS quality, conversion clarity.
