@@ -14,7 +14,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | ✅ |
 | M05 JavaScript for Marketers | L2 | 4 | #3, #6, #7, #12 (reinforced) | ✅ |
 | M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 (+ #3, #6, #12 reinforced) | ✅ |
-| M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 | — |
+| M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 (+ #2, #3, #4, #5, #8, #12 reinforced) | ✅ |
 | M08 Advanced: AI, Automation & Scale | L3 | 4 | #12 | — |
 
 ---
@@ -398,3 +398,62 @@ flowchart LR
 ### M06 Capstone — Fully tracked launch page
 - **File:** `capstones/m06-capstone.md` + `cheatsheets/m06-tracking.md`
 - The live launch page measures page views and `generate_lead` (a key event) through GA4 via GTM, with UTM-tagged links for a small launch campaign (at least three channels from the naming sheet) and a working consent banner with Consent Mode v2. Deliverable: a measurement plan (business question → key event → report), the tag and consent table, Tag Assistant and DevTools evidence that nothing needing consent runs before Accept, a privacy checklist, and a one-paragraph answer to "which channel brought sign-ups?" from test data. Break-it-and-fix-it set: duplicate GA4 install, a UTM case mismatch, a tag firing before consent. Rubric: measurement plan and key events (NN #10), tag hygiene (GTM versions, no duplicates), UTM consistency, consent and privacy (NN #9, privacy checklist), evidence and honesty of reporting.
+
+## M07 — Fast, Accessible & Search-Ready (L3)
+
+**Goal:** make the live launch page load fast on a mid-range phone, work for everyone, and be understood by search and AI engines, and prove it with before/after reports. · NN #11 Core Web Vitals in the "good" range (taught: L01–L02); reinforced: #2 (one H1 and a logical outline, re-audited in L03 and read by search in L04), #3 (alt text, labels and keyboard access, audited in L03), #4 (mobile-first: mobile Lighthouse and Search Console's mobile view), #5 (contrast re-checked in L03), #8 (titles, descriptions and Open Graph checked alongside structured data in L04), #12 (AI-suggested fixes and schema checked before shipping)
+**First installs:** none new to pay for. Lighthouse in Chrome DevTools, PageSpeed Insights, WAVE or axe DevTools (free browser extension), a free screen reader (NVDA on Windows, VoiceOver on Mac/iPhone, TalkBack on Android), Squoosh (images), Google's Rich Results Test and Schema Markup Validator, and **Google Search Console** for the learner's own domain (L04).
+**Running project:** the tracked M06 launch page. Each lesson starts with a "before" measurement of the learner's own page and ends with an "after"; the tags from M06 are part of what gets measured (L01 checks their cost, and nothing may break consent).
+**Level note (L3):** less hand-holding; each lesson gives a method (measure → find the cause → fix one thing → re-measure) and expects learners to apply it to their own page's problems, not just Nila Coffee's.
+**Freshness:** Lighthouse versions and audit names, Core Web Vitals thresholds and metrics (INP replaced FID in March 2024), image-format support, WCAG versions (2.2 current; 3.0 in draft) and Google's rich-result eligibility (e.g. FAQ and HowTo rich results were restricted in 2023) change; each lesson carries a check date and a freshness flag.
+
+```mermaid
+flowchart LR
+  %% alt: M07 lesson path: performance and Core Web Vitals, images and fonts, accessibility, technical SEO, then the before/after capstone.
+  L1[L01 Performance and<br/>Core Web Vitals]:::cream --> L2[L02 Images, fonts<br/>and media]:::sky
+  L2 --> L3[L03 Accessibility<br/>in practice]:::blue
+  L3 --> L4[L04 Technical SEO<br/>foundations]:::blue
+  L1 -. "measure before and after every fix" .-> L4
+  L4 --> C[M07 Capstone:<br/>before/after audit]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M07.L01 — Performance & Core Web Vitals
+- **File:** `lessons/m07-l01-performance-core-web-vitals.md` · **Prereqs:** M04.L03, M06.L03 · **Remediate to:** M03.L04 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Explain** LCP, INP and CLS (what each measures, the "good" thresholds at the 75th percentile) and the difference between lab data (Lighthouse) and field data (Chrome UX Report, shown in PageSpeed Insights and Search Console).
+  2. **Read** a Lighthouse and PageSpeed Insights report for the launch page (mobile): find the LCP element, layout-shift culprits and long tasks, and **rank** the fixes by impact.
+  3. **Fix** at least two causes (render-blocking CSS/JS, `defer` on scripts, missing image dimensions, heavy third-party tags from M06) and **verify** the change with a before/after Lighthouse run under the same conditions.
+- **Hands-on idea:** Nila Coffee's page first: a slow hero, a late-loading banner that shifts the layout, and a blocking script; then the learner's own page, mobile Lighthouse runs (median of three) saved as before/after JSON or screenshots. Break-it-and-fix-it: remove the image `width`/`height` (CLS jumps), move `main.js` into `<head>` without `defer` (render-blocking), add a heavy third-party embed above the fold (LCP and total blocking time worsen).
+
+### M07.L02 — Images, Fonts & Media Optimization
+- **File:** `lessons/m07-l02-images-fonts-media.md` · **Prereqs:** M07.L01, M02.L02, M03.L02 · **Remediate to:** M02.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Convert** and compress images to modern formats (AVIF/WebP with a fallback via `<picture>`) at the right dimensions, and **serve** responsive sizes with `srcset` and `sizes`.
+  2. **Apply** loading hints correctly: `loading="lazy"` below the fold only, `fetchpriority="high"` (and no lazy-loading) on the LCP image, `decoding`, and preloading only what is critical.
+  3. **Load** fonts and media efficiently: self-hosted WOFF2, `font-display: swap`, a limited set of weights, a fallback font tuned to reduce layout shift, and video/embeds as lightweight facades or `preload="none"`.
+- **Hands-on idea:** Squoosh the hero in three formats and compare file size vs quality; build a `<picture>` with `srcset`; swap a YouTube embed for a click-to-load facade; measure LCP and page weight before/after. Break-it-and-fix-it: lazy-loading the hero image (LCP gets worse), a `sizes` attribute missing so phones download the desktop image, a Google Fonts link loading nine weights.
+
+### M07.L03 — Accessibility in Practice (WCAG 2.2)
+- **File:** `lessons/m07-l03-accessibility-wcag.md` · **Prereqs:** M02.L03, M03.L02, M05.L03 · **Remediate to:** M02.L03 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Explain** the WCAG 2.2 level AA structure (POUR principles, success criteria, conformance) and what automated tools can and cannot find.
+  2. **Audit** the launch page three ways: automated (Lighthouse accessibility + WAVE or axe), keyboard-only (focus order, visible focus, no traps, WCAG 2.4.11 Focus Not Obscured) and with a screen reader (headings, landmarks, link names, form labels and errors, the consent banner and dialog).
+  3. **Fix** and **re-test** the common failures (missing or poor alt text, unlabelled inputs, low contrast, empty links/buttons, skipped heading levels, focus hidden by a sticky header, small targets), and **record** the results in an accessibility statement.
+- **Hands-on idea:** a short audit log (issue, WCAG criterion, how found, fix, retested) for Nila Coffee's page and then the learner's own; a 5-minute screen-reader script everyone follows. Break-it-and-fix-it: an icon-only button with no accessible name, a sticky header covering the focused link, form errors shown only in red.
+
+### M07.L04 — Technical SEO Foundations
+- **File:** `lessons/m07-l04-technical-seo-foundations.md` · **Prereqs:** M02.L05, M04.L04, M07.L01 · **Remediate to:** M02.L05 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Add** structured data in JSON-LD (`Organization` with `logo` and `sameAs`, plus `Product`/`Offer` or `Person`/`ProfessionalService` for the learner's page) that matches visible content, and **validate** it with the Rich Results Test and the Schema Markup Validator.
+  2. **Create** an XML sitemap and `robots.txt`, set self-referencing canonical URLs, and **decide** what should be `noindex` (thank-you page, test pages) without blocking crawling of what should be indexed.
+  3. **Verify** the domain in Google Search Console, submit the sitemap, inspect the launch URL (indexing, mobile rendering, detected structured data) and **explain** how search and AI answers use the same signals (bridge to Modern SEO).
+- **Hands-on idea:** JSON-LD for Nila Coffee's subscription box, then the learner's own; sitemap + robots.txt committed and deployed; Search Console DNS verification (reuses M04.L04) and URL Inspection. Break-it-and-fix-it: `Disallow: /` left in robots.txt from a staging copy, a canonical pointing to the `http://` or `www` duplicate, schema with a price that doesn't match the page.
+
+### M07 Capstone — Before/after: fast, accessible and search-ready
+- **File:** `capstones/m07-capstone.md` + `cheatsheets/m07-fast-accessible-search.md`
+- Raise the live launch page to Lighthouse 90+ (mobile) in Performance, Accessibility, Best Practices and SEO, with LCP, INP (or total blocking time in the lab) and CLS in the "good" range; pass a manual accessibility audit (keyboard + screen reader) with no open level A/AA issues; add structured data that validates with no errors; sitemap submitted in Search Console. Consent and tracking from M06 must still work after the changes. Deliverable: before/after report (Lighthouse/PSI runs under the same conditions, the audit log, Rich Results Test result, Search Console screenshots) and an honest note on what lab scores don't prove. Break-it-and-fix-it set: a lazy-loaded LCP image, an icon button with no accessible name, `Disallow: /` in robots.txt. Rubric: performance and CWV (NN #11), images/fonts/media, accessibility (NN #2, #3, #5), technical SEO and structured data (NN #8), evidence and honesty (before/after under the same conditions, no score-chasing that hurts users).
