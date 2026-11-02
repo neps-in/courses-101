@@ -40,7 +40,7 @@
 - d) Preview mode was left connected, which adds extra visits from real users
 
 **Answer:** b
-**Explanation:** Two GA4 installations send two `page_view` hits per load: check Network → `collect` and View Source for both `gtag/js` and `gtm.js`, and keep one. GTM doesn't double-count by design, a Custom Event trigger only fires on its event, and Preview only affects your own debug browser.
+**Explanation:** Two GA4 installations send two `page_view` hits per load (checked with the Google tag installed twice): check Network → `collect` and View Source for both `gtag/js` and `gtm.js`, and keep one. GTM doesn't double-count by design, a Custom Event trigger only fires on its event, and Preview only affects your own debug browser.
 **Hint:** How many GA4 installations are on the page?
 
 ### Q5. Your form uses `fetch()` and `event.preventDefault()`. A colleague suggests GTM's built-in Form Submission trigger for `generate_lead`. What do you recommend? *(O2 · scenario)*

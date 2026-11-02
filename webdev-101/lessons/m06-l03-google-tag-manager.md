@@ -2,7 +2,7 @@
 > After this lesson your launch page's tracking lives in one place: Google Tag Manager loads GA4, your form tells it when a real sign-up happens, you test every change in Preview before it goes live, and you can undo a bad change in two clicks.
 
 **Time:** ~22 min reading + ~45 min exercise · **Level:** L2 Practitioner · **Prereqs:** M06.L02 · **Remediate to:** M06.L02
-**Verified against:** Google Tag Manager Help "Create an account and container" (14842164), "Install a web container" (14847097), "Set up Google Analytics in Tag Manager" (9442095), "Set up Google Analytics events in Tag Manager" (13034206), "Page view triggers" (7679319), "Custom event trigger" (7679219), "Form submission trigger" (7679217), "User-defined variable types for web" (7683362), "Preview and debug containers" (6107056), "Publishing, versions, and approvals" (6107163); Google Tag Platform "The data layer"; all read 2026-11-03. Live check the same day: `gtm.js?id=` with a made-up container ID returned **200** and an **empty container** (`"tags":[]`), so a mistyped ID fails silently.
+**Verified against:** Google Tag Manager Help "Create an account and container" (14842164), "Install a web container" (14847097), "Set up Google Analytics in Tag Manager" (9442095), "Set up Google Analytics events in Tag Manager" (13034206), "Page view triggers" (7679319), "Custom event trigger" (7679219), "Form submission trigger" (7679217), "User-defined variable types for web" (7683362), "Preview and debug containers" (6107056), "Publishing, versions, and approvals" (6107163); Google Tag Platform "The data layer"; all read 2026-11-03. Live check the same day: `gtm.js?id=` with a made-up container ID returned **200** and an **empty container** (`"tags":[]`), so a mistyped ID fails silently. A page with the Google tag installed twice sent two `page_view` requests per load.
 
 > ⚠️ **Freshness flag:** GTM's tag templates and the Tag Assistant debug screen are redesigned from time to time; labels below are as of November 2026. Google's help pages describe the tag types and triggers but not every panel name, so if a button has moved, look for the same idea nearby.
 > Note: as in Lesson 6.2, keep tracking to your own test visits until Lesson 6.4 adds the consent banner (which you'll also install through GTM).
@@ -99,7 +99,7 @@ flowchart TD
 
 **Part C: the Google tag, the event tag, a trigger and a variable (15 min)**
 In GTM's workspace:
-1. **Tags → New → Tag Configuration → Google Analytics → Google tag** (or choose **Google Tag** directly). **Tag ID:** your `G-…` Measurement ID from Lesson 6.2. **Triggering → Initialization – All Pages**. Name it `Google tag – GA4` → **Save**.
+1. **Tags → New → Tag Configuration → Google Analytics → Google tag** (or choose **Google Tag** directly). **Tag ID:** your `G-…` Measurement ID from Lesson 6.2. **Triggering → Initialization – All Pages** (built into every web container; Google's set-up page also offers "Initialization – All Initialization Events", which does the same job here). Name it `Google tag – GA4` → **Save**.
 2. **Variables → User-Defined Variables → New → Variable Configuration → Data Layer Variable.** Data layer variable name: `form_name` (exactly as in your push); version 2. Name it `DLV – form_name` → **Save**.
 3. **Triggers → New → Trigger Configuration → Custom Event.** Event name: `generate_lead` (exact, case sensitive). This trigger fires on **All Custom Events** with that name. Name it `CE – generate_lead` → **Save**.
 4. **Tags → New → Google Analytics: GA4 Event.** Measurement ID: your `G-…`. Event Name: `generate_lead`. Event parameters: add `lead_source` with the value `{{DLV – form_name}}` (click the brick icon to pick the variable). **Triggering:** `CE – generate_lead`. Name it `GA4 event – generate_lead` → **Save**.
@@ -121,12 +121,12 @@ In GTM's workspace:
 2. Practise an undo. Make a deliberately bad change: edit the GA4 event tag's Event Name to `generate_lead_test`, then **Submit → Publish** as `v2 – broken name (practice)`. In DebugView the event now arrives under the wrong name.
 3. Roll back: **Versions** → the **Actions** menu (⋮) next to `v1` → **Set as Latest Version** (this replaces your draft with v1) → **Submit → Publish** as `v3 – rollback to v1`. (Or use **Publish To…** from v1's Actions menu.)
    **Expected:** `generate_lead` arrives with its correct name again; Versions shows the full history.
-4. In your repo, delete nothing: your code didn't change for the rollback. That's the point of GTM: tag changes are versioned in GTM, code changes in Git (Lesson 4.2).
+4. Notice that your repo didn't change during the rollback. Tag changes are versioned in GTM; code changes are versioned in Git (Lesson 4.2). Keep both histories tidy and name versions so either can be undone.
 
 **Part F: break it and fix it (5 min)**
 | Plant this | Symptom | Find it | Fix |
 |---|---|---|---|
-| Leave the Lesson 6.2 gtag.js snippet in **and** publish the GTM Google tag | Two `collect` requests with `en=page_view` per load; page views double in GA4 | Network → `collect`; View Source shows both `gtag/js` and `gtm.js` | One installation only: delete the gtag.js snippet |
+| Leave the Lesson 6.2 gtag.js snippet in **and** publish the GTM Google tag | Two `collect` requests with `en=page_view` per load (checked with two copies of the Google tag on one page: 2 page views per load); page views double in GA4 | Network → `collect`; View Source shows both `gtag/js` and `gtm.js` | One installation only: delete the gtag.js snippet |
 | A typo in the container ID (`GTM-AB12CED`) | No error anywhere (checked: `gtm.js` for a made-up ID returns 200 with an empty container); no tags fire | Tag Assistant can't connect; Network → `gtm.js?id=` doesn't match your container | Copy the snippet again from **Admin → Install Google Tag Manager** |
 | Trigger the GA4 event on **Click – All Elements** with Click Text "Join" | Every click on Join counts, including empty and failed submissions | Preview: the tag fires on an empty submit | Use the Custom Event trigger from the success-branch push |
 | Test in Preview, never publish | Everything works in Preview; nothing changes for real visitors | Versions: the latest published version doesn't contain the tag; your workspace shows unpublished changes | **Submit → Publish** |
