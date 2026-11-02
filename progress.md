@@ -105,13 +105,14 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | draft | 2026-11-02 |
 | M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | draft | 2026-11-02 |
 | M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | draft | 2026-11-02 |
-| M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | todo | — |
+| M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | draft | 2026-11-02 |
 | M05 | — | JavaScript for Marketers (not yet planned) | — | todo | — |
 | M06 | — | Tracking, Analytics & Consent (not yet planned) | — | todo | — |
 | M07 | — | Fast, Accessible & Search-Ready (not yet planned) | — | todo | — |
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m04 capstone draft + cheatsheets/m04-publish.md (seven tasks mapped to L01–L05; live test table; three planted bugs: case 404, www CNAME typo → "Site not found · GitHub Pages", bad commit → revert redeploy; launch log template; 5×4 rubric with a no-domain path for the domain row; github.io certificate also Let's Encrypt, checked).
 - 2026-11-02: webdev-101 m04-l05 draft (seven-question checklist, who-edits/how-often weighted double; three-year cost sheet incl. hours, renewals and exit; three briefs: café → hand-coded, coach → WordPress (bridge to WordPress 101), spice shop → Shopify; prices are rounded starting ranges with a freshness flag, learners look up vendor pages; quiz b c a b c b; 6 glossary terms; 2 image prompts).
 - 2026-11-02: webdev-101 m04-l04 draft (registrar/DNS host/web host split; GitHub Pages records from docs: 4 A + optional AAAA, www CNAME, _github-pages-challenge TXT, no wildcards, remove parking A, keep MX; live checks: jekyllrb.com A records and Let's Encrypt 90-day cert, www→apex 301, mistyped *.github.io → "Site not found · GitHub Pages" 404, *.github.io cert served before issuance; break-it table; no-domain path; quiz d a b c c b c, Q7 reviews m04-l03; 12 glossary terms; 2 image prompts).
 - 2026-11-02: webdev-101 m04-l03 draft (GitHub Pages from main /(root) as the default; host table from primary sources: GitHub Pages 1 GB / soft 100 GB / 10 builds/h and no shops; Netlify credit-based Free 300 credits, 15 per production deploy, pauses; Cloudflare Pages 500 builds/month, new projects steered to Workers; live curl checks of a GitHub Pages site: wrong case = 404, http→https 301, max-age=600; break-its: case, root-relative /css/ on a project address, revert rollback; optional Netlify/Cloudflare part; quiz c a d b c a d, Q7 reviews m04-l02; 11 glossary terms; 2 image prompts).
