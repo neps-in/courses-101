@@ -3,7 +3,7 @@
 
 **Time:** ~2–3 hours · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L01–M03.L05 (and your M02 capstone `launch.html`)
 **Non-negotiables assessed:** #4 Mobile-first, responsive layout · #5 Colour contrast and brand tokens · reinforced: #3 Alt text, labels and keyboard access (focus and tap targets)
-**Verified against:** the M03 lessons' sources; the full Module 3 stylesheet validated live with the W3C CSS Validation Service (no errors; only the "CSS variables are not statically checked" warnings); all five planted bugs below reproduced in headless Chrome 156 at 320 and 1280 px, with the symptoms as described, on 2026-11-02.
+**Verified against:** the M03 lessons' sources; the full Module 3 stylesheet validated live with the W3C CSS Validation Service (no errors; only the "CSS variables are not statically checked" warnings); all five planted bugs below reproduced in headless Chrome 156 at 320 and 1280 px, with the symptoms as described; re-checked after the M03 lesson reviews (card columns per width, the finder's blind spot for spilling text, link-styled buttons in bug C), on 2026-11-02.
 
 > Note: no brand guide yet? Use the one-paragraph mini guide in Task 1, or keep Nila Coffee's tokens and change only the accent colour. The rubric scores how you **use** tokens and contrast, not how original the palette is.
 
@@ -81,8 +81,8 @@ Visual order = HTML order everywhere (no `order`, no `-reverse`).
 - **Keyboard:** Tab from the address bar to the submit button. Focus is always visible, never hidden behind anything, and moves in reading order.
 - **Validator:** W3C CSS checker, "Congratulations! No Error Found." (variable warnings are fine). Re-run the **HTML** checker too: your Module 3 HTML edits (classes, wrappers, the pricing section) must still validate.
 
-> 🖼️ **Image prompt:** Composite of three full-page screenshots of a styled launch page side by side, at 320 px (one column, stacked hero, single cards), 768 px (two-column cards) and 1280 px (logo and nav on one line, hero text and image side by side, three cards). Outline the hero in each width. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
-> **Alt text:** The same launch page at phone, tablet and laptop widths, with the layout adapting from one column to three.
+> 🖼️ **Image prompt:** Composite of three full-page screenshots of a styled launch page side by side, at 320 px (one column, stacked hero, single cards), 768 px (logo and nav on one line, hero text and image side by side, three narrower cards) and 1280 px (the same layout with more space and a larger heading). Outline the hero in each width. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+> **Alt text:** The same launch page at phone, tablet and laptop widths, with the layout changing from one column to side-by-side sections.
 
 ### 7. Break it and fix it: five planted bugs
 Save a copy as `styles-broken.css`, point a copy of your page (`launch-broken.html`) at it, and plant these **one at a time**. For each, record the symptom, the tool and the exact evidence (message, value or screenshot), then fix it.
@@ -91,9 +91,9 @@ Save a copy as `styles-broken.css`, point a copy of your page (`launch-broken.ht
 |---|---|---|---|
 | A | `.button { background-color: var(--color-CTA); }` | The primary button loses its background (transparent); white text vanishes on a light page | Inspect: the computed `background-color` is `rgba(0, 0, 0, 0)`; compare the token name letter by letter |
 | B | `.hero > * { flex: 0 0 30rem; }` | At 320 px the hero text runs off the right edge and the page scrolls sideways | The Console finder lists the hero's `div`, `h1` and `p`; the flex overlay shows items that can't shrink |
-| C | `a:focus { outline: none; }` | Tabbing through links shows no focus ring (buttons and fields still have one) | Tab test; DevTools **:hov** → force **:focus** and **:focus-visible** on a link: your outline is struck through, beaten by this rule (same specificity, later in the file) |
-| D | In `:root`, change `--color-muted` to `#a07850` | Hints and captions look fine but measure **3.81:1** on cream (fails 4.5:1) | DevTools colour picker or WebAIM on the hint text |
-| E | Move `class="card-grid"` from the benefits `ul` to its `section` (HTML change) | Phone looks normal; at 1280 px the `h2` sits on the left and the benefits become one bulleted card on the right | The **grid** badge is now on the `section`; only direct children (`h2`, `ul`) became grid items |
+| C | `a:focus { outline: none; }` | Tabbing through links shows no focus ring, including link-styled buttons such as `<a class="button">` (`<button>` elements and fields still have one) | Tab test; DevTools **:hov** → force **:focus** and **:focus-visible** on a link: your outline is struck through, beaten by this rule (same specificity, later in the file) |
+| D | In `:root`, change `--color-muted` to `#a07850` | Hints and captions look fine but measure **3.81:1** on cream (3.96:1 on a white card; both fail 4.5:1) | DevTools colour picker or WebAIM on the hint text |
+| E | Move `class="card-grid"` from the benefits `ul` to its `section` (HTML change) | Phone looks almost normal (the heading and the list each get a card border); at 1280 px the `h2` becomes a card on the left and the whole list one bulleted card on the right | The **grid** badge is now on the `section`; only direct children (`h2`, `ul`) became grid items |
 
 Bug D is the lesson: **a design can look fine and still fail**, so you measure. Bug E is the other one: **test at more than one width**, because some bugs only appear on big screens.
 
@@ -116,7 +116,7 @@ Pair · ratio · required (4.5 / 3) · pass/fail   (one line each, incl. focus r
 Where you used Flexbox, where Grid, and why (one line each); your media queries and what each adds
 
 ## 4. Responsive and keyboard checks
-Overflow finder at 320 px: result · tap targets checked · Tab order: <list> · 200% zoom: result
+Overflow finder and `scrollWidth` at 320 px: result · tap targets checked · Tab order: <list> · 200% zoom: result
 
 ## 5. Conversion and honesty
 Primary CTA per section · dark-pattern audit (six rows: none / changed) · CSS library decision (one paragraph)
@@ -141,7 +141,7 @@ Score each criterion; **Good** or better on all five completes the module.
 
 ## Self-check before you submit
 - [ ] Searching `styles.css` for `#` finds hex codes only inside `:root`.
-- [ ] The overflow finder prints nothing at 320 px.
+- [ ] At 320 px the overflow finder prints nothing and `document.documentElement.scrollWidth` is 320.
 - [ ] I can see focus on every element when I Tab, and it follows the reading order.
 - [ ] Every pair in my contrast report has a measured ratio, not a guess.
 - [ ] Both the CSS and the HTML validators are clean.
