@@ -15,7 +15,7 @@
 
 ### Q2. Which three UTM parameters should every campaign link carry? *(O2 · recall)*
 - a) `utm_term`, `utm_content` and `utm_id`, for the most detail
-- b) `utm_source`, `utm_medium` and `utm_campaign`, every time
+- b) `utm_source`, `utm_medium` and `utm_campaign` on every link
 - c) `utm_page`, `utm_button` and `utm_user`, to track each click
 - d) `utm_source` alone, because GA4 works the rest out by itself
 
@@ -36,7 +36,7 @@
 ### Q4. Your launch email links use `utm_source=newsletter&utm_medium=newsletter&utm_campaign=launch-2026`. In GA4 the visits show up as "Unassigned". What's the best fix for future emails? *(O2 · scenario)*
 - a) Add `utm_term=email` so GA4 can see that the link came from an email
 - b) Remove all UTMs, because GA4 detects email traffic automatically
-- c) Use `utm_medium=email`, a value GA4's channel rules recognise
+- c) Use `utm_medium=email`, a value that GA4's channel rules recognise
 - d) Change the campaign name to `email-launch` so it's grouped as Email
 
 **Answer:** c
@@ -45,12 +45,12 @@
 
 ### Q5. The marketing team wants to add `?utm_source=homepage&utm_medium=button` to the "Join the launch list" button that links to `#signup` on the same page. What do you advise? *(O2 · scenario)*
 - a) Do it, since every link should have UTMs for complete tracking data
-- b) Don't: an internal UTM replaces the visitor's real source in reports
+- b) Don't: it adds a fake campaign that can take credit for real sign-ups
 - c) Do it, but write the values in capitals so they stand out in reports
 - d) Don't, because UTMs only work on links in emails and paid adverts
 
 **Answer:** b
-**Explanation:** The visitor already arrived with a real source (newsletter, Instagram). An internal UTM would replace it from that point on and credit your own button with the sign-up. Use UTMs only on links you place outside your site (emails, social, ads, QR codes, partners); capitals would also split the rows.
+**Explanation:** The visitor already arrived with a real source (newsletter, Instagram). An internal UTM adds a made-up campaign to your reports, and because GA4 attributes a visitor's later direct visits to the last campaign it saw, your own button can take credit for those visits and their sign-ups. Measure button clicks with an event instead (Lesson 6.2). Use UTMs only on links you place outside your site (emails, social, ads, QR codes, partners); capitals would also split the rows.
 **Hint:** Where did the visitor really come from?
 
 ### Q6. Spot the error. Which of these Instagram bio links will lose its `utm_source`? *(O2 · spot-the-error)*

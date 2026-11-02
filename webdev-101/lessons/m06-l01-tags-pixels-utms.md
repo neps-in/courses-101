@@ -1,7 +1,7 @@
 # M06.L01 — Tags, Pixels & UTMs
 > After this lesson you can see exactly what a tracking tag sends and to whom, build campaign links that land in the right report every time, and list every tag on your launch page so you know what needs consent.
 
-**Time:** ~20 min reading + ~35 min exercise · **Level:** L2 Practitioner · **Prereqs:** M05.L01 · **Remediate to:** M05.L01
+**Time:** ~22 min reading + ~35 min exercise · **Level:** L2 Practitioner · **Prereqs:** M05.L01 · **Remediate to:** M05.L01
 **Verified against:** Google Analytics Help "Collect campaign data with custom URLs" (answer 10917952), "Default channel group" (answer 9756891), "Cookie usage on websites" (answer 11397207); Google's Campaign URL Builder; Meta Pixel base code; all read 2026-11-03. Live check the same day in headless Chrome 156: a page with the Google tag (test ID `G-TEST123456`) and a Meta Pixel (test ID) opened with `?utm_source=newsletter&utm_medium=email&utm_campaign=launch-2026`: GA4 sent `POST https://www.google-analytics.com/g/collect?v=2&tid=G-TEST123456&…&en=page_view&dl=…utm_campaign=launch-2026` (status 204) and set the cookies `_ga` and `_ga_TEST123456`; the Pixel sent `GET https://www.facebook.com/tr/?id=…&ev=PageView&dl=<the full page URL, UTMs included>` (status 200). A link with a second `?` (`?ref=bio?utm_source=instagram&…`) lost `utm_source` (it became part of `ref`).
 
 > ⚠️ **Freshness flag:** request URLs, parameter names and cookie names belong to Google and Meta and change without notice; GA4's channel rules are updated from time to time. Re-check in DevTools and the help pages above before you rely on an exact value.
@@ -107,7 +107,7 @@ flowchart TD
    **Expected:** `https://nilacoffee.in/?utm_source=newsletter&utm_medium=email&utm_campaign=launch-2026&utm_content=header-button`. Cross-check one row with Google's **Campaign URL Builder** (https://ga-dev-tools.web.app/ga4/campaign-url-builder/): same result.
    (If your base URL already has a `?`, the first UTM must start with `&`; Part D shows what happens otherwise.)
 5. Check the channels against the table above: `newsletter`/`email` → Email; `instagram`/`social` → Organic Social; `instagram`/`paid-social` → Paid Social (matches `paid…`); `whatsapp`/`social` → Organic Social. A QR code on a flyer with `utm_medium=qr` will show as **Unassigned** in the default channels; that's acceptable as long as the Source/Medium row (`flyer / qr`) is consistent, and you can add a custom channel group later.
-6. Rule for **internal links:** never add UTMs to links from one page of your site to another (e.g. a "Join" button pointing to `/?utm_source=homepage#signup`). The visitor already has a real source; your internal label would replace it in the reports from that point on and credit your own button for the sign-up.
+6. Rule for **internal links:** never add UTMs to links from one page of your site to another (e.g. a "Join" button pointing to `/?utm_source=homepage#signup`). The visitor already has a real source. Your label adds a made-up campaign (`homepage / button`) to the reports, and GA4 attributes a visitor's later direct visits to the last campaign it saw for them (Google's "Scopes of traffic-source dimensions" page), so those visits and their sign-ups can be credited to your own button instead of Instagram or the newsletter. Google's help pages don't spell out every case, so the safe rule is simply: no UTMs inside your own site. To measure clicks on your own buttons, use a GA4 event (Lesson 6.2).
    > 🖼️ **Image prompt:** Desktop screenshot (1280×800) of a Google Sheet named "Nila launch UTMs" with the rules row frozen at the top and five rows of source, medium, campaign, content and a generated Final URL column. Outline the Final URL column. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** A UTM naming sheet with consistent lowercase values and generated campaign URLs.
 
@@ -129,7 +129,7 @@ Use Network (filter **3rd-party requests**, Lesson 5.1) and **Application → Co
 | Two links: `utm_source=Instagram` and `utm_source=instagram` | Two Instagram rows in Traffic acquisition (values are case sensitive, per Google's help page) | Sort the Session source column; look for near-duplicates | Lowercase everything (`LOWER()` in the sheet); fix the link at the source; old data stays split |
 | `https://nilacoffee.in/?ref=bio?utm_source=instagram&utm_medium=social` (a second `?`) | The source is lost (checked: `utm_source` becomes part of the `ref` value) and the visit shows `(not set)` or the wrong source | Paste it into the Console: `new URL('…').searchParams.get('utm_source')` → `null` | Only the first separator is `?`; every other is `&` |
 | `utm_medium=newsletter` with `utm_source=launch-mail` | Visits land in **Unassigned** instead of Email | Reports → Traffic acquisition → Session default channel group | Use `utm_medium=email` (a value the channel rules know) |
-| A UTM on an internal "Join" button | Sign-ups credited to `homepage / internal` instead of Instagram or email | A source/medium you never posted anywhere | Remove UTMs from internal links |
+| A UTM on an internal "Join" button | A campaign you never posted anywhere (`homepage / button`) appears in Traffic acquisition and can take credit for visits and sign-ups | Look for sources and mediums that aren't in your naming sheet | Remove UTMs from internal links; measure button clicks with an event (Lesson 6.2) |
 
 ## When to use / when not to
 - **UTMs:** on every link **you** place outside your site that you want to measure: emails, social bios and posts, ads (unless the ad platform auto-tags, such as Google Ads), QR codes, partner sites.
@@ -148,7 +148,7 @@ Use Network (filter **3rd-party requests**, Lesson 5.1) and **Application → Co
 ## Common mistakes
 - **Mixed case and spellings** (`Email`, `email`, `e-mail-blast`) splitting one channel into many rows.
 - **Invented mediums** that fall into Unassigned.
-- **UTMs on internal links,** overwriting the real source.
+- **UTMs on internal links,** adding fake campaigns that can take credit from the real source.
 - **A second `?`** in the URL.
 - **Personal data in URLs** (emails, names), which every tag on the page then receives.
 - **Installing tags "just in case"** without knowing what they send.
@@ -170,7 +170,7 @@ Use Network (filter **3rd-party requests**, Lesson 5.1) and **Application → Co
 2. A note on each row of which GA4 default channel it should land in.
 3. A tag inventory of your live page (scripts, vendors, what they send, cookies, purpose), filled from Network and Application, not from memory.
 4. Screenshots: one tag request on a brand site with `en` and `dl` visible, and your sheet (personal details blurred).
-5. Commit the sheet export (CSV) to your repo's `docs/` folder with the message `Add UTM naming sheet and tag inventory`.
+5. Commit the sheet export (CSV) to your repo's `docs/` folder with the message `Add UTM naming sheet and tag inventory`. Your repo and site are public (Lesson 4.3), so keep nothing private in it (no ad budgets or personal details), or keep the sheet outside the repo and commit only the naming rules.
 
 **Expected outcome:** every campaign link you'll post in Lesson 6.2's tests and the capstone comes from one sheet, and you can say what every tag on your page sends and to whom.
 **Stretch goal:** on a brand site, compare the number of tracking vendors with and without an ad blocker, and note which ones remain.
@@ -201,6 +201,7 @@ Explain to a friend in 3 sentences what happens when someone clicks your newslet
 *All checked 2026-11-03.*
 - Google Analytics Help — Collect campaign data with custom URLs: https://support.google.com/analytics/answer/10917952
 - Google Analytics Help — [GA4] Default channel group: https://support.google.com/analytics/answer/9756891
+- Google Analytics Help — Scopes of traffic-source dimensions: https://support.google.com/analytics/answer/11080067
 - Google Analytics Help — [GA4] Cookie usage on websites: https://support.google.com/analytics/answer/11397207
 - Google — Campaign URL Builder: https://ga-dev-tools.web.app/ga4/campaign-url-builder/
 - Meta for Developers — Meta Pixel: https://developers.facebook.com/docs/meta-pixel/
