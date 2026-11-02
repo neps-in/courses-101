@@ -100,13 +100,19 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M03 | L05 | Conversion-Focused UI Patterns | webdev-101/lessons/m03-l05-conversion-ui-patterns.md | reviewed | 2026-11-02 |
 | M03 | Capstone | M03 capstone | webdev-101/capstones/m03-capstone.md | reviewed | 2026-11-02 |
 | — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | draft | 2026-11-02 |
-| M04 | — | Publish It: Tools, Hosting & Domains (not yet planned) | — | todo | — |
+| M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | todo | — |
+| M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | todo | — |
+| M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | todo | — |
+| M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | todo | — |
+| M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | todo | — |
+| M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | todo | — |
 | M05 | — | JavaScript for Marketers (not yet planned) | — | todo | — |
 | M06 | — | Tracking, Analytics & Consent (not yet planned) | — | todo | — |
 | M07 | — | Fast, Accessible & Search-Ready (not yet planned) | — | todo | — |
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 plan M04 (Publish It: 5 lessons + capstone; NN #6, #7 taught, #1 reinforced; first local installs: VS Code, Git, GitHub account; hosting free, domain optional).
 - 2026-11-02: webdev-101 diagnostic quiz draft (15 questions, 5 per module M01–M03, one spot-the-error each; skip-rule flowchart and score sheet per outline §13; answers c a d a b · d b a c c · b d a b c, 4/4/4/3 per letter; no correct option longest). Written before planning M04 because the outline schedules it "after M03 is drafted". Noticed for the M02 review: m02 cheat sheet says a broken image shows "404 in Network", which is only true on a live server (locally `ERR_FILE_NOT_FOUND`, as fixed in M03.L01). Next: `/plan-module 4`.
 - 2026-11-02: webdev-101 m03-capstone reviewed: image prompt said 768 px shows two-column cards (Chrome: three from ~740 px) — corrected; bug C symptom now names link-styled buttons (`a.button`) as losing the ring too; bug D adds 3.96:1 on white cards; bug E symptom matches Chrome (h2 and list each become a card, bullets return); self-check and style report add the `scrollWidth` = 320 check. Rubric (5×4), NN #3/#4/#5 mapping and the template's break-it task confirmed against course-framework.md and the outline. Module 3 fully reviewed.
 - 2026-11-02: webdev-101 m03-l05 reviewed: headless Chrome 156 showed Part C's planted `*:focus { outline: none; }` does NOT remove the ring (0-1-0 loses to `a:focus-visible` 0-1-1); Part C now shows that first as a cascade lesson, then plants `a:focus, button:focus, input:focus { outline: none; }` (verified: outline none on every Tab stop) and tells learners to force both :focus and :focus-visible in :hov (troubleshooting row and capstone bug C wording updated to match). `.plan-featured` overrides four tokens, not five. Freshness flag updated: India CCPA June 2025 self-audit advisory; FTC new negative-option rulemaking (ANPRM March 2026, no new requirements). Re-checked: Pico 2.1.1, Bootstrap 5.3.8 still latest, Pico SRI hash recomputed identical, 10.3 KB gzipped. Quiz Q2 correct option no longer shortest; letters c d b a c b a.

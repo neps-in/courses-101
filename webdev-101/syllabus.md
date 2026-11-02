@@ -11,7 +11,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | M01 How the Web Works | L1 | 5 | #1 | ✅ |
 | M02 HTML: The Structure of Content | L1 | 5 | #2, #3, #8 | ✅ |
 | M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | ✅ |
-| M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | — |
+| M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | ✅ |
 | M05 JavaScript for Marketers | L2 | 4 | #3 (reinforced) | — |
 | M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 | — |
 | M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 | — |
@@ -218,3 +218,68 @@ flowchart LR
 ### M03 Capstone — Styled, responsive launch page
 - **File:** `capstones/m03-capstone.md` + `cheatsheets/m03-css.md`
 - Style the launch page to a brand guide (tokens in `:root`, one linked stylesheet). It must pass a 320 / 768 / 1280 px check with no sideways scroll, AA contrast on every text and CTA pair, and visible keyboard focus. Includes a break-it-and-fix-it set of planted CSS bugs. Rubric: brand tokens and consistency, responsive layout, contrast and focus, CSS quality, conversion clarity.
+
+## M04 — Publish It: Tools, Hosting & Domains (L2)
+
+**Goal:** move from playground to a real, live site you control. · NN #6 Version control before you deploy, #7 HTTPS on every page (taught), #1 mental model of the web (reinforced: DNS, status codes, "works locally but not live")
+**First installs:** VS Code and Git (both free, Windows/Mac/Linux) and a free GitHub account. Hosting stays free (GitHub Pages, Netlify or Cloudflare Pages); a custom domain is the only optional cost (≈ $10–15 / ₹800–1,200 a year). Learners without a domain use the host's free subdomain and still get HTTPS.
+**Running project:** the M03 launch page (`launch.html`, `styles.css`, `images/`) moves into a tidy project folder, goes into a Git repository, deploys on every push, and ends on a custom domain (or free subdomain) with HTTPS.
+
+```mermaid
+flowchart LR
+  %% alt: M04 lesson path: VS Code and folders, Git and GitHub, deploy to free hosting, custom domain DNS and HTTPS, choosing code, CMS or no-code, then the live-site capstone.
+  L1[L01 VS Code,<br/>files & folders]:::cream --> L2[L02 Git & GitHub<br/>without fear]:::sky
+  L2 --> L3[L03 Deploy to<br/>free hosting]:::sky
+  L3 --> L4[L04 Custom domain,<br/>DNS & HTTPS]:::blue
+  L4 --> L5[L05 Code, CMS<br/>or no-code?]:::blue
+  L5 --> C[M04 Capstone:<br/>live, versioned site]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M04.L01 — Your Toolkit: VS Code, Files & Folders
+- **File:** `lessons/m04-l01-vscode-files-folders.md` · **Prereqs:** M01.L05, M03 capstone · **Remediate to:** M01.L05 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Set up** VS Code with a project folder, a small set of trusted extensions and format-on-save, and open, edit and save files from it.
+  2. **Organise** a site folder (`index.html`, `css/`, `images/`) with web-safe file names (lowercase, no spaces) and **fix** broken relative paths.
+  3. **Preview** the site locally (a local server via an extension or the built-in terminal) and explain why `http://localhost` behaves more like a live site than opening the file directly.
+- **Hands-on idea:** move the M03 launch page into `nila-launch/`, rename `launch.html` to `index.html`, update paths; break-it-and-fix-it: `Images/Beans.JPG` vs `images/beans.jpg` works on Windows/Mac but will break live.
+
+### M04.L02 — Git & GitHub Without Fear
+- **File:** `lessons/m04-l02-git-github-basics.md` · **Prereqs:** M04.L01 · **Remediate to:** M04.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** repository, commit, history, branch, remote and push in plain words, and why version control comes before deploying (NN #6).
+  2. **Commit** changes with clear messages from VS Code's Source Control panel (and the matching four Git commands), and **push** to a new GitHub repository.
+  3. **Undo** a bad change safely (discard, revert a commit) and keep secrets out with `.gitignore`.
+- **Hands-on idea:** first commit of the launch page, push to GitHub; break-it-and-fix-it: commit a "bad CTA colour" change, then revert it and read the history.
+
+### M04.L03 — Deploy to Free Hosting
+- **File:** `lessons/m04-l03-deploy-free-hosting.md` · **Prereqs:** M04.L02 · **Remediate to:** M04.L02 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Compare** GitHub Pages, Netlify and Cloudflare Pages on free-tier limits, commercial-use terms, build settings and deploy previews.
+  2. **Publish** the launch page from its GitHub repository so every push redeploys automatically.
+  3. **Test** the live site (real 404s, case-sensitive paths, HTTPS padlock, phone check) and **roll back** a bad deploy.
+- **Hands-on idea:** deploy to GitHub Pages (or Netlify/Cloudflare Pages), open it on a phone; break-it-and-fix-it: the image that worked locally 404s live because of letter case.
+
+### M04.L04 — Custom Domains, DNS Records & HTTPS
+- **File:** `lessons/m04-l04-custom-domains-dns-https.md` · **Prereqs:** M04.L03, M01.L02 · **Remediate to:** M01.L02 · **Hands-on:** ~40 min (plus DNS waiting time)
+- **Objectives:**
+  1. **Choose** and register a domain sensibly (registrar vs DNS host, renewal price, WHOIS privacy, auto-renew), or justify the free subdomain.
+  2. **Connect** the domain to the host with the right records (apex A/ALIAS, `www` CNAME, verification TXT) and **verify** them with a DNS lookup tool, without touching email (MX) records.
+  3. **Enable** HTTPS with a free auto-renewing certificate, force HTTP → HTTPS and pick one canonical host (`www` or not) (NN #7).
+- **Hands-on idea:** connect a domain (or walk through with the free subdomain and a DNS lookup tool); break-it-and-fix-it: a CNAME typo, diagnosed with Dig and the browser error.
+
+### M04.L05 — Choosing How to Build: Code, CMS or No-Code
+- **File:** `lessons/m04-l05-choosing-code-cms-nocode.md` · **Prereqs:** M01.L04, M04.L03 · **Remediate to:** M01.L04 · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Apply** a decision checklist (who edits, how often, features, budget, skills, ownership and exit) to a project brief.
+  2. **Estimate** the three-year cost and effort of hand-coded, WordPress and no-code options, including hidden costs (plugins, themes, time, migration).
+  3. **Write** a one-page recommendation for your next project, and know where WordPress 101 picks up.
+- **Hands-on idea:** three client briefs (a café menu, a coach with a blog, a shop with 200 products) scored with the checklist; the learner's own decision note.
+
+### M04 Capstone — Live, versioned launch page
+- **File:** `capstones/m04-capstone.md` + `cheatsheets/m04-publish.md`
+- The launch page is live on a custom domain (or the host's free subdomain) with HTTPS forced and one canonical host, deployed automatically from a public or private GitHub repository with a readable history (at least five meaningful commits, including one revert). Includes a break-it-and-fix-it set: a case-mismatched path, a CNAME typo and a bad commit rolled back. Plus a short written decision on code vs CMS vs no-code for the learner's next project. Rubric: project structure, version control, deployment and testing, domain and HTTPS, build-approach decision.
