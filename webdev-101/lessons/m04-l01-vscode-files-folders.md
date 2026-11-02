@@ -2,7 +2,7 @@
 > After this lesson you can open your launch page as a proper project in a real code editor, keep its files in a tidy folder that will work unchanged on a web server, and preview it on a local server exactly the way a visitor's browser will load it.
 
 **Time:** ~17 min reading + ~30 min exercise · **Level:** L2 Practitioner · **Prereqs:** M01.L05, M03 capstone · **Remediate to:** M01.L05
-**Verified against:** VS Code docs ("Setting up Visual Studio Code", "Basic editing", "Workspace Trust", "Emmet", "Extension Marketplace", "Integrated browser"); VS Code stable release list (1.144.0 current on the check date); Microsoft "Live Preview" extension README and settings (`livePreview.portNumber` default 3000, `useIntegratedBrowser` default on, marked "still under development"); VS Code Marketplace listing (publisher, version and update date); MDN "Dealing with files" and "What is a URL?" (relative paths); a headless Chrome 156 run of the three path styles in Parts B–C, from `file://` and from a local server, on 2026-11-02.
+**Verified against:** VS Code docs ("Setting up Visual Studio Code", "Basic editing", "Workspace Trust", "Emmet", "Extension Marketplace", "Integrated browser"); VS Code stable release list (1.144.0 current on the check date); Microsoft "Live Preview" extension README and settings (`livePreview.portNumber` default 3000, `useIntegratedBrowser` default on, marked "still under development"); VS Code Marketplace listing (publisher, version and update date); MDN "Dealing with files" and "What is a URL?" (relative paths); a headless Chrome 156 run of the three path styles in Parts B–C, from `file://` and from a local server; the Part C capital-letter pattern tested with ripgrep (VS Code's search engine) on HTML and CSS files; Live Preview's 404 response and port fallback checked in its source, on 2026-11-02.
 
 > ⚠️ **Freshness flag:** VS Code ships a new version every month and Live Preview is still labelled "under development", so menu names and the preview window may look slightly different from the screenshots described here. The steps (open a folder, install one extension, preview on `localhost`) have been stable for years.
 
@@ -83,7 +83,7 @@ flowchart TD
 1. Download VS Code **only** from **https://code.visualstudio.com/** (lookalike download sites bundle adware). Install it with the defaults. On Windows, tick **Add "Open with Code" action** if offered.
    **Expected (checked 2026-11-02):** **Help → About** shows version **1.144** or later.
 2. Make a new folder called `nila-launch` (or `<your-project>-launch`) in your Documents folder. In VS Code: **File → Open Folder…** and choose it.
-   **Expected:** a **Workspace Trust** prompt: "Do you trust the authors of the files in this folder?" It's your own empty folder, so choose **Yes, I trust the authors**. (For folders downloaded from strangers, choose "No": VS Code then opens them in Restricted Mode, where extensions and tasks can't run code.)
+   **Expected:** a **Workspace Trust** prompt: "Do you trust the authors of the files in this folder?" It's your own empty folder, so choose **Yes, I trust the authors**. (For folders downloaded from strangers, choose "No": VS Code then opens them in **Restricted Mode**, which disables or limits the terminal, tasks, debugging, workspace settings, extensions and AI agents, so nothing in the folder can run code automatically. You can still read every file.)
 3. Turn on **format on save**: **File → Preferences → Settings** (Mac: **Code → Settings → Settings**), search for `format on save`, tick **Editor: Format On Save**. VS Code formats HTML and CSS with its built-in formatter; no extra extension is needed.
 4. Install one extension: open the **Extensions** view (Ctrl+Shift+X / Cmd+Shift+X), search for **Live Preview**, and check the publisher is **Microsoft** with the blue verified tick before you click **Install**.
    **Expected:** "Live Preview" by Microsoft installed. (A similar, older extension called "Live Server" by Ritwick Dey also works; this course uses Microsoft's.)
@@ -110,18 +110,18 @@ flowchart TD
 1. With `index.html` open, click the **Show Preview** icon (a page with a magnifier, top right of the editor), or open the Command Palette (**Ctrl+Shift+P** / **Cmd+Shift+P**) and run **Live Preview: Show Preview**.
    **Expected:** your styled page in a preview pane at an address starting **`http://127.0.0.1:3000/`**. Edit a word in the `h1`: the preview updates as you type.
 2. Open it in your normal browser too: Command Palette → **Live Preview: Show Preview (External Browser)**. Open DevTools → **Network**, tick **Disable cache**, reload.
-   **Expected:** every file shows status **200** (or 304); nothing in red.
+   **Expected:** your HTML, CSS and images show status **200**; nothing in red. (You may also see a small script and a connection from Live Preview itself: that's how it refreshes the page as you type.)
 3. **Bug 1: the forgotten path.** In `index.html`, change the link back to `href="styles.css"` and save.
    **Symptom:** the page is unstyled. **Find it:** Network shows `styles.css` in red with status **404 Not Found**, exactly what the live site would show (compare Lesson 3.1, where the same mistake from a double-clicked file gave `ERR_FILE_NOT_FOUND`). **Fix:** `css/styles.css`.
 4. **Bug 2: the root-relative path.** Change it to `href="/css/styles.css"` and save. **Expected:** on the local server it **works**. Now double-click `index.html` in your file manager to open it as a file: it's unstyled, because `/` now means the root of your whole drive. (Checked in Chrome: `net::ERR_FILE_NOT_FOUND` from the file, styles applied from the server.) Put it back to `css/styles.css`: relative paths work everywhere, including the GitHub Pages address you'll get in Lesson 4.3.
 5. **Bug 3: the invisible one.** Change an image's `src` to `images/Beans.jpg` (capital B) and save. **Symptom on Windows or Mac:** none. The image still shows, because your computer's file system ignores letter case. On most web hosts it would be a **404**. **Find it:** press **Ctrl+Shift+F** / **Cmd+Shift+F** (search the whole folder), turn on **Use Regular Expression** (`.*` icon, or Alt+R) and **Match Case** (`Aa` icon, or Alt+C), and search for:
    ```
-   (src|href)="[^"]*[A-Z]
+   (src="|href="|url\(["']?)[^"')]*[A-Z]
    ```
-   **Expected:** the `Beans.jpg` line is listed (and any other path with a capital letter). Fix each one by matching the real, lowercase file name. Run the search again: "No results found".
-   > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of VS Code's Search view with the regular-expression and match-case toggles switched on, the pattern `(src|href)="[^"]*[A-Z]` typed in, and one result listed: `images/Beans.jpg` in `index.html`. Outline the two toggles and the result. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
+   It finds a capital letter in any `src`, `href` or CSS `url(…)` path. **Expected:** the `Beans.jpg` line is listed. Fix it (and any other) by matching the real, lowercase file name, and search again. (Checked with ripgrep, the search engine inside VS Code.)
+   > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of VS Code's Search view with the regular-expression and match-case toggles switched on, the pattern `(src="|href="|url\(["']?)[^"')]*[A-Z]` typed in, and two results in `index.html`: the Google Fonts link and `images/Beans.jpg`. Outline the two toggles and the `Beans.jpg` result. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** VS Code search with regex and match case on, finding an image path that contains a capital letter.
-   (External `https://` links in `href` may contain capitals legitimately, e.g. a YouTube video ID; ignore those. The search only needs to come back clean for your own files.)
+   What may legitimately stay in the results: **external `https://` links** (your Google Fonts link always appears, because of `Lora`), and **`#` links** whose capitals exactly match the target `id` (Lesson 2.2). Everything that points to one of your own files must be lowercase.
 
 ## When to use / when not to
 - **VS Code vs Notepad/TextEdit:** a plain text editor is fine for one file. From now on you'll have several files, Git and a terminal; VS Code puts them in one window. **Trade-off:** it's a bigger install and has many features you'll ignore for now. That's fine.
@@ -163,7 +163,7 @@ flowchart TD
 1. VS Code installed (version noted), your project folder opened and trusted, format on save on, Live Preview installed from Microsoft.
 2. The folder structure from Core concept: `index.html`, `css/styles.css`, `images/…`, with every file name lowercase and hyphenated.
 3. All paths relative; the page previews correctly at `http://127.0.0.1:3000/` with no red requests in Network (cache disabled).
-4. The capital-letter search returns no results for your own files.
+4. The capital-letter search lists nothing that points to one of your own files (external links and matching `#` links may remain).
 5. One break-it-and-fix-it from Part C, recorded in your project note: what you broke, what Network or the search showed, and the fix.
 6. A screenshot of the Explorer showing your folder tree.
 
@@ -210,4 +210,4 @@ Explain to a friend in 3 sentences why their photo shows on their laptop but not
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-VS Code: **File → Open Folder** (the folder is the site), trust only your own folders, Format On Save on, one extension (Live Preview by Microsoft, verified). Structure: `index.html`, `css/styles.css`, `images/`; names lowercase-hyphen, no spaces. Paths: relative (`css/styles.css`, `../images/x.jpg` from inside `css/`); avoid `/…` root-relative and `C:\` paths. Preview at `http://127.0.0.1:3000/`: Network shows real 404s. Case mismatches don't show on Windows/Mac: search `(src|href)="[^"]*[A-Z]` with regex + match case.
+VS Code: **File → Open Folder** (the folder is the site), trust only your own folders, Format On Save on, one extension (Live Preview by Microsoft, verified). Structure: `index.html`, `css/styles.css`, `images/`; names lowercase-hyphen, no spaces. Paths: relative (`css/styles.css`, `../images/x.jpg` from inside `css/`); avoid `/…` root-relative and `C:\` paths. Preview at `http://127.0.0.1:3000/`: Network shows real 404s. Case mismatches don't show on Windows/Mac: search `(src="|href="|url\(["']?)[^"')]*[A-Z]` with regex + match case; only external links may remain.

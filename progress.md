@@ -100,7 +100,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M03 | L05 | Conversion-Focused UI Patterns | webdev-101/lessons/m03-l05-conversion-ui-patterns.md | reviewed | 2026-11-02 |
 | M03 | Capstone | M03 capstone | webdev-101/capstones/m03-capstone.md | reviewed | 2026-11-02 |
 | — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | draft | 2026-11-02 |
-| M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | draft | 2026-11-02 |
+| M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | reviewed | 2026-11-02 |
 | M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | draft | 2026-11-02 |
 | M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | todo | — |
 | M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | todo | — |
@@ -112,6 +112,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m04-l01 reviewed: the capital-letter search `(src|href)="[^"]*[A-Z]` always flagged the Google Fonts link (Lora) and missed CSS `url(…)` paths, so a "no results" target was impossible and CSS images went unchecked; new pattern `(src="|href="|url\(["']?)[^"')]*[A-Z]` tested with ripgrep (VS Code's engine) on HTML and CSS, lesson now says which results may remain (external and matching # links); exercise, refresher and image prompt updated. Restricted Mode wording now matches VS Code docs (terminal, tasks, debugging, settings, extensions, AI agents). Network expectation allows Live Preview's own refresh script. Confirmed in Live Preview source: 404 for missing files, port 3000 tried first then incremented; command names exact. Quiz unchanged (b c d a b d a, none longest).
 - 2026-11-02: webdev-101 m04-l02 draft (Git for Windows 2.56 / Git ≥2.4x; GitHub no-reply email, mandatory 2FA, token sign-in; VS Code Initialize → Stage → Commit → Publish to GitHub (public, because free GitHub Pages needs a public repo); every command and output run with Git 2.43: revert of a bad CTA commit, .gitignore not untracking a committed file and `git show` proving history keeps it → rotate secrets; quiz c a d b a c d, Q6 error text captured, Q7 reviews m04-l01; 14 glossary terms; 2 image prompts).
 - 2026-11-02: webdev-101 m04-l01 draft (VS Code 1.144 + Microsoft Live Preview on port 3000; tidy folder with index.html, css/, images/; relative vs root-relative paths verified in headless Chrome from file:// and a local server; capital-letter regex search because case mismatches are invisible on Windows/Mac; 3 break-it bugs; 2 image prompts; quiz b c d a b d a, Q7 reviews m03-l04; 14 glossary terms).
 - 2026-11-02: webdev-101 plan M04 (Publish It: 5 lessons + capstone; NN #6, #7 taught, #1 reinforced; first local installs: VS Code, Git, GitHub account; hosting free, domain optional).
