@@ -2,7 +2,7 @@
 > After this lesson you can put a logo and menu on one line, place hero text beside an image, and lay out benefit cards that rearrange themselves from one column on a phone to three on a laptop, without breaking the keyboard order.
 
 **Time:** ~17 min reading + ~35 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L01, M03.L02 · **Remediate to:** M03.L01
-**Verified against:** MDN "CSS layout" learning area (Introduction, Flexbox, Grids) and the `order` reference; MDN "Grid layout and accessibility"; W3C WAI Understanding SC 1.3.2 Meaningful Sequence and SC 2.4.3 Focus Order (WCAG 2.2); Chrome DevTools "Inspect CSS grid" and "Inspect and debug CSS flexbox"; this lesson's stylesheet validated live with the W3C CSS Validation Service, on 2026-11-02 (Chrome/Edge and Firefox stable).
+**Verified against:** MDN "CSS layout" learning area (Introduction, Flexbox, Grids) and the `order` reference; MDN "Grid layout and accessibility"; W3C WAI Understanding SC 1.3.2 Meaningful Sequence and SC 2.4.3 Focus Order (WCAG 2.2); Chrome DevTools "Inspect CSS grid" and "Inspect and debug CSS flexbox"; this lesson's stylesheet validated live with the W3C CSS Validation Service and run in headless Chrome 156 at 320, 375, 600, 768 and 1280 px (wrapping points, card columns, the three Part D bugs and the Tab order), on 2026-11-02 (Chrome/Edge and Firefox stable).
 
 ## Learning objectives
 1. **Explain** normal flow and **choose** Flexbox (one direction) or Grid (rows and columns) for a layout job. *(O1)*
@@ -41,14 +41,14 @@ Set on the **container**:
 Set on an **item** (a direct child):
 | Property | Example | What it does |
 |---|---|---|
-| `flex` | `flex: 1 1 18rem` | "Grow: yes. Shrink: yes. Start at 18rem." Two items with this sit side by side when there's at least about 36rem, and stack when there isn't |
+| `flex` | `flex: 1 1 18rem` | "Grow: yes. Shrink: yes. Start at 18rem." Two items with this sit side by side when there's room for both starting widths plus the gap (36rem + gap), and stack when there isn't |
 
 ### Grid: the properties you'll use
 | Property | Example | What it does |
 |---|---|---|
 | `display: grid` | — | Children become grid items |
 | `grid-template-columns` | `1fr 1fr 1fr`, `repeat(3, 1fr)` | Column sizes; `fr` = a fraction of the free space |
-| The responsive pattern | `repeat(auto-fit, minmax(min(14rem, 100%), 1fr))` | "As many columns as fit, each at least 14rem, sharing the space equally." 1 column on a phone, 2 on a tablet, 3–4 on a laptop. **No media queries.** The `min(…, 100%)` stops a card from overflowing on very narrow screens |
+| The responsive pattern | `repeat(auto-fit, minmax(min(14rem, 100%), 1fr))` | "As many columns as fit, each at least 14rem, sharing the space equally." With 14rem cards in Nila's 60rem column: 1 column on a phone, 2 from about 500 px wide, 3 from about 740 px (so a 768 px tablet already shows 3). **No media queries.** The `min(…, 100%)` stops a card from overflowing on very narrow screens |
 | `gap` | `1rem` | Space between rows and columns |
 
 ### Visual order = source order
@@ -195,7 +195,7 @@ flowchart TD
    }
    ```
    `max-width: none` overrides Lesson 3.2's `li { max-width: 65ch; }`; `.card-grid > *` (0-1-0) beats `li` (0-0-1), the cascade from Lesson 3.1 at work.
-3. Reload. **Expected:** three white cards in a row on a laptop, two on a tablet width, one per row on a phone, all the same width with even gaps.
+3. Reload. **Expected:** three white cards in a row on a laptop and on a 768 px tablet, two at around 500–730 px, one per row on a phone, all the same width with even gaps. Drag the device-toolbar width slowly to watch the columns change.
 4. Click the **grid** badge next to the `ul` in Elements. **Expected:** the grid overlay with numbered lines. In the **Layout** tab (next to **Styles** and **Computed** in Chrome/Edge; Firefox's Layout panel has a similar Grid section) you can switch overlays on and off and choose to show line numbers.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of three Nila Coffee benefit cards in a row with the Chrome DevTools grid overlay on, showing numbered grid lines and hatched gaps, and the Layout pane listing the grid. Outline the overlay and the Layout pane. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** DevTools grid overlay with numbered lines over three benefit cards, and the Layout pane listing the grid.
@@ -203,8 +203,8 @@ flowchart TD
 
 **Part D: break it and fix it (7 min)**
 Plant each bug, find it, fix it.
-1. **No wrap.** Remove `flex-wrap: wrap;` from `nav ul` and view at 320 px in the device toolbar.
-   **Symptom:** links squeeze and break mid-phrase, or the row pushes past the screen edge so the page scrolls sideways. **Find it:** the flex overlay shows the items overflowing the container. **Fix:** put `flex-wrap: wrap` back.
+1. **No wrap.** First add two more links to the menu (for example `<li><a href="#why">Why subscribe</a></li>` and `<li><a href="#pricing">Pricing</a></li>`): three short links fit on one line at 320 px even without wrapping, so you'd see no change. Now remove `flex-wrap: wrap;` from `nav ul` and view at 320 px in the device toolbar.
+   **Symptom:** the links squash into narrow columns and multi-word links break over two or three lines (checked in Chrome: "How it works" became three lines). A link with one long word, such as a brand name, can't break at all and pushes past the screen edge, so the page scrolls sideways. **Find it:** the flex overlay shows the items squeezed (or overflowing) on one line. **Fix:** put `flex-wrap: wrap` back. Keep the extra links if your real menu needs them.
 2. **Flex on the wrong element.** Move `display: flex;` from `nav ul` to `nav li`. **Symptom:** the links stack vertically again. **Find it:** the **flex** badge now appears next to each `li`, not the `ul`. Remember, `display: flex` arranges the element's **children**, and each `li` has only one child (its link). **Fix:** put it back on the `ul`.
 3. **Visual order trap.** Add `flex-direction: row-reverse;` to `nav ul`. Reload at full width: the menu now reads "Join · FAQ · How it works". Click in the address bar, then press **Tab** repeatedly.
    **Symptom:** after the logo, focus lands on "How it works", which is now the item furthest to the **right**, then moves **leftwards**. A sighted keyboard user sees focus jumping against the reading direction; a screen-reader user hears the links in a different order from what sighted colleagues see. **Find it:** compare the order in the Elements tree with the order on screen. **Fix:** remove `row-reverse`. If "Join" should come first, move its `<li>` to the top of the list in the HTML.
@@ -226,7 +226,7 @@ Plant each bug, find it, fix it.
 ## Common mistakes
 - **Putting `display: flex` on the item instead of its container.** It arranges the element's **children**.
 - **Forgetting `flex-wrap: wrap`,** so items squash or overflow on phones.
-- **Using margins to space flex or grid items** instead of `gap` (margins add space at the outer edges too and collapse in surprising ways).
+- **Using margins to space flex or grid items** instead of `gap` (margins add space at the outer edges too, so you end up removing the extra margin from the first or last item).
 - **Fixed widths** (`width: 400px`) on cards or hero halves. Use `flex-basis`/`minmax` and let the container decide.
 - **Reordering with `order` or `row-reverse`,** so keyboard focus jumps around the screen.
 - **Using Grid for everything,** including a simple two-link menu, then fighting it on small screens.
@@ -237,7 +237,7 @@ Plant each bug, find it, fix it.
 |---|---|---|
 | Nothing changes after `display: flex` | It's on the wrong element, or the element has only one child | Check where the **flex**/**grid** badge appears in Elements; move the rule to the parent of the items |
 | Page scrolls sideways on a phone | No `flex-wrap`; a fixed width; a large image without `max-width: 100%` | Device toolbar at 320 px; find the widest element (Lesson 3.4 shows a quick finder); add wrap or `max-width: 100%` |
-| Cards are different heights | Different amounts of content; Flexbox wrapping | Grid rows stretch items to the same height by default; use the `.card-grid` pattern |
+| Cards are different heights | Different amounts of content; Flexbox wrapping | Grid stretches the cards **in each row** to the same height by default; use the `.card-grid` pattern |
 | Last card stretches across the whole row | Flexbox wrapping with `flex-grow` | Use Grid for cards, or accept it as a design choice |
 | Bullets or indent still showing on the card list | Browser default list styles | `list-style: none; padding: 0; margin: 0;` on the `ul` |
 | Tab focus jumps around | `order`, `-reverse` or grid placement changed the visual order | Remove the reordering CSS and fix the HTML order |

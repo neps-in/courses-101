@@ -20,7 +20,7 @@
 - d) Creates columns only after a media query has turned the grid on
 
 **Answer:** c
-**Explanation:** `auto-fit` creates as many columns as fit; `minmax(…, 1fr)` makes each one at least 14rem (or 100% of the container, if that's smaller) and lets them share any leftover space equally. The result is 1 column on a phone, 2 on a tablet and 3–4 on a laptop, with no media query.
+**Explanation:** `auto-fit` creates as many columns as fit; `minmax(…, 1fr)` makes each one at least 14rem (or 100% of the container, if that's smaller) and lets them share any leftover space equally. The column count follows the available width (1 on a phone, then 2, 3 or more as space allows), with no media query.
 **Hint:** Read it aloud: "repeat, as many as fit, each between … and …".
 
 ### Q3. Elena needs to lay out six testimonial cards so they line up in neat, equal columns on every screen size. Which approach fits best? *(O1 · scenario)*
@@ -33,7 +33,7 @@
 **Explanation:** Cards in rows *and* columns are a Grid job, and the `auto-fit`/`minmax` pattern adapts from one column to several on its own. Flexbox without wrapping squashes six cards into one line, fixed `400px` widths overflow a 360 px phone, and floats are a legacy layout technique.
 **Hint:** One line of things, or a table of boxes?
 
-### Q4. Chen's menu looks fine on a laptop, but on a 320 px phone the links squeeze together and the page scrolls sideways. The CSS is `nav ul { display: flex; gap: 1rem; }`. What's the most likely fix? *(O2 · scenario)*
+### Q4. Chen's menu looks fine on a laptop, but on a 320 px phone the five links squash into narrow columns, with words broken over several lines. The CSS is `nav ul { display: flex; gap: 1rem; }`. What's the most likely fix? *(O2 · scenario)*
 - a) Add `flex-wrap: wrap;` so links can move onto a second line
 - b) Replace `gap: 1rem` with a `margin-right` on every single link
 - c) Add `order: -1;` to the longest link so that it shows up first
