@@ -186,7 +186,7 @@ Use Network (filter **3rd-party requests**, Lesson 5.1) and **Application → Co
 Explain to a friend in 3 sentences what happens when someone clicks your newsletter link and lands on your page, and why `Instagram` and `instagram` are a problem.
 
 ## Glossary terms added
-- Tag — added to `webdev-101/glossary.md`
+- Tag (tracking tag) — added to `webdev-101/glossary.md`
 - Pixel (tracking pixel) — added to `webdev-101/glossary.md`
 - First-party vs third-party (data and cookies) — added to `webdev-101/glossary.md`
 - UTM parameters — added to `webdev-101/glossary.md`

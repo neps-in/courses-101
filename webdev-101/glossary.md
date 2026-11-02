@@ -262,6 +262,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Subresource Integrity (SRI)** — an `integrity="sha384-…"` hash (plus `crossorigin`) on a `<link>` or `<script>` from another server; the browser blocks the file if it has changed. [M03.L05]
 - **System font** — a font already installed with the operating system (Segoe UI, San Francisco, Roboto); `system-ui` uses it with no download. [M03.L02]
 - **Tag** — a label in angle brackets: start tag `<p>`, end tag `</p>`. [M02.L01]
+- **Tag (tracking tag)** — a snippet of code from a tool (analytics, ads, heatmaps) that sends details of a visit or event to that tool's server, usually setting a cookie. Not the same as an HTML tag. [M06.L01]
 - **Tag inventory** — a table of every tag and script on a page: vendor, what it sends, cookies, purpose, and whether it needs consent. [M06.L01]
 - **Target size (WCAG 2.5.8)** — things you tap must be at least 24 × 24 CSS px or spaced apart enough; links in sentences and unmodified browser controls are exempt. 44 × 44 px is better for main buttons. [M03.L04]
 - **target="_blank" / rel="noopener"** — `target="_blank"` opens a link in a new tab; modern browsers imply `noopener` (the new page can't control yours), and adding `rel="noopener"` covers old browsers. [M02.L02]
