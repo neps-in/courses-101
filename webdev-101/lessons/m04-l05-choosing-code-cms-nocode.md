@@ -2,7 +2,7 @@
 > After this lesson you can take any website brief, score it with a seven-question checklist, estimate what each way of building it really costs over three years, and write a one-page recommendation a client (or you) can act on.
 
 **Time:** ~16 min reading + ~30 min exercise · **Level:** L2 Practitioner · **Prereqs:** M01.L04, M04.L03 · **Remediate to:** M01.L04
-**Verified against:** vendor pricing pages for WordPress.com, Wix, Squarespace, Webflow, Framer and Shopify, cross-checked with 2026 comparison articles; GitHub Pages and Netlify limits from Lesson 4.3; WordPress.org Tools → Export documentation and Webflow's help centre on code export; checked 2026-11-02.
+**Verified against:** 2026 price comparisons for WordPress.com, Wix, Squarespace, Webflow and Shopify (third-party, mostly affiliate-funded: the vendors' own pricing pages load prices with JavaScript and couldn't be read automatically, so figures are rounded starting prices to be checked by hand); Framer's pricing page (read directly); GitHub Pages and Netlify limits from Lesson 4.3; WordPress.org Tools → Export documentation and Webflow's help centre on code export; checked 2026-11-02.
 
 > ⚠️ **Freshness flag:** builder prices and plan names change several times a year, and most "comparison" articles are affiliate-funded. The prices below are **starting prices billed yearly, in USD, rounded**, to show the method. In the exercise you'll look up today's prices for your own country on each vendor's own pricing page.
 
@@ -104,6 +104,7 @@ Write `decision-notes.md` → **"My next project"**: the brief in two sentences,
 ## When to use / when not to
 - **Hand-coded static:** few pages, rare changes, someone who can edit code, and a wish for speed, control and near-zero cost. **Not** when non-technical people must publish often.
 - **WordPress (self-hosted):** blogs and content sites, several editors, the need to own and move your site. **Trade-off:** you (or someone) must update, back up and secure it every month.
+- **Hosted WordPress (WordPress.com):** WordPress without managing a server, from about $4 a month; plugins and custom themes need a higher plan. A middle path for Brief 2 if nobody will do updates.
 - **No-code builders (Wix, Squarespace, Webflow, Framer):** a non-technical owner who wants it done fast and won't maintain anything. **Trade-off:** monthly fees forever and limited exit; Webflow and Framer suit design-led sites.
 - **Shop platforms (Shopify, WooCommerce):** real stock, carts, taxes and shipping. Don't hand-code commerce.
 - **Mix and match is normal:** a hand-coded launch page plus a hosted shop on `shop.yourdomain`, or WordPress for the blog with a builder for a one-off campaign page.

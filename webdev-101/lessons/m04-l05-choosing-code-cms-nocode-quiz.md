@@ -1,6 +1,6 @@
 # M04.L05 Quiz — Choosing How to Build: Code, CMS or No-Code
 
-> 6 questions · 2 recall, 3 scenario, 1 spot-the-error · pass mark 70% (5 of 6). Questions are tagged with the objective they test (O1–O3).
+> 7 questions · 3 recall, 3 scenario, 1 spot-the-error (incl. 1 spaced review) · pass mark 70% (5 of 7). Questions are tagged with the objective they test (O1–O3).
 > Prices change often; questions test the method, not today's prices (checked 2026-11-02).
 
 ### Q1. Which two checklist questions count double, because they decide daily life with the site? *(O1 · recall)*
@@ -62,3 +62,13 @@
 **Answer:** b
 **Explanation:** "Free domain" usually means year 1 only, and introductory prices often rise on renewal, so years 2–3 must use renewal prices and add the domain. Builders do bill monthly or yearly, and a three-year total is the figure to compare.
 **Hint:** What ends after year 1?
+
+### Q7. *(review: m04-l04)* Your recommendation moves a client's existing domain to a new builder. Before you change any DNS records, what should you save? *(O2 of M04.L04 · recall)*
+- a) A list of the builder's IP addresses, copied from a blog tutorial
+- b) A screenshot of every current record, including MX and email TXT
+- c) The registrar password, emailed to yourself for safe keeping
+- d) Nothing at all, because DNS changes can be undone with one click
+
+**Answer:** b
+**Explanation:** A "before" record lets you restore anything you break, especially MX and email TXT records that keep the client's email working. IP addresses must come from the host's own docs, passwords never go in email, and DNS changes take time to spread, so mistakes aren't instantly undone.
+**Hint:** Lesson 4.4: what did Rahul delete?
