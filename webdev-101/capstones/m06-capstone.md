@@ -14,7 +14,7 @@ The founder is about to spend money on the launch: a newsletter swap with a part
 
 ```mermaid
 flowchart TD
-  %% alt: Capstone steps: measurement plan, UTM sheet, GA4 via GTM with generate_lead, consent banner and Consent Mode, tests, three planted bugs, then the report.
+  %% alt: Capstone steps: measurement plan, UTM sheet, GA4 via GTM with generate_lead, consent banner and Consent Mode, tests, planted bugs, report.
   A[Measurement plan:<br/>question → key event → report]:::cream --> B[UTM naming sheet:<br/>3+ channels]:::sky
   B --> C[GA4 via GTM: Google tag +<br/>generate_lead on response.ok]:::sky
   C --> D[Consent default first,<br/>banner, Consent Mode]:::sky
