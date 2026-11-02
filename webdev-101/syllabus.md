@@ -13,7 +13,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | M03 CSS: Design, Brand & Layout | L1 | 5 | #4, #5 | ✅ |
 | M04 Publish It: Tools, Hosting & Domains | L2 | 5 | #6, #7 | ✅ |
 | M05 JavaScript for Marketers | L2 | 4 | #3, #6, #7, #12 (reinforced) | ✅ |
-| M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 | — |
+| M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 (+ #3, #6, #12 reinforced) | ✅ |
 | M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 | — |
 | M08 Advanced: AI, Automation & Scale | L3 | 4 | #12 | — |
 
@@ -339,3 +339,62 @@ flowchart LR
 ### M05 Capstone — Interactive launch page
 - **File:** `capstones/m05-capstone.md` + `cheatsheets/m05-javascript.md`
 - The live launch page gains a working FAQ accordion, a timed newsletter modal (polite: delayed or scroll-triggered, dismissible, shown once, keyboard and screen-reader friendly) and a lead form that delivers to an email list with double opt-in. All JS in one deferred `js/main.js`; the content and form still work with JavaScript off. Includes a break-it-and-fix-it set (a `null` element error, a modal focus bug, a form field missing `name`) and a short script audit of the page (own and third-party scripts, weight, purpose). Rubric: JavaScript quality and progressive enhancement, accessibility of components (NN #3), form delivery and consent, honesty (no fake urgency), debugging evidence.
+
+## M06 — Tracking, Analytics & Consent (L2)
+
+**Goal:** measure what matters on the launch page (visits by campaign, sign-ups as key events), legally and honestly. · NN #9 Consent before tracking where the law requires it (taught: L04, applied to every tag in L01–L03 and the capstone), #10 Measure with defined key events (taught: L02–L03); reinforced: #3 (the consent banner works with a keyboard and a screen reader), #6 (each tracking change is a commit or a GTM container version), #12 (AI-generated tracking code and banner wording checked)
+**First installs:** a free Google Analytics 4 property (L02), a free Google Tag Manager container (L03), and a consent banner: a free-tier consent management platform (CMP) from Google's CMP Partner Program list or an open-source option (L04). Chrome's **Tag Assistant** for testing.
+**Running project:** the live M05 launch page gets a UTM naming sheet for its launch campaign, GA4 measuring page views and `generate_lead` (marked as a key event) through GTM, and a consent banner with Google Consent Mode v2 so nothing that needs consent runs before the visitor agrees. The M05 form's success branch pushes a `dataLayer` event, so only real, confirmed sign-ups count.
+**Order note:** L02 and L03 install tracking before the consent banner arrives in L04. Learners keep tracking in test (their own visits, internal traffic filtered) until L04; each lesson says so in a `> Note:`.
+**Freshness:** GA4 menus, Consent Mode requirements and privacy laws (India's DPDP Rules 2025 phase in until 2027; US state laws keep multiplying) change often; each lesson carries a freshness flag and a check date.
+
+```mermaid
+flowchart LR
+  %% alt: M06 lesson path: tags, pixels and UTMs; GA4 and key events; Google Tag Manager; privacy and consent; then the fully tracked launch page capstone.
+  L1[L01 Tags, pixels<br/>and UTMs]:::cream --> L2[L02 GA4 and<br/>key events]:::sky
+  L2 --> L3[L03 Google Tag<br/>Manager]:::blue
+  L3 --> L4[L04 Privacy, cookies<br/>and consent]:::blue
+  L1 -. "consent applies to every tag" .-> L4
+  L4 --> C[M06 Capstone:<br/>fully tracked launch page]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M06.L01 — Tags, Pixels & UTMs
+- **File:** `lessons/m06-l01-tags-pixels-utms.md` · **Prereqs:** M05.L01 · **Remediate to:** M05.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** how a tag or pixel works (a script or image that sends a request with parameters, often setting cookies; first- vs third-party) and **observe** one firing in the Network panel.
+  2. **Build** consistent UTM links (`utm_source`, `utm_medium`, `utm_campaign`, optional `utm_content`, `utm_term`) from a naming convention (lowercase, hyphens, GA4's default channel rules for `utm_medium`), and **decide** where not to use them (internal links).
+  3. **Audit** the tags on a page (what each collects, who receives it, whether it sets cookies) as the input to the consent work in L04.
+- **Hands-on idea:** a UTM naming sheet and builder (spreadsheet formula or Google's Campaign URL Builder) for Nila Coffee's launch: newsletter, Instagram bio, WhatsApp share, a paid ad; watch a GA4 or Meta Pixel request on a brand site in Network (filter `collect`); tag inventory table for your own page. Break-it-and-fix-it: `utm_source=Instagram` vs `instagram` splitting one source into two rows, UTMs on internal links restarting the session's source, a second `?` instead of `&` breaking the parameters.
+
+### M06.L02 — Google Analytics 4 & Key Events
+- **File:** `lessons/m06-l02-ga4-key-events.md` · **Prereqs:** M06.L01 · **Remediate to:** M06.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Set up** a GA4 property and web data stream, review Enhanced measurement, and **verify** data arriving in Realtime and DebugView.
+  2. **Define** key events: send `generate_lead` from the M05 form's success branch only (after `response.ok`), mark it as a key event, and **filter** internal traffic.
+  3. **Read** the core reports (Traffic acquisition by session source/medium and campaign, Pages and screens, Key events) and **answer** a business question ("which channel brought sign-ups?") from them.
+- **Hands-on idea:** install the Google tag (gtag.js) on the launch page, send a test sign-up and find it in DebugView, mark `generate_lead` as a key event, set up the internal-traffic filter; read the reports for a UTM-tagged test visit from L01. Break-it-and-fix-it: a Measurement ID typo (no data in Realtime), `generate_lead` fired on button click so failed submissions count, the tag on only one page of the site.
+
+### M06.L03 — Google Tag Manager
+- **File:** `lessons/m06-l03-google-tag-manager.md` · **Prereqs:** M06.L02 · **Remediate to:** M06.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Explain** GTM's model (tags, triggers, variables, the `dataLayer`, workspaces and versions) and **install** the container snippet, replacing the hard-coded gtag.js from L02.
+  2. **Configure** the Google tag and a GA4 event tag for `generate_lead` fired by a custom `dataLayer.push` event from the form's success branch, with a variable for the form name.
+  3. **Test** in Preview mode (Tag Assistant), **publish** a named version, and **roll back** a bad version.
+- **Hands-on idea:** move GA4 from gtag.js to GTM, push `{ event: 'generate_lead', form_name: 'launch-list' }` after `response.ok`, check it in Tag Assistant and GA4 DebugView, publish "v2 – lead event"; a UTM-tagged visit from L01 shows up correctly. Break-it-and-fix-it: GA4 installed twice (gtag.js left in plus GTM → double page views), a trigger on "All Elements" clicks that counts failed submissions, changes tested in Preview but never published.
+
+### M06.L04 — Privacy, Cookies & Consent Around the World
+- **File:** `lessons/m06-l04-privacy-cookies-consent.md` · **Prereqs:** M06.L01, M06.L03, M02.L04 · **Remediate to:** M06.L01 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Compare** the basics of GDPR + ePrivacy (EU/UK), CCPA/CPRA (California), DPDP Act 2023 and Rules 2025 (India) and LGPD (Brazil): opt-in vs opt-out, what counts as consent, rights to withdraw, with a "check a lawyer" boundary.
+  2. **Add** a consent banner (free-tier CMP or open-source) with equal "Accept" and "Reject" choices, a way to change one's mind later, and keyboard and screen-reader access, and **update** the privacy page to list the tags from L01.
+  3. **Configure** Google Consent Mode v2 (default `denied` before any tag, `update` on choice; basic vs advanced) through GTM, and **verify** in Tag Assistant and DevTools that no analytics cookie is set before consent.
+- **Hands-on idea:** a tag-by-tag consent table (from the L01 inventory), banner installed via GTM, Consent Mode defaults and updates checked in Tag Assistant's Consent tab, cookies checked in Application → Cookies before and after Accept/Reject. Break-it-and-fix-it: GA4 firing before the consent default (cookie set on first load), a banner with no "Reject" on the first layer, the consent default set after the Google tag loads.
+
+### M06 Capstone — Fully tracked launch page
+- **File:** `capstones/m06-capstone.md` + `cheatsheets/m06-tracking.md`
+- The live launch page measures page views and `generate_lead` (a key event) through GA4 via GTM, with UTM-tagged links for a small launch campaign (at least three channels from the naming sheet) and a working consent banner with Consent Mode v2. Deliverable: a measurement plan (business question → key event → report), the tag and consent table, Tag Assistant and DevTools evidence that nothing needing consent runs before Accept, a privacy checklist, and a one-paragraph answer to "which channel brought sign-ups?" from test data. Break-it-and-fix-it set: duplicate GA4 install, a UTM case mismatch, a tag firing before consent. Rubric: measurement plan and key events (NN #10), tag hygiene (GTM versions, no duplicates), UTM consistency, consent and privacy (NN #9, privacy checklist), evidence and honesty of reporting.

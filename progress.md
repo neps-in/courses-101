@@ -111,11 +111,16 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M05 | L03 | Interactive Components | webdev-101/lessons/m05-l03-interactive-components.md | reviewed | 2026-11-02 |
 | M05 | L04 | Forms That Work: Validation & Sending Data | webdev-101/lessons/m05-l04-forms-send-data.md | reviewed | 2026-11-02 |
 | M05 | Capstone | M05 capstone | webdev-101/capstones/m05-capstone.md | reviewed | 2026-11-02 |
-| M06 | — | Tracking, Analytics & Consent (not yet planned) | — | todo | — |
+| M06 | L01 | Tags, Pixels & UTMs | webdev-101/lessons/m06-l01-tags-pixels-utms.md | todo | — |
+| M06 | L02 | Google Analytics 4 & Key Events | webdev-101/lessons/m06-l02-ga4-key-events.md | todo | — |
+| M06 | L03 | Google Tag Manager | webdev-101/lessons/m06-l03-google-tag-manager.md | todo | — |
+| M06 | L04 | Privacy, Cookies & Consent Around the World | webdev-101/lessons/m06-l04-privacy-cookies-consent.md | todo | — |
+| M06 | Capstone | M06 capstone | webdev-101/capstones/m06-capstone.md | todo | — |
 | M07 | — | Fast, Accessible & Search-Ready (not yet planned) | — | todo | — |
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-03: webdev-101 planned M06 (4 lessons + capstone) in syllabus.md: L01 tags/pixels/UTMs (naming sheet, Network, tag inventory), L02 GA4 + generate_lead key event from the form's response.ok branch, L03 GTM (dataLayer push, Preview, versions, rollback), L04 GDPR/CPRA/DPDP/LGPD basics + consent banner + Consent Mode v2 via GTM; capstone fully tracked launch page + cheatsheets/m06-tracking.md; order note: tracking stays in test until the L04 banner. M05 fully reviewed first (L02–L04 + capstone).
 - 2026-11-02: webdev-101 m05-capstone reviewed: structure matches the M04 capstone and framework; rubric matches the syllabus criteria; carried the L02/L03 review fixes into the brief (copy button hidden until JS + fallback, counter limit from maxlength, no dead buttons and plain-date countdown in the JS-off test, focus returns after the pop-up closes, how to re-test once-per-visit); planted bugs A–C unchanged (verified in L01–L04). M05 fully reviewed.
 - 2026-11-02: webdev-101 m05-l04 reviewed: http:// break-it row now separates the no-JS case (301 → followed as GET, data lost) from the fetch case (blocked as mixed content); catch message "Couldn't send…" (it also catches non-network failures), cheat sheet matched; Mailchimp double opt-in path re-checked against its help page (audience Settings or account-wide Opt-In Settings; only for Mailchimp's own/embedded forms); Formspree "confirm the form" corrected to account email verification; noted Netlify Forms needs a different fetch request; quiz unchanged (c b d b c a d).
 - 2026-11-02: webdev-101 m05-l03 reviewed: re-tested in Chrome 156 — showModal() focuses the first focusable item (the sign-up link), Tab also reaches the browser address bar, closing restores focus to the previously focused element, show() + Escape leaves the dialog open (break-it row confirmed); lesson now says so; added optional Home/End for tabs (APG); countdown expected output dated; exercise time 45→50 min to match Parts A–E; quiz Q2 and Q6 correct options were the longest after drafting edits → shortened (answers unchanged b d a c c a b).
