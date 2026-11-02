@@ -93,7 +93,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | draft | 2026-11-02 |
 | M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | draft | 2026-11-02 |
-| M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | todo | — |
+| M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | draft | 2026-11-02 |
 | M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | todo | — |
 | M03 | L03 | Layout with Flexbox & Grid | webdev-101/lessons/m03-l03-layout-flexbox-grid.md | todo | — |
 | M03 | L04 | Responsive, Mobile-First Design | webdev-101/lessons/m03-l04-responsive-mobile-first.md | todo | — |
@@ -106,6 +106,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-02: webdev-101 m03-l01 draft (lesson + 7-question quiz incl. 1 review from M02.L03; 14 glossary terms; cascade-decision flowchart kept as Mermaid; 2 image prompts, no images). Starter styles.css validated live (W3C CSS Validator: "Congratulations! No Error Found."; missing-semicolon message quoted from a live run). Chrome DevTools specificity tooltip confirmed in the CSS features reference. Break-it-and-fix-it: 404 stylesheet, missing semicolon, class beats later type rule. Glossary re-sorted (2 entries moved). Next: `/next-lesson` → M03.L02.
 - 2026-11-02: webdev-101 planned M03 (5 lessons + capstone) in syllabus.md; linked styles.css next to launch.html (Notepad/TextEdit) + CodePen for experiments; WCAG 2.2 contrast, reflow and target size built in. Started by `/loop /next-lesson` while M02 is still at draft (not yet reviewed). Next: `/next-lesson` → M03.L01.
 - 2026-11-02: webdev-101 m02-capstone draft (launch-page content skeleton + hand-over pack; 5×4 rubric; five-bug break-it-and-fix-it incl. relative og:image the validator can't catch; 1 image prompt) + cheatsheets/m02-html.md. Module 2 fully drafted; loop stopped for review. Next: /review-lesson for M02, then /plan-module 3.
 - 2026-11-02: webdev-101 m02-l05 draft (lesson + 7-question quiz incl. 1 review from M02.L04; 11 glossary terms; preview-cache flowchart kept as Mermaid; 3 image prompts, no images). Meta image sizes (1200×630 best, 600×315 min, 8 MB) and Google title/snippet 'no limit, truncated' read from primary docs; <head> validated live (0 errors). Hands-on tests the debuggers on the M01 brand site (learner page not public until M04). Fixed M02 cross-refs to match the outline (4.3, 3.2, WP101 M05.L02, WP101 M08.L04). Next: M02 capstone.
