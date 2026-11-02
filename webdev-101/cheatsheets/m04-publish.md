@@ -54,7 +54,7 @@ nila-launch/          ← open this folder in VS Code (the site root)
 **Never:** wildcard `*` records, deleting MX, old IPs from blogs, buying on first-year price, someone else's account.
 | Error | Means |
 |---|---|
-| "Site not found · GitHub Pages" (404) | CNAME points at the wrong `*.github.io`, or no custom domain set in the repo |
+| "Site not found · GitHub Pages" (404) | No repo claims the domain: custom domain not set in Settings → Pages, or `CNAME` file deleted |
 | `DNS_PROBE_FINISHED_NXDOMAIN` | No record for that name (typo) or domain lapsed |
 | `NET::ERR_CERT_COMMON_NAME_INVALID` | Your certificate isn't issued yet (`*.github.io` cert showing) |
 | HTTPS never provisions | CAA record not allowing `letsencrypt.org` |

@@ -3,7 +3,7 @@
 
 **Time:** ~3–4 hours (plus DNS and certificate waiting time) · **Level:** L2 Practitioner · **Prereqs:** M04.L01–M04.L05 (and your M03 capstone page)
 **Non-negotiables assessed:** #6 Version control and safe deployment · #7 HTTPS and one canonical address · reinforced: #4 Mobile-first (checked live on a real phone)
-**Verified against:** the M04 lessons' sources (GitHub Docs on Pages, publishing sources, limits, custom domains, verification and HTTPS; Pro Git; VS Code docs); the three planted bugs' symptoms checked live on 2026-11-02 (wrong letter case → 404 on a GitHub Pages site; a mistyped `*.github.io` CNAME target → "Site not found · GitHub Pages", 404; `git revert` + push → a new Pages deployment that restores the previous content).
+**Verified against:** the M04 lessons' sources (GitHub Docs on Pages, publishing sources, limits, custom domains, verification and HTTPS; Pro Git; VS Code docs); the three planted bugs' symptoms checked live on 2026-11-02 (wrong letter case → 404 on a GitHub Pages site; a mistyped `www` record name → `DNS_PROBE_FINISHED_NXDOMAIN` (NXDOMAIN in Dig); a mistyped `*.github.io` CNAME **value** resolves to the same GitHub addresses, so the site still loads, which is why it isn't used as a planted bug; `git revert` + push → a new Pages deployment that restores the previous content).
 
 > Note: a custom domain is **optional** (the course's zero-cost rule). Without one, use your `username.github.io/repo/` address, skip Task 4's DNS steps and do bug B as a read-and-explain exercise. The rubric's domain row has a no-domain column.
 
@@ -60,7 +60,8 @@ flowchart TD
 | Network, **Disable cache**, reload | Every file 200; no red requests |
 | `http://` and the non-canonical host (apex or `www`) | One or two 301s, ending at your canonical `https://` address |
 | `/nope.html` | 404 (your custom `404.html` if you made one) |
-| Padlock → certificate | Issued to your domain (or `*.github.io`) by Let's Encrypt, about 90 days, renewed automatically |
+| Site-information icon → certificate | Issued to your domain (or `*.github.io`) by Let's Encrypt, about 90 days, renewed automatically |
+| Console | No mixed-content warnings (nothing loaded over `http://`) |
 | A real phone | Mobile layout, fonts loaded, no sideways scroll (NN #4) |
 | Push a small text change | Live within a few minutes, matching the latest commit |
 
@@ -69,13 +70,13 @@ Plant these **one at a time** on the live site, record the symptom, the tool and
 
 | # | Plant this | Symptom (checked 2026-11-02) | Find it with | Fix |
 |---|---|---|---|---|
-| A | Change the hero `src` to `images/Beans.jpg` (file is `beans.jpg`), commit, push | Local preview on Windows/Mac still shows it; **live**, the image is missing | Network: **404** for `…/images/Beans.jpg`; compare with the file list on GitHub | Match the case, commit `Fix hero image case`, push |
-| B | At your DNS host, change the `www` CNAME value to a typo (`yuorname.github.io`) | After the TTL, `www.yourdomain` shows **"Site not found · GitHub Pages"** (404); the apex may still work | Dig CNAME for `www`; compare letter by letter | Restore the value; wait for the TTL; recheck Dig |
+| A | Change the hero `src` to `images/Beans.jpg` (leave the file as `beans.jpg`: Git on Windows/Mac often ignores case-only renames), commit, push | Local preview on Windows/Mac still shows it; **live**, the image is missing | Network: **404** for `…/images/Beans.jpg`; compare with the file list on GitHub | Match the case, commit `Fix hero image case`, push |
+| B | At your DNS host, rename the `www` CNAME record to `ww` (value unchanged) | `www.yourdomain` fails with **`DNS_PROBE_FINISHED_NXDOMAIN`** (once any cached answer expires); the apex still works | Dig CNAME for `www`: status **NXDOMAIN**, no answer; Dig `ww.yourdomain` finds your record | Rename it back to `www`; recheck Dig; restore within the hour so the certificate keeps renewing |
 | C | Commit and push "Remove pricing section" (delete it) | Live page loses the section after the deploy | Actions: the deploy for that commit; `git log --oneline` | `git revert HEAD --no-edit` + `git push`; a new deploy restores it |
 
-**No domain?** For bug B, Dig your `username.github.io` address and write what you'd see with a typo and why (Lesson 4.4's table). Use a short-TTL record (e.g. 300 s) if your DNS host lets you, so bug B doesn't keep `www` broken for long.
+**No domain?** For bug B, Dig `ww.username.github.io` (it resolves, because GitHub answers every `*.github.io` name) and explain in two sentences why a typo in your *own* domain's record name gives NXDOMAIN instead (Lesson 4.4's table). With a domain, use a short-TTL record (e.g. 300 s) if your DNS host lets you, so bug B doesn't keep `www` broken for long.
 
-The lesson of bug A: **live is stricter than local**. Of bug B: **DNS typos look like hosting errors**, so check the record first. Of bug C: **rolling back is a commit, not a panic**.
+The lesson of bug A: **live is stricter than local**. Of bug B: **DNS typos look like the site is down**, so Dig the exact name before blaming the host. Of bug C: **rolling back is a commit, not a panic**.
 
 ### 7. Build decision (from M04.L05)
 `decision-notes.md` in the repo: your next project's brief, the seven checklist answers, winner and runner-up, a three-year cost sheet (vendor pages named and dated), the exit line, and a "revisit when" trigger.
