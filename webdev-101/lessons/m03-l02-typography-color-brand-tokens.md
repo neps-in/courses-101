@@ -220,7 +220,7 @@ flowchart TD
    > 🖼️ **Image prompt:** Desktop screenshot (1280×800) of the Nila Coffee launch page after this lesson: cream background, coffee-brown serif h1 "Fresh beans every month", dark body text in a narrow column, and a burnt-orange "Join the launch list" button. Outline the heading and the button. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Launch page with cream background, brown serif headline, readable body text and an orange call-to-action button.
 6. Open DevTools → **Elements**, select `<html>`, and look at the **Styles** pane. **Expected:** your `:root` tokens listed. Hover a `var(--color-cta)` anywhere: a tooltip shows its value.
-7. Validate `styles.css` in the W3C CSS checker. **Expected (checked 2026-11-02):** "Congratulations! No Error Found."
+7. Validate `styles.css` in the W3C CSS checker. **Expected (checked 2026-11-02):** "Congratulations! No Error Found." You'll also see a few **Warnings** such as "Due to their dynamic nature, CSS variables are currently not statically checked". Those are fine: the checker is saying it can't test values that live in tokens, which is why you check contrast yourself.
 
 **Part C: break it and fix it: the brand colour that fails (8 min)**
 1. Change one token to the "brand guide" caramel: `--color-cta: #e0a458;`. Save and reload. **Every** button changes, because they all use the token.
