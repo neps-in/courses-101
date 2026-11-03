@@ -148,7 +148,7 @@ flowchart TD
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| Old title or image keeps showing after a fix | The platform's cached card | Facebook Sharing Debugger → **Scrape Again**; LinkedIn Post Inspector → **Inspect**; WhatsApp and others refresh on their own schedule (sharing a URL with a harmless `?v=2` gives a fresh card) |
+| Old title or image keeps showing after a fix | The platform's cached card | Facebook Sharing Debugger → **Scrape Again**; LinkedIn Post Inspector → **Inspect**; WhatsApp and others refresh on their own schedule. Adding a harmless `?v=2` can force a new card in some apps, but platforms that group shares by `og:url` (Facebook does) may still show the old one, so re-scrape first |
 | No image in the preview | `og:image` missing, relative, private, or blocked | Use a full public `https://` URL; open it in a private window to check it loads |
 | Image cropped badly | Wrong ratio or key content near the edges | 1200×630 (1.91:1), important content in the centre |
 | Debugger warns "Missing properties: og:…" | A required tag is absent | Add the tag it names (often `og:type` or `og:url`) |

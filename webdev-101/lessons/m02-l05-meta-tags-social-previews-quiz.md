@@ -61,7 +61,7 @@
 ```
 - a) X needs its own `twitter:title` tag; it never reads `og:title`
 - b) The `og:image` URL can't contain numbers such as `1200x630`
-- c) `summary` is the small card; use `summary_large_image`
+- c) `summary` is the small card style; use `summary_large_image`
 - d) The `og:title` content is too short to be accepted by X at all
 
 **Answer:** c
@@ -72,7 +72,7 @@
 - a) Only inside the website's own database, hidden from the visitor
 - b) In the page's `<head>`, as new meta tags for the next visitor
 - c) In a cookie that is deleted as soon as the browser tab closes
-- d) In the URL's query string, visible in the address bar and history
+- d) In the URL's query string, shown in the address bar and history
 
 **Answer:** d
 **Explanation:** GET sends form data in the URL (`?email=amara%40example.com`), so it's visible in the address bar, browser history, server logs and analytics. That's why real sign-up forms use POST to a form service (Lesson 5.4). It doesn't create cookies or meta tags, and the practice form has no database at all.

@@ -91,7 +91,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | reviewed | 2026-11-03 |
 | M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | reviewed | 2026-11-03 |
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | reviewed | 2026-11-03 |
-| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
+| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | reviewed | 2026-11-03 |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | draft | 2026-11-02 |
 | M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | reviewed | 2026-11-02 |
 | M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | reviewed | 2026-11-02 |
@@ -124,6 +124,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-03: webdev-101 m02-l05 reviewed (no browser tests): "?v=2 gives a fresh card" corrected (platforms that group by og:url, e.g. Facebook, may still show the cached card; re-scrape first); Meta 1200×630/8 MB, OGP required tags, twitter:card fallback and Google title/snippet guidance accurate; X, Meta and Google doc URLs return 200; quiz Q6, Q7 lengths rebalanced; answers c b d b a c d unchanged; ~16 min reading.
 - 2026-11-03: webdev-101 m02-l04 reviewed (no browser tests): "By joining you agree to our privacy notice" replaced (a notice informs, it isn't agreed to) and exercise note added; autocomplete described as the usual way to meet WCAG 1.3.5 rather than "required by"; DPDP phasing (Rules Nov 2025, consent duties ~May 2027) consistent with M06.L04; quiz Q1, Q6, Q7 lengths rebalanced, Q2 explanation aligned; answers b d a c b d a unchanged; ~18 min reading.
 - 2026-11-03: webdev-101 m02-l03 reviewed (no browser tests): content accurate (outline algorithm removed 2022, checker heading-level error and outline option checked live at draft, landmark names, VO-U rotor); VoiceOver troubleshooting row clarified; quiz Q1, Q5, Q7 option lengths rebalanced; answers c a d b a c d unchanged; ~17 min reading.
 - 2026-11-03: webdev-101 m02-l02 reviewed (no browser tests): autoplay claim made precise (browsers generally block autoplay with sound; muted + playsinline); rest accurate (implicit noopener, rel=sponsored/nofollow per Google, nocookie wording hedged); quiz Q3, Q4, Q5 option lengths rebalanced; answers b d a c b d a unchanged; ~20 min reading.
