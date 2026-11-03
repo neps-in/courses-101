@@ -6,7 +6,7 @@
 ### Q1. How many `<main>` elements should a normal page have? *(O1 · recall)*
 - a) One per section, so each block is marked as important
 - b) None; `<main>` is optional decoration for designers
-- c) Exactly one, around the page's main content
+- c) Exactly one, wrapped around the page's main content
 - d) Two: one for the header and one for the footer
 
 **Answer:** c
@@ -44,7 +44,7 @@
 **Hint:** Look at what the lesson's semantic example adds to each `<section>`.
 
 ### Q5. Which structure is best for a launch page's top menu of four links? *(O1 · scenario)*
-- a) `<nav aria-label="Main">` containing a `<ul>` of `<li><a>` links
+- a) `<nav aria-label="Main">` holding a `<ul>` of `<li><a>` links
 - b) A `<div class="menu">` with the four links separated by spaces
 - c) An `<h2>` heading for each link so each one stands out more
 - d) A `<footer>` element at the top so it's easy to find in code
@@ -75,7 +75,7 @@
 - a) `alt=""`, because the link already works without text
 - b) A detailed description of the photo's colours and background
 - c) `alt="link"`, so screen readers know that it can be clicked
-- d) Where the link goes, such as `alt="Shop the Coorg dark roast"`
+- d) Where the link goes, e.g. `alt="Shop the Coorg dark roast"`
 
 **Answer:** d
 **Explanation:** When an image is a link's only content, its alt *is* the link text, so it must name the destination. An empty alt leaves a nameless link, a visual description doesn't say what the link does, and screen readers already announce "link".

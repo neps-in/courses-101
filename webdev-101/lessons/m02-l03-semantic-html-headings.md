@@ -193,7 +193,7 @@ flowchart TD
 | Error: the heading … skipping heading levels | Same as above (current checker versions report this as an error) | Fix the level, not the font size |
 | Accessibility tree shows "region" missing for a section | The section has no accessible name | Add `aria-labelledby="…"` pointing to the section's heading `id` |
 | Two "banner" or "contentinfo" landmarks | `header`/`footer` used at the top level twice | Keep one page `header` and one page `footer`; headers inside `article` or `section` don't count |
-| VoiceOver rotor shows no landmarks | Using Safari with a different focus, or rotor on another list | Click inside the page, then Control+Option+U and press ← / → to switch lists |
+| VoiceOver rotor shows no landmarks | Focus is outside the page (e.g. in the address bar), or the rotor is on another list | Click inside the page, then Control+Option+U and press ← / → to switch lists |
 
 ## Exercise
 **Task:** produce a "structure report" for `launch.html`:

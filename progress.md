@@ -89,7 +89,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | reviewed | 2026-11-02 |
 | M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | reviewed | 2026-11-03 |
 | M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | reviewed | 2026-11-03 |
-| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | draft | 2026-11-02 |
+| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | reviewed | 2026-11-03 |
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | draft | 2026-11-02 |
 | M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
 | M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | draft | 2026-11-02 |
@@ -124,6 +124,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-03: webdev-101 m02-l03 reviewed (no browser tests): content accurate (outline algorithm removed 2022, checker heading-level error and outline option checked live at draft, landmark names, VO-U rotor); VoiceOver troubleshooting row clarified; quiz Q1, Q5, Q7 option lengths rebalanced; answers c a d b a c d unchanged; ~17 min reading.
 - 2026-11-03: webdev-101 m02-l02 reviewed (no browser tests): autoplay claim made precise (browsers generally block autoplay with sound; muted + playsinline); rest accurate (implicit noopener, rel=sponsored/nofollow per Google, nocookie wording hedged); quiz Q3, Q4, Q5 option lengths rebalanced; answers b d a c b d a unchanged; ~20 min reading.
 - 2026-11-03: webdev-101 m02-l01 reviewed (no browser tests): content accurate (validator messages were checked live at draft; CodePen "Stuff for <head>" and TextEdit "Display HTML files as HTML code" labels real); template complete, palette and alt OK; quiz Q1, Q3, Q6 distractors lengthened (correct answers were longest, written before the length rule); answers a c b d c a d unchanged; ~16 min reading.
 - 2026-11-03: webdev-101 m07 capstone reviewed (no browser tests): matches the syllabus deliverables and rubric; bug C made safe for a live site — plant for minutes only, before requesting indexing; Google caches robots.txt and refreshes about every 24 h, so after reverting use Search Console Settings → robots.txt → Request a recrawl (Google Search Central "Update your robots.txt file"); flowchart palette, alt length (133), template sections and self-check confirmed; cheat sheet unchanged. Module 7 complete.
