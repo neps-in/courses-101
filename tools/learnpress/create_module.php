@@ -99,11 +99,11 @@ foreach ( $payload as $item ) {
 	$quiz->post_status  = 'publish';
 	$quiz->post_author  = get_current_user_id();
 	$quiz->post_type    = LP_QUIZ_CPT;
-	$quiz->post_content = '<p>Check your understanding. Every question has a hint, and you see the explanation after each answer. Retake as often as you like.</p>';
+	$quiz->post_content = wp_slash( $item['quiz']['description'] ?? '<p>Check your understanding. Every question has a hint, and you see the explanation after each answer. Retake as often as you like.</p>' );
 	$quiz->save();
 	$quiz_id = $quiz->get_id();
 
-	foreach ( [
+	foreach ( array_merge( [
 		'_lp_duration'             => '10 minute',
 		'_lp_passing_grade'        => 70,
 		'_lp_instant_check'        => 'yes',
@@ -113,7 +113,7 @@ foreach ( $payload as $item ) {
 		'_lp_pagination'           => 1,
 		'_lp_review'               => 'yes',
 		'_lp_show_correct_review'  => 'yes',
-	] as $k => $v ) {
+	], $item['quiz']['meta'] ?? [] ) as $k => $v ) {   // payload "meta" overrides the defaults
 		update_post_meta( $quiz_id, $k, $v );
 	}
 

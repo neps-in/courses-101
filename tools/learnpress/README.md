@@ -42,10 +42,13 @@ Course 2606 had no lesson posts, so `create_module.php` creates the section, les
 
 | Section | Order | Section ID | Status |
 |---|---|---|---|
-| Start here (diagnostic quiz) | 1 | — | not yet |
-| M01 — How the Web Works | 2 | 41 | live 2026-11-03 (lessons 3181/3190/3199/3208/3217, capstone 3226; quizzes 3182/3191/3200/3209/3218) |
-| M02–M08 | 3–9 | — | not yet |
-| Final capstone (Launch Week) | 10 | — | not yet |
+| Start here (lesson 3515 + placement quiz 3516, passing grade 0) | 1 | 49 | live 2026-11-03 (`build_module.py start 0 …`) |
+| M01 — How the Web Works | 2 | 41 | live 2026-11-03 (trial) |
+| M02–M08 | 3–9 | 42–48 | live 2026-11-03 |
+| Final capstone — Launch Week (lesson 3532) | 10 | 50 | live 2026-11-03 (`build_module.py final 0 …`) |
+
+LearnPress stored the first section of the empty course at order 1 whatever was passed; check `section_order` after creating a section.
+Verify the whole course with `wp eval-file verify_webdev.php <payload dir> --user=118` (payloads from 2026-11-03 are in `/home/ubuntu/backups/neps-in/2026-11-03-webdev-rest/`).
 
 ## ⚠️ Slashing
 `wp_insert_post`, `wp_update_post` and `update_post_meta` unslash their input, and LearnPress `PostModel::save()` calls `wp_insert_post` unslashed.

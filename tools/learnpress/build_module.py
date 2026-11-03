@@ -16,7 +16,8 @@ ROOT = f"/home/ubuntu/courses-101/{COURSE}"
 MERMAID_JS = ('<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";'
               'mermaid.initialize({startOnLoad:true});</script>')
 
-MODULE, FIRST_ID, OUT = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3]
+MODE, FIRST_ID, OUT = sys.argv[1], int(sys.argv[2]), sys.argv[3]   # MODE: module number, "start" or "final"
+MODULE = int(MODE) if MODE.isdigit() else 0
 
 
 def module_files(n):
@@ -29,7 +30,7 @@ def module_files(n):
     return [((FIRST_ID + i) if FIRST_ID else 0, path, quiz) for i, (path, quiz) in enumerate(files)]
 
 
-LESSONS = module_files(MODULE)
+LESSONS = module_files(MODULE) if MODULE else []
 
 
 def md(text):
@@ -91,6 +92,7 @@ def lesson_html(path):
 def duration(path):
     head = open(f"{ROOT}/{path}").read()[:600]
     mins = [int(x) for x in re.findall(r"~(\d+)(?:–\d+)? min", head)]
+    mins += [60 * int(x) for x in re.findall(r"~(\d+)(?:–\d+)? hours?", head)]   # capstones: "~2–3 hours"
     return f"{sum(mins) or 30} minute"
 
 
@@ -107,13 +109,13 @@ def parse_quiz(path):
     for b in blocks:
         lines = b.rstrip().split("\n")
         q_title = re.sub(r"\(review: m(\d+)-l(\d+)\)", lesson_ref, lines[0])
-        q_title = re.sub(r"\s*\*\(O\d[^)]*\)\*\s*$", "", q_title)              # internal objective tag
+        q_title = re.sub(r"\s*\*\((?:O\d|M\d)[^)]*\)\*\s*$", "", q_title)        # internal tag: (O1 · recall), (M01.L01 · recall)
         opts, context, i = [], [], 1
         while i < len(lines) and not re.match(r"- [a-h]\) ", lines[i]):
             context.append(lines[i]); i += 1
         while i < len(lines) and re.match(r"- [a-h]\) ", lines[i]):
             opts.append((lines[i][2], lines[i][5:])); i += 1
-        rest = "\n".join(lines[i:])
+        rest = re.split(r"\n---\s*(?:\n|$)|\n## ", "\n".join(lines[i:]))[0]          # stop before a block break
         answer = re.search(r"\*\*Answer:\*\*\s*([a-h])", rest).group(1)
         expl = re.search(r"\*\*Explanation:\*\*\s*(.*?)(?=\n\*\*Hint:\*\*|\Z)", rest, re.S).group(1).strip()
         hint = re.search(r"\*\*Hint:\*\*\s*(.*)", rest, re.S).group(1).strip()
@@ -140,7 +142,35 @@ def site_title(path, n):
     return f"{int(m.group(1))}.{n} Module capstone: {m.group(2)}"
 
 
-payload = []
+def start_payload():
+    """webdev-101 'Start here': a short lesson (how to use your score) + the placement quiz from diagnostic-quiz.md."""
+    text = open(f"{ROOT}/diagnostic-quiz.md").read()
+    intro = text.split("\n## Block 1")[0]
+    intro = re.sub(r"^\*\*Verified against:\*\*.*\n", "", intro, flags=re.M)
+    intro = re.sub(r"\nWrite your answers down first.*\n", "\n", intro)
+    intro = re.sub(r"\n---\s*$", "", intro.rstrip())
+    sheet = text.split("\n## Score sheet")[1]
+    sheet = re.sub(r"^\*\*Answer key:\*\*.*\n", "", sheet, flags=re.M)
+    tmp = f"{OUT}.start.md"
+    open(tmp, "w").write(intro + "\n\n## Take the quiz\nThe placement quiz is the next item: 15 questions, about 15 minutes, no pass or fail. "
+                         "After each answer you see whether it was right, so keep a tally per block of five.\n\n## Score sheet" + sheet)
+    content = lesson_html(os.path.relpath(tmp, ROOT))
+    os.remove(tmp)
+    _, qs = parse_quiz("diagnostic-quiz.md")
+    return [{"lesson_id": 0, "title": "Start here: which modules can you skip?", "content": content,
+             "duration": "5 minute", "quiz": {"title": "Placement quiz", "site_title": "Placement quiz: Modules 1–3",
+             "questions": qs, "description": "<p>15 questions on Modules 1–3, about 15 minutes. There is no pass or fail: "
+             "count your correct answers in each block of five (Q1–5, Q6–10, Q11–15) and use the score sheet in the previous item.</p>",
+             "meta": {"_lp_passing_grade": 0, "_lp_duration": "15 minute"}}}]
+
+
+def final_payload():
+    path = "capstones/final-capstone.md"
+    return [{"lesson_id": 0, "title": "Final capstone: Launch Week", "content": lesson_html(path),
+             "duration": duration(path), "quiz": None}]
+
+
+payload = start_payload() if MODE == "start" else final_payload() if MODE == "final" else []
 for n, (lid, lpath, qpath) in enumerate(LESSONS, 1):
     item = {"lesson_id": lid, "title": site_title(lpath, n), "content": lesson_html(lpath),
             "duration": duration(lpath), "quiz": None}

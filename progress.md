@@ -81,54 +81,55 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | reviewed | 2026-11-02 |
-| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | reviewed | 2026-11-02 |
-| M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | reviewed | 2026-11-02 |
-| M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | reviewed | 2026-11-02 |
-| M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | reviewed | 2026-11-02 |
-| M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | reviewed | 2026-11-02 |
-| M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | reviewed | 2026-11-03 |
-| M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | reviewed | 2026-11-03 |
-| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | reviewed | 2026-11-03 |
-| M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | reviewed | 2026-11-03 |
-| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | reviewed | 2026-11-03 |
-| M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | reviewed | 2026-11-03 |
-| M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | reviewed | 2026-11-02 |
-| M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | reviewed | 2026-11-02 |
-| M03 | L03 | Layout with Flexbox & Grid | webdev-101/lessons/m03-l03-layout-flexbox-grid.md | reviewed | 2026-11-02 |
-| M03 | L04 | Responsive, Mobile-First Design | webdev-101/lessons/m03-l04-responsive-mobile-first.md | reviewed | 2026-11-02 |
-| M03 | L05 | Conversion-Focused UI Patterns | webdev-101/lessons/m03-l05-conversion-ui-patterns.md | reviewed | 2026-11-02 |
-| M03 | Capstone | M03 capstone | webdev-101/capstones/m03-capstone.md | reviewed | 2026-11-02 |
-| — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | reviewed | 2026-11-03 |
-| M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | reviewed | 2026-11-02 |
-| M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | reviewed | 2026-11-02 |
-| M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | reviewed | 2026-11-02 |
-| M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | reviewed | 2026-11-02 |
-| M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | reviewed | 2026-11-02 |
-| M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | reviewed | 2026-11-02 |
-| M05 | L01 | What JavaScript Does (and Breaks) | webdev-101/lessons/m05-l01-what-javascript-does.md | reviewed | 2026-11-02 |
-| M05 | L02 | JS Basics: Variables, Functions, Events | webdev-101/lessons/m05-l02-js-basics-events.md | reviewed | 2026-11-02 |
-| M05 | L03 | Interactive Components | webdev-101/lessons/m05-l03-interactive-components.md | reviewed | 2026-11-02 |
-| M05 | L04 | Forms That Work: Validation & Sending Data | webdev-101/lessons/m05-l04-forms-send-data.md | reviewed | 2026-11-02 |
-| M05 | Capstone | M05 capstone | webdev-101/capstones/m05-capstone.md | reviewed | 2026-11-02 |
-| M06 | L01 | Tags, Pixels & UTMs | webdev-101/lessons/m06-l01-tags-pixels-utms.md | reviewed | 2026-11-03 |
-| M06 | L02 | Google Analytics 4 & Key Events | webdev-101/lessons/m06-l02-ga4-key-events.md | reviewed | 2026-11-03 |
-| M06 | L03 | Google Tag Manager | webdev-101/lessons/m06-l03-google-tag-manager.md | reviewed | 2026-11-03 |
-| M06 | L04 | Privacy, Cookies & Consent Around the World | webdev-101/lessons/m06-l04-privacy-cookies-consent.md | reviewed | 2026-11-03 |
-| M06 | Capstone | M06 capstone | webdev-101/capstones/m06-capstone.md | reviewed | 2026-11-03 |
-| M07 | L01 | Performance & Core Web Vitals | webdev-101/lessons/m07-l01-performance-core-web-vitals.md | reviewed | 2026-11-03 |
-| M07 | L02 | Images, Fonts & Media Optimization | webdev-101/lessons/m07-l02-images-fonts-media.md | reviewed | 2026-11-03 |
-| M07 | L03 | Accessibility in Practice (WCAG 2.2) | webdev-101/lessons/m07-l03-accessibility-wcag.md | reviewed | 2026-11-03 |
-| M07 | L04 | Technical SEO Foundations | webdev-101/lessons/m07-l04-technical-seo-foundations.md | reviewed | 2026-11-03 |
-| M07 | Capstone | M07 capstone | webdev-101/capstones/m07-capstone.md | reviewed | 2026-11-03 |
-| M08 | L01 | Building with AI Assistants | webdev-101/lessons/m08-l01-building-with-ai.md | reviewed | 2026-11-03 |
-| M08 | L02 | APIs, Webhooks & No-Code Automation | webdev-101/lessons/m08-l02-apis-webhooks-automation.md | reviewed | 2026-11-03 |
-| M08 | L03 | Templates, Static Site Generators & Headless CMS | webdev-101/lessons/m08-l03-templates-ssg-headless.md | reviewed | 2026-11-03 |
-| M08 | L04 | Going Global: Multilingual & Multi-Region Sites | webdev-101/lessons/m08-l04-multilingual-hreflang.md | reviewed | 2026-11-03 |
-| M08 | Capstone | M08 capstone | webdev-101/capstones/m08-capstone.md | reviewed | 2026-11-03 |
-| Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | reviewed | 2026-11-03 |
+| M01 | L01 | The Internet vs the Web | webdev-101/lessons/m01-l01-internet-vs-web.md | published | 2026-11-03 |
+| M01 | L02 | URLs, Domains & DNS | webdev-101/lessons/m01-l02-urls-domains-dns.md | published | 2026-11-03 |
+| M01 | L03 | Hosting & How a Page Loads | webdev-101/lessons/m01-l03-hosting-page-load.md | published | 2026-11-03 |
+| M01 | L04 | Static vs Dynamic, Code vs CMS vs No-Code | webdev-101/lessons/m01-l04-static-dynamic-cms.md | published | 2026-11-03 |
+| M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | published | 2026-11-03 |
+| M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | published | 2026-11-03 |
+| M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | published | 2026-11-03 |
+| M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | published | 2026-11-03 |
+| M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | published | 2026-11-03 |
+| M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | published | 2026-11-03 |
+| M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | published | 2026-11-03 |
+| M02 | Capstone | M02 capstone | webdev-101/capstones/m02-capstone.md | published | 2026-11-03 |
+| M03 | L01 | How CSS Works: Selectors, Cascade, Box Model | webdev-101/lessons/m03-l01-css-selectors-cascade-box-model.md | published | 2026-11-03 |
+| M03 | L02 | Typography, Color & Brand Tokens | webdev-101/lessons/m03-l02-typography-color-brand-tokens.md | published | 2026-11-03 |
+| M03 | L03 | Layout with Flexbox & Grid | webdev-101/lessons/m03-l03-layout-flexbox-grid.md | published | 2026-11-03 |
+| M03 | L04 | Responsive, Mobile-First Design | webdev-101/lessons/m03-l04-responsive-mobile-first.md | published | 2026-11-03 |
+| M03 | L05 | Conversion-Focused UI Patterns | webdev-101/lessons/m03-l05-conversion-ui-patterns.md | published | 2026-11-03 |
+| M03 | Capstone | M03 capstone | webdev-101/capstones/m03-capstone.md | published | 2026-11-03 |
+| — | Diagnostic | Diagnostic (placement) quiz, M01–M03 | webdev-101/diagnostic-quiz.md | published | 2026-11-03 |
+| M04 | L01 | Your Toolkit: VS Code, Files & Folders | webdev-101/lessons/m04-l01-vscode-files-folders.md | published | 2026-11-03 |
+| M04 | L02 | Git & GitHub Without Fear | webdev-101/lessons/m04-l02-git-github-basics.md | published | 2026-11-03 |
+| M04 | L03 | Deploy to Free Hosting | webdev-101/lessons/m04-l03-deploy-free-hosting.md | published | 2026-11-03 |
+| M04 | L04 | Custom Domains, DNS Records & HTTPS | webdev-101/lessons/m04-l04-custom-domains-dns-https.md | published | 2026-11-03 |
+| M04 | L05 | Choosing How to Build: Code, CMS or No-Code | webdev-101/lessons/m04-l05-choosing-code-cms-nocode.md | published | 2026-11-03 |
+| M04 | Capstone | M04 capstone | webdev-101/capstones/m04-capstone.md | published | 2026-11-03 |
+| M05 | L01 | What JavaScript Does (and Breaks) | webdev-101/lessons/m05-l01-what-javascript-does.md | published | 2026-11-03 |
+| M05 | L02 | JS Basics: Variables, Functions, Events | webdev-101/lessons/m05-l02-js-basics-events.md | published | 2026-11-03 |
+| M05 | L03 | Interactive Components | webdev-101/lessons/m05-l03-interactive-components.md | published | 2026-11-03 |
+| M05 | L04 | Forms That Work: Validation & Sending Data | webdev-101/lessons/m05-l04-forms-send-data.md | published | 2026-11-03 |
+| M05 | Capstone | M05 capstone | webdev-101/capstones/m05-capstone.md | published | 2026-11-03 |
+| M06 | L01 | Tags, Pixels & UTMs | webdev-101/lessons/m06-l01-tags-pixels-utms.md | published | 2026-11-03 |
+| M06 | L02 | Google Analytics 4 & Key Events | webdev-101/lessons/m06-l02-ga4-key-events.md | published | 2026-11-03 |
+| M06 | L03 | Google Tag Manager | webdev-101/lessons/m06-l03-google-tag-manager.md | published | 2026-11-03 |
+| M06 | L04 | Privacy, Cookies & Consent Around the World | webdev-101/lessons/m06-l04-privacy-cookies-consent.md | published | 2026-11-03 |
+| M06 | Capstone | M06 capstone | webdev-101/capstones/m06-capstone.md | published | 2026-11-03 |
+| M07 | L01 | Performance & Core Web Vitals | webdev-101/lessons/m07-l01-performance-core-web-vitals.md | published | 2026-11-03 |
+| M07 | L02 | Images, Fonts & Media Optimization | webdev-101/lessons/m07-l02-images-fonts-media.md | published | 2026-11-03 |
+| M07 | L03 | Accessibility in Practice (WCAG 2.2) | webdev-101/lessons/m07-l03-accessibility-wcag.md | published | 2026-11-03 |
+| M07 | L04 | Technical SEO Foundations | webdev-101/lessons/m07-l04-technical-seo-foundations.md | published | 2026-11-03 |
+| M07 | Capstone | M07 capstone | webdev-101/capstones/m07-capstone.md | published | 2026-11-03 |
+| M08 | L01 | Building with AI Assistants | webdev-101/lessons/m08-l01-building-with-ai.md | published | 2026-11-03 |
+| M08 | L02 | APIs, Webhooks & No-Code Automation | webdev-101/lessons/m08-l02-apis-webhooks-automation.md | published | 2026-11-03 |
+| M08 | L03 | Templates, Static Site Generators & Headless CMS | webdev-101/lessons/m08-l03-templates-ssg-headless.md | published | 2026-11-03 |
+| M08 | L04 | Going Global: Multilingual & Multi-Region Sites | webdev-101/lessons/m08-l04-multilingual-hreflang.md | published | 2026-11-03 |
+| M08 | Capstone | M08 capstone | webdev-101/capstones/m08-capstone.md | published | 2026-11-03 |
+| Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: webdev-101 WHOLE COURSE LIVE on neps.in (course 2606): M02–M08 = sections 42–48, "Start here" = section 49 (lesson 3515 + placement quiz 3516, 15 questions, passing grade 0), "Final capstone — Launch Week" = section 50 (lesson 3532); M01 = section 41 moved to order 2 (LearnPress had stored the first section at order 1). Backup /home/ubuntu/backups/neps-in/2026-11-03-webdev-rest/ (also holds every payload and verify.php). Every module dry-run first. verify.php: 46 lessons and 267 questions identical to the payloads (content, duration, answers, hints, explanations); placement quiz grade 0, lesson quizzes 70; public page shows 46 lessons, 37 quizzes, sections in order; sample lesson/quiz URLs 200. Builder fixes: capstone times in hours now parsed (were 30-min fallback), (M01.L01 · …) tags stripped, hints stop at --- / ## block breaks (no lesson quiz was affected); start/final modes; create_module.php accepts quiz meta/description overrides (array_merge). 46 webdev-101 rows set to published.
 - 2026-11-03: wordpress-101 lesson 2.1 (post 2621) re-pushed with the user's OK: the live table row now reads "Ctrl+Shift+\\" again (lost earlier to WordPress unslashing). Backup in /home/ubuntu/backups/neps-in/2026-11-03-wp101-l2-1-backslash/. The rebuilt content differed from live only on that line, and stored content is now identical to the repo build; lesson URL 200. No other wordpress-101 source contains a backslash.
 - 2026-11-03: webdev-101 M01 synced to neps.in LearnPress as a trial (user's choice: one module first). Full DB backup in /home/ubuntu/backups/neps-in/2026-11-03-webdev-m01-trial/. Course 2606 renamed "Web Development 101 for Marketers & Content Creators" (slug unchanged) with a description generated from syllabus.md and an excerpt. Section 41 "M01 — How the Web Works" (order 2; 1 is kept for the "Start here" diagnostic, 10 for the final capstone): lessons 3181/3190/3199/3208/3217 + capstone 3226 with the M01 cheat sheet inlined, quizzes 3182/3191/3200/3209/3218 (7 questions each). Checked: items in order, all published, content identical to the payload, one correct answer per question, live answer letters = Markdown keys for all 5 quizzes, course and lesson URLs 200. Tools: build_module.py takes COURSE=…, outputs site titles, strips quiz objective tags and the glossary path; new create_module.php (dry run, then apply). Found: old scripts didn't wp_slash, so wordpress-101 lesson 2.1 (2621) shows "Ctrl+Shift+" without its backslash; all scripts now slash; the live fix awaits the user's OK.
 - 2026-11-03: webdev-101 m01, m03, m04, m05 cheat sheets reviewed (no progress rows; no browser tests). Each checked line by line against its reviewed lessons. M05: L02 snippet wrote to an undeclared `status` (in a browser that is window.status, a string, so the message silently never appears); now declares `copyStatus` as in the lesson. L04 snippet now declares form/emailField/status/submitButton with the lesson's names; `class="signup-form"` added to the form; both JS blocks pass `node --check`; "WCAG 2.2.2" → "SC 2.2.2 Pause, Stop, Hide" (as on M08). M01: 4xx = "request problem (usually a wrong URL)" to match L03. M03 and M04: content unchanged; Netlify Free figures (300 credits, 15 per deploy, 20 per GB, site paused at zero) re-confirmed on netlify.com pricing and docs. Note: M05.L03 body still says "WCAG 2.2.2" in two summary lines (full name given nearby). With m02/m06/m07/m08 checked earlier, all eight webdev-101 cheat sheets are now reviewed.
