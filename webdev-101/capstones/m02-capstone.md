@@ -51,7 +51,7 @@ On paper or in your note, write the heading outline you want, e.g.:
 | Benefits `section` | `h2` + a list of 3–5 benefits, using `strong` where it helps |
 | Testimonials `section` | `h2` + 1–3 `figure`/`blockquote`/`figcaption` (real, or TODO) |
 | FAQ `section` | `h2` + at least three questions as `h3` (or `details`/`summary`) with answers |
-| Sign-up `section id="signup"` | Promise line, form with labelled fields, right `type`s, `name`s, `autocomplete`, `required` only where essential, a hint via `aria-describedby`, any extra use as an unticked optional checkbox, privacy link, and a `button` that says what happens |
+| Sign-up `section id="signup"` | Promise line, form with labelled fields, right `type`s, `name`s, `autocomplete`, `required` only where essential, a hint via `aria-describedby`, any extra use as an unticked optional checkbox, a privacy link worded as information (not "you agree to"), and a `button` that says what happens |
 | `footer` | Contact (`mailto:` and/or `tel:`), privacy link, © line |
 
 Every `section` is named with `aria-labelledby`. At least one decorative image uses `alt=""`. Below-the-fold images use `loading="lazy"`.
@@ -72,7 +72,7 @@ Save a copy as `launch-broken.html` and plant these bugs **one at a time**. For 
 | A | Change an FAQ `h3` to `h4` | Validator error (skipped heading level) and `[missing]` in the outline |
 | B | Delete the hero image's `alt` | Validator error: `An "img" element must have an "alt" attribute…` |
 | C | Change the email label's `for` to a different case (`Email`) | Clicking the label does nothing; accessibility tree shows no Name |
-| D | Remove `name` from the email input | Submit: `email=` is missing from the address bar |
+| D | Remove `name` from the email input | Submit (with the practice `method="get"` from Lesson 2.4): `email=` is missing from the address bar |
 | E | Make `og:image` relative (`images/share.jpg`) | Not caught by the validator. Find it by reading your `<head>` against the cheat sheet, and explain why platforms would show no image |
 
 Bug E is the lesson: **a valid page can still be broken for sharing**, so the checklist matters as much as the checker.
