@@ -1,5 +1,5 @@
 # M01 Cheat Sheet — How the Web Works
-*Web Development 101 · Module 1 · checked 2026-11-02*
+*Web Development 101 · Module 1 · checked 2026-11-03*
 
 ## The big picture
 ```mermaid
@@ -38,7 +38,7 @@ scheme · subdomain · domain · TLD · path · **query (UTMs here)** · **fragm
 **TTL** = how long answers are cached. **NXDOMAIN** = no such domain.
 
 ## Status codes (L03)
-**2xx** ok · **3xx** redirect · **4xx** wrong URL · **5xx** server problem
+**2xx** ok · **3xx** redirect · **4xx** request problem (usually a wrong URL) · **5xx** server problem
 `200` OK · `301` moved for good · `302/307` moved for now · `304` use your cache · `404` not found · `410` gone · `500` server error · `503` overloaded/maintenance
 
 ## HTTPS (L03)

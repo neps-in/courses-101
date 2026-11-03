@@ -1,5 +1,5 @@
 # M03 Cheat Sheet — CSS: Design, Brand & Layout
-*Web Development 101 · Module 3 · checked 2026-11-02*
+*Web Development 101 · Module 3 · checked 2026-11-03*
 
 ## Rules, selectors and the cascade (L01)
 `selector { property: value; }` · link once in `<head>`: `<link rel="stylesheet" href="styles.css">`.

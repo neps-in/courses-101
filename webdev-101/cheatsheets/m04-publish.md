@@ -1,5 +1,5 @@
 # M04 Cheat Sheet — Tools, Version Control & Publishing
-*Web Development 101 · Module 4 · checked 2026-11-02*
+*Web Development 101 · Module 4 · checked 2026-11-03*
 
 ## Folders, files and paths (L01)
 ```
