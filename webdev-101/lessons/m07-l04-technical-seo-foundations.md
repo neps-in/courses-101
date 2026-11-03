@@ -90,6 +90,7 @@ flowchart TD
    }
    </script>
    ```
+   JSON doesn't allow comments, so keep notes out of the block. Use a logo image that looks right on a white background; SEO guides commonly cite a 112 × 112 px minimum (check Google's Organization page for the current rule).
 2. If your page shows a **price**, add a `Product` with an `Offer` that matches it exactly:
    ```html
    <script type="application/ld+json">
@@ -111,7 +112,7 @@ flowchart TD
    </script>
    ```
    A personal-brand page uses `Person` instead (`name`, `url`, `image`, `jobTitle`, `sameAs`). No price on the page yet? Leave `Product` out.
-3. Commit, deploy, then test the **live URL** in Google's **Rich Results Test** (search.google.com/test/rich-results). **Expected:** "Page is eligible for rich results" listing **Product snippets** or **Merchant listings** if you added a product (a page where people can buy is a merchant listing; otherwise product snippets), If you only added `Organization`, the tool may list it or report no rich-result items; either is fine, because the Schema Markup Validator (next step) checks every type. The exact wording on Google's tools changes; what matters is **0 errors**.
+3. Commit, deploy, then test the **live URL** in Google's **Rich Results Test** (search.google.com/test/rich-results). **Expected:** "Page is eligible for rich results" listing **Product snippets** or **Merchant listings** if you added a product (a page where people can buy is a merchant listing; otherwise product snippets), `Organization` is validated there too (Google moved its logo and organization checks into the Rich Results Test in November 2023), so expect an **Organization** item. The exact wording on Google's tools changes; what matters is **0 errors**.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Google's Rich Results Test showing the launch page URL tested, the result "Page is eligible for rich results", and the detected Product item with no errors. Outline the eligibility message and the item count. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Google Rich Results Test showing the launch page is eligible, with a Product item detected and no errors.
 4. Check **all** types (including `Organization`) at **validator.schema.org**. **Expected:** your items listed with 0 errors. Fix every error; read warnings and add recommended properties where they're true.
@@ -133,7 +134,7 @@ flowchart TD
      <url><loc>https://nilacoffee.in/accessibility.html</loc><lastmod>2026-11-03</lastmod></url>
    </urlset>
    ```
-   Use the exact URLs visitors land on (`https://`, with or without `www` as you chose in Lesson 4.4). Update `lastmod` when a page's content really changes.
+   Use the exact URLs visitors land on (`https://`, with or without `www` as you chose in Lesson 4.4). Update `lastmod` only when the main content, structured data or links really change: Google uses it only when it's consistently accurate, and ignores `<priority>` and `<changefreq>` (Search Central blog, June 2023).
 3. Deploy, then open `https://<your-domain>/robots.txt` and `/sitemap.xml` in a browser. **Expected:** both load (no 404), the sitemap shows as XML.
 
 **Part C: canonical and noindex (5 min)**
@@ -151,7 +152,7 @@ flowchart TD
 **Part D: Google Search Console (15 min)**
 1. Go to search.google.com/search-console → **Add property** → **Domain** → enter your domain. Google gives you a **TXT record**; add it at your DNS provider (Lesson 4.4) and click **Verify**. (DNS can take a while; the **URL prefix** property with an HTML file or meta tag is the alternative if you can't edit DNS.)
 2. **Sitemaps** → enter `sitemap.xml` → **Submit**. **Expected:** status "Success" (it may show "Couldn't fetch" for a short while on a new property; check again later).
-3. **URL Inspection** → paste your home page URL. On a new site it will probably say the URL isn't on Google yet. Click **Test live URL**. **Expected:** "URL is available to Google", the page's rendered screenshot and HTML, and any detected structured data. If the page is ready, click **Request indexing**.
+3. **URL Inspection** → paste your home page URL. On a new site it will probably say the URL isn't on Google yet. Click **Test live URL**. **Expected:** a verdict such as "URL is available to Google" (wording may differ), the page's rendered screenshot and HTML, and any detected structured data. A passing live test doesn't guarantee indexing (Google's help page says so). If the page is ready, click **Request indexing**.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Google Search Console URL Inspection after "Test live URL", showing "URL is available to Google", the "View tested page" button and a detected structured-data item. Outline the availability message. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Search Console URL Inspection showing the launch page is available to Google with structured data detected.
 4. Come back in a week: **Pages** (indexing) report, **Enhancements** (structured data), and **Core Web Vitals** (once there's traffic, Lesson 7.1).
@@ -192,7 +193,7 @@ flowchart TD
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Rich Results Test: "Unparsable structured data" | JSON syntax error (trailing comma, smart quotes from a word processor) | Validate; edit in your code editor, not a word processor |
-| No rich-result items detected | Only types the Rich Results Test doesn't report as rich results, or markup added by JavaScript after load | Check validator.schema.org; for important markup, put JSON-LD in the HTML |
+| No rich-result items detected | A type the Rich Results Test doesn't cover (check it at validator.schema.org), a syntax error, or markup added by JavaScript after load | Check validator.schema.org; for important markup, put JSON-LD in the HTML |
 | Domain verification fails | TXT record not yet visible, added to the wrong host, or quotes added | Wait and retry; check the record with a DNS lookup tool (Lesson 1.2) |
 | Sitemap "Couldn't fetch" | Wrong URL, not deployed, or a very new property | Open the sitemap URL in a browser; resubmit later |
 | "Discovered – currently not indexed" | Google knows the URL but hasn't crawled it yet | Usually patience on a new site; improve internal links and content |
@@ -243,6 +244,8 @@ Explain to a friend in 3 sentences why putting a page in `robots.txt` doesn't ke
 - Google Search Central — General structured data guidelines: https://developers.google.com/search/docs/appearance/structured-data/sd-policies
 - Google Search Central — AI features and your website: https://developers.google.com/search/docs/appearance/ai-features
 - Google Search Central blog — Changes to HowTo and FAQ rich results (August 2023): https://developers.google.com/search/blog/2023/08/howto-faq-changes
+- Google Search Central blog — Expanding markup support for Organization details (November 2023): https://developers.google.com/search/blog/2023/11/introducing-organization-markup
+- Google Search Central blog — Sitemaps ping endpoint is going away (lastmod, priority, changefreq; June 2023): https://developers.google.com/search/blog/2023/06/sitemaps-lastmod-ping
 - Google — Rich Results Test: https://search.google.com/test/rich-results
 - Schema.org — Schema Markup Validator: https://validator.schema.org/
 - Search Console Help — Add a website property / Verify your site ownership: https://support.google.com/webmasters/answer/9008080
