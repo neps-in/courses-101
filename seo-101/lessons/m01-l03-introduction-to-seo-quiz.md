@@ -1,7 +1,7 @@
-# M01.L01 Quiz — What SEO Is (and Isn't)
+# M01.L03 Quiz — Introduction to SEO & Types of SEO (On-Page, Off-Page, Technical)
 
 > 7 questions · 3 recall, 3 scenario, 1 spot-the-error · pass mark 70% (5 of 7). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
-> This is the course's first lesson, so there are no spaced-review questions yet; they start in M01.L02.
+> Spaced-review questions from M01.L01–L02 are added when those lessons are written (they don't exist yet).
 > Facts checked 2026-11-03 against Google Search Central (SEO Starter Guide, "Do you need an SEO?", `site:` operator).
 
 ### Q1. What is the difference between an organic result and a paid result? *(O1 · recall)*
@@ -14,14 +14,14 @@
 **Explanation:** Organic results are picked by the search engine, and Google says it never accepts money to include or rank sites in them. Paid results are ads: the advertiser pays (usually per click) and the result is labelled as an ad. Option b has them the wrong way round; ads and organic results can both appear on page one.
 **Hint:** Which one stops the moment you stop paying?
 
-### Q2. Which task belongs to the **technical** pillar of SEO? *(O2 · recall)*
+### Q2. Which task belongs to **technical** SEO? *(O2 · recall)*
 - a) Checking that search engines aren't blocked from reaching a new page
 - b) Rewriting a guide so it answers what people actually search for
 - c) Asking a local food blogger to link to your tasting-room page
 - d) Writing a friendlier title for your class schedule page
 
 **Answer:** a
-**Explanation:** The technical pillar asks "can search engines find, read and store the pages?". A blocked page fails that test however good it is. Option b and option d are content tasks (does the page match the search?), and option c is a links task (is it trusted?).
+**Explanation:** Technical SEO asks "can search engines find, read and store the pages?". A blocked page fails that test however good it is. Option b and option d are on-page tasks (does the page match the search?), and option c is an off-page task (is it trusted?).
 **Hint:** Technical = can it be found at all?
 
 ### Q3. How long does Google say it can take for a change to your site to show in Google Search? *(O2 · recall)*
@@ -51,7 +51,7 @@
 - d) The engines keep separate indexes and `site:` is a sample, so record both
 
 **Answer:** d
-**Explanation:** Google and Bing build separate indexes, and Google's documentation says `site:` doesn't necessarily return every indexed URL. Different numbers are normal. She records both with the date and compares each engine with itself over time. Exact indexing data comes from Search Console in Module 2.
+**Explanation:** Google and Bing build separate indexes, and Google's documentation says `site:` doesn't necessarily return every indexed URL. Different numbers are normal. She records both with the date and compares each engine with itself over time. Exact indexing data comes from Search Console, set up in Lesson 1.8.
 **Hint:** Is a `site:` count exact, or a sample?
 
 ### Q6. Amara's client gets an email: "We are Google-approved partners. We guarantee your shop will be #1 on Google within 30 days." What's the best advice? *(O1, O2 · scenario)*
@@ -61,15 +61,15 @@
 - d) Ask them to show proof that they are Google partners, then hire them
 
 **Answer:** a
-**Explanation:** Google's "Do you need an SEO?" page says no one can guarantee a #1 ranking, and warns about SEOs who claim a special relationship with Google or who email out of the blue. A refund offer or a partner badge doesn't change that: the promise itself is the red flag. Lesson 1.5 covers more warning signs.
+**Explanation:** Google's "Do you need an SEO?" page says no one can guarantee a #1 ranking, and warns about SEOs who claim a special relationship with Google or who email out of the blue. A refund offer or a partner badge doesn't change that: the promise itself is the red flag. Lesson 1.6 covers more warning signs.
 **Hint:** What does Google itself say about guaranteed rankings?
 
 ### Q7. A new learner writes these notes. Which line contains the mistake? *(O1, O3 · spot-the-error)*
 - a) "My `site:` search shows zero results. That's a real finding for my baseline."
 - b) "`site:` shows 12 pages, so exactly 12 are indexed. I'll report that to my client."
-- c) "SEO has three pillars: technical, content and links. My site needs all three."
+- c) "SEO has three types: on-page, off-page and technical. My site needs all three."
 - d) "Today I ran `site:mysite.com` in Google and Bing and wrote down the date."
 
 **Answer:** b
-**Explanation:** Google's documentation says the `site:` operator doesn't necessarily return all indexed URLs, so its count is a sample, not an exact figure, and shouldn't go into a client report. Exact indexing numbers come from Search Console (Module 2). The other notes are right: zero results is a valid finding, all three pillars matter, and dated checks build the baseline.
+**Explanation:** Google's documentation says the `site:` operator doesn't necessarily return all indexed URLs, so its count is a sample, not an exact figure, and shouldn't go into a client report. Exact indexing numbers come from Search Console (Lesson 1.8). The other notes are right: zero results is a valid finding, all three types matter, and dated checks build the baseline.
 **Hint:** Which tool gives a quick sample, and which gives exact numbers?

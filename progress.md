@@ -7,24 +7,33 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 ## seo-101
 
+neps.in course 2566 (structure source). Live posts listed in the syllabus.
+
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | L01 | What SEO Is (and Isn't) | seo-101/lessons/m01-l01-what-is-seo.md | draft | 2026-11-03 |
-| M01 | L02 | How Search Works: Crawl → Render → Index → Rank → Serve | seo-101/lessons/m01-l02-how-search-works.md | todo | — |
-| M01 | L03 | Anatomy of a Results Page | seo-101/lessons/m01-l03-anatomy-of-results-page.md | todo | — |
-| M01 | L04 | Search Operators & Sizing Up Competitors | seo-101/lessons/m01-l04-search-operators.md | todo | — |
-| M01 | L05 | The Rules: Spam Policies, Penalties and Bad SEO Offers | seo-101/lessons/m01-l05-seo-rules-spam-policies.md | todo | — |
-| M01 | Capstone | M01 capstone — First look report | seo-101/capstones/m01-capstone.md | todo | — |
-| M02 | — | Your SEO Toolkit: Search Console, Bing & GA4 Set-Up (not yet planned) | — | todo | — |
-| M03 | — | Keyword Research & Search Intent (not yet planned) | — | todo | — |
+| M01 | L01 | Introduction to Marketing | seo-101/lessons/m01-l01-introduction-to-marketing.md | todo | — |
+| M01 | L02 | Introduction to Digital Marketing | seo-101/lessons/m01-l02-introduction-to-digital-marketing.md | todo | — |
+| M01 | L03 | Introduction to SEO & Types of SEO (On-Page, Off-Page, Technical) | seo-101/lessons/m01-l03-introduction-to-seo.md | draft | 2026-11-03 |
+| M01 | L04 | How Search Engines Work: Crawling, Indexing and Ranking | seo-101/lessons/m01-l04-how-search-engines-work.md | todo | — |
+| M01 | L05 | SERP Features (Featured Snippets, People Also Ask, Local Pack, etc.) | seo-101/lessons/m01-l05-serp-features.md | todo | — |
+| M01 | L06 | White Hat vs Black Hat vs Grey Hat SEO | seo-101/lessons/m01-l06-white-black-grey-hat-seo.md | todo | — |
+| M01 | L07 | Overview of Google's Ranking Factors | seo-101/lessons/m01-l07-ranking-factors-overview.md | todo | — |
+| M01 | L08 | Practice: Set Up Google Search Console + GA4 on a Test Site | seo-101/lessons/m01-l08-practice-gsc-ga4-setup.md | todo | — |
+| M01 | Capstone | M01 capstone — Marketing & search snapshot | seo-101/capstones/m01-capstone.md | todo | — |
+| M02 | — | Introduction to Web Development (HTML & CSS for content creators) (not yet planned) | — | todo | — |
+| M03 | — | Keyword Research (not yet planned) | — | todo | — |
 | M04 | — | On-Page SEO (not yet planned) | — | todo | — |
-| M05 | — | Writing SEO Blog Posts (not yet planned) | — | todo | — |
-| M06 | — | Technical SEO I: Crawling, Rendering & Indexing (not yet planned) | — | todo | — |
-| M07 | — | Technical SEO II: Site Architecture, Page Experience & Structured Data (not yet planned) | — | todo | — |
-| M08 | — | Links & Authority (not yet planned) | — | todo | — |
-| M09 | — | Local, International & E-commerce SEO (not yet planned) | — | todo | — |
-| M10 | — | Technical SEO Audit, Migrations & Recovery (not yet planned) | — | todo | — |
-| Final | — | Final capstone: Full SEO Audit & 90-Day Plan (not yet planned) | — | todo | — |
+| M05 | — | WordPress for Content Creators (Content Creation & Page Builders) (not yet planned) | — | todo | — |
+| M06 | — | Technical SEO Fundamentals (not yet planned) | — | todo | — |
+| M07 | — | Content Strategy, SEO Writing & AI Content (not yet planned) | — | todo | — |
+| M08 | — | Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) (not yet planned) | — | todo | — |
+| M09 | — | Off-Page SEO & Link Building (not yet planned) | — | todo | — |
+| M10 | — | Competitor Analysis (not yet planned) | — | todo | — |
+| M11 | — | Local SEO & Google Business Profile (not yet planned) | — | todo | — |
+| M12 | — | Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) (not yet planned) | — | todo | — |
+| M13 | — | SEO Tools Mastery & WordPress SEO (not yet planned) | — | todo | — |
+| M14 | — | Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search (not yet planned) | — | todo | — |
+| M15 | — | SEO Audit & Capstone Project (not yet planned) | — | todo | — |
 
 ## modern-seo
 
@@ -150,6 +159,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: seo-101 outline v0.3 — user chose "live structure wins": 15 modules = the 15 sections of neps.in course 2566, M01 = its 8 live lesson titles (2569–2576), M02 = its 10 (2577–2586). Re-planned M01 (8 lessons + capstone). Draft "What SEO Is" renamed to m01-l03-introduction-to-seo (live 1.3) and adapted to on-page / off-page / technical; project-path choice moved to L01. Live course 2566 description: stray AI note removed (backup /home/ubuntu/backups/neps-in/2026-11-03-seo101-desc-note/, direct DB update to avoid LearnPress save hooks, 18 items still attached, page 200); AEO/GEO bullets and "~181 hours" left as they are (user's choice). Next: `/next-lesson` (M01.L01 Introduction to Marketing).
 - 2026-11-03: neps.in check for seo-101 (read-only): course **2566** "SEO 101: Get Your Website on Page One of Google" (slug seo-101, published, 0 enrolments). 15 sections (IDs 15–29), but only sections 1–2 hold items: 18 lesson posts (2569–2586), all **title-only shells** (0 chars of content, no meta, no revisions with content, no quizzes). Sections 3–15 are empty. So no seo-101 lesson is completed, drafted or reviewed on neps.in; repo statuses unchanged (M01.L01 = draft). Title overlap with this outline: 1.3 ≈ M01.L01, 1.4 + 1.7 ≈ M01.L02, 1.5 ≈ M01.L03, 1.6 ≈ M01.L05, 1.8 ≈ M02; 1.1–1.2 (marketing intro) and section 2 (HTML/CSS, 2577–2586) are not in this outline (Web Dev 101 covers them). Course description (edited 2026-11-03 20:34) still contains a leftover AI note ("One suggestion: I used 'first page'…") and promises AEO/GEO and AI Overviews, which v0.2 excludes. Nothing changed on the site.
 - 2026-11-03: seo-101 m01-l01 draft (lesson + 7-question quiz, answers a2/b2/c1/d2, lengths checked; 11 glossary terms; 2 Mermaid flowcharts, 2 image prompts). Verified against Google Search Central (SEO Starter Guide, Do you need an SEO?, site: operator). Not confirmed: Google's current ad label text (lesson says "a word such as Sponsored", flagged ⚠️); Bing guidelines page rendered empty to the fetcher. Path B demo site not built yet; lesson says its setup guide comes with M02. Next: `/review-lesson seo-101/lessons/m01-l01-what-is-seo.md`.
 - 2026-11-03: seo-101 planned M01 (5 lessons + capstone) in syllabus.md: what SEO is (first win: `site:` search + project path), how search works (crawl → serve), results-page anatomy, search operators & competitors, spam policies. No GSC yet (M02). Next: `/next-lesson` (M01.L01).
