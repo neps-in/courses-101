@@ -15,7 +15,7 @@ Times below are **hands-on** estimates (on top of reading time). Each lesson hea
 | M05 JavaScript for Marketers | L2 | 4 | #3, #6, #7, #12 (reinforced) | ✅ |
 | M06 Tracking, Analytics & Consent | L2 | 4 | #9, #10 (+ #3, #6, #12 reinforced) | ✅ |
 | M07 Fast, Accessible & Search-Ready | L3 | 4 | #11 (+ #2, #3, #4, #5, #8, #12 reinforced) | ✅ |
-| M08 Advanced: AI, Automation & Scale | L3 | 4 | #12 | — |
+| M08 Advanced: AI, Automation & Scale | L3 | 4 | #12 (+ #2, #3, #6, #8, #9, #10 reinforced) | ✅ |
 
 ---
 
@@ -457,3 +457,62 @@ flowchart LR
 ### M07 Capstone — Before/after: fast, accessible and search-ready
 - **File:** `capstones/m07-capstone.md` + `cheatsheets/m07-fast-accessible-search.md`
 - Raise the live launch page to Lighthouse 90+ (mobile) in Performance, Accessibility, Best Practices and SEO, with LCP, INP (or total blocking time in the lab) and CLS in the "good" range; pass a manual accessibility audit (keyboard + screen reader) with no open level A/AA issues; add structured data that validates with no errors; sitemap submitted in Search Console. Consent and tracking from M06 must still work after the changes. Deliverable: before/after report (Lighthouse/PSI runs under the same conditions, the audit log, Rich Results Test result, Search Console screenshots) and an honest note on what lab scores don't prove. Break-it-and-fix-it set: a lazy-loaded LCP image, an icon button with no accessible name, `Disallow: /` in robots.txt. Rubric: performance and CWV (NN #11), images/fonts/media, accessibility (NN #2, #3, #5), technical SEO and structured data (NN #8), evidence and honesty (before/after under the same conditions, no score-chasing that hurts users).
+
+## M08 — Advanced: AI, Automation & Scale (L3)
+
+**Goal:** work faster and scale beyond one page: use AI assistants without shipping their mistakes, send every lead to the right place automatically, reuse components across many pages, and launch a second-language version that search engines and visitors can find. · NN #12 Review AI output before shipping (taught: L01, applied in every lesson); reinforced: #6 (every AI change and every generated page goes through Git), #9 (lead data sent to third-party tools is covered by the consent and privacy notice from M06), #2, #3 and #8 (structure, accessibility and meta tags must survive templates and translation), #10 (`generate_lead` still fires once per real sign-up after automation)
+**First installs:** none new to pay for. An AI coding assistant with a free tier (GitHub Copilot Free in VS Code, or a chat assistant), one no-code automation tool on its free tier (Zapier, Make or n8n; learners pick one), Google Sheets, a free email-sending option (the form service's auto-reply or Brevo), and Node.js LTS for L03 (Eleventy or Astro, both free and open source).
+**Running project:** the fast, accessible, search-ready M07 launch page. L01 reviews an AI-written feature for it, L02 connects its lead form to a sheet/CRM and an auto-reply, L03 turns the page into a reusable template (header, footer, sections) so a second page is cheap, and L04 uses that template to publish the second-language version.
+**Level note (L3):** method first. Each lesson gives a decision rule (when to use AI / automation / a generator / a separate language URL) and a verification routine; learners apply it to their own page and justify the choice.
+**Freshness:** AI assistant features and free-tier limits, Zapier/Make/n8n plan limits (tasks or operations per month), form-service webhook features, Eleventy/Astro versions and CLI commands, headless-CMS free tiers, and Google's hreflang guidance change often; each lesson carries a check date and a freshness flag. Prices and limits are quoted from the vendor's own pricing page with the date.
+
+```mermaid
+flowchart LR
+  %% alt: M08 lesson path: build with AI, automate leads, templates and generators, multilingual sites, then the automation plus second-language capstone.
+  L1[L01 Building with<br/>AI assistants]:::cream --> L2[L02 APIs, webhooks<br/>and no-code automation]:::sky
+  L2 --> L3[L03 Templates, generators<br/>and headless CMS]:::blue
+  L3 --> L4[L04 Going global:<br/>multilingual sites]:::blue
+  L1 -. "review every AI output" .-> L4
+  L4 --> C[M08 Capstone:<br/>automated leads + 2nd language]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+
+### M08.L01 — Building with AI Assistants
+- **File:** `lessons/m08-l01-building-with-ai.md` · **Prereqs:** M05.L02, M07.L03 · **Remediate to:** M05.L02 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Write** a structured prompt for HTML/CSS/JS work (context, constraints, existing code, acceptance checks) and **iterate** on the output in small, committed steps.
+  2. **Review** AI-generated code with a fixed checklist: validity, semantics and accessibility (names, labels, keyboard, contrast), security (no secrets in front-end code, no `innerHTML` with user input, no unknown third-party scripts, HTTPS only), performance and privacy (no tracking added without consent).
+  3. **Decide** what to accept, fix or reject, and **record** it in an AI-use log (prompt, tool, what changed, why), so every AI change is reviewable in Git (NN #6, #12).
+- **Hands-on idea:** ask an assistant for a "countdown to launch" banner and a testimonial carousel for Nila Coffee; run the review checklist (W3C checker, keyboard test, Lighthouse accessibility, reading the code); fix or reject; commit with the log. Break-it-and-fix-it: AI code that builds markup with `innerHTML` from a URL parameter, an icon button with no name, an auto-rotating carousel with no pause control (WCAG 2.2.2), a hallucinated CDN script URL.
+
+### M08.L02 — APIs, Webhooks & No-Code Automation
+- **File:** `lessons/m08-l02-apis-webhooks-automation.md` · **Prereqs:** M05.L04, M06.L04 · **Remediate to:** M05.L04 · **Hands-on:** ~55 min
+- **Objectives:**
+  1. **Explain** APIs, JSON and webhooks in plain terms (request vs push, endpoint, payload, API key) and **read** a webhook payload from the learner's form service.
+  2. **Build** a lead flow in one no-code tool (Zapier, Make or n8n): form submission → Google Sheet row (or free CRM) → auto-reply email → team notification, with field mapping and a filter for spam or test entries.
+  3. **Test, monitor and secure** the flow: send test leads, read the run history, handle failures and duplicates, keep API keys out of the page, store only the fields the privacy notice covers, and **compare** free-tier limits before choosing a tool.
+- **Hands-on idea:** Nila Coffee's form service (from M05.L04) posts to a webhook; the learner maps email, first name, UTM source (hidden fields from M06.L01) and consent to a sheet, then sends an auto-reply; a decision table compares Zapier, Make and n8n by free limits, hosting and data location. Break-it-and-fix-it: a renamed form field that leaves the sheet column blank, an auto-reply sent to test addresses twice (no de-duplication), an API key pasted into front-end JavaScript.
+
+### M08.L03 — Templates, Static Site Generators & Headless CMS
+- **File:** `lessons/m08-l03-templates-ssg-headless.md` · **Prereqs:** M04.L01, M04.L05 · **Remediate to:** M04.L05 · **Hands-on:** ~55 min
+- **Objectives:**
+  1. **Identify** repeated parts of the site (head/meta, header, footer, CTA, testimonial card) and **explain** how a static site generator turns templates, partials and data files into plain HTML at build time.
+  2. **Build** the launch page with one generator (Eleventy, or Astro as the alternative): a base layout, header/footer partials, a data file for testimonials and prices, and a second page that reuses them; **deploy** it with the same Git host from M04.L03.
+  3. **Choose** between hand-coding, a generator, a headless CMS (Git-based or API-based), WordPress and no-code builders for a given team and content volume, and **justify** the trade-offs (who edits, cost, speed, lock-in).
+- **Hands-on idea:** convert `launch.html` into an Eleventy project with `_includes/base.njk`, `header`/`footer` partials and `_data/testimonials.json`; add a "Thank you" page from the same layout; build, compare the output HTML with the original (still valid, same outline, same meta) and deploy. Break-it-and-fix-it: a hard-coded `<title>` in the layout that makes every page share one title, a broken partial path that fails the build, `noindex` copied from the thank-you page into the base layout.
+
+### M08.L04 — Going Global: Multilingual & Multi-Region Sites
+- **File:** `lessons/m08-l04-multilingual-hreflang.md` · **Prereqs:** M07.L04, M08.L03 · **Remediate to:** M07.L04 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Structure** a second-language version with its own URL (subdirectory such as `/hi/` or `/es/` vs subdomain vs separate domain), set `lang` (and `dir` for right-to-left scripts) and a self-canonical per language, and **add** a visible language switcher that never redirects visitors automatically by IP.
+  2. **Add** `hreflang` annotations (reciprocal, self-referencing, `x-default`) in the `<head>` or the sitemap, and **verify** them by reading the generated HTML and with Search Console.
+  3. **Localize**, not just translate: dates, numbers and currency (`Intl.DateTimeFormat`, `Intl.NumberFormat`), prices, examples, images and alt text, form labels and the consent/privacy text for that region; **review** machine or AI translation with a fluent speaker before publishing.
+- **Hands-on idea:** generate Nila Coffee's Hindi (or Spanish) page from the L03 template with a `lang` data value; add hreflang pairs and a switcher; format ₹ and $ prices with `Intl.NumberFormat`; check meta and Open Graph per language. Break-it-and-fix-it: hreflang on one page but not the other (not reciprocal), a wrong code (`in` or `en-UK` instead of `hi` / `en-GB`), a translated page whose canonical points to the English page.
+
+### M08 Capstone — Automated leads and a second language
+- **File:** `capstones/m08-capstone.md` + `cheatsheets/m08-ai-automation-scale.md`
+- The live launch page, rebuilt from templates (L03), with a working lead flow: form → automation → sheet or CRM → auto-reply email → team notification, tested with at least five test leads including a duplicate and a spam-like entry; plus a second-language version with correct `lang`, self-canonicals, reciprocal hreflang with `x-default`, a visible switcher, localized prices/dates and a reviewed translation. M06 consent and `generate_lead` and M07 scores must still hold. Deliverable: flow diagram and run-history screenshots, data map (which fields go where, and why the privacy notice covers them), hreflang table and Search Console check, an AI-use log for the module. Break-it-and-fix-it set: a renamed form field breaking the sheet mapping, non-reciprocal hreflang, AI-generated code with an accessibility or security flaw. Rubric: automation reliability and data minimisation (NN #9), templates and maintainability (NN #6), internationalization and hreflang, AI review and logging (NN #12), evidence and regression checks (#2, #3, #8, #10, #11 still pass).

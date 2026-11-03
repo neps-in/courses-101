@@ -121,9 +121,14 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M07 | L03 | Accessibility in Practice (WCAG 2.2) | webdev-101/lessons/m07-l03-accessibility-wcag.md | reviewed | 2026-11-03 |
 | M07 | L04 | Technical SEO Foundations | webdev-101/lessons/m07-l04-technical-seo-foundations.md | reviewed | 2026-11-03 |
 | M07 | Capstone | M07 capstone | webdev-101/capstones/m07-capstone.md | reviewed | 2026-11-03 |
-| M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
+| M08 | L01 | Building with AI Assistants | webdev-101/lessons/m08-l01-building-with-ai.md | todo | — |
+| M08 | L02 | APIs, Webhooks & No-Code Automation | webdev-101/lessons/m08-l02-apis-webhooks-automation.md | todo | — |
+| M08 | L03 | Templates, Static Site Generators & Headless CMS | webdev-101/lessons/m08-l03-templates-ssg-headless.md | todo | — |
+| M08 | L04 | Going Global: Multilingual & Multi-Region Sites | webdev-101/lessons/m08-l04-multilingual-hreflang.md | todo | — |
+| M08 | Capstone | M08 capstone | webdev-101/capstones/m08-capstone.md | todo | — |
 
 ## Log
+- 2026-11-03: webdev-101 plan M08 (4 lessons + capstone): L01 Building with AI Assistants (prompt, review checklist, AI-use log; NN #12), L02 APIs, Webhooks & No-Code Automation (form → Zapier/Make/n8n → sheet/CRM → auto-reply; test, monitor, secure), L03 Templates, SSGs & Headless CMS (Eleventy build of the launch page, Astro alternative; choose the stack), L04 Going Global (language URLs, lang/dir, reciprocal hreflang + x-default, Intl formatting, reviewed translation); capstone = automated leads + second-language version with regression checks; lesson-path flowchart in house palette. Final "Launch Week" capstone not yet in progress.md. Next: `/next-lesson` → M08.L01.
 - 2026-11-03: webdev-101 m02 capstone reviewed (no browser tests): tasks, rubric and five planted bugs match L01–L05; sign-up row aligned with the L04 privacy-wording fix; bug D notes it needs the practice method="get"; flowchart palette/alt OK; cheat sheet accurate and unchanged. Module 2 complete.
 - 2026-11-03: webdev-101 m02-l05 reviewed (no browser tests): "?v=2 gives a fresh card" corrected (platforms that group by og:url, e.g. Facebook, may still show the cached card; re-scrape first); Meta 1200×630/8 MB, OGP required tags, twitter:card fallback and Google title/snippet guidance accurate; X, Meta and Google doc URLs return 200; quiz Q6, Q7 lengths rebalanced; answers c b d b a c d unchanged; ~16 min reading.
 - 2026-11-03: webdev-101 m02-l04 reviewed (no browser tests): "By joining you agree to our privacy notice" replaced (a notice informs, it isn't agreed to) and exercise note added; autocomplete described as the usual way to meet WCAG 1.3.5 rather than "required by"; DPDP phasing (Rules Nov 2025, consent duties ~May 2027) consistent with M06.L04; quiz Q1, Q6, Q7 lengths rebalanced, Q2 explanation aligned; answers b d a c b d a unchanged; ~18 min reading.
