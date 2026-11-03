@@ -28,7 +28,7 @@ Carlos runs ads to a "Get the free guide" page. The form asks for name, surname,
 | `<label for="…">` + `id` | `<label for="email">Email address</label>` + `<input id="email">` | Ties the text to the field: screen readers announce it, and clicking the label puts the cursor in the field. |
 | `type` | `email`, `tel`, `url`, `text`, `checkbox`, `radio`, `date` | The right phone keyboard and free checks (e.g. `email` needs an `@`). |
 | `name` | `name="email"` | The key the data is sent under (`email=amara@…`). Fields without a `name` are **not sent**. |
-| `autocomplete` | `autocomplete="email"`, `"given-name"`, `"tel"` | Lets browsers fill known details; required by WCAG 2.2 success criterion 1.3.5 for fields about the user. |
+| `autocomplete` | `autocomplete="email"`, `"given-name"`, `"tel"` | Lets browsers fill known details; the usual way to meet WCAG 2.2 success criterion 1.3.5 (Identify Input Purpose) for fields about the user. |
 | `required` | `required` | The browser won't submit the form while the field is empty. |
 | Hint text | `aria-describedby="email-hint"` → `<span id="email-hint">` | Extra help that screen readers read after the label. |
 | `<fieldset>` + `<legend>` | A group of radio buttons with a question | The question is read with each option. |
@@ -97,7 +97,7 @@ Work in `launch.html`, inside your `<section id="signup">` from Lesson 2.3.
        <input type="checkbox" id="partner-offers" name="partner_offers" value="yes">
        <label for="partner-offers">Also send me occasional offers from partner farms (optional)</label>
      </p>
-     <p>By joining you agree to our <a href="/privacy">privacy notice</a>.</p>
+     <p>How we use your email: see our <a href="/privacy">privacy notice</a>.</p>
      <button type="submit">Join the launch list</button>
    </form>
    ```
@@ -173,7 +173,7 @@ Work in `launch.html`, inside your `<section id="signup">` from Lesson 2.3.
 **Task:** design and build **your** launch page's sign-up form:
 1. List every field you're tempted to ask for, run each through the flowchart, and keep only what survives. Write the reason for each kept field in your project note.
 2. Build the form with labels, types, names, `autocomplete`, a hint, `required` where essential, and a button whose text says what happens.
-3. Add a one-line promise above the form and a privacy-notice link near the button. If you add any extra use (partner offers, a second newsletter), use a separate unticked optional checkbox.
+3. Add a one-line promise above the form and a privacy-notice link near the button. A privacy notice *informs*; don't word it as something people "agree to". If you add any extra use (partner offers, a second newsletter), use a separate unticked optional checkbox.
 4. Pass the W3C checker, the label-click test and the keyboard-only test.
 
 **Expected outcome:** a form with 1–3 fields that a keyboard user can complete in under 30 seconds, plus a note justifying each field. Example justification: "Email (required): needed to send the launch email. First name (optional): used in the email greeting."

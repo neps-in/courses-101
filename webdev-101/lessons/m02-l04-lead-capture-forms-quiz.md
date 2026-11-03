@@ -5,7 +5,7 @@
 
 ### Q1. Why should every form field have a `name` attribute? *(O1 · recall)*
 - a) It gives the field a visible caption above it on the page
-- b) Without it, the field's value isn't sent when the form submits
+- b) Without it, the value isn't sent when the form submits
 - c) It makes the browser check that the field isn't left empty
 - d) It tells the phone which on-screen keyboard to show for it
 
@@ -20,7 +20,7 @@
 - d) `autocomplete="email"`
 
 **Answer:** d
-**Explanation:** `autocomplete` with a standard token (`email`, `given-name`, `tel`…) tells browsers what the field is for, so they can autofill it. WCAG 2.2 criterion 1.3.5 asks for this on fields about the user. A placeholder is only sample text, `required` blocks empty submits, and `aria-describedby` links a hint.
+**Explanation:** `autocomplete` with a standard token (`email`, `given-name`, `tel`…) tells browsers what the field is for, so they can autofill it. It's also the usual way to meet WCAG 2.2 criterion 1.3.5 for fields about the user. A placeholder is only sample text, `required` blocks empty submits, and `aria-describedby` links a hint.
 **Hint:** The attribute's name says what it does.
 
 ### Q3. Kofi's lead-magnet form asks for name, email, phone, company, job title and country, but he only ever sends the guide by email. What's the best change? *(O3 · scenario)*
@@ -59,8 +59,8 @@
 <input type="email" id="email" name="email" autocomplete="email" required>
 ```
 - a) The `required` attribute must come before `type` in the tag
-- b) Labels must wrap the input; `for` is not allowed in HTML
-- c) `autocomplete="email"` hides the field's accessible name
+- b) Labels must wrap the input, since `for` is not allowed in HTML
+- c) `autocomplete="email"` hides the field's accessible name from screen readers
 - d) `for="Email"` doesn't match `id="email"`: ids are case-sensitive
 
 **Answer:** d
@@ -68,7 +68,7 @@
 **Hint:** Compare the two values letter by letter, as in the M02.L02 `#signup` question.
 
 ### Q7. *(review: m02-l03)* Your sign-up form lives in `<section aria-labelledby="signup-title">`. What does `aria-labelledby` do there? *(O1 of M02.L03 · recall)*
-- a) It names the section with its heading, so screen readers list it as a region
+- a) It names the section with its heading, so it's listed as a region
 - b) It makes the section's heading bigger and bolder when the page is shown
 - c) It submits the form inside the section to the address given by its `id`
 - d) It sets the section's heading level so that no level is ever skipped
