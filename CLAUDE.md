@@ -56,7 +56,8 @@ Goal: build deep, hands-on courses as modules → lessons → quizzes.
 - `/new-course <name>` — scaffold a new course folder.
 
 ## Courses
-- `modern-seo/` — Modern SEO 101: SEO, AEO, GEO and Content Automation (active)
+- `seo-101/` — SEO 101: complete classic SEO, prequel to Modern SEO 101 (active)
+- `modern-seo/` — Modern SEO 101: SEO, AEO, GEO and Content Automation (planned)
 - `wordpress-101/` — WordPress 101 for Content Creators (published)
 - `webdev-101/` — Web Development 101 for Marketers & Content Creators (published)
 

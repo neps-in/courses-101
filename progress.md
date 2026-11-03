@@ -1,9 +1,23 @@
 # Progress
 
-Active course: **modern-seo**
+Active course: **seo-101**
 
 Status values: `todo` → `draft` → `reviewed` → `published`.
 Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` row.
+
+## seo-101
+
+| Module | Lesson | Title | File | Status | Date |
+|--------|--------|-------|------|--------|------|
+| M01 | — | How Search Works & Your First Look (not yet planned) | — | todo | — |
+| M02 | — | Keyword Research & Search Intent (not yet planned) | — | todo | — |
+| M03 | — | On-Page SEO & Content Quality (not yet planned) | — | todo | — |
+| M04 | — | Technical SEO I: Crawling & Indexing (not yet planned) | — | todo | — |
+| M05 | — | Technical SEO II: Page Experience & Structured Data (not yet planned) | — | todo | — |
+| M06 | — | Links & Authority (not yet planned) | — | todo | — |
+| M07 | — | Local, International & E-commerce SEO (not yet planned) | — | todo | — |
+| M08 | — | Measurement, Audits, Migrations & Recovery (not yet planned) | — | todo | — |
+| Final | — | Final capstone: Full SEO Audit & 90-Day Plan (not yet planned) | — | todo | — |
 
 ## modern-seo
 
@@ -129,6 +143,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: seo-101 scaffolded (/new-course) as the classic-SEO prequel to modern-seo (user's choice: "complete SEO from basics to advanced topics in the right order"). Total beginners; self-paced written, 8 modules (L1 M01–M03, L2 M04–M06, L3 M07–M08) + final capstone "Full SEO Audit & 90-Day Plan"; 2 lessons/week; 12 non-negotiables; Nila Coffee running example (adds tasting room, international shipping, subscription shop); project paths own/demo/client; 16-question diagnostic. AEO/GEO/AI production/automation left to modern-seo (graduates skip its M01–M02). Checked against the design guide's 'What most courses miss' table (added break-it labs to M01, M03, M06). Active course switched to seo-101. Next: `/plan-module 1`.
 - 2026-11-03: modern-seo scaffolded (/new-course): course-outline.md written from the template, starting from the neps.in course 2521 topic list (9 modules, 39 empty lessons). User choices: all three audiences (creators/SMB, marketers, working SEOs) served by L1–L3 levels + a 16-question diagnostic with skip rules; no-code automation first, Python optional (Colab); learner picks a project path (own site / demo site / client site); self-paced, 2 lessons/week. 8 modules + final capstone "90-Day Growth Sprint"; 12 non-negotiables; overlap with webdev-101 M07 and wordpress-101 M05 moved to remediation links; FAQ/HowTo schema, Ahrefs/Semrush APIs and SERP scraping replaced (see outline changelog). Checked against the design guide's 'What most courses miss' table. Active course switched to modern-seo. Next: `/plan-module 1`.
 - 2026-11-03: webdev-101 WHOLE COURSE LIVE on neps.in (course 2606): M02–M08 = sections 42–48, "Start here" = section 49 (lesson 3515 + placement quiz 3516, 15 questions, passing grade 0), "Final capstone — Launch Week" = section 50 (lesson 3532); M01 = section 41 moved to order 2 (LearnPress had stored the first section at order 1). Backup /home/ubuntu/backups/neps-in/2026-11-03-webdev-rest/ (also holds every payload and verify.php). Every module dry-run first. verify.php: 46 lessons and 267 questions identical to the payloads (content, duration, answers, hints, explanations); placement quiz grade 0, lesson quizzes 70; public page shows 46 lessons, 37 quizzes, sections in order; sample lesson/quiz URLs 200. Builder fixes: capstone times in hours now parsed (were 30-min fallback), (M01.L01 · …) tags stripped, hints stop at --- / ## block breaks (no lesson quiz was affected); start/final modes; create_module.php accepts quiz meta/description overrides (array_merge). 46 webdev-101 rows set to published.
 - 2026-11-03: wordpress-101 lesson 2.1 (post 2621) re-pushed with the user's OK: the live table row now reads "Ctrl+Shift+\\" again (lost earlier to WordPress unslashing). Backup in /home/ubuntu/backups/neps-in/2026-11-03-wp101-l2-1-backslash/. The rebuilt content differed from live only on that line, and stored content is now identical to the repo build; lesson URL 200. No other wordpress-101 source contains a backslash.
