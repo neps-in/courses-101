@@ -2,7 +2,7 @@
 > After this lesson you can read a Lighthouse or PageSpeed Insights report for your launch page, find what makes it slow or jumpy, fix the biggest causes, and prove the fix with a fair before/after measurement.
 
 **Time:** ~20 min reading + ~45 min exercise · **Level:** L3 Advanced · **Prereqs:** M04.L03, M06.L03 · **Remediate to:** M03.L04
-**Verified against:** web.dev "Web Vitals", "Largest Contentful Paint", "Interaction to Next Paint" and "Cumulative Layout Shift" (thresholds, 75th percentile); web.dev "Interaction to Next Paint becomes a Core Web Vital on March 12" (INP replaced FID on 12 March 2024); Google for Developers "About PageSpeed Insights" (field data from the Chrome UX Report, previous 28 days); Lighthouse 13.6.0 source code (performance score weights and insight names), all read 2026-11-03. Live check the same day with Lighthouse 13.6.0 (mobile, simulated throttling) against a local test page: **Render-blocking requests** listed a 280-byte, completely empty script that the server delayed by 1 second (about 780 ms of blocking: the wait for the file, not its size, is the problem), and **LCP breakdown** named the `<h1>`, not the hero image, as the LCP element. The test server was too heavily loaded for its timings (score, LCP, TBT) to mean anything, so this lesson quotes no measured before/after numbers.
+**Verified against:** Chrome for Developers "Monitor your local and real-user Core Web Vitals performance in DevTools" (Live metrics view); web.dev "Web Vitals", "Largest Contentful Paint", "Interaction to Next Paint" and "Cumulative Layout Shift" (thresholds, 75th percentile); web.dev "Interaction to Next Paint becomes a Core Web Vital on March 12" (INP replaced FID on 12 March 2024); Google for Developers "About PageSpeed Insights" (field data from the Chrome UX Report, previous 28 days); Lighthouse 13.6.0 source code (performance score weights and insight names), all read 2026-11-03. Live check the same day with Lighthouse 13.6.0 (mobile, simulated throttling) against a local test page: **Render-blocking requests** listed a 280-byte, completely empty script that the server delayed by 1 second (about 780 ms of blocking: the wait for the file, not its size, is the problem), and **LCP breakdown** named the `<h1>`, not the hero image, as the LCP element. The test server was too heavily loaded for its timings (score, LCP, TBT) to mean anything, so this lesson quotes no measured before/after numbers.
 
 > ⚠️ **Freshness flag:** the three Core Web Vitals and their thresholds have been stable since INP replaced FID in March 2024. Lighthouse renames and regroups its advice more often: Lighthouse 13 (October 2025) replaced many older audits ("Eliminate render-blocking resources", "Properly size images") with **insights** such as **Render-blocking requests** and **Improve image delivery**. If your report uses different names, match them by what they describe.
 
@@ -12,7 +12,7 @@
 3. **Fix** at least two causes (render-blocking scripts, missing image dimensions, content that pushes the page down, heavy third-party tags from M06) and **verify** each with a before/after Lighthouse run under the same conditions. *(O3)*
 
 ## Why it matters
-Nila Coffee's launch page looked instant on the founder's laptop on office Wi-Fi. On a mid-range phone on mobile data, the hero photo took four seconds to appear, the "Join the launch list" button jumped down just as people tapped it (the consent banner from Lesson 6.4 had pushed everything below it), and the newsletter partner's readers bounced before the offer even loaded. Google's own research summary on web.dev is blunt: the Core Web Vitals reflect what real visitors feel, and Search Central says good page experience "aligns with what our core ranking systems seek to reward". You don't need a perfect score. You need the page to be fast, stable and responsive **for the people who actually visit**, and the habit of measuring before you change anything.
+Nila Coffee's launch page looked instant on the founder's laptop on office Wi-Fi. On a mid-range phone on mobile data, the hero photo took four seconds to appear, the "Join the launch list" button jumped down just as people tapped it (the consent banner from Lesson 6.4 had pushed everything below it), and the newsletter partner's readers bounced before the offer even loaded. The Core Web Vitals are Google's way of measuring exactly those three feelings for real visitors, and Search Central says good page experience "aligns with what our core ranking systems seek to reward". You don't need a perfect score. You need the page to be fast, stable and responsive **for the people who actually visit**, and the habit of measuring before you change anything.
 
 ## Core concept
 **Plain version:** three numbers describe how a page feels.
@@ -76,14 +76,14 @@ flowchart TD
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Chrome DevTools Lighthouse panel set to Navigation mode, Mobile device and Performance category, with the "Analyze page load" button. Outline the Mobile option and the button. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Chrome DevTools Lighthouse panel set to test mobile performance, with the Analyze page load button.
 3. Run it **three times** and write down the **median** (middle) run's Performance score, LCP, TBT and CLS. Lab results vary from run to run; one run proves nothing.
-4. Also run **PageSpeed Insights** (pagespeed.web.dev) on the live URL. **Expected:** for a new page, "The Chrome User Experience Report does not have sufficient real-world speed data for this page" (or similar), and lab results below it. Note the field data if there is any.
-5. Save the evidence: in DevTools, the **⋮** menu on the report → **Save as JSON** (or a screenshot), named `before-YYYY-MM-DD.json`. Keep the same device setting, network and page for every later run.
+4. Also run **PageSpeed Insights** (pagespeed.web.dev) on the live URL. **Expected:** for a new page, a message that there isn't enough real-world speed data yet (wording varies), and lab results below it. Note the field data if there is any.
+5. Save the evidence: the report's **⋮** menu → **Save as JSON** (label checked in Lighthouse 13.6's source) (or a screenshot), named `before-YYYY-MM-DD.json`. Keep the same device setting, network and page for every later run.
 
 **Part B: read the report (10 min)**
 1. Under **Diagnostics/Insights**, open **LCP breakdown**: it names the **LCP element** (often your hero `<img>` or the `<h1>`) and splits the time into phases (time to first byte, load delay, load duration, render delay). A large **load delay** means the browser found the image late; a large **render delay** usually means something was blocking it.
 2. Open **Render-blocking requests**: any `<script>` without `defer`/`async` in `<head>`, and large CSS or font files, are listed with estimated savings.
 3. Open **Layout shift culprits**: it lists elements that moved and why (an image without dimensions, injected content, a web font).
-4. Open **3rd parties**: your GTM container and GA4 from Module 6 appear here with their transfer size and main-thread time.
+4. Open **3rd parties**: your GTM container and GA4 from Module 6 appear here with their transfer size and main-thread time. Long main-thread tasks (over 50 ms) are what add up to **TBT**; scripts are almost always the cause.
 5. Rank the fixes in a small table: **cause → metric affected → estimated saving → effort**. Start with the biggest saving that's quick.
 
 **Part C: fix the common causes, one at a time (20 min)**
@@ -131,7 +131,7 @@ Commit after each fix, and re-run Lighthouse (median of three) after each one so
 - **Use Lighthouse in DevTools** for quick checks while you work (local or live) and for testing one fix at a time.
 - **Use PageSpeed Insights** for the live URL: same Lighthouse lab test on Google's servers, plus field data when it exists.
 - **Use Search Console's Core Web Vitals report** once the site has traffic: it groups real-user data by page type.
-- **Use the DevTools Performance panel** when you need to see what a slow interaction actually does (it shows live LCP, CLS and INP for your own clicks).
+- **Use the DevTools Performance panel** when you need to see what a slow interaction actually does (its **Live metrics** view shows LCP, CLS and INP for your own loads and clicks, colour-coded against the thresholds, and can show field data next to them; Chrome for Developers, September 2024).
 - **Don't chase 100.** A score of 90+ with good field data is excellent. Removing analytics, consent or accessibility features to gain points makes the page worse for the business and for visitors.
 
 ## Use AI for this
@@ -207,6 +207,7 @@ Explain to a friend in 3 sentences why a page can feel fast on your laptop but f
 - Chrome for Developers — Performance insights reference: https://developer.chrome.com/docs/performance/insights
 - Google Search Central — Understanding page experience in Google Search results: https://developers.google.com/search/docs/appearance/page-experience
 - Search Console Help — Core Web Vitals report: https://support.google.com/webmasters/answer/9205520
+- Chrome for Developers — Monitor your local and real-user Core Web Vitals performance in DevTools: https://developer.chrome.com/blog/devtools-realtime-cwv
 - MDN — `<script>`: the `defer` attribute: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#defer
 
 ## Refresher card

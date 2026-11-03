@@ -46,7 +46,7 @@
 ### Q5. You test your page once on desktop over office Wi-Fi (score 98), then once on mobile in PSI (score 61). A colleague says "the desktop number is the real one". What do you reply? *(O2 · scenario)*
 - a) Agree, since most of the visitors who buy will be on desktop computers
 - b) Average them to 80 and report that number as the page's speed score
-- c) Test mobile three times, keep the median, and check any field data
+- c) Test mobile three times, keep the median, and check its field data too
 - d) Ignore both numbers; only a real 100 score means the page is ready yet
 
 **Answer:** c
