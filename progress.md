@@ -9,7 +9,12 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | — | How Search Works (not yet planned) | — | todo | — |
+| M01 | L01 | What SEO Is (and Isn't) | seo-101/lessons/m01-l01-what-is-seo.md | todo | — |
+| M01 | L02 | How Search Works: Crawl → Render → Index → Rank → Serve | seo-101/lessons/m01-l02-how-search-works.md | todo | — |
+| M01 | L03 | Anatomy of a Results Page | seo-101/lessons/m01-l03-anatomy-of-results-page.md | todo | — |
+| M01 | L04 | Search Operators & Sizing Up Competitors | seo-101/lessons/m01-l04-search-operators.md | todo | — |
+| M01 | L05 | The Rules: Spam Policies, Penalties and Bad SEO Offers | seo-101/lessons/m01-l05-seo-rules-spam-policies.md | todo | — |
+| M01 | Capstone | M01 capstone — First look report | seo-101/capstones/m01-capstone.md | todo | — |
 | M02 | — | Your SEO Toolkit: Search Console, Bing & GA4 Set-Up (not yet planned) | — | todo | — |
 | M03 | — | Keyword Research & Search Intent (not yet planned) | — | todo | — |
 | M04 | — | On-Page SEO (not yet planned) | — | todo | — |
@@ -145,6 +150,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: seo-101 planned M01 (5 lessons + capstone) in syllabus.md: what SEO is (first win: `site:` search + project path), how search works (crawl → serve), results-page anatomy, search operators & competitors, spam policies. No GSC yet (M02). Next: `/next-lesson` (M01.L01).
 - 2026-11-03: seo-101 outline v0.2 — scope confirmed by the user: beginner-friendly, SEO only (no AEO/GEO/automation), in depth from zero to a technical audit, incl. keyword research, blog post creation, GSC + GA4 set-up and 'under the hood'. 8 → 10 modules (new M02 GSC/Bing/GA4 set-up, new M05 Writing SEO Blog Posts, M10 Technical SEO Audit, Migrations & Recovery); JS rendering, X-Robots-Tag, crawl budget and log files moved into the core; AI Overviews orientation removed; 13 non-negotiables; 20-question diagnostic; ~46 lessons, ~55–60 h. Next: `/plan-module 1`.
 - 2026-11-03: seo-101 scaffolded (/new-course) as the classic-SEO prequel to modern-seo (user's choice: "complete SEO from basics to advanced topics in the right order"). Total beginners; self-paced written, 8 modules (L1 M01–M03, L2 M04–M06, L3 M07–M08) + final capstone "Full SEO Audit & 90-Day Plan"; 2 lessons/week; 12 non-negotiables; Nila Coffee running example (adds tasting room, international shipping, subscription shop); project paths own/demo/client; 16-question diagnostic. AEO/GEO/AI production/automation left to modern-seo (graduates skip its M01–M02). Checked against the design guide's 'What most courses miss' table (added break-it labs to M01, M03, M06). Active course switched to seo-101. Next: `/plan-module 1`.
 - 2026-11-03: modern-seo scaffolded (/new-course): course-outline.md written from the template, starting from the neps.in course 2521 topic list (9 modules, 39 empty lessons). User choices: all three audiences (creators/SMB, marketers, working SEOs) served by L1–L3 levels + a 16-question diagnostic with skip rules; no-code automation first, Python optional (Colab); learner picks a project path (own site / demo site / client site); self-paced, 2 lessons/week. 8 modules + final capstone "90-Day Growth Sprint"; 12 non-negotiables; overlap with webdev-101 M07 and wordpress-101 M05 moved to remediation links; FAQ/HowTo schema, Ahrefs/Semrush APIs and SERP scraping replaced (see outline changelog). Checked against the design guide's 'What most courses miss' table. Active course switched to modern-seo. Next: `/plan-module 1`.
