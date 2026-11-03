@@ -4,7 +4,7 @@
 **Time:** ~20 min reading + ~50 min exercise · **Level:** L3 Advanced · **Prereqs:** M02.L03, M03.L02, M05.L03 · **Remediate to:** M02.L03
 **Verified against:** W3C "Web Content Accessibility Guidelines (WCAG) 2.2" (W3C Recommendation, first published October 2023) and its "What's New in WCAG 2.2" and Understanding pages for 2.4.11 Focus Not Obscured (Minimum) and technique C43 (`scroll-padding`); W3C WAI "Easy Checks", "Developing an Accessibility Statement" and the WCAG 3 Working Draft status page (latest draft I found: 3 March 2026); Deque's 2021 coverage study (automated testing found 57% of issues by volume in their own audit data); all read 2026-11-03. No live browser tests were run for this lesson.
 
-> ⚠️ **Freshness flag:** WCAG 2.2 is the current W3C standard; **WCAG 3.0 is still a Working Draft** and W3C says it won't be a finished standard for a few more years, so don't build to it yet. Laws that point to WCAG (the European Accessibility Act, applying since 28 June 2025 to many consumer products and services sold in the EU, including e-commerce; ADA cases in the US; India's RPwD Act 2016 for many organisations) change and have exemptions, for example for some micro-enterprises under the EAA. This lesson isn't legal advice; check what applies to you.
+> ⚠️ **Freshness flag:** WCAG 2.2 is the current W3C standard; **WCAG 3.0 is still a Working Draft** and W3C says it won't be a finished standard for a few more years, so don't build to it yet. Laws that point to WCAG (the European Accessibility Act, applying since 28 June 2025 to many consumer products and services sold in the EU, including e-commerce; ADA cases in the US; India's Rights of Persons with Disabilities Act 2016 and its rules) change and have exemptions: under the EAA, for example, micro-enterprises (fewer than 10 staff and no more than €2 million turnover or balance sheet) that provide **services** are exempt, per law-firm summaries. This lesson isn't legal advice; check what applies to you.
 
 ## Learning objectives
 1. **Explain** the WCAG 2.2 level AA structure (POUR principles, success criteria, conformance) and what automated tools can and cannot find. *(O1)*
@@ -12,7 +12,7 @@
 3. **Fix** and **re-test** the common failures (missing or poor alt text, unlabelled inputs, low contrast, empty links/buttons, skipped heading levels, focus hidden by a sticky header, small targets), and **record** the results in an accessibility statement. *(O3)*
 
 ## Why it matters
-Nila Coffee's page scored 100 for accessibility in Lighthouse. Then a customer who uses a screen reader emailed: the newsletter pop-up's close button was announced as just "button", the testimonial carousel's arrows said nothing at all, and when she tabbed to "Join the launch list" the sticky header hid it. None of that cost much to fix. One in six people worldwide lives with a significant disability (WHO), and many more have temporary or situational ones: a broken arm, bright sunlight, a slow phone, a noisy train. Accessible pages also tend to be clearer for everyone and easier for search and AI engines to understand, because both read structure, labels and text rather than looks.
+Nila Coffee's page scored 100 for accessibility in Lighthouse. Then a customer who uses a screen reader emailed: the newsletter pop-up's close button was announced as just "button", the testimonial carousel's arrows said nothing at all, and when she tabbed to "Join the launch list" the sticky header hid it. None of that cost much to fix. The WHO estimates that 1.3 billion people, about 1 in 6 worldwide, experience significant disability, and many more have temporary or situational ones: a broken arm, bright sunlight, a slow phone, a noisy train. Accessible pages also tend to be clearer for everyone and easier for search and AI engines to understand, because both read structure, labels and text rather than looks.
 
 ## Core concept
 **Plain version:** WCAG (Web Content Accessibility Guidelines) is the W3C's checklist of things a page must do so people with disabilities can use it. It has four **principles** (**POUR**):
@@ -224,8 +224,8 @@ Explain to a friend in 3 sentences why a page with a Lighthouse accessibility sc
 - WebAIM — WAVE Web Accessibility Evaluation Tools: https://wave.webaim.org/
 - Deque — axe DevTools browser extension: https://www.deque.com/axe/devtools/
 - Deque — Automated testing study identifies 57 percent of digital accessibility issues (2021, vendor research): https://www.deque.com/blog/automated-testing-study-identifies-57-percent-of-digital-accessibility-issues
-- NV Access — NVDA screen reader (free): https://www.nvaccess.org/
-- Apple — VoiceOver User Guide for Mac: https://support.apple.com/guide/voiceover/welcome/mac
+- NV Access — NVDA screen reader (free) and its User Guide (browse-mode single-letter navigation): https://www.nvaccess.org/ · https://download.nvaccess.org/documentation/userGuide.html
+- Apple — VoiceOver User Guide for Mac (incl. "Find the next control" VO-Command-J, next graphic VO-Command-G): https://support.apple.com/guide/voiceover/welcome/mac
 - WHO — Disability (fact sheet): https://www.who.int/news-room/fact-sheets/detail/disability-and-health
 
 ## Refresher card
