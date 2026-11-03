@@ -2,7 +2,7 @@
 > After this lesson every sign-up on your launch page lands in a Google Sheet, gets a friendly auto-reply and pings your team within seconds, with no server of your own, no code you have to host, and no secret keys in your page.
 
 **Time:** ~20 min reading + ~55 min exercise · **Level:** L3 Advanced · **Prereqs:** M05.L04, M06.L04 · **Remediate to:** M05.L04
-**Verified against:** Make Help Center "Webhooks" (custom webhooks give a URL you can send any data to; instant trigger; logs kept 3 days) and Make's integrations page (Custom webhook = instant trigger, available on the Free plan); Formspree Help "Webhooks" and "Connecting a form to Zapier" (both on Professional and Business plans only); n8n docs "Choose how to use n8n" (Community edition free to self-host; Cloud is paid with a trial); MDN `fetch()`, `URLSearchParams` and JSON. Free-plan limits for Make (1,000 credits a month, 2 active scenarios) and Zapier (100 tasks a month, two-step Zaps, no webhooks) come from third-party pricing summaries that agree with each other; check each vendor's pricing page. All read 2026-11-03. No live tests were run for this lesson; Make's module and menu names were not checked in the app.
+**Verified against:** Make Help Center "Webhooks" (custom webhooks give a URL you can send any data to; instant trigger; logs kept 3 days; default reply 200 "Accepted" without a Webhook response module) and Make's integrations page (Custom webhook = instant trigger, available on the Free plan); Formspree Help "Webhooks" and "Connecting a form to Zapier" (both on Professional and Business plans only); n8n docs "Choose how to use n8n" (Community edition free to self-host; Cloud is paid with a trial); MDN `fetch()`, `URLSearchParams` and JSON. Free-plan limits for Make (1,000 credits a month, 2 active scenarios) and Zapier (100 tasks a month, two-step Zaps, no webhooks) come from third-party pricing summaries that agree with each other; check each vendor's pricing page. All read 2026-11-03. No live tests were run for this lesson; Make's module and menu names were not checked in the app, and the empty-search behaviour is from Make community answers that disagree (flagged in Part C).
 
 > Note: the lesson uses **Make**, because its free plan includes an instant webhook trigger, so a form can send leads to it at no cost. Formspree (Lesson 5.4) only sends webhooks on its paid plans, and Zapier's free plan has no webhooks. Zapier and n8n are compared in the decision table; the method is the same in all three.
 
@@ -108,14 +108,14 @@ flowchart LR
    > **Alt text:** Make custom webhook output listing the launch form's fields after a test submission.
 
 **Part C: filter, store, reply, notify (20 min)**
-1. **Duplicate check:** add **Google Sheets → Search Rows** on *Nila launch leads*, where `email` equals the webhook's `email`. Connect your Google account when asked (this connection is the secret, and it stays in Make).
-   ⚠️ **Gotcha:** in Make, a search that finds **no** rows can end the route there, so a brand-new lead would do nothing, which is the opposite of what you want. Look in the module's advanced settings for an option to continue when no results are returned, or follow the search with an aggregator that always outputs a count. Test 1 in Part D catches this: if a first-time sign-up produces no row, this is why. (Not checked in the app for this draft.)
+1. **Duplicate check:** add **Google Sheets → Search Rows** on *Nila launch leads*, where `email` equals the webhook's email **cleaned up**: `lower(trim(email))` (Make's text functions), so `Kofi@Example.com ` and `kofi@example.com` count as the same person. Store the cleaned version in the sheet too. Connect your Google account when asked (this connection is the secret, and it stays in Make).
+   ⚠️ **Check this with test 1 in Part D:** Make community answers disagree on how a search that finds **no** rows behaves. Most recommend a filter on the search's **Total number of bundles = 0**, as below; others report that the route stops when nothing is found. If a first-time sign-up produces no row, add an **Array aggregator** after Search Rows and filter on the length of its array being `0` instead. (Not checked in the app for this lesson.)
 2. **Filter** (the small icon on the link between modules): name it "Real, new, not spam". Conditions, all of them (AND):
    - `_gotcha` **does not exist** or is empty;
    - `email` **contains** `@` (Lesson 5.4 already validated it; this is a second check against bots that skip your page);
    - `email` **does not contain** `+test`;
-   - the duplicate check found `0` matching rows (not already in the sheet).
-3. **Google Sheets → Add a Row**: map `received_at` to Make's `now`, and each column to the matching payload key from the data map.
+   - Search Rows' **Total number of bundles** equals `0` (not already in the sheet).
+3. **Google Sheets → Add a Row**: map `received_at` to Make's `now`, `email` to the cleaned `lower(trim(email))`, and each other column to the matching payload key from the data map.
 4. **Auto-reply:** add **Gmail → Send an email** (or **Brevo → Send a transactional email**). To: `email`. Subject: "You're on the Nila Coffee launch list". Body: greet with `first_name` if present, say exactly what happens next ("one email on launch day, 1 December"), and link the privacy notice. No offers unless `partner_offers` is `yes`.
 5. **Team notification:** add **Email** to your own address (or **Slack → Create a message**): "New lead from {utm_source}: {first_name}".
 6. **Save**, switch the scenario **ON** (scheduling: **Immediately as data arrives**).
@@ -178,8 +178,9 @@ Open the scenario's **History**. **Expected:** five runs, with the filter showin
 | Make says "waiting for data" forever | Scenario not in **Run once**, or the form still posts to the old endpoint | Click **Run once**, check the form's `action`, submit again |
 | Sheet column empty for one field | The form field was renamed, or the column mapping is wrong | Compare the payload keys in History with the mapping; fix the name or remap |
 | Some leads missing from the sheet | The filter is too strict, the quota ran out, or the scenario turned off after errors | Open History and the scenario's status; check the credit counter |
-| Two auto-replies to one person | No duplicate check, or the check runs after the email | Put **Search Rows** and the filter before any email step |
+| Two auto-replies to one person | No duplicate check, the check runs after the email, or the same address with different capitals/spaces | Put **Search Rows** and the filter before any email step |
 | Auto-replies land in spam | Sending from a personal Gmail in bulk, or no SPF/DKIM on your domain | Use your email tool (Brevo) with your verified domain (Lesson 4.4's DNS records) |
+| With JavaScript off, visitors land on a bare page saying `Accepted` | That's Make's default reply (status 200, body "Accepted") when there's no **Webhook response** module | Add a **Webhook response** module that redirects to your `noindex` thank-you page (status 303 with a `Location` header), or rely on the M05.L04 script for JS visitors |
 | Form shows "Couldn't send…" though Make received it | Your M05 script expects Formspree's JSON reply | Check only `response.ok`, or add Make's **Webhook response** module returning JSON |
 | Connection error after weeks of working | The Google or email connection expired or lost permission | Reconnect it in Make and re-run the failed runs from History |
 
