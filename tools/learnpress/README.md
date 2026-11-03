@@ -49,4 +49,4 @@ Course 2606 had no lesson posts, so `create_module.php` creates the section, les
 
 ## ⚠️ Slashing
 `wp_insert_post`, `wp_update_post` and `update_post_meta` unslash their input, and LearnPress `PostModel::save()` calls `wp_insert_post` unslashed.
-Every script now wraps content in `wp_slash()`. Before this fix, wordpress-101 lesson 2.1 (ID 2621) lost the backslash in "Ctrl+Shift+\\".
+Every script now wraps content in `wp_slash()`. Before this fix, wordpress-101 lesson 2.1 (ID 2621) lost the backslash in "Ctrl+Shift+\\" (re-pushed and fixed on 2026-11-03).
