@@ -1,14 +1,18 @@
 """Convert one module's lessons, quizzes and capstone into a JSON payload for the LearnPress upload.
 
-Usage: python3 build_module.py <module number> <first WP lesson id> <out.json>
+Usage: [COURSE=webdev-101] python3 build_module.py <module number> <first WP lesson id> <out.json>
 WP lesson IDs are consecutive in outline order (lessons, then the capstone).
+For a course whose lesson posts don't exist yet (webdev-101), pass 0 as the first ID: create_module.php
+creates the posts and uses the "title" fields ("1.1 …", "1.1 Quiz: …", "1.6 Module capstone: …").
+COURSE defaults to wordpress-101.
 """
 import glob, html, json, os, re, sys
 from markdown_it import MarkdownIt
 
 MD = MarkdownIt("commonmark").enable("table")
 
-ROOT = "/home/ubuntu/courses-101/wordpress-101"
+COURSE = os.environ.get("COURSE", "wordpress-101")
+ROOT = f"/home/ubuntu/courses-101/{COURSE}"
 MERMAID_JS = ('<script type="module">import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";'
               'mermaid.initialize({startOnLoad:true});</script>')
 
@@ -22,7 +26,7 @@ def module_files(n):
     files.append((f"capstones/m{n:02d}-capstone.md", None))
     for path, quiz in files:
         assert os.path.exists(f"{ROOT}/{path}") and (quiz is None or os.path.exists(f"{ROOT}/{quiz}")), path
-    return [(FIRST_ID + i, path, quiz) for i, (path, quiz) in enumerate(files)]
+    return [((FIRST_ID + i) if FIRST_ID else 0, path, quiz) for i, (path, quiz) in enumerate(files)]
 
 
 LESSONS = module_files(MODULE)
@@ -62,7 +66,8 @@ def lesson_html(path):
     text = re.sub(r"^\s*> 🖼️ \*\*Image prompt:\*\*.*\n\s*> \*\*Alt text:\*\*.*\n", "", text, flags=re.M)
     text = re.sub(r"!\[[^\]]*\]\([^)]*\.webp\)\n?", "", text, flags=re.S)      # no images on the site
     text = drop_section(text, "Glossary terms added")                           # repo-internal
-    cheat = re.search(r"^(## Module \d+ cheat sheet)\n.*?`wordpress-101/(cheatsheets/[^`]+)`", text, re.S | re.M)
+    text = re.sub(r" \(entry point: see `[\w-]+/glossary\.md`\)", " (entry point)", text)   # repo file, not on the site
+    cheat = re.search(r"^(## Module \d+ cheat sheet)\n.*?`" + re.escape(COURSE) + r"/(cheatsheets/[^`]+)`", text, re.S | re.M)
     if cheat:                                                                   # inline the cheat sheet
         sheet = open(f"{ROOT}/{cheat.group(2)}").read()
         sheet = re.sub(r"^# .*\n", "", sheet, count=1)
@@ -102,6 +107,7 @@ def parse_quiz(path):
     for b in blocks:
         lines = b.rstrip().split("\n")
         q_title = re.sub(r"\(review: m(\d+)-l(\d+)\)", lesson_ref, lines[0])
+        q_title = re.sub(r"\s*\*\(O\d[^)]*\)\*\s*$", "", q_title)              # internal objective tag
         opts, context, i = [], [], 1
         while i < len(lines) and not re.match(r"- [a-h]\) ", lines[i]):
             context.append(lines[i]); i += 1
@@ -123,15 +129,27 @@ def parse_quiz(path):
     return title, questions
 
 
+def site_title(path, n):
+    """'# M01.L02 — URLs, Domains & DNS' -> '1.2 URLs, Domains & DNS'; capstone -> '1.6 Module capstone: …'."""
+    h1 = re.search(r"^# (.*)", open(f"{ROOT}/{path}").read(), re.M).group(1)
+    m = re.match(r"M0?(\d+)\.L0?(\d+)(?: (Quiz))? — (.*)", h1)
+    if m:
+        return f"{int(m.group(1))}.{int(m.group(2))} " + (f"Quiz: {m.group(4)}" if m.group(3) else m.group(4))
+    m = re.match(r"M0?(\d+) Capstone — (.*)", h1)
+    assert m, h1
+    return f"{int(m.group(1))}.{n} Module capstone: {m.group(2)}"
+
+
 payload = []
-for lid, lpath, qpath in LESSONS:
-    item = {"lesson_id": lid, "content": lesson_html(lpath), "duration": duration(lpath), "quiz": None}
+for n, (lid, lpath, qpath) in enumerate(LESSONS, 1):
+    item = {"lesson_id": lid, "title": site_title(lpath, n), "content": lesson_html(lpath),
+            "duration": duration(lpath), "quiz": None}
     if qpath:
         qtitle, qs = parse_quiz(qpath)
-        item["quiz"] = {"title": qtitle, "questions": qs}
+        item["quiz"] = {"title": qtitle, "site_title": site_title(qpath, n), "questions": qs}
     payload.append(item)
 
 json.dump(payload, open(OUT, "w"), ensure_ascii=False, indent=1)
 for p in payload:
     q = p["quiz"]
-    print(p["lesson_id"], p["duration"], len(p["content"]), "chars", (q["title"], len(q["questions"])) if q else "no quiz")
+    print(p["lesson_id"], p["title"], "|", p["duration"], len(p["content"]), "chars", (q["title"], len(q["questions"])) if q else "no quiz")

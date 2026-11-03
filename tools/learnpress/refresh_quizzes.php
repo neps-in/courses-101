@@ -63,9 +63,9 @@ foreach ( $payload as $item ) {
 		if ( ! $apply ) {
 			continue;
 		}
-		wp_update_post( [ 'ID' => $qid, 'post_title' => $q['title'], 'post_content' => $q['content'] ] );
-		update_post_meta( $qid, '_lp_hint', $q['hint'] );
-		update_post_meta( $qid, '_lp_explanation', $q['explanation'] );
+		wp_update_post( wp_slash( [ 'ID' => $qid, 'post_title' => $q['title'], 'post_content' => $q['content'] ] ) );
+		update_post_meta( $qid, '_lp_hint', wp_slash( $q['hint'] ) );
+		update_post_meta( $qid, '_lp_explanation', wp_slash( $q['explanation'] ) );
 		foreach ( $answers as $k => $a ) {
 			$wpdb->update( $qa,
 				[ 'title' => $q['options'][ $k ]['title'], 'is_true' => $q['options'][ $k ]['is_true'] ],

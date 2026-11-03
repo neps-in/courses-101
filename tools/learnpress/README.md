@@ -1,4 +1,4 @@
-# LearnPress sync (neps.in course 2608)
+# LearnPress sync (neps.in: wordpress-101 = course 2608, webdev-101 = course 2606)
 
 Run on the server that hosts `/var/www/neps.in`. Back up first:
 `wp db export backup.sql --tables=wp_posts,wp_postmeta,wp_learnpress_sections,wp_learnpress_section_items,wp_learnpress_quiz_questions,wp_learnpress_question_answers,wp_learnpress_courses`
@@ -31,3 +31,22 @@ Re-attach them with `wp eval-file reattach_drafts.php --user=118`.
 ## Checking a live lesson
 Lesson URLs work only inside the course: `https://neps.in/courses/wordpress-101-for-content-creators/lessons/<slug>/` (the bare `/lessons/<slug>/` returns 404). Logged-out visitors see the enrol prompt, so check content with
 `wp eval 'echo apply_filters("the_content", get_post(<ID>)->post_content);' --user=118`.
+
+## webdev-101 → course 2606 (new posts, created from scratch)
+Course 2606 had no lesson posts, so `create_module.php` creates the section, lessons and quizzes itself.
+1. Back up: `wp db export /home/ubuntu/backups/neps-in/<date>-<reason>/full.sql`.
+2. `COURSE=webdev-101 python3 build_module.py <N> 0 mNN.json` (first ID 0 = new posts; titles "1.1 …", "1.1 Quiz: …", "1.6 Module capstone: …").
+3. Dry run: `wp eval-file create_module.php mNN.json 2606 <order> "M0N — Name" "<goal from syllabus.md>" --user=118`, then add `apply`.
+   Refuses a duplicate section name, a used section order, or an existing lesson/quiz title.
+4. Check: section items in order, one `is_true` per question, live answer letters = the Markdown `**Answer:**` keys, content identical to the payload.
+
+| Section | Order | Section ID | Status |
+|---|---|---|---|
+| Start here (diagnostic quiz) | 1 | — | not yet |
+| M01 — How the Web Works | 2 | 41 | live 2026-11-03 (lessons 3181/3190/3199/3208/3217, capstone 3226; quizzes 3182/3191/3200/3209/3218) |
+| M02–M08 | 3–9 | — | not yet |
+| Final capstone (Launch Week) | 10 | — | not yet |
+
+## ⚠️ Slashing
+`wp_insert_post`, `wp_update_post` and `update_post_meta` unslash their input, and LearnPress `PostModel::save()` calls `wp_insert_post` unslashed.
+Every script now wraps content in `wp_slash()`. Before this fix, wordpress-101 lesson 2.1 (ID 2621) lost the backslash in "Ctrl+Shift+\\".

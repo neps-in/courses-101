@@ -38,11 +38,11 @@ if ( $other ) {
 $items = [];
 foreach ( $payload as $item ) {
 	$lesson_id = (int) $item['lesson_id'];
-	$res       = wp_update_post( [
+	$res       = wp_update_post( wp_slash( [
 		'ID'           => $lesson_id,
 		'post_content' => $item['content'],
 		'post_status'  => 'publish',
-	], true );
+	] ), true );
 	if ( is_wp_error( $res ) ) {
 		WP_CLI::error( "Lesson $lesson_id: " . $res->get_error_message() );
 	}
@@ -83,14 +83,14 @@ foreach ( $payload as $item ) {
 
 	foreach ( $item['quiz']['questions'] as $q ) {
 		$qq = $quiz->create_question_and_add( [
-			'question_title'   => $q['title'],
+			'question_title'   => wp_slash( $q['title'] ),
 			'question_type'    => 'single_choice',
-			'question_content' => $q['content'],
+			'question_content' => wp_slash( $q['content'] ),
 			'question_options' => $q['options'],
 		] );
 		update_post_meta( $qq->question_id, '_lp_mark', 1 );
-		update_post_meta( $qq->question_id, '_lp_hint', $q['hint'] );
-		update_post_meta( $qq->question_id, '_lp_explanation', $q['explanation'] );
+		update_post_meta( $qq->question_id, '_lp_hint', wp_slash( $q['hint'] ) );
+		update_post_meta( $qq->question_id, '_lp_explanation', wp_slash( $q['explanation'] ) );
 	}
 	$items[] = [ 'id' => $quiz_id, 'type' => LP_QUIZ_CPT ];
 	WP_CLI::log( "  Quiz $quiz_id: $quiz_title (" . count( $item['quiz']['questions'] ) . ' questions)' );
