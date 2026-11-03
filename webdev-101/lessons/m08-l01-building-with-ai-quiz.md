@@ -20,7 +20,7 @@
 - d) Ask the same AI whether the package exists, and accept whatever it answers
 
 **Answer:** a
-**Explanation:** AI tools often invent package names; a 2025 study found about one in five code samples referenced packages that don't exist, and attackers can register those names ("slopsquatting"). A CDN serves whatever is published under the name, `defer` only changes *when* a script runs, and the AI that invented the name may confirm it again.
+**Explanation:** AI tools sometimes invent package names (a 2025 study found at least 5.2% of packages suggested by commercial models, and 21.7% by open-source models, didn't exist), and attackers can register those names ("slopsquatting"). A CDN serves whatever is published under the name, `defer` only changes *when* a script runs, and the AI that invented the name may confirm it again.
 **Hint:** Who is the authority on whether a package exists?
 
 ### Q3. Why is `el.innerHTML = 'Hi ' + nameFromUrl` dangerous? *(O2 · recall)*

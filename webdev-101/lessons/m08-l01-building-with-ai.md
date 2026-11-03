@@ -2,7 +2,7 @@
 > After this lesson you can get useful HTML, CSS and JavaScript from an AI assistant, review it with a fixed checklist before it touches your live page, and keep a record of every AI change in Git.
 
 **Time:** ~18 min reading + ~50 min exercise · **Level:** L3 Advanced · **Prereqs:** M05.L02, M07.L03 · **Remediate to:** M05.L02
-**Verified against:** MDN `innerHTML` security considerations and `textContent`, OWASP DOM-based XSS Prevention Cheat Sheet, W3C WCAG 2.2 (2.2.2 Pause, Stop, Hide; 4.1.2 Name, Role, Value), W3C WAI-ARIA Authoring Practices (carousel pattern), the VS Code Copilot FAQ, and Spracklen et al., "We Have a Package for You!" (USENIX Security 2025, via secondary summaries); all read 2026-11-03. Copilot Free's monthly limits come from third-party summaries, not GitHub's own page; check GitHub's plans page. No live browser tests were run for this lesson.
+**Verified against:** MDN `innerHTML` security considerations and `textContent`, OWASP DOM-based XSS Prevention Cheat Sheet, W3C WCAG 2.2 (2.2.2 Pause, Stop, Hide; 4.1.2 Name, Role, Value), W3C WAI-ARIA Authoring Practices (carousel pattern), the VS Code Copilot FAQ, and Spracklen et al., "We Have a Package for You!" (USENIX Security 2025; rates from the proceedings and arXiv versions); all read 2026-11-03. Copilot Free's monthly limits come from third-party summaries, not GitHub's own page; check GitHub's plans page. No live browser tests were run for this lesson.
 
 > Note: you don't need an AI account to follow the walkthrough. Part B gives everyone the same AI-written code (with real, common mistakes in it) to review. Part C, using your own assistant, is optional but recommended.
 
@@ -44,7 +44,7 @@ Small, specific asks beat "build me a landing page". One component per prompt, a
 
 ### Three AI failure patterns to look for first
 1. **Unsafe DOM writing.** AI often builds text with `innerHTML` because it's short. If any part comes from the URL, a form or an API, that's a cross-site scripting (XSS) hole. Use `textContent` (Lesson 5.2), or build elements with `createElement`.
-2. **Hallucinated packages and URLs.** A 2025 study (Spracklen et al., USENIX Security) generated 576,000 code samples with 16 models and found that about 20% referenced packages that don't exist, and many of the same fake names came back again and again. Attackers can register those names ("slopsquatting"). Never load a script or install a package you haven't found on its official registry page (npmjs.com) and checked.
+2. **Hallucinated packages and URLs.** A 2025 study (Spracklen et al., USENIX Security) generated over half a million code samples with 16 models. On average at least 5.2% of the packages suggested by commercial models, and 21.7% by open-source models, didn't exist, and the same fake names often came back when the prompt was repeated. Attackers can register those names ("slopsquatting"). Never load a script or install a package you haven't found on its official registry page (npmjs.com) and checked.
 3. **Missing names and keyboard support.** Clickable `<div>`s, icon buttons with no label, carousels that rotate forever. These fail WCAG 4.1.2 and 2.2.2 even though they look fine.
 
 ## How it works
@@ -113,7 +113,7 @@ Work in your launch-page repo from Module 4. Create a branch first: `git switch 
    | 2 | `innerHTML` with `name` from the URL: open `countdown-ai.html?name=<img src=x onerror=alert(1)>` and an alert box appears | Secure (DOM XSS) | The alert proves untrusted text ran as code |
    | 3 | Script from a CDN package nobody checked | Secure (supply chain) | Network shows the request failing (404). Search npmjs.com for the name: if it doesn't exist, the AI made it up |
    | 4 | `gtag('event', …)` added without being asked; fires on load, and errors if GTM/consent isn't set up | Private | Console: `gtag is not defined`, or in the live page an event you never planned |
-   | 5 | Text changes every second, counting seconds: distracting, and a screen reader reading it would announce constant changes | Accessible (2.2.2) / usability | Watch it; there's no way to pause it |
+   | 5 | Text updates every second and starts on its own, with no way to pause, stop or hide it: distracting for many readers (WCAG 2.2.2 covers auto-updating content). Adding `aria-live` to "help" would make screen readers announce every tick | Accessible (2.2.2) / usability | Watch it; there's no control. The fix updates once a minute and the Close button hides it |
    | 6 | Shows "null" if there's no `?name=`, and goes negative after launch | Truthful / correctness | Open the file without a query string |
 
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of the local countdown-ai.html page opened with `?name=<img src=x onerror=alert(1)>` in the address bar, showing the browser's alert box, with DevTools Console and Network panels open showing a 404 for the CDN script. Outline the alert box and the 404 row. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
@@ -196,6 +196,7 @@ Work in your launch-page repo from Module 4. Create a branch first: `git switch 
 | A CDN script returns 404 | The package or version doesn't exist (possibly hallucinated) | Delete it; find a real, maintained package or write the few lines yourself |
 | Lighthouse score dropped after an AI change | New library, unoptimised image or layout shift | `git diff` to see what changed; remove or fix that part (Lesson 7.1) |
 | Consent stopped working | AI code set cookies or loaded a tag directly instead of through GTM | Remove direct tags; route through GTM with consent checks (Lesson 6.3–6.4) |
+| Close button runs but the banner stays visible | Your CSS sets `display` on `.countdown`, which overrides the `hidden` attribute | Add `.countdown[hidden] { display: none; }` |
 | The assistant says it "can't" or gives a different answer each time | Normal variation | Narrow the task, give an example of the output you want, and verify whichever answer you keep |
 
 ## Exercise
