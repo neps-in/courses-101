@@ -1,6 +1,6 @@
 # Progress
 
-Active course: **webdev-101**
+Active course: **modern-seo**
 
 Status values: `todo` → `draft` → `reviewed` → `published`.
 Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` row.
@@ -9,15 +9,15 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | — | Search Foundations (not yet planned) | — | todo | — |
-| M02 | — | Keyword and Intent Research (not yet planned) | — | todo | — |
-| M03 | — | Content Strategy (not yet planned) | — | todo | — |
-| M04 | — | AEO - Answer Engine Optimization (not yet planned) | — | todo | — |
-| M05 | — | GEO - Generative Engine Optimization (not yet planned) | — | todo | — |
+| M01 | — | Search & AI Foundations (not yet planned) | — | todo | — |
+| M02 | — | Keyword & Intent Research (not yet planned) | — | todo | — |
+| M03 | — | Content Strategy & Topical Authority (not yet planned) | — | todo | — |
+| M04 | — | AEO: Answer Engine Optimization (not yet planned) | — | todo | — |
+| M05 | — | GEO: Generative Engine Optimization (not yet planned) | — | todo | — |
 | M06 | — | Content Production with AI (not yet planned) | — | todo | — |
-| M07 | — | Automation Stack (Python) (not yet planned) | — | todo | — |
-| M08 | — | Measurement (not yet planned) | — | todo | — |
-| M09 | — | Capstone (not yet planned) | — | todo | — |
+| M07 | — | Automation Stack: No-Code First, Python Optional (not yet planned) | — | todo | — |
+| M08 | — | Measurement, Reporting & Refresh (not yet planned) | — | todo | — |
+| Final | — | Final capstone: 90-Day Growth Sprint (not yet planned) | — | todo | — |
 
 ## wordpress-101
 
@@ -129,6 +129,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: modern-seo scaffolded (/new-course): course-outline.md written from the template, starting from the neps.in course 2521 topic list (9 modules, 39 empty lessons). User choices: all three audiences (creators/SMB, marketers, working SEOs) served by L1–L3 levels + a 16-question diagnostic with skip rules; no-code automation first, Python optional (Colab); learner picks a project path (own site / demo site / client site); self-paced, 2 lessons/week. 8 modules + final capstone "90-Day Growth Sprint"; 12 non-negotiables; overlap with webdev-101 M07 and wordpress-101 M05 moved to remediation links; FAQ/HowTo schema, Ahrefs/Semrush APIs and SERP scraping replaced (see outline changelog). Checked against the design guide's 'What most courses miss' table. Active course switched to modern-seo. Next: `/plan-module 1`.
 - 2026-11-03: webdev-101 WHOLE COURSE LIVE on neps.in (course 2606): M02–M08 = sections 42–48, "Start here" = section 49 (lesson 3515 + placement quiz 3516, 15 questions, passing grade 0), "Final capstone — Launch Week" = section 50 (lesson 3532); M01 = section 41 moved to order 2 (LearnPress had stored the first section at order 1). Backup /home/ubuntu/backups/neps-in/2026-11-03-webdev-rest/ (also holds every payload and verify.php). Every module dry-run first. verify.php: 46 lessons and 267 questions identical to the payloads (content, duration, answers, hints, explanations); placement quiz grade 0, lesson quizzes 70; public page shows 46 lessons, 37 quizzes, sections in order; sample lesson/quiz URLs 200. Builder fixes: capstone times in hours now parsed (were 30-min fallback), (M01.L01 · …) tags stripped, hints stop at --- / ## block breaks (no lesson quiz was affected); start/final modes; create_module.php accepts quiz meta/description overrides (array_merge). 46 webdev-101 rows set to published.
 - 2026-11-03: wordpress-101 lesson 2.1 (post 2621) re-pushed with the user's OK: the live table row now reads "Ctrl+Shift+\\" again (lost earlier to WordPress unslashing). Backup in /home/ubuntu/backups/neps-in/2026-11-03-wp101-l2-1-backslash/. The rebuilt content differed from live only on that line, and stored content is now identical to the repo build; lesson URL 200. No other wordpress-101 source contains a backslash.
 - 2026-11-03: webdev-101 M01 synced to neps.in LearnPress as a trial (user's choice: one module first). Full DB backup in /home/ubuntu/backups/neps-in/2026-11-03-webdev-m01-trial/. Course 2606 renamed "Web Development 101 for Marketers & Content Creators" (slug unchanged) with a description generated from syllabus.md and an excerpt. Section 41 "M01 — How the Web Works" (order 2; 1 is kept for the "Start here" diagnostic, 10 for the final capstone): lessons 3181/3190/3199/3208/3217 + capstone 3226 with the M01 cheat sheet inlined, quizzes 3182/3191/3200/3209/3218 (7 questions each). Checked: items in order, all published, content identical to the payload, one correct answer per question, live answer letters = Markdown keys for all 5 quizzes, course and lesson URLs 200. Tools: build_module.py takes COURSE=…, outputs site titles, strips quiz objective tags and the glossary path; new create_module.php (dry run, then apply). Found: old scripts didn't wp_slash, so wordpress-101 lesson 2.1 (2621) shows "Ctrl+Shift+" without its backslash; all scripts now slash; the live fix awaits the user's OK.
