@@ -56,7 +56,7 @@ Sofia's skincare launch page has a "Click here" button, a hero image with `alt="
 - **`<figure>` + `<figcaption>`:** when the image needs a visible caption.
 
 ### Video and embeds
-- **Your own file:** `<video controls width="1280" height="720" poster="images/video-cover.jpg">` with a `<source>` and a `<track kind="captions">` for captions. Always include `controls`. Autoplay only works when the video is `muted`, and visitors rarely like it.
+- **Your own file:** `<video controls width="1280" height="720" poster="images/video-cover.jpg">` with a `<source>` and a `<track kind="captions">` for captions. Always include `controls`. Browsers generally block autoplay with sound, so autoplay needs `muted` (and `playsinline` on iPhones), and visitors rarely like it anyway.
 - **YouTube / Vimeo:** paste the platform's `<iframe>` embed code, then **add a `title`** describing the video (otherwise screen readers announce just "frame") and `loading="lazy"`. YouTube offers a **privacy-enhanced mode**: an embed address on `www.youtube-nocookie.com`. YouTube says views of videos embedded this way aren't used to personalise the viewer's browsing on YouTube; check its help page for exactly what is and isn't stored. You'll need it for consent rules in Lesson 6.4.
 
 ## How it works

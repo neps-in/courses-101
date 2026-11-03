@@ -24,7 +24,7 @@
 **Hint:** Imagine hearing *only* the link text, with nothing around it.
 
 ### Q3. Your company logo sits in the header and links to the homepage. It's the only thing inside the link. What alt text should it have? *(O3 · scenario)*
-- a) `alt="Nila Coffee home"`
+- a) `alt="Nila Coffee home"`, the link's destination
 - b) `alt=""`, because logos are always decorative
 - c) `alt="Nila Coffee logo, brown, round, 200 pixels"`
 - d) `alt="best coffee subscription India buy beans"`
@@ -34,7 +34,7 @@
 **Hint:** Flowchart branch two: what does the link *do*?
 
 ### Q4. Reza's launch page jumps down by half a screen when the hero image loads on mobile, and visitors tap the wrong button. What should he add to the `<img>`? *(O3 · scenario)*
-- a) `loading="lazy"`, so the image loads later than the rest of the page
+- a) `loading="lazy"`, so the image loads later
 - b) A longer `alt` text that describes the whole hero image
 - c) The image's real `width` and `height` attributes
 - d) `target="_blank"`, so the image opens somewhere else
@@ -45,7 +45,7 @@
 
 ### Q5. Priya writes a review of a grinder and links to it through an affiliate programme. Which markup follows Google's guidance *and* tells readers? *(O2 · scenario)*
 - a) `<a href="…" target="_blank">Burr Grinder (opens new tab)</a>`
-- b) `<a href="…" rel="sponsored">Burr Grinder (affiliate link)</a>`
+- b) `<a href="…" rel="sponsored">Burr Grinder (affiliate)</a>`
 - c) `<a href="…">Burr Grinder</a>`, with no extra attributes
 - d) `<a href="…" rel="noopener">Burr Grinder (our pick)</a>`
 

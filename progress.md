@@ -88,7 +88,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M01 | L05 | Your First Look at DevTools | webdev-101/lessons/m01-l05-first-look-devtools.md | reviewed | 2026-11-02 |
 | M01 | Capstone | M01 capstone | webdev-101/capstones/m01-capstone.md | reviewed | 2026-11-02 |
 | M02 | L01 | Anatomy of an HTML Page | webdev-101/lessons/m02-l01-html-page-anatomy.md | reviewed | 2026-11-03 |
-| M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | draft | 2026-11-02 |
+| M02 | L02 | Text, Links, Images & Media | webdev-101/lessons/m02-l02-text-links-images-media.md | reviewed | 2026-11-03 |
 | M02 | L03 | Semantic HTML & Heading Structure | webdev-101/lessons/m02-l03-semantic-html-headings.md | draft | 2026-11-02 |
 | M02 | L04 | Forms for Lead Capture | webdev-101/lessons/m02-l04-lead-capture-forms.md | draft | 2026-11-02 |
 | M02 | L05 | Meta Tags & Social Previews | webdev-101/lessons/m02-l05-meta-tags-social-previews.md | draft | 2026-11-02 |
@@ -124,6 +124,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | M08 | — | Advanced: AI, Automation & Scale (not yet planned) | — | todo | — |
 
 ## Log
+- 2026-11-03: webdev-101 m02-l02 reviewed (no browser tests): autoplay claim made precise (browsers generally block autoplay with sound; muted + playsinline); rest accurate (implicit noopener, rel=sponsored/nofollow per Google, nocookie wording hedged); quiz Q3, Q4, Q5 option lengths rebalanced; answers b d a c b d a unchanged; ~20 min reading.
 - 2026-11-03: webdev-101 m02-l01 reviewed (no browser tests): content accurate (validator messages were checked live at draft; CodePen "Stuff for <head>" and TextEdit "Display HTML files as HTML code" labels real); template complete, palette and alt OK; quiz Q1, Q3, Q6 distractors lengthened (correct answers were longest, written before the length rule); answers a c b d c a d unchanged; ~16 min reading.
 - 2026-11-03: webdev-101 m07 capstone reviewed (no browser tests): matches the syllabus deliverables and rubric; bug C made safe for a live site — plant for minutes only, before requesting indexing; Google caches robots.txt and refreshes about every 24 h, so after reverting use Search Console Settings → robots.txt → Request a recrawl (Google Search Central "Update your robots.txt file"); flowchart palette, alt length (133), template sections and self-check confirmed; cheat sheet unchanged. Module 7 complete.
 - 2026-11-03: webdev-101 m07 capstone draft (no browser tests): before/after report; tasks mapped to L01–L04 (baseline median of 3 mobile in all four Lighthouse categories, speed fixes, picture/srcset/fonts/facade, three-way a11y audit + statement, JSON-LD/robots/sitemap/canonical/noindex + Search Console) plus an M06 regression check (consent, generate_lead); planted bugs A lazy hero (Lighthouse "LCP resources shouldn't use loading=lazy"), B nameless icon button ("Buttons do not have an accessible name"), C Disallow: / (Search Console live test blocked); 5-criterion rubric (NN #11; images/fonts/media; NN #2 #3 #5; NN #8 + SEO; evidence and honesty); 1 image prompt) + cheatsheets/m07-fast-accessible-search.md.
