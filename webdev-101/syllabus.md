@@ -436,7 +436,7 @@ flowchart LR
   1. **Convert** and compress images to modern formats (AVIF/WebP with a fallback via `<picture>`) at the right dimensions, and **serve** responsive sizes with `srcset` and `sizes`.
   2. **Apply** loading hints correctly: `loading="lazy"` below the fold only, `fetchpriority="high"` (and no lazy-loading) on the LCP image, `decoding`, and preloading only what is critical.
   3. **Load** fonts and media efficiently: self-hosted WOFF2, `font-display: swap`, a limited set of weights, a fallback font tuned to reduce layout shift, and video/embeds as lightweight facades or `preload="none"`.
-- **Hands-on idea:** Squoosh the hero in three formats and compare file size vs quality; build a `<picture>` with `srcset`; swap a YouTube embed for a click-to-load facade; measure LCP and page weight before/after. Break-it-and-fix-it: lazy-loading the hero image (LCP gets worse), a `sizes` attribute missing so phones download the desktop image, a Google Fonts link loading nine weights.
+- **Hands-on idea:** Squoosh the hero in three formats and compare file size vs quality; build a `<picture>` with `srcset`; swap a YouTube embed for a click-to-load facade; measure LCP and page weight before/after. Break-it-and-fix-it: lazy-loading the hero image (LCP gets worse), a hero served as one 1600 px `src` with no `srcset`, so phones download the desktop file, a Google Fonts link loading nine weights.
 
 ### M07.L03 — Accessibility in Practice (WCAG 2.2)
 - **File:** `lessons/m07-l03-accessibility-wcag.md` · **Prereqs:** M02.L03, M03.L02, M05.L03 · **Remediate to:** M02.L03 · **Hands-on:** ~50 min
