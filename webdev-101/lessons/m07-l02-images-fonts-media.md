@@ -113,8 +113,8 @@ flowchart TD
 3. Note your Lesson 7.1 "after" numbers (score, LCP, CLS) as this lesson's "before".
 
 **Part B: resize and convert the hero (10 min)**
-1. Open **Squoosh** (squoosh.app, free, runs in your browser; the image isn't uploaded) and drop in your hero photo.
-2. Resize to **1600 px** wide (Lesson 3.2's rule for full-width images), choose **AVIF**, and adjust quality until you can't see a difference in the side-by-side view. Download. Repeat for **WebP** and **MozJPEG**, then make **800 px** and **480 px** versions.
+1. Open **Squoosh** (squoosh.app, free from Google Chrome Labs; its README says it "does not send your image to a server" and compresses locally, though it records basic Google Analytics data and before/after file sizes) and drop in your hero photo.
+2. Resize the largest version to about **twice the widest size it's ever displayed** (for a hero shown up to 800 CSS px wide, that's **1600 px**, enough for 2× screens), choose **AVIF**, and adjust quality until you can't see a difference in the side-by-side view. Download. Repeat for **WebP** and **MozJPEG**, then make **800 px** and **480 px** versions.
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of Squoosh comparing an original JPEG photo (left) with an AVIF version (right) at 1600 px wide, showing both file sizes at the bottom. Outline the two file-size labels. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Squoosh side-by-side comparison showing the original photo and a much smaller AVIF version.
 3. Write the sizes in a table: original, AVIF, WebP, JPEG at each width. **Expected:** the AVIF and WebP files are clearly smaller than the original; your exact numbers depend on the photo.
@@ -238,7 +238,7 @@ Explain to a friend in 3 sentences how a browser chooses which image file to dow
 - MDN — `<picture>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/picture
 - MDN — `fetchpriority`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority
 - MDN — `<video>` (`preload`, `poster`): https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video
-- Squoosh (free image compressor in the browser): https://squoosh.app/
+- Squoosh (free image compressor in the browser): https://squoosh.app/ · README (privacy): https://github.com/GoogleChromeLabs/squoosh
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
