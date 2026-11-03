@@ -2,7 +2,7 @@
 > 15 questions, about 15 minutes. Take it **before Module 1** to find out which of Modules 1–3 you can skip or skim. There's no pass or fail: it only tells you where to start. Answer without looking anything up; a guess you're unsure of should count as wrong.
 
 **Covers:** Module 1 (how the web works), Module 2 (HTML) and Module 3 (CSS). 5 questions each, including one spot-the-error item per block.
-**Verified against:** the M01–M03 lessons and their primary sources (MDN, W3C WCAG 2.2 Understanding docs, RFC 9110 status codes); every answer re-checked against the reviewed M01 and M03 lessons and the M02 drafts, on 2026-11-02.
+**Verified against:** the M01–M03 lessons and their primary sources (MDN, W3C WCAG 2.2 Understanding docs, RFC 9110 status codes); every answer re-checked against the reviewed M01–M03 lessons on 2026-11-03.
 
 ## How to use your score
 
@@ -63,7 +63,7 @@ Write your answers down first (for example `1b 2d 3a …`), then check them agai
 **Hint:** Did the browser even find a server to talk to?
 
 ### Q4. A café owner who updates a menu twice a year and wants the lowest cost asks you how to build a five-page site. What's the best fit? *(M01.L04 · scenario)*
-- a) A hand-coded static site on a free static host
+- a) A simple hand-coded static site on a free static host
 - b) A custom app with its own database and login system
 - c) A full online store platform with a monthly plan
 - d) A WordPress site with a dozen plugins on a paid server
@@ -107,7 +107,7 @@ Write your answers down first (for example `1b 2d 3a …`), then check them agai
 **Hint:** What does a screen-reader user need to hear before following the link?
 
 ### Q8. Your sign-up form arrives without the visitor's email address, although they typed one. Which attribute is missing from the email `input`? *(M02.L04 · scenario)*
-- a) `name`, which labels the value when the form is sent
+- a) `name`, which labels the value each time the form is sent
 - b) `placeholder`, which shows an example address in the field
 - c) `autocomplete`, which lets the browser fill the field in
 - d) `required`, which stops the form sending an empty field
@@ -119,7 +119,7 @@ Write your answers down first (for example `1b 2d 3a …`), then check them agai
 ### Q9. Where does a share preview's title, description and image come from when someone posts your link on LinkedIn or WhatsApp? *(M02.L05 · recall)*
 - a) From the first heading and the first image in the page body
 - b) From the page's `alt` texts and file names, read in order
-- c) From `og:` meta tags in the page's head, when present
+- c) From the `og:` meta tags in the page's head, when present
 - d) From a profile setting on each platform, not from your page
 
 **Answer:** c
@@ -135,7 +135,7 @@ Write your answers down first (for example `1b 2d 3a …`), then check them agai
 ```
 - a) `<h1>`, because a page should start with an `<h2>` heading
 - b) The second `<h2>`, because two `h2`s can't share one page
-- c) `<h4>`, which jumps from `h2` to `h4` and skips `h3`
+- c) `<h4>`, which jumps from `h2` down to `h4`, skipping `h3`
 - d) None; heading levels are only about how big the text looks
 
 **Answer:** c
@@ -160,7 +160,7 @@ Write your answers down first (for example `1b 2d 3a …`), then check them agai
 - a) 3:1, the same as for large headings and icons
 - b) 7:1 for every piece of text on every page
 - c) 2:1 if the text is set in a bold weight
-- d) 4.5:1, with 3:1 allowed for large text
+- d) 4.5:1, with 3:1 allowed for large-scale text
 
 **Answer:** d
 **Explanation:** SC 1.4.3 asks for 4.5:1 for normal text and 3:1 for large text (24 px, or about 18.66 px bold). 7:1 is the stricter AAA level. Measure with DevTools' colour picker or WebAIM; don't guess.
@@ -195,7 +195,7 @@ a:focus { outline: none; }
 ```
 - a) `.plan` with `flex-direction: column`, which hides the focus
 - b) `.button:hover`, because hover styles block keyboard focus
-- c) `a:focus { outline: none; }` with nothing in its place
+- c) `a:focus { outline: none; }`, with nothing to replace it
 - d) `var(--color-cta)`, because tokens can't be used on links
 
 **Answer:** c

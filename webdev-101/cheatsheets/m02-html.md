@@ -88,7 +88,7 @@ Share image: **full https URL**, 1200×630 (min 600×315), under 8 MB, key conte
 ## Diagnose fast
 | You see | Likely cause |
 |---|---|
-| Broken-image icon + 404 in Network | Wrong path or file-name case |
+| Broken-image icon + 404 in Network (live server) or `ERR_FILE_NOT_FOUND` (local file) | Wrong path or file-name case |
 | `#link` doesn't jump | `id` missing, misspelt or different case |
 | Clicking a label does nothing | `for` ≠ `id` |
 | Field missing after submit | No `name` |
