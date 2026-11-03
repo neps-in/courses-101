@@ -5,8 +5,8 @@
 
 ### Q1. In `<a href="/subscribe" class="cta">Start now</a>`, what is `href="/subscribe"`? *(O2 · recall)*
 - a) An attribute that gives the link its destination
-- b) The content of the element, shown on the page
-- c) The end tag that closes the link element
+- b) The content of the element, shown on the page itself
+- c) The end tag that closes the link element again
 - d) A comment that the browser ignores completely
 
 **Answer:** a
@@ -24,10 +24,10 @@
 **Hint:** "Port" as in the window you view the page through.
 
 ### Q3. Ama's page shows `â‚¹499` instead of `₹499`. Everything else looks fine. What's the most likely fix? *(O1 · scenario)*
-- a) Add `lang="en-IN"` to the `<html>` start tag
+- a) Add `lang="en-IN"` to the `<html>` start tag instead
 - b) Add `<meta charset="utf-8">` and save the file as UTF-8
-- c) Wrap the price in `<strong>` so the browser notices it
-- d) Move the price paragraph into the page's `<head>`
+- c) Wrap the price in `<strong>` so the browser notices it more
+- d) Move the price paragraph up into the page's `<head>`
 
 **Answer:** b
 **Explanation:** Garbled symbols are an encoding problem. The browser read the bytes with the wrong character set. Declaring UTF-8 (first in the head) and saving the file as UTF-8 fixes it. `lang` affects language handling, not encoding; `<strong>` only adds emphasis; and visible content never belongs in the head.
@@ -58,9 +58,9 @@
 <p>Fresh beans <em>every <strong>month</em></strong>.</p>
 ```
 - a) `</em>` closes before `</strong>`, so the tags cross
-- b) `<em>` can't be used inside a paragraph
-- c) The full stop must go inside the `<strong>` tag
-- d) `<strong>` is a void element and needs no end tag
+- b) `<em>` isn't allowed inside a paragraph at all
+- c) The full stop must go inside the `<strong>` tag too
+- d) `<strong>` is a void element, so it needs no end tag
 
 **Answer:** a
 **Explanation:** `<strong>` was opened last, so it must close first: `<em>every <strong>month</strong></em>`. Crossed tags force the browser to guess. `<em>` belongs inside paragraphs, punctuation placement is a style choice, and `<strong>` is not a void element.
