@@ -31,7 +31,7 @@ Nila Coffee's founder wants Hindi-speaking customers in North India. A plugin "t
 | **Same URL, swapped by cookie or browser setting** | — | Google recommends **different URLs per language** instead | Avoid for public pages |
 
 ### `lang` is for people and browsers; `hreflang` is for search engines
-- `<html lang="hi">` tells screen readers which voice to use, browsers which fonts, hyphenation and translation offers to use (WCAG 3.1.1). For a phrase in another language inside a page, mark that part: `<span lang="en">Nila Coffee</span>` (WCAG 3.1.2). Right-to-left scripts (Arabic, Urdu, Hebrew) also need `dir="rtl"` on `<html>`.
+- `<html lang="hi">` tells screen readers which voice to use, browsers which fonts, hyphenation and translation offers to use (WCAG 3.1.1). For a phrase in another language inside a page, mark that part, e.g. an English customer quote on the Hindi page: `<blockquote lang="en">…</blockquote>` (WCAG 3.1.2). Proper names such as "Nila Coffee" and technical terms are exempt: no `lang` needed. Right-to-left scripts (Arabic, Urdu, Hebrew) also need `dir="rtl"` on `<html>`.
 - Google says it **doesn't use** `lang` or `hreflang` to detect a page's language; it reads the visible content. `hreflang` tells Google *which other versions exist*, so it can show the right one to each searcher.
 
 ### `hreflang` rules (from Google's documentation)
@@ -44,7 +44,7 @@ Nila Coffee's founder wants Hindi-speaking customers in North India. A plugin "t
 - **Every version lists itself and all others.** If two pages don't point to each other, Google ignores the tags.
 - **Codes:** language from ISO 639-1 (`en`, `hi`, `es`), optionally plus a region from ISO 3166-1 Alpha 2 (`en-GB`, `es-MX`). A region alone isn't valid. `UK` isn't a region code (use `GB`); `in` is not "India" or "Hindi" (Hindi is `hi`, India is `IN`, so `hi-IN` or `en-IN`).
 - **Full URLs** with `https://`, never `/hi/`.
-- **`x-default`** is the fallback for anyone whose language matches none of your versions; a language-selector page or your main version.
+- **`x-default`** is the fallback for anyone whose language matches none of your versions. Google's examples point it at a language-selector page; pointing it at your main version, as this lesson does, is common practice for small sites.
 - **One method is enough:** `<head>` links, HTTP headers or the XML sitemap; Google treats them the same.
 - **Canonical:** each language page's canonical points to **itself**. A Hindi page whose canonical points to the English page asks Google to drop the Hindi page.
 
@@ -222,7 +222,7 @@ Work in the Eleventy project from Lesson 8.3, on a branch: `git switch -c hindi`
 | Only one language listed on each page | Only one page has the key, or `lang` is missing on one | Check both front matters; rebuild |
 | Switcher shows an empty list on some pages | Those pages have no translations | Wrap the switcher in `{% if translationKey %}` (as in Part C) |
 | Hindi text shows as boxes | Your web font lacks Devanagari glyphs | Add a font that covers the script (e.g. a Noto family), or let the fallback system font render it |
-| Screen reader reads Hindi with an English voice | Missing or wrong `lang` on `<html>`, or on a mixed-language phrase | `<html lang="hi">`; `lang` on phrases in another language |
+| Screen reader reads Hindi with an English voice | Missing or wrong `lang` on `<html>`, or on a mixed-language passage | `<html lang="hi">`; `lang` on passages in another language (not needed on brand names) |
 | Search shows the English page to Hindi searchers | Hindi page not indexed yet, canonical points to English, or tags not reciprocal | URL Inspection on the Hindi URL (Lesson 7.4); fix canonical and tags; wait for recrawl |
 | Price shows `NaN` or `₹NaN` | `value` attribute missing or not a plain number | `value="1299"` (no symbols or commas) |
 
