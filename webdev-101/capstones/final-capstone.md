@@ -79,7 +79,7 @@ Risks: what could stop it working, and your plan for each
 - If your audience includes a second language, the M08.L04 rules apply (own URL, reciprocal `hreflang`, switcher, reviewed translation).
 
 ### 6. Launch and run for one week
-- Before you share anything, run the **launch checklist** below.
+- Before you share anything, run the **launch checklist** below. Keep your GA4 **internal-traffic filter** active (Lesson 6.2), delete your test rows from the sheet afterwards, and note how many test sign-ups you made, so they don't inflate your KPI.
 - Share each channel's UTM link. Don't change the page's main offer during the week; fix bugs, and note every change with its date and commit.
 - Check daily (5 minutes): GA4 Realtime or the Reports for that day, the lead flow's run history, and the inbox for replies or complaints.
 
@@ -91,7 +91,7 @@ See **Deliverable** below.
 |---|---|
 | Open each UTM link in a private window | The right page loads over `https://`; GA4 shows the visit with the right source/medium |
 | Reject, then Accept, on the consent banner | No `_ga` cookie after Reject; `_ga` after Accept; no tags firing before consent (Tag Assistant) |
-| One real sign-up (your own address) | One `generate_lead` in GA4 DebugView; one row, one auto-reply and one team alert |
+| One real sign-up (your own address), with GTM Preview on | One `generate_lead` in GA4 DebugView; one row, one auto-reply and one team alert |
 | Duplicate and `+test` sign-ups | No second row or reply |
 | Lighthouse mobile, median of 3 | 90+ in all four categories |
 | Keyboard only, then screen reader | Skip link, visible focus, named controls, labelled fields, consent banner usable |
@@ -136,7 +136,7 @@ Three bullet points each, with evidence (a number, a recording, a quote from a r
 Lighthouse at the end of the week · accessibility issues reported · lead-flow failures in the run history · changes made during the week (date, commit, why)
 
 ## 5. Limits of this data
-Consent (basic mode: only consented visits measured; advanced mode: some figures modelled) · small numbers · ad blockers · lab vs field data · anything else you can't conclude
+Test sign-ups excluded (how many, and how) · Consent (basic mode: only consented visits measured; advanced mode: some figures modelled) · small numbers · ad blockers · lab vs field data · anything else you can't conclude
 
 ## 6. Next
 The one change you'd make first for the next launch, and the metric that would show it worked.
@@ -162,7 +162,7 @@ Six criteria from the course outline, each scored on four levels. **Proficient**
 - [ ] Consent worked all week, and my report says how consent affects the numbers (basic or advanced mode).
 - [ ] Lighthouse 90+ and the AA checks held at the end of the week, not just at launch.
 - [ ] Every lead got exactly one reply; no test or spam entries were answered.
-- [ ] My numbers are real, and I didn't hide a missed target.
+- [ ] My numbers are real, my own test sign-ups are excluded, and I didn't hide a missed target.
 - [ ] I can explain every line of code on the page, including any AI wrote.
 
 ## Portfolio note
