@@ -1,4 +1,4 @@
-# Modern SEO: SEO, AEO, GEO and Content Automation — Syllabus
+# Modern SEO 101 — Syllabus
 
 _Lessons are added per module by `/plan-module <N>`. Source of truth for topics: `course-outline.md`._
 

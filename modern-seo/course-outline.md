@@ -1,4 +1,4 @@
-# Modern SEO: SEO, AEO, GEO and Content Automation — Course Outline
+# Modern SEO 101 — Course Outline
 
 | Field | Value |
 |---|---|
@@ -9,6 +9,7 @@
 | Author(s) | Napoleon Arouldas, GrandAppStudio |
 | Language | English (plain, ~grade 8–10 reading level) |
 | Licence | CC BY-SA 4.0 |
+| Tagline | SEO, AEO, GEO and Content Automation |
 
 **Source:** the original topic list from neps.in LearnPress course 2521 (9 modules, 39 lesson titles, no content). It has been restructured here: the parts already taught in Web Development 101 (M07) and WordPress 101 (M05, M07) are not taught again but are linked as remediation, outdated topics are updated (see the Changelog), and the old "Module 9: Capstone" is now the final capstone.
 
@@ -328,9 +329,9 @@ Run the full system on your project site (path A, B or C): baseline (M01) → ke
 ## 20. Licence & attribution
 - Licence: CC BY-SA 4.0 (others may reuse and adapt with credit, sharing under the same terms).
 - Third-party material: quoted guidelines and studies are cited with links; screenshots of tools are illustrative.
-- Credit line: "© 2026 GrandAppStudio — Modern SEO: SEO, AEO, GEO and Content Automation".
+- Credit line: "© 2026 GrandAppStudio — Modern SEO 101".
 
 ## 21. Changelog
 | Version | Date | Change |
 |---|---|---|
-| 0.1 | 2026-11-03 | Outline drafted from the neps.in course 2521 topic list. 9 modules → 8 + final capstone. Technical how-to moved out to Web Dev 101 M07 / WordPress 101 M05 (remediation links). "FAQ and HowTo schema" replaced by "structured data that still earns features" (FAQ/HowTo flagged). "Ahrefs / Semrush APIs" replaced by free data sources (paid as optional). "Auto-generated briefs from SERP scraping" replaced by compliant data sources. Python made an optional track. Three audiences served by levels + diagnostic skip rules; three project paths (own site / demo site / client site). |
+| 0.1 | 2026-11-03 | Course named **Modern SEO 101** (tagline: SEO, AEO, GEO and Content Automation). Outline drafted from the neps.in course 2521 topic list. 9 modules → 8 + final capstone. Technical how-to moved out to Web Dev 101 M07 / WordPress 101 M05 (remediation links). "FAQ and HowTo schema" replaced by "structured data that still earns features" (FAQ/HowTo flagged). "Ahrefs / Semrush APIs" replaced by free data sources (paid as optional). "Auto-generated briefs from SERP scraping" replaced by compliant data sources. Python made an optional track. Three audiences served by levels + diagnostic skip rules; three project paths (own site / demo site / client site). |

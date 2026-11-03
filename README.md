@@ -24,7 +24,7 @@ Resume your last session in this folder with `claude --continue`.
 - `course-framework.md` — lesson, quiz and capstone templates
 - `progress.md` — status of every lesson (the course's memory)
 - `.claude/skills/` — the slash commands above
-- `modern-seo/` — Modern SEO: SEO, AEO, GEO and Content Automation
+- `modern-seo/` — Modern SEO 101: SEO, AEO, GEO and Content Automation
 - `routines/next-lesson.md` — prompt for a scheduled lesson-drafting routine
 
 ## Optional: save to Google Drive
