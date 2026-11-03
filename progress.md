@@ -9,7 +9,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 
 | Module | Lesson | Title | File | Status | Date |
 |--------|--------|-------|------|--------|------|
-| M01 | L01 | What SEO Is (and Isn't) | seo-101/lessons/m01-l01-what-is-seo.md | todo | — |
+| M01 | L01 | What SEO Is (and Isn't) | seo-101/lessons/m01-l01-what-is-seo.md | draft | 2026-11-03 |
 | M01 | L02 | How Search Works: Crawl → Render → Index → Rank → Serve | seo-101/lessons/m01-l02-how-search-works.md | todo | — |
 | M01 | L03 | Anatomy of a Results Page | seo-101/lessons/m01-l03-anatomy-of-results-page.md | todo | — |
 | M01 | L04 | Search Operators & Sizing Up Competitors | seo-101/lessons/m01-l04-search-operators.md | todo | — |
@@ -150,6 +150,7 @@ Lessons are added here by `/plan-module`; `/next-lesson` picks the first `todo` 
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-03: seo-101 m01-l01 draft (lesson + 7-question quiz, answers a2/b2/c1/d2, lengths checked; 11 glossary terms; 2 Mermaid flowcharts, 2 image prompts). Verified against Google Search Central (SEO Starter Guide, Do you need an SEO?, site: operator). Not confirmed: Google's current ad label text (lesson says "a word such as Sponsored", flagged ⚠️); Bing guidelines page rendered empty to the fetcher. Path B demo site not built yet; lesson says its setup guide comes with M02. Next: `/review-lesson seo-101/lessons/m01-l01-what-is-seo.md`.
 - 2026-11-03: seo-101 planned M01 (5 lessons + capstone) in syllabus.md: what SEO is (first win: `site:` search + project path), how search works (crawl → serve), results-page anatomy, search operators & competitors, spam policies. No GSC yet (M02). Next: `/next-lesson` (M01.L01).
 - 2026-11-03: seo-101 outline v0.2 — scope confirmed by the user: beginner-friendly, SEO only (no AEO/GEO/automation), in depth from zero to a technical audit, incl. keyword research, blog post creation, GSC + GA4 set-up and 'under the hood'. 8 → 10 modules (new M02 GSC/Bing/GA4 set-up, new M05 Writing SEO Blog Posts, M10 Technical SEO Audit, Migrations & Recovery); JS rendering, X-Robots-Tag, crawl budget and log files moved into the core; AI Overviews orientation removed; 13 non-negotiables; 20-question diagnostic; ~46 lessons, ~55–60 h. Next: `/plan-module 1`.
 - 2026-11-03: seo-101 scaffolded (/new-course) as the classic-SEO prequel to modern-seo (user's choice: "complete SEO from basics to advanced topics in the right order"). Total beginners; self-paced written, 8 modules (L1 M01–M03, L2 M04–M06, L3 M07–M08) + final capstone "Full SEO Audit & 90-Day Plan"; 2 lessons/week; 12 non-negotiables; Nila Coffee running example (adds tasting room, international shipping, subscription shop); project paths own/demo/client; 16-question diagnostic. AEO/GEO/AI production/automation left to modern-seo (graduates skip its M01–M02). Checked against the design guide's 'What most courses miss' table (added break-it labs to M01, M03, M06). Active course switched to seo-101. Next: `/plan-module 1`.
