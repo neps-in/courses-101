@@ -2,7 +2,7 @@
 > After this lesson your launch page is built from one layout, shared header and footer files and a data file, so a second page (or a second language) takes minutes, not a copy-paste afternoon. You'll also know when a generator, a headless CMS, WordPress or a no-code builder is the better choice.
 
 **Time:** ~18 min reading + ~55 min exercise · **Level:** L3 Advanced · **Prereqs:** M04.L01, M04.L05 · **Remediate to:** M04.L05
-**Verified against:** Eleventy 3.1.7 (current on npm, Node 18 or newer) and its docs (layouts, `_includes`, `_data`, passthrough file copy, `eleventy.config.js`); Astro 7.4 on npm (needs Node 22.23 or newer); Decap CMS 3.17 on npm; GitHub Docs "Using custom workflows with GitHub Pages" and the current major versions of `actions/checkout` (v7), `actions/setup-node` (v7), `actions/upload-pages-artifact` (v5) and `actions/deploy-pages` (v5) from GitHub's release API; all checked 2026-11-03. The Eleventy example in Part B, its output and the "template not found" and config-loading errors were produced by a real Eleventy 3.1.7 build on 2026-11-03. The GitHub Actions workflow was not run. No browser tests were run.
+**Verified against:** Eleventy 3.1.7 (current on npm, Node 18 or newer) and its docs (layouts, `_includes`, `_data`, passthrough file copy, `eleventy.config.js`); Astro 7.4 on npm (needs Node 22.23 or newer); Decap CMS 3.17 on npm; GitHub Docs "Using custom workflows with GitHub Pages" and the current major versions of `actions/checkout` (v7), `actions/setup-node` (v7), `actions/upload-pages-artifact` (v5) and `actions/deploy-pages` (v5) from GitHub's release API; all checked 2026-11-03. The Eleventy example in Part B, its output the `permalink` and passthrough results, and the "template not found" and config-loading errors were produced by a real Eleventy 3.1.7 build on 2026-11-03. The GitHub Actions workflow was not run. No browser tests were run.
 
 > ⚠️ **Freshness flag:** generators release major versions about once a year, and Action versions (`@v7`, `@v5`) move on. If a command or version fails, check the project's own "Get started" page and the Action's README. The ideas (layouts, partials, data, build to plain HTML) have been stable for over a decade.
 
@@ -85,8 +85,13 @@ flowchart LR
      eleventyConfig.addPassthroughCopy("images");
      eleventyConfig.addPassthroughCopy("css");
      eleventyConfig.addPassthroughCopy("js");
+     // Files from earlier modules that must reach the live site unchanged:
+     eleventyConfig.addPassthroughCopy("robots.txt");   // Lesson 7.4
+     eleventyConfig.addPassthroughCopy("sitemap.xml");  // Lesson 7.4
+     eleventyConfig.addPassthroughCopy("icon.svg");     // Lesson 2.5 favicon
    }
    ```
+   Anything that isn't a template and isn't listed here **won't be in `_site/`**, so it disappears from your live site.
 3. Create the data files. `_data/site.json`:
    ```json
    { "name": "Nila Coffee", "url": "https://nilacoffee.example", "lang": "en", "year": 2026 }
@@ -152,15 +157,17 @@ flowchart LR
    title: Thanks for joining
    description: You're on the Nila Coffee launch list.
    noindex: true
+   permalink: thank-you.html
    ---
    <h1>Thanks, you're on the list</h1>
    <p>One email on launch day, 1 December. <a href="/">Back to the home page</a>.</p>
    ```
+   **Keep your URLs.** By default Eleventy writes `thank-you.njk` to `/thank-you/` (a folder with an `index.html`). Your Lesson 8.2 redirect, your sitemap and any analytics that use the old address expect `/thank-you.html`, so `permalink: thank-you.html` keeps it. Do the same for any other page whose URL is already live or shared; changing a URL breaks links and search results unless you also set up redirects.
 7. Build and preview:
    ```bash
    npx @11ty/eleventy --serve
    ```
-   **Expected (checked with Eleventy 3.1.7):** lines like `[11ty] Writing ./_site/index.html from ./index.njk`, `[11ty] Writing ./_site/thank-you/index.html from ./thank-you.njk`, then `Copied … Wrote 2 files in … seconds (v3.1.7)`, and a local address (usually `http://localhost:8080/`). Both pages share one header and footer. The thank-you page's built `<head>` contains `<title>Thanks for joining | Nila Coffee</title>` and `<meta name="robots" content="noindex">`; the home page doesn't have the `noindex` line. The description shows `You&#39;re`: that's the automatic escaping, and browsers display it as "You're".
+   **Expected (checked with Eleventy 3.1.7):** lines like `[11ty] Writing ./_site/index.html from ./index.njk`, `[11ty] Writing ./_site/thank-you.html from ./thank-you.njk`, then `Copied … Wrote 2 files in … seconds (v3.1.7)`; `_site/` also contains `robots.txt`, `sitemap.xml` and `icon.svg`, and a local address (usually `http://localhost:8080/`). Both pages share one header and footer. The thank-you page's built `<head>` contains `<title>Thanks for joining | Nila Coffee</title>` and `<meta name="robots" content="noindex">`; the home page doesn't have the `noindex` line. The description shows `You&#39;re`: that's the automatic escaping, and browsers display it as "You're".
    > 🖼️ **Image prompt:** Desktop screenshot (1440×900) of VS Code with the Eleventy project's file tree (_data, _includes, index.njk, thank-you.njk, eleventy.config.js, _site) on the left and the terminal showing "[11ty] Writing ./_site/index.html from ./index.njk" and "Wrote 2 files". Outline the _includes folder and the terminal output. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** VS Code showing an Eleventy project's folders and a terminal build writing two HTML pages to _site.
 
@@ -242,7 +249,8 @@ GitHub Pages served your files as they were. Now the host must **build** first.
 - **Editing files in `_site/`.** They're overwritten on every build. Edit the source.
 - **Committing `_site/` and `node_modules/`.** Add both to `.gitignore`; the host builds them.
 - **Hard-coding per-page values** (title, description, canonical, `noindex`) in the layout.
-- **Forgetting passthrough copy,** so images, CSS and JS are missing from `_site/`.
+- **Forgetting passthrough copy,** so images, CSS, JS, `robots.txt` or `sitemap.xml` are missing from `_site/` and the live site.
+- **Letting URLs change** (`/thank-you.html` → `/thank-you/`) without a `permalink` or redirects.
 - **`| safe` on data** (testimonials, form values). Let the template escape it.
 - **Losing tracking or consent** when moving the head into a layout. Check Part C every time.
 - **Choosing a stack for the CV, not the team.** An API-based CMS nobody on the team can maintain is worse than Markdown files.
@@ -251,7 +259,9 @@ GitHub Pages served your files as they were. Now the host must **build** first.
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | `Error: template not found: …` | Wrong partial or layout name, or it isn't in `_includes/` | Fix the path; names are case-sensitive |
-| Images/CSS 404 on the built site | No `addPassthroughCopy` for that folder | Add it in `eleventy.config.js`, rebuild |
+| Images/CSS, `robots.txt` or `sitemap.xml` 404 on the built site | No `addPassthroughCopy` for that folder or file | Add it in `eleventy.config.js`, rebuild |
+| Thank-you redirect or sitemap link 404s after the switch | Eleventy wrote `/thank-you/` instead of `/thank-you.html` | Add `permalink: thank-you.html` to the page's front matter |
+| Links and images break only on `username.github.io/repo/` | Root-relative paths (`/images/…`) point to the domain root, not the repo folder | Use your custom domain (Lesson 4.4), or set Eleventy's `pathPrefix` and wrap links in the `url` filter |
 | `Eleventy Fatal Error` … `Error in your Eleventy config file 'eleventy.config.js'`, with a Node warning "Failed to load the ES module… set \"type\": \"module\"" (checked) | `package.json` lacks `"type": "module"` | Add it, or name the file `eleventy.config.mjs` |
 | `&#39;` or `&amp;` shown literally on the page | Escaped twice (e.g. you escaped the data yourself) | Store plain text in `_data`; let Nunjucks escape once |
 | Raw `{{ title }}` appears in the output | The file isn't processed as a template (wrong extension, or it's passthrough-copied) | Use `.njk`; don't passthrough-copy page files |
