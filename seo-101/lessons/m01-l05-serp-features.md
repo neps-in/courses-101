@@ -1,8 +1,8 @@
 # M01.L05 — SERP Features (Featured Snippets, People Also Ask, Local Pack, etc.)
 > After this lesson you can name every part of a search result and the main features on a results page, explain where Google gets your title and snippet from, and size up who you're really competing with in search.
 
-**Time:** ~20 min reading + ~25 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L04 · **Remediate to:** M01.L04
-**Verified against:** Google Search Central "Visual elements gallery", "Title links", "Snippets", "Featured snippets", "Sitelinks" and "Search operators" pages on 2026-11-03. Results pages change often and differ by country, language and device; your screens will not match these examples exactly.
+**Time:** ~20 min reading + ~30 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L04 · **Remediate to:** M01.L04
+**Verified against:** Google Search Central "Visual elements gallery", "Title links", "Snippets", "Featured snippets", "Sitelinks", "Search operators", "AI features and your website" and "Latest documentation updates" pages on 2026-11-04. Results pages change often and differ by country, language and device; your screens will not match these examples exactly.
 
 ## Learning objectives
 1. **Identify** the parts of a search result (title link, URL/breadcrumb, site name, snippet, sitelinks) and where each comes from on the page. *(O1)*
@@ -23,9 +23,9 @@ Google calls an ordinary result a **text result**. Its parts, using Google's own
 | Part | What it is | Where Google gets it (documented) | Can you control it? |
 |---|---|---|---|
 | **Attribution** | Favicon (the small logo), **site name**, and the **visible URL** shown as domain + **breadcrumb** | Your site, its favicon file, site name data and URL structure | Partly: you provide the inputs |
-| **Title link** | The clickable headline | Mostly your `<title>` element, but also "the main visual title shown on the page", headings such as `<h1>`, `og:title`, anchor text and "text within links that point to the page" | Partly: Google says generating title links "is completely automated" |
+| **Title link** | The clickable headline | Your `<title>` element, plus several other sources: the "main visual title shown on the page", headings such as `<h1>`, `og:title` (a tag set for social sharing), other prominent text, anchor text, "text within links that point to the page" and `WebSite` structured data | Partly: Google says generating title links "is completely automated" |
 | **Snippet** | The description under the title | "Google primarily uses the content on the page"; it uses your **meta description** only "sometimes", when it describes the page better | Partly: write a good description; you can also limit snippets (see below) |
-| **Byline date** | A date, e.g. for articles | Dates shown on the page and in structured data | Partly |
+| **Byline date** | A date, e.g. for articles | Google's estimate of when the page was updated or published | Partly: show a clear date on the page |
 | **Sitelinks** | Extra links to pages on the same site under a result | Automated: "At the moment, sitelinks are automated" | No; clear structure and headings help |
 
 The key lesson: **you supply ingredients; Google cooks the result.** That's why Google can show a different title from the one you wrote. You'll write titles and descriptions properly in Module 4.
@@ -34,17 +34,19 @@ The key lesson: **you supply ingredients; Google cooks the result.** That's why 
 | Feature | What it looks like | Often triggered by | What influences it | Course module |
 |---|---|---|---|---|
 | **Featured snippet** | A box at the top where "the format of a regular search result is reversed, showing the descriptive snippet first" | Questions: "how to", "what is", "why" | Clear, direct answers on the page. Google: you **can't** mark up a page to get one | M04, M07 |
-| **People also ask** (Google: "related questions group") | Expandable list of related questions with short answers | Informational searches | Pages that answer related questions clearly; Google says "you can't control what shows up here" | M03, M07 |
+| **People also ask** (Google: "related questions group") | Expandable list of related questions; opening one shows a featured snippet | Informational searches | Pages that answer related questions clearly; Google says "you can't control what shows up here" | M03, M07 |
 | **Related searches** | Suggested searches near the bottom | Most searches | Not controllable; great keyword ideas | M03 |
-| **Rich results** | Results with extras such as star ratings, prices, recipe times | Products, recipes, reviews, events | Valid **structured data** on the page (Google: rich results rely on it) | M12 |
+| **Rich results** | Results with extras such as star ratings, prices, recipe times | Products, recipes, reviews, events | Valid **structured data** (code that labels page content for search engines); Google says a rich result "typically relies" on it | M12 |
 | **Image and video results** | Image strips, video results with thumbnails | Visual or "how to" searches | Good images (alt text, file names); videos with clear titles | M04, M12 |
 | **Local pack** *(observed)* | A map with 3 or so businesses | Searches with local intent: "near me", a city name, services | Google Business Profile, reviews, location pages | M11 |
 | **Top stories** *(observed)* | News article carousel | News and trending topics | Timely news content | — |
 | **Knowledge panel** *(observed)* | A box about an entity (a business, person, place) | Brand and entity names | Consistent business information across the web | M11, M14 |
-| **Ads** | Results labelled as sponsored, at the top or bottom | Commercial and product searches | Paid only (Lesson 1.3) | — |
-| **AI Overviews** *(observed)* | An AI-written summary with links, on some searches | Some informational searches | Introduced in M14; in depth in Modern SEO 101 | M14 |
+| **Ads** *(observed)* | Results labelled as sponsored, at the top or bottom | Commercial and product searches | Paid only (Lesson 1.3) | — |
+| **AI Overviews** *(observed)* | An AI-written summary with links, on some searches | Some informational searches | The page must be indexed and able to show a snippet; Google says no special markup or files are needed. Introduced in M14; in depth in Modern SEO 101 | M14 |
 
-*(observed)* = commonly seen on results pages but not listed in Google's "Visual elements gallery". Google documents these features elsewhere or not at all, and they change often.
+*(observed)* = commonly seen on results pages but not listed in Google's "Visual elements gallery". Google documents these features elsewhere or not at all, and they change often. The **Often triggered by** column is observed practice for every row: Google doesn't publish which searches trigger which features.
+
+**Features also disappear.** Google retires rich result types it no longer wants to show. FAQ rich results stopped appearing on 7 May 2026, so any guide telling you to add FAQ markup for extra space on the results page is out of date.
 
 **Opting out of snippets.** If you ever need to stop Google showing text from a page, Google documents three controls: the `nosnippet` rule (no snippet at all, and no featured snippet), `max-snippet:[number]` (limits snippet length; Google says a low value "doesn't guarantee" removal from featured snippets), and `data-nosnippet` on parts of a page. Most sites never need these; they're mentioned so you recognise them in an audit.
 
@@ -66,7 +68,7 @@ Google itself notes that operators are limited and that **URL Inspection** in Se
 ## How it works
 ```mermaid
 flowchart LR
-  %% alt: Page ingredients such as the title tag, headings, content, meta description and structured data feed the title link, snippet and rich results Google builds.
+  %% alt: Page ingredients like the title tag, headings, content and structured data feed the title link, snippet and rich results Google builds.
   T[title tag, h1,<br/>og:title, link text]:::cream --> TL[Title link]:::blue
   P[Page content,<br/>meta description]:::cream --> SN[Snippet]:::blue
   SD[Structured data]:::cream --> RR[Rich result<br/>e.g. stars, price]:::blue
@@ -100,7 +102,7 @@ Use a private/incognito window so your history doesn't change the results. Add a
    **Expected output:** three different layouts. Usually the informational search shows People also ask, videos and perhaps a featured snippet or AI Overview; the local search shows a map with businesses; the product search shows ads and shopping-style results. If you see an AI Overview, just note it.
 
 **Part B — Find where a title and snippet came from (10 min)**
-1. On your informational search, pick one organic result. Write down its title link and snippet exactly.
+1. On your informational search, pick one organic result. Write down its site name, visible URL, title link and snippet exactly.
    > 🖼️ **Image prompt:** Close-up of one Google text result (900×300) with small labels on its favicon, site name, visible URL/breadcrumb, title link and snippet. Highlight the title link with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** One search result with its favicon, site name, URL breadcrumb, title link and snippet each labelled.
 2. Click through to the page, open **View Source** (Ctrl+U / Cmd+Option+U, Lesson 1.4) and search for `<title>` and `name="description"`.
@@ -119,14 +121,14 @@ Use a private/incognito window so your history doesn't change the results. Add a
 **Use SERP analysis** before you create or change any page: the results show what kind of page Google thinks fits the search. If every top result is a video or a recipe blog, a product page is unlikely to rank there.
 **Don't chase every feature.** Many features can't be requested (featured snippets, People also ask, sitelinks) or need things you may not have (structured data, a Business Profile, videos). Focus on the features that match your offer and journey stage.
 
-**Trade-off:** a feature like a featured snippet can bring visibility at the very top, but it also answers the question on the results page, so some searchers never click. For quick facts that can mean fewer visits; for "how to" and buying searches, being the chosen answer usually still helps. Judge by the search, not by the feature's size.
+**Trade-off:** a feature like a featured snippet can bring visibility at the very top, but it also answers the question on the results page, so some searchers never click. For quick facts that can mean fewer visits; for "how to" and buying searches, being the chosen answer often still helps (observed practice, not a Google claim). Judge by the search, not by the feature's size.
 
 ## Use AI for this
 **Example prompt:**
 > "Here are the features I saw on Google's first page for 'coffee roasters in kochi', from top to bottom: [paste your list]. Explain in plain language what each feature means for a small coffee roaster, which ones I could realistically appear in, and what I'd need for each. Keep it to the features I listed."
 
 **What AI does well here:** explaining features in plain words and suggesting what kind of page or profile fits each one.
-**Where it gets it wrong:** AI often describes results pages from its training data rather than what you see today, and invents features or tactics, for example "add FAQ schema to get a featured snippet" (Google says you can't mark up a page for a featured snippet) or "submit your site for sitelinks" (sitelinks are automated). It can't see your results page unless you paste or describe it.
+**Where it gets it wrong:** AI often describes results pages from its training data rather than what you see today, and invents features or tactics, for example "add FAQ schema to get a featured snippet" (Google says you can't mark up a page for a featured snippet, and FAQ rich results ended in May 2026) or "submit your site for sitelinks" (sitelinks are automated). It can't see your results page unless you paste or describe it.
 **How to check:** describe your actual results page to the AI rather than asking "what does Google show for…". Check any "do this to get feature X" claim against the matching Google Search Central page in Further reading.
 
 ## Common mistakes
@@ -149,12 +151,12 @@ Use a private/incognito window so your history doesn't change the results. Add a
 ## Exercise
 **Task:** complete your **SERPs** tab for three searches (Part A), the title-and-snippet comparison for one result (Part B) and the competitor list (Part C). Then write two sentences: *"For my main topic, the results page rewards ___ (page type). The feature I could realistically aim for is ___ because ___."*
 **Expected outcome:** three labelled layouts, one title/snippet comparison, a list of 3–9 search competitors with page types, and a realistic target, e.g. Kavya: *"For 'yoga classes adyar' the results page rewards local businesses with reviews. I could aim for the local pack, because I have a real studio address; I need a Business Profile and reviews (Module 11)."*
-**Stretch goal:** repeat one search on your phone (or with DevTools' device toolbar, Ctrl+Shift+M) and list what changes in the layout. Google mainly indexes the mobile version of pages (Lesson 1.4), and many searches happen on phones.
+**Stretch goal:** repeat one search on your phone (or open DevTools and press Ctrl+Shift+M / Cmd+Shift+M for the device toolbar) and list what changes in the layout. Google mainly indexes the mobile version of pages (Lesson 1.4), and many searches happen on phones.
 
 ## Key takeaways
 - A **text result** has an attribution (favicon, site name, URL/breadcrumb), a **title link**, a **snippet** and sometimes **sitelinks**; Google builds them automatically from your page.
 - Google uses your `<title>` and meta description as inputs, not orders: it may show other text from the page.
-- **SERP features** depend on the search: questions bring featured snippets and People also ask; local searches bring the local pack; product searches bring ads and rich results.
+- **SERP features** depend on the search: questions often bring featured snippets and People also ask, local searches the local pack, and product searches ads and rich results.
 - You **can't** request featured snippets, People also ask or sitelinks. You can make pages good material for them.
 - Your **search competitors** are whoever ranks for your searches, often blogs, videos and directories, not just similar businesses.
 
@@ -177,9 +179,10 @@ Explain to a friend in 3 sentences why their business might appear in Google wit
 - Knowledge panel — added to `seo-101/glossary.md`
 - Search competitor — added to `seo-101/glossary.md`
 - `nosnippet` / `max-snippet` / `data-nosnippet` — added to `seo-101/glossary.md`
+- AI Overview — added to `seo-101/glossary.md`
 
 ## Further reading
-*All checked 2026-11-03.*
+*All checked 2026-11-04.*
 - Google Search Central — Visual elements gallery of Google Search: https://developers.google.com/search/docs/appearance/visual-elements-gallery
 - Google Search Central — Influencing your title links: https://developers.google.com/search/docs/appearance/title-link
 - Google Search Central — Snippets and meta descriptions: https://developers.google.com/search/docs/appearance/snippet
@@ -187,9 +190,11 @@ Explain to a friend in 3 sentences why their business might appear in Google wit
 - Google Search Central — Sitelinks: https://developers.google.com/search/docs/appearance/sitelinks
 - Google Search Central — Search operators: https://developers.google.com/search/docs/monitor-debug/search-operators
 - Google Search Help — Refine Google searches: https://support.google.com/websearch/answer/2466433
+- Google Search Central — AI features and your website: https://developers.google.com/search/docs/appearance/ai-features
+- Google Search Central — Latest documentation updates (FAQ rich results, 2026): https://developers.google.com/search/updates
 
-> ⚠️ **May change:** which features appear and how they look (especially AI Overviews, local results and ads); whether `intitle:` keeps working. Re-check before publishing.
+> ⚠️ **May change:** which features appear and how they look (especially AI Overviews, local results and ads); whether `intitle:` keeps working; which rich result types Google still shows; Google's controls for generative AI features (documentation updated October 2026). Re-check before publishing.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Text result** = attribution (favicon, site name, URL/breadcrumb) + **title link** (from `<title>`, `<h1>`, prominent text, link text; automated) + **snippet** (mostly page content; meta description only sometimes) + maybe **sitelinks** (automated). **Features** depend on the search: questions → featured snippet, People also ask; local → local pack; products → ads, rich results (need structured data). You can't request featured snippets or sitelinks. **Search competitors** = whoever ranks for your searches.
+**Text result** = attribution (favicon, site name, URL/breadcrumb) + **title link** (from `<title>`, `<h1>`, prominent text, link text; automated) + **snippet** (mostly page content; meta description only sometimes) + maybe **sitelinks** (automated). **Features** depend on the search: questions → featured snippet, People also ask; local → local pack; products → ads, rich results (usually need structured data). You can't request featured snippets or sitelinks. **Search competitors** = whoever ranks for your searches.

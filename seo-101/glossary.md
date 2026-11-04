@@ -2,6 +2,7 @@
 
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
+- **AI Overview** — an AI-written summary with links that Google shows on some searches; no special markup is needed to appear in one (Module 14). [M01.L05]
 - **Attribution (favicon, site name, visible URL, breadcrumb)** — the top line of a search result that shows which site it's from. [M01.L05]
 - **Baseline** — a dated record of where a site stands before you change anything, so you can measure what your work changed later. [M01.L03]
 - **Canonical URL** — the one URL Google picks to represent a group of pages with the same or very similar content; the others usually aren't shown. [M01.L04]
@@ -42,7 +43,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Rented channel** — a channel you use but don't control, such as a social media profile; the platform sets the rules and the reach. [M01.L02]
 - **Request / response** — a browser or crawler asks a server for a URL (request); the server answers with a status code and, if it worked, the page's code (response). [M01.L04]
 - **Results page (SERP)** — the page a search engine shows after a query; SERP stands for "search engine results page". [M01.L03]
-- **Rich result** — a search result with extras such as star ratings, prices or cooking times; relies on structured data. [M01.L05]
+- **Rich result** — a search result with extras such as star ratings, prices or cooking times; typically relies on structured data. [M01.L05]
 - **Search competitor** — any site that ranks for the searches you want, which may be a blog, video or directory rather than a similar business. [M01.L05]
 - **Search engine** — a service such as Google or Bing that collects web pages and shows the most useful ones for each query. [M01.L03]
 - **Search operator** — a special command typed into the search box that narrows the results, such as `site:` or quotes. [M01.L03]
@@ -54,7 +55,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Snippet** — the description under a result's title; mostly taken from page content. [M01.L05]
 - **Soft 404** — a page that says "not found" (or is nearly empty) but returns status 200 instead of 404. [M01.L04]
 - **Status code** — a three-digit number in a server's response: 200 OK, 301/302 moved, 404 not found, 500-range server error. [M01.L04]
-- **Structured data** — code (usually JSON-LD) that describes a page's content to search engines in a standard format; needed for rich results (Module 12). [M01.L05]
+- **Structured data** — code (usually JSON-LD) that describes a page's content to search engines in a standard format; rich results typically rely on it (Module 12). [M01.L05]
 - **Target audience** — the specific group of people a site or business is for, narrow enough to picture one real person. [M01.L01]
 - **Text result** — Google's name for an ordinary search result: attribution, title link, snippet. [M01.L05]
 - **Title link** — the clickable headline of a result; generated automatically from the `<title>`, headings and other text. [M01.L05]

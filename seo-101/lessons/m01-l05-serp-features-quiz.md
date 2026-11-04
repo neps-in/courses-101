@@ -1,7 +1,7 @@
 # M01.L05 Quiz — SERP Features (Featured Snippets, People Also Ask, Local Pack, etc.)
 
-> 7 questions · 3 recall, 2 scenario, 1 spot-the-error, 1 spaced review · pass mark 70% (5 of 7). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
-> Facts checked 2026-11-03 against Google Search Central (visual elements gallery, title links, snippets, featured snippets, sitelinks, search operators) and Google Search Help ("Refine Google searches").
+> 8 questions · 3 recall, 4 scenario, 1 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
+> Facts checked 2026-11-04 against Google Search Central (visual elements gallery, title links, snippets, featured snippets, sitelinks, search operators) and Google Search Help ("Refine Google searches").
 
 ### Q1. Where does Google say it **primarily** gets a result's snippet from? *(O1 · recall)*
 - a) Only from the meta description, which every page is required to have
@@ -31,7 +31,7 @@
 
 **Answer:** d
 **Explanation:** Google says "at the moment, sitelinks are automated." Clear site structure, informative headings and concise link text help Google pick good ones, but there's no way to request or buy them. To remove one, Google suggests removing the page or using `noindex`.
-**Hint:** Check Google's own sitelinks page: is there any setting?
+**Hint:** Think about who builds each part of a result.
 
 ### Q4. Kavya searches `yoga classes adyar` and sees a map with three studios above the text results. Her studio isn't in it. Which feature is this, and what mainly influences it? *(O2 · scenario)*
 - a) A featured snippet, influenced by answer-style paragraphs on her pages
@@ -45,9 +45,9 @@
 
 ### Q5. Amara's client wrote `<title>Home</title>` on their bakery homepage, but Google shows the title link "Ada's Bakery – Fresh Cakes in Lagos". What's the most likely explanation? *(O1 · scenario)*
 - a) Google built the title link from other text, such as the main heading
-- b) Someone hacked the site and changed the title without the owner knowing
-- c) Google shows a different title to every searcher, chosen at random each time
-- d) The client paid Google to show a better title, which replaced the old one
+- b) Google ignores the `<title>` on homepages and always uses the site name
+- c) Google copied the title link from the page's meta description tag
+- d) A title saved in Search Console settings overrode the one on the page
 
 **Answer:** a
 **Explanation:** Google's title links are "completely automated". It uses the `<title>` element, but also the main visual title, headings such as `<h1>`, `og:title`, and link text pointing to the page. A vague title like "Home" makes it more likely Google picks something more descriptive. You'll write better titles in Module 4.
@@ -61,9 +61,19 @@
 
 **Answer:** c
 **Explanation:** Google says you can't mark up a page to get a featured snippet: its systems decide whether a page would make a good one. Clear, direct answers on the page help. The other steps match the lesson.
-**Hint:** Is there any markup that requests a featured snippet?
+**Hint:** Which step treats an automated feature as something you can switch on?
 
-### Q7. In Lesson 1.4 you checked a page in DevTools and it returned status 200, but it says "Page not found". What is this called? *(review: m01-l04 · recall)*
+### Q7. Nila Coffee wants to see pages containing the exact phrase cold brew concentrate, leaving out any that mention Starbucks. Which search does that? *(O3 · scenario)*
+- a) `cold brew concentrate site:starbucks`
+- b) `"cold brew concentrate" -starbucks`
+- c) `intitle:cold brew concentrate starbucks`
+- d) `"cold brew concentrate" after:starbucks`
+
+**Answer:** b
+**Explanation:** Quotes match an exact phrase and `-` excludes a word. `site:` limits results to one site, `intitle:` looks at titles (and is undocumented), and `after:` takes a date. Use these to explore your competition, not to prove anything: operators have limits.
+**Hint:** You need one operator to keep a phrase together and one to remove a word.
+
+### Q8. A client's page says "Page not found", but DevTools shows it returned status 200. What is this problem called? *(review: m01-l04 · scenario)*
 - a) A redirect chain
 - b) A canonical
 - c) A server error
