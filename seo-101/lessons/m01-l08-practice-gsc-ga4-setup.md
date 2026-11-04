@@ -2,7 +2,7 @@
 > After this lesson you can prove you own a site to Google and Bing, submit a sitemap, see your own visit in GA4, link the two tools and save a dated baseline.
 
 **Time:** ~10 min reading + ~45 min hands-on (plus waiting for DNS, if needed) · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L03 · **Remediate to:** M01.L03; Web Development 101 M06 (analytics)
-**Verified against:** Search Console Help "Add a website property", "Verify your site ownership" and "Sitemaps report"; Google Analytics Help "Set up Analytics for a website and/or app", "Realtime report", "Confirm that you're collecting data", "Enhanced measurement events", "Data retention", "Connect Search Console to Google Analytics" and "Privacy Disclosures Policy"; the Bing Webmaster blog post on importing from Search Console (updated June 2025); WordPress.com Support and the Site Kit plugin page (version 1.191.0) on 2026-11-04. Screens were not tested live; button names come from these pages and may differ slightly on yours.
+**Verified against:** Search Console Help "Add a website property", "Verify your site ownership" and "Sitemaps report"; Google Analytics Help "Set up Analytics for a website and/or app", "Realtime report", "Confirm that you're collecting data", "Enhanced measurement events", "Data retention", "Connect Search Console to Google Analytics" and "Privacy Disclosures Policy"; the Bing Webmaster blog post on importing from Search Console (updated June 2025); Blogger Help "Create a blog" and "Control access to your blog"; "Managing owners, users, and permissions"; "Add, edit, and delete Analytics users"; "Build and submit a sitemap"; WordPress.com Support and the Site Kit plugin page (version 1.191.0) and set-up guide on 2026-11-04. Screens were not tested live; button names come from these pages and may differ slightly on yours.
 
 ## Learning objectives
 1. **Set up** a test site (or use your project site) and verify it in Google Search Console as a Domain property, then import it into Bing Webmaster Tools. *(O1)*
@@ -23,14 +23,14 @@ Kavya spent a weekend improving her class pages. A month later a student asks wh
 |---|---|---|
 | **Answers** | How do people find me in Google? Is my site indexed? | What do visitors do on my site? |
 | **Data from** | Google's own search systems | A tag on your pages |
-| **Needs on your site** | Proof of ownership | The Google tag |
+| **Needs on your site** | Proof of ownership | The Google tag (a small piece of code on every page) |
 | **First data** | "In a few days" | Realtime within about 30 minutes; most reports "24-48 hours" |
 | **In depth** | M08 | M08 |
 
 ### Two property types
 | | **Domain property** (`example.com`) | **URL-prefix property** (`https://example.com/`) |
 |---|---|---|
-| **Covers** | "All subdomains, protocols, and subpaths" | Only URLs that start with that exact prefix |
+| **Covers** | All subdomains (such as `blog.example.com`), protocols (`http` and `https`) and subpaths | Only URLs that start with that exact prefix |
 | **Verification** | DNS record only | Several methods, such as an HTML tag or file |
 | **Use it when** | You can edit your domain's DNS (**the default for this course**) | You can't edit DNS, or you're on a free address such as `yourname.blogspot.com` |
 
@@ -76,25 +76,25 @@ flowchart TD
 Use the Google account you'll keep for this site, not a temporary one. Keep your project sheet open.
 
 **Part A — Get the site ready (5–10 min)**
-1. **Blogger route only:** go to https://www.blogger.com, create a blog, choose an address and publish two or three short posts on your topic.
+1. **Blogger route only:** sign in to https://www.blogger.com with the Google account you'll use for Search Console. Create a new blog, enter a name, choose an address, click **Save** and publish two or three short posts on your topic. Blogs are public by default.
 2. Open your site in a private window to confirm that it loads for the public.
 3. **WordPress sites:** in **Settings → Reading**, make sure **Discourage search engines from indexing this site** is *not* ticked. It adds a `noindex` rule (Lesson 1.4) and also turns off WordPress's built-in sitemaps.
 4. Find your sitemap by opening one of these addresses:
    - WordPress: `https://yoursite.com/wp-sitemap.xml` (an SEO plugin may use `/sitemap_index.xml` instead)
-   - Blogger: `https://yourname.blogspot.com/sitemap.xml`
+   - Blogger: try `https://yourname.blogspot.com/sitemap.xml` (observed practice: Google says Blogger likely makes a sitemap available, but doesn't name the address)
 
    **Expected output:** a page of links or XML code, not a "not found" error. Write the address down.
 
 **Part B — Verify in Search Console (10 min, plus any DNS wait)**
 
-> **Path C:** don't create new accounts until you've asked the owner. Many sites already have these tools. Ask to be added to the existing Search Console property and GA4 property. Only an owner can do some steps here, so plan to do them together.
+> **Path C:** don't create new accounts until you've asked the owner, because many sites already have these tools. Ask to be added to the existing ones. In Search Console, the owner uses **Settings → Users and permissions → Add user**. In GA4, they use **Admin → Access Management**, click **+**, then **Add users**. Linking the two tools needs a verified Search Console owner, so plan to do Part G together.
 
 1. Go to https://search.google.com/search-console, select **+ Add property**, then choose **Website property**.
-2. Choose **Domain property** and enter just the domain: `example.com`, with no `https://`, no `www` and no path. (On Blogger, choose **URL-prefix property**, enter `https://yourname.blogspot.com/`, and pick the Blogger verification option if asked.)
+2. Choose **Domain property** and enter just the domain: `example.com`, with no `https://`, no `www` and no path. (**Blogger:** Google says new blogs "should be added and verified automatically", so first check whether your blog is already in the property list. If it is, skip to Part C. If it isn't, choose **URL-prefix property**, enter `https://yourname.blogspot.com/` and follow the steps shown.)
    > 🖼️ **Image prompt:** Search Console's add-property screen (1100×650) showing the Domain property and URL-prefix property choices. Highlight the Domain property field with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** The Search Console add-property screen, offering a Domain property or a URL-prefix property.
 3. Copy the TXT record that Search Console gives you. It starts with `google-site-verification=`.
-4. In a new tab, sign in to wherever your domain's DNS is managed (often your registrar or hosting provider). Add a new record:
+4. In a new tab, sign in to wherever your domain's DNS is managed (often your hosting provider or your **registrar**, the company you bought the domain from). Add a new record:
    - **Type:** TXT
    - **Host/Name:** blank or `@`, as your provider's help says
    - **Value:** the string you copied
@@ -109,7 +109,7 @@ Use the Google account you'll keep for this site, not a temporary one. Keep your
 1. In Search Console, open **Sitemaps**.
 2. Paste your full sitemap address into **Add a new sitemap**, then click **Submit**.
 
-   **Expected output:** a row with the status **Success**. A status of **Couldn't fetch** or **Has errors** means you should click the row for details. A sitemap is a list of your pages; it helps Google find them, but it doesn't guarantee they'll be indexed (Lesson 1.4).
+   **Expected output:** a row with the status **Success**. A status of **Couldn't fetch** or **Has errors** means you should click the row for details. A sitemap is a list of your pages; Google calls submitting one "merely a hint", so it doesn't guarantee anything will be crawled or indexed (Lesson 1.4).
 
 **Part D — Import into Bing (4 min)**
 1. Go to https://www.bing.com/webmasters and sign in, or create an account.
@@ -137,12 +137,12 @@ Use the Google account you'll keep for this site, not a temporary one. Keep your
 
    | Your site | How |
    |---|---|
-   | **WordPress** | Install **Site Kit by Google**, the official plugin, and connect Analytics during its set-up, choosing the property you just made |
+   | **WordPress** | Install **Site Kit by Google**, the official plugin. During set-up, tick **Connect Google Analytics as part of your setup** and choose the property you just made. Site Kit also connects Search Console and can verify the site for you |
    | **Blogger** | **Settings → Basic → Google Analytics Measurement ID**, paste your ID, **Save** |
    | **Wix, Shopify, Squarespace, other builders** | Google's set-up page links to instructions for each: paste the ID into the field provided |
    | **Hand-coded site** | Paste the Google tag "immediately after the `<head>`" on each page |
 
-2. Open your site in a private window and click two or three pages. Turn off any ad blocker for this test, because it may stop the tag.
+2. Open your site in a private window and click two or three pages. Turn off any ad blocker and accept any cookie banner for this test, because either can stop the tag (observed practice).
 3. In GA4, go to **Reports → Realtime**.
    > 🖼️ **Image prompt:** GA4 Realtime report (1280×720) showing 1 active user in the last 5 minutes and page_view in the event list. Highlight the active users card with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** The GA4 Realtime report showing one active user and page view events from a test visit.
@@ -194,11 +194,11 @@ Add this to your **Baseline** tab, under row 1 from Lesson 1.3:
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Verification failed | The record hasn't reached Google yet, or it's in the wrong place | Check the Host/Name and Value, wait a day or two, and try again |
-| You can't find your DNS settings | The domain is managed somewhere other than your host | Check your registrar's account or ask your web person; meanwhile, use URL-prefix |
-| Sitemap shows **Couldn't fetch** | Wrong address, or the site is blocked | Open the address in a private window, then resubmit |
+| You can't find your DNS settings | The domain is managed somewhere other than your host | Check the account of your registrar (the company you bought the domain from), or ask your web person. Meanwhile, use URL-prefix, or Site Kit on WordPress |
+| Sitemap shows **Couldn't fetch** | Wrong address, or the site is blocked | Open the address in a private window, then resubmit. On Blogger, search Blogger Help for its current sitemap or feed address |
 | WordPress sitemap shows "not found" | **Discourage search engines** is ticked, or an SEO plugin replaced it | Untick the box, or use the plugin's sitemap address |
 | Bing import shows no sites | You signed in with a different Google account | Use the account that owns the property, or add the site by hand |
-| Realtime stays at 0 | Too soon, a blocker, or the tag isn't on the page | Wait 30 minutes, turn off blockers, then look for your `G-` ID in View Source |
+| Realtime stays at 0 | Too soon, a blocker or cookie banner, or the tag isn't on the page | Wait 30 minutes, turn off blockers, accept the banner, then look for your `G-` ID in View Source |
 | Visitor numbers look double | The tag is installed twice | Keep one method, and remove the other |
 | **Link** is unavailable in GA4 | You aren't a verified owner or an Editor | Ask the owner to give you the role, or to link it |
 | Search Console reports are empty | Too soon, or a new site with no search visits | Check again in a few days, and note it in your baseline |
@@ -236,6 +236,8 @@ Explain to a friend in 3 sentences why a website needs both Search Console and G
 - Search Console Help — Add a website property: https://support.google.com/webmasters/answer/34592
 - Search Console Help — Verify your site ownership: https://support.google.com/webmasters/answer/9008080
 - Search Console Help — Sitemaps report: https://support.google.com/webmasters/answer/7451001
+- Google Search Central — Build and submit a sitemap: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+- Search Console Help — Managing owners, users, and permissions: https://support.google.com/webmasters/answer/7687615
 - Bing Webmaster Blog — Import sites from Search Console: https://blogs.bing.com/webmaster/september-2019/Import-sites-from-Search-Console-to-Bing-Webmaster-Tools
 - Google Analytics Help — Set up Analytics for a website and/or app: https://support.google.com/analytics/answer/9304153
 - Google Analytics Help — Realtime report: https://support.google.com/analytics/answer/9271392
@@ -244,7 +246,10 @@ Explain to a friend in 3 sentences why a website needs both Search Console and G
 - Google Analytics Help — Data retention: https://support.google.com/analytics/answer/7667196
 - Google Analytics Help — Connect Search Console to Google Analytics: https://support.google.com/analytics/answer/10737381
 - Google Analytics Help — Privacy Disclosures Policy: https://support.google.com/analytics/answer/7318509
+- Google Analytics Help — Add, edit, and delete Analytics users: https://support.google.com/analytics/answer/9305788
 - Google Analytics Help — Set up your Google tag with Blogger: https://support.google.com/analytics/answer/13126712
+- Google Analytics Help — Site Kit plugin (WordPress): https://support.google.com/analytics/answer/11898619
+- Blogger Help — Create a blog: https://support.google.com/blogger/answer/1623800
 - WordPress.org — Site Kit by Google: https://wordpress.org/plugins/google-site-kit/
 - WordPress.com Support — Google Analytics: https://wordpress.com/support/google-analytics/
 

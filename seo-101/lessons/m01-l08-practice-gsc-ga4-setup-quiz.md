@@ -55,7 +55,7 @@
 
 ### Q6. Amara linked Search Console to GA4, but she can't find the Search Console reports in the left menu. What's the likely cause? *(O3 · scenario)*
 - a) The link only works on the paid Google Analytics 360 properties
-- b) Bing Webmaster Tools must be imported again before they appear
+- b) Search Console reports stay inside Search Console and never show
 - c) Her site's sitemap has to be deleted and submitted a second time
 - d) The collection stays unpublished until she publishes it in Library
 
