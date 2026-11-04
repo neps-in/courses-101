@@ -98,6 +98,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **`site:` operator** — `site:example.com` shows results from one site only; a quick sample of what the engine has indexed, not an exact count. [M01.L03]
 - **Sitelinks** — extra links to pages on the same site under a result; automated by Google. [M01.L05]
 - **Sitemap (XML sitemap)** — a file listing the URLs you want search engines to find, often at `/sitemap.xml` (WordPress: `/wp-sitemap.xml`). [M01.L04]
+- **Slug** — the last part of a page's URL, such as `cold-brew-guide`; Shopify calls it a handle. [M02.L02]
 - **Snippet** — the description under a result's title; mostly taken from page content. [M01.L05]
 - **Soft 404** — a page that says "not found" (or is nearly empty) but returns status 200 instead of 404. [M01.L04]
 - **Spam policies** — Google's published list of practices that can get pages ranked lower or removed from results. [M01.L06]

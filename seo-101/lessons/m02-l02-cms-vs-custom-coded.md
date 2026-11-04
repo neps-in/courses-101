@@ -2,7 +2,7 @@
 > After this lesson you can tell what any site is built with, compare the main ways to build a site, and list exactly which SEO settings you can and can't change on yours.
 
 **Time:** ~18 min reading + ~25 min hands-on · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L01 · **Remediate to:** M02.L01; Web Development 101 M01.L04 (code vs CMS vs no-code)
-**Verified against:** Google Search Central ("Update your robots.txt file", "Introduction to robots.txt", "Build and submit a sitemap", "Block Search indexing with noindex", "Intro to structured data"); Shopify Help Center; Wix Help Center; Blogger Help; WordPress.org and WordPress.com support pages; W3Techs, on 2026-11-04. Squarespace's help articles and Wix's redirect articles were read through search excerpts and summaries, not in full, so check them before you rely on a detail. No platform's screens were tested live, so labels may differ slightly on yours.
+**Verified against:** Google Search Central ("Update your robots.txt file", "Introduction to robots.txt", "Build and submit a sitemap", "Block Search indexing with noindex", "Intro to structured data"); Shopify Help Center; Wix Help Center; Blogger Help; WordPress.org and WordPress.com support pages; W3Techs, on 2026-11-04. Squarespace's help articles were read only through search excerpts and summaries, as their full text wasn't available to us, so check them before you rely on a detail. The Blogger source clues were checked on a public Blogger blog. No platform's screens were tested live, so labels may differ slightly on yours.
 
 > ⚠️ **Freshness flag:** platforms add and remove SEO settings, rename menus and change which plans include what. Treat the access table in this lesson as a starting point, and confirm your row in your platform's own help pages.
 
@@ -12,7 +12,7 @@
 3. **List** which SEO settings you can and can't change on your project site's platform. *(O3)*
 
 ## Why it matters
-Amara sends her first client a list of six SEO fixes. Two come back marked "impossible". The client's site runs on Squarespace, and one fix says "edit the `robots.txt` file", which Squarespace users can't do. Amara wrote good advice for the wrong platform, and now the client is asking how much she really knows. Every SEO recommendation has to pass one test first: **can this be changed on this platform, and how?** This lesson shows you how to answer that before you promise anything.
+Amara sends her first client a list of six SEO fixes. Two come back marked "impossible". The client's site runs on Squarespace, and one fix says "edit the `robots.txt` file to keep the old offers page out of Google". Squarespace users can't edit that file. Amara wrote good advice for the wrong platform, and now the client is asking how much she really knows. Every SEO recommendation has to pass one test first: **can this be changed on this platform, and how?** This lesson shows you how to answer that before you promise anything.
 
 ## Core concept
 **Plain version:** there are three common ways to build a site. You can use software that manages your content, rent a service that does everything, or have the site coded from scratch. All three can rank. They differ in what you're allowed to change, and in who does the work.
@@ -28,9 +28,9 @@ Amara sends her first client a list of six SEO fixes. Two come back marked "impo
 **Precise definitions:**
 
 - A **CMS (content management system)** is software that lets people create and edit content in a browser while the system builds the pages. A **template** or **theme** controls how those pages look, and a **plugin** (some platforms say **app**) adds a feature.
-- A **self-hosted CMS** runs on hosting you choose. WordPress from `wordpress.org` is the main example, and it powers roughly 40% of all websites (W3Techs, autumn 2026).
-- A **website builder** is a hosted service that bundles an editor, templates and hosting. Wix and Squarespace are the best known. Shopify is the same idea built for selling, at about 5% of websites, with Wix at about 4%. Blogger is a free hosted blog platform from Google.
-- A **custom-coded site** is built by developers, by hand or with a framework, and has no ready-made admin screens unless someone builds them.
+- A **self-hosted CMS** runs on hosting you choose. WordPress from `wordpress.org` is the main example, and it powers about 40% of all websites (39.5%, W3Techs, November 2026).
+- A **website builder** is a hosted service that bundles an editor, templates and hosting. Wix (4.2% of websites) and Squarespace (2.4%) are the best known. Shopify (5.3%) is the same idea built for selling. Blogger is a free hosted blog platform from Google.
+- A **custom-coded site** is built by developers and has no ready-made admin screens unless someone builds them. W3Techs finds that 32.2% of websites use none of the CMSs it tracks, though some of those use a CMS it doesn't monitor.
 - **Lock-in** is how hard it is to leave a platform. Builders are usually the hardest to leave, and a self-hosted CMS is much easier.
 
 The line between these isn't sharp. Google's own documentation calls Wix, Blogger and Shopify a "CMS" too. So when a Google page says "if you use a CMS", it means you.
@@ -71,10 +71,12 @@ flowchart TD
 ```
 **In words:** on a CMS or builder, you type into an editor, the text is saved in a database, and a template turns it into HTML. On a custom-coded site, a developer usually changes the code and uploads it. Either way, the same thing comes out at the end: HTML sent to browsers and to Googlebot. Search engines read that HTML, so they don't need to care how it was made.
 
+> **Under the hood: a CMS page usually isn't a file.** On a hand-coded site, `cold-brew-guide.html` may be a real file on the server. On a CMS, the words sit in a database and the page is built when someone asks for it. Addresses such as `/robots.txt` and `/sitemap.xml` are often built the same way *(observed practice)*. So if you can't find one of these as a file, it may still exist: check its address in a browser, as you will in Part C.
+
 ### What this means for SEO
 | Claim | Verdict | What the source says |
 |---|---|---|
-| WordPress ranks better than Wix or other platforms | **Myth, by Google's public comments** | John Mueller of Google: "There's no ranking-boost for using WP", and "We don't prioritize crawling, indexing, or ranking by platform used." These reach us through industry news reports |
+| WordPress ranks better than Wix or other platforms | **Myth, by Google's public comments** | John Mueller of Google: "There's no ranking-boost for using WP" (2025), and "We don't prioritize crawling, indexing, or ranking by platform used." (2020). These reach us through industry news reports |
 | Mainstream platforms are about equal for SEO | **Google's public comment** | Mueller: "there's no fundamental SEO difference between mainstream CMSs, even static hosting with modern frameworks is fine." This was a Reddit comment in October 2025, not a documentation page |
 | You may not be able to edit `robots.txt` on your platform | **Documented** | "If you use a CMS, such as Wix or Blogger, you might not need to (or be able to) edit your robots.txt file directly." A settings page may do the job instead |
 | Your platform probably already has a sitemap | **Documented** | "If you're using a CMS such as WordPress, Wix, or Blogger, it's likely that your CMS has already made a sitemap available to search engines." |
@@ -82,22 +84,22 @@ flowchart TD
 | Custom code is better for SEO | **Not by itself** *(observed practice)* | It removes limits, but also the defaults. Titles, sitemaps and redirects exist only if someone builds them |
 | Page speed depends on the platform | **Partly** *(observed practice)* | Themes, plugins, images and apps often matter as much as the platform. Module 12 covers how to measure this |
 
-So the platform doesn't give you a ranking bonus or penalty. What it does decide is **what you can fix, how, and who has to do it**.
+So, going by those comments, the platform doesn't give you a ranking bonus or penalty. What it does decide is **what you can fix, how, and who has to do it**.
 
 ### What you can change, platform by platform
 You'll meet these tasks properly later. For now, you only need to know what each one does:
 - **Title and description:** the text you set for search results (Lesson 2.3, Module 4).
 - **Hide a page:** a `noindex` rule that keeps a page out of search results (Module 6).
-- **Redirect:** sends an old address to a new one (Module 6).
-- **`robots.txt`:** a file telling crawlers which URLs not to request (Module 6).
+- **Redirect:** sends an old address to a new one (Module 6). A **301** means the move is permanent and a **302** means it's temporary. You often need one after changing a page's **slug**, the last part of its URL.
+- **`robots.txt`:** a file telling crawlers which URLs not to request (Module 6). Google says it "is not a mechanism for keeping a web page out of Google", so use `noindex` for that.
 - **Sitemap:** the list of URLs you met in Lesson 1.4.
 
 | Platform | Title and description | Hide a page | Redirects | `robots.txt` | Sitemap | Code access |
 |---|---|---|---|---|---|---|
 | **WordPress (self-hosted)** | SEO plugin, as core has no meta description field *(observed practice; Module 13)* | SEO plugin; the site-wide **Search Engine Visibility** box hides everything | Plugin *(Module 13)* | Plugin or host file access *(observed practice)* | Built in at `/wp-sitemap.xml` | Full, through your host |
-| **Wix** | **SEO basics** in each page's settings | **Let search engines index this page** toggle | **URL Redirect Manager**; automatic when you change a page's slug, but not for blog pages | **Robots.txt Editor**, marked advanced | Automatic at `/sitemap.xml` | Added tags and custom code; no full template access |
+| **Wix** | **SEO basics** in each page's settings | **Let search engines index this page** toggle | **URL Redirect Manager**, on custom domains only; automatic when you change a page's slug, but not for blog pages | **Robots.txt Editor**, marked advanced | Automatic at `/sitemap.xml` | Added tags and custom code; no full template access |
 | **Squarespace** | **SEO** tab in page settings; the homepage is set separately | **Hide page from search results** toggle; not for the homepage | **URL mappings**, 301 or 302; none are made for you when you change a slug | **Can't be edited**: all sites share one file | Automatic, can't be edited | Code injection, on some plans only |
-| **Shopify** | **Search engine listing** on each page or product | Theme code or an app *(observed practice)* | **Content > Menus > View URL Redirects**; only from URLs that are already broken | `robots.txt.liquid` template; Shopify Support can't help with edits | Automatic at `/sitemap.xml` | Theme code, through **Edit code** |
+| **Shopify** | **Search engine listing** on each page or product | `seo.hidden` custom field or theme code; **Unlisted** status for products | **Content > Menus > View URL Redirects**; only from URLs that are already broken | `robots.txt.liquid` template; Shopify Support can't help with edits | Automatic at `/sitemap.xml` | Theme code, through **Edit code** |
 | **Blogger** | **Enable search description** in Settings | **Custom robots tags** in the post editor | **Custom redirects** in Settings | **Enable custom robots.txt** in Settings | Likely available (Lesson 1.8) | Theme HTML *(observed practice)* |
 | **Custom-coded** | Whatever was built | Whatever was built | Server or code change | A file on the server | Must be created | Full, if you have a developer |
 
@@ -124,7 +126,7 @@ flowchart TD
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** look for a built-in setting first, because it's the safest choice and the platform supports it. If there isn't one, look for a trusted plugin or app. If that fails, use code access, or brief a developer. If none of these is possible, write the limit down and look for another way to reach the same goal. Amara's client can't edit `robots.txt`, but can hide a page with a toggle, which is what the client actually needed.
+**In words:** look for a built-in setting first, because it's the safest choice and the platform supports it. If there isn't one, look for a trusted plugin or app. If that fails, use code access, or brief a developer. If none of these is possible, write the limit down and look for another way to reach the same goal. Amara's client can't edit `robots.txt`, but can hide the page with a toggle, which is a better tool for that job anyway.
 
 ## Hands-on walkthrough
 You'll identify three platforms and record what yours allows. Nila Coffee's values are illustrative.
@@ -144,8 +146,8 @@ You'll identify three platforms and record what yours allows. Nila Coffee's valu
    | `cdn.shopify.com` | Shopify |
    | `wixstatic.com` | Wix |
    | `static1.squarespace.com` | Squarespace |
-   | `blogger.com` or `blogspot.com` | Blogger |
-   | `name="generator"` | Many CMSs name themselves here, such as `content="WordPress 7.1"` |
+   | `blogspot.com` | Blogger |
+   | `generator` | Many CMSs name themselves on this line, such as `content="WordPress 7.1"` or `content='blogger'` |
 
    **Expected:** one clue with many matches. Write your verdict and the proof, such as "WordPress: 87 matches for `/wp-content/`".
    > 🖼️ **Image prompt:** Chrome's View Source page (1280×720) for a WordPress site with the find bar open, searching for `/wp-content/`, showing the match count and several highlighted matches. Highlight the find bar and match count with a 3px #F9B2D7 outline; blur any personal details.
@@ -169,7 +171,7 @@ You'll identify three platforms and record what yours allows. Nila Coffee's valu
 
    | Task | Nila Coffee (WordPress, illustrative) | Where or how |
    |---|---|---|
-   | Edit page titles | With a plugin or app | SEO plugin, chosen in Module 13 |
+   | Edit page titles | With a plugin or app | WordPress uses the post title; an SEO plugin (Module 13) sets a separate one |
    | Edit meta descriptions | With a plugin or app | SEO plugin |
    | Hide a page from search | With a plugin or app | SEO plugin |
    | Create redirects | With a plugin or app | Redirect plugin or SEO plugin |
@@ -217,19 +219,20 @@ You'll identify three platforms and record what yours allows. Nila Coffee's valu
 | `/sitemap.xml` shows a 404 | The sitemap has another address, or the site is private | Look for the `Sitemap:` line in `/robots.txt` and check the platform's help pages |
 | `/robots.txt` says `Disallow: /` for all crawlers | The site may be hidden or blocked on purpose | Check the platform's visibility setting, such as WordPress's **Search Engine Visibility**, and ask the owner before changing it |
 | A setting from this lesson isn't in your admin screens | Different plan, editor version or renamed menu | Search the platform's help pages for the task, and record your plan |
-| A Shopify or Squarespace redirect does nothing | The old URL still loads a page | Delete or disable the old page, then test again |
+| A Shopify or Squarespace redirect does nothing | The old URL still loads a page | Delete or disable the old page, then test again. On Shopify, setting a product to **Draft** also works |
 
 ## Exercise
-**Task:** complete your **SEO access** tab (Part D). Then decide what you'd do in each of these cases, using the access table and the "When a fix isn't in the table" flowchart:
-1. A Squarespace client wants a private offer page kept out of Google. A blog post says to edit `robots.txt`.
+**Task:** complete your **SEO access** tab (Part D). Then decide what you'd do in each of these cases, using this lesson's tables and the "When a fix isn't in the table" flowchart:
+1. A Squarespace client wants a thank-you page kept out of Google. A blog post says to edit `robots.txt`.
 2. Tomás's shop is on Shopify. He renames a product's handle (its URL slug) and the old URL now shows a 404.
 3. An agency tells Kavya: "Move from WordPress to a custom-coded site or you'll never rank." Her pages load well, and she can change everything she needs to.
+4. A bakery owner in Lagos wants a five-page site with no online sales. The owner will update it weekly, never wants to handle updates or backups, and has a budget of $30 a month.
 
-**Expected outcome:** a complete tab, and these answers: **1** Squarespace users can't edit `robots.txt`, so use the page's **Hide page from search results** toggle. **2** Create a redirect in **Content > Menus > View URL Redirects**; it will work because the old URL is now broken. **3** Stay on WordPress: Google says it doesn't rank by platform, she has no recorded limit, and a rebuild adds cost and risk. Ask the agency which specific fix WordPress prevents.
+**Expected outcome:** a complete tab, and these answers: **1** Squarespace users can't edit `robots.txt`, and it's the wrong tool anyway, so use the page's **Hide page from search results** toggle. The page is still open to anyone with the link. **2** Create a redirect in **Content > Menus > View URL Redirects**; it will work because the old URL is now broken. **3** Stay on WordPress: Google's public comments say it doesn't rank by platform, she has no recorded limit, and a rebuild adds cost and risk. Ask the agency which specific fix WordPress prevents. **4** A website builder fits best: no upkeep, inside the budget and easy to edit. The trade-off is fixed limits and a harder exit. Managed WordPress could also work, but it costs about the same or more and has more to learn.
 **Stretch goal:** pick one **No** or **Paid plan only** row in your tab and write two sentences: what you'd lose by leaving it that way, and what it would cost to change.
 
 ## Key takeaways
-- All mainstream platforms can rank. Google says it doesn't rank by platform.
+- All mainstream platforms can rank. Google's public comments say it doesn't rank by platform.
 - The platform decides what you can change, how you change it, and who has to do it.
 - Check the platform before you give advice: View Source shows it in minutes.
 - Fix in this order: built-in setting, trusted plugin or app, code, then record the limit.
@@ -246,6 +249,7 @@ Explain to a friend in 3 sentences why Google doesn't care whether a site uses W
 - Redirect — added to `seo-101/glossary.md`
 - `robots.txt` — added to `seo-101/glossary.md`
 - Self-hosted CMS — added to `seo-101/glossary.md`
+- Slug — added to `seo-101/glossary.md`
 - Theme (template) — added to `seo-101/glossary.md`
 - Website builder — added to `seo-101/glossary.md`
 
@@ -271,6 +275,7 @@ Explain to a friend in 3 sentences why Google doesn't care whether a site uses W
 - Squarespace — View your site map: https://support.squarespace.com/hc/en-us/articles/206543547-View-your-site-map
 - Shopify — Editing robots.txt: https://help.shopify.com/en/manual/promoting-marketing/seo/editing-robots-txt
 - Shopify — URL redirects: https://help.shopify.com/en/manual/online-store/menus-and-links/url-redirect
+- Shopify — Hide a page from search engines: https://help.shopify.com/en/manual/promoting-marketing/seo/hide-a-page-from-search-engines
 - Shopify — Finding and submitting your sitemap: https://help.shopify.com/en/manual/promoting-marketing/seo/find-site-map
 - Shopify — Adding keywords to your pages: https://help.shopify.com/en/manual/promoting-marketing/seo/adding-keywords
 - Blogger Help — Manage your blog's settings: https://support.google.com/blogger/answer/9691230
@@ -282,4 +287,4 @@ Explain to a friend in 3 sentences why Google doesn't care whether a site uses W
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Three ways to build:** self-hosted CMS (WordPress: most freedom, you do the upkeep), website builder or shop platform (Wix, Squarespace, Shopify: less work, fixed limits), custom-coded (no limits, but nothing is built in). **WordPress.org** is software you host; **WordPress.com** is a hosted service. **Identify a platform** in View Source: `/wp-content/`, `cdn.shopify.com`, `wixstatic.com`, `static1.squarespace.com`. **For SEO:** Google says it doesn't rank by platform; the platform decides what you can change. **Fix order:** built-in setting → trusted plugin or app → code → record the limit. Squarespace users can't edit `robots.txt`, and Shopify and Squarespace redirects work only once the old URL is broken.
+**Three ways to build:** self-hosted CMS (WordPress: most freedom, you do the upkeep), website builder or shop platform (Wix, Squarespace, Shopify: less work, fixed limits), custom-coded (no limits, but nothing is built in). **WordPress.org** is software you host; **WordPress.com** is a hosted service. **Identify a platform** in View Source: `/wp-content/`, `cdn.shopify.com`, `wixstatic.com`, `static1.squarespace.com`. **For SEO:** Google's public comments say it doesn't rank by platform; the platform decides what you can change. **Fix order:** built-in setting → trusted plugin or app → code → record the limit. Squarespace users can't edit `robots.txt`, and Shopify and Squarespace redirects work only once the old URL is broken.

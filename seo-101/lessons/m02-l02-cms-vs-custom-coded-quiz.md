@@ -1,6 +1,6 @@
 # M02.L02 Quiz — CMS vs Custom-Coded Websites
 
-> 8 questions · 3 recall, 3 scenario, 2 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
+> 8 questions · 3 recall, 3 scenario, 2 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Q1–Q7 are tagged with the objective they test (O1–O3) so a failed answer points at the exact concept.
 > Facts checked 2026-11-04 against Google Search Central, Shopify Help Center, Squarespace Help (through excerpts) and WordPress.com support. Google's comments on platforms reach us through news reports.
 
 ### Q1. What is a CMS? *(O1 · recall)*
@@ -31,7 +31,7 @@
 
 **Answer:** d
 **Explanation:** `/wp-content/` is a strong WordPress clue. Shopify sites usually show `cdn.shopify.com`, and a clue about the platform says nothing about whether the site is hidden from search.
-**Hint:** The clue starts with two letters. What might "wp" stand for?
+**Hint:** Look back at the clue table in Part A.
 
 ### Q4. Amara's client runs on Squarespace and wants one page kept out of Google. A guide says to edit `robots.txt`. What should Amara do? *(O3 · scenario)*
 - a) Ask Squarespace Support to change the shared robots.txt file by hand
@@ -46,7 +46,7 @@
 ### Q5. Tomás adds a redirect on Shopify from an old product URL to a new one, but the old page still loads as before. What's the likely reason? *(O3 · scenario)*
 - a) Redirects on Shopify take about a month to reach all of your visitors
 - b) Shopify doesn't support any redirects, so a developer must build them
-- c) Redirects work on Shopify only when the shop is switched to private mode
+- c) Redirects on Shopify start working only after you resubmit the sitemap
 - d) Shopify redirects work only from broken URLs, and this one still loads
 
 **Answer:** d
@@ -60,7 +60,7 @@
 - d) Stay, but delete her plugins, because Google penalises sites that use them
 
 **Answer:** a
-**Explanation:** Google says it doesn't prioritise ranking by platform, and Kavya has recorded no real limit. A rebuild adds cost and risk, so a specific reason should come first.
+**Explanation:** Google's John Mueller has said Google doesn't prioritise ranking by platform, and Kavya has recorded no real limit. A rebuild adds cost and risk, so a specific reason should come first.
 **Hint:** When is changing platform worth it?
 
 ### Q7. Spot the error: "We chose WordPress, so Google ranks us above competitors on Wix. We also don't need to check our settings, because all platforms offer the same SEO access." *(O1 · spot the error)*
@@ -73,7 +73,7 @@
 **Explanation:** Google's John Mueller has said "There's no ranking-boost for using WP". Access does differ, though: for example, Wix has a robots.txt editor, and Squarespace users can't edit that file.
 **Hint:** There are two claims here. Check each one.
 
-### Q8. Spot the error: "Our Wix plan is paid for this year, so our domain name can't expire." *(O3 · spot the error · review: m02-l01)*
+### Q8. Spot the error: "Our Wix plan is paid for this year, so our domain name can't expire." *(spot the error · review: m02-l01)*
 - a) Domains on Wix expire every month, whatever the plan you're paying for
 - b) Wix sites have no domain names, so there's nothing that could expire
 - c) A domain is renewed on its own, even if one company sells you both
