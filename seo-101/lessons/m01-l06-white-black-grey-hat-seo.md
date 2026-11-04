@@ -2,7 +2,7 @@
 > After this lesson you can tell a safe SEO tactic from a risky one, name the spam policy it touches, tell a manual action from an algorithmic drop, and spot an SEO offer you shouldn't buy.
 
 **Time:** ~20 min reading + ~30 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M01.L03 · **Remediate to:** M01.L03
-**Verified against:** Google Search Central "Spam policies", "Do you need an SEO?", "Using generative AI content", "Qualify outbound links", "Debugging Search traffic drops", "Ranking systems guide" and "Latest documentation updates" pages, Search Console Help "Manual actions report" and the Google Search Status Dashboard on 2026-11-04. Spam policies change several times a year; re-read the policy page before you rely on any detail here.
+**Verified against:** Google Search Central "Spam policies", "Do you need an SEO?", "Using generative AI content", "Qualify outbound links", "Debugging Search traffic drops", "Ranking systems guide", "Report quality issues" and "Latest documentation updates" pages, the Search Central blog post on the site reputation policy (28 August 2026), Search Console Help "Manual actions report" and the Google Search Status Dashboard on 2026-11-04. Spam policies change several times a year; re-read the policy page before you rely on any detail here.
 
 ## Learning objectives
 1. **Define** white-, grey- and black-hat SEO with examples, and summarise Google's spam policies in plain words. *(O1)*
@@ -10,12 +10,12 @@
 3. **Evaluate** an SEO offer or agency pitch and flag the claims that break the rules or can't be promised. *(O3)*
 
 ## Why it matters
-Tomás is taking over the SEO for his family's hardware shop from an agency. In the last invoice he finds a line: "200 high-authority backlinks: €150." In his inbox is another pitch: "We guarantee page one in 30 days." He can't tell whether either is a bargain or a danger, and Google is clear about who carries the risk: "you are responsible for the actions of any companies you hire." This lesson gives you the rules before you build anything, so nothing you do in this course has to be undone later.
+Tomás is taking over the SEO for his family's hardware shop from an agency. In the last invoice he finds a line: "200 high-authority backlinks: €150." (A backlink is a link from another site to yours.) In his inbox is another pitch: "We guarantee page one in 30 days." He can't tell whether either is a bargain or a danger, and Google is clear about who carries the risk: "you are responsible for the actions of any companies you hire." This lesson gives you the rules before you build anything, so nothing you do in this course has to be undone later.
 
 ## Core concept
 **Plain version:** **white hat** means improving your site for people, inside the search engines' rules. **Black hat** means trying to trick search engines or visitors, against the rules. **Grey hat** means tactics in between, which aren't obviously cheating but whose main purpose is still to move rankings.
 
-**Analogy:** think of an exam. Studying is white hat. Copying from a neighbour is black hat. Writing notes "just for reference" on your water bottle is grey hat: you can argue about it, until the invigilator picks up the bottle.
+**Analogy:** think of an exam. Studying is white hat. Copying from a neighbour is black hat. Writing notes "just for reference" on your water bottle is grey hat: you can argue about it, until the exam supervisor picks up the bottle.
 
 **Precise definition:** the hat colours are industry slang, borrowed from old Western films. You won't find them in Google's spam policies page. Google's own term is **spam**: "techniques used to deceive users or manipulate our Search systems into featuring content prominently", which now includes "attempting to manipulate generative AI responses in Google Search."
 
@@ -23,7 +23,7 @@ Tomás is taking over the SEO for his family's hardware shop from an agency. In 
 |---|---|---|---|
 | **White hat** | Helps people first; fits the policies | A cold brew guide based on your own tests | None from the policies |
 | **Grey hat** | Not clearly named, or depends on scale and intent | A few link swaps with friendly sites | Can become a violation; the label is no defence |
-| **Black hat** | Breaks a named policy | Hidden keywords, paid links with no `rel` label | Lower rankings or removal |
+| **Black hat** | Breaks a named policy | Hidden keywords, paid links with no label | Lower rankings or removal |
 
 **Grey hat is not a safe zone.** Google has no grey category, and it says it "may act against any type of spam practices we detect", not only the ones it lists. This course's rule is simple: **stay white hat**. If a tactic only makes sense because search engines exist, stop and check it.
 
@@ -42,7 +42,7 @@ This lesson uses Google's policies because they're detailed and public. Other se
 
 Three details beginners get wrong:
 
-- **Paid links aren't banned; hidden paid links are.** Google says buying and selling links is "a normal part of the economy of the web" for advertising, as long as they're marked `rel="nofollow"` or `rel="sponsored"`. `sponsored` is the preferred value for paid placements.
+- **Paid links aren't banned; hidden paid links are.** Google says buying and selling links is "a normal part of the economy of the web" for advertising, as long as they're marked with a `rel` attribute, a small label in the link's HTML (Module 2): `rel="nofollow"` or `rel="sponsored"`. `sponsored` is the preferred value for paid placements.
 - **Link spam includes goods and favours, not just money.** Google's examples include "Sending someone a product in exchange for them writing about it and including a link".
 - **AI content isn't banned; AI spam is.** Scaled content abuse applies "no matter how it's created". The example is "Using generative AI tools or other similar tools to generate many pages without adding value for users". Module 7 covers using AI properly.
 
@@ -52,14 +52,14 @@ Google says it detects violations "both through automated systems and, as needed
 | | **Manual action** | **Algorithmic change** |
 |---|---|---|
 | **What happens** | "A human reviewer at Google has determined that pages on the site are not compliant" | Google's automated systems change how your pages rank |
-| **Where it shows** | The **Manual actions** report in Search Console, plus the Search Console message center | No message and no report for your site. Compare your drop dates with the **Ranking** history on the Google Search Status Dashboard |
+| **Where it shows** | The **Manual actions** report in Search Console, plus the Search Console message center | No message and no report for your site (observed practice: Google lists no such report). Compare your drop dates with the **Ranking** history on the Google Search Status Dashboard |
 | **Scope** | "Some or all" of the site | Can be some pages or the whole site |
 | **Fix** | Fix every listed issue on all affected pages, then select **Request Review** | Improve the site. There's no request to send |
 | **Timing** | Reviews "can take several days or weeks", and link-related ones may take longer | Unknown. Google says "there's no guarantee" that changes will have a noticeable effect |
 
 "Penalty" is the word people use for both, but only a manual action is a penalty someone applied to your site. An algorithmic drop may not be about spam at all: after an update, "there might not be anything fundamentally wrong with your content." The two kinds you'll see most on Google's Dashboard are **spam updates** and **core updates**. You'll work with them in Module 14.
 
-A good review request does three things, says Google: "Explains the exact quality issue", "Describes the steps you've taken to fix the issue" and "Documents the outcome of your efforts."
+A good review request (Google calls it a **reconsideration request**) does three things, says Google: "Explains the exact quality issue", "Describes the steps you've taken to fix the issue" and "Documents the outcome of your efforts."
 
 ### Part 3 — What Google says about hiring an SEO
 Google's "Do you need an SEO?" page works as a free buyer's guide. It also says plainly: "If you run a small local business, you can probably do much of the work yourself."
@@ -78,7 +78,7 @@ Google's "Do you need an SEO?" page works as a free buyer's guide. It also says 
 
 Google also says it "never accepts money to include or rank sites" in its organic results. One more flag, from observed practice rather than Google: any price per link, such as "200 backlinks for €150". That's buying links for ranking purposes.
 
-**Good signs:** they show past work, follow Google Search Essentials, explain what results to expect and when, and "share with me all the changes you make to my site".
+**Good signs:** they show past work, follow Google Search Essentials (Google's core rules for appearing in Search), explain what results to expect and when, and "share with me all the changes you make to my site".
 
 ## How it works
 **Is this tactic safe?** Run any tactic through these questions, in order.
@@ -121,7 +121,7 @@ flowchart TD
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** first look for a manual action, because it has a clear fix. Next check for a security problem. If neither is listed, see whether a ranking update happened at the same time. If one did, assess your whole site. If not, look for ordinary causes such as a stray `noindex` (Lesson 1.4), broken redirects or a seasonal dip. You'll get Search Console in Lesson 1.8 and work through real drops in Module 15.
+**In words:** first look for a manual action, because it has a clear fix. Next check for a security problem. If neither is listed, see whether a ranking update happened at the same time. If one did, assess your whole site. If not, look for ordinary causes such as a stray `noindex` (Lesson 1.4), broken redirects or a seasonal dip. You'll get Search Console in Lesson 1.8 and diagnose a simulated drop in Module 14.
 
 ## Hands-on walkthrough
 You need a browser and your project sheet. Add a new tab **Rules**. You don't need Search Console yet.
@@ -147,22 +147,25 @@ You need a browser and your project sheet. Add a new tab **Rules**. You don't ne
    | 1 | White | Original, useful content |
    | 2 | Black | Keyword stuffing |
    | 3 | Black | Link spam: "Exchanging money for links" |
-   | 4 | White | Paid link correctly marked |
+   | 4 | White | Paid link correctly marked: it's advertising, and it passes no ranking credit |
    | 5 | Black | Link spam: a named example, even with no money involved |
-   | 6 | Black | Doorway abuse |
+   | 6 | Black | Doorway abuse: "pages targeted at specific regions or cities" |
    | 7 | Black | Scaled content abuse |
    | 8 | White | A person adds value and checks the facts (Module 7) |
    | 9 | Grey | One honest link is normal; "excessive link exchanges" are link spam |
    | 10 | Black | Hidden text and link abuse |
 
    If you marked number 5 grey, you've found the lesson's main trap: many tactics that feel grey are named in the policy.
+3. In two sentences, summarise Google's spam policies in your own words.
+
+   **Expected output:** something like *"Google doesn't allow tricks that deceive people or manipulate rankings, such as fake links, hidden text and masses of low-value pages. Breaking the rules can mean lower rankings or removal."*
 
 **Part B — Red-flag check of one real offer (10 min)**
 1. Find one real SEO offer: a cold email in your inbox or spam folder, or a results page for `guaranteed first page google seo`. Don't reply to it, click links in an unknown email, or buy anything.
 2. In your Rules tab, list each red flag from Part 3 and mark it yes or no for this offer. Copy the exact words that triggered it.
 3. Write a verdict: **avoid**, **ask questions** or **worth a call**. Our course rule: a ranking guarantee, a "special relationship" or per-link pricing means avoid.
 
-   **Expected output (made-up example for Tomás):** "We guarantee page one in 30 days with 200 DA50 backlinks for €150 a month. We're a Google insider partner." Flags: guarantee, special relationship, cold email, link scheme, per-link pricing. Verdict: **avoid**.
+   **Expected output (made-up example for Tomás):** "We guarantee page one in 30 days with 200 DA50 backlinks for €150 a month. (DA is a score from a third-party tool, not from Google; Module 9.) We're a Google insider partner." Flags: guarantee, special relationship, cold email, link scheme, per-link pricing. Verdict: **avoid**.
 
 **Part C — Diagnose three traffic drops (10 min)**
 1. Open the Google Search Status Dashboard's Ranking history: https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history. Write down the three most recent updates and their start dates.
@@ -201,6 +204,7 @@ You need a browser and your project sheet. Add a new tab **Rules**. You don't ne
 - **Fixing only the worst pages.** Google says partial fixes won't earn "a partial return to search results".
 - **Believing AI content is banned.** The problem is many pages with no value, however they were made.
 - **Ignoring your comment section.** User-generated spam and hacked content count even though you didn't write them.
+- **Copying a competitor who seems to get away with it.** They may be caught later. If a site breaks the rules, you can file a search quality user report, and Google "may use your report to take manual action".
 
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
@@ -210,11 +214,11 @@ You need a browser and your project sheet. Add a new tab **Rules**. You don't ne
 | An offer has no red flags at all | It may be a good one, or it may be too vague to judge | Ask Google's questions: past work, Search Essentials, what changes they'll share |
 | The Dashboard shows no update near your drop | The cause is something else | Follow the last box in the flowchart |
 | Your site inherited bad links or content from an agency or an old owner | Past work is still there | Note it now and don't panic; Module 9 and Module 14 cover the clean-up. If you bought a site with a manual action, say so in your review request |
-| Spam comments appear on your site | Open comment forms | Moderate or close comments; WordPress settings come in Module 5 |
+| Spam comments appear on your site | Open comment forms | Moderate or close comments, and remove the spam |
 
 ## Exercise
-**Task:** complete your **Rules** tab: the 10-tactic sort (Part A), the red-flag check with a verdict (Part B) and the three diagnoses (Part C). Then write your own one-line **SEO rule** for your project site, and list one thing you or a past provider did that you now want to check.
-**Expected outcome:** a sorted list with policy names, one scored offer, three diagnoses and a personal rule, e.g. Kavya: *"I won't do anything for my site that I'd be embarrassed to explain to my students. To check: a directory listing a past web designer paid for."*
+**Task:** complete your **Rules** tab: the 10-tactic sort and policy summary (Part A), the red-flag check with a verdict (Part B) and the three diagnoses (Part C). Then write your own one-line **SEO rule** for your project site, and list one thing you or a past provider did that you now want to check.
+**Expected outcome:** a sorted list with policy names, a two-sentence summary, one scored offer, three diagnoses and a personal rule, e.g. Kavya: *"I won't do anything for my site that I'd be embarrassed to explain to my students. To check: a directory listing a past web designer paid for."*
 **Stretch goal:** look at your project site with fresh eyes for one spam-policy risk: a keyword-stuffed footer, spam comments, near-identical location pages, or paid links with no `rel` value. Note what you find in the tab. If your site is on path C, share it with the owner rather than changing it.
 
 ## Key takeaways
@@ -253,9 +257,11 @@ Explain to a friend in 3 sentences why "we guarantee page one" is a red flag, an
 - Google Search Central — Using generative AI content: https://developers.google.com/search/docs/fundamentals/using-gen-ai-content
 - Google Search Central — Ranking systems guide: https://developers.google.com/search/docs/appearance/ranking-systems-guide
 - Google Search Status Dashboard — Ranking history: https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history
+- Google Search Central — Report quality issues: https://developers.google.com/search/help/report-quality-issues
+- Google Search Central Blog — Site reputation policy update (28 August 2026): https://developers.google.com/search/blog/2026/08/update-site-reputation-policy
 - Google Search Central — Latest documentation updates: https://developers.google.com/search/updates
 
-> ⚠️ **May change:** Google changed these rules several times in 2026. It added back button hijacking (April), said it may use spam reports to take manual action (April), extended the policies to generative AI responses (May), and changed site reputation enforcement in the European Economic Area (August). Spam updates ran in March, June, August and September 2026. Re-check the policy names, the review process and the Dashboard before publishing.
+> ⚠️ **May change:** Google changed these rules several times in 2026. It added back button hijacking (April), said it may use spam reports to take manual action (April), extended the policies to generative AI responses (May), and, from 30 August, stopped site reputation manual actions from affecting results shown to users in the European Economic Area (they still apply elsewhere). Spam updates ran in March, June, August and September 2026. Re-check the policy names, the review process and the Dashboard before publishing.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*

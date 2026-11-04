@@ -3,24 +3,24 @@
 > 8 questions · 3 recall, 4 scenario, 1 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
 > Facts checked 2026-11-04 against Google Search Central (spam policies, "Do you need an SEO?", debugging traffic drops, qualify outbound links) and Search Console Help (Manual actions report).
 
-### Q1. What makes something a **manual action**? *(O2 · recall)*
-- a) An automated system lowers a site's rankings during a core update
-- b) A human reviewer at Google decides pages break the spam policies
-- c) A competitor files a report, which removes the site automatically
-- d) A site owner removes their own pages from Google using a request
+### Q1. An SEO offers to audit your site. What does Google advise about Search Console access at this stage? *(O3 · recall)*
+- a) Give full owner access, so they can fix problems as they find them
+- b) Grant read access only, and don't give them write access for now
+- c) Share your Google password, so they can reach every report at once
+- d) Give no access at all, as Google doesn't allow any outside access
 
 **Answer:** b
-**Explanation:** Google issues a manual action "when a human reviewer at Google has determined that pages on the site are not compliant with Google's spam policies." Option a is an algorithmic change. Google may use spam reports to take manual action, but a report alone doesn't remove a site.
-**Hint:** Look at the word "manual".
+**Explanation:** Google says to "only grant read access to Search Console (at this stage, don't grant them write access)." An audit needs to look at your data, not change it. Never share your password.
+**Hint:** What does an audit actually need to do?
 
-### Q2. Where does Google tell you about a manual action? *(O2 · recall)*
+### Q2. A human reviewer at Google finds that pages on a site break the spam policies. Where is the owner told? *(O2 · recall)*
 - a) On the Google Search Status Dashboard's list of ranking updates
 - b) In a label that appears next to your site on the results page
 - c) In a monthly email sent to every address found on your website
 - d) In Search Console's Manual actions report and message center
 
 **Answer:** d
-**Explanation:** Google says it will notify you "in the Manual actions report and in the Search Console message center." The Dashboard lists updates that affect all sites, not actions against yours, and searchers see no label.
+**Explanation:** This is a manual action. Google says it will notify you "in the Manual actions report and in the Search Console message center." The Dashboard lists updates that affect all sites, not actions against yours, and searchers see no label.
 **Hint:** It's a message for the site owner, not for the public.
 
 ### Q3. Which statement about **grey-hat SEO** is correct? *(O1 · recall)*
@@ -53,15 +53,15 @@
 **Explanation:** With no manual action there's nothing to review, so Request Review doesn't apply. Google suggests self-assessing "your whole website overall", and says there "might not be anything fundamentally wrong with your content." There's also no guarantee that changes will have a noticeable effect.
 **Hint:** Which reports showed a problem?
 
-### Q6. Amara's client asks which line in an SEO pitch is the **biggest** warning sign. Which one? *(O3 · scenario)*
-- a) "We'll share every change we make to your site with you each month."
-- b) "We'd like to see read-only access to Search Console for the audit."
+### Q6. Amara reads a client's SEO pitch. Which line matches a warning on Google's "Do you need an SEO?" page? *(O3 · scenario)*
+- a) "We'll share every change we make to your site in a monthly report."
+- b) "We'd need read-only Search Console access to do the audit for you."
 - c) "Results usually take several months, and we'll report on them."
-- d) "Thanks to our Google contacts we guarantee you the top position."
+- d) "We'll put your site in Google's priority submission queue this week."
 
 **Answer:** d
-**Explanation:** Google says "No one can guarantee a #1 ranking on Google" and warns about SEOs who "allege a 'special relationship' with Google". Options a and b are what Google advises you to expect, and c is an honest timeframe.
-**Hint:** Which line promises something nobody can control?
+**Explanation:** Google warns about SEOs who "advertise a 'priority submit' to Google": there's no such fast lane. Options a and b are what Google advises you to expect, and c is an honest timeframe.
+**Hint:** Which line claims something only Google could offer?
 
 ### Q7. A site has a manual action for spammy pages. The owner writes this plan. Which step contains the mistake? *(O2 · spot-the-error)*
 - a) "Read the report to see which page patterns are affected."
