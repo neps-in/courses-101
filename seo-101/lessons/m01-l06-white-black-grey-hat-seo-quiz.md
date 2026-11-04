@@ -1,0 +1,84 @@
+# M01.L06 Quiz — White Hat vs Black Hat vs Grey Hat SEO
+
+> 8 questions · 3 recall, 4 scenario, 1 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Each question is tagged with the objective it tests (O1–O3) so a failed answer points at the exact concept.
+> Facts checked 2026-11-04 against Google Search Central (spam policies, "Do you need an SEO?", debugging traffic drops, qualify outbound links) and Search Console Help (Manual actions report).
+
+### Q1. What makes something a **manual action**? *(O2 · recall)*
+- a) An automated system lowers a site's rankings during a core update
+- b) A human reviewer at Google decides pages break the spam policies
+- c) A competitor files a report, which removes the site automatically
+- d) A site owner removes their own pages from Google using a request
+
+**Answer:** b
+**Explanation:** Google issues a manual action "when a human reviewer at Google has determined that pages on the site are not compliant with Google's spam policies." Option a is an algorithmic change. Google may use spam reports to take manual action, but a report alone doesn't remove a site.
+**Hint:** Look at the word "manual".
+
+### Q2. Where does Google tell you about a manual action? *(O2 · recall)*
+- a) On the Google Search Status Dashboard's list of ranking updates
+- b) In a label that appears next to your site on the results page
+- c) In a monthly email sent to every address found on your website
+- d) In Search Console's Manual actions report and message center
+
+**Answer:** d
+**Explanation:** Google says it will notify you "in the Manual actions report and in the Search Console message center." The Dashboard lists updates that affect all sites, not actions against yours, and searchers see no label.
+**Hint:** It's a message for the site owner, not for the public.
+
+### Q3. Which statement about **grey-hat SEO** is correct? *(O1 · recall)*
+- a) It's industry slang; Google has no grey category in its policies
+- b) It's Google's name for tactics that are allowed in small amounts
+- c) It's a safe level of risk, because only black hat gets any action
+- d) It's the official term for spam that only affects a single page
+
+**Answer:** a
+**Explanation:** The hat colours are industry labels. Google's policies describe spam and say it "may act against any type of spam practices we detect", so calling a tactic grey doesn't protect a site.
+**Hint:** Whose word is "grey hat"?
+
+### Q4. A mat brand offers Kavya a free yoga mat if she writes a post that links to them, and tells her to leave the link unmarked. What is this? *(O1 · scenario)*
+- a) Fine, because no money changes hands between the two of them
+- b) Grey hat, because Google's rules only ever mention paid money
+- c) Link spam, because goods exchanged for a link are a named example
+- d) Scaled content abuse, because the post is promoting a product
+
+**Answer:** c
+**Explanation:** Google's link spam examples include "Exchanging goods or services for links" and "Sending someone a product in exchange for them writing about it and including a link". Marking the link `rel="sponsored"` would keep it within the policy.
+**Hint:** Money isn't the only thing that can pay for a link.
+
+### Q5. Tomás's traffic fell the week a core update ran. The Manual actions and Security issues reports are both clear. What should he do? *(O2 · scenario)*
+- a) Assess the whole site for helpfulness; there's no request to send
+- b) Select Request Review and describe the drop he has noticed so far
+- c) Delete the pages that lost the most traffic straight after the drop
+- d) Hire a firm that promises to reverse the core update within a week
+
+**Answer:** a
+**Explanation:** With no manual action there's nothing to review, so Request Review doesn't apply. Google suggests self-assessing "your whole website overall", and says there "might not be anything fundamentally wrong with your content." There's also no guarantee that changes will have a noticeable effect.
+**Hint:** Which reports showed a problem?
+
+### Q6. Amara's client asks which line in an SEO pitch is the **biggest** warning sign. Which one? *(O3 · scenario)*
+- a) "We'll share every change we make to your site with you each month."
+- b) "We'd like to see read-only access to Search Console for the audit."
+- c) "Results usually take several months, and we'll report on them."
+- d) "Thanks to our Google contacts we guarantee you the top position."
+
+**Answer:** d
+**Explanation:** Google says "No one can guarantee a #1 ranking on Google" and warns about SEOs who "allege a 'special relationship' with Google". Options a and b are what Google advises you to expect, and c is an honest timeframe.
+**Hint:** Which line promises something nobody can control?
+
+### Q7. A site has a manual action for spammy pages. The owner writes this plan. Which step contains the mistake? *(O2 · spot-the-error)*
+- a) "Read the report to see which page patterns are affected."
+- b) "Fix the worst few pages now, then select Request Review."
+- c) "Describe the issue, the steps taken and the outcome."
+- d) "Wait for a decision before sending any further request."
+
+**Answer:** b
+**Explanation:** Google says "Fixing the issue on just some pages will not earn you a partial return to search results." Fix all listed issues on all pages first. The other steps follow Google's guidance.
+**Hint:** How much of the problem does Google expect you to fix?
+
+### Q8. A local food blogger chooses to link to Nila Coffee after trying the tasting room. Which type of SEO does this link belong to? *(review: m01-l03 · scenario)*
+- a) Technical SEO
+- b) On-page SEO
+- c) Off-page SEO
+- d) Paid search
+
+**Answer:** c
+**Explanation:** Off-page SEO covers signals away from your site, such as links from other sites, brand mentions and reviews. An earned link like this is white hat: nobody paid for it or traded anything.
+**Hint:** Where does the link live?
