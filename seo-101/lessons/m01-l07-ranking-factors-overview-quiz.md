@@ -10,18 +10,18 @@
 - d) Authority, word count, clicks, freshness, schema
 
 **Answer:** c
-**Explanation:** Google lists meaning, relevance, quality, usability and context. The other lists mix real factors with myths and unproven ideas.
+**Explanation:** Google lists meaning, relevance, quality, usability and context, and says their weight "varies depending on the nature of your query." The other lists mix real factors with myths and unproven ideas.
 **Hint:** Think of a searcher's whole journey, from what they mean to where they are.
 
-### Q2. What does Google say about the weight of each ranking factor? *(O1 · recall)*
-- a) It varies depending on the nature of the search query
-- b) It's published as a percentage in Search Console each year
-- c) It's the same for every search, so links always count most
-- d) It's set by each site owner in their Search Console settings
+### Q2. Nila's new guide has a stray `noindex`, a slow photo and no links from other sites. What should Nila fix first? *(O3 · scenario)*
+- a) Remove the `noindex`, so Google can index the page at all
+- b) Replace the photo, as Core Web Vitals are used in ranking
+- c) Ask a food blogger for a link, as links are a stated signal
+- d) Add 1,000 more words, so the guide looks more thorough
 
 **Answer:** a
-**Explanation:** Google says "The weight applied to each factor varies depending on the nature of your query." For example, freshness plays a bigger role for news searches than for dictionary definitions. Google doesn't publish the weights.
-**Hint:** Compare a news search with a dictionary search.
+**Explanation:** A page that isn't indexed can't rank, so nothing else counts until that's fixed (Lesson 1.4). Options b and c are worthwhile, but later. Option d relies on a myth: length alone doesn't matter.
+**Hint:** Go down the priority order from the top.
 
 ### Q3. What does Google say about word count and ranking? *(O2 · recall)*
 - a) Pages need at least 300 words before they can appear in results
@@ -45,8 +45,8 @@
 
 ### Q5. Tomás in Lisbon and a friend in Porto both search `hardware shop near me` and see different results. Which signal explains this best? *(O1 · scenario)*
 - a) Usability, because one of the two phones has a smaller screen
-- b) Quality, because Google trusts Lisbon's shops more than Porto's
-- c) Relevance, because each person's page has a different keyword
+- b) Freshness, because one of them searched a little later that day
+- c) Quality, because shops in each city have different link counts
 - d) Context, because Google uses location to judge what's relevant
 
 **Answer:** d
@@ -71,14 +71,14 @@
 
 **Answer:** c
 **Explanation:** Google says "E-E-A-T itself isn't a specific ranking factor". Its systems use a mix of factors that can identify content with those qualities. The other notes match Google's documentation.
-**Hint:** Which note describes something no tool can read?
+**Hint:** Compare each note with Google's exact words.
 
-### Q8. A pitch offers "200 links for €150, no labels, to raise your DA". Which spam policy does this break? *(review: m01-l06 · scenario)*
-- a) Keyword stuffing
-- b) Link spam
-- c) Cloaking
-- d) Doorway abuse
+### Q8. Which `rel` value does Google prefer for a link you were paid to place? *(review: m01-l06 · recall)*
+- a) `rel="ugc"`
+- b) `rel="sponsored"`
+- c) `rel="canonical"`
+- d) `rel="noopener"`
 
 **Answer:** b
-**Explanation:** Buying links for ranking purposes is link spam unless they're marked `rel="nofollow"` or `rel="sponsored"`. Per-link pricing is also a red flag in any SEO offer.
-**Hint:** What's being sold?
+**Explanation:** Google says to mark ads and paid placements with `sponsored`; `nofollow` is still acceptable. `ugc` is for user-generated links such as comments. Unmarked paid links are link spam.
+**Hint:** Which word means someone paid?

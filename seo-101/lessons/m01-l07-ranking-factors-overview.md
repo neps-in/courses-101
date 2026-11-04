@@ -27,7 +27,7 @@ Google's "How Search Works" page names five. Each one maps to work you'll do lat
 | **Meaning** | It needs to establish "the intent behind your query" | What is this person really looking for? | On-page · M03 |
 | **Relevance** | "The most basic signal that information is relevant is when content contains the same keywords as your search query." | Does the page cover what was searched? | On-page · M04 |
 | **Quality** | Signals of "expertise, authoritativeness, and trustworthiness", such as whether "other prominent websites link or refer to the content" | Is it helpful, and do others trust it? | On-page and off-page · M07, M09 |
-| **Usability** | "When all other signals are relatively equal, content that people will find more accessible may perform better." | Is it easy to use, including on a phone? | Technical · M06, M12 |
+| **Usability** | "When all other signals are relatively equal, content that people will find more accessible may perform better." Google's example: "mobile-friendly content that loads quickly" | Is it easy to use, including on a phone? | Technical · M06, M12 |
 | **Context** | "Your location, past Search history, and Search settings" | Who is searching, and where? | Local · M11 |
 
 Three things follow from this:
@@ -38,7 +38,7 @@ Three things follow from this:
 
 **Ranking systems.** Google's "Ranking systems guide" describes notable systems behind these signals. You don't need to memorise them, but a few names are useful: **freshness systems**, **link analysis systems and PageRank** (links help show what pages are about and which might be most helpful), **original content systems**, the **reviews system** and the **site diversity system**, which "generally won't show more than two web page listings from the same site in our top results."
 
-Old advice often mentions Panda, Penguin or the "helpful content update". Google lists all three under **Retired systems**, because they became part of its **core ranking systems**. Helpful content joined them in March 2024.
+Old advice often mentions Panda, Penguin or the "helpful content update". Google lists all three under **Retired systems**, because they became part of its **core ranking systems**, the underlying technology that produces results. Helpful content joined them in March 2024.
 
 ### Part 2 — What's documented, what's a myth, what's unproven
 Use three labels for any claim:
@@ -56,7 +56,8 @@ Use three labels for any claim:
 | **Helpful content** | "Creating content that people find compelling and useful will likely influence your website's presence in search results more than any of the other suggestions in this guide." | This comes first, always |
 | **Keywords on the page** | Matching keywords are "the most basic signal" of relevance | Write naturally; keyword stuffing is spam (Lesson 1.6) |
 | **Links** | "Google uses links as a signal when determining the relevancy of pages and to find new pages to crawl." | PageRank "is just one" of many signals. Earn links; never buy them |
-| **Core Web Vitals** | "Core Web Vitals are used by our ranking systems." | Good scores don't "guarantee that your pages will rank at the top". Details in M12 |
+| **Core Web Vitals** (Google's measures of loading, responsiveness and visual stability) | "Core Web Vitals are used by our ranking systems." | Good scores don't "guarantee that your pages will rank at the top". Other page experience aspects "don't directly help your website rank higher", though they're still worth improving for visitors. Details in M12 |
+| **Interaction data** | "We also use aggregated and anonymised interaction data to assess whether search results are relevant to queries." | This is data from many people, turned into signals. It isn't a setting you can adjust, and Google gives no detail on how much it counts |
 | **Freshness** | Systems "designed to show fresher content for queries where it would be expected" | Only for some searches. Changing a date without real updates is a warning sign, Google says |
 
 **Myths** (Google says don't focus on these):
@@ -64,8 +65,8 @@ Use three labels for any claim:
 | Claim | What Google says |
 |---|---|
 | "Use the meta keywords tag" | "Google Search doesn't use the keywords meta tag." |
-| "Aim for 2,000 words" | "There's no magical word count target, minimum or maximum" |
-| "Get keywords in your domain" | Keywords in the domain or URL path "alone have hardly any effect beyond appearing in breadcrumbs" |
+| "Aim for 2,000 words" | "The length of the content alone doesn't matter for ranking purposes" |
+| "Get keywords in your domain" | Keywords in the domain or URL path "alone have hardly any effect beyond appearing in breadcrumbs". Google also has a system so it doesn't "give too much credit" to domains built to match a search |
 | "A `.com` ranks better" | The domain ending "only matters if you're targeting a specific country's users, and even then it's usually a low impact signal" |
 | "Headings must be in perfect order to rank" | For Google Search "it doesn't matter", though correct order is "fantastic for screen readers", so still do it |
 | "Duplicate content gets you penalised" | Content on several URLs is "not something that will cause a manual action". Copying others' content is a different story |
@@ -74,7 +75,7 @@ Use three labels for any claim:
 
 **E-E-A-T** stands for experience, expertise, authoritativeness and trustworthiness. It isn't one score. Google's systems use "a mix of factors" that can identify content showing these qualities, and "trust is most important". Google gives this "even more weight" for **YMYL** ("Your Money or Your Life") topics such as health and finances. So: no single E-E-A-T factor exists, but the qualities matter a lot. Module 14 goes deeper.
 
-**Unproven:** clicks, time on page and social shares are the usual examples. Google's ranking documentation that we checked doesn't list them as factors. Reports on testimony from the 2023 US antitrust trial and a 2024 leak of internal Google documents suggest Google has used click data, but those are secondary reports, and they don't tell you how to rank. Most "200 factors" lists mix documented items, myths and guesses without saying which is which.
+**Unproven:** social shares and specific behaviour claims, such as "pages rank higher when visitors stay longer". Be careful with the second kind, because part of it is documented: Google does use aggregated interaction data (see the table above). What it doesn't say is that time on page, or any other single behaviour on your site, raises your ranking. Reports on testimony from the 2023 US antitrust trial and a 2024 leak of internal Google documents add detail about click data, but we could only find them in secondary sources, and they don't tell you how to rank. Most "200 factors" lists mix documented items, myths and guesses without saying which is which.
 
 **A note on AI search:** Google says SEO best practices "continue to be relevant" because its generative AI features "are rooted in our core Search ranking and quality systems." The basics in this lesson apply there too (Module 14).
 
@@ -130,7 +131,7 @@ You need a browser and your project sheet. Add a new tab **Ranking**.
    **Expected output (Nila Coffee):** *"Meaning: someone searching `cold brew ratio` wants a number, not a shop. Relevance: my guide must state the ratio. Quality: I show my own tests and who wrote them. Usability: it reads well on a phone. Context: a searcher in Kochi may see local roasters first."*
 
 **Part B — Fact-check 8 claims (10 min)**
-1. Copy these claims into the tab. Label each **documented**, **myth** or **unproven**, using Part 2 and the Google pages in Further reading. Add the source for each one.
+1. Copy these claims into the tab. Label each **documented**, **myth** or **unproven**, using Part 2 and the Google pages in Further reading. Add the source for each one. For at least two claims, open the Google page and find the sentence yourself: that's the skill you'll use for the rest of your career.
    1. "Posts under 1,500 words can't rank."
    2. "Add a meta keywords tag to every page."
    3. "Links from other sites can help a page rank."
@@ -152,12 +153,12 @@ You need a browser and your project sheet. Add a new tab **Ranking**.
    | 5 | Documented | Stated, with no guarantee of top rankings |
    | 6 | Myth | A third-party score, not one of Google's |
    | 7 | Unproven | Not in Google's ranking documentation; you can't prove cause and effect |
-   | 8 | Unproven | Not in Google's documentation; reports are secondary |
+   | 8 | Unproven | Google documents aggregated interaction data, but not this specific claim |
 
    For 7 and 8, the flowchart still helps: shares and engaged readers are good for your business, so a page people want to share is worth making. Just don't report them as ranking factors.
 
 **Part C — Prioritise three improvements (10 min)**
-1. Look at your Trace tab (Lesson 1.4) and your SERPs tab (Lesson 1.5). List up to six possible improvements for your site.
+1. Look at your Trace tab (Lesson 1.4) and your SERPs tab (Lesson 1.5). List up to six possible improvements for your site. Try for at least one under each box in the second flowchart.
 2. Use the second flowchart to pick the **top three**. For each one, record: the improvement, the signal it supports, the SEO type (on-page, off-page or technical, Lesson 1.3), why it's first and the module that covers it.
 3. Don't make the changes yet. You're choosing, not fixing. Later modules show how.
 
@@ -241,8 +242,8 @@ Explain to a friend in 3 sentences why "write 2,000 words to rank" is a myth, an
 - Google Search Central — Link best practices: https://developers.google.com/search/docs/crawling-indexing/links-crawlable
 - Google Search Central — Optimizing for generative AI features: https://developers.google.com/search/docs/fundamentals/ai-optimization-guide
 
-> ⚠️ **May change:** Google's ranking systems change constantly (see the core and spam updates in Lesson 1.6), and it can edit these pages at any time. Re-check the five signals, the Core Web Vitals wording and the "Things we believe you shouldn't focus on" table before publishing. The click-data reports in Part 2 come from secondary sources, not from Google's documentation.
+> ⚠️ **May change:** Google's ranking systems change constantly (see the core and spam updates in Lesson 1.6), and it can edit these pages at any time. Re-check the five signals, the Core Web Vitals wording and the "Things we believe you shouldn't focus on" table before publishing. The trial and leak reports in Part 2 come from secondary sources; only the interaction data sentence is Google's own.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Five key signals:** meaning (intent), relevance (matching content), quality (expertise, trust, links), usability (accessible, good on mobile), context (location, history, settings). **Weights vary by search** and aren't public. **Documented:** helpful content, keywords on the page, links, Core Web Vitals, freshness where expected. **Myths:** meta keywords, word count targets, keyword domains, Domain Authority as a Google factor. **E-E-A-T** isn't a single factor. **Unproven:** check it, and do it only if it helps people. **Priority order:** indexed → relevant → helpful → usable → linked.
+**Five key signals:** meaning (intent), relevance (matching content), quality (expertise, trust, links), usability (accessible, good on mobile), context (location, history, settings). **Weights vary by search** and aren't public. **Documented:** helpful content, keywords on the page, links, Core Web Vitals, aggregated interaction data, freshness where expected. **Myths:** meta keywords, word count targets, keyword domains, Domain Authority as a Google factor. **E-E-A-T** isn't a single factor. **Unproven:** check it, and do it only if it helps people. **Priority order:** indexed → relevant → helpful → usable → linked.
