@@ -7,7 +7,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | Module | Level | Non-negotiables taught | Planned |
 |--------|-------|------------------------|---------|
 | M01 Marketing & SEO Foundations | L1 | #1, #2 | 8 lessons + capstone |
-| M02 Introduction to Web Development (HTML & CSS for content creators) | L1 | #3 | 10 live titles, objectives not yet planned |
+| M02 Introduction to Web Development (HTML & CSS for content creators) | L1 | #3 | 10 lessons + capstone |
 | M03 Keyword Research | L1 | #4, #5 | — |
 | M04 On-Page SEO | L1 | #6 | — |
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | — | — |
@@ -119,4 +119,111 @@ flowchart LR
 ---
 
 ## M02 — Introduction to Web Development (HTML & CSS for content creators) (L1)
-_Not yet planned. Live lesson titles (posts 2577–2586): 2.1 How websites work · 2.2 CMS vs custom-coded websites · 2.3 HTML fundamentals · 2.4 Formatting text · 2.5 Links & images · 2.6 Semantic HTML · 2.7 Tables, blockquotes & embeds · 2.8 CSS fundamentals · 2.9 Styling text & layout · 2.10 Responsive design basics. Run `/plan-module 2` to add objectives._
+
+**Goal:** read and write the HTML and CSS that matter for SEO and content, so you can check what search engines actually see. · NN #3
+**Live lessons:** posts 2577–2586 in course 2566 (titles only; content written here). Ten lessons, above the usual 3–6, because the live course sets the titles. Web Development 101 graduates can skip this module through the diagnostic quiz.
+
+```mermaid
+flowchart LR
+  %% alt: M02 lesson path: how websites work, CMS or code, HTML basics, text, links and images, semantic HTML, tables, CSS, layout, responsive, capstone.
+  L1[L01 How websites<br/>work]:::cream --> L2[L02 CMS vs<br/>custom code]:::cream
+  L2 --> L3[L03 HTML<br/>fundamentals]:::sky
+  L3 --> L4[L04 Formatting<br/>text]:::sky
+  L4 --> L5[L05 Links &<br/>images]:::sky
+  L5 --> L6[L06 Semantic<br/>HTML]:::sky
+  L6 --> L7[L07 Tables, quotes<br/>& embeds]:::sky
+  L7 --> L8[L08 CSS<br/>fundamentals]:::blue
+  L8 --> L9[L09 Text &<br/>layout styling]:::blue
+  L9 --> L10[L10 Responsive<br/>basics]:::blue
+  L10 --> C[M02 Capstone:<br/>SEO-ready article page]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start with how a website reaches a browser and how it gets built, then learn HTML from page structure through text, links, images, semantic elements and tables. CSS comes next: the basics, then text and layout, then making pages work on phones. The capstone combines it all into one hand-coded article page.
+
+### M02.L01 — How Websites Work: Browsers, Servers, Hosting, Domains and IP Addresses
+- **File:** `lessons/m02-l01-how-websites-work.md` · **Live post:** 2577 · **Prereqs:** M01.L04 · **Remediate to:** M01.L04; Web Dev 101 M01.L02 (domains and DNS), M01.L03 (hosting) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Explain** what browsers, servers, hosting, domains, DNS and IP addresses each do when a page loads.
+  2. **Find** your project site's registrar, expiry date, nameservers, IP address and likely host using free lookup tools.
+  3. **Judge** which hosting and domain problems affect SEO, separating Google's documentation from myths such as "shared hosting hurts rankings".
+- **Hands-on idea:** look up your site's domain, DNS and host; fill in a new **Site facts** tab that also records who holds each login; add a domain renewal reminder.
+
+### M02.L02 — CMS vs Custom-Coded Websites
+- **File:** `lessons/m02-l02-cms-vs-custom-coded.md` · **Live post:** 2578 · **Prereqs:** L01 · **Remediate to:** L01; Web Dev 101 M01.L04 (code vs CMS vs no-code) · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Compare** CMSs, website builders and custom-coded sites on control, cost, skills and SEO access.
+  2. **Identify** what a site is built with, using its source code and free checks.
+  3. **List** which SEO settings you can and can't change on your project site's platform.
+- **Hands-on idea:** identify the platform of your site and two competitors; complete an "SEO access" checklist (titles, descriptions, redirects, `robots.txt`, sitemap, code access).
+
+### M02.L03 — HTML Fundamentals: Elements, Tags, Attributes & Page Structure
+- **File:** `lessons/m02-l03-html-fundamentals.md` · **Live post:** 2579 · **Prereqs:** L01 · **Remediate to:** M01.L04; Web Dev 101 M02.L01 (anatomy of an HTML page) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Label** the parts of an element: opening tag, attribute, content and closing tag.
+  2. **Build** a valid page skeleton with `<!DOCTYPE>`, `<html lang>`, `<head>` and `<body>`.
+  3. **Explain** what the `<title>` and meta description in `<head>` do for search results.
+- **Hands-on idea:** create a page file in a free editor, open it in a browser, and read the same parts in your live site's View Source.
+
+### M02.L04 — Formatting Text: Headings, Paragraphs, Lists, Bold & Italic
+- **File:** `lessons/m02-l04-formatting-text.md` · **Live post:** 2580 · **Prereqs:** L03 · **Remediate to:** L03; Web Dev 101 M02.L02 (text, links, images and media) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Structure** an article with one H1 and headings in logical order.
+  2. **Choose** between paragraphs, lists, `<strong>` and `<em>` by meaning, not by looks.
+  3. **Audit** a live page's heading outline and fix headings used only for styling.
+- **Hands-on idea:** mark up a plain-text Nila Coffee brew guide; extract your own page's heading outline in DevTools and record what's wrong.
+
+### M02.L05 — Links & Images: href, alt, title and New Tabs
+- **File:** `lessons/m02-l05-links-and-images.md` · **Live post:** 2581 · **Prereqs:** L04 · **Remediate to:** L03; Web Dev 101 M02.L02 (text, links, images and media) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Write** crawlable links with descriptive anchor text, and tell internal links from external ones.
+  2. **Add** images with useful alt text, dimensions and sensible file names.
+  3. **Decide** when to use `rel` values, `target="_blank"` and the `title` attribute, and when to leave them out.
+- **Hands-on idea:** rewrite five weak anchors; write alt text for three images, including one decorative image; check a link's code in DevTools.
+
+### M02.L06 — Semantic HTML for Content: article, header, nav, section, footer
+- **File:** `lessons/m02-l06-semantic-html.md` · **Live post:** 2582 · **Prereqs:** L04, L05 · **Remediate to:** L04; Web Dev 101 M02.L03 (semantic HTML and heading structure) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Replace** generic `<div>` containers with the right semantic elements.
+  2. **Explain** how semantic structure helps screen readers and machines, and what Google does and doesn't say about it.
+  3. **Map** the landmarks of a real page from your project site.
+- **Hands-on idea:** convert a "div soup" page to semantic HTML, then map your own page's landmarks.
+
+### M02.L07 — Tables, Blockquotes & Embeds
+- **File:** `lessons/m02-l07-tables-blockquotes-embeds.md` · **Live post:** 2583 · **Prereqs:** L06 · **Remediate to:** L05; Web Dev 101 M02.L02 (text, links, images and media) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Build** a data table with a caption and header cells.
+  2. **Mark up** quotations with `<blockquote>` and a visible source.
+  3. **Embed** a YouTube video or social post, and weigh what an embed adds against its cost in speed, privacy and text that search engines can read.
+- **Hands-on idea:** add a brew-ratio table, a quotation and a video embed to the Nila Coffee article; note which embedded text appears in View Source.
+
+### M02.L08 — CSS Fundamentals: Selectors, Properties & Ways to Add CSS
+- **File:** `lessons/m02-l08-css-fundamentals.md` · **Live post:** 2584 · **Prereqs:** L03 · **Remediate to:** Web Dev 101 M03.L01 (selectors, cascade, box model) · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Write** CSS rules using element, class and ID selectors.
+  2. **Compare** inline, internal and external CSS, and choose one for a given job.
+  3. **Inspect** and temporarily change a live page's CSS in DevTools.
+- **Hands-on idea:** link an external stylesheet to your article page; change a live page's styles in DevTools and see that a reload undoes it.
+
+### M02.L09 — Styling Text & Layout: Fonts, Colours, Spacing and the Box Model
+- **File:** `lessons/m02-l09-styling-text-layout.md` · **Live post:** 2585 · **Prereqs:** L08 · **Remediate to:** L08; Web Dev 101 M03.L01, M03.L02 (typography and colour) · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Style** readable text with font, size, line height and colour contrast.
+  2. **Use** the box model (content, padding, border, margin) to control spacing.
+  3. **Spot** CSS that hides content from people, and explain how hidden text can break spam policies.
+- **Hands-on idea:** style the article for reading on a laptop; fix a low-contrast block; use the DevTools box model view to fix a spacing bug.
+
+### M02.L10 — Responsive Design Basics: Viewport Meta Tag & Mobile-Friendly Layouts
+- **File:** `lessons/m02-l10-responsive-design-basics.md` · **Live post:** 2586 · **Prereqs:** L08, L09 · **Remediate to:** L09; Web Dev 101 M03.L04 (responsive, mobile-first design) · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Add** the viewport meta tag and explain what breaks without it.
+  2. **Build** a simple mobile-friendly layout with flexible widths and one media query.
+  3. **Test** a page at phone widths in DevTools and check that mobile shows the same content as desktop.
+- **Hands-on idea:** make the article responsive; compare your project site's phone and desktop content, because Google mainly indexes the mobile version.
+
+### M02 Capstone — SEO-ready article page
+- **File:** `capstones/m02-capstone.md` + `cheatsheets/m02-html-css-for-seo.md`
+- Hand-code one Nila Coffee-style article page for your project topic: head with title and description, one H1, logical headings, a table, an image with alt text, internal and external links, semantic layout and responsive CSS. Validate it. **Break-it lab:** a planted page with two H1s, skipped heading levels, empty alt text and a missing viewport tag. Rubric: valid HTML, heading and link quality, accessibility basics, mobile layout, explanation of each fix.

@@ -20,7 +20,17 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M01 | L07 | Overview of Google's Ranking Factors | seo-101/lessons/m01-l07-ranking-factors-overview.md | reviewed | 2026-11-04 |
 | M01 | L08 | Practice: Set Up Google Search Console + GA4 on a Test Site | seo-101/lessons/m01-l08-practice-gsc-ga4-setup.md | reviewed | 2026-11-04 |
 | M01 | Capstone | M01 capstone — Marketing & search snapshot | seo-101/capstones/m01-capstone.md | draft | 2026-11-04 |
-| M02 | — | Introduction to Web Development (HTML & CSS for content creators) (not yet planned) | — | todo | — |
+| M02 | L01 | How Websites Work: Browsers, Servers, Hosting, Domains and IP Addresses | seo-101/lessons/m02-l01-how-websites-work.md | todo | — |
+| M02 | L02 | CMS vs Custom-Coded Websites | seo-101/lessons/m02-l02-cms-vs-custom-coded.md | todo | — |
+| M02 | L03 | HTML Fundamentals: Elements, Tags, Attributes & Page Structure | seo-101/lessons/m02-l03-html-fundamentals.md | todo | — |
+| M02 | L04 | Formatting Text: Headings, Paragraphs, Lists, Bold & Italic | seo-101/lessons/m02-l04-formatting-text.md | todo | — |
+| M02 | L05 | Links & Images: href, alt, title and New Tabs | seo-101/lessons/m02-l05-links-and-images.md | todo | — |
+| M02 | L06 | Semantic HTML for Content: article, header, nav, section, footer | seo-101/lessons/m02-l06-semantic-html.md | todo | — |
+| M02 | L07 | Tables, Blockquotes & Embeds | seo-101/lessons/m02-l07-tables-blockquotes-embeds.md | todo | — |
+| M02 | L08 | CSS Fundamentals: Selectors, Properties & Ways to Add CSS | seo-101/lessons/m02-l08-css-fundamentals.md | todo | — |
+| M02 | L09 | Styling Text & Layout: Fonts, Colours, Spacing and the Box Model | seo-101/lessons/m02-l09-styling-text-layout.md | todo | — |
+| M02 | L10 | Responsive Design Basics: Viewport Meta Tag & Mobile-Friendly Layouts | seo-101/lessons/m02-l10-responsive-design-basics.md | todo | — |
+| M02 | Capstone | M02 capstone — SEO-ready article page | seo-101/capstones/m02-capstone.md | todo | — |
 | M03 | — | Keyword Research (not yet planned) | — | todo | — |
 | M04 | — | On-Page SEO (not yet planned) | — | todo | — |
 | M05 | — | WordPress for Content Creators (Content Creation & Page Builders) (not yet planned) | — | todo | — |
@@ -159,6 +169,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-04: seo-101 planned M02: 10 lessons from live titles (posts 2577–2586; above the usual 3–6 because the live course sets them) + capstone (hand-coded article page, break-it lab) with objectives, remediation links and a lesson-path flowchart.
 - 2026-11-04: seo-101 M01 capstone draft — Marketing & Search Snapshot (non-negotiables #1, #2): 7 tasks pulling from the project sheet tabs, fresh `site:` checks, tool evidence table, one real offer check; break-it = 5 planted offers (A link spam, B doorway/scaled, C white, D grey/expired domain, E site reputation) with answer table; 4-criterion rubric from the syllabus (accuracy, evidence, explanation, judgement); 1 flowchart, 1 image prompt; + cheatsheets/m01-marketing-seo-foundations.md. Module 1 fully drafted; L05–L08 reviewed, L01–L04 and capstone still draft. Next: `/review-lesson seo-101/capstones/m01-capstone.md`, reviews of L01–L04, or `/plan-module 2`.
 - 2026-11-04: seo-101 m01-l08 reviewed: Blogger steps now from Blogger Help and "Verify your site ownership" (new blogs "should be added and verified automatically", so check before adding); Blogger `/sitemap.xml` labelled observed, as Google names no address; Site Kit also connects Search Console and can verify; sitemap = "merely a hint"; path C gets exact Users and permissions / Access Management steps; cookie banner added to Realtime checks; subdomain, protocol, registrar and tag defined; Q6 distractor b replaced; answers unchanged d b a c b d a c. Steps still not tested live. Free path B (Blogger) still needs the owner's decision: outline and L01 say WordPress. M01 lessons L05–L08 reviewed; L01–L04 still draft. Next: `/next-lesson` → M01 capstone.
 - 2026-11-04: seo-101 m01-l08 draft — Practice: GSC + GA4 (live post 2576): before/after-the-click framing; Domain vs URL-prefix; Parts A–H (site check, TXT verification, sitemap, Bing import, GA4, install once + Realtime, link + publish from Library, baseline row 2); privacy disclosure; 1 flowchart; 2 image prompts; 11 glossary terms; quiz d b a c b d a c, Q8 reviews m01-l04. Design change to confirm: Playground and local installs can't be reached by Google, and WordPress.com Free has no GA, so free path B uses Blogger (URL-prefix) here; outline and L01 still promise a "free WordPress test site". Blogger create steps and /sitemap.xml come from general knowledge, not a fetched page; steps not tested live. Next: `/review-lesson seo-101/lessons/m01-l08-practice-gsc-ga4-setup.md`.
