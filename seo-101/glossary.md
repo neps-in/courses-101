@@ -115,7 +115,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Search engine** — a service such as Google or Bing that collects web pages and shows the most useful ones for each query. [M01.L03]
 - **Search operator** — a special command typed into the search box that narrows the results, such as `site:` or quotes. [M01.L03]
 - **Self-hosted CMS** — a CMS that runs on hosting you choose, such as WordPress from wordpress.org; you handle updates, backups and security. [M02.L02]
-- **Semantic HTML** — using elements that say what content is, such as `<nav>` or `<article>`, instead of generic `<div>`s. Good for accessibility, but Google says it isn't a ranking factor. [M02.L06]
+- **Semantic HTML** — using elements that say what content is, such as `<nav>` or `<article>`, instead of generic `<div>`s. Good for accessibility, but Google's public comments say it isn't a ranking factor. [M02.L06]
 - **SEO (search engine optimisation)** — helping search engines understand your content and helping people find your site and decide to visit it from search results. [M01.L03]
 - **SERP feature** — any part of a results page beyond a plain text result, such as a featured snippet, local pack, image strip or ad. [M01.L05]
 - **Shared hosting** — hosting where many sites use one server; low cost, and not an SEO problem by itself unless the server is slow or fails. [M02.L01]

@@ -24,10 +24,10 @@
 **Hint:** What did the checker say in Part C?
 
 ### Q3. What do landmarks let screen reader users do? *(O2 · recall)*
-- a) Hear each image on the page described in more detail
-- b) Change the size of the text on the page as they read it
-- c) Translate the page's content into their own language
-- d) Jump straight to important parts of a page by keyboard
+- a) Hear every link on the page read out first, in order
+- b) Hear the page's meta description before its content
+- c) Turn off the page's images, so it loads more quickly
+- d) Jump straight to the important parts of a page
 
 **Answer:** d
 **Explanation:** W3C says screen readers use landmark roles "to provide keyboard navigation to important sections of a page". So a reader can skip a long menu.
@@ -65,7 +65,7 @@
 
 ### Q7. Spot the error: "Each `<section>` resets the headings, so start every section with its own `<h1>`." *(O1 · spot the error)*
 - a) Sections don't change levels; the number in the tag sets the level
-- b) Sections can only hold an `<h6>`, because they're the smallest unit
+- b) That only works inside `<article>`, where levels restart at `<h1>`
 - c) Headings aren't allowed inside a `<section>` element in any case
 - d) This only works if every `<section>` also has an `aria-label` on it
 

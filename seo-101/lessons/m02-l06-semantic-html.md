@@ -2,7 +2,7 @@
 > After this lesson you can replace generic `<div>` containers with the right semantic elements, say honestly what that does for search, and map the landmarks of any live page.
 
 **Time:** ~16 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L04, M02.L05 · **Remediate to:** M02.L04; Web Development 101 M02.L03 (semantic HTML and heading structure)
-**Verified against:** MDN pages for `<article>`, `<section>`, `<header>`, `<footer>`, `<nav>`, `<main>`, `<aside>`, `<div>` and "Semantics"; W3C WAI "Page regions" and ARIA Authoring Practices "Landmark regions"; the WHATWG HTML Standard (sections); Google Search Central "SEO Starter Guide" and "Creating helpful, reliable, people-first content"; WebAIM Screen Reader User Survey #11; Gutenberg source code (Group block); the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The Console command in Part D wasn't run in a live browser for this draft.
+**Verified against:** MDN pages for `<article>`, `<section>`, `<header>`, `<footer>`, `<nav>`, `<main>`, `<aside>`, `<div>`, `<search>`, "Semantics" and "Accessibility tree"; W3C WAI "Page regions" and ARIA Authoring Practices "Landmark regions"; the WHATWG HTML Standard (sections); Google Search Central "SEO Starter Guide" and "Creating helpful, reliable, people-first content"; WebAIM Screen Reader User Survey #11; Gutenberg source code (Group block); the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The Console command in Part D wasn't run in a live browser for this draft, but it gave the expected output in jsdom, a browser simulator.
 
 > ⚠️ **Freshness flag:** these elements have been stable for years. Google's documentation doesn't mention them, and its public comments on them date from 2021–2023, so re-check that row before publishing.
 
@@ -17,7 +17,7 @@ One of Kavya's yoga students uses a screen reader. Every page on Kavya's site st
 ## Core concept
 **Plain version:** Lesson 2.4 labelled small pieces of text as headings and lists. This lesson labels the big blocks of a page: the top, the menu, the main content, the sidebar and the bottom. A `<div>` says nothing about what's inside it. A `<nav>` says "these are the main links". **Semantic** just means "to do with meaning".
 
-**Analogy:** think of a newspaper page. You know the masthead, the contents strip, the main story, the side column and the small print at a glance, because each one has its place. A page of `<div>`s is that newspaper with all the layout removed, so a reader has to work out what's what line by line.
+**Analogy:** think of a newspaper page. You know the title at the top, the contents strip, the main story, the side column and the small print at a glance, because each one has its place. A page of `<div>`s is that newspaper with all the layout removed, so a reader has to work out what's what line by line.
 
 **Precise definition:** a **semantic element** gives its content a role or meaning (MDN). Some of these elements create **landmarks**, which let screen readers "provide keyboard navigation to important sections of a page" (W3C).
 
@@ -25,14 +25,16 @@ One of Kavya's yoga students uses a screen reader. Every page on Kavya's site st
 
 | Element | What it's for | Screen readers call it | Good to know |
 |---|---|---|---|
-| `<header>` | "Introductory content", such as the logo and menu | banner, when it's the page's header | Inside `<article>`, `<section>` or `<main>`, it's no longer a landmark |
+| `<header>` | Content that's "introductory", such as the logo and menu | banner, when it's the page's header | Inside `<article>`, `<section>` or `<main>`, it's no longer a landmark |
 | `<nav>` | A "major block of navigation links" | navigation | "It's not necessary for all links to be contained in a `<nav>`" |
-| `<main>` | "The dominant content" of the page | main | "A document mustn't have more than one" visible `<main>`. Leave out repeated items such as sidebars and site logos |
-| `<article>` | "A self-contained composition": a blog post, a product card, a comment | Not a landmark | Should have a heading. Ask: would this make sense on its own, somewhere else? |
+| `<main>` | The page's "dominant content" | main | "A document mustn't have more than one" visible `<main>`. Leave out repeated items such as sidebars and site logos |
+| `<article>` | A "self-contained composition": a blog post, a product card, a comment | Not a landmark | Should have a heading. Ask: would this make sense on its own, somewhere else? |
 | `<section>` | A themed part of a page, with a heading | region, but only if it has a label | "If you are only using the element as a styling wrapper, use a `<div>` instead" |
 | `<aside>` | Content "only indirectly related" to the main content, such as a sidebar | complementary | Not for content the page needs |
 | `<footer>` | Closing information: author, copyright, related links | contentinfo, when it's the page's footer | Inside `<article>` or `<section>`, it's no longer a landmark |
-| `<div>` | "The generic container" | Nothing | Use it "only when no other semantic element … is appropriate". It's still the right tool for styling |
+| `<div>` | A "generic container" | Nothing | Use it "only when no other semantic element … is appropriate". It's still the right tool for styling |
+
+There's also a newer element, `<search>`, for search forms. It creates a search landmark.
 
 A typical blog post page looks like this:
 
@@ -51,8 +53,10 @@ body
 
 Three rules catch most mistakes:
 1. **Use one `<main>`** that holds what's unique to this page.
-2. **Label a `<nav>` if there's more than one.** "If a page includes more than one `navigation` landmark, each should have a unique label." Use `aria-label`: `<nav aria-label="Main">`. Don't put "navigation" in the label, or a screen reader says "Main navigation navigation".
+2. **Label a `<nav>` if there's more than one.** "If a page includes more than one `navigation` landmark, each should have a unique label." Use `aria-label`, a name that screen readers read out but the page doesn't show: `<nav aria-label="Main">`. Don't put "navigation" in the label, or a screen reader says "Main navigation navigation".
 3. **`<section>` doesn't change heading levels.** Old tutorials say each section can start again with an `<h1>`. It can't: headings "have a heading level given by the number in their name" (WHATWG). Keep the outline from Lesson 2.4.
+
+`<section>` is optional. Headings already divide an article, so plain `<h2>`s with no `<section>` are fine too. This lesson uses it so you can practise.
 
 ### What this does for search and for people
 
@@ -61,9 +65,9 @@ Three rules catch most mistakes:
 | Semantic elements help screen reader users | **Documented** | Landmarks give "keyboard navigation to important sections of a page" |
 | Google's documentation recommends these elements | **Not in Google's docs** | We checked the Starter Guide, the helpful content guide and the pages on title links and snippets, and none of them mention `<article>`, `<main>` or `<nav>`. The closest line is "Google Search can rarely depend on semantic meanings hidden in the HTML specification" |
 | Semantic elements boost your rankings | **No, by Google's public comments** | John Mueller: "It's not a ranking factor, but it can help our systems to understand your content better." And "The `<article>` HTML element does not have any particular effect in Google Search." (2023, reported by a third party) |
-| Semantic HTML is a quality signal | **No, by Google's public comments** | Mueller: "I don't see it as a quality signal, but it definitely helps us to better understand pages." (2021, reported by a third party) |
+| Semantic HTML is a quality signal | **No, by Google's public comments** | Mueller: "I don't see it as a quality signal, but it definitely helps us to better understand pages" (2021, reported by a third party) |
 | `<main>` tells Google what your "main content" is | **Not in Google's docs** | Google defines main content as "any part of the web page that directly helps the page achieve its purpose". That's a description of the content, not of the HTML element |
-| Landmarks matter as much as headings | **False** | In WebAIM's 2026 survey, 28.3% of respondents use landmarks always or often, but only 3.4% start with them on a long page. For headings, it's 67.8% |
+| Screen reader users rely on landmarks as much as on headings | **Not in the survey data** | In WebAIM's 2026 survey, 28.3% of respondents use landmarks always or often, but only 3.4% start with them on a long page. For headings, it's 67.8% |
 
 **A source conflict worth noticing:** MDN's Semantics glossary page says search engines treat semantic markup's contents "as important keywords to influence the page's search rankings". MDN is an excellent HTML reference, but on how Google ranks pages, Google's own statements carry more weight. So don't sell semantic HTML to a client as a ranking boost. Use it because it's better for readers and easier to audit, and because Google says it can aid understanding.
 
@@ -96,7 +100,7 @@ flowchart TD
 ```
 **In words:** work down the questions and stop at the first "yes". The site logo or a page intro is a `<header>`. A major block of links is a `<nav>`. The wrapper around everything unique to this page is `<main>`. Inside it, something that makes sense on its own is an `<article>`, and something only indirectly related is an `<aside>`. Closing information is a `<footer>`. A themed part with its own heading is a `<section>`. Anything else, including a box that's only there for styling, stays a `<div>`.
 
-> **Under the hood: the accessibility tree.** Browsers build a second version of the page for assistive technology, and it lists each element's role and name. `<nav aria-label="Main">` appears there as navigation "Main". A `<div>` adds nothing to it. That's why you can't see semantic HTML by looking at a page: both versions can look identical. Web Development 101 M02.L03 shows how to view this tree in DevTools.
+> **Under the hood: the accessibility tree.** Browsers build an "accessibility tree" from your HTML for assistive technology, meaning tools such as screen readers. It records each element's role (what it is) and name. `<nav aria-label="Main">` appears there as navigation "Main". A plain `<div>` has no role to report. That's why you can't see semantic HTML by looking at a page: both versions can look identical. Web Development 101 M02.L03 shows how to view this tree in DevTools.
 
 ## Hands-on walkthrough
 You'll convert a page, apply the same structure to your article, test it, then map a live page. Nila Coffee's values are illustrative.
@@ -154,7 +158,7 @@ You'll convert a page, apply the same structure to your article, test it, then m
 
 2. Paste it into `https://validator.w3.org/nu/#textarea` and click **Check**.
    **Expected:** "Document checking completed. No errors or warnings to show." A page with no structure at all still passes. The checker can't tell you to use better elements.
-3. Using the flowchart, replace each `<div>` with the right element. Change each closing tag too, and delete the `class` attributes you no longer need. Make the logo's `<div>` a `<p>`, and give the menu the label `aria-label="Main"`.
+3. Using the flowchart, replace each `<div>` with the right element. Change each closing tag too, and delete the `class` attributes you no longer need. The logo's `<div>` sits inside the header, so make it a `<p>`, and give the menu the label `aria-label="Main"`.
 4. Compare your body with this one:
 
    ```html
@@ -272,7 +276,7 @@ Use `story.html` for these tests, and undo each change afterwards.
    | `<article>` around the post? | Yes |
    | `<aside>` for side content? | No: the sidebar is a `<div>` |
    | Page `<footer>`? | Yes |
-   | Sections with no heading? | 6, added by the page builder |
+   | Lots of `SECTION`s with no clear purpose? | Yes: 6, added by the page builder |
    | Comes from the theme or from the content? | Theme and page builder |
 
 5. Write one line under the table: what's the single most useful fix? For Nila Coffee, it's adding a `<main>`. Don't change anything yet. On most platforms, this structure comes from your theme, so your **SEO access** tab from Lesson 2.2 shows whether you can reach it.
@@ -282,7 +286,7 @@ Use `story.html` for these tests, and undo each change afterwards.
 ## When to use / when not to
 **Use semantic elements when** you're building or changing a page's structure, or briefing a developer or theme change. They cost nothing extra, and the page is easier to work with afterwards.
 
-**Don't use them when** you only need a box for styling: that's what `<div>` is for. And **don't rebuild a working site just for this.** Google says these elements aren't a ranking factor, so fix titles, content and indexing first. Treat a missing `<main>` as a useful accessibility fix, not an SEO emergency.
+**Don't use them when** you only need a box for styling: that's what `<div>` is for. And **don't rebuild a working site just for this.** Google's public comments say these elements aren't a ranking factor, so fix titles, content and indexing first. Treat a missing `<main>` as a useful accessibility fix, not an SEO emergency.
 
 **On a platform,** your theme usually sets these elements, and you choose only the content inside them. In WordPress, the Group block has a setting for which HTML element it uses, and the default is `<div>`.
 
@@ -303,7 +307,7 @@ Use `story.html` for these tests, and undo each change afterwards.
 - **Restarting at `<h1>` in each section.** Sections don't change heading levels.
 - **Putting the site header or footer inside `<main>`.** `<main>` holds only what's unique to this page.
 - **Using `<aside>` for key content.** If the page needs it, it belongs in the main content.
-- **Promising a client better rankings.** Google's comments say it isn't a ranking factor.
+- **Promising a client better rankings.** Google's public comments say it isn't a ranking factor.
 - **Thinking `<div>` is bad.** It's the right tool when no other element fits.
 
 ## Troubleshooting
@@ -372,7 +376,7 @@ The checker reports four of the seven (numbers 3, 4, 5 and 6). For number 4, it 
 - Semantic elements name the big blocks of a page: `header`, `nav`, `main`, `article`, `section`, `aside` and `footer`.
 - Use one `<main>`, label multiple `<nav>`s, and remember that `<section>` doesn't change heading levels.
 - `<div>` is fine when nothing else fits, and it's the right choice for styling boxes.
-- Semantic HTML helps screen reader users and can help machines understand a page, but Google says it isn't a ranking factor.
+- Semantic HTML helps screen reader users and can help machines understand a page, but Google's public comments say it isn't a ranking factor.
 - Headings still matter more than landmarks, so fix those first.
 
 ## Teach it back
@@ -395,7 +399,9 @@ Explain to a friend in 3 sentences what a landmark is, who it helps, and why you
 - MDN — `<main>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/main
 - MDN — `<aside>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/aside
 - MDN — `<div>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/div
+- MDN — `<search>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/search
 - MDN — Semantics: https://developer.mozilla.org/en-US/docs/Glossary/Semantics
+- MDN — Accessibility tree: https://developer.mozilla.org/en-US/docs/Glossary/Accessibility_tree
 - W3C WAI — Page regions: https://www.w3.org/WAI/tutorials/page-structure/regions/
 - W3C WAI — ARIA Authoring Practices, Landmark regions: https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/
 - WHATWG — HTML Standard, sections: https://html.spec.whatwg.org/multipage/sections.html
@@ -409,7 +415,7 @@ Explain to a friend in 3 sentences what a landmark is, who it helps, and why you
 - Search Engine Journal on John Mueller and the `<article>` element, 2023: https://www.searchenginejournal.com/seo-and-article-semantic-html-element/494237/
 - Search Engine Roundtable on John Mueller and semantic HTML as a quality signal, 2021: https://www.seroundtable.com/semantic-html-google-search-quality-signal-32464.html
 
-> ⚠️ **May change:** Google's position, which rests on public comments and not documentation; the WebAIM figures; the checker's messages; WordPress block settings.
+> ⚠️ **May change:** Google's position, which rests on public comments and not documentation; the WebAIM figures; the checker's messages; WordPress block settings. The HTML Standard has also added a `headingoffset` attribute that can shift heading levels, which isn't covered here.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
