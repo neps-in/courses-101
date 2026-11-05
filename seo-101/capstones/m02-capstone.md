@@ -48,7 +48,7 @@ On paper or in a document, write:
 - A meta description: a short, honest summary.
 - One H1, and an outline of at least three H2s, with at least one H3.
 
-Your content should be 300–600 words, with real detail from your own knowledge or the business. If AI helps you draft, check every fact yourself, and rewrite it in your own voice.
+Your content should be 300–600 words, with real detail from your own knowledge or the business. That's a practice size for this capstone, not an SEO rule: Google says it has no preferred word count. If AI helps you draft, check every fact yourself, and rewrite it in your own voice.
 
 ### 2. Build the head and structure (L03, L06, L10)
 Create `capstone.html` and `capstone.css` in your `seo-101-html` folder.
@@ -89,7 +89,7 @@ In `capstone.css`, use mainly element and class selectors, with no inline styles
 - Check that the same content appears on phone and desktop.
 
 ### 6. Run the checks
-Collect this evidence, and keep it with your page:
+Collect this evidence, with the date of each check, and keep it with your page:
 
 | Check | How | Evidence |
 |---|---|---|
@@ -103,7 +103,9 @@ Collect this evidence, and keep it with your page:
 A clean validator result isn't the finish line. **A validator checks rules, not quality**, so read your page as a visitor would too.
 
 ### 7. Break it and fix it: the planted page
-This page has **nine problems**, and **two things that look wrong but aren't**. First, list what you can find by reading it. Then run it through the checkers, and record which problems they report and which ones they don't. Then fix it.
+This page has **nine problems**, and **two things that look wrong but aren't**. First, list what you can find by reading it. Then run it through the checkers, and record which problems they report and which ones they don't. Then fix it, and write one line for each fix that says why it was needed.
+
+The page is cut down for this lab, so its missing `<header>` and `<footer>` and its CSS in a `<style>` element aren't among the nine.
 
 ```html
 <!DOCTYPE html>
@@ -184,6 +186,7 @@ Phone vs desktop counts: …
 What I chose, what I didn't, and why (for example, a table or a list, an embed or a link).
 
 ## 5. Break-it lab
+Each fix, and why it was needed: 1) … 2) … (all nine)
 Problems the checkers reported: …
 Problems only I could find: …
 What I left alone, and why: …
@@ -193,18 +196,21 @@ Two or three plain sentences on what this page does, with no jargon.
 ```
 
 ## Rubric
-Score each criterion. **Good** or better on all five completes the module.
+Score each criterion. **Good** or better on all five completes the module. The page must also be your own work on your own topic: a copied page doesn't pass.
 
 | Criterion | Excellent (4) | Good (3) | Needs work (2) | Missing (1) |
 |---|---|---|---|---|
-| **Head and structure** | Every required element is present, the title and description are specific, and the landmarks and outline are logical | All required elements are present, with one weak title, description or heading | A required element is missing, or levels are skipped | Little real structure |
-| **Content and links** | Useful, original content; a correct table; alt text that fits its context; clear anchor text | Useful content, with one small slip in the table, alt text or a link | Thin or copied content, or vague links such as "click here" | No table, image or links |
-| **Readability and phones** | Contrast measured and passing, comfortable text, works at 320px, and the same content on phone and desktop | Passes these checks, with one small layout problem | Fails contrast, scrolls sideways, or loses content on phones | No CSS, or no viewport tag |
-| **Evidence** | Every check has dated proof, and any warning that remains is explained | Nearly every check has proof | Claims made without proof, or AI output copied without checking | Little or no evidence |
-| **Judgement** | All nine problems are fixed, both traps are left alone, and the notes separate what checkers find from what people find | At least seven are fixed, and at least one trap is left alone | Fixes only what the checkers report | Lab not attempted |
+| **Valid HTML** | No errors in either checker, any warning is explained, every required head and layout element is present, and each check has dated proof | No errors, with one weak title or description, or one thin piece of proof | Errors remain, or a required element is missing | Not validated |
+| **Heading and link quality** | One H1, a logical outline, and anchor text that makes sense on its own for every link | One weak heading or link | Skipped levels, or vague links such as "click here" | No real outline, or no links |
+| **Accessibility basics** | A correct table, alt text that fits its context, measured contrast that passes, clear landmarks, and nothing hidden from people | One small slip in these | Contrast fails, or alt text or table headers are missing | Not considered |
+| **Mobile layout** | Works at 320px, with flexible images, a useful media query, and the same content on phone and desktop | Works, with one small layout problem | Scrolls sideways, or loses content on phones | No viewport tag |
+| **Explanation of each fix** | All nine are fixed and explained, both traps are left alone with reasons, and the notes separate what checkers find from what people find | At least seven are fixed and explained, and at least one trap is left alone | Fixes with no reasons, or only what the checkers report | Lab not attempted |
 
 ## Self-check before you submit
 - [ ] I've read the page out loud, as a visitor would.
+- [ ] Both checkers show no errors, and every check has a date.
+- [ ] I've measured contrast for body text and links.
+- [ ] The words are my own.
 - [ ] There's one H1, and no heading level is skipped.
 - [ ] Every image has suitable `alt` text, and I have the right to use it.
 - [ ] Every link makes sense on its own.

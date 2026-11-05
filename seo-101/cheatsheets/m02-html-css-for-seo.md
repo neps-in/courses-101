@@ -24,7 +24,7 @@ flowchart LR
 <meta name="description" content="A short, honest summary.">
 <link rel="stylesheet" href="style.css">
 ```
-- Google may rewrite your title and snippet. `<meta name="keywords">` is ignored.
+- Google may show a different title link or snippet. Google ignores `<meta name="keywords">`.
 - Never add `user-scalable=no`.
 
 ## Headings and text (L04)
