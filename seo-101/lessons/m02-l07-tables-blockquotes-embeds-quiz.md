@@ -20,7 +20,7 @@
 - d) In visible text outside the `<blockquote>`, such as a `<p>`
 
 **Answer:** d
-**Explanation:** The HTML Standard says attribution "must be placed outside the `blockquote` element". The `cite` attribute is "not for readers", and `<cite>` isn't for names.
+**Explanation:** The HTML Standard says attribution "must be placed outside the `blockquote` element". The `cite` attribute is "primarily intended for private use", and `<cite>` isn't for names.
 **Hint:** Is the credit part of what the person said?
 
 ### Q3. What does `<th scope="col">` tell a screen reader? *(O1 · recall)*
