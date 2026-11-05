@@ -1,7 +1,7 @@
 # M02.L04 Quiz — Formatting Text: Headings, Paragraphs, Lists, Bold & Italic
 
 > 8 questions · 3 recall, 3 scenario, 2 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Q1–Q7 are tagged with the objective they test (O1–O3) so a failed answer points at the exact concept.
-> Facts checked 2026-11-06 against MDN (heading elements, `<br>`, `<ol>`, `<strong>`, `<em>`), W3C WAI (headings) and Google Search Central (SEO Starter Guide, title links, valid page metadata).
+> Facts checked 2026-11-06 against MDN (heading elements, `<br>`, `<ol>`, `<strong>`, `<em>`), W3C WAI (headings) and Google Search Central (SEO Starter Guide, title links). The valid page metadata fact in Q8 was checked 2026-11-04 for Lesson 2.3.
 
 ### Q1. What should a page's `<h1>` do? *(O1 · recall)*
 - a) Hold the largest text on the page, whatever that text happens to say

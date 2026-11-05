@@ -1,10 +1,10 @@
 # M02.L04 — Formatting Text: Headings, Paragraphs, Lists, Bold & Italic
 > After this lesson you can structure an article with clear headings, pick the right text element by meaning, and audit the heading outline of any live page.
 
-**Time:** ~18 min reading + ~30 min hands-on · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L03 · **Remediate to:** M02.L03; Web Development 101 M02.L02 (text, links, images and media)
-**Verified against:** MDN pages for heading elements, `<p>`, `<br>`, `<ul>`, `<ol>`, `<strong>`, `<em>`, `<b>` and `<i>`; W3C WAI "Headings" tutorial; Google Search Central "SEO Starter Guide", "Title links", "Featured snippets" and "Creating helpful, reliable, people-first content"; WebAIM Screen Reader User Survey #10; Gutenberg source code (bold, italic and Heading block); the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The Console command in Part D uses standard browser features but wasn't run in a live browser for this draft.
+**Time:** ~18 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L03 · **Remediate to:** M02.L03; Web Development 101 M02.L02 (text, links, images and media)
+**Verified against:** MDN pages for heading elements, `<p>`, `<br>`, `<ul>`, `<ol>`, `<strong>`, `<em>`, `<b>` and `<i>`; W3C WAI "Headings" tutorial; Google Search Central "SEO Starter Guide", "Title links", "Featured snippets" and "Creating helpful, reliable, people-first content"; WebAIM Screen Reader User Survey #11; Blogger Help "Help people find your blog on search engines"; Gutenberg source code (bold, italic, Heading block and its transforms); the Twenty Twenty-Four and Twenty Twenty-Five `single.html` templates; the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The Console command in Part D uses standard browser features but wasn't run in a live browser for this draft.
 
-> ⚠️ **Freshness flag:** HTML's rules change slowly. Google's advice on headings can change, and the WebAIM figure comes from a survey run in 2023–24, so re-check both before publishing.
+> ⚠️ **Freshness flag:** HTML's rules change slowly. Google's advice on headings can change, and the WebAIM figure changes with each new survey (the latest ran in 2026), so re-check both before publishing.
 
 ## Learning objectives
 1. **Structure** an article with one H1 and headings in logical order. *(O1)*
@@ -19,7 +19,7 @@ Amara hands a client a 1,500-word blog post. In the editor it looks fine: she pi
 
 **Analogy:** think of a recipe book. The contents page lists chapters and the sections inside them, so you can find "Cold drinks" without reading every page. Headings are that contents page, built into your article. Ingredients are a list you can scan. The method is a numbered list, because the order matters. The notes are paragraphs.
 
-**Precise definition:** `<h1>` to `<h6>` are the six **heading** levels. Together, a page's headings form its **heading outline**: the same headings, read in order and indented by level. "The most important heading has the rank 1 (`<h1>`), the least important heading rank 6 (`<h6>`)" (W3C).
+**Precise definition:** `<h1>` to `<h6>` are the six **heading** levels. Together, a page's headings form its **heading outline**: the same headings, read in order and indented by level. "The most important heading has the rank 1 (`<h1>`), the least important heading rank 6 (`<h6>`)" (W3C). In W3C's wording, "rank" means heading level. It has nothing to do with search rankings.
 
 ### Heading rules
 A good outline looks like this:
@@ -54,6 +54,8 @@ h1  Cold Brew at Home
 | `<b>` | Drawing attention without extra importance, such as "product names in a review" | Headings or importance |
 | `<i>` | Text "set off from the normal prose", such as technical terms | Stress or decoration |
 
+**Paragraphs:** keep each one to a single idea. Long blocks are hard to read on a phone (observed practice), and Google's advice is to "break up long content".
+
 **The list test:** MDN's rule is to "try changing the order of the list items". If the meaning changes, use `<ol>`. If it doesn't, use `<ul>`.
 
 **The `<em>` test:** read the sentence aloud. "Cold brew *never* gets hot" means something a little different from the flat version. If stressing a word changes the meaning, use `<em>`.
@@ -71,11 +73,11 @@ Browsers show `<strong>` and `<b>` the same way, and `<em>` and `<i>` the same w
 | Two H1s will hurt your rankings | **Not in Google's docs** | "There's also no magical, ideal amount of headings a given page should have." Google staff have said the same in public comments. This course still uses one H1, because that's clearer for readers and easier to audit |
 | Your post needs a minimum word count | **Myth** | There's "no magical word count target, minimum or maximum" |
 | A list will win you a featured snippet | **Can't be forced** | Asked how to mark a page as a featured snippet, Google says "You can't." Its systems decide. Use a list when the content is a list |
-| Bold keywords help you rank | **Not in Google's docs** | None of the Google guides listed below mention it. In 2021, Google's John Mueller said bold text can help a little, if it's used sparingly (a public comment, as reported by a third party). Bold for readers, not for robots |
+| Bold keywords help you rank | **Not in Google's docs** | None of the Google guides listed below mention it. In 2021, Google's John Mueller said bold can help Google understand a page, but that it won't "make your site rocket up in rankings" (a public comment, reported by a third party). Bold for readers, not for robots |
 
-Why does Google care so little about the fine detail? It says: "The web in general is not valid HTML, so Google Search can rarely depend on semantic meanings hidden in the HTML specification."
+Why does Google care so little about the fine detail? Google says the following, where "semantic" simply means "to do with meaning": "The web in general is not valid HTML, so Google Search can rarely depend on semantic meanings hidden in the HTML specification."
 
-So the case for good structure is mainly about people. In WebAIM's 2023–24 survey, 71.6% of screen reader users said they'd first navigate through the headings to find information on a long page. The sample wasn't controlled, so treat that as a strong signal, not an exact figure. Skimming readers on phones use headings in a similar way.
+So the case for good structure is mainly about people. In WebAIM's 2026 survey of screen reader users, 67.8% of respondents said they'd first navigate through the headings to find information on a long page. It's still the most common method by far. Respondents chose to take part, so treat this as a strong signal, not an exact figure. Skimming readers on phones use headings in a similar way.
 
 ## How it works
 Use this flow each time you're unsure which element a piece of text should be.
@@ -96,13 +98,14 @@ flowchart TD
   K -- important --> L[strong]:::pink
   K -- stressed --> M[em]:::pink
   K -- only for looks --> N[Use CSS, Lesson 2.9]:::pink
+  K -- no --> O[Leave it as plain text]:::pink
 
   classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
   classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** if the text names the section below it, it's a heading: `<h1>` for the page's main topic, otherwise `<h2>` or one level below the section it sits in. If it's a group of similar items, it's a list: `<ol>` when changing the order changes the meaning, `<ul>` when it doesn't. Anything else is a paragraph. Inside a paragraph, important words get `<strong>` and stressed words get `<em>`. If you only want a different look, use CSS.
+**In words:** if the text names the section below it, it's a heading: `<h1>` for the page's main topic, otherwise `<h2>` or one level below the section it sits in. If it's a group of similar items, it's a list: `<ol>` when changing the order changes the meaning, `<ul>` when it doesn't. Anything else is a paragraph. Inside a paragraph, important words get `<strong>` and stressed words get `<em>`. If you only want a different look, use CSS. If nothing needs to stand out, leave the text plain.
 
 > **Under the hood: why `<h1>` looks big.** Size isn't part of what a heading means. Every browser has a built-in stylesheet that makes `<h1>` large and `<h6>` small, and your CSS can replace it. That's why "this heading looks too big" is never a reason to change its level. Change the size with CSS and keep the level.
 
@@ -184,15 +187,15 @@ You'll mark up a real article, test its headings, then audit a live page. Nila C
 **Part B — Check the outline (3 min)**
 1. Open `https://validator.w3.org/nu/#textarea` and tick **outline** under the text box.
 2. Paste in all your code and click **Check**.
-   **Expected:** "Document checking completed. No errors or warnings to show." Below that, the **Outline** section lists your headings, indented like the outline at the top of this lesson.
-   > 🖼️ **Image prompt:** W3C Nu HTML Checker results page (1280×720) for the cold brew article with "outline" ticked, showing the success message and the indented heading outline. Highlight the Outline section with a 3px #F9B2D7 outline; blur any personal details.
-   > **Alt text:** W3C checker results showing no errors and an indented outline of the article's headings.
+   **Expected:** "Document checking completed. No errors or warnings to show." Below that, the **Outline** section lists your headings in order, each with its level, such as `<h2> What you need`.
+   > 🖼️ **Image prompt:** W3C Nu HTML Checker results page (1280×720) for the cold brew article with "outline" ticked, showing the success message and the heading outline. Highlight the Outline section with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** W3C checker results showing no errors and an outline of the article's headings.
 
 **Part C — Break the headings on purpose (5 min)**
 1. Change `<h2>What you need</h2>` to `<h4>What you need</h4>`, then check the code again.
    **Expected:** one error: *The heading "h4" (with computed level 4) follows the heading "h1" (with computed level 1), skipping 2 heading levels.*
 2. Put that heading back to `<h2>`. Now change `<h2>How long it keeps</h2>` to `<h1>How long it keeps</h1>`, and check again.
-   **Expected:** no errors or warnings at all. The HTML rules allow a second `<h1>`, so the checker stays quiet. Only the outline shows the problem. A validator checks rules, not quality.
+   **Expected:** no errors or warnings at all. The HTML rules allow a second `<h1>`, so the checker stays quiet. Only the outline shows the problem, with `<h1> How long it keeps` near the end. A validator checks rules, not quality.
 3. Put it back to `<h2>` and save.
 
 **Part D — Audit a live page's outline (7 min)**
@@ -205,7 +208,7 @@ You'll mark up a real article, test its headings, then audit a live page. Nila C
    ```
 
    Typing is better than pasting here. Chrome may block pasting into the Console until you type `allow pasting`, because scammers trick people into pasting harmful code. Only run code you understand. This line reads the page and changes nothing.
-   **Expected:** one line per heading, such as `H1 Cold Brew at Home`, in page order.
+   **Expected:** one line per heading, such as `H1 Cold Brew at Home`, in page order, then the word `undefined`. That last word isn't an error: the command just has nothing more to return.
    > 🖼️ **Image prompt:** Chrome DevTools Console (1280×720) on a small blog post, listing each heading as a line such as "H1 Cold Brew at Home" and "H2 What you need". Highlight the list of headings with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** DevTools Console listing a page's headings in order, each with its level.
 
@@ -226,11 +229,13 @@ You'll mark up a real article, test its headings, then audit a live page. Nila C
 
 **Part E — Fix one heading (3 min)**
 Choose one heading used only for styling, or one bold line that should be a heading, in the *content* of a page you can edit.
-- **WordPress:** click the block, then change the level in the Heading block's toolbar. A new Heading block starts at H2. Turn a bold paragraph into a real heading with the block's **Transform** option.
-- **Blogger:** select the line and pick a heading style from the format menu in the post toolbar.
+- **WordPress:** click the block, then change the level in the Heading block's toolbar. A new Heading block starts at H2. Turn a bold paragraph into a real heading with the block's **Transform** option, then remove the bold, because it carries over. Click **Save** or **Update** when you're done.
+- **Blogger:** open the post, highlight the text, click the **Paragraph** menu and choose a heading type, then update the post.
 - **Other platforms and path C:** use your **SEO access** tab from Lesson 2.2 to find where headings are set, or write the fix as a recommendation.
 
-Then rerun Part D. **Expected:** the outline shows the fix. Headings from the theme, such as a sidebar title, usually need a theme setting or a developer, so note them in your tab and move on.
+Nothing to fix in the content? Note that in your tab and move on.
+
+Then reload the page and rerun Part D. **Expected:** the outline shows the fix. Headings from the theme, such as a sidebar title, usually need a theme setting or a developer, so note them in your tab and move on.
 
 **Expected output:** a valid, structured `article.html`, a **Heading check** tab for one page, and one fix made or recommended.
 
@@ -252,7 +257,7 @@ Then rerun Part D. **Expected:** the outline shows the fix. Headings from the th
 ## Common mistakes
 - **Picking a heading level for its size.** Choose the level by structure and resize with CSS.
 - **Bold paragraphs as headings.** They look like headings, but they aren't in the outline, so screen reader users can't jump to them.
-- **Adding a second H1 inside a post.** On most WordPress themes, the post title is already the H1. So start your content at H2, and check the source to be sure.
+- **Adding a second H1 inside a post.** WordPress's default themes make the post title the H1 (checked in Twenty Twenty-Four and Twenty Twenty-Five), and many others do the same (observed practice). So start your content at H2. Other themes may differ, so check with Part D.
 - **Using headings for promos and small print.** "Free shipping!" doesn't name a section, so it isn't a heading.
 - **Typing "1." by hand.** Use `<ol>`, so the numbers stay right when you add a step.
 - **Using `<br>` or empty paragraphs for spacing.** Use `<p>` for paragraphs. Spacing is a job for CSS.
@@ -265,6 +270,7 @@ Then rerun Part D. **Expected:** the outline shows the fix. Headings from the th
 | The whole page turned bold or huge | A closing tag is missing, such as `</strong>` or `</h2>` | Run the checker, and fix the first error |
 | The Console says `Uncaught SyntaxError` | The line was mistyped, often a quote or bracket | Retype it carefully, and use straight quotes |
 | The Console lists nothing | The page has no heading elements, or you're in the wrong tab | Reload, and check the page itself. If the list is still empty, that's a finding: note it |
+| Your fix doesn't show up | The update wasn't saved, or you're seeing a cached copy | Check that the post was updated, then reload. If the site uses a caching plugin, clear its cache |
 | The list shows headings you can't see | They sit in hidden menus or pop-ups | Note them and focus on the main content |
 | The checker shows no error, but the outline looks wrong | The rules allow it, as with a second `<h1>` | Trust the outline. Fix it by hand |
 | Your site name is the H1 on every page | Your theme marks up the site name that way | Note it in your tab. Theme issues come up again in Module 13 |
@@ -341,7 +347,8 @@ Explain to a friend in 3 sentences why a heading level shouldn't be chosen by si
 - Google Search Central — Title links: https://developers.google.com/search/docs/appearance/title-link
 - Google Search Central — Featured snippets: https://developers.google.com/search/docs/appearance/featured-snippets
 - Google Search Central — Creating helpful, reliable, people-first content: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
-- WebAIM — Screen Reader User Survey #10: https://webaim.org/projects/screenreadersurvey10/
+- WebAIM — Screen Reader User Survey #11: https://webaim.org/projects/screenreadersurvey11/
+- Blogger Help — Help people find your blog on search engines: https://support.google.com/blogger/answer/41373
 - Chrome for Developers — How DevTools helps to defend against self-XSS attacks: https://developer.chrome.com/blog/self-xss
 - W3C Nu HTML Checker: https://validator.w3.org/nu/
 
@@ -349,7 +356,7 @@ Explain to a friend in 3 sentences why a heading level shouldn't be chosen by si
 - Search Engine Journal on John Mueller and H1 headings, 2019: https://www.searchenginejournal.com/google-h1-headings-seo/328459/
 - Search Engine Roundtable on John Mueller and bold text, 2021: https://www.seroundtable.com/google-bold-seo-32418.html
 
-> ⚠️ **May change:** Google's Starter Guide wording on headings, the checker's messages, Chrome's paste warning, and WordPress editor labels. We found no WebAIM survey newer than #10; check for one before publishing.
+> ⚠️ **May change:** Google's Starter Guide wording on headings, the WebAIM figure, the checker's messages, Chrome's paste warning, and WordPress and Blogger editor labels.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
