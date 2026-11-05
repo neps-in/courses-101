@@ -8,7 +8,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 |--------|-------|------------------------|---------|
 | M01 Marketing & SEO Foundations | L1 | #1, #2 | 8 lessons + capstone |
 | M02 Introduction to Web Development (HTML & CSS for content creators) | L1 | #3 | 10 lessons + capstone |
-| M03 Keyword Research | L1 | #4, #5 | — |
+| M03 Keyword Research | L1 | #4, #5 | 5 lessons + capstone |
 | M04 On-Page SEO | L1 | #6 | — |
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | — | — |
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | — |
@@ -227,3 +227,68 @@ flowchart LR
 ### M02 Capstone — SEO-ready article page
 - **File:** `capstones/m02-capstone.md` + `cheatsheets/m02-html-css-for-seo.md`
 - Hand-code one Nila Coffee-style article page for your project topic: head with title and description, one H1, logical headings, a table, an image with alt text, internal and external links, semantic layout and responsive CSS. Validate it. **Break-it lab:** a planted page with two H1s, skipped heading levels, empty alt text and a missing viewport tag. Rubric: valid HTML, heading and link quality, accessibility basics, mobile layout, explanation of each fix.
+
+## M03 — Keyword Research (L1)
+
+**Goal:** find the words your audience really uses and decide which page should answer each one. · NN #4, #5
+**Lessons:** planned from the outline's topics. The live course has no lesson titles for this section, so there are no live post numbers yet.
+
+```mermaid
+flowchart LR
+  %% alt: M03 lesson path: read search intent, find keywords, check free data, choose realistic targets, build a keyword map, then the capstone.
+  L1[L01 Search<br/>intent]:::cream --> L2[L02 Finding<br/>keywords]:::sky
+  L2 --> L3[L03 Free<br/>keyword data]:::sky
+  L3 --> L4[L04 Realistic<br/>targets]:::blue
+  L4 --> L5[L05 Keyword maps &<br/>cannibalisation]:::blue
+  L5 --> C[M03 Capstone:<br/>keyword map]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start by learning to read what a search really wants, because every later choice depends on it. Then collect the words people use, check them against free data, and pick targets a new site can realistically reach. Finally, group them into topics and give each topic one page. The capstone turns all of this into a keyword map.
+
+### M03.L01 — Search Intent: Reading the Results Page Before You Write
+- **File:** `lessons/m03-l01-search-intent.md` · **Prereqs:** M01.L05, M01.L07 · **Remediate to:** M01.L05 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Classify** searches as informational, navigational, commercial or transactional.
+  2. **Read** a results page for intent signals: page types, formats and SERP features.
+  3. **Choose** the page type that fits a search's one primary intent.
+- **Hands-on idea:** run ten searches from your project site's topic, record what each results page rewards, and fill in a new **Intent check** tab.
+
+### M03.L02 — Finding Keywords: Seed Terms, Long-Tail Phrases and Real Questions
+- **File:** `lessons/m03-l02-finding-keywords.md` · **Prereqs:** M03.L01; M01.L01 · **Remediate to:** M03.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Build** a seed list from your audience, offer and customers' own words.
+  2. **Expand** it with autocomplete, People Also Ask, related searches and forums.
+  3. **Separate** real phrases people use from AI-suggested ones you can't confirm.
+- **Hands-on idea:** turn five seed terms into at least 40 phrases, note where each came from, and fill in a new **Keyword ideas** tab.
+
+### M03.L03 — Free Keyword Data: Volume, Difficulty and Seasonality
+- **File:** `lessons/m03-l03-free-keyword-data.md` · **Prereqs:** M03.L02; M01.L08 · **Remediate to:** M03.L02; M01.L08 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Use** free sources: Keyword Planner, Google Trends, Bing keyword research, Search Console queries and Ahrefs Webmaster Tools.
+  2. **Explain** what volume, difficulty and seasonality really measure, and why tools disagree.
+  3. **Check** a claimed search volume against a real source, and reject figures AI has invented.
+- **Hands-on idea:** look up ten phrases in at least two sources, compare a seasonal phrase in Trends, and fill in a new **Keyword data** tab. Sites with no Search Console data yet use the other sources.
+
+### M03.L04 — Realistic Targets: Choosing Keywords a New Site Can Win
+- **File:** `lessons/m03-l04-realistic-targets.md` · **Prereqs:** M03.L01, M03.L03 · **Remediate to:** M03.L03 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Judge** who ranks for a phrase and whether your site could compete with them.
+  2. **Compare** phrases by intent, business value and effort, not volume alone.
+  3. **Prioritise** a short list of first targets for your project site.
+- **Hands-on idea:** review the results for ten phrases, score them, and pick your first five targets in a new **Targets** tab.
+
+### M03.L05 — Keyword Maps: Grouping Topics and Spotting Cannibalisation
+- **File:** `lessons/m03-l05-keyword-maps-cannibalisation.md` · **Prereqs:** M03.L04 · **Remediate to:** M03.L01, M03.L04 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Group** keywords into topics, using results-page overlap to decide what belongs on one page.
+  2. **Build** a keyword map that gives each topic one page.
+  3. **Spot** cannibalisation with `site:` searches and Search Console, and choose a fix.
+- **Hands-on idea:** group your phrases, map your first topics to existing or new pages, and check your project site for pages competing on one topic in a new **Keyword map** tab.
+
+### M03 Capstone — Keyword map
+- **File:** `capstones/m03-capstone.md` + `cheatsheets/m03-keyword-research.md`
+- A keyword map for at least 15 topics: topic → keywords → intent → page type → existing or new page → priority. **Break-it lab:** two planted pages that cannibalise each other. Rubric: intent accuracy, data honesty, one page per topic, realistic priorities, explanation of the fix.
