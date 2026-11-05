@@ -197,8 +197,7 @@ You'll sort example searches, read one results page closely, then check ten sear
 **Stretch goal:** find a search in your tab where the results are clearly mixed. Write down the dominant interpretation, if there is one, and the intent you'd choose.
 
 ## Key takeaways
-- Search intent is what someone wants to get done.
-- The four types are informational, navigational, commercial and transactional, and local searches sit across them.
+- Search intent is what someone wants to get done: informational, navigational, commercial or transactional, with local searches across them.
 - The results page is better evidence than word clues or a tool's label.
 - Read page types, formats and features, and date every check.
 - Give each page one primary intent, and match the page type.
