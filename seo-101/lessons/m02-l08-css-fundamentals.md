@@ -2,7 +2,7 @@
 > After this lesson you can write simple CSS rules, choose where they should live, and use DevTools to find out why a page looks the way it does.
 
 **Time:** ~15 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L03 · **Remediate to:** Web Development 101 M03.L01 (selectors, cascade, box model)
-**Verified against:** MDN pages on CSS selectors, specificity, handling conflicts, CSS error handling, `<link>` and `<style>`, and its "What is CSS?" and "Getting started with CSS" guides; Chrome for Developers DevTools docs ("View and change CSS", "CSS features reference", "Open Chrome DevTools", plus its pages on CSS issues and local overrides); the WHATWG HTML Standard (`id`); Google Search Central "SEO Starter Guide", "Introduction to robots.txt", "Spam policies" and "Googlebot"; web.dev "Render-blocking CSS"; Gutenberg and WordPress source code (labels and stylesheet output), all on 2026-11-06. The planted CSS and Part A's stylesheet were run through the W3C CSS Validator, and the exercise's fixed result was confirmed with computed styles in jsdom. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft. Chrome's docs don't state that a reload clears ordinary edits: that's everyday behaviour, so check it at screenshot time.
+**Verified against:** MDN pages on CSS selectors, specificity, handling conflicts, CSS error handling, `<link>` and `<style>`, and its "What is CSS?" and "Getting started with CSS" guides; Chrome for Developers DevTools docs (CSS tutorial and reference, opening DevTools, CSS issues, local overrides); the WHATWG HTML Standard (`id`); Google Search Central "SEO Starter Guide", "Introduction to robots.txt", "Spam policies" and "Googlebot"; web.dev's article on render-blocking CSS; Gutenberg and WordPress source code (labels and stylesheet output), all on 2026-11-06. The planted CSS and Part A's stylesheet were run through the W3C CSS Validator, and the exercise's fixed result was confirmed with computed styles in jsdom. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft. Chrome's docs don't state that a reload clears ordinary edits: that's everyday behaviour, so check it at screenshot time.
 
 > ⚠️ **Freshness flag:** DevTools labels and WordPress menus move between versions. Google's file size limits can change, and web.dev's render-blocking article dates from 2014, though the behaviour it describes still applies.
 
@@ -355,10 +355,10 @@ Explain to a friend in 3 sentences why editing a page in DevTools doesn't change
 - MDN — CSS error handling: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Error_handling
 - MDN — `<link>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link
 - MDN — `<style>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style
-- Chrome for Developers — View and change CSS: https://developer.chrome.com/docs/devtools/css
-- Chrome for Developers — CSS features reference: https://developer.chrome.com/docs/devtools/css/reference
-- Chrome for Developers — Open Chrome DevTools: https://developer.chrome.com/docs/devtools/open
-- Chrome for Developers — Find invalid, overridden and other CSS: https://developer.chrome.com/docs/devtools/css/issues
+- Chrome for Developers — DevTools CSS tutorial: https://developer.chrome.com/docs/devtools/css
+- Chrome for Developers — DevTools CSS reference: https://developer.chrome.com/docs/devtools/css/reference
+- Chrome for Developers — Opening DevTools: https://developer.chrome.com/docs/devtools/open
+- Chrome for Developers — DevTools CSS issues: https://developer.chrome.com/docs/devtools/css/issues
 - Chrome for Developers — Local overrides: https://developer.chrome.com/docs/devtools/overrides
 - WHATWG — HTML Standard, `id`: https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute
 - Google Search Central — SEO Starter Guide: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
@@ -366,7 +366,7 @@ Explain to a friend in 3 sentences why editing a page in DevTools doesn't change
 - Google Search Central — Googlebot: https://developers.google.com/search/docs/crawling-indexing/googlebot
 - Google Search Central — Spam policies: https://developers.google.com/search/docs/essentials/spam-policies
 - W3C CSS Validator: https://jigsaw.w3.org/css-validator/
-- web.dev — Render-blocking CSS (2014): https://web.dev/articles/critical-rendering-path/render-blocking-css
+- web.dev — Render-blocking CSS article (2014): https://web.dev/articles/critical-rendering-path/render-blocking-css
 
 > ⚠️ **May change:** DevTools labels and layout; WordPress menu routes; Googlebot's file size limit.
 
