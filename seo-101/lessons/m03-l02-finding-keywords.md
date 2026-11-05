@@ -2,7 +2,7 @@
 > After this lesson you can start from what you know about your audience, grow it into a list of real phrases, and tell those apart from phrases an AI tool made up.
 
 **Time:** ~15 min reading + ~35 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M03.L01, M01.L01 · **Remediate to:** M03.L01
-**Verified against:** Google Search Help "How Google autocomplete predictions work" and "Performance report (Search results)"; Google's blog post "How Google autocomplete works in Search" (2018, so treat it as background); Google Search Central "Visual Elements gallery of Google Search", "SEO Starter Guide" and "Spam policies for Google web search", all on 2026-11-06. "Seed term" and "long-tail" are SEO terms, not Google's. Search techniques here are observed practice, labelled as such.
+**Verified against:** Google Search Help "How Google autocomplete predictions work" and "Performance report (Search results)"; Google Search Central "Visual Elements gallery of Google Search", "SEO Starter Guide" and "Spam policies for Google web search", all on 2026-11-06. "Seed term" and "long-tail" are SEO terms, not Google's. Search techniques here are observed practice, labelled as such.
 
 > ⚠️ **Freshness flag:** what autocomplete, People Also Ask and related searches show changes all the time. Date your list, and expect different phrases from the examples here.
 
@@ -33,7 +33,7 @@ Tomás's shop site calls a part a "ceramic disc cartridge". That's the right nam
 Start with what you know, before you open any tool.
 - **Your audience:** the snapshot from Lesson 1.1, and the problems those people have.
 - **Your offer:** what you sell, teach or write about, in plain words.
-- **Customers' own words:** emails, reviews, phone calls, questions in class or at the counter. This is the best source, because no tool can give it to you. Copy the words, and leave out names and personal details.
+- **Customers' own words:** emails, reviews, phone calls, questions in class or at the counter. This is the best source *(observed practice)*, because no tool can give it to you. Copy the words, and leave out names and personal details.
 
 ### Where to expand them
 
@@ -45,7 +45,7 @@ Start with what you know, before you open any tool.
 | **Forums and communities** | Whole questions in people's own words | Not a Google source. It's evidence of how people talk, not proof of what they search *(observed practice)* |
 | **Search Console** | Searches that already bring your site visits | The Queries view groups "your data by the search query users typed". Lesson 3.3 covers this |
 
-Google even recommends this habit: "it can be helpful to pay attention to the related search queries when you're thinking about topics you could write about for your site."
+Google suggests this habit too: "it can be helpful to pay attention to the related search queries when you're thinking about topics you could write about for your site."
 
 ### Real phrases and AI phrases
 AI tools are great at producing plausible phrases. Plausible isn't the same as real. So every phrase in your list gets a status:
@@ -88,7 +88,7 @@ flowchart TD
 ```
 **In words:** write seeds from your audience, offer and customers. Expand them with autocomplete, People Also Ask and related searches, then add people's words from forums. Add AI ideas if you want them. If you've seen a phrase in a real source, mark it Confirmed and note where. If you haven't, mark it Unconfirmed and don't rely on it. Then add each phrase's likely intent.
 
-> **Under the hood: why you use a private window.** Google says that predictions are "related to your location and previous searches". A private window takes your search history out of it, but your rough location still counts, so your list will suit your area. That's useful for a local business. If your audience lives elsewhere, ask someone there to check a few phrases.
+> **Under the hood: why you use a private window.** Google says that predictions consider "The location a query is coming from" and "Your past searches". A private window keeps your past searches out of it, but your rough location still counts *(observed practice)*, so your list will suit your area. That's useful for a local business. If your audience lives elsewhere, ask someone there to check a few phrases.
 
 ## Hands-on walkthrough
 You'll turn five seed terms into at least 40 phrases, and record where each one came from. You need a browser and your "SEO 101 project" sheet. Nila Coffee's values are illustrative.
@@ -96,7 +96,7 @@ You'll turn five seed terms into at least 40 phrases, and record where each one 
 **Before you start: which steps apply to you?**
 - **Path A (your own site):** do every part, and use your real customers' words.
 - **Path B (Blogger practice site):** you won't have customers yet, so in Part A use forums and your own questions.
-- **Path C (client site):** ask the client for common customer questions. Don't use their accounts, and keep any customer details out of your sheet.
+- **Path C (client site):** ask the client for common customer questions. Don't use their accounts, so skip step 4 of Part D, and keep any customer details out of your sheet.
 
 **Part A — Write five seeds (6 min)**
 1. Add a tab called **Keyword ideas** to your "SEO 101 project" sheet, with these columns:
@@ -109,7 +109,7 @@ You'll turn five seed terms into at least 40 phrases, and record where each one 
 
    **Expected:** Nila Coffee's five might be "cold brew", "coffee beans", "french press", "coffee subscription" and "bitter coffee". Keep them short: one to three words.
 
-**Part B — Autocomplete (8 min)**
+**Part B — Autocomplete (7 min)**
 1. Open a private window, and go to Google. Type your first seed, and stop before you press Enter.
 2. Add each prediction that fits your audience to your tab, with "Autocomplete" as the source.
    > 🖼️ **Image prompt:** Google's search box (900×500) with "cold brew" typed in and the list of predictions open underneath. Highlight the list of predictions with a 3px #F9B2D7 outline; blur any personal details.
@@ -119,15 +119,15 @@ You'll turn five seed terms into at least 40 phrases, and record where each one 
    **Expected:** different predictions each time, such as "cold brew vs iced coffee". Skip anything that isn't for your audience, such as a brand you don't sell.
 4. Repeat with your other seeds, until you have about 20 phrases.
 
-**Part C — People Also Ask and related searches (8 min)**
-1. Search your first seed. Find **People Also Ask**, and open two or three questions. Opening one often adds more questions below.
+**Part C — People Also Ask and related searches (7 min)**
+1. Search your first seed. Find **People Also Ask**, and open two or three questions. Opening one often adds more questions below *(observed)*.
 2. Add the useful questions, with "People Also Ask" as the source.
 3. Scroll to the related searches near the bottom of the page, and add what fits.
 
    **Expected:** not every search shows both. Move on if yours doesn't.
 4. Repeat with two more seeds.
 
-**Part D — People's own words (6 min)**
+**Part D — People's own words (5 min)**
 1. Find where your audience asks questions in public: Reddit, Quora, a public Facebook group, or the comments on a YouTube video.
 2. To search one site, use the `site:` operator from Lesson 1.5, such as `site:reddit.com cold brew bitter`.
 3. Read a few post titles. Add any wording you hadn't found, with the site as the source. Read only: don't post, and leave out people's names.
@@ -135,9 +135,9 @@ You'll turn five seed terms into at least 40 phrases, and record where each one 
    **Expected:** longer, messier phrases, such as "cold brew tastes like nothing". Keep them as people wrote them.
 4. If you have Search Console access to your project site, open **Performance**, and glance at the queries for phrases you've missed. Otherwise skip this step, and Lesson 3.3 will come back to it.
 
-**Part E — Test some AI ideas (5 min)**
+**Part E — Test some AI ideas (8 min)**
 1. Ask an AI tool for ten more phrases, using the prompt in "Use AI for this" below. Add them with "AI" as the source, and "Unconfirmed" as the status.
-2. Test each one. Type it into Google in your private window, and see if autocomplete predicts it. Then look through People Also Ask, and search for those words in a forum.
+2. Test each one. Type it into Google in your private window, and see if autocomplete predicts it. Then search it in quotes, as you did in Lesson 1.5, to find those exact words on public pages. A forum post or a question on a real page counts. An SEO article that lists keywords doesn't.
 3. If you find it, change the status to Confirmed, and change the source to where you saw it. If you don't, leave it Unconfirmed.
 
    **Expected:** some will be confirmed, and some won't. Note how many of each, because it's a useful warning about how far to trust AI's lists.
@@ -230,7 +230,6 @@ Explain to a friend in 3 sentences why a phrase from an AI tool isn't the same a
 ## Further reading
 *All checked 2026-11-06.*
 - Google Search Help — How Google autocomplete predictions work: https://support.google.com/websearch/answer/7368877
-- Google blog — How Google autocomplete works in Search (2018): https://blog.google/products/search/how-google-autocomplete-works-search/
 - Google Search Central — Visual Elements gallery of Google Search: https://developers.google.com/search/docs/appearance/visual-elements-gallery
 - Google Search Central — SEO Starter Guide: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 - Google Search Central — Spam policies for Google web search: https://developers.google.com/search/docs/essentials/spam-policies

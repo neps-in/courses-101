@@ -23,15 +23,15 @@
 **Explanation:** Google says predictions "reflect real searches that have been done on Google". It also considers language, location, trends and your past searches.
 **Hint:** Where does Google say that predictions come from?
 
-### Q3. Which is the best example of a long-tail phrase? *(O1 · recall)*
-- a) "coffee"
-- b) "cold brew ratio for 1 litre jar"
-- c) "coffee beans online shop india buy"
-- d) "nila coffee"
+### Q3. Which statement about long-tail phrases is true? *(O1 · recall)*
+- a) They must always be at least five words long
+- b) Each gets few searches, but the need is clearer
+- c) They're the phrases with the most monthly searches
+- d) Google labels them for you inside Search Console
 
 **Answer:** b
-**Explanation:** It's specific, with a clear need, and few people will search exactly that. Option c is long too, but it's a jumble of words, not something a person would really ask.
-**Hint:** Which one shows exactly what the person needs?
+**Explanation:** "Long-tail" is about how few people search a phrase, not how many words it has. Long phrases are usually long-tail, so length is only a handy clue.
+**Hint:** What does "long-tail" really describe?
 
 ### Q4. Kavya's site says "hatha sessions", but her students ask about "gentle yoga for beginners". What should her seed list include? *(O1 · scenario)*
 - a) Only "hatha sessions", as it's the correct term for the class
@@ -50,7 +50,7 @@
 - d) Stop using autocomplete, as it's only for personal use
 
 **Answer:** b
-**Explanation:** Google considers "Your past searches" as well as location and trends. A private window takes her history out of it.
+**Explanation:** Google considers "Your past searches" as well as location and trends. A private window keeps her past searches out of it, in practice.
 **Hint:** What makes her results different from a stranger's?
 
 ### Q6. Tomás gets 20 phrases from an AI tool. He can find 14 of them, and six appear nowhere. What should he do with the six? *(O3 · scenario)*
