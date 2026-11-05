@@ -7,7 +7,7 @@
 - a) It adds a small note below each column in the table
 - b) It works like a heading, saying what the table is about
 - c) It tells the browser how wide each of the columns should be
-- d) It hides the table from search engines until a visitor clicks
+- d) It lists the sources that the table's data was taken from
 
 **Answer:** b
 **Explanation:** W3C says a caption "functions like a heading for a table". It helps people decide whether to read the table. It must come first inside `<table>`.
@@ -47,7 +47,7 @@
 - a) Keep only those that help, then add titles and `loading="lazy"`
 - b) Keep all four, and move them to the top of the page to load first
 - c) Replace all four with screenshots that link to a contact form
-- d) Copy each of the videos' full transcripts into `alt` attributes
+- d) Add `loading="lazy"` to all four, whether they help or not
 
 **Answer:** a
 **Explanation:** Every embed adds weight, so each must earn its place. web.dev says lazy-loading offscreen iframes saves data and speeds up the rest of the page. Titles help screen reader users.
@@ -57,7 +57,7 @@
 - a) A `<q>` element around the `<blockquote>`, to add the quote marks
 - b) Nothing, because browsers turn the `cite` value into a visible link
 - c) A visible source, as the `cite` attribute isn't meant for readers
-- d) A `rel="sponsored"` attribute, because the source is a company
+- d) A `<cite>` element around the author's name, inside the quote
 
 **Answer:** c
 **Explanation:** The HTML Standard says the `cite` attribute is "primarily intended for private use … not for readers". So show the source in visible text, with a link if you like.

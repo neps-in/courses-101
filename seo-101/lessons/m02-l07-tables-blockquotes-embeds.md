@@ -2,7 +2,7 @@
 > After this lesson you can build an accessible data table, quote a source properly, and decide whether an embed is worth what it costs in speed, privacy and readable text.
 
 **Time:** ~15 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L06 · **Remediate to:** M02.L05; Web Development 101 M02.L02 (text, links, images and media)
-**Verified against:** MDN pages for `<table>`, `<caption>`, `<th>`, `<thead>`, `<tbody>`, `<blockquote>`, `<q>`, `<cite>` and `<iframe>`; W3C WAI "Tables" tutorials; the WHATWG HTML Standard (`blockquote`, `cite`); Google Search Central "Video SEO best practices", "Spam policies" and "Creating helpful, reliable, people-first content"; web.dev "Best practices for using third-party embeds" and "It's time to lazy-load offscreen iframes!"; YouTube Help "Embed videos & playlists"; YouTube API Services "Required Minimum Functionality"; the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. Embeds weren't tested in a live browser for this draft.
+**Verified against:** MDN pages for `<table>`, `<caption>`, `<th>`, `<thead>`, `<tbody>`, `<blockquote>`, `<q>`, `<cite>` and `<iframe>`; W3C WAI "Tables" tutorials; the WHATWG HTML Standard (`blockquote`, `cite`); Google Search Central "Video SEO best practices", "Spam policies" and "Creating helpful, reliable, people-first content"; web.dev articles on third-party embeds and lazy-loading iframes; WordPress documentation "Embeds" and Gutenberg source code (Table and Quote blocks); YouTube Help "Embed videos & playlists"; YouTube API Services "Required Minimum Functionality"; the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. Embeds weren't tested in a live browser for this draft.
 
 > ⚠️ **Freshness flag:** embed codes, privacy options and size figures change often. YouTube's embed rules and web.dev's numbers are the first things to re-check before publishing.
 
@@ -55,7 +55,7 @@ A table "represents tabular data", meaning information in rows and columns (MDN)
 | Element | What it does |
 |---|---|
 | `<table>` | Wraps the whole table |
-| `<caption>` | "Functions like a heading for a table" (W3C). It must come first inside `<table>` |
+| `<caption>` | It "functions like a heading for a table" (W3C), and it must come first inside `<table>` |
 | `<thead>`, `<tbody>` | Group the header rows and the data rows |
 | `<tr>` | One table row |
 | `<th>` | A header cell. `scope="col"` means it heads a column, and `scope="row"` means it heads a row |
@@ -76,10 +76,10 @@ Why bother? "Header cells must be marked up with `<th>`, and data cells with `<t
 
 | Element | What it's for | Watch out for |
 |---|---|---|
-| `<blockquote>` | "An extended quotation" | Don't use it just to indent your own text. CSS does that |
-| `<q>` | "A short inline quotation". Browsers add the quote marks | Don't type your own marks as well |
-| `cite` attribute | The source's URL | It's "not for readers" (WHATWG), so you still need a visible source |
-| `<cite>` element | "The title of a creative work" | It "must … not be used to mark up people's names" (WHATWG) |
+| `<blockquote>` | Marks "an extended quotation" | Don't use it just to indent your own text. CSS does that |
+| `<q>` | Marks "a short inline quotation". Most browsers add the quote marks | Don't type your own marks as well |
+| `cite` attribute | The source's URL | It's primarily "not for readers" (WHATWG), so you still need a visible source |
+| `<cite>` element | Marks "the title of a creative work" | It "must … not be used to mark up people's names" (WHATWG) |
 
 Put the credit outside: "Attribution for the quotation, if any, must be placed outside the `blockquote` element" (WHATWG).
 
@@ -89,7 +89,7 @@ Most embeds use an `<iframe>`, which puts "another document into the current one
 | Cost | What the source says | What to do |
 |---|---|---|
 | **Speed** | "Many popular embeds include over 100 KB of JavaScript, sometimes even going up to 2 MB" (web.dev). Every `<iframe>` "requires increased memory and other computing resources" (MDN) | Use few embeds. Add `loading="lazy"` to any that start below the first screen. On YouTube, web.dev says this saves around 500 KB on first load |
-| **Privacy** | Embedded content comes from another company's servers. YouTube's Privacy Enhanced Mode "prevents the use of views of embedded YouTube content from influencing the viewer's browsing experience on YouTube" | Use `youtube-nocookie.com`, but don't call it tracking-free: YouTube Help doesn't say that. Mention embeds in your privacy policy |
+| **Privacy** | Embedded content comes from another company's servers. YouTube's Privacy Enhanced Mode "prevents the use of views of embedded YouTube content from influencing the viewer's browsing experience on YouTube" | Use `youtube-nocookie.com`, but don't call it tracking-free: YouTube Help doesn't say that. It's also good practice to mention embeds in your privacy policy |
 | **Readable text** | What's said in a video isn't in your HTML | Put the key information in your own text |
 | **Accessibility** | Without a `title`, people using screen readers "have to navigate into the `<iframe>` to determine what its embedded content is" (MDN) | Give each `<iframe>` a `title` that describes it |
 | **Control** | The content lives on someone else's site | Accept that it can change or disappear, and keep key facts in your text |
@@ -100,7 +100,7 @@ Most embeds use an `<iframe>`, which puts "another document into the current one
 |---|---|---|
 | Google can find embedded videos | **Documented** | "Google can find videos referenced by a `<video>`, `<embed>`, `<iframe>`, or `<object>` element." |
 | Embedding a video gets your page into video results | **Not usually** | "The video must be embedded on a watch page", meaning a page whose "main purpose is to show users a single video". A blog post with a video isn't one, though it "can still be eligible to appear as a text result" |
-| Google may show the YouTube page and not yours | **Documented** | "Google may index the video both on your web page and on the third-party platform's equivalent page." |
+| Your embedded video may also be indexed on YouTube's own page | **Documented** | "Google may index the video both on your web page and on the third-party platform's equivalent page." |
 | Embedded text counts as your page's content | **Not in Google's docs** | We found no page that says how text inside an `<iframe>` is credited. Don't rely on it: write the important words on your own page |
 | Tables win featured snippets | **Not in Google's docs** | Google's featured snippet page doesn't mention tables, and you can't mark a page for one. Use a table when the content is a table |
 | Quoting a source is enough | **False** | "Attribution or giving credit to other sources doesn't replace the need for original effort." |
@@ -136,8 +136,7 @@ flowchart TD
 You'll add a table, a quotation and a video to your article, then see which text is really in your page. Nila Coffee's values are illustrative.
 
 **Before you start: which steps apply to you?**
-- **All paths:** do Parts A, B and C. They use `article.html` and don't touch any website.
-- **All paths:** do Part D too. It only reads public pages, so path C needs no logins. If your project site has no embeds, use any public page that has one.
+- **All paths:** do all four parts. Parts A, B and C use `article.html` and don't touch any website. Part D only reads public pages, so path C needs no logins. If your project site has no embeds, use any public page that has one.
 
 **Part A — Add a table (10 min)**
 1. Open `article.html`. Inside `<article>`, after the "How to make it" section, add a new section:
@@ -185,7 +184,7 @@ You'll add a table, a quotation and a video to your article, then see which text
 
    Replace `VIDEO_ID` with your video's own code, as YouTube gave it to you.
 3. Save, reload and check the code.
-   **Expected:** no errors or warnings from the checker. The player appears, but **it may show an error such as "Error 153" instead of playing.** That's likely here, and it isn't your fault. YouTube says embedded players "must provide identification through the `HTTP Referer` request header", and a file opened from your computer may not send one. Your code is fine, and it should play on a real website.
+   **Expected:** no errors or warnings from the checker. The player appears, but **it may show an error such as "Error 153" instead of playing.** That's likely here, and it isn't your fault. YouTube says embedded players "must provide identification through the `HTTP Referer` request header", which is a note telling YouTube which site the player is on. A file opened from your computer may not send one. Your code is fine, and it should play on a real website.
 
 **Part D — See what's really in your page (7 min)**
 1. Open View Source for `article.html` (**Ctrl+U**, Mac: **Cmd+Option+U**).
@@ -222,9 +221,9 @@ You'll add a table, a quotation and a video to your article, then see which text
 
 **Embed when** the original really adds something, such as a demonstration that's hard to describe. **Link instead when** it's only "for more information". Tomás's page on fitting a door hinge earns a video. A "follow us" feed on every page probably doesn't.
 
-**On a platform,** you usually don't paste code. WordPress has a Table block, a Quote block and embed blocks, so check the result in View Source.
+**On a platform,** you usually don't paste code. WordPress has a Table block, a Quote block and an Embed block, where you paste a video's address (public or unlisted videos only). Its output differs from this lesson in two ways. The Table block writes its caption as `<figcaption>` in a `<figure>`, not `<caption>`. The Quote block puts the credit inside the `<blockquote>`, in a `<cite>`. That's how WordPress works, and it's fine to leave it, so don't hand-edit it. Do turn on the header section in the Table block, and fill in the credit in the Quote block.
 
-**The trade-off:** an embed can make a page more useful, but it adds weight and hands part of your page to another company. There's a catch with speed tricks too. web.dev suggests a "facade", a static picture that loads the real player on a click, which saves the most. But Google says "Don't rely on user actions (such as swiping, clicking, or typing) to load the video". So if a video matters for search, use `loading="lazy"` and not a click to load.
+**The trade-off:** an embed can make a page more useful, but it adds weight and hands part of your page to another company. There's a catch with speed tricks too. web.dev suggests a "facade", a static picture that loads the real player on a click and is "much less taxing on the page load". But Google says "Don't rely on user actions (such as swiping, clicking, or typing) to load the video". So if a video matters for search, use `loading="lazy"` and not a click to load.
 
 ## Use AI for this
 **Example prompt:**
@@ -252,7 +251,7 @@ You'll add a table, a quotation and a video to your article, then see which text
 | The video shows "Error 153" | YouTube got no `Referer`. Likely on a local file. On a live site, a referrer setting may block it | On a local file, ignore it. On a live site, keep `referrerpolicy="strict-origin-when-cross-origin"` |
 | The video says it's unavailable | Its owner doesn't allow embedding, or the ID is wrong | Choose another video, or check the ID |
 | Cells appear in the wrong columns | A row has too many or too few cells | Count the cells in each row, and check for the checker's warning |
-| The caption appears below or the checker complains | `<caption>` isn't the first thing in `<table>` | Move it directly after `<table>` |
+| The checker reports a problem with `<caption>` | It isn't the first thing in `<table>` | Move it directly after `<table>` |
 | A table spills off a phone screen | It's too wide for the screen | Lesson 2.10 covers phones. Fewer columns help too |
 | A social post shows only plain text | The platform's script didn't load | Check that its `<script>` line was pasted too. Some browsers and blockers stop these scripts |
 | The page feels slow | Too many embeds | Remove what doesn't earn its place, and lazy-load the rest. Module 12 covers speed |
@@ -337,13 +336,14 @@ Explain to a friend in 3 sentences why a YouTube video on a blog post doesn't ad
 - Google Search Central — Spam policies (scraping): https://developers.google.com/search/docs/essentials/spam-policies
 - Google Search Central — Creating helpful, reliable, people-first content: https://developers.google.com/search/docs/fundamentals/creating-helpful-content
 - Google Search Central — Featured snippets: https://developers.google.com/search/docs/appearance/featured-snippets
-- web.dev — Best practices for using third-party embeds: https://web.dev/articles/embed-best-practices
+- web.dev — Third-party embeds: https://web.dev/articles/embed-best-practices
 - web.dev — Lazy-loading iframes: https://web.dev/articles/iframe-lazy-loading
 - YouTube Help — Embed videos & playlists: https://support.google.com/youtube/answer/171780
 - YouTube API Services — Required Minimum Functionality: https://developers.google.com/youtube/terms/required-minimum-functionality
+- WordPress documentation — Embeds: https://wordpress.org/documentation/article/embeds/
 - W3C Nu HTML Checker: https://validator.w3.org/nu/
 
-> ⚠️ **May change:** YouTube's embed code and rules; web.dev's size figures, which show no date; Google's video indexing criteria; social platforms' embed codes. We couldn't read X's help pages, so nothing here is specific to X.
+> ⚠️ **May change:** YouTube's embed code and rules; web.dev's size figures, which show no date; Google's video indexing criteria; social platforms' embed codes; how WordPress blocks write their HTML. We couldn't read X's help pages, so nothing here is specific to X.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
