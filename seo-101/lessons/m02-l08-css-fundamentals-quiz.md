@@ -1,7 +1,7 @@
 # M02.L08 Quiz — CSS Fundamentals: Selectors, Properties & Ways to Add CSS
 
 > 8 questions · 3 recall, 3 scenario, 2 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Q1–Q7 are tagged with the objective they test (O1–O3) so a failed answer points at the exact concept.
-> Facts checked 2026-11-06 against MDN (selectors, specificity, handling conflicts, getting started), Chrome for Developers (DevTools CSS reference) and Google Search Central (robots.txt, SEO Starter Guide). Q8's `<cite>` rule was checked for Lesson 2.7.
+> Facts checked 2026-11-06 against MDN (selectors, specificity, handling conflicts, getting started), and Chrome for Developers (DevTools CSS reference, CSS issues). Q8's `<cite>` rule was checked for Lesson 2.7.
 
 ### Q1. In `h1 { color: brown; }`, which part is the property? *(O1 · recall)*
 - a) `color`, the thing that you're changing on the heading
@@ -63,15 +63,15 @@
 **Explanation:** DevTools changes the page in his browser, not the files on the server. To keep the fix, he needs to add it to the real stylesheet or brief his developer.
 **Hint:** What happened in step 7 of Part D?
 
-### Q7. Spot the error: "Our developer blocked `/assets/css/` in robots.txt to save crawl time. CSS is only decoration, so Google doesn't need it." *(O3 · spot the error)*
-- a) robots.txt can block HTML pages, but it can't block any CSS files
-- b) CSS should be blocked, but only after the pages have been indexed
-- c) Blocking is fine, as long as all of the CSS is in `<style>` blocks
-- d) If blocking makes pages harder to understand, Google says not to
+### Q7. Spot the error: "My `font-size` line is crossed out in Styles, with no warning icon, so DevTools has a bug. I'll add `!important`." *(O3 · spot the error)*
+- a) Crossed-out lines come back by themselves after a page reload
+- b) DevTools can only show `font-size` in the Computed tab, not Styles
+- c) Crossed-out lines must be deleted from the file before anything else
+- d) It means another rule won, so find that rule and work out why
 
 **Answer:** d
-**Explanation:** Google says that if losing these files makes a page "harder for Google's crawler to understand", then "don't block them". Its Starter Guide says Google needs "the same resources as the user's browser".
-**Hint:** What does Google need in order to see a page as a visitor does?
+**Explanation:** Chrome says the Styles pane "crosses out properties that are overridden by other properties". Look for the winner, and work out why it won. `!important` only hides the problem.
+**Hint:** What does a crossed-out line with no warning icon mean?
 
 ### Q8. Spot the error: "I credited the quote with `<cite>Meera Nair</cite>` below my `<blockquote>`." *(spot the error · review: m02-l07)*
 - a) The credit has to go inside the `<blockquote>` to be allowed

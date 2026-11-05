@@ -2,7 +2,7 @@
 > After this lesson you can write simple CSS rules, choose where they should live, and use DevTools to find out why a page looks the way it does.
 
 **Time:** ~15 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L03 · **Remediate to:** Web Development 101 M03.L01 (selectors, cascade, box model)
-**Verified against:** MDN pages on CSS selectors, specificity, handling conflicts, `<link>` and `<style>`, and its "What is CSS?" and "Getting started with CSS" guides; Chrome for Developers DevTools docs ("View and change CSS", "CSS features reference", "Open Chrome DevTools"); Google Search Central "SEO Starter Guide", "Introduction to robots.txt", "Spam policies" and "Googlebot"; web.dev "Render-blocking CSS"; Gutenberg source code (WordPress labels), all on 2026-11-06. The planted CSS and Part A's stylesheet were run through the W3C CSS Validator, and the exercise's fixed result was confirmed with computed styles in jsdom. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft. Chrome's docs don't state that a reload clears your edits, that overridden lines are crossed out, or that unknown properties get a warning sign: all three are everyday behaviour, so check them at screenshot time.
+**Verified against:** MDN pages on CSS selectors, specificity, handling conflicts, CSS error handling, `<link>` and `<style>`, and its "What is CSS?" and "Getting started with CSS" guides; Chrome for Developers DevTools docs ("View and change CSS", "CSS features reference", "Open Chrome DevTools", plus its pages on CSS issues and local overrides); the WHATWG HTML Standard (`id`); Google Search Central "SEO Starter Guide", "Introduction to robots.txt", "Spam policies" and "Googlebot"; web.dev "Render-blocking CSS"; Gutenberg and WordPress source code (labels and stylesheet output), all on 2026-11-06. The planted CSS and Part A's stylesheet were run through the W3C CSS Validator, and the exercise's fixed result was confirmed with computed styles in jsdom. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft. Chrome's docs don't state that a reload clears ordinary edits: that's everyday behaviour, so check it at screenshot time.
 
 > ⚠️ **Freshness flag:** DevTools labels and WordPress menus move between versions. Google's file size limits can change, and web.dev's render-blocking article dates from 2014, though the behaviour it describes still applies.
 
@@ -75,7 +75,7 @@ The big gain from an external file is that you can "link a single CSS file to mu
 
 | Claim | Verdict | What the source says |
 |---|---|---|
-| Google needs your CSS to understand a page | **Documented** | "If your site is hiding important components that make up your website (like CSS and JavaScript), Google might not be able to understand your pages" |
+| Hiding CSS from Google can stop it understanding a page | **Documented** | "If your site is hiding important components that make up your website (like CSS and JavaScript), Google might not be able to understand your pages" |
 | Blocking CSS in robots.txt is always safe | **False** | Google says if losing these files makes a page "harder for Google's crawler to understand", then "don't block them" |
 | Moving CSS to an external file improves rankings | **Not in Google's docs** | We found no such statement. The clear benefit is easier upkeep |
 | Class names with keywords help you rank | **Not in Google's docs** | We found no such statement. Name classes for people who maintain the site |
@@ -106,7 +106,7 @@ flowchart TD
 ```
 **In words:** try the change in DevTools first, because it's safe and quick. If you can edit the external stylesheet, add a rule there, usually with a class. If you can't, use your platform's CSS box or a `<style>` element. Only use an inline style if neither is possible. Whichever you choose, reload and check the real page.
 
-> **Under the hood: why a typo only breaks one line.** Browsers skip CSS they can't understand and carry on. If you write `colour: navy;`, the browser ignores that declaration and shows no error on the page. That's why CSS mistakes are quiet: nothing crashes, and the style just doesn't appear. DevTools helps by flagging declarations it doesn't recognise, usually with a warning sign.
+> **Under the hood: why a typo only breaks one line.** MDN says browsers "discard invalid content and parse subsequent valid styles". If you write `colour: navy;`, the browser drops that declaration and shows no error on the page. A missing semicolon costs more, because the browser only recovers at the next semicolon or closing bracket, so two declarations are lost. That's why CSS mistakes are quiet: nothing crashes, and the style just doesn't appear. DevTools helps by crossing out invalid declarations and adding a warning icon.
 
 ## Hands-on walkthrough
 You'll link a stylesheet to your article, test which rule wins, break the link, then inspect a live page. Nila Coffee's values are illustrative.
@@ -142,7 +142,7 @@ You'll link a stylesheet to your article, test which rule wins, break the link, 
    <link rel="stylesheet" href="style.css">
    ```
 3. Now give the rules something to match:
-   - Change the "Keep the same 12 hours…" paragraph to `<p class="tip">`.
+   - Change the "Keep the same 12 hours…" paragraph to `<p class="tip">`. If you skipped Lesson 2.7, use any paragraph.
    - Change the "How to make it" section to `<section id="how-to-make-it">`.
 4. Save both files, and reload.
 
@@ -189,7 +189,7 @@ You'll link a stylesheet to your article, test which rule wins, break the link, 
 1. Open a page on your project site. Right-click its main heading and choose **Inspect**.
 
    **Expected:** DevTools opens on the **Elements** panel, with the heading selected and its rules listed in the **Styles** tab.
-2. In **Styles**, find the rule that sets the heading's `color` or `font-size`. Note the file name shown beside it, and any crossed-out lines nearby. Those lines lost to another rule.
+2. In **Styles**, find the rule that sets the heading's `color` or `font-size`. Note the file name shown beside it, and any crossed-out lines nearby. A crossed-out line lost to another rule, unless it has a warning icon, which means it's invalid.
    > 🖼️ **Image prompt:** Chrome DevTools (1280×800) docked beside a blog post, with the `<h1>` selected and the Styles tab showing a rule, its stylesheet name and one crossed-out declaration. Highlight the crossed-out declaration with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** DevTools Styles tab showing a heading's CSS rules, its stylesheet name and a crossed-out declaration.
 3. Double-click the value of `color` (or add one) and type `red`, then press **Enter**.
@@ -204,8 +204,8 @@ You'll link a stylesheet to your article, test which rule wins, break the link, 
 6. Open the **Computed** tab. It lists "only the CSS that's actually being applied to an element" (Chrome docs).
 7. Reload the page.
 
-   **Expected:** all your changes are gone. They only existed in your browser, so no visitor or search engine ever saw them.
-8. In View Source, use **Ctrl+F** (Mac: **Cmd+F**) to count `rel="stylesheet"`, `<style` and `style="`. Your browser's find bar shows the number of matches.
+   **Expected:** all your changes are gone. They only existed in your browser, so no visitor or search engine ever saw them. (Chrome's Local Overrides feature can keep edits across reloads, but only on your own computer.)
+8. In View Source, use **Ctrl+F** (Mac: **Cmd+F**) to count `stylesheet`, `<style` and `style=`. Your browser's find bar shows the number of matches. Leave out the quote marks, because sites differ: WordPress writes `rel='stylesheet'` with single quotes. These are rough counts, which is all you need.
 9. Open `/robots.txt` on the site's domain, such as `https://www.example.com/robots.txt`. Look for `Disallow` lines that mention `css`, `theme` or `assets`. You're only looking for now: a later module covers robots.txt.
 10. Add a tab called **Style check** to your "SEO 101 project" sheet and fill it in.
 
@@ -226,7 +226,7 @@ You'll link a stylesheet to your article, test which rule wins, break the link, 
 
 **Use internal CSS when** one page needs something special, or you can't reach the external file. **Use inline CSS when** nothing else works, as in some restricted editors.
 
-**On a platform,** you usually don't edit the theme's files, because a theme update can overwrite them. In the WordPress Site Editor, the Styles area has an **Additional CSS** box, and most blocks have an **Additional CSS class(es)** field in their **Advanced** settings. The exact route depends on your theme, and Module 5 covers WordPress. Other platforms have similar boxes.
+**On a platform,** you usually don't edit the theme's files, because a theme update can overwrite them. In the WordPress Site Editor, the Styles area has an **Additional CSS** box, and most blocks have an **Additional CSS class(es)** field in their settings. The exact route depends on your theme, and Module 5 covers WordPress. Other platforms have similar boxes.
 
 **The trade-off:** a platform's CSS box is quick and safe, but it splits your styling between two places. Keep a short note of what you've added, so that the next person can find it.
 
@@ -249,17 +249,17 @@ You'll link a stylesheet to your article, test which rule wins, break the link, 
 - **Reaching for `!important`.** Find out which rule is winning, and why.
 - **Leaving inline styles everywhere.** Each one has to be changed by hand.
 - **Thinking a DevTools edit is saved.** A reload wipes it.
-- **Editing theme files directly.** Use your platform's CSS box or a child theme.
+- **Editing theme files directly.** A theme update can overwrite your work, so use your platform's CSS box.
 
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | No styling at all | The `href` file name or folder is wrong | Check the spelling, and that `style.css` sits beside `article.html` |
 | One rule has no effect | A typo, or the selector doesn't match | Inspect the element. If the rule isn't listed, check the selector |
-| The rule is listed but crossed out | Another rule beat it | Look above it in **Styles** for the winner |
-| A line in **Styles** has a warning sign | DevTools doesn't recognise the property or value | Check the spelling |
+| A line is crossed out, with no warning icon | Another rule beat it | Look above it in **Styles** for the winner |
+| A line is crossed out, with a warning icon | The property or value is invalid | Check the spelling |
 | Several lines stop working together | A missing `}` or semicolon | Check the lines just above the first one that fails |
-| Your change works locally but not on the live site | A cached old file | Do a hard reload, and clear any caching plugin |
+| Your change works locally but not on the live site | Your browser or site is showing a saved old copy | Force a fresh load with **Ctrl+Shift+R** (Mac: **Cmd+Shift+R**), and clear any caching plugin |
 | Your DevTools change disappeared | You reloaded | Copy it into the real stylesheet |
 
 ## Exercise
@@ -313,6 +313,13 @@ p {
 
 The W3C CSS Validator (`https://jigsaw.w3.org/css-validator/`) reports only two of these: *Property "colour" doesn't exist. The closest matching property name is "color"* and *Missing a semicolon before the property name "line-height"*. `!important` is valid CSS, so it passes. A validator checks rules, not quality.
 
+**Then choose:** where would you put the CSS in each case, and why?
+1. A new button style for all 40 pages of a site you can edit.
+2. A one-off campaign page on a platform that has a CSS box but no access to its stylesheet files.
+3. A short note in an editor that strips out `<style>` and has no CSS box.
+
+**Answers:** (1) An external stylesheet, with a class. (2) The CSS box. (3) An inline style, because nothing else is possible.
+
 **Stretch goal:** in DevTools, find one crossed-out declaration on your project site and name the rule that beat it. Say why it won, using the order from this lesson.
 
 ## Key takeaways
@@ -345,11 +352,15 @@ Explain to a friend in 3 sentences why editing a page in DevTools doesn't change
 - MDN — Handling conflicts: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Handling_conflicts
 - MDN — CSS selectors: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Selectors
 - MDN — Specificity: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascade/Specificity
+- MDN — CSS error handling: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Syntax/Error_handling
 - MDN — `<link>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/link
 - MDN — `<style>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/style
 - Chrome for Developers — View and change CSS: https://developer.chrome.com/docs/devtools/css
 - Chrome for Developers — CSS features reference: https://developer.chrome.com/docs/devtools/css/reference
 - Chrome for Developers — Open Chrome DevTools: https://developer.chrome.com/docs/devtools/open
+- Chrome for Developers — Find invalid, overridden and other CSS: https://developer.chrome.com/docs/devtools/css/issues
+- Chrome for Developers — Local overrides: https://developer.chrome.com/docs/devtools/overrides
+- WHATWG — HTML Standard, `id`: https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute
 - Google Search Central — SEO Starter Guide: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 - Google Search Central — Introduction to robots.txt: https://developers.google.com/search/docs/crawling-indexing/robots/intro
 - Google Search Central — Googlebot: https://developers.google.com/search/docs/crawling-indexing/googlebot
@@ -361,4 +372,4 @@ Explain to a friend in 3 sentences why editing a page in DevTools doesn't change
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Rule:** `selector { property: value; }`. **Selectors:** `p` (element), `.tip` (class, reusable, your default), `#id` (once per page, rarely for styling). In HTML, write `class="tip"` with no dot. **Which wins:** inline, then ID, then class, then element. In a tie, the last rule wins. Avoid `!important`. **Where CSS lives:** external file with `<link rel="stylesheet" href="style.css">` (default), internal `<style>` (one page, or no file access), inline `style=` (last resort). **DevTools:** right-click, **Inspect**, then **Styles** shows the rules and crossed-out losers, and **Computed** shows what applied. Edits only exist in your browser, and a reload wipes them. **SEO:** CSS changes how text looks, not what it is. Google needs access to it, so don't block it in robots.txt.
+**Rule:** `selector { property: value; }`. **Selectors:** `p` (element), `.tip` (class, reusable, your default), `#id` (once per page, rarely for styling). In HTML, write `class="tip"` with no dot. **Which wins:** inline, then ID, then class, then element. In a tie, the last rule wins. Avoid `!important`. **Where CSS lives:** external file with `<link rel="stylesheet" href="style.css">` (default), internal `<style>` (one page, or no file access), inline `style=` (last resort). **DevTools:** right-click, **Inspect**, then **Styles** shows the rules and crossed-out losers, and **Computed** shows what applied. A warning icon on a crossed-out line means it's invalid. Edits only exist in your browser, and a reload wipes them. **SEO:** CSS changes how text looks, not what it is. Google needs access to it, so don't block it in robots.txt.
