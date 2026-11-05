@@ -2,7 +2,7 @@
 > After this lesson you can write links search engines can follow, add images with useful alt text, and decide when `rel`, `target="_blank"` and `title` are worth adding.
 
 **Time:** ~18 min reading + ~30 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L04 · **Remediate to:** M02.L03; Web Development 101 M02.L02 (text, links, images and media)
-**Verified against:** Google Search Central "Link best practices", "Qualify outbound links", "Image SEO best practices" and "SEO Starter Guide"; MDN `<a>`, `<img>`, `rel`, `noopener` and `title` pages; W3C WAI alt decision tree and "Decorative images"; WCAG 2.2 "Link purpose (in context)" and technique G201; the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The DevTools steps in Part E weren't run in a live browser for this draft.
+**Verified against:** Google Search Central "Link best practices for Google", "Qualify outbound links", "Google image SEO best practices", "Spam policies", "Lazy loading" and "SEO Starter Guide"; MDN `<a>`, `<img>`, `rel`, `noopener`, `title` and "Creating links" pages; W3C WAI alt decision tree, "Decorative images" and "Functional images"; WebAIM "Alternative text"; WCAG 2.2 "Link purpose (in context)" and technique G201; the W3C Nu HTML Checker (this lesson's code examples were run through it) on 2026-11-06. The DevTools steps in Part E weren't run in a live browser for this draft.
 
 > ⚠️ **Freshness flag:** HTML's link and image rules change slowly. Google's advice on `rel` values and image SEO can change, so re-check the claims table before publishing.
 
@@ -41,7 +41,7 @@ An `href` can be written in three ways:
 | Type | Example | Use it for |
 |---|---|---|
 | Absolute | `https://nilacoffee.example/shop` | External links. Always include `https://` |
-| Root-relative | `/shop` | Internal links on a live site. It starts from the site's root |
+| Root-relative | `/shop` | Internal links on a live site. The root is the top level of your site, so this works from any page. It won't work on files opened from your computer |
 | Relative | `french-press.html` | Files next to the current page, as in your practice folder |
 
 **Crawlable links:** "Generally, Google can only crawl your link if it's an `<a>` HTML element … with an `href` attribute."
@@ -54,7 +54,7 @@ An `href` can be written in three ways:
 | ❌ `<span onclick="location.href='/shop'">Shop</span>` | Not reliably: it isn't a link |
 | ❌ `<a href="javascript:goTo('shop')">Shop</a>` | Not reliably: `href` holds a script, not an address |
 
-**Anchor text:** "Good anchor text is descriptive, reasonably concise, and relevant to the page that it's on and to the page it links to." MDN adds that link text should say where the link goes "even out of context", because screen reader users can pull up a list of just the links.
+**Anchor text:** "Good anchor text is descriptive, reasonably concise, and relevant to the page that it's on and to the page it links to." MDN adds that link text should say where the link goes "even out of context", because "Screen reader users like jumping around from link to link on the page, and reading links out of context."
 
 | Weak | Why | Better |
 |---|---|---|
@@ -72,15 +72,15 @@ An `href` can be written in three ways:
 |---|---|---|
 | `src` | Gives the image's address | Use a file name that's "short, but descriptive": `my-new-black-kitten.jpg` beats `IMG00023.JPG` (Google) |
 | `alt` | Replaces the image for screen readers, and when it fails to load | Write what the image adds to this page |
-| `width`, `height` | Give the image's real size in pixels | They let the browser reserve the space, "reducing or even preventing a layout shift" (MDN) |
+| `width`, `height` | Give the image's real size in pixels | They let the browser reserve the space, "reducing or even preventing a layout shift" (MDN), which is the page jumping as images load |
 
 `<img>` is a void element, as you saw in Lesson 2.3, so it has no closing tag.
 
-Use a real `<img>` for any image you want found in search: "Google doesn't index CSS images." You'll meet CSS background images in Lesson 2.9. Google also says to place images "near relevant text".
+Use a real `<img>` for any image you want found in search: "Google doesn't index CSS images." A CSS image is one added by the stylesheet as a background, not with an `<img>` in the HTML. Google also says to place images "near relevant text".
 
 ### Three optional extras
 - **`rel`** describes your relationship with the link's destination. Google's default is simple: for regular links, "you don't need to add a `rel` attribute."
-  - `rel="sponsored"`: "advertisements or paid placements", including affiliate links you earn from.
+  - `rel="sponsored"`: "advertisements or paid placements". Google's test is whether "you were paid in some way for the link", so this course also marks affiliate links, which earn you a commission on sales.
   - `rel="ugc"`: user-generated content "such as comments and forum posts".
   - `rel="nofollow"`: when "other values don't apply, and you'd rather Google not associate your site with, or crawl the linked page from, your site".
 - **`target="_blank"`** opens a link in a new tab. It "implicitly provides the same `rel` behavior as setting `rel="noopener"`" in modern browsers, so you don't need to add that for safety. The real cost is confusion: people using screen readers, or with cognitive concerns, "may be confused when a new tab, window, or application opens unexpectedly" (MDN). If you use it, say so in the link, as in `Wikipedia (opens in new tab)`. W3C treats this warning as good practice, not as a strict requirement.
@@ -93,7 +93,7 @@ Use a real `<img>` for any image you want found in search: "Google doesn't index
 | Important pages need internal links | **Documented** | "Every page you care about should have a link from at least one other page on your site." |
 | There's an ideal number of links per page | **False** | "There's no magical ideal number of links a given page should contain. However, if you think it's too much, then it probably is." |
 | External links lose you ranking power, so nofollow them all | **False** | External links "can help establish trustworthiness (for example, citing your sources)". Use `nofollow` "only when you don't trust the source, and not for every external link on your site" |
-| Paid links must be marked | **Documented** | "If you were paid in some way for the link, qualify these links with `sponsored` or `nofollow`." Module 9 covers link schemes |
+| Paid links must be marked | **Documented** | "If you were paid in some way for the link, qualify these links with `sponsored` or `nofollow`." Paid links are "not a violation of our policies" when they're marked this way. Module 9 covers link schemes |
 | `nofollow` keeps a page out of Google | **False** | Such links "will generally not be followed", but the linked pages "may still be crawled" if they're found in other ways |
 | Stuff keywords into alt text | **Don't** | It "results in a negative user experience and may cause your site to be seen as spam" |
 | Alt text on a linked image counts | **Documented** | "Google uses the `alt` attribute of the `img` element as anchor text" |
@@ -147,7 +147,7 @@ flowchart TD
 ```
 **In words:** decorative images get an empty `alt=""`, so screen readers skip them. If an image is a link or button with no text of its own, the alt text says where it goes or what it does. If the image contains text, repeat that text, unless it's already on the page nearby. Otherwise, write a brief description of what the image shows and why it's here. Never leave `alt` out completely, because "some screen readers will announce the file name of the image instead" (W3C).
 
-> **Under the hood: how a crawler uses a link.** When Googlebot reads a page, it pulls out the `href` of each `<a>`, turns it into a full address, and adds that to its list of pages to visit (Lesson 1.4). It doesn't click anything. So a script that only runs on a click isn't a link at all from the crawler's side, even though a visitor with a mouse never notices.
+> **Under the hood: how a crawler uses a link.** When Googlebot reads a page, it pulls out the `href` of each `<a>`, turns it into a full address, and adds that to its list of pages to visit (Lesson 1.4). Google says it "does not interact with your page". So a script that only runs on a click isn't a link at all from the crawler's side, even though a visitor with a mouse never notices. JavaScript isn't the problem by itself: links a script adds to the page are fine, as long as they're real `<a href>` links.
 
 ## Hands-on walkthrough
 You'll add a link and an image to your article, practise on some examples, then inspect a live page. Nila Coffee's values are illustrative.
@@ -168,7 +168,7 @@ You'll add a link and an image to your article, practise on some examples, then 
    <p>You can read more about <a href="https://en.wikipedia.org/wiki/Cold_brew_coffee">cold brew coffee on Wikipedia</a>.</p>
    ```
 4. Save, reload and click both links.
-   **Expected:** each link is blue and underlined. The first opens your French press page and the second opens Wikipedia, both in the same tab. Use the browser's Back button to return.
+   **Expected:** each link is underlined, and blue or purple. The first opens your French press page and the second opens Wikipedia, both in the same tab. Use the browser's Back button to return.
 
 **Part B — Add an image (8 min)**
 1. Make a folder called `images` inside `seo-101-html`.
@@ -181,7 +181,7 @@ You'll add a link and an image to your article, practise on some examples, then 
 5. Save and reload.
    **Expected:** the photo appears at the size you gave. A large photo may spill off the screen. That's fine for now: Lesson 2.10 makes images fit.
 6. Change `src` to `images/oops.jpg`, then save and reload.
-   **Expected:** a broken-image icon with your alt text next to it. This is what the alt text is for.
+   **Expected:** your alt text where the image should be, usually with a broken-image icon. Browsers differ a little. This is what the alt text is for.
    > 🖼️ **Image prompt:** A browser window (1280×720) showing the cold brew article with a broken-image icon and the alt text "A glass jar of cold brew coffee in a fridge" in its place. Highlight the alt text with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** A web page with a broken image, showing the image's alt text in its place.
 7. Put `src` back. Now delete the whole `alt="…"` part, and paste your code into `https://validator.w3.org/nu/#textarea`.
@@ -213,7 +213,7 @@ Use the second flowchart. Write the `alt` for each of these Nila Coffee images.
 **Expected**, or something close:
 1. `alt="A 250 g bag of Nila Coffee House Blend beside a cup of black coffee"`
 2. `alt=""`, because it's decoration.
-3. `alt="Nila Coffee home"`, because the image is the link. Describing it as a "logo" wouldn't tell a reader where it goes.
+3. `alt="Nila Coffee home"`, because the image is the link, so the alt says where it goes. W3C's own example is `alt="W3C home"`. WebAIM says "home" often isn't needed, so `alt="Nila Coffee"` is fine too. "Logo" adds nothing.
 
 **Part E — Inspect a live link and image (5 min)**
 1. Open a blog post or inner page on your project site in Chrome or Edge.
@@ -242,7 +242,7 @@ Use the second flowchart. Write the `alt` for each of these Nila Coffee images.
    | `width` and `height` set? | No |
    | File name descriptive? | No |
 
-6. Don't fix anything yet, unless it's a quick alt text change. Module 4 covers internal linking and image SEO in more depth.
+6. Don't fix anything yet, unless it's a quick alt text change on your own site. Path C: change nothing. Module 4 covers internal linking and image SEO in more depth.
 
 **Expected output:** an `article.html` with two links and an image that passes the checker, your rewrites and alt text, and a **Link & image check** tab.
 
@@ -257,7 +257,7 @@ Use the second flowchart. Write the `alt` for each of these Nila Coffee images.
 
 ## Use AI for this
 **Example prompt:**
-> "Here are the images on my page, each with what it shows and what it's for: [list]. Using W3C's alt decision tree, write alt text for each, or say it should be empty. Keep each under 125 characters. Don't add keywords that aren't really in the image."
+> "Here are the images on my page, each with what it shows and what it's for: [list]. Using W3C's alt decision tree, write alt text for each, or say it should be empty. Keep each to a few words or one short sentence. Don't add keywords that aren't really in the image."
 
 **What AI does well here:** applying a decision tree the same way across many images, and rewriting weak anchors.
 **Where it gets it wrong:** it describes images it can't see, adds keywords, starts with "Image of", and may say all external links need `nofollow` or that `title` helps SEO.
@@ -269,7 +269,7 @@ Use the second flowchart. Write the `alt` for each of these Nila Coffee images.
 - **Leaving out `alt`.** Use `alt=""` for decoration, and never leave the attribute out.
 - **Describing decoration.** "Green leaf" on a divider just adds noise for screen reader users.
 - **Stuffing alt text.** Google warns this "may cause your site to be seen as spam".
-- **Starting alt text with "Image of".** Screen readers already say it's an image.
+- **Starting alt text with "Image of".** This is redundant, because "screen readers already announce 'graphic'" (WebAIM).
 - **Copying alt text into `title`.** Some screen readers may then "announce the same text twice" (MDN).
 - **Adding `nofollow` to every external link.** Google says not to.
 - **Forgetting to mark affiliate links.** Paid links need `rel="sponsored"` or `nofollow`.
@@ -279,7 +279,7 @@ Use the second flowchart. Write the `alt` for each of these Nila Coffee images.
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | A broken-image icon appears | The path or file name doesn't match exactly | Check the folder, spelling, capitals and extension. Hosted sites often treat `Jar.jpg` and `jar.jpg` as different files |
-| A link says the file can't be found | The `href` is mistyped, or the file is in another folder | Check that `french-press.html` sits next to `article.html` |
+| A link says the file can't be found | The `href` is mistyped, starts with `/`, or the file is in another folder | Check that `french-press.html` sits next to `article.html`, and use `href="french-press.html"` |
 | An external link opens a broken address | `https://` is missing, so the browser treats it as a local file | Use the full address |
 | The image looks stretched | `width` and `height` don't match its real shape | Use the file's real numbers |
 | The image is enormous | It's a large file with its real size set | Fine for now. Lesson 2.10 makes images fit, and Module 4 covers file size |
@@ -343,17 +343,22 @@ Explain to a friend in 3 sentences why a button that works perfectly with a mous
 
 ## Further reading
 *All checked 2026-11-06.*
-- Google Search Central — Link best practices: https://developers.google.com/search/docs/crawling-indexing/links-crawlable
+- Google Search Central — Link best practices for Google: https://developers.google.com/search/docs/crawling-indexing/links-crawlable
 - Google Search Central — Qualify outbound links: https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links
-- Google Search Central — Image SEO best practices: https://developers.google.com/search/docs/appearance/google-images
+- Google Search Central — Google image SEO best practices: https://developers.google.com/search/docs/appearance/google-images
+- Google Search Central — Spam policies (link spam): https://developers.google.com/search/docs/essentials/spam-policies
+- Google Search Central — Fix lazy-loaded content: https://developers.google.com/search/docs/crawling-indexing/javascript/lazy-loading
 - Google Search Central — SEO Starter Guide: https://developers.google.com/search/docs/fundamentals/seo-starter-guide
 - MDN — `<a>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a
 - MDN — `<img>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/img
 - MDN — `rel`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel
 - MDN — `noopener`: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/noopener
 - MDN — `title` attribute: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/title
+- MDN — Creating links: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Creating_links
 - W3C WAI — An alt decision tree: https://www.w3.org/WAI/tutorials/images/decision-tree/
 - W3C WAI — Decorative images: https://www.w3.org/WAI/tutorials/images/decorative/
+- W3C WAI — Functional images: https://www.w3.org/WAI/tutorials/images/functional/
+- WebAIM — Alternative text: https://webaim.org/techniques/alttext/
 - W3C — WCAG 2.2 Understanding Link Purpose (In Context): https://www.w3.org/WAI/WCAG22/Understanding/link-purpose-in-context.html
 - W3C — WCAG technique G201, warning about new windows: https://www.w3.org/WAI/WCAG22/Techniques/general/G201
 - Blogger Help — Help people find your blog on search engines: https://support.google.com/blogger/answer/41373

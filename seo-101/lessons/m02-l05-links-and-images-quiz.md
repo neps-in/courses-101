@@ -1,7 +1,7 @@
 # M02.L05 Quiz — Links & Images: href, alt, title and New Tabs
 
 > 8 questions · 3 recall, 3 scenario, 2 spot-the-error (Q8 is the spaced review) · pass mark 70% (6 of 8). Q1–Q7 are tagged with the objective they test (O1–O3) so a failed answer points at the exact concept.
-> Facts checked 2026-11-06 against Google Search Central (link best practices, qualify outbound links, image SEO), MDN (`<a>`, `<img>`, `<ol>`) and W3C WAI (alt decision tree, decorative images).
+> Facts checked 2026-11-06 against Google Search Central (link best practices, qualify outbound links, image SEO), MDN (`<a>`, `<img>`), and W3C WAI (alt decision tree, decorative and functional images). The `<ol>` test in Q8 was checked for Lesson 2.4.
 
 ### Q1. Which of these links can Google reliably crawl? *(O1 · recall)*
 - a) `<a onclick="goto('/shop')">Shop all beans</a>`
@@ -24,7 +24,7 @@
 **Hint:** When would you want an image to be ignored?
 
 ### Q3. When should you use `rel="sponsored"`? *(O3 · recall)*
-- a) On links that are ads or paid placements, such as affiliate links
+- a) On links that are ads or placements someone paid you for
 - b) On links to any business that you'd like to thank or recommend
 - c) On every external link, to protect your own site's ranking power
 - d) On links in comments that visitors have posted on your blog
@@ -47,7 +47,7 @@
 - a) Remove it from links he trusts, as they don't need any `rel`
 - b) Keep it, because external links drain ranking power from a site
 - c) Change them all to `rel="ugc"`, as that value suits shops better
-- d) Delete all his external links, so that none of them need a `rel`
+- d) Change them all to `rel="sponsored"`, as the makers are businesses
 
 **Answer:** a
 **Explanation:** Google says to use `nofollow` "only when you don't trust the source, and not for every external link on your site". External links can even help establish trust.
@@ -57,10 +57,10 @@
 - a) `alt="logo"`, because that's what the image is on the page
 - b) `alt=""`, because a logo is only a decorative part of the design
 - c) `alt="Nila Coffee home"`, as it says where the link goes
-- d) `alt="Nila Coffee best coffee beans India buy coffee online"`
+- d) `alt="Nila Coffee logo in dark brown on a white background"`
 
 **Answer:** c
-**Explanation:** When an image is the whole link, the alt text does the job of the link text, so it should say where the link goes. Google also uses it as anchor text.
+**Explanation:** When an image is the whole link, the alt text does the job of the link text, so it should say where the link goes. Describing the logo's colours doesn't do that. Google also uses this alt text as anchor text.
 **Hint:** If the image failed to load, what would the link need to say?
 
 ### Q7. Spot the error: "Use the same keyword-rich phrase as the alt text on all your images, because alt text is the best place for keywords." *(O2 · spot the error)*
@@ -76,7 +76,7 @@
 ### Q8. Spot the error: "I put the ingredients in an `<ol>` so they get numbers, and the method in a `<ul>`." *(spot the error · review: m02-l04)*
 - a) Both lists should be paragraphs, separated with `<br>` tags instead
 - b) They're swapped: order matters in a method, not in the ingredients
-- c) Lists aren't allowed in articles, so both should be `<h3>` headings
+- c) Both lists should be `<ol>`, because every list has a set order
 - d) Both are right, because the choice is only about how the list looks
 
 **Answer:** b
