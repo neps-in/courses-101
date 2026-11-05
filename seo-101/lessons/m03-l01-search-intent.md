@@ -12,7 +12,7 @@
 3. **Choose** the page type that fits a search's one primary intent. *(O3)*
 
 ## Why it matters
-Kavya writes a careful 2,000-word article called "Yoga Classes in Chennai", about the history of yoga in the city. It never gets near the first page. When she finally searches that phrase, she sees a map of studios, directories and class timetables. People searching it want to find a class, not read history. Her article is good, but it answers a different question. This is why the course's rule is **read the results page before you write**: content that doesn't match what people want won't rank, however good it is.
+Kavya writes a careful 2,000-word article called "Yoga Classes in Chennai", about the history of yoga in the city. It never gets near the first page. When she finally searches that phrase, she sees a map of studios, directories and class timetables. People searching it want to find a class, not read history. Her article is good, but it answers a different question. This is why the course's rule is **read the results page before you write**: content that doesn't match what people want rarely ranks, however good it is *(observed practice)*.
 
 ## Core concept
 **Plain version:** **search intent** is what someone is trying to get done when they search. Google's rater guidelines put it this way: "What the user is trying to accomplish when they search."
@@ -20,9 +20,9 @@ Kavya writes a careful 2,000-word article called "Yoga Classes in Chennai", abou
 **Analogy:** two people walk into Tomás's shop. One asks, "How do I fix a dripping tap?" The other asks, "Do you have a 15mm washer?" Both are talking about taps, but one needs advice and the other needs a product. A good shopkeeper hears the difference. So does a good results page.
 
 ### The four types
-These are the four types SEOs use. The first three go back to a 2002 paper by Andrei Broder, and "commercial" is an SEO convention added later. Google's raters use their own terms, shown in the last column.
+These are the four types SEOs use. The first three go back to a 2002 paper by Andrei Broder, and "commercial" is an SEO addition. Google's raters use their own terms, and the last column shows the closest match *(our mapping, not Google's)*.
 
-| Intent | They want to… | Nila Coffee example | Word clues *(observed)* | Rater term |
+| Intent | They want to… | Nila Coffee example | Word clues *(observed)* | Closest rater term |
 |---|---|---|---|---|
 | **Informational** | Learn something | "how long does cold brew last" | how, why, what, guide, ideas | Know, Know Simple |
 | **Navigational** | Reach a specific site or page | "nila coffee contact" | A brand or site name | Website |
@@ -31,7 +31,7 @@ These are the four types SEOs use. The first three go back to a 2002 paper by An
 
 Broder's definitions are short: for navigational, "The immediate intent is to reach a particular site". For transactional, "The intent is to perform some web-mediated activity".
 
-**Local searches** sit across these types. Google says it can "recognise many queries have a local intent", so "coffee roasters in kochi" may show a map, even though the person could be comparing or ready to visit. Raters call this "visit-in-person". Module 11 covers local SEO.
+**Local searches** sit across these types. Google says it can "recognise many queries have a local intent", so "coffee roasters in kochi" may show a map, even though the person could be comparing or ready to visit. Raters call this a Visit-in-person query. Module 11 covers local SEO.
 
 ### Reading the results page
 Word clues are only a hint. The results page is better evidence, because it shows what Google currently thinks fits. Look at three things *(observed practice)*:
@@ -40,7 +40,7 @@ Word clues are only a hint. The results page is better evidence, because it show
 |---|---|
 | **Page types** in the top results | Blog posts and guides suggest informational. Comparison lists suggest commercial. Product and category pages suggest transactional. One brand filling the page suggests navigational |
 | **Formats** | Numbered steps, videos, tables, images or forums show how people like the answer |
-| **SERP features** (Lesson 1.5) | A map suggests local. Shopping results suggest buying. People Also Ask suggests questions. An AI Overview suggests a topic worth a summary |
+| **SERP features** (Lesson 1.5) | A map suggests local. Shopping results suggest buying. People Also Ask suggests questions. An AI Overview suggests people want the gist of a topic |
 
 ### When a search has more than one meaning
 Raters are told: "Many queries have more than one likely user intent." Their guidelines separate:
@@ -48,7 +48,7 @@ Raters are told: "Many queries have more than one likely user intent." Their gui
 - **Common interpretations**, which "many or some users" mean.
 - **Minor interpretations**, which fewer people have in mind.
 
-So "cold brew" could mean a recipe, a shop product or a definition. If the results are mixed, pick the intent your site can serve best, and write for that. A page that tries to serve every intent usually serves none of them well *(observed practice)*. That's the rule: **one primary intent per page**.
+So "cold brew" could mean a recipe, a shop product or a definition. If the results are mixed, pick the intent your site can serve best, and write for that. A page that tries to serve every intent usually serves none of them well *(observed practice)*. That's this course's rule: **one primary intent per page**.
 
 ### What this does for search
 
@@ -60,7 +60,7 @@ So "cold brew" could mean a recipe, a shop product or a definition. If the resul
 | Your page must use the exact search words | **False** | "Google's language matching systems are sophisticated and can understand how your page relates to many queries, even if you don't explicitly use the exact terms in them." |
 | Everyone sees the same results | **False** | "Time may be one of the biggest reasons why results vary between people." Google also uses "your location, past Search history, and Search settings" |
 | Every search gets an AI Overview | **False** | Google says they're shown only when "additive to classic Search, and as such, often don't trigger" |
-| You need special work for AI Overviews | **False** | "There are no additional requirements to appear in AI Overviews or AI Mode". Modern SEO 101 goes further |
+| You need special work for AI Overviews | **False** | "There are no additional requirements to appear in AI Overviews or AI Mode". Our follow-on course, Modern SEO 101, covers AI search |
 | Write for any intent that gets traffic | **Risky** | Google asks: "Is the content primarily made to attract visits from search engines?" Stay with what your audience needs |
 
 ## How it works
@@ -113,7 +113,7 @@ You'll sort example searches, read one results page closely, then check ten sear
 
 **Part C — Check ten searches for your site (12 min)**
 1. List ten searches that your audience might use. Use your marketing snapshot from Lesson 1.1, and aim for a mix of types. Lesson 3.2 will find many more.
-2. Add a tab called **Intent check** to your "SEO 101 project" sheet.
+2. Add a tab called **Intent check** to your "SEO 101 project" sheet. Write your location and device at the top, because results vary with both.
 3. Search each one in a private window, and fill in a row.
 
    | Search | Date | Word-clue guess | Top page types | Features | Primary intent | Best page type |
@@ -122,6 +122,8 @@ You'll sort example searches, read one results page closely, then check ten sear
    | cold brew ratio | 2026-11-06 | Informational | Guides, recipes, video | AI Overview, People Also Ask | Informational | Guide with a table |
 
    **Expected:** ten dated rows. In at least one, your word-clue guess may turn out wrong. Mark any with mixed results as "Mixed", and name the intent you'd pick.
+   > 🖼️ **Image prompt:** A Google Sheets tab called Intent check (1200×500) with ten dated rows, and columns for search, page types, features and primary intent. Highlight the Primary intent column with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** A spreadsheet tab of ten dated searches, with the primary intent column highlighted.
 
 **Part D — Compare with what you already have (5 min)**
 1. Pick three searches from your tab that matter to the business.
@@ -135,7 +137,7 @@ You'll sort example searches, read one results page closely, then check ten sear
 ## When to use / when not to
 **Use this check** before you write any new page, and before you rewrite a page that isn't performing.
 
-**Trust the results page over the word clues,** and over any tool's intent label. Tools guess from patterns, and they can be wrong.
+**Trust the results page over the word clues,** and over any tool's intent label. Tools guess from patterns, and they can be wrong *(observed practice)*.
 
 **Don't chase an intent your business can't serve.** If a search only shows big retailers' product pages and you sell nothing, it isn't for you.
 
@@ -167,8 +169,9 @@ You'll sort example searches, read one results page closely, then check ten sear
 | The results are a mix of types | The search has several intents | Note the mix, and pick the one you can serve best |
 | Results look very different from a colleague's | Location, language, device or timing | Note your location and device, and use a private window |
 | Everything is from one brand | It's a navigational search | Leave it unless that's your brand |
-| Ads fill the top of the page | Common on buying searches | Ignore ads when reading page types, and note that the search has commercial value |
+| Ads fill the top of the page | Common on buying searches | Ignore ads when reading page types, and note that businesses pay to appear here |
 | An AI Overview covers the answer | The topic suits a short summary | Record it, and read the organic results underneath |
+| You land in AI Mode, not the usual results | It's a separate AI view | Go back to the main results, because this check reads those |
 | You can't tell page types apart | The title isn't enough | Open the result, and look at what the page does |
 
 ## Exercise

@@ -36,7 +36,7 @@
 ### Q4. Kavya searches "yoga classes in chennai" and sees a map, directories and studio timetables. What should she plan? *(O3 · scenario)*
 - a) A long article on the history of yoga in the city
 - b) A class page with her timetable, location and how to book
-- c) A blog post that lists all of the benefits of practising yoga
+- c) A guide to choosing a yoga style, with a link to her classes
 - d) An FAQ on the meanings of the Sanskrit names of poses
 
 **Answer:** b
@@ -63,15 +63,15 @@
 **Explanation:** The results page is better evidence than word clues. She should date her note, because what a search shows can change.
 **Hint:** Which is the better evidence?
 
-### Q7. Spot the error: "The rater guidelines say a page must meet the user's intent, so raters can push pages up or down in Google." *(O2 · spot the error)*
-- a) The guidelines don't mention user intent at any point in them
-- b) Raters can only change rankings for pages in English-speaking areas
-- c) Only Google's own employees can read what's in the guidelines
-- d) Raters have no control over rankings, and they don't move pages
+### Q7. Spot the error: "I checked this search once last year, so its intent is settled, and I never need to look at it again." *(O2 · spot the error)*
+- a) Intent checks must be run from inside a Search Console account
+- b) Google only allows a search to be checked once every few months
+- c) Intent is fixed for each search, so the check wasn't needed at all
+- d) Results change over time, so date each check and look again
 
 **Answer:** d
-**Explanation:** Google says: "Search raters have no control over how pages rank." The guidelines do cover intent, and they're public, but they aren't ranking rules.
-**Hint:** What does Google say raters control?
+**Explanation:** Google says: "Time may be one of the biggest reasons why results vary between people." What a search shows can shift, so a dated check is a snapshot, not a final answer.
+**Hint:** What can happen to a results page in a year?
 
 ### Q8. Spot the error: "We hid the booking section on phones to keep the page short. It's fine, because the desktop page still has it." *(spot the error · review: m02-l10)*
 - a) Hiding content is only allowed on tablets, not on phones
