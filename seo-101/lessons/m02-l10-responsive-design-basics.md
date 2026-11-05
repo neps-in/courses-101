@@ -2,7 +2,7 @@
 > After this lesson you can make a page work on a phone, test it at phone widths, and check that mobile visitors and Google get the same content as desktop visitors.
 
 **Time:** ~15 min reading + ~35 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L08, M02.L09 · **Remediate to:** M02.L09; Web Development 101 M03.L04 (responsive, mobile-first design)
-**Verified against:** Google Search Central "Mobile site and mobile-first indexing best practices", "Mobile-first indexing has landed" (2023), "Understanding page experience in Google Search results" and "Avoid intrusive interstitials and dialogs"; Search Console Help "URL Inspection tool"; MDN pages on the viewport meta tag, responsive web design, media queries, `max-width` and `overflow-x`; web.dev articles on responsive basics and tap targets; W3C "Understanding" pages for SC 1.4.10 Reflow and 2.5.8 Target Size (Minimum); Chrome for Developers device mode docs, all on 2026-11-06. CSS samples passed the W3C CSS Validator, and Part D's Console line ran in jsdom, with `innerText` simulated. The Mobile-Friendly Test's retirement comes from third-party reports, which fit Google pointing to Lighthouse. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps and page layouts weren't run in a live browser for this draft.
+**Verified against:** Google Search Central "Mobile site and mobile-first indexing best practices", "Mobile-first indexing has landed" (2023), "Understanding page experience in Google Search results" and "Avoid intrusive interstitials and dialogs"; Search Console Help "URL Inspection tool"; MDN pages on the viewport meta tag, responsive web design, media queries, `max-width` and `overflow-x`; web.dev articles on responsive basics, tap targets and layout shift (CLS); W3C "Understanding" pages for SC 1.4.10 Reflow and 2.5.8 Target Size (Minimum); Chrome for Developers device mode docs, all on 2026-11-06. CSS samples passed the W3C CSS Validator, and Part D's Console line ran in jsdom, with `innerText` simulated. The Mobile-Friendly Test's retirement comes from third-party reports, which fit Google pointing to Lighthouse. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps and page layouts weren't run in a live browser for this draft.
 
 > ⚠️ **Freshness flag:** Google's mobile tools have changed before. Its Mobile-Friendly Test and Mobile Usability report were retired in December 2023, so old tutorials that send you there are out of date. DevTools labels also move.
 
@@ -12,7 +12,7 @@
 3. **Test** a page at phone widths in DevTools and check that mobile shows the same content as desktop. *(O3)*
 
 ## Why it matters
-Tomás checks his shop's site on his laptop, and it looks fine. Then a customer shows him the same page on a phone. The text is tiny, the price table runs off the screen, and the "Delivery" section has gone, because the theme hides it to save space. That last problem is the most serious for SEO, because Google uses the mobile version of a page for indexing and ranking. If it isn't on mobile, Google may never see it. Being able to spot this on a phone-sized screen is a basic SEO skill.
+Tomás checks his shop's site on his laptop, and it looks fine. Then a customer shows him the same page on a phone. The text is tiny, the price table runs off the screen, and the "Delivery" section has gone, because the theme hides it to save space. That last problem matters most. Phone visitors can't read the section, and Google uses the mobile version of a page for indexing and ranking. Being able to spot this on a phone-sized screen is a basic SEO skill.
 
 ## Core concept
 **Plain version:** a responsive page uses the same HTML on every device, and CSS adjusts the layout to fit the screen.
@@ -36,10 +36,10 @@ Avoid fixed widths. web.dev warns: "Using pixel measurements requires the user t
 | Instead of | Use | Why |
 |---|---|---|
 | `width: 1100px;` | `max-width: 60rem;` | The box can shrink on small screens |
-| `<img width="1200">` on its own | `img { max-width: 100%; height: auto; }` | The image fits its container, and it keeps its shape. Keep the `width` and `height` attributes you added in Lesson 2.5 |
+| `<img width="1200">` on its own | `img { max-width: 100%; height: auto; }` | The image fits its container, and it keeps its shape. Keep the `width` and `height` attributes from Lesson 2.5: web.dev says that with them, browsers can reserve the image's space while it loads |
 | A wide table spilling off the screen | A wrapper with `overflow-x: auto` | W3C says a data table can sit in "its own scrollable container", so the rest of the page still fits |
 
-W3C's reflow rule gives a useful test width: content should work "without requiring scrolling in two dimensions" at 320 CSS pixels wide, except for parts such as data tables that need the two dimensions.
+W3C's reflow rule gives a useful test width: content should work "without requiring scrolling in two dimensions" at 320 CSS pixels wide (see "Under the hood" below), except for parts such as data tables that need the two dimensions.
 
 ### Media queries
 A **media query** applies CSS only when a condition is true, such as a minimum screen width. The width where the layout changes is a **breakpoint**.
@@ -66,10 +66,11 @@ Fingers are bigger than mouse pointers. W3C's minimum is "at least 24 by 24 CSS 
 | Google uses the mobile version for indexing | **Documented** | "Google uses the mobile version of a site's content, crawled with the smartphone agent, for indexing and ranking." The rollout finished in 2023 |
 | You must have a mobile version to be indexed | **False** | Google says "it's not required", but "it is very strongly recommended" |
 | Google recommends responsive design | **Documented** | "Google recommends Responsive Web Design because it's the easiest design pattern to implement and maintain." |
-| Content can be cut on mobile | **Risky** | Google says that if you give a mobile page less content on purpose, "you can expect some traffic loss" |
+| Separate mobile pages can have less content | **Risky** | Google says that if a mobile page has less content on purpose, "you can expect some traffic loss". This advice is for sites with separate mobile versions |
+| Text hidden with CSS on phones is safe | **Not in Google's docs** | Its mobile-first guide doesn't mention it. Either way, phone visitors lose that content, so show it or use an accordion |
 | Accordions on mobile are fine | **Documented** | "Instead of removing content, consider moving content into accordions or tabs to save space." |
-| Metadata can differ on mobile | **False** | Keep the `title` element and meta description "equivalent", and the same alt text, structured data and robots tags |
-| Mobile-friendliness directly boosts rankings | **Not per Google's FAQ** | Its page experience page says Core Web Vitals "are used by our ranking systems", and other aspects "don't directly help your website rank higher". Lots of your visitors still need it to work |
+| Metadata can differ on mobile | **False** | Keep the `title` element and meta description "equivalent", and the same alt text, structured data and robots tags. A responsive page gets this automatically, because the HTML is the same |
+| Good mobile display directly boosts rankings | **Not directly** | Google says Core Web Vitals "are used by our ranking systems", and other page experience aspects "don't directly help your website rank higher". But they're "generally aligned with what our ranking systems seek to reward", and it lists "Does your content display well on mobile devices?" among its questions. Lesson 1.7 covers usability |
 | Full-page pop-ups are fine | **Avoid** | "Don't obscure the entire page with interstitials." Google suggests banners "that take up only a small fraction of the screen". Legal ones, such as age gates, are an exception |
 | Use the Mobile-Friendly Test | **Out of date** | Reported as retired in December 2023 (Search Engine Land). Google's page experience page points to Lighthouse for "mobile usability" |
 
@@ -112,17 +113,17 @@ You'll see what breaks without the viewport tag, fix the wide parts of your arti
 
 **Part A — See what the viewport tag does (7 min)**
 1. Open `article.html`, press **F12** (Mac: **Cmd+Option+I**) to open DevTools, and click **Toggle device toolbar** at the top.
-2. Check that **Dimensions** says **Responsive**, and type `375` in the width box. Reload the page.
+2. Open the **Dimensions** list, and pick any phone. Reload the page.
 
    **Expected:** a shrunken, desktop-style page with tiny text.
-   > 🖼️ **Image prompt:** Chrome DevTools device mode (1280×800) at 375px wide, showing `article.html` with tiny text and no viewport tag. Highlight the width box in the device toolbar with a 3px #F9B2D7 outline; blur any personal details.
-   > **Alt text:** Device mode at 375 pixels wide showing an article shrunk to tiny text because it has no viewport tag.
+   > 🖼️ **Image prompt:** Chrome DevTools device mode (1280×800) with a phone selected, showing `article.html` with tiny text and no viewport tag. Highlight the Dimensions list in the device toolbar with a 3px #F9B2D7 outline; blur any personal details.
+   > **Alt text:** Device mode with a phone selected, showing an article shrunk to tiny text because it has no viewport tag.
 3. In the `<head>`, below `<meta charset="utf-8">`, add the viewport tag from this lesson. Save and reload.
 
    **Expected:** the text is a readable size, and it fills the narrow screen. Wider parts may now run off the edge. That's Part B.
 
 **Part B — Fix what's too wide (10 min)**
-1. Set the width to `320`, and scroll through the page. Note anything that runs off the side.
+1. Set **Dimensions** to **Responsive**, type `320` in the width box, and scroll through the page. Note anything that runs off the side.
 
    **Expected:** your image and video run off the side, and the table may too.
 2. Add this to `style.css`:
@@ -186,10 +187,11 @@ You'll see what breaks without the viewport tag, fix the wide parts of your arti
    **Expected:** one line with the page's title and four counts. Note them.
 3. Turn on device mode, pick a phone from **Dimensions**, reload, and run the line again.
 
-   **Expected:** the same title and very similar counts. A lower word count is a clue, not proof. `innerText` skips closed accordions and hidden menus, so scroll through the phone view to see whether the content has moved or gone.
+   **Expected:** the same title and very similar counts. A lower word count is a clue, not proof. `innerText` skips closed accordions and hidden menus, so scroll through the phone view to see whether the content has moved or gone. If a section has gone from view, open **Elements**, press **Ctrl+F** (Mac: **Cmd+F**) and search for a phrase from it. If it's found, it's hidden. If it isn't, it's been removed.
 4. Scroll through at phone width, and look for sideways scrolling, tiny links and pop-ups that cover the page.
-5. **Path A, if your site is in Search Console:** run **URL Inspection** on the page, and find **Crawled as** under **Page availability**. The Help page says it shows "desktop or mobile".
-6. Add a tab called **Mobile check** to your "SEO 101 project" sheet and fill it in.
+5. Open View Source, and search for `viewport` to check the tag.
+6. **Path A, if your site is in Search Console:** run **URL Inspection** on the page, and find **Crawled as** under **Page availability**. The Help page says it shows "desktop or mobile".
+7. Add a tab called **Mobile check** to your "SEO 101 project" sheet and fill it in.
 
    | Check | Desktop | Phone (illustrative) |
    |---|---|---|
@@ -202,7 +204,7 @@ You'll see what breaks without the viewport tag, fix the wide parts of your arti
    | Easy to tap? | — | Footer links are too close |
    | Covers the page with a pop-up? | — | No |
 
-7. Open the page on a real phone if you have one. DevTools calls device mode "a first-order approximation".
+8. Open the page on a real phone if you have one. DevTools calls device mode "a first-order approximation".
 
 **Expected output:** an `article.html` and `style.css` that work from 320px to desktop, and a **Mobile check** tab.
 
@@ -229,7 +231,7 @@ You'll see what breaks without the viewport tag, fix the wide parts of your arti
 - **Leaving out the viewport tag.** Phones then show a shrunken desktop page.
 - **Disabling zoom with `user-scalable=no`.** It blocks people who need to zoom in.
 - **Using fixed pixel widths on layouts.** Use `max-width`.
-- **Hiding content on phones.** Google indexes the mobile version.
+- **Hiding content on phones.** Phone visitors lose it, and Google uses the mobile version for indexing.
 - **Removing `width` and `height` from images.** Keep them, and use `height: auto`.
 - **Naming breakpoints after devices.** Let your content decide.
 - **Testing only on your laptop.** Most of the problems here don't show up there.
@@ -340,6 +342,7 @@ Explain to a friend in 3 sentences why hiding a section on phones can hurt a pag
 - MDN — `overflow-x`: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x
 - web.dev — Responsive web design basics: https://web.dev/articles/responsive-web-design-basics
 - web.dev — Accessible tap targets: https://web.dev/articles/accessible-tap-targets
+- web.dev — Optimize Cumulative Layout Shift: https://web.dev/articles/optimize-cls
 - W3C — Understanding SC 1.4.10 Reflow: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html
 - W3C — Understanding SC 2.5.8 Target Size (Minimum): https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
 - Chrome for Developers — DevTools device mode: https://developer.chrome.com/docs/devtools/device-mode
@@ -351,4 +354,4 @@ Explain to a friend in 3 sentences why hiding a section on phones can hurt a pag
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Viewport tag:** `<meta name="viewport" content="width=device-width, initial-scale=1">` in the `<head>`. Without it, phones show a shrunken desktop page. Never use `user-scalable=no`. **Responsive design:** same HTML on every device, and Google's recommended pattern. **Flexible widths:** `max-width` not fixed `width`, `img { max-width: 100%; height: auto; }`, and `overflow-x: auto` on a wrapper for wide tables. **Media query:** `@media (min-width: 60rem) { … }`. Mobile-first design adds to a simple base. Let content choose breakpoints. **Tap targets:** at least 24×24 CSS pixels, ideally around 48. **Google:** uses the mobile version for indexing and ranking, so keep content, titles, meta descriptions, alt text and structured data the same. Accordions are fine, removal isn't. **Test:** device mode at 320px, compare with desktop, then a real phone. The Mobile-Friendly Test is gone.
+**Viewport tag:** `<meta name="viewport" content="width=device-width, initial-scale=1">` in the `<head>`. Without it, phones show a shrunken desktop page. Never use `user-scalable=no`. **Responsive design:** same HTML on every device, and Google's recommended pattern. **Flexible widths:** `max-width` not fixed `width`, `img { max-width: 100%; height: auto; }`, and `overflow-x: auto` on a wrapper for wide tables. **Media query:** `@media (min-width: 60rem) { … }`. Mobile-first design adds to a simple base. Let content choose breakpoints. **Tap targets:** at least 24×24 CSS pixels, ideally around 48. **Google:** uses the mobile version for indexing and ranking, so keep content, titles, meta descriptions, alt text and structured data the same. Accordions are fine. Removing content is risky, and hiding it with CSS still loses phone visitors. **Test:** device mode at 320px, compare with desktop, then a real phone. The Mobile-Friendly Test is gone.

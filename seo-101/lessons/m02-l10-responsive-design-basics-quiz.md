@@ -50,8 +50,8 @@
 - d) Leave it, because Google reads the desktop version of the page
 
 **Answer:** a
-**Explanation:** Google says: "Instead of removing content, consider moving content into accordions or tabs to save space." Mobile needs the same content as desktop.
-**Hint:** Which version does Google use?
+**Explanation:** Phone visitors can't read a hidden section, and Google uses the mobile version for indexing. Its advice is: "Instead of removing content, consider moving content into accordions or tabs to save space."
+**Hint:** What do phone visitors lose?
 
 ### Q6. Amara's Console counts match on phone and desktop, except the word count: 900 and 620. What should she do next? *(O3 · scenario)*
 - a) Report that 280 words have been removed from the phone version
@@ -70,7 +70,7 @@
 - d) The test only runs on the desktop version, not the mobile version
 
 **Answer:** c
-**Explanation:** The Mobile-Friendly Test was reported as retired in December 2023. Test in device mode and on a real phone, and compare the content with desktop.
+**Explanation:** The Mobile-Friendly Test was reported as retired in December 2023. Test in device mode and on a real phone, and compare the content with desktop. Google's page experience page points to Lighthouse for more checks.
 **Hint:** Is that tool still around?
 
 ### Q8. Spot the error: "The phone layout's footer text is `#999999` on white. It's small, but it's only the footer, so contrast rules don't apply." *(spot the error · review: m02-l09)*
