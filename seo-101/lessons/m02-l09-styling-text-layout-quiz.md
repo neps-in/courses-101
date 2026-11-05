@@ -11,7 +11,7 @@
 
 **Answer:** d
 **Explanation:** WCAG level AA asks for "at least 4.5:1" for normal text and 3:1 for large text. 7:1 is the stricter AAA level.
-**Hint:** What did the checker test the tip against in Part B?
+**Hint:** Normal text has the higher of the two AA numbers.
 
 ### Q2. In the box model, what's padding? *(O2 · recall)*
 - a) The space between this box and the boxes next to it on the page
@@ -24,7 +24,7 @@
 **Hint:** Think of the card mount inside a picture frame.
 
 ### Q3. Which of these does Google say doesn't violate its hidden text policy? *(O3 · recall)*
-- a) Accordion content that visitors can open to read more
+- a) Accordion content that visitors can open to read more details
 - b) White keywords on a white background, placed in a site's footer
 - c) A list of city names with its font size set to 0 by a stylesheet
 - d) Keywords moved off-screen with CSS for the search engines to read
@@ -65,7 +65,7 @@
 
 ### Q7. Spot the error: "We load the specifications only when a visitor clicks the tab, so the page stays light, and Google will read them the same way." *(O3 · spot the error)*
 - a) Tabs aren't allowed, because they're on Google's hidden text list
-- b) Google won't load content on a click, so keep it in the HTML
+- b) Google won't load content on a click, so keep it all in the HTML
 - c) Specifications can't be indexed unless they're on a separate page
 - d) Google only reads tab content when the page has a `<details>` tag
 

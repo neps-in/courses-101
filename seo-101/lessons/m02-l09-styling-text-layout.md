@@ -2,7 +2,7 @@
 > After this lesson you can make a page comfortable to read, fix spacing with the box model, and tell hidden content that's fine from hidden text that breaks Google's spam policies.
 
 **Time:** ~15 min reading + ~35 min hands-on + ~10 min exercise · **Level:** L1 Foundation (beginner) · **Prereqs:** M02.L08 · **Remediate to:** M02.L08; Web Development 101 M03.L01 and M03.L02 (typography and colour)
-**Verified against:** MDN pages for `font-family`, `font-size`, `line-height`, `color`, `display` and `visibility`, plus "The box model" and "Color contrast"; W3C "Understanding SC 1.4.3 Contrast (Minimum)" and "Understanding SC 1.4.12 Text Spacing" (WCAG 2.2); WebAIM Contrast Checker, "The WebAIM Million" (2026) and "Invisible Content Just for Screen Reader Users" (2020); Chrome for Developers docs on contrast and CSS; Google Search Central "Spam policies for Google web search", "Understanding page experience in Google Search results", "Creating helpful, reliable, people-first content" and "Mobile site and mobile-first indexing best practices"; Search Console Help "Manual actions report", all on 2026-11-06. The contrast ratios here were calculated with the WCAG formula and spot-checked with WebAIM's tool. The CSS samples and the planted page's CSS passed the W3C CSS Validator. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft.
+**Verified against:** MDN pages for `font-family`, `font-size`, `line-height`, `color`, `display` and `visibility`, plus "The box model" and "Color contrast"; W3C "Understanding SC 1.4.3 Contrast (Minimum)" and "Understanding SC 1.4.12 Text Spacing" (WCAG 2.2); WebAIM Contrast Checker, "The WebAIM Million" (2026) and "Invisible Content Just for Screen Reader Users" (2020); Chrome for Developers docs on contrast and CSS; W3C "Understanding SC 1.4.8 Visual Presentation"; MDN "Mastering margin collapsing"; Google Search Central "Spam policies for Google web search", "Understanding page experience in Google Search results", "Creating helpful, reliable, people-first content" and "Mobile site and mobile-first indexing best practices"; Search Console Help "Manual actions report", all on 2026-11-06. The contrast ratios here were calculated with the WCAG formula and spot-checked with WebAIM's tool. The CSS samples and the planted page's CSS passed the W3C CSS Validator. Part E's Console line was tested in jsdom, with off-screen positions simulated, not in a real browser. The W3C Nu HTML Checker was rate-limiting requests, so **this lesson's HTML hasn't been through it yet**. DevTools steps weren't run in a live browser for this draft. Chrome's docs place the box model diagram behind **Show sidebar**. That it also appears in **Computed**, and that hovering tints the page, are everyday behaviour, so check both at screenshot time.
 
 > ⚠️ **Freshness flag:** Google's list of hidden text examples and the WebAIM Million figures can change. WebAIM publishes a new Million report each year, and its screen reader article dates from 2020.
 
@@ -27,7 +27,7 @@ Amara writes a strong guide for a client, but the site shows it in pale grey 13p
 | `font-size` | `font-size: 1.125rem;` | Use `rem`, not `px`. `1rem` is usually 16px. MDN says `px` sizes are "not accessible, because the user cannot change the font size in some browsers" |
 | `line-height` | `line-height: 1.6;` | "Use a minimum value of `1.5` for `line-height` for main paragraph content" (MDN). Leave off the unit |
 | `color` | `color: #222222;` | Keep enough contrast with the background |
-| `max-width` | `max-width: 40rem;` | Stops lines becoming too long to read comfortably |
+| `max-width` | `max-width: 40rem;` | Keeps lines a comfortable length. W3C's strictest guidance is "no more than 80 characters or glyphs", because people can have "trouble keeping their place" in long lines |
 
 Lesson 2.8 used `px` to keep things simple. From here on, use `rem` for text.
 
@@ -93,7 +93,7 @@ Notice that "position text off-screen" appears on the bad list, and off-screen i
 | Claim | Verdict | What the source says |
 |---|---|---|
 | Google ranks pages on font size or contrast | **Not in Google's docs** | Its page experience page names neither. It does ask if visitors "can easily distinguish the main content from other content" |
-| Readability doesn't matter for SEO | **Misleading** | Google's content page asks: "Is the content produced well, or does it appear sloppy or hastily produced?" People also can't use what they can't read |
+| Readability affects your search results | **Not stated directly** | Google doesn't name it. The nearest line is about content quality in general: "Is the content produced well, or does it appear sloppy or hastily produced?" The clear benefit is for readers |
 | White text on a white background is spam | **Documented** | It's in Google's list of hidden text abuse |
 | All hidden content breaks the policy | **False** | Accordions, tabs, sliders, tooltips and screen reader text "don't violate our policies" |
 | Content in tabs counts as main content | **Documented** | Google's main content list includes "Tabbed or expanded sections" |
@@ -110,18 +110,18 @@ flowchart TD
   B -- yes --> C[Fine: keep it<br/>in the page's HTML]:::blue
   B -- no --> D{Does it help<br/>screen reader users?}:::sky
   D -- yes --> E[Fine: keep it]:::blue
-  D -- no --> F{Is it old or unused,<br/>like a closed banner?}:::sky
-  F -- yes --> G[Tidy it up<br/>when you can]:::blue
-  F -- no --> H{Is it there just<br/>for search engines?}:::sky
+  D -- no --> H{Is it there just<br/>for search engines?}:::sky
   H -- yes --> I[Remove it, or make<br/>it visible to everyone]:::pink
-  H -- no --> J[Ask the developer<br/>why it's there]:::pink
+  H -- no --> F{Is it old or unused,<br/>like a closed banner?}:::sky
+  F -- yes --> G[Tidy it up<br/>when you can]:::blue
+  F -- no --> J[Ask the developer<br/>why it's there]:::pink
 
   classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
   classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** if visitors can open the content, as in a tab or accordion, it's fine, so long as it's in the page's HTML. If it helps screen reader users, keep it. If it's old or unused, tidy it up when you can. If it's there just for search engines, remove it or make it visible to everyone. If you can't tell, ask the developer.
+**In words:** if visitors can open the content, as in a tab or accordion, it's fine, so long as it's in the page's HTML. If it helps screen reader users, keep it. If it's there just for search engines, remove it or make it visible to everyone, however old it is. If it's simply old or unused, tidy it up when you can. If you can't tell, ask the developer.
 
 > **Under the hood: how contrast is measured.** The ratio doesn't compare colours as you see them. It compares "relative luminance", a calculated value for how bright a colour is, and it gives green far more weight than blue, because our eyes are most sensitive to green. That's why two colours that look clearly different can still fail. Don't judge by eye: measure it.
 
@@ -151,7 +151,7 @@ You'll style your article for reading, fix low contrast, fix a spacing bug and s
    **Expected:** the text is larger, with more space between lines, in a centred column that stops growing as the window widens.
 3. Press **Ctrl** and **+** (Mac: **Cmd** and **+**) a few times to zoom in, then **Ctrl+0** (Mac: **Cmd+0**) to reset.
 
-   **Expected:** the text and line spacing grow together.
+   **Expected:** the text and line spacing grow together. Zoom scales `px` too. The gain from `rem` comes when readers raise the default font size in their browser settings.
 
 **Part B — Find and fix low contrast (8 min)**
 1. Add a colour to the `.tip` rule: `color: #b8a98f;`. Save and reload.
@@ -229,7 +229,11 @@ You'll style your article for reading, fix low contrast, fix a spacing bug and s
 1. Open a page on your project site, and use **Inspect** on a main paragraph.
 2. In **Styles** or **Computed**, note its `font-size`, `line-height` and `color`. Use the **Color Picker** to read its contrast ratio.
 3. Press **Ctrl+A** (Mac: **Cmd+A**), and look for text that appears only when selected.
-4. In View Source, search for `font-size:0`, `left:-` and `opacity:0`, and look for lists of keywords. A match isn't proof of anything: read the content, and use the flowchart.
+4. Most CSS lives in stylesheets, so View Source won't show it. Instead, ask the browser. Press **Ctrl+Shift+J** (Mac: **Cmd+Option+J**) to open the **Console**, then enter this line. As in Lesson 2.4, Chrome may ask you to type `allow pasting` first. If you'd rather not use the Console, skip this step.
+   ```js
+   document.querySelectorAll('body *').forEach(e => { const s = getComputedStyle(e), r = e.getBoundingClientRect(); if (!e.children.length && e.textContent.trim() && (parseFloat(s.fontSize) === 0 || s.opacity === '0' || r.right < 0)) console.log(e.textContent.trim().slice(0, 60)); });
+   ```
+   **Expected:** a list of any text with a font size of 0, an opacity of 0, or a position off the left of the screen, or nothing at all. It won't catch every method, and **Ctrl+A** covers white text. A match isn't proof of anything: read the content, and use the flowchart.
 5. Add a tab called **Readability check** to your "SEO 101 project" sheet and fill it in.
 
    | Check | Nila Coffee cold brew guide (illustrative) |
@@ -283,9 +287,10 @@ You'll style your article for reading, fix low contrast, fix a spacing bug and s
 | Text looks huge inside other elements | `em` sizes multiply as they nest | Use `rem` |
 | A box is wider than you set | Padding and border are added to `width` | Add `box-sizing: border-box` |
 | A gap won't go away | A margin on the element above or below | Check both in the box model diagram |
-| Two vertical margins don't add up | Margins between stacked boxes combine | Expect the larger one, not the total |
+| Two vertical margins don't add up | "Margin collapsing": stacked margins combine into one "whose size is the largest of the individual margins" (MDN) | Expect the larger one, not the total |
 | `margin: 0 auto` doesn't centre a box | The box has no `width` or `max-width` | Add one |
 | Text fails contrast only on an image | The image's colours vary | Add a solid or semi-solid background behind the text |
+| You find keywords hidden for search engines on a live site | Old spam tactics, or a hacked site | Report it, and ask the owner to check **Manual actions** in Search Console. Google's steps: "Remove or re-style any hidden text" |
 | **Ctrl+A** shows nothing, but View Source shows odd keywords | They're hidden another way, such as `font-size: 0` | Find the element in **Elements**, and read its styles |
 
 ## Exercise
@@ -370,10 +375,12 @@ Explain to a friend in 3 sentences why two pieces of off-screen text can be trea
 - MDN — `line-height`: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-height
 - MDN — Color contrast: https://developer.mozilla.org/en-US/docs/Web/Accessibility/Guides/Understanding_WCAG/Perceivable/Color_contrast
 - MDN — The box model: https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model
+- MDN — Mastering margin collapsing: https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Box_model/Margin_collapsing
 - MDN — `display`: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/display
 - MDN — `visibility`: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/visibility
 - W3C — Understanding SC 1.4.3 Contrast (Minimum): https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html
 - W3C — Understanding SC 1.4.12 Text Spacing: https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html
+- W3C — Understanding SC 1.4.8 Visual Presentation: https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html
 - WebAIM — Contrast Checker: https://webaim.org/resources/contrastchecker/
 - WebAIM — The WebAIM Million (2026): https://webaim.org/projects/million/
 - WebAIM — Invisible Content Just for Screen Reader Users: https://webaim.org/techniques/css/invisiblecontent/
