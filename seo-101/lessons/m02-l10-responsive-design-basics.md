@@ -342,7 +342,7 @@ Explain to a friend in 3 sentences why hiding a section on phones can hurt a pag
 - MDN — `overflow-x`: https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/overflow-x
 - web.dev — Responsive web design basics: https://web.dev/articles/responsive-web-design-basics
 - web.dev — Accessible tap targets: https://web.dev/articles/accessible-tap-targets
-- web.dev — Optimize Cumulative Layout Shift: https://web.dev/articles/optimize-cls
+- web.dev — Guide to layout shift (CLS): https://web.dev/articles/optimize-cls
 - W3C — Understanding SC 1.4.10 Reflow: https://www.w3.org/WAI/WCAG22/Understanding/reflow.html
 - W3C — Understanding SC 2.5.8 Target Size (Minimum): https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
 - Chrome for Developers — DevTools device mode: https://developer.chrome.com/docs/devtools/device-mode
