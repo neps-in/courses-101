@@ -36,21 +36,21 @@ Amara's client forwards a report: "cold brew recipe gets 40,500 searches a month
 | **Search Console** | Searches where your site appeared | Google, your site only | Only shows your site's own appearances |
 | **Bing Webmaster Tools** | Keyword research and your site's performance | Bing | Bing's searches only, and you must sign in |
 | **Ahrefs Webmaster Tools** | SEO data on sites you've verified | Ahrefs | Competitors' sites need a paid plan |
-| **Ahrefs free keyword tools** | Volume estimates and a difficulty score | Ahrefs | Estimates, "powered by clickstream data" |
+| **Ahrefs free keyword tools** | Volume estimates and a difficulty score | Ahrefs | Estimates, "powered by clickstream data" (data on how people browse) |
 
 ### What each number says
-**Keyword Planner volume.** Google defines it as "The average number of times people have searched for a keyword and its close variants based on the month range as well as the location and Search Network settings you selected." **Close variants** are near-identical phrases, so similar phrases can share one number. Google adds: "Your search volume statistics are rounded."
+**Keyword Planner volume.** Google defines it as "The average number of times people have searched for a keyword and its close variants based on the month range as well as the location and Search Network settings you selected." **Close variants** are near-identical phrases, so similar phrases can share one number. "Search Network settings" are just the options you chose in the tool. Google adds: "Your search volume statistics are rounded." It's also an average, so it hides seasonality: a phrase that peaks in May looks steady in this column. That's why you check Trends as well.
 
 **Ranges.** With little or no ad spend, you may see a broad range such as 1K–10K. SEO sites report this, though Google's help pages that we checked don't explain it. A range is still enough to compare phrases.
 
 **The Competition trap.** In Keyword Planner, Competition is "The number of advertisers that showed on each keyword relative to all keywords across Google." It's about **ads**, not about how hard it is to rank.
 
-**Google Trends.** Trends doesn't count searches. Google says: "Each data point is divided by the total searches of the geography and time range it represents to compare relative popularity." The results are then "scaled on a range of 0 to 100". On your chart, 100 marks the peak *(observed)*, not 100 searches. Also, "Trends only shows data for popular terms", so a long-tail phrase may show nothing. That doesn't prove nobody searches it.
+**Google Trends.** Trends doesn't count searches. Google says: "Each data point is divided by the total searches of the geography and time range it represents to compare relative popularity." The results are then "scaled on a range of 0 to 100". On your chart, 100 marks the peak *(observed)*, not 100 searches. Also, "Trends only shows data for popular terms", so a long-tail phrase may show nothing. That doesn't prove nobody searches it. Trends also separates **search terms** from **topics**: "Topics are a group of terms that share the same concept in any language." A term is narrower, and Google warns: "You won't get results for misspellings, spelling variations, synonyms, plural, or singular versions of your terms."
 
-**Search Console.** **Impressions** means "How many times your site appeared in Search results." So it's not the total demand for a phrase. It's also missing some rare searches: "Some queries (called anonymized queries) are not included in Search Console data to protect the privacy of the user making the query." It's the only source here that shows what really happened for your site, which is why it matters so much once you have data.
+**Search Console.** **Impressions** means "How many times your site appeared in Search results." So it's not the total demand for a phrase. It's also missing some rare searches: "Some queries (called anonymized queries) are not included in Search Console data to protect the privacy of the user making the query." It's the one source here that shows what really happened for your site on Google, which is why it matters so much once you have data.
 
 **Difficulty.** Each tool has its own method, so these scores aren't comparable:
-- **Ahrefs:** it looks at "the number of referring domains the top 10 ranking pages have", and says: "Keyword Difficulty doesn't take into account any on-page factors."
+- **Ahrefs:** it looks at "the number of referring domains the top 10 ranking pages have" (how many other sites link to them), and says: "Keyword Difficulty doesn't take into account any on-page factors."
 - **Semrush:** its score is "based on a variety of factors", including links and "the SERP-related qualities of the keyword itself".
 
 Ahrefs itself says: "These tools all use the same 0-100 scale, but each one calculates it differently." Compare phrases inside one tool, and never across two.
@@ -88,7 +88,7 @@ flowchart TD
 ```
 **In words:** when someone gives you a search volume, check if it names a tool, a place and a date. If it doesn't, treat it as unsupported. Either way, look the phrase up in a real source. If the numbers are about the same size, record it with its source, place and date. If they aren't, reject the claim and record what you found.
 
-> **Under the hood: why estimates disagree.** Google's tools see Google's searches. Bing sees Bing's. Third-party tools can't see inside Google, so they estimate. Ahrefs says its estimates are "powered by clickstream data". Each tool also picks its own place, period, rounding and grouping of similar phrases. So a gap between two tools isn't a mistake. It's a reminder that you're comparing estimates. In this course, "about the same size" means within roughly the same power of ten, such as hundreds or thousands *(course rule of thumb)*.
+> **Under the hood: why estimates disagree.** Google's tools see Google's searches. Bing sees Bing's. Third-party tools can't see inside Google, so they estimate. Ahrefs says its estimates are "powered by clickstream data". Each tool also picks its own place, period, rounding and grouping of similar phrases *(observed practice)*. So a gap between two tools isn't a mistake. It's a reminder that you're comparing estimates. In this course, "about the same size" means within roughly the same power of ten, such as hundreds or thousands *(course rule of thumb)*.
 
 ## Hands-on walkthrough
 You'll look up ten phrases in at least two sources, compare a seasonal phrase, and test a claimed number. You need a browser and your "SEO 101 project" sheet. Nila Coffee's values are illustrative.
@@ -119,7 +119,7 @@ You'll look up ten phrases in at least two sources, compare a seasonal phrase, a
    **Expected:** ranges or rounded numbers, and blanks or very low figures for some long phrases. Leave Competition out of your tab, because it's about ads.
 
 **Part C — Google Trends (8 min)**
-1. Go to `https://trends.google.com`, and search a phrase that you suspect is seasonal, such as "iced coffee".
+1. Go to `https://trends.google.com`, and search a phrase that you suspect is seasonal, such as "iced coffee". If Trends offers a **Topic** as well as a **Search term**, use the search term for an exact phrase, and the topic for the wider idea.
 2. Set the country to your audience's, and the time range to the past five years.
 3. Look for peaks at the same time each year.
    > 🖼️ **Image prompt:** Google Trends line chart (1200×500) showing five years of interest in a seasonal search such as "iced coffee", with clear yearly peaks. Highlight one yearly peak with a 3px #F9B2D7 outline; blur any personal details.
@@ -133,7 +133,7 @@ You'll look up ten phrases in at least two sources, compare a seasonal phrase, a
 Use at least one of these.
 1. **Search Console** (if you have data): open **Performance**, then **Queries**, and search your phrases. Record impressions and average position.
 2. **Bing Webmaster Tools:** sign in at `https://www.bing.com/webmasters`, and open **Keyword Research**. Third-party reports say it shows impressions for each keyword, so note what you really see. Label it as Bing data.
-3. **Ahrefs free tools:** enter a phrase in the free Keyword Generator at `https://ahrefs.com/keyword-generator`, and the Keyword Difficulty Checker at `https://ahrefs.com/keyword-difficulty`. Record the estimate, and the difficulty as "(Ahrefs)". If you've verified your site in Ahrefs Webmaster Tools, look at the keywords it already ranks for, too.
+3. **Ahrefs free tools:** enter a phrase in the free Keyword Generator at `https://ahrefs.com/keyword-generator`, and the Keyword Difficulty Checker at `https://ahrefs.com/keyword-difficulty`. Record the estimate, and the difficulty as "(Ahrefs)". Ahrefs Webmaster Tools is optional for now. It's free, but you need to sign up and verify your site. If you've done that, look at the keywords your site already ranks for, too.
 
 **Expected:** the sources won't match. That's normal. Look at whether they agree on which phrases are bigger.
 
