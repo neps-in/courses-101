@@ -12,7 +12,7 @@
 3. **Prioritise** a short list of first targets for your project site. *(O3)*
 
 ## Why it matters
-Kavya's first keyword list starts with "yoga", because it has the biggest number. The first page is full of huge health sites, national brands and video channels. A new site with six blog posts won't move them, and most people searching "yoga" don't want a class in Chennai anyway. Further down her list is "gentle yoga for beginners in adyar". It has far fewer searches, but the people searching it are the ones she can actually teach. Choosing that kind of target is the difference between a year of no results and a first real student from Google.
+Kavya's first keyword list starts with "yoga", because it has the biggest number. The first page is full of huge health sites, national brands and video channels. A new site with six blog posts is very unlikely to move them *(observed practice)*, and most people searching "yoga" don't want a class in Chennai anyway. Further down her list is "gentle yoga for beginners in adyar". It has far fewer searches, but the people searching it are the ones she can actually teach. Choosing that kind of target gives her a realistic chance of a first real student from Google.
 
 ## Core concept
 **Plain version:** a good first target is a phrase that you can serve, that's worth something to the business, and where the current results look beatable. The biggest number on your list is rarely the best place to start.
@@ -28,6 +28,7 @@ You don't need paid tools for this. Search the phrase in a private window, and l
 | **How well they fit** | Pages built exactly for this phrase | General pages that only partly answer it |
 | **How good they are** | Detailed, current, written by someone with real experience | Thin, out of date, or written with no real experience |
 | **What you can add** | You have nothing that they lack | You have first-hand knowledge, local detail or real examples |
+| **What sits above them** | A map, Shopping results or an AI Overview pushes organic results down | Mostly plain organic results |
 
 Then give the phrase a **Chance** rating, from your own reading:
 - **3 (open):** forums, small sites or weak pages in the top results.
@@ -41,7 +42,7 @@ Google gives you two good questions to ask yourself. The first is about comparin
 
 That's where small sites can be strong. Kavya has really taught beginners, and Tomás has really fixed taps. A big site may not have that.
 
-Links also matter, and that's one reason established sites are hard to beat. Google says: "one of the factors used to determine quality is understanding if other prominent websites link or refer to the content." Module 9 covers links.
+Links also matter, and they're likely one reason established sites are hard to beat *(observed practice)*. Google says: "one of the factors used to determine quality is understanding if other prominent websites link or refer to the content." Module 9 covers links.
 
 ### Scoring a phrase
 First comes one yes-or-no gate: **can your site serve this intent?** If the results want a product and you don't sell one, stop there. Otherwise, score each phrase from 1 to 3 *(course rule of thumb)*.
@@ -61,14 +62,14 @@ Don't just take the top five totals. Aim for a mix:
 - **Quick wins:** high Chance and low Effort. Three or so, for early progress.
 - **Stretch targets:** high Value, but harder. One or two, to work towards.
 
-If you have Search Console data, look for phrases where you already appear on the second page. They're often the closest wins, because Google already connects your page with the phrase *(observed practice)*.
+If you have Search Console data, look for phrases with an average position of about 11 to 20, which is roughly the second page. They're often the closest wins, because Google already connects your page with the phrase *(observed practice)*.
 
 ### What this does for search
 
 | Claim | Verdict | What the source says |
 |---|---|---|
 | Someone can promise you first place | **False** | "No one can guarantee a #1 ranking on Google." |
-| Results will show up within days | **False** | "Some changes might take effect in a few hours, others could take several months." |
+| Results always show up within days | **False** | "Some changes might take effect in a few hours, others could take several months." |
 | A new site is noticed straight away | **False** | "It can take a few weeks for Google to notice a new site, or any changes in your existing site." |
 | Matching a competitor's links wins the spot | **False** | Even Ahrefs says that as many links or more "won't guarantee that you'll rank #1" |
 | A low difficulty score means it's easy | **Unsupported** | It's a tool's estimate, and it ignores on-page factors. Read the results too |
@@ -102,7 +103,7 @@ flowchart TD
 You'll review the results for ten phrases, score them, and choose five first targets. You need a browser and your "SEO 101 project" sheet. Nila Coffee's values are illustrative.
 
 **Before you start: which steps apply to you?**
-- **Path A (your own site):** do every part, using what you know about your margins and customers.
+- **Path A (your own site):** do every part, using what you know about your customers and what earns you the most.
 - **Path B (practice site):** you have no sales to protect, so score Value by how well a phrase fits your blog's audience. Expect mostly low-Effort, specific phrases.
 - **Path C (client site):** ask the client which products or services matter most before you score Value. It's their business decision.
 
@@ -139,7 +140,7 @@ You'll review the results for ten phrases, score them, and choose five first tar
    > 🖼️ **Image prompt:** A Google Sheets tab called Targets (1200×500) with ten scored phrases sorted by total, and a Decision column showing Quick win, Stretch, Later and Drop. Highlight the Decision column with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** A spreadsheet of scored phrases sorted by total, with the Decision column highlighted.
 
-**Expected output:** a dated **Targets** tab with ten phrases, each with a note on who ranks, scores and a decision, including five first targets.
+**Expected output:** a dated **Targets** tab with ten phrases, each with a note on who ranks, scores and a decision, including five first targets. Recheck a phrase when you start work on it, and review the whole list every few months *(course rule of thumb)*.
 
 ## When to use / when not to
 **Use this process** when you choose what to work on next, for a new site or an existing one.

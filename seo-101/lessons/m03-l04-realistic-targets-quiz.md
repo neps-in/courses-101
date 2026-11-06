@@ -27,7 +27,7 @@
 - a) Agencies can guarantee them if they're Google partners
 - b) New sites get a short ranking boost for the first month
 - c) Rankings can be guaranteed for very low-volume phrases
-- d) No one can guarantee a #1 ranking on Google
+- d) Nobody can guarantee first place, for any phrase
 
 **Answer:** d
 **Explanation:** Google says exactly that: "No one can guarantee a #1 ranking on Google." Be wary of anyone who promises positions or dates.
