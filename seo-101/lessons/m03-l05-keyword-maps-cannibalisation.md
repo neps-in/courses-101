@@ -12,7 +12,7 @@
 3. **Spot** cannibalisation with `site:` searches and Search Console, and choose a fix. *(O3)*
 
 ## Why it matters
-Kavya has two blog posts: "Yoga for Beginners" and "A Beginner's Guide to Yoga". She wrote the second because the first wasn't ranking. Now neither is. In Search Console, both appear for "beginner yoga", sometimes one and sometimes the other, both on the second page. Visitors who land on one don't know the other exists, and the links people give her are split between them. Two weaker pages are doing one job. A keyword map would have stopped this before she wrote the second post, and this lesson also shows her how to fix it now.
+Kavya has two blog posts: "Yoga for Beginners" and "A Beginner's Guide to Yoga". She wrote the second because the first wasn't ranking. Now neither is. In Search Console, both appear for "beginner yoga", sometimes one and sometimes the other, both on the second page. Visitors who land on one don't know the other exists, and the links people give her are split between them. Google says that combining similar pages helps it "consolidate the signals they have for the individual URLs (such as links to them) into a single, preferred URL". Two weaker pages are doing one job. A keyword map would have stopped this before she wrote the second post, and this lesson also shows her how to fix it now.
 
 ## Core concept
 **Plain version:** many phrases are really one question asked in different words. Group them into a **topic**, and give each topic **one page**. A **keyword map** is the table that records which page owns which topic. When two of your pages try to do the same job for the same searches, people call it **keyword cannibalisation**.
@@ -35,7 +35,7 @@ So the test isn't "do two of my pages appear for one search?" It's: **do they se
 | Claim | Verdict | What the source says |
 |---|---|---|
 | Two of your pages in one set of results is always a problem | **False, by Google's public comment** | Mueller: "You need to look at the details, you need to know your site, and your potential users." |
-| Similar pages get you a penalty | **False** | "Having duplicate content on your site is not a violation of our spam policies, but it can be a bad user experience" |
+| Duplicate pages on your site get you a penalty | **False** | "Having duplicate content on your site is not a violation of our spam policies, but it can be a bad user experience" |
 | Merging pages and redirecting the old one is a recognised fix | **Documented** | "if you have consolidated content previously hosted on multiple pages to a new single page, you can redirect the older URLs to that new, consolidated page." |
 | A canonical tag fixes any pair of competing pages | **Only for duplicates** | Canonical tags are for "duplicate or very similar pages", and they're "a hint, not a rule" |
 | Add `noindex` to the weaker page | **Not recommended** | "We don't recommend using noindex to prevent selection of a canonical page within a single site, because it will completely block the page from Search." |
@@ -73,7 +73,7 @@ The "three or more" line is a common starting point in keyword tools *(observed 
 flowchart TD
   %% alt: Fixing competing pages: if both aren't shown or intents differ, keep both; if the intent is the same, merge into the stronger page and redirect.
   A[Two of your pages seem<br/>to compete]:::cream --> B{Does Search Console show<br/>both for the same search?}:::sky
-  B -- no --> C[Not a real problem yet:<br/>keep watching]:::blue
+  B -- no --> C[Not a real problem yet:<br/>note the owner, keep watching]:::blue
   B -- yes --> D{Same intent?}:::sky
   D -- no --> E[Keep both: make each page's job<br/>clear and link between them]:::blue
   D -- yes --> F[Merge into the stronger page<br/>and redirect the other]:::pink
@@ -84,7 +84,7 @@ flowchart TD
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** first check that both pages are actually shown for the same search. Mueller notes that Search Console "shows data for when pages were actually shown", and if they aren't, the problem is theoretical. If both are shown but serve different intents, such as a product page and a how-to guide, keep both, make each page's job clear, and link between them. If they serve the same intent, move the best content into the stronger page, permanently redirect the other to it, and update your internal links. Module 6 shows how to set up redirects.
+**In words:** first check that both pages are actually shown for the same search. Mueller notes that Search Console "shows data for when pages were actually shown", and if they aren't, the problem is theoretical. If they aren't, note in your map which page owns the topic, and keep watching. If both are shown but serve different intents, such as a product page and a how-to guide, keep both, make each page's job clear, and link between them. If they serve the same intent, move the best content into the stronger page, permanently redirect the other to it, and update your internal links. Module 6 shows how to set up redirects.
 
 **How to pick the stronger page:** the one with more clicks and impressions in Search Console, more links from other sites, or the better content *(observed practice)*. If they're close, keep the one with the clearer URL.
 
@@ -102,7 +102,7 @@ You'll group your phrases, build a keyword map, and check your site for pages co
 
 **Part B — Compare the results pages (15 min)**
 1. Open a private window and search the first phrase of a pair. Copy the URLs of the top ten organic results, skipping ads, into one column of your **Overlap** tab. Do the same for the second phrase in the next column.
-2. In the cell beside the first URL, count whether it also appears in the second list, for example with `=COUNTIF(C$2:C$11, B2)`. Copy the formula down and add up the column. COUNTIF counts how many cells match. It ignores capital letters, but every other character must match, so copy URLs exactly.
+2. In the cell beside the first URL, count whether it also appears in the second list, for example with `=COUNTIF(C$2:C$11, B2)`. Copy the formula down and add up the column. COUNTIF counts how many cells match, and it ignores capital letters. It treats `?` and `*` as wildcards, so cut each URL off before any `?`. That also removes tracking codes.
 
    | | B: french press ratio | C: how much coffee for a french press | In both? |
    |---|---|---|---|
@@ -125,7 +125,7 @@ You'll group your phrases, build a keyword map, and check your site for pages co
    | French press (buy) | french press | buy french press india | Transactional | Product page | /shop/french-press | Existing | Stretch | FALSE |
 
 2. Use **Insert > Dropdown** for the **Intent**, **Page type**, **Existing or new** and **Priority** columns, so the values stay consistent.
-3. Take **Priority** from your **Targets** tab (Quick win, Stretch or Later).
+3. Take **Priority** from your **Targets** tab (Quick win, Stretch or Later). For a topic with no page yet, choose **New** and write the URL you'd give it.
 4. In **Used twice?**, enter `=COUNTIF(F:F, F2)>1` and copy it down. It shows **TRUE** if a URL is given to more than one topic.
    **Expected:** no TRUE values. If one appears, either the topics belong together or one needs a new page.
 
@@ -169,7 +169,8 @@ You'll group your phrases, build a keyword map, and check your site for pages co
 ## Troubleshooting
 | Symptom | Likely cause | Fix |
 |---|---|---|
-| COUNTIF says 0, but the same page is in both lists | The URLs differ slightly, such as a trailing `/`, `www` or a tracking code | Copy URLs exactly, or trim them to the same form |
+| COUNTIF says 0, but the same page is in both lists | The URLs differ slightly, such as a trailing `/` or `www` | Trim them to the same form |
+| COUNTIF counts a match that isn't there | A `?` in a URL acts as a wildcard | Cut each URL off before the `?` |
 | Every pair shares lots of results | Your phrases are only small word changes | That's useful: they're one topic, so group them |
 | No pair shares any results | Results are personalised, or the phrases really differ | Use a private window, and check intent by eye |
 | Search Console shows no rows for a phrase | Too few searches, or your site isn't shown for it | Use the `site:` check, and try a broader filter with **Queries containing** |

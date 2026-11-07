@@ -30,7 +30,7 @@
 - d) Move the content into one page and redirect the old URL to the new page
 
 **Answer:** d
-**Explanation:** Google says that if you've "consolidated content previously hosted on multiple pages to a new single page, you can redirect the older URLs to that new, consolidated page." It doesn't recommend `noindex` for this, or `robots.txt` and the removal tool for choosing a canonical.
+**Explanation:** Google says that if you've "consolidated content previously hosted on multiple pages to a new single page, you can redirect the older URLs to that new, consolidated page." Google doesn't recommend `noindex` for this, and says: "Don't use the robots.txt file for canonicalization purposes" and "Don't use the URL removal tool for canonicalization."
 **Hint:** Which option keeps visitors and links pointing somewhere useful?
 
 ### Q4. Kavya's posts "Yoga for Beginners" and "A Beginner's Guide to Yoga" both appear in Search Console for "beginner yoga", swapping places on page two. What should she do? *(O3 · scenario)*
