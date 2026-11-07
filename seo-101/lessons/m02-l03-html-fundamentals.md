@@ -82,7 +82,7 @@ You saw these in Lesson 1.5 from the results page side. Now you can see them in 
 | Google always shows your `<title>` | **False** | Title links are "completely automated". Google uses several sources and "might modify the title link" if it decides "the page title doesn't reflect the page content" |
 | Titles must be under 60 characters | **Rule of thumb** | Google: "there's no limit on how long a `<title>` element can be", but the title link "is truncated … as needed". MDN says search engines typically show about the first 55–60 characters, so put the important words first |
 | Google always shows your meta description | **False** | Google "sometimes uses the meta description", and "snippets are primarily created from the page content itself" |
-| The meta description helps you rank | **No, by Google's own statement** | "We still don't use the description `meta` tag in our ranking." This comes from an archived 2009 Google post, and we found no newer page that says otherwise. A good description still helps people choose your result |
+| The meta description helps you rank | **No, by Google's last statement on it** | "We still don't use the description `meta` tag in our ranking." This comes from an archived 2009 Google post. We found no newer Google page that says either way. A good description still helps people choose your result |
 | Add `<meta name="keywords">` to rank | **Myth** | "The meta-keyword tag is not used by Google Search, and it has no effect on indexing and ranking at all." |
 | `lang` tells Google the page's language | **False, but keep it** | Google "doesn't rely on code annotations such as the `lang`". It reads the text instead. Keep `lang` anyway: screen readers use it for "the correct pronunciation" |
 | Invalid HTML hurts your rankings | **Not stated** | We found no Google page saying this. Google says "the web in general is not valid HTML". The head is the exception that matters (see below) |
@@ -107,7 +107,7 @@ flowchart TD
   classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
   classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
 ```
-**In words:** Google works through the head one element at a time. Allowed elements are `title`, `meta`, `link`, `script`, `style`, `base`, `noscript` and `template`. If it finds anything else, such as an `<img>` or `<iframe>`, Google "assumes the end of the `<head>` element and stops reading any further elements" in it. So a stray image at the top of the head can hide your description, or a `noindex` tag, from Google, even though the page looks fine. Plugins and pasted tracking codes can cause this, which is why the head is worth checking.
+**In words:** Google works through the head one element at a time. Allowed elements are `title`, `meta`, `link`, `script`, `style`, `base`, `noscript` and `template`. If it finds anything else, such as an `<img>` or `<iframe>`, Google "assumes the end of the `<head>` element and stops reading any further elements" in it. So a stray image at the top of the head can hide your description, or a `noindex` tag, from Google, even though the page looks fine. This often happens when someone pastes a tracking code into the wrong place *(observed practice)*. For example, many tag snippets have a `<noscript>` part containing an `<iframe>`, which is meant for the body. Pasted into the head, it ends the head there.
 
 > **Under the hood: browsers repair bad HTML without telling you.** If you make a mistake, a browser guesses what you meant and shows the page anyway. That's why a broken page can look fine. View Source shows what the server sent, while the **Elements** panel in DevTools shows the browser's repaired version. A **validator** is a free tool that checks your code against the HTML rules and reports what the browser quietly fixed.
 
@@ -132,7 +132,7 @@ You'll build a page, check it, break it on purpose, and then read your live site
 **Part B — Validate it (5 min)**
 1. Open the **W3C Nu HTML Checker** text box at `https://validator.w3.org/nu/#textarea`.
 2. Paste in all your code and click **Check**.
-   **Expected:** "Document checking completed. No errors or warnings to show." If you see errors, fix the first one and check again, because one mistake often causes several messages.
+   **Expected:** a green message saying there are no errors or warnings. The exact wording can change, so look for green and for the word "no". If you see errors, fix the first one and check again, because one mistake often causes several messages.
 
 **Part C — Break the head on purpose (5 min)**
 1. In `article.html`, add this line just below the `<meta charset>` line, and save:
@@ -162,9 +162,10 @@ You'll build a page, check it, break it on purpose, and then read your live site
    | Meta description | Missing | Present, 127 characters |
    | Anything odd in the head? | No | No |
 
-4. Don't fix anything yet. Module 4 covers writing titles and descriptions. Your **SEO access** tab from Lesson 2.2 shows where you'd change them.
+4. Copy one `<a …>` or `<meta …>` line from your page into the tab, and label its opening tag, attributes, content and closing tag. Write "none" where a part is missing, as it is for a void element such as `<meta>`.
+5. Don't fix anything yet. Module 4 covers writing titles and descriptions. Your **SEO access** tab from Lesson 2.2 shows where you'd change them.
 
-**Expected output:** a valid `article.html`, and a **Head check** tab for two pages with at least one thing to improve noted.
+**Expected output:** a valid `article.html`, and a **Head check** tab for two pages with one element labelled and at least one thing to improve noted.
 
 ## When to use / when not to
 **Hand-write HTML when** you're learning, building a small page, or need to see exactly what's happening. This course does it so you can read code with confidence.
@@ -187,7 +188,7 @@ You'll build a page, check it, break it on purpose, and then read your live site
 - **Putting an image or heading in the head.** This ends the head early for Google.
 - **Crossing tags.** Close the last one you opened first.
 - **Leaving out quote marks.** A missing closing quote can swallow the rest of your page.
-- **Adding meta keywords.** Google doesn't use them, and they show competitors your target words.
+- **Adding meta keywords.** Google doesn't use them, so they're wasted effort.
 - **Trusting how a page looks.** Browsers repair errors silently, so check with a validator.
 
 ## Troubleshooting
@@ -234,7 +235,7 @@ The checker doesn't flag a vague title, so you have to catch number 3 yourself. 
 - An element is an opening tag, content and a closing tag, and attributes add extra information in the opening tag.
 - The head describes the page, and the body holds what people see.
 - A clear, unique `<title>` is worth your effort, though Google may still change the title link.
-- The meta description can shape your snippet, but it isn't a ranking factor.
+- The meta description can shape your snippet. Google last said in 2009 that it doesn't use it for ranking.
 - An invalid element in the head can make Google miss everything after it, so check the code, not just the look.
 
 ## Teach it back
@@ -273,4 +274,4 @@ Explain to a friend in 3 sentences the difference between the head and the body 
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*
-**Element** = opening tag + content + closing tag. **Attribute** = extra information in the opening tag, as `name="value"`. **Void elements** such as `<meta>` and `<img>` have no closing tag. **Skeleton:** `<!DOCTYPE html>`, `<html lang="en">`, `<head>` (charset, title, description), `<body>`. **Head** = about the page; **body** = what people see. **`<title>`:** unique, clear, accurate; Google may change the title link. **Meta description:** may feed the snippet, doesn't affect ranking. **Meta keywords:** not used. **`lang`:** for screen readers, not Google. Only `title`, `meta`, `link`, `script`, `style`, `base`, `noscript` and `template` belong in the head; anything else makes Google stop reading it. Check code with `https://validator.w3.org/nu/#textarea`.
+**Element** = opening tag + content + closing tag. **Attribute** = extra information in the opening tag, as `name="value"`. **Void elements** such as `<meta>` and `<img>` have no closing tag. **Skeleton:** `<!DOCTYPE html>`, `<html lang="en">`, `<head>` (charset, title, description), `<body>`. **Head** = about the page; **body** = what people see. **`<title>`:** unique, clear, accurate; Google may change the title link. **Meta description:** may feed the snippet; Google said in 2009 it isn't used for ranking. **Meta keywords:** not used. **`lang`:** for screen readers, not Google. Only `title`, `meta`, `link`, `script`, `style`, `base`, `noscript` and `template` belong in the head; anything else makes Google stop reading it. Check code with `https://validator.w3.org/nu/#textarea`.
