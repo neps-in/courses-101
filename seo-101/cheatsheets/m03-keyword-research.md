@@ -51,8 +51,8 @@ No free tool gives one true number. If a figure has no tool, place and date, rej
 - "No one can guarantee a #1 ranking on Google."
 
 ## Keyword map template (L05)
-| Topic | Main phrase | Other phrases | Intent | Page type | URL | Existing or new | Priority | Used twice? |
-|---|---|---|---|---|---|---|---|---|
+| Topic | Main phrase | Other phrases | Intent | Page type | URL | Existing or new | Priority | Used twice? | Notes |
+|---|---|---|---|---|---|---|---|---|---|
 
 - **Group** phrases that share **3 or more** of their top 10 results *(industry rule of thumb)*, then check intent.
 - **Used twice?** `=COUNTIF(F:F, F2)>1` must be FALSE on every row (non-negotiable #5).

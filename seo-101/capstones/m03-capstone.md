@@ -59,8 +59,8 @@ In your **Overlap** tab, compare the top ten results for each pair of phrases th
 ### 4. Build the map (L05)
 In your **Keyword map** tab, add one row per topic, with at least **15 topics**:
 
-| Topic | Main phrase | Other phrases | Intent | Page type | URL | Existing or new | Priority | Used twice? |
-|---|---|---|---|---|---|---|---|---|
+| Topic | Main phrase | Other phrases | Intent | Page type | URL | Existing or new | Priority | Used twice? | Notes |
+|---|---|---|---|---|---|---|---|---|---|
 
 - Use dropdowns for **Intent**, **Page type**, **Existing or new** and **Priority**.
 - Give each topic one URL. For a new page, write the URL you'd give it.
@@ -115,9 +115,11 @@ It has **five problems** and **two things that look wrong but aren't**. Find the
 | french press | /shop/french-press | 31 | 900 | 9 |
 | french press | /how-to-use-french-press | 18 | 650 | 12 |
 
-**Overlap notes** (top ten results compared on the same day)
-- "french press ratio" and "how much coffee for a french press" share **6** results.
+**Overlap and results notes** (all checked on the same day)
+- "french press ratio" and "how much coffee for a french press" share **6** of their top ten results.
 - "french press ratio" and "french press" share **1** result.
+- "cold brew ratio": the top results are recipe posts and how-to guides, with People Also Ask.
+- "coffee": the top results are an encyclopedia entry, big coffee chains and a map of nearby cafés.
 
 Only then check your work against the answers near the end of this page.
 
@@ -186,16 +188,16 @@ Score each criterion. **Good** or better on all five completes the module. The m
 | # | Problem | Fix | Why |
 |---|---|---|---|
 | 1 | Rows 1 and 2 are one topic on two pages | Merge row 2 into row 1, add its phrase to **Other phrases**, and plan to redirect `/how-much-coffee-french-press` to `/french-press-ratio` | They share 6 results and the same intent, and Search Console shows both for the same phrase. `/french-press-ratio` is stronger, with 22 clicks against 9 (L05) |
-| 2 | Row 5 has the wrong intent and page type | Change it to **Informational**, **Guide**, and give it its own page, or add it to the cold brew guide if its results overlap | "cold brew ratio" asks how to make it, so a product page doesn't fit (L01) |
-| 3 | `/cold-brew` is used twice, in rows 6 and 7 | Give the concentrate its product page, such as `/shop/cold-brew-concentrate` | One page can't serve learning and buying at once, and **Used twice?** would show TRUE (L05) |
-| 4 | "coffee" marked as a quick win | Drop it, or mark it **Later** | It's a huge, broad phrase with big brands and unclear intent, so a small site can't win it soon (L04) |
+| 2 | Row 5 has the wrong intent and page type | Change it to **Informational** and **Guide**, with a new page such as `/cold-brew-ratio`. If its results overlap heavily with "how to make cold brew", add it to the cold brew guide instead | Its results are recipes and how-to guides, so a product page doesn't fit (L01) |
+| 3 | `/cold-brew` is used twice, in rows 6 and 7 | Give the concentrate its product page, `/shop/cold-brew-concentrate`, which fix 2 has freed | One page can't serve learning and buying at once, and **Used twice?** would show TRUE (L05) |
+| 4 | "coffee" marked as a quick win | Drop it, or mark it **Later** | Its results are an encyclopedia, big chains and a map, with no single intent, so a small site can't win it soon (L04) |
 | 5 | Rows 9 to 11 are one topic in three word orders | Keep one row and one page, with the other wordings as **Other phrases** | Separate near-identical pages lean towards doorway abuse (L05) |
 
 **Leave alone:**
 - **Rows 3 and 4 both appear for "french press".** One is for buying and one is for learning, so keep both and link the guide to the product page (L05).
 - **Rows 1 and 3 share the words "french press".** They share only 1 result, so they're separate topics. Grouping them by words would be a mistake (L05).
 
-Your notes should show that the numbers alone don't decide. You needed the intent of each page, and whether both pages were really shown, to tell a real problem from a harmless overlap.
+After your fixes, the map has three quick wins (rows 1, 4 and 5), the mix Lesson 3.4 recommends. Your notes should show that the numbers alone don't decide. You needed the intent of each page, and whether both pages were really shown, to tell a real problem from a harmless overlap.
 
 ## Running project checkpoint
 Before Module 4, make sure your **SEO 101 project** sheet has these tabs complete:
