@@ -1074,3 +1074,85 @@ flowchart LR
 ### M13 Capstone — Configured plugin and tool-based audit
 - **File:** `capstones/m13-capstone.md` + `cheatsheets/m13-tools-wordpress.md`
 - A configured SEO plugin (checklist and View Source proof) plus a tool-based audit: a Screaming Frog export and one other tool's export (Ahrefs Free or Bing Site Scan), merged into one prioritised issue list. **Break-it lab:** Nila Coffee staging with two SEO plugins active (duplicate tags and sitemaps), three sitemaps, indexed attachment pages, a stale cached `noindex`, an aggressive crawl configuration, a spoofed-Googlebot check, a JavaScript-injected H1, a health score hiding a `noindex`, the retired Web Vitals extension, a paid tool for a 40-page site, and "fewer plugins = faster". Rubric: tools, plugin set-up, WordPress traps, prioritisation, and ethics.
+
+## M14 — Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search (L3)
+
+**Goal:** understand how Google judges quality, how algorithm updates work, what the spam policies forbid in detail, and how AI search is changing the results page. · NN #14 taught (+ #1, #6, #10, #11, #12 reinforced)
+**Lessons:** planned from the outline's topics and the research notes in `research/m14-eeat-algorithms-ai-search.md` (2026-11-09). The research suggested 6 lessons with L06 (AI search + traffic drops) possibly too long. Instead, spam policies and manual actions are merged into L04 (link manual actions and disavow were already covered in M09.L05). AI search (L05) and traffic-drop diagnosis (L06, NN #14) each get their own lesson. M01.L06–L07 and M04.L03 introduced E-E-A-T, white hat and ranking factors; M07.L04 AI-assisted writing; M08.L04 broken tags; M08.L01 annotations.
+**Planning notes from research:**
+- **Rater guidelines:** current PDF dated September 11, 2025; check the cover date. Raters don't affect rankings directly; E-E-A-T isn't a score, and third-party "E-E-A-T scores" aren't Google's.
+- **Site reputation:** teach the 2026 "fully integrated with the main site" criteria and EEA-specific enforcement (from 30 Aug 2026); show the Nov 2024 hard line only as history. The rater PDF still says "Site Reputation Abuse".
+- **New since 2024:** expired domain abuse, scaled content abuse (March 2024); back button hijacking (added 2026-04-13, enforced 2026-06-15); spam in generative AI responses (2026-05-15); spam reports may lead to manual actions (April 2026).
+- **AI controls conflict:** the ai-features page (2025-12-10) lists robots, snippet rules, noindex and Google-Extended; the newer Search Console "Search generative AI control" (worldwide 31 Aug 2026) is site-wide. Teach both; Google-Extended doesn't control AI Overviews. "No special optimizations" vs Google's 2026 optimisation guide: it says it's "still SEO".
+- **Status Dashboard:** latest core update May 2026 (21 May–2 Jun), spam update September 2026 (24 Sep–8 Oct); add any newer one. FAQ rich results removed 7 May 2026 (impressions dip, not a penalty); Search Console impressions logging fix (May 2025–April 2026).
+- **Don't quote:** "Good SEO is good GEO" (not readable), podcast transcript (unread), AI Overview click-through data (not researched; Google's "higher quality" claim only), Bing spam rules (not researched).
+- **Personas:** Nila (not YMYL; traffic-drop dataset), Kavya (yoga for back pain = YMYL health), Tomás (wiring how-to = YMYL safety; agency proposal), Amara (agency "offers we refuse").
+
+```mermaid
+flowchart LR
+  %% alt: M14 lesson path: E-E-A-T through raters' eyes, people-first self-check, ranking systems and updates, spam policies, AI search, then traffic drops.
+  L1[L01 E-E-A-T through<br/>a rater's eyes]:::cream --> L2[L02 People-first<br/>self-assessment]:::cream
+  L2 --> L3[L03 Ranking systems<br/>and updates]:::sky
+  L3 --> L4[L04 Spam policies +<br/>manual actions]:::blue
+  L4 --> L5[L05 AI search<br/>orientation]:::sky
+  L5 --> L6[L06 Diagnose a<br/>traffic drop]:::blue
+  L6 --> C[M14 Capstone: policy<br/>review + drop playbook]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** first see quality the way Google's raters do, then assess your own content with Google's people-first questions. Learn how ranking systems and updates work, then what the spam policies forbid and how manual actions are fixed. Get oriented in AI search, and finish with a step-by-step way to diagnose a traffic drop. The capstone is an E-E-A-T and policy review plus a traffic-drop playbook.
+
+### M14.L01 — E-E-A-T Through a Rater's Eyes
+- **File:** `lessons/m14-l01-eeat-rater-guidelines.md` · **Prereqs:** M01.L07, M04.L03 · **Remediate to:** M04.L03 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** what quality raters do and don't do, and why E-E-A-T isn't a score.
+  2. **Rate** a page's trust using the three evidence sources (about the site, what others say, on the page).
+  3. **Classify** pages as clearly YMYL, in between, or not, and say when experience is enough.
+- **Hands-on idea:** a **Rater lens** tab for 3 pages: what we say, what others say (`"brand" reviews -site:`), what's on the page, YMYL rating.
+
+### M14.L02 — People-First Content: A Self-Assessment
+- **File:** `lessons/m14-l02-people-first-self-assessment.md` · **Prereqs:** M14.L01, M07.L04 · **Remediate to:** M14.L01 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Apply** Google's people-first questions to your own pages.
+  2. **Document** Who, How and Why (bylines, how it was made, AI use and disclosure).
+  3. **Reject** quality myths (word counts, changing dates, fake author profiles).
+- **Hands-on idea:** a **Self-assessment** tab with an unaffiliated reviewer's column, and a **Who/How/Why** table.
+
+### M14.L03 — How Google Ranks and Updates: Systems, Core Updates and Spam Updates
+- **File:** `lessons/m14-l03-ranking-systems-updates.md` · **Prereqs:** M14.L02, M08.L01 · **Remediate to:** M01.L07 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Describe** Google's named ranking systems, including retired ones.
+  2. **Explain** core and spam updates, and what to do (and not do) during one.
+  3. **Track** updates with the Status Dashboard and Search Console annotations.
+- **Hands-on idea:** an **Updates** tab from the Status Dashboard (2025–2026), RSS subscription, and annotations.
+
+### M14.L04 — Spam Policies in Depth, Manual Actions and Reconsideration
+- **File:** `lessons/m14-l04-spam-policies-manual-actions.md` · **Prereqs:** M14.L03, M09.L05, M01.L06 · **Remediate to:** M01.L06 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Identify** each spam policy, including those added since 2024 (scaled content, expired domains, site reputation, back button hijacking).
+  2. **Judge** risky proposals against the policies.
+  3. **Write** a reconsideration request for a non-link manual action.
+- **Hands-on idea:** a **Spam policy self-check**, Manual actions and Security issues status, and a draft reconsideration request.
+
+### M14.L05 — AI Search Orientation: AI Overviews, AI Mode and Your Controls
+- **File:** `lessons/m14-l05-ai-search-orientation.md` · **Prereqs:** M14.L04, M12.L05 · **Remediate to:** M01.L04 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** what Google documents about AI Overviews and AI Mode, and how pages become eligible.
+  2. **Choose** the right control (nosnippet, max-snippet, data-nosnippet, Search generative AI control, Google-Extended) for a goal.
+  3. **Read** AI traffic in Search Console, and reject AI-SEO myths.
+- **Hands-on idea:** an **AI feature check** of 5 queries, the generative AI report, and a `data-nosnippet` test on a practice page.
+
+### M14.L06 — Diagnosing a Traffic Drop
+- **File:** `lessons/m14-l06-diagnose-traffic-drop.md` · **Prereqs:** M14.L05, M08.L04 · **Remediate to:** M08.L04 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Confirm** whether a drop is real (tracking, reporting changes, date ranges).
+  2. **Separate** seasonality, technical breaks, manual actions and updates using evidence.
+  3. **Act** proportionately: one change at a time, annotated, after the update finishes.
+- **Hands-on idea:** a **Traffic-drop decision tree** filled in for one illustrative dataset, plus a Trends seasonality check.
+
+### M14 Capstone — E-E-A-T and policy review plus traffic-drop playbook
+- **File:** `capstones/m14-capstone.md` + `cheatsheets/m14-modern-seo.md`
+- An E-E-A-T and policy review of the project site (rater evidence, Who/How/Why, YMYL rating, spam-policy checklist, manual action and security status) and a one-page traffic-drop playbook. **Break-it labs:** (A) Nila's illustrative 40% drop dataset with variants (tracking error, seasonality, technical break, core update, reporting change, FAQ removal) to diagnose to the real cause; (B) Amara's agency proposal for Tomás with 10 policy problems (expired domain, scaled city pages, sponsored casino page, AI author photo, llms.txt, Google-Extended, back button script, subdomain move, panic rewrite, E-E-A-T score). Rubric: E-E-A-T evidence, policies, updates, AI controls, and diagnosis.

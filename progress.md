@@ -103,7 +103,13 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M13 | L05 | WordPress-Specific SEO Traps | seo-101/lessons/m13-l05-wordpress-seo-traps.md | draft | 2026-11-10 |
 | M13 | L06 | Paid SEO Tools: When They're Worth It | seo-101/lessons/m13-l06-paid-tools.md | draft | 2026-11-10 |
 | M13 | Capstone | M13 capstone — Configured plugin and tool-based audit | seo-101/capstones/m13-capstone.md | draft | 2026-11-10 |
-| M14 | — | Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search (not yet planned) | — | todo | — |
+| M14 | L01 | E-E-A-T Through a Rater's Eyes | seo-101/lessons/m14-l01-eeat-rater-guidelines.md | todo | — |
+| M14 | L02 | People-First Content: A Self-Assessment | seo-101/lessons/m14-l02-people-first-self-assessment.md | todo | — |
+| M14 | L03 | How Google Ranks and Updates: Systems, Core Updates and Spam Updates | seo-101/lessons/m14-l03-ranking-systems-updates.md | todo | — |
+| M14 | L04 | Spam Policies in Depth, Manual Actions and Reconsideration | seo-101/lessons/m14-l04-spam-policies-manual-actions.md | todo | — |
+| M14 | L05 | AI Search Orientation: AI Overviews, AI Mode and Your Controls | seo-101/lessons/m14-l05-ai-search-orientation.md | todo | — |
+| M14 | L06 | Diagnosing a Traffic Drop | seo-101/lessons/m14-l06-diagnose-traffic-drop.md | todo | — |
+| M14 | Capstone | M14 capstone — E-E-A-T and policy review plus traffic-drop playbook | seo-101/capstones/m14-capstone.md | todo | — |
 | M15 | — | SEO Audit & Capstone Project (not yet planned) | — | todo | — |
 
 ## modern-seo
@@ -230,6 +236,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-10: seo-101 plan M14 — 6 lessons + capstone from research/m14 (split changed: spam policies + manual actions merged in L04; AI search L05 and traffic drops L06 separate to keep NN #14 a full lesson); notes on rater PDF date, site reputation 2026 criteria + EEA, 2024–2026 policy additions, AI controls conflict, Status Dashboard dates, unquotable sources; two break-it labs; flowchart added.
 - 2026-11-10: seo-101 m13-capstone draft — configured plugin + tool-based audit (SF + Ahrefs Free or Bing Site Scan), 8 tasks, 15-error staging break-it lab (two plugins, three sitemaps, upgraded-site attachment pages, stale cache noindex, aggressive competitor crawl, spoofed Googlebot, JS H1 + extra H1, score over noindex, retired Web Vitals ext, split redirect chain, blocked /?s=, plugin-count deletion, invisible breadcrumbs, Ahrefs Advanced for 40-page site); 5-criterion rubric; cheatsheets/m13-tools-wordpress.md (SF settings by task, plugin checklist, traps, tool comparison). Module 13 drafted.
 - 2026-11-10: seo-101 m13-l06 draft — paid tools: prices re-read live 2026-11-09 (US server): SF £199/yr; Ahrefs Starter $29, Lite $129, Standard $249, Advanced $449 (Lite 20 non-verified/unlimited verified, 2 years history; ahrefs.com/free now $29, earlier €27 noted as location); Semrush SEO $139 monthly / $117.33 annual, 5 websites, 500 keywords; Moz $49 entry, Standard $99 ($79 yearly), 'Save 20%'; Yoast Premium $118.80 ex VAT. No rupee prices published. Four-question buy rule + persona decisions labelled course rule of thumb. Tool comparison tab; 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M13.L05; 3 glossary terms.
 - 2026-11-10: seo-101 m13-l05 draft — WordPress traps: 20 quotes re-matched live (core 6.4 attachment pages: new installs disabled, existing set to 1 on upgrade, 'get indexed … even rank', View Media File; Yoast media pages off by default, redirect to media, parent 'not always reliable', manual enable; Rank Math redirect to post, recommended; AIOSEO default Attachment, Attachment Parent; WP Optimization 'number of plugins and their performance', selectively disable; 6.1 Full Page Cache check; 5.3 2560px threshold; Yoast conflict method + Health Check plugin; AIOSEO date/author archives in sitemap; Rank Math two-plugin FAQ). Attachment-redirect conflict taught as either-is-fine; no plugin-count number. Traps tab + before/after crawl; 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M13.L04; 4 glossary terms.
