@@ -14,7 +14,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | 6 lessons + capstone |
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | 6 lessons + capstone |
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) | L2 | — (#2 in depth) | 6 lessons + capstone |
-| M09 Off-Page SEO & Link Building | L2 | #11 | — |
+| M09 Off-Page SEO & Link Building | L2 | #11 | 5 lessons + capstone |
 | M10 Competitor Analysis | L2 | — | — |
 | M11 Local SEO & Google Business Profile | L2 | #12 | — |
 | M12 Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) | L3 | #13 | — |
@@ -696,3 +696,74 @@ flowchart LR
 ### M08 Capstone — SEO dashboard and monthly report
 - **File:** `capstones/m08-capstone.md` + `cheatsheets/m08-analytics-reporting.md`
 - A Data Studio dashboard and a one-page monthly SEO report for the project site, with a changes log and data caveats. **Break-it lab:** Nila's site after a "tracking upgrade": a GA4 tag installed twice (plugin + GTM), a wrong measurement ID in a GTM event tag, GTM changes left in Preview, the internal-traffic filter left in Testing, a missing key event, and a report comparing GSC "last 28 days" with GA4 "last month"; found with View Source, Tag Assistant, DevTools, DebugView and GA4 Admin. Rubric: measurement set-up (#2), Search Console use, GA4 and key events, dashboard accuracy, honest reporting.
+
+## M09 — Off-Page SEO & Link Building (L2)
+
+**Goal:** understand why links and mentions matter, see who links to you, and earn links the right way. · NN #11 taught (+ #1 reinforced)
+**Lessons:** planned from the outline's topics and the research notes in `research/m09-off-page-link-building.md` (2026-11-09). The research suggested six lessons, with an optional sixth for practice; that practice is the capstone, so the module has **5 lessons + capstone**. M01.L06 already quoted the link spam definition and the paid-links rule, M01.L07 called "Domain Authority affects rankings" a myth, M02.L05 taught `<a href>`, anchor text and `rel` values, and M08.L01 toured the Links report as "a sample". These lessons reference them and go deeper.
+**Planning notes from research:**
+- **Renamed:** Ahrefs Webmaster Tools is now **Ahrefs Free** (say "Ahrefs Free (formerly Ahrefs Webmaster Tools)"); limits (1K backlinks visible) may change.
+- **Freshness:** spam policies last updated 2026-08-28 (now include "generative AI responses", and an EEA split in site reputation abuse). Google says the disavow tool may be removed one day; Bing removed its own (reported 2023). Re-check both before quoting.
+- **Conflicts to teach:** the Links help page's softer "disavow them" line vs the disavow page's "Step 0" (course follows Step 0); Moz's "regularly disavow" vs Google; Semrush's ">90% followed = spam" heuristic vs Google's "regular links need no rel"; TLD-level disavow (undocumented: don't teach).
+- **Don't quote:** Googler comments on link weight as policy (2023–24, relayed second-hand, partly walked back); any Mueller "digital PR" remark (original not read); UK PECR or India email rules (not read: tell learners to check local law); Bing link-policy text (not readable).
+- **Course rules:** no paid tools required (GSC, Bing Webmaster Tools, Ahrefs Free on verified sites only); no real disavow uploads in exercises.
+
+```mermaid
+flowchart LR
+  %% alt: M09 lesson path: how links work, authority scores as estimates, a free backlink audit, earning links, then link schemes and disavow, then the capstone.
+  L1[L01 How links<br/>work]:::cream --> L2[L02 Authority scores<br/>are estimates]:::sky
+  L2 --> L3[L03 Free backlink<br/>audit]:::sky
+  L3 --> L4[L04 Earning links<br/>the right way]:::blue
+  L4 --> L5[L05 Link schemes,<br/>penalties, disavow]:::blue
+  L5 --> C[M09 Capstone:<br/>report + outreach plan]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** first learn how links pass value and what anchor text and link attributes do. Then see why "authority" scores are tool estimates, not Google's. Audit who links to you with free tools. Learn the honest ways to earn links. Finally, learn what counts as a link scheme, what happens if you're caught, and when (rarely) to disavow. The capstone turns this into a backlink report and a 3-month outreach plan.
+
+### M09.L01 — How Links Work: PageRank, Anchor Text and Link Attributes
+- **File:** `lessons/m09-l01-how-links-work.md` · **Prereqs:** M02.L05, M01.L06 · **Remediate to:** M02.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** PageRank in plain words (the "random surfer"), and why links are one signal among many, not the top factor.
+  2. **Judge** anchor text in links to your site and in your own links (descriptive, not keyword-stuffed).
+  3. **Choose** the right `rel` value (`sponsored`, `ugc`, `nofollow`, none) and explain the 2019–2020 "hints" change.
+- **Hands-on idea:** inspect five links to and from the project site on the live pages (anchor text, `rel` value, where it points), and record them in a new **Links 101** tab with a verdict for each.
+
+### M09.L02 — "Authority" Scores Are Estimates (DA, DR, Authority Score)
+- **File:** `lessons/m09-l02-authority-scores.md` · **Prereqs:** M09.L01, M01.L07 · **Remediate to:** M01.L07 · **Hands-on:** ~25 min
+- **Objectives:**
+  1. **Describe** how Moz DA, Ahrefs DR and Semrush Authority Score are calculated, from each vendor's own docs.
+  2. **Explain** why Google doesn't use them, and why scores change without anything happening to your site.
+  3. **Use** a score only to compare and shortlist prospects, never to buy links or disavow.
+- **Hands-on idea:** look up the project site and three competitors in two free score checkers, note the scores and how they differ, and write one sentence per site on what the score can and can't tell you.
+
+### M09.L03 — Auditing Your Backlinks for Free
+- **File:** `lessons/m09-l03-backlink-audit.md` · **Prereqs:** M09.L02, M08.L01 · **Remediate to:** M08.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Export** links from Search Console (Top linking sites; Latest links), and add Bing Webmaster Tools and Ahrefs Free (verified sites only).
+  2. **Sort** each linking site into fine, ignore or risky, checking `rel` on the live page (Search Console doesn't show it).
+  3. **Find** reclaim opportunities: links to 404 pages and unlinked mentions.
+- **Hands-on idea:** a **Backlink audit** tab from the Search Console export, with columns for source, target, anchor, `rel` (checked live), label (fine / ignore / risky) and action; plus a comparison of link counts across the three tools.
+
+### M09.L04 — Earning Links the Right Way
+- **File:** `lessons/m09-l04-earning-links.md` · **Prereqs:** M09.L03, M07.L01 · **Remediate to:** M09.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Plan** one linkable asset and 10 realistic people or sites who'd cite it (local, industry, press).
+  2. **Write** an honest, personal outreach email (who you are, why it helps them, an easy way to say no), avoiding "aggressive or repeated" requests.
+  3. **Explain** guest content done right, broken-link fixing, unlinked mentions, digital PR basics, and where social signals and mentions fit.
+- **Hands-on idea:** a linkable asset brief and an **Outreach** tab with 10 targets, the reason each would care, contact route, and one drafted email checked against a simple honesty checklist.
+
+### M09.L05 — Link Schemes, Penalties and Disavow
+- **File:** `lessons/m09-l05-link-schemes-disavow.md` · **Prereqs:** M09.L04, M01.L06 · **Remediate to:** M01.L06 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Recognise** every type of link spam in Google's policy (paid, exchanges, PBNs, widgets, footers, press-release anchors, ToS links, directories) and SpamBrain's "neutralise" effect.
+  2. **Describe** the two "Unnatural links" manual actions and a good reconsideration request.
+  3. **Decide** whether to disavow with Google's "Step 0" test, and build a correctly formatted disavow file (practice only).
+- **Hands-on idea:** a disavow decision drill on three scenarios, a "is this a link scheme?" checklist applied to five offers Nila received, and a practice `disavow.txt` (not uploaded).
+
+### M09 Capstone — Backlink report and 3-month outreach plan
+- **File:** `capstones/m09-capstone.md` + `cheatsheets/m09-off-page-links.md`
+- A backlink report for the project site (sources compared, links sorted, reclaim list) and a 3-month outreach plan with one linkable asset and 10 realistic targets. **Break-it lab:** Nila Coffee's 16-row backlink list to sort into fine / ignore / risky, plus an inherited "Unnatural links to your site" manual action to plan the fix for. Rubric: link understanding, audit accuracy, ethical earning (#11), outreach quality, spam and disavow judgement (#1).

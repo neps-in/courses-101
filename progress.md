@@ -71,7 +71,12 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M08 | L05 | A Data Studio SEO Dashboard | seo-101/lessons/m08-l05-data-studio-dashboard.md | draft | 2026-11-09 |
 | M08 | L06 | KPIs and an Honest Monthly SEO Report | seo-101/lessons/m08-l06-kpis-monthly-report.md | draft | 2026-11-09 |
 | M08 | Capstone | M08 capstone — SEO dashboard and monthly report | seo-101/capstones/m08-capstone.md | draft | 2026-11-09 |
-| M09 | — | Off-Page SEO & Link Building (not yet planned) | — | todo | — |
+| M09 | L01 | How Links Work: PageRank, Anchor Text and Link Attributes | seo-101/lessons/m09-l01-how-links-work.md | todo | — |
+| M09 | L02 | "Authority" Scores Are Estimates (DA, DR, Authority Score) | seo-101/lessons/m09-l02-authority-scores.md | todo | — |
+| M09 | L03 | Auditing Your Backlinks for Free | seo-101/lessons/m09-l03-backlink-audit.md | todo | — |
+| M09 | L04 | Earning Links the Right Way | seo-101/lessons/m09-l04-earning-links.md | todo | — |
+| M09 | L05 | Link Schemes, Penalties and Disavow | seo-101/lessons/m09-l05-link-schemes-disavow.md | todo | — |
+| M09 | Capstone | M09 capstone — Backlink report and 3-month outreach plan | seo-101/capstones/m09-capstone.md | todo | — |
 | M10 | — | Competitor Analysis (not yet planned) | — | todo | — |
 | M11 | — | Local SEO & Google Business Profile (not yet planned) | — | todo | — |
 | M12 | — | Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) (not yet planned) | — | todo | — |
@@ -203,6 +208,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09 — seo-101 plan M09: 5 lessons + capstone from research/m09-off-page-link-building.md (research's optional L06 folded into the capstone); Ahrefs Free rename, spam-policy 2026-08-28 and disavow freshness flags noted; conflicts (Links page vs Step 0, Moz/Semrush vs Google) set as course positions.
 - 2026-11-09: seo-101 m08-capstone draft — SEO dashboard and monthly report: 6 tasks mapped to L01–L06 (GSC tour, GA4 SEO view + key event + filter, consent + one published GTM event, tag health + 4-week gap, Data Studio dashboard + checks, KPIs + one-page report); break-it lab 'Nila's tracking upgrade' with 7 planted faults (duplicate GA4 via Site Kit + GTM, transposed G- ID in sign_up tag, unpublished GTM workspace change, internal filter stuck in Testing, no purchase/key event, mismatched date ranges, vanity headline with no caveats) and 2 traps (steady ~30% gap; old-URL 404s on a 180-page site); 5-criterion rubric (#2 assessed); 1 flowchart; 1 image prompt. Plus cheatsheets/m08-analytics-reporting.md. Module 8 complete.
 - 2026-11-09: seo-101 m08-l06 draft — KPIs and an honest monthly report: built from research/m08 §8; 13 quotes re-matched live (Search Central traffic drops 2025-12-10 and GA+GSC guide 2026-01-07; GSC Help Performance report and aggregation; blog branded filter and weekly views). KPI-by-goal table for all personas; one-page report structure labelled course's own (no Google template); average-position worked example; AI-features caveat flagged. New KPIs + Monthly report tabs; 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M08.L05; 5 glossary terms.
 - 2026-11-09: seo-101 m08-l05 draft — Data Studio SEO dashboard: built from research/m08 §6–7; 21 quotes re-matched live (Data Studio docs 2026-10-26: welcome + April 2026 rename, release notes, GSC connector, GA connector incl. quotas, segments/comparisons limit and ISO-week bug, freshness, Pro, comparisons; Search Central GA+GSC guide incl. template filter). Freshness conflict resolved as '12 hours default, GA4 1/4 h options'; no native annotations → Changes log sheet (observed practice). New Changes log + Dashboard checks tabs and a one-page dashboard (5 scorecards with comparison, weekly clicks, GA4 landing pages, changes log); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M08.L04; 5 glossary terms.
