@@ -3,12 +3,15 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **Bulk Export** — Screaming Frog's menu for exporting all instances of data across a crawl, such as every internal link pointing to a 404. [M13.L01]
 - **ccTLD** — a country-code top-level domain such as .in, .pt or .co.uk; a strong country signal but costly and limited to one country. [M12.L06]
 - **Citation (local)** — a mention of a business's name, address and phone on another site, such as a directory, map app, review site or social profile. [M11.L05]
 - **Client-side rendering (CSR)** — building a page in the browser with JavaScript; content and links must still appear in the rendered HTML, on real URLs. [M12.L04]
 - **CLS (Cumulative Layout Shift)** — the Core Web Vital for visual stability: the largest burst of unexpected layout shifts; good is 0.1 or less. [M12.L01]
 - **Crawl budget** — the set of URLs Google can and wants to crawl on a site; a concern mainly for 1M+ page sites or 10k+ pages that change daily. [M12.L06]
+- **Crawl configuration** — a crawler's settings (speed, user agent, robots.txt handling, rendering, limits); fixed to safe defaults in Screaming Frog's free version. [M13.L01]
 - **CrUX (Chrome UX Report)** — Google's dataset of real Chrome users' experience over 28 days; the source of field data in PageSpeed Insights and Search Console. [M12.L01]
+- **Custom extraction** — collecting specific data (prices, authors, H1 counts) from every crawled page with XPath, CSS Path or Regex; a Screaming Frog licence feature. [M13.L01]
 - **`datePublished` / `dateModified`** — structured data fields for when a page was first published and last significantly changed; they should match the visible dates. [M07.L05]
 - **Above the fold** — the part of a page visible without scrolling; images here shouldn't be lazy-loaded. [M04.L04]
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
@@ -200,6 +203,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Link scheme** — any arrangement that creates links primarily to manipulate rankings (buying, swapping, automating, widget or footer links, keyword anchors in guest posts); the same as link spam. [M09.L05]
 - **Link spam** — links created mainly to manipulate rankings, including paid or exchanged links that aren't marked. [M01.L06]
 - **Linkable asset** — a page people want to cite: original data, a tool, a chart, a clear guide or local information nobody else has. [M09.L04]
+- **List mode** — crawling a pasted or uploaded list of URLs instead of following links; useful for checking redirect maps and sitemap URLs. [M13.L01]
 - **Local pack** — a map with a few local businesses, shown for searches with local intent such as "near me" or a city name. [M01.L05]
 - **Local ranking factors** — Google's three main inputs for local results: relevance, distance and prominence (which Google now also calls popularity). [M11.L01]
 - **LocalBusiness markup** — structured data describing a business (name and address required; phone, URL and hours recommended); it must match the Business Profile. [M11.L05]
