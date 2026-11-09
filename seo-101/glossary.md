@@ -3,6 +3,7 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **AI Mode** — Google's conversational search mode built on Search's index and ranking; counted in Performance → Web, and a follow-up question counts as a new query. [M14.L05]
 - **All-in-one SEO suite** — a paid platform (e.g. Ahrefs, Semrush, Moz Pro) with keyword research, backlink data, audits and rank tracking for any site; competitor figures are estimates. [M13.L06]
 - **Attachment page** — a page WordPress creates for each uploaded file, showing just that file; disabled on new installs since 6.4, still on for upgraded sites unless redirected. [M13.L05]
 - **Back button hijacking** — a site interfering with the browser's Back button so users can't return to where they came from; a spam policy (malicious practices) enforced from 15 June 2026. Often caused by ad or popup scripts. [M14.L04]
@@ -149,6 +150,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Google Search Status Dashboard** — status.search.google.com; Google's public list of ranking updates and crawling, indexing and serving incidents, with start and completion dates, kept for 5 years. [M14.L03]
 - **Google Tag Manager (GTM)** — a free tool that holds your tracking tags in one container (ID starts GTM-), so you can add, preview, publish and roll back tags without editing site code. [M08.L03]
 - **Google Trends** — Google's free tool showing relative interest in a search over time and by place, on a 0–100 scale. It doesn't show counts. [M03.L03]
+- **Google-Extended** — a robots.txt product token controlling whether Google may use your content to train Gemini models and for grounding in Gemini Apps and Vertex AI; it doesn't affect Google Search or AI Overviews. [M14.L05]
 - **Google-selected canonical** — the URL Google chose to index from a group of duplicates, shown in URL Inspection next to your user-declared canonical. [M06.L03]
 - **Grey hat SEO** — disputed tactics between white and black hat; not a safe zone, as Google has no such category. [M01.L06]
 - **`<h1>`** — the top heading level; it should name the page's main topic. HTML allows several, but this course uses one per page. [M02.L04]
@@ -287,6 +289,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Product variant** — one version of a product, such as a size or colour; if it has its own page it needs a real URL, not a `#`. [M04.L06]
 - **Publish checklist** — the course's fixed list of 24 pass/fail checks (plan, content, on-page, links, trust, after publishing) run on every post; non-negotiable #9. [M07.L05]
 - **Query deserves freshness (QDF)** — Google systems that show fresher content for searches where recency is expected, such as "best X" or news; not a site-wide boost for posting often. [M07.L02]
+- **Query fan-out** — AI Overviews and AI Mode running several related searches across subtopics to build one answer. [M14.L05]
 - **Query group** — an AI-made group of similar searches in Search Console Insights; groups may change over time and "don't affect ranking". [M08.L01]
 - **Query** — the words someone types (or says) into a search engine. [M01.L03]
 - **Quick win** — a target with a good chance and little effort, chosen for early progress. [M03.L04]
@@ -334,6 +337,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Search Console property** — a website, or part of one, that you've proved you control in Search Console. [M01.L08]
 - **Search engine** — a service such as Google or Bing that collects web pages and shows the most useful ones for each query. [M01.L03]
 - **Search engine-first content** — content made mainly to gain rankings rather than to help an audience; Google lists 11 warning-sign questions for it. [M14.L02]
+- **Search generative AI control** — the Search Console setting (Settings > Search generative AI; all sites from 31 Aug 2026) to include (default) or exclude your site's links and content from Google's generative AI features in Search; not a ranking signal. [M14.L05]
 - **Search intent** — what someone is trying to get done when they search. [M03.L01]
 - **Search operator** — a special command typed into the search box that narrows the results, such as `site:` or quotes. [M01.L03]
 - **Search quality raters** — outside people Google works with who rate sample results using its public rater guidelines; their ratings test ranking changes and can't move any page. [M14.L01]
