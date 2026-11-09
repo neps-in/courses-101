@@ -3,6 +3,7 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **`datePublished` / `dateModified`** — structured data fields for when a page was first published and last significantly changed; they should match the visible dates. [M07.L05]
 - **Above the fold** — the part of a page visible without scrolling; images here shouldn't be lazy-loaded. [M04.L04]
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
 - **AI disclosure** — a short note telling readers how AI or automation helped make a page; Google suggests it when readers would "reasonably" expect it. Merchant Center requires labels on AI product data. [M07.L04]
@@ -16,6 +17,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Anonymized query** — a rare search that Search Console leaves out of its tables to protect people's privacy. [M03.L03]
 - **Attribute** — extra information about an HTML element, written as `name="value"` in the opening tag, such as `href` on a link. [M02.L03]
 - **Attribution (favicon, site name, visible URL, breadcrumb)** — the top line of a search result that shows which site it's from. [M01.L05]
+- **Author page** — a page about the person in a byline (About, team or author page) with a true bio; `author.url` in Article markup points to it. [M07.L05]
 - **Autocomplete prediction** — a search Google predicts as you type, based on real searches and shaped by language, location, trends and your past searches. [M03.L02]
 - **Baseline** — a dated record of where a site stands before you change anything, so you can measure what your work changed later. [M01.L03]
 - **Bing Webmaster Tools** — Bing's free equivalent of Search Console; can import sites verified in Search Console. [M01.L08]
@@ -27,6 +29,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Box model** — the layers of every element: content, padding, border and margin. [M02.L09]
 - **Breakpoint** — the screen width where a page's layout changes, set with a media query. [M02.L10]
 - **Browser** — the app that requests web pages and displays them, such as Chrome, Edge or Safari. [M02.L01]
+- **Byline date** — the date Google estimates a page was published or updated, from several signals; label it "Published" or "Last updated" and keep it consistent with the markup. [M07.L05]
 - **Byline** — the line naming a page's author, ideally linking to more about them; part of showing "Who" made the content. [M04.L03]
 - **Canonical URL** — the one URL Google picks to represent a group of pages with the same or very similar content; the others usually aren't shown. [M01.L04]
 - **`<caption>` and `<th>`** — `<caption>` works like a heading for a table; `<th>` marks a header cell, with `scope="col"` or `scope="row"` saying what it heads. [M02.L07]
@@ -181,6 +184,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Primary intent** — the one main thing a page sets out to serve; this course gives each page one. [M03.L01]
 - **Primary source** — the original source of a fact (the study, the manufacturer's spec, the official page or your own test), not a blog that repeats it. [M07.L03]
 - **Product variant** — one version of a product, such as a size or colour; if it has its own page it needs a real URL, not a `#`. [M04.L06]
+- **Publish checklist** — the course's fixed list of 24 pass/fail checks (plan, content, on-page, links, trust, after publishing) run on every post; non-negotiable #9. [M07.L05]
 - **Query deserves freshness (QDF)** — Google systems that show fresher content for searches where recency is expected, such as "best X" or news; not a site-wide boost for posting often. [M07.L02]
 - **Query** — the words someone types (or says) into a search engine. [M01.L03]
 - **Quick win** — a target with a good chance and little effort, chosen for early progress. [M03.L04]
