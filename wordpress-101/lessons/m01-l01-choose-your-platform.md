@@ -2,7 +2,7 @@
 > After this lesson you can choose where to publish based on what you own, what it costs and how easily you can leave, and you'll have a free WordPress practice site running.
 
 **Time:** ~15 min reading + ~20 min exercise · **Level:** beginner · **Prereqs:** none
-**Verified against:** WordPress 7.1 admin labels, WordPress Playground, and the WordPress.com, Substack, Ghost and Medium help pages on 2026-10-29; prices re-checked 2026-11-01
+**Verified against:** WordPress 7.1 admin labels, WordPress Playground, and the WordPress.com, Substack, Ghost and Medium help pages on 2026-10-29; prices re-checked 2026-11-01; Playground save steps re-checked 2026-11-09 against the Playground Handbook (updated 2026-11-04)
 
 > ⚠️ **Freshness flag:** platform prices, fees and plan features change often. The numbers below were checked on 2026-10-29 and re-checked on 2026-11-01. WordPress.com opened plugins to every paid plan only in April 2026, so older guides disagree. Re-check each platform's pricing page before you buy anything.
 
@@ -103,8 +103,12 @@ You'll score the platforms for *your* situation, then start a free WordPress pra
    **Expected:** an `.xml` file downloads. This is your whole site's content in a portable format. You've just proved you can leave in one minute.
    > 🖼️ **Image prompt:** Screenshot of Tools → Export in WordPress 7.1 with "All content" selected and the Download Export File button outlined; the browser's download bar shows a file ending in `.xml`. Highlight the key element with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Tools → Export screen with All content selected and the downloaded .xml export file.
-5. Save your Playground so it survives a browser restart. Use the **Save** option in the Playground toolbar (it saves to your browser). Or install **Local** (localwp.com, free) for a permanent local site.
-   **Expected:** the site is still there when you reopen Playground.
+5. Keep your Playground site. Playground has no Save button: the bar at the top (the **Dock**) shows a save status next to the address field, such as **Unsaved** or **Autosaved**. Autosaves are only short-term: "Playground keeps up to five recent autosaves", and "Autosaves are recovery points, not long-term backups."
+   - Click the save status and choose **Store permanently**, so the site stays in your browser.
+   - Then open **Export** in the Dock and use **Download as .zip** for a backup you can keep. To restore it later, use **New → Import zip**.
+   - Or install **Local** (localwp.com, free) for a permanent site on your computer.
+
+   **Expected:** the status shows **Saved**, a `.zip` file is in your downloads, and the site is still there when you reopen Playground.
 
 > **Note:** Playground runs WordPress entirely in your browser. It's perfect for practice but isn't a public website. You'll move to real hosting in Lesson 1.2, or in Module 9 when you launch.
 
@@ -135,7 +139,7 @@ Many creators combine them: a WordPress site as the home base, with a newsletter
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Playground shows a blank page or keeps loading | Browser blocks storage or service workers (private mode, strict settings) | Use a normal (non-private) window in Chrome, Edge or Firefox, or install Local |
-| Practice site disappeared after closing the tab | Playground wasn't saved | Use **Save** in the Playground toolbar next time, or switch to Local |
+| Practice site disappeared after closing the tab | It was only autosaved, or the browser's storage was cleared | Restore your ZIP with **New → Import zip**. Next time, choose **Store permanently** and download a ZIP, or switch to Local |
 | No **Tools → Export** menu on WordPress.com | Wrong dashboard view or limited user role | Open the site's WP Admin view and make sure you're an Administrator |
 | A guide says your plan "can't install plugins" | Out-of-date article | Check the platform's current support page and plan comparison |
 
@@ -169,6 +173,8 @@ Explain to a friend in 3 sentences why a creator with an audience on Substack or
 - WordPress.com support — Plugins (which plans can install them): https://wordpress.com/support/plugins/
 - WordPress documentation — Tools Export Screen: https://wordpress.org/documentation/article/tools-export-screen/
 - WordPress Playground: https://wordpress.org/playground/
+- WordPress Playground Handbook — Use the Playground web instance (checked 2026-11-09): https://developer.wordpress.org/playground/handbook/web-instance/
+- WordPress Playground Handbook — Limitations (autosaves): https://developer.wordpress.org/playground/developers/limitations/
 - Substack support — How do I set up my custom domain?: https://support.substack.com/hc/en-us/articles/360051222571-How-do-I-set-up-my-custom-domain-on-Substack
 - Substack support — How do I export my email list?: https://support.substack.com/hc/en-us/articles/6314498343700-How-do-I-export-my-email-list-on-Substack
 - Ghost pricing (check current tiers and limits): https://ghost.org/pricing/

@@ -82,7 +82,7 @@ flowchart TD
 3. In the panel's **SSL/TLS** or **Security** section, confirm a free certificate (usually Let's Encrypt) is active and set to auto-renew.
    **Expected:** status "Active" or "Issued" for your domain (and `www`, if you use it).
 
-> **Using Playground instead?** That's fine for this lesson: Playground already runs on `https://playground.wordpress.net`. Remember to **Save** it, and plan to move to Local or hosting before M02.
+> **Using Playground instead?** That's fine for this lesson: Playground already runs on `https://playground.wordpress.net`. Click the save status in the Dock and choose **Store permanently**, download a ZIP backup (**Export → Download as .zip**), and plan to move to Local or hosting before M02.
 
 **Part B: confirm HTTPS (5 min)**
 1. Open your site's homepage.

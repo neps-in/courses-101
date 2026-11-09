@@ -127,7 +127,7 @@ You'll set up a practice site, fix its permalinks, add two real posts and make a
 
 **Part D — Back it up (8 min)**
 1. Back up your site:
-   - **Playground:** click the save status (**Autosaved** or **Unsaved**), and choose **Store permanently**. Then use **Download as .zip**, which "exports the current files, database, plugins, themes, uploads, and edits". To check it, restore it with **New → Import zip**.
+   - **Playground:** click the save status (**Autosaved** or **Unsaved**), and choose **Store permanently**. Then open **Export** in the Dock and use **Download as .zip**, which "exports the current files, database, plugins, themes, uploads, and edits". To check it, restore it with **New → Import zip**.
    > 🖼️ **Image prompt:** The WordPress Playground Dock (1280×700) with the save status next to the address field opened, showing the Store permanently option. Highlight the save status with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Playground's Dock with the save status open and the Store permanently option highlighted.
    - **Local or hosting:** go to **Tools → Export**, choose **All content**, and click **Download Export File**. This WXR file holds your content, but not your theme, plugins or settings.
