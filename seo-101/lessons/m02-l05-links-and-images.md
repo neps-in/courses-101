@@ -187,7 +187,7 @@ You'll add a link and an image to your article, practise on some examples, then 
 7. Put `src` back. Now delete the whole `alt="…"` part, and paste your code into `https://validator.w3.org/nu/#textarea`.
    **Expected:** one error: *An "img" element must have an "alt" attribute, except under certain conditions.*
 8. Put the `alt` back and check again.
-   **Expected:** "Document checking completed. No errors or warnings to show."
+   **Expected:** a green message saying there are no errors or warnings (the exact wording can change).
 
 **Part C — Rewrite five weak anchors (5 min)**
 In a note, rewrite the link in each sentence. The linked words are in square brackets.

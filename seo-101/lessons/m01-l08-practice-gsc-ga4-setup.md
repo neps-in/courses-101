@@ -121,7 +121,7 @@ Use the Google account you'll keep for this site, not a temporary one. Keep your
 
 **Part E — Create GA4 (8 min)**
 
-**First, check that the site doesn't already have GA4** (paths A and C): open View Source (Lesson 1.4) and search for `G-` and `gtag`. Installing it twice counts every visit twice.
+**First, check that the site doesn't already have GA4** (paths A and C): open View Source (Lesson 1.4) and search for `googletagmanager.com`, `gtag` and `G-`. Google says to check existing tags first, "so you don't add any redundant tags". The ID may also start with `GT-` or `GTM-`. Installing it twice counts every visit twice *(observed practice)*.
 
 1. Go to https://analytics.google.com and click **Start Measuring**. If you already have an account, go to **Admin**, click **Create**, then choose **Property**.
 2. Enter an **account name**, such as your business name, and review the data-sharing settings. Click **Next**.
@@ -140,7 +140,7 @@ Use the Google account you'll keep for this site, not a temporary one. Keep your
    | **WordPress** | Install **Site Kit by Google**, the official plugin. During set-up, tick **Connect Google Analytics as part of your setup** and choose the property you just made. Site Kit also connects Search Console and can verify the site for you |
    | **Blogger** | **Settings → Basic → Google Analytics Measurement ID**, paste your ID, **Save** |
    | **Wix, Shopify, Squarespace, other builders** | Google's set-up page links to instructions for each: paste the ID into the field provided |
-   | **Hand-coded site** | Paste the Google tag "immediately after the `<head>`" on each page |
+   | **Hand-coded site** | Copy the snippet GA4 shows you, and paste it "immediately after the opening `<head>` HTML tag on every page you want to measure". Since November 2026, the default snippet loads `gtm.js?id=…` and no longer includes `gtag('config')`. Older snippets with it "will continue to work", so don't replace one that already works |
 
 2. Open your site in a private window and click two or three pages. Turn off any ad blocker and accept any cookie banner for this test, because either can stop the tag (observed practice).
 3. In GA4, go to **Reports → Realtime**.
@@ -248,12 +248,14 @@ Explain to a friend in 3 sentences why a website needs both Search Console and G
 - Google Analytics Help — Privacy Disclosures Policy: https://support.google.com/analytics/answer/7318509
 - Google Analytics Help — Add, edit, and delete Analytics users: https://support.google.com/analytics/answer/9305788
 - Google Analytics Help — Set up your Google tag with Blogger: https://support.google.com/analytics/answer/13126712
+- Google Tag Platform — Install the Google tag (updated 2026-11-06): https://developers.google.com/tag-platform/gtagjs/install
+- Google Tag Platform — Check for existing tags (updated 2026-11-06): https://developers.google.com/tag-platform/devguides/existing
 - Google Analytics Help — Site Kit plugin (WordPress): https://support.google.com/analytics/answer/11898619
 - Blogger Help — Create a blog: https://support.google.com/blogger/answer/1623800
 - WordPress.org — Site Kit by Google: https://wordpress.org/plugins/google-site-kit/
 - WordPress.com Support — Google Analytics: https://wordpress.com/support/google-analytics/
 
-> ⚠️ **May change:** every menu in this lesson. Google and Bing rename and move settings often. Re-check all button names, the GA4 set-up flow, Blogger's menus and sitemap address, WordPress.com plan limits, and consent rules before publishing.
+> ⚠️ **May change:** Google changed its default tag snippet on 2026-11-06, so tutorials and screenshots older than that show `gtag('config')`, which is now "deprecated and no longer included in default installation snippets". Also: every menu in this lesson. Google and Bing rename and move settings often. Re-check all button names, the GA4 set-up flow, Blogger's menus and sitemap address, WordPress.com plan limits, and consent rules before publishing.
 
 ## Refresher card
 *Used by remediation when a learner fails a quiz twice on a later lesson that points back here.*

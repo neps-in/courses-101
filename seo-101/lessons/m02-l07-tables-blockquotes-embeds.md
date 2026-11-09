@@ -149,7 +149,7 @@ You'll add a table, a quotation and a video to your article, then see which text
    ```
 2. Type in the table from this lesson, replacing the comment.
 3. Save, reload and check the code at `https://validator.w3.org/nu/#textarea`.
-   **Expected:** a small table with its caption above it, header cells in bold, and "Document checking completed. No errors or warnings to show."
+   **Expected:** a small table with its caption above it, header cells in bold, and a green message saying there are no errors or warnings (the exact wording can change).
    > 🖼️ **Image prompt:** A browser window (1280×720) showing the "Stronger or lighter?" section with the plain, unstyled cold brew ratio table and its caption. Highlight the caption and header row with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** An unstyled data table of cold brew ratios with its caption and header row highlighted.
 4. Break it: add an extra `<td>Test</td>` to the "Light" row, and check again.

@@ -52,8 +52,8 @@ After this course you can take a website from "invisible" to "properly optimised
 
 ## 3. Prerequisites (required)
 - **Knowledge:** you can use a browser, a spreadsheet and an email account. Everything else (marketing basics, HTML/CSS, WordPress) is taught in M01, M02 and M05.
-- **A project site (choose one path in Lesson 1.1, see §12):** (A) your own live site, (B) the course's free practice site (a WordPress test site; set-up guide in Lesson 1.8), or (C) a friend's or client's live site with written permission to access their Search Console and GA4.
-- **Accounts / tools:** a Google account (Search Console, GA4, Sheets, Looker Studio); a Microsoft account (Bing Webmaster Tools), set up in Lesson 1.8.
+- **A project site (choose one path in Lesson 1.1, see §12):** (A) your own live site, (B) the course's free practice site (a free Blogger site, set up in Lesson 1.8, plus a WordPress practice site from Lesson 5.1), or (C) a friend's or client's live site with written permission to access their Search Console and GA4.
+- **Accounts / tools:** a Google account (Search Console, GA4, Sheets, Data Studio); a Microsoft account (Bing Webmaster Tools), set up in Lesson 1.8.
 - **Hardware / internet:** a laptop or desktop with Chrome or Edge (for the developer tools). Mobile works for reading, not for the exercises. M06 onward uses the free Screaming Frog crawler (desktop app for Windows, macOS or Linux).
 - **Not required:** coding experience, paid SEO tools, an ads budget, a big site or existing traffic.
 
@@ -70,7 +70,7 @@ By the end of the course a learner can:
 1. **Explain** how SEO fits into marketing and digital marketing, and how search engines crawl, index and rank pages.
 2. **Build** a keyword map that matches each search intent to one page, using free data sources and competitor research.
 3. **Write and publish** SEO-optimised pages and blog posts in WordPress, from brief to indexed page, with clean HTML.
-4. **Configure** Search Console, Bing Webmaster Tools, GA4 (incl. GTM) and a Looker Studio report, and read them to make decisions.
+4. **Configure** Search Console, Bing Webmaster Tools, GA4 (incl. GTM) and a Data Studio report, and read them to make decisions.
 5. **Diagnose and fix** technical problems (indexing, redirects, Core Web Vitals, JavaScript, schema, international) and plan ethical link building and local SEO.
 6. **Run** a complete SEO audit with a client-ready report, and decide what to do after an algorithm update or traffic drop.
 
@@ -101,7 +101,7 @@ By the end of the course a learner can:
 | Screaming Frog SEO Spider | Crawl a site like a search engine | Free version, up to 500 URLs per crawl (⚠️ verify limit) | Paid licence | M06 |
 | AI assistant (ChatGPT, Gemini, Claude, Copilot) | Brainstorming, outlines, editing help (always fact-checked by you) | Free tiers | Paid plans | M07 |
 | Google Tag Manager | Installing GA4 and events without editing code | Free | — | M08 |
-| Looker Studio | SEO dashboard from GSC + GA4 | Free | — | M08 |
+| Data Studio (formerly Looker Studio) | SEO dashboard from GSC + GA4 | Free | — | M08 |
 | Ahrefs Webmaster Tools | Site audit, keywords and backlinks for **sites you verify** | Free | Ahrefs / Semrush / Moz subscriptions | M09, M10 |
 | Google Business Profile, Bing Places | Local listings, reviews | Free | — | M11 |
 | PageSpeed Insights, Rich Results Test, Schema Markup Validator | Core Web Vitals and structured-data checks | Free | — | M12 |
@@ -184,7 +184,7 @@ flowchart TD
 
 **Learner project (built in the capstones): choose one path in Lesson 1.1** and keep it for the whole course:
 - **A. Your own site:** a blog, creator, business or shop site you control (WordPress recommended; other builders work with platform notes).
-- **B. The practice site:** a free WordPress test site (set-up guide in Lesson 1.8), with planted bugs for the break-it labs. For learners with no site of their own.
+- **B. The practice site:** a free, public Blogger site (set up in Lesson 1.8) for Search Console and GA4 data, plus a WordPress practice site (Local or Playground, or hosting if you want Search Console data on WordPress) from Lesson 5.1, where you move two Blogger posts. Break-it labs use planted pages. For learners with no site of their own.
 - **C. A friend's or client's site:** a real local business or creator who gives written permission and Search Console/GA4 access.
 
 Low traffic is expected and fine. The rubric grades method and evidence, not traffic numbers.
@@ -251,11 +251,11 @@ Every lesson follows `course-framework.md` and includes a **when to use / when n
 - **Cheat sheet:** Brief template; post formats by intent; the AI edit and fact-check pass; the publish checklist.
 - **Common failure points:** publishing AI drafts unchecked; padding to a word count; clusters with no internal links; never revisiting old posts.
 
-### M08 — Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) (L2)
+### M08 — Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) (L2)
 - **Goal:** measure SEO properly and turn data into decisions and reports.
-- **Topics:** Search Console in depth (every report; Performance filters, comparisons and regex; Links; Crawl stats); GA4 in depth (organic reports, landing pages, key events, explorations, internal-traffic filters, Consent Mode basics ⚠️ freshness); Google Tag Manager basics (installing GA4, events, preview and debug); linking GSC and GA4; why GSC and GA4 numbers differ; a Looker Studio SEO dashboard with annotations; KPIs and an honest monthly report.
+- **Topics:** Search Console in depth (every report; Performance filters, comparisons and regex; Links; Crawl stats); GA4 in depth (organic reports, landing pages, key events, explorations, internal-traffic filters, Consent Mode basics ⚠️ freshness); Google Tag Manager basics (installing GA4, events, preview and debug); linking GSC and GA4; why GSC and GA4 numbers differ; a Data Studio SEO dashboard with annotations; KPIs and an honest monthly report.
 - **Non-negotiables reinforced:** #2 (in depth)
-- **Module capstone (artifact):** A Looker Studio dashboard + a one-page monthly SEO report for the project site. Break-it lab: a duplicated GA4 tag and a wrong measurement ID, found in GTM preview and DevTools.
+- **Module capstone (artifact):** A Data Studio dashboard + a one-page monthly SEO report for the project site. Break-it lab: a duplicated GA4 tag and a wrong measurement ID, found in GTM preview and DevTools.
 - **Cheat sheet:** Which GSC/GA4 report answers which question; GTM set-up checks; KPI definitions.
 - **Common failure points:** double-counting with two GA4 installs; no key events; comparing different date ranges; reporting averages that hide a page's loss.
 
@@ -311,7 +311,7 @@ Every lesson follows `course-framework.md` and includes a **when to use / when n
 - **Goal:** run a complete, professional SEO audit and deliver it like a client project.
 - **Topics:** scoping an audit; the audit order (indexing → crawling and status → architecture and internal links → on-page and content → page experience → structured data → links → local and international → E-E-A-T and policies); prioritising by impact × effort; writing a client-ready report and fix tickets; site migrations and redesigns (redirect map, pre-launch and post-launch checklists, Change of Address); a 90-day plan and monthly routine.
 - **Non-negotiables reinforced:** all
-- **Final capstone (the course's capstone project):** a full SEO audit of the project site (path A, B or C) with a prioritised 90-day plan, the fixes already made with before/after evidence, a Looker Studio dashboard, and a short walkthrough (written or recorded) a site owner can follow.
+- **Final capstone (the course's capstone project):** a full SEO audit of the project site (path A, B or C) with a prioritised 90-day plan, the fixes already made with before/after evidence, a Data Studio dashboard, and a short walkthrough (written or recorded) a site owner can follow.
 - **Cheat sheet:** The audit order and checklist; the migration checklist; the monthly SEO routine.
 - **Common failure points:** an audit with 200 issues and no priorities; recommendations without evidence; no plan for checking fixes.
 
@@ -363,6 +363,7 @@ Every lesson follows `course-framework.md` and includes a **when to use / when n
 ## 21. Changelog
 | Version | Date | Change |
 |---|---|---|
+| 0.4 | 2026-11-09 | Path B now matches the lessons: a free Blogger site (Lesson 1.8) plus a WordPress practice site from Lesson 5.1. Looker Studio renamed Data Studio (Google, April 2026). |
 | 0.3 | 2026-11-03 | **Restructured to match neps.in course 2566** (course owner: "live structure wins"): 15 modules named and ordered as its 15 sections; M01 (8 lessons) and M02 (10 lessons) use the live lesson titles (posts 2569–2586, empty shells). Added marketing foundations, HTML & CSS, WordPress content creation, competitor analysis, tools mastery & WordPress SEO, and an AI-search orientation in M14. 13 → 14 non-negotiables (added clean HTML, human edit of AI content; merged page experience and schema). Diagnostic 20 → 30 questions with skips for Web Dev 101 / WordPress 101 graduates. ~83 lessons, ~120 h (live description says ~181 h; to reconcile). Draft lesson "What SEO Is" remapped to M01.L03. |
 | 0.2 | 2026-11-03 | SEO only, beginner-friendly, in depth from zero to a technical audit; 10 modules. |
 | 0.1 | 2026-11-03 | Outline drafted as the classic-SEO prequel to Modern SEO 101: 8 modules + final capstone. |

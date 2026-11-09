@@ -187,7 +187,7 @@ You'll mark up a real article, test its headings, then audit a live page. Nila C
 **Part B — Check the outline (3 min)**
 1. Open `https://validator.w3.org/nu/#textarea` and tick **outline** under the text box.
 2. Paste in all your code and click **Check**.
-   **Expected:** "Document checking completed. No errors or warnings to show." Below that, the **Outline** section lists your headings in order, each with its level, such as `<h2> What you need`.
+   **Expected:** a green message saying there are no errors or warnings (the exact wording can change). Below that, the **Outline** section lists your headings in order, each with its level, such as `<h2> What you need`.
    > 🖼️ **Image prompt:** W3C Nu HTML Checker results page (1280×720) for the cold brew article with "outline" ticked, showing the success message and the heading outline. Highlight the Outline section with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** W3C checker results showing no errors and an outline of the article's headings.
 

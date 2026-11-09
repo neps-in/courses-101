@@ -157,7 +157,7 @@ You'll convert a page, apply the same structure to your article, test it, then m
    ```
 
 2. Paste it into `https://validator.w3.org/nu/#textarea` and click **Check**.
-   **Expected:** "Document checking completed. No errors or warnings to show." A page with no structure at all still passes. The checker can't tell you to use better elements.
+   **Expected:** a green message saying there are no errors or warnings (the exact wording can change). A page with no structure at all still passes. The checker can't tell you to use better elements.
 3. Using the flowchart, replace each `<div>` with the right element. Change each closing tag too, and delete the `class` attributes you no longer need. The logo's `<div>` sits inside the header, so make it a `<p>`, and give the menu the label `aria-label="Main"`.
 4. Compare your body with this one:
 
