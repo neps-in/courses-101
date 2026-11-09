@@ -57,7 +57,13 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M06 | L05 | Redirects, Site Structure and Crawl Depth | seo-101/lessons/m06-l05-redirects-site-structure.md | draft | 2026-11-09 |
 | M06 | L06 | Crawl Your Site: Screaming Frog, Page Indexing and URL Inspection | seo-101/lessons/m06-l06-crawl-tools-page-indexing.md | draft | 2026-11-09 |
 | M06 | Capstone | M06 capstone — Crawl and indexing audit | seo-101/capstones/m06-capstone.md | draft | 2026-11-09 |
-| M07 | — | Content Strategy, SEO Writing & AI Content (not yet planned) | — | todo | — |
+| M07 | L01 | Content Strategy: Goals, Audience and Topic Clusters | seo-101/lessons/m07-l01-content-strategy-clusters.md | todo | — |
+| M07 | L02 | The Content Brief and Post Formats by Intent | seo-101/lessons/m07-l02-content-brief-formats.md | todo | — |
+| M07 | L03 | SEO Writing That Ranks and Reads Well | seo-101/lessons/m07-l03-seo-writing.md | todo | — |
+| M07 | L04 | AI as a Helper: Where It Helps, Where It Fails, and the Fact-Check Pass | seo-101/lessons/m07-l04-ai-fact-check.md | todo | — |
+| M07 | L05 | The Publish Checklist | seo-101/lessons/m07-l05-publish-checklist.md | todo | — |
+| M07 | L06 | Refresh, Merge or Retire: Keeping Old Content Useful | seo-101/lessons/m07-l06-refresh-merge-retire.md | todo | — |
+| M07 | Capstone | M07 capstone — 3-month content plan and two published posts | seo-101/capstones/m07-capstone.md | todo | — |
 | M08 | — | Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) (not yet planned) | — | todo | — |
 | M09 | — | Off-Page SEO & Link Building (not yet planned) | — | todo | — |
 | M10 | — | Competitor Analysis (not yet planned) | — | todo | — |
@@ -191,6 +197,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 plan M07 — 6 lessons + capstone from research/m07 (strategy & clusters, brief & formats, SEO writing, AI & fact-check, publish checklist, refresh/merge/retire). Links back to M04.L03 for E-E-A-T; picks up merging from M03.L05. New project tabs: Content plan, Briefs, Fact-check log, Publish log, Content audit.
 - 2026-11-09: seo-101 m06 capstone draft — Crawl and indexing audit + cheatsheets/m06-technical-seo.md. Assesses #7, #8. 10 key pages × six-point check, crawl, Page indexing + sitemap triage, redirect map, fix/test/Validate fix, impact × effort list. Break-it lab from evidence only (robots.txt, headers/source table, Preserve-log chain, URL Inspection notes, owner's note): X-Robots-Tag noindex on best page, blocked+noindexed /wholesale/, 3-hop chain, http canonical to redirect, soft 404 with replacement; traps = search-page noindex,follow and deliberate 404. 5-criterion rubric. Module 6 fully drafted.
 - 2026-11-09: seo-101 m06-l06 draft — Crawl tools & Page indexing: built from research/m06 §8, §10, §11; ~40 quotes re-matched live (Screaming Frog product/pricing/release history v25.1/FAQ/user guide tabs + general; Page indexing + URL Inspection help; Bing blog 2020 + 2025). SF free: 500 URLs, no saved crawls; Sitemaps-tab filters and List mode not used (free availability unconfirmed); export button label hedged; Local-site crawl marked untested. Reason table = intended vs fix; 'crawler ≠ Google's view' labelled course inference. New Crawl findings tab (crawl counts, depth, reason triage, one fix + Validate fix date, Bing Site Scan); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M06.L05; 3 glossary terms.
 - 2026-11-09: seo-101 m06-l05 draft — Redirects, site structure & crawl depth: built from research/m06 §6, §7; ~32 quotes re-matched live (redirects 2026-04-14, site moves 2026-08-20, URL structure 2026-10-21, Starter Guide, links, ecommerce structure; Redirection plugin page). Course #8 single-hop stated as stricter than Google's 'ideally no more than 3'; '3 clicks' labelled observed practice; Mueller 2018 depth quote not used (secondary only); hyphen quote dropped (didn't match). Platform redirect locations reuse verified M04.L02/M05.L05/WP101 M05.L02 labels. New Redirect map tab (10-URL map, 3 single-hop tests, chain made and fixed, optional loop, click-depth sketch); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M06.L04; 5 glossary terms.

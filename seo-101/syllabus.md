@@ -12,7 +12,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M04 On-Page SEO | L1 | #6 | 6 lessons + capstone |
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | #3, #6 reinforced | 5 lessons + capstone |
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | 6 lessons + capstone |
-| M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | — |
+| M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | 6 lessons + capstone |
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) | L2 | — (#2 in depth) | — |
 | M09 Off-Page SEO & Link Building | L2 | #11 | — |
 | M10 Competitor Analysis | L2 | — | — |
@@ -532,3 +532,85 @@ flowchart LR
 ### M06 Capstone — Crawl and indexing audit
 - **File:** `capstones/m06-capstone.md` + `cheatsheets/m06-technical-seo.md`
 - Audit the project site's crawlability and indexing, using the crawl, Page indexing, URL Inspection, the sitemap and robots.txt, and produce a prioritised fix list (impact × effort) with a redirect map for any URL changes. **Break-it lab:** a planted set of Nila pages with a `noindex` in an HTTP header, a robots.txt block on a `noindex` page, a three-hop redirect chain, a canonical pointing to a redirected URL, and a soft 404, found with DevTools, a crawl and URL Inspection. Rubric: indexability checks (#7), redirects (#8), canonicals and sitemaps, evidence, prioritisation.
+
+## M07 — Content Strategy, SEO Writing & AI Content (L2)
+
+**Goal:** plan a content programme, write posts that rank, and use AI as a helper without breaking quality or spam rules. · NN #9, #10 taught (+ #4, #5, #6 reinforced)
+**Lessons:** planned from the outline's topics and the research notes in `research/m07-content-strategy-ai.md` (2026-11-09). The research's six-lesson split is kept. M04.L03 already teaches E-E-A-T, the helpful-content questions and the word-count myth, so M07 links back to it and adds only the AI, scale, date and refresh angles. M03.L05 deferred "merging content" to this module; L06 picks it up. The live course has no lesson titles for this section, so there are no live post numbers yet.
+**Planning notes from research:**
+- **Fresh changes to quote carefully:** Google's gen-AI content doc gained the "generative models don't retrieve facts … critical to manually factcheck" sentences on **2026-10-01**. The helpful-content page gained a "Main content" section and a fabricated-creator paragraph on **2026-10-05**, with no update-log entry. Recheck both before quoting. The spam policy is now titled **"Site reputation policy"** (2026-08-28, with EEA-specific enforcement).
+- **No Google wording for clusters:** Google's docs don't use "pillar", "topic cluster" or "topical authority". Teach clusters as a planning and internal-linking method (HubSpot 2017, labelled observed practice), backed by Google's link-importance wording. Keep clusters small (1 pillar + 4–6 posts), because Google warns against "separate content for every possible variation".
+- **Briefs and checklists are industry practice:** no Google doc defines either. Tie each field to a Google or GOV.UK line instead.
+- **Disclosure is "consider", not "must":** for Search, AI disclosure is advised "when it would be reasonably expected". Merchant Center product data is the exception ("must … be labeled"). No AI bylines; no fake authors.
+- **Don't quote:** OpenAI help text (403, not captured), any hallucination rate (secondary only), Mueller's 2018 readability comment or 2023 "still valid" comment (secondary only), GOV.UK "reading age 9" (not found), and "410 is faster than 404" (the current doc treats all 4xx the same).
+- **Conflicts to teach:** question headings (GOV.UK says no; SEO practice often yes; answer it in the first sentence either way); citing a source is required but "doesn't replace the need for original effort"; freshness is per query (QDF), not a site-wide boost.
+- **AI tool use in exercises:** free tiers only, for ideas and outlines; the learner writes and checks the body. Never paste private customer data into an AI tool.
+
+```mermaid
+flowchart LR
+  %% alt: M07 lesson path: strategy and clusters, briefs and formats, SEO writing, AI and fact-checking, publish checklist, refresh or retire, then the capstone.
+  L1[L01 Strategy &<br/>topic clusters]:::cream --> L2[L02 Briefs &<br/>formats by intent]:::sky
+  L2 --> L3[L03 SEO writing<br/>that reads well]:::sky
+  L3 --> L4[L04 AI as a helper<br/>& fact-check pass]:::blue
+  L4 --> L5[L05 The publish<br/>checklist]:::blue
+  L5 --> L6[L06 Refresh, merge<br/>or retire]:::blue
+  L6 --> C[M07 Capstone:<br/>3-month plan + 2 posts]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** first decide what to publish and why: goals, audience, and a small cluster of posts from your keyword map. Then turn each idea into a brief and pick the format the results page rewards. Write the post so people can find the answer fast and trust it. Use AI for ideas and outlines, then check every claim yourself. Before anything goes live, run the publish checklist. Finally, keep old posts useful: refresh, merge or retire them. The capstone puts it all together in a 3-month plan and two published posts.
+
+### M07.L01 — Content Strategy: Goals, Audience and Topic Clusters
+- **File:** `lessons/m07-l01-content-strategy-clusters.md` · **Prereqs:** M01.L01, M03.L05, M04.L05 · **Remediate to:** M03.L05 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Link** each planned post to a business goal and a persona from the M01 snapshot.
+  2. **Design** a small topic cluster (1 pillar + 4–6 posts) from the keyword map, with one keyword and intent per URL and planned internal links.
+  3. **Build** a realistic 3-month content calendar that one person can keep up with.
+- **Hands-on idea:** a cluster map for the project site (or Nila's "Brewing coffee at home" pillar), checked against the keyword map for cannibalisation, then a 3-month calendar in a new **Content plan** tab (URL, keyword, intent, format, brief, draft, fact-check, publish date, 4-week check).
+
+### M07.L02 — The Content Brief and Post Formats by Intent
+- **File:** `lessons/m07-l02-content-brief-formats.md` · **Prereqs:** M07.L01, M03.L01 · **Remediate to:** M03.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Write** a content brief whose every field (keyword, intent, audience, angle, outline, questions, sources, links in and out, CTA, scope) traces to a reason.
+  2. **Choose** a post format (how-to, comparison, "best X", product-led) from the formats ranking for the keyword.
+  3. **Distinguish** commodity content from content with first-hand value, and set a word range as scope, not a target.
+- **Hands-on idea:** a SERP format check for three cluster keywords in a private window, then one full brief for a cluster post in a new **Briefs** tab, with a "what only we can add" line.
+
+### M07.L03 — SEO Writing That Ranks and Reads Well
+- **File:** `lessons/m07-l03-seo-writing.md` · **Prereqs:** M07.L02, M04.L02, M04.L03 · **Remediate to:** M04.L03 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Apply** plain-language rules (answer first, descriptive headings, short sentences and paragraphs, everyday words) to a draft.
+  2. **Add** evidence of first-hand experience and cite primary sources in the sentence.
+  3. **Cut** filler, and explain why word counts and readability scores aren't ranking factors.
+- **Hands-on idea:** a before/after rewrite of a padded Nila brew-guide intro (ratio moved to the top, sentences over 25 words split, filler cut), then the first draft of the learner's own cluster post from the L02 brief.
+
+### M07.L04 — AI as a Helper: Where It Helps, Where It Fails, and the Fact-Check Pass
+- **File:** `lessons/m07-l04-ai-fact-check.md` · **Prereqs:** M07.L03, M01.L06 · **Remediate to:** M01.L06 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Explain** Google's position on AI-generated content, and how scaled content abuse and fake authors break the spam policies.
+  2. **Run** a claim-by-claim fact-check (claim, source URL, supporting sentence, date checked, verdict) on an AI-assisted draft.
+  3. **Decide** when an AI disclosure is reasonably expected, and write one.
+- **Hands-on idea:** ask a free AI assistant for an outline and a short section on one cluster topic, then fact-check every number, quote, name and link in a new **Fact-check log** tab (exact-phrase search, open every link, check against first-hand notes) and write a "How we made this" line.
+
+### M07.L05 — The Publish Checklist
+- **File:** `lessons/m07-l05-publish-checklist.md` · **Prereqs:** M07.L04, M04.L01, M04.L04, M06.L01 · **Remediate to:** M04.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Run** the publish checklist (non-negotiable #9): one keyword and intent, facts checked, sources cited, internal links in and out, title, meta and alt reviewed, byline and author page, visible date.
+  2. **Set** honest "Published" and "Last updated" dates that match the structured data.
+  3. **Confirm** the new post passes the M06 "can it be indexed?" check after it goes live.
+- **Hands-on idea:** run the checklist on the L03/L04 draft in WordPress (or the learner's platform), fix every fail, publish, add two internal links from older posts, and record the results in a new **Publish log** tab.
+
+### M07.L06 — Refresh, Merge or Retire: Keeping Old Content Useful
+- **File:** `lessons/m07-l06-refresh-merge-retire.md` · **Prereqs:** M07.L05, M03.L05, M06.L05 · **Remediate to:** M06.L05 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Spot** decaying or overlapping posts with Search Console Performance comparisons and the keyword map.
+  2. **Choose** refresh, merge (with a 301) or retire (404/410 or redirect) for each post, avoiding soft 404s and fake "freshness".
+  3. **Explain** when a date change is honest, and when query freshness matters.
+- **Hands-on idea:** a refresh triage of five older posts (Nila's sample set or the learner's own) in a new **Content audit** tab, with one line of reasoning per decision and one real refresh done end to end.
+
+### M07 Capstone — 3-month content plan and two published posts
+- **File:** `capstones/m07-capstone.md` + `cheatsheets/m07-content-ai.md`
+- A 3-month content plan for the project site (1 pillar + cluster, calendar, internal-link plan) and 2 posts published from briefs, each with an edit and fact-check log and a publish-checklist pass. **Break-it lab:** an "AI draft" of Nila's cold brew guide with an invented statistic, a fake quote, the wrong intent (a "top 10 makers" listicle), a wrong steep time, a dead source link, AI leftovers and a fake PhD byline, found with exact-phrase search, the SERP, Nila's tested recipe, link clicks and a reverse-image search. Rubric: strategy and clusters (#5), briefs and intent (#4), writing quality (#6), fact-check log and AI use (#10), publish checklist (#9).
