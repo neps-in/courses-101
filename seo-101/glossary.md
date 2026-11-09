@@ -3,6 +3,7 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **All-in-one SEO suite** — a paid platform (e.g. Ahrefs, Semrush, Moz Pro) with keyword research, backlink data, audits and rank tracking for any site; competitor figures are estimates. [M13.L06]
 - **Attachment page** — a page WordPress creates for each uploaded file, showing just that file; disabled on new installs since 6.4, still on for upgraded sites unless redirected. [M13.L05]
 - **Bulk Export** — Screaming Frog's menu for exporting all instances of data across a crawl, such as every internal link pointing to a 404. [M13.L01]
 - **ccTLD** — a country-code top-level domain such as .in, .pt or .co.uk; a strong country signal but costly and limited to one country. [M12.L06]
@@ -283,6 +284,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Query group** — an AI-made group of similar searches in Search Console Insights; groups may change over time and "don't affect ranking". [M08.L01]
 - **Query** — the words someone types (or says) into a search engine. [M01.L03]
 - **Quick win** — a target with a good chance and little effort, chosen for early progress. [M03.L04]
+- **Rank tracking** — checking positions for a chosen keyword list on a schedule; Search Console only shows average positions for queries you already appear for. [M13.L06]
 - **Ranking / serving** — choosing and ordering the most relevant indexed pages for a search, and showing them. [M01.L04]
 - **Ranking factor (signal)** — any information Google's ranking systems use to order results; the full list and weights aren't public. [M01.L07]
 - **Ranking system / core ranking systems** — the automated systems that order results; the core ones are the underlying technology behind search results. [M01.L07]
@@ -400,6 +402,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Validator** — a free tool that checks code against the HTML rules, such as the W3C Nu HTML Checker. [M02.L03]
 - **Vanity metric** — a number that looks good but doesn't show whether the goal is being met, such as total impressions or average position. [M08.L06]
 - **Verification (Business Profile)** — Google's check that you really run the business at that location; methods are chosen by Google (video, phone, email, postcard), and big edits can trigger it again. [M11.L02]
+- **Verified project** — a site you've proved you own in a tool (for example Ahrefs Free); free tools mostly work only on verified sites. [M13.L06]
 - **View Source** — the browser view (Ctrl+U / Cmd+Option+U) that shows the HTML the server sent, before JavaScript runs. [M01.L04]
 - **Viewport** — the visible area of a page in a browser; the viewport meta tag makes it match a phone's screen. [M02.L10]
 - **Void element** — an element with one tag and no closing tag, because it can't contain content, such as `<meta>` or `<img>`. [M02.L03]
