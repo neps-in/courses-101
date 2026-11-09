@@ -22,7 +22,7 @@ Google calls an ordinary result a **text result**. Its parts, using Google's own
 
 | Part | What it is | Where Google gets it (documented) | Can you control it? |
 |---|---|---|---|
-| **Attribution** | Favicon (the small logo), **site name**, and the **visible URL** shown as domain + **breadcrumb** | Your site, its favicon file, site name data and URL structure | Partly: you provide the inputs |
+| **Attribution** | Favicon (the small logo), **site name**, and the **visible URL**: domain + **breadcrumb** on desktop; since January 2025, mobile shows only the domain | Your site, its favicon file, site name data and URL structure | Partly: you provide the inputs |
 | **Title link** | The clickable headline | Your `<title>` element, plus several other sources: the "main visual title shown on the page", headings such as `<h1>`, `og:title` (a tag set for social sharing), other prominent text, anchor text, "text within links that point to the page" and `WebSite` structured data | Partly: Google says generating title links "is completely automated" |
 | **Snippet** | The description under the title | "Google primarily uses the content on the page"; it uses your **meta description** only "sometimes", when it describes the page better | Partly: write a good description; you can also limit snippets (see below) |
 | **Byline date** | A date, e.g. for articles | Google's estimate of when the page was updated or published | Partly: show a clear date on the page |

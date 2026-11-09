@@ -47,7 +47,7 @@ Google lists the usual causes, including:
 - **Site functions:** "the results of sorting and filtering functions of a category page", such as `?sort=price`.
 - **Tracking parameters:** `?utm_source=…` added to links in emails and social posts *(course example)*.
 - **Accidental variants:** "the demo version of the site is accidentally left accessible to crawlers" (Lesson 6.2's staging leak).
-- **Device and region variants:** separate mobile pages, or one page for several countries (hreflang, Module 13).
+- **Device and region variants:** separate mobile pages, or one page for several countries (hreflang, Module 12).
 - **Copies on other sites:** syndicated articles, or a copycat site.
 
 ## How it works
