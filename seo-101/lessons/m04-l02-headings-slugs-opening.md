@@ -141,7 +141,7 @@ You'll check whether one page's title, H1, outline, slug and opening agree, then
 1. Copy the current slug into **Slug now**. Check it against the slug table: words, hyphens, same case, short, no ID or tracking parameter, no year.
 2. Write a better one in **Slug planned**, or "Keep" if it's fine.
 3. **On paths A and C, don't change a live slug yet.** On path B, try it on a practice post:
-   - **Blogger:** in the post editor's settings, choose a custom permalink, then update the post. Then add a redirect from the old URL to the new one in **Settings > Custom redirects**, and tick **Permanent**.
+   - **Blogger:** in the post editor's settings, choose a custom permalink, then update the post. Then add a redirect from the old URL to the new one under **Custom redirects** in **Settings**, choosing the permanent option if it's offered.
    - **WordPress:** edit the post's URL in the post settings. Published posts get a redirect automatically, and pages don't.
 4. Visit the old URL in a private window.
    **Expected:** you land on the new URL. If you see "Not found", the redirect is missing.
