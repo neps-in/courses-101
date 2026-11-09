@@ -83,7 +83,12 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M10 | L04 | The Backlink Gap | seo-101/lessons/m10-l04-backlink-gap.md | draft | 2026-11-09 |
 | M10 | L05 | Turning Findings into Priorities | seo-101/lessons/m10-l05-competitor-priorities.md | draft | 2026-11-09 |
 | M10 | Capstone | M10 capstone — Competitor analysis and 10 opportunities | seo-101/capstones/m10-capstone.md | draft | 2026-11-09 |
-| M11 | — | Local SEO & Google Business Profile (not yet planned) | — | todo | — |
+| M11 | L01 | How Local Results Work (and Is Local SEO for You?) | seo-101/lessons/m11-l01-how-local-results-work.md | todo | — |
+| M11 | L02 | Set Up and Verify a Business Profile the Right Way | seo-101/lessons/m11-l02-gbp-setup-verification.md | todo | — |
+| M11 | L03 | Optimise the Profile: Categories, Services, Hours, Photos, Posts | seo-101/lessons/m11-l03-gbp-optimisation.md | todo | — |
+| M11 | L04 | Reviews: Get Them Honestly, Reply Well, Stay Legal | seo-101/lessons/m11-l04-reviews.md | todo | — |
+| M11 | L05 | One Identity Everywhere: NAP, Citations, Local Pages, Schema, Bing and Apple | seo-101/lessons/m11-l05-nap-citations-local-pages.md | todo | — |
+| M11 | Capstone | M11 capstone — Business Profile audit with citation and review plans | seo-101/capstones/m11-capstone.md | todo | — |
 | M12 | — | Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) (not yet planned) | — | todo | — |
 | M13 | — | SEO Tools Mastery & WordPress SEO (not yet planned) | — | todo | — |
 | M14 | — | Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search (not yet planned) | — | todo | — |
@@ -213,6 +218,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09 — seo-101 plan M11: 5 lessons + capstone from research/m11-local-seo-gbp.md (split kept); research for M11, M13, M14, M15 saved by research subagents (M12 still running). Planning notes: popularity/prominence wording, Q&A and chat changes, India feature limits, persona eligibility (Amara online-only), fake-review law as examples only.
 - 2026-11-09: seo-101 m10-capstone draft — Competitor analysis and 10 opportunities: 6 tasks mapped to L01–L05 (Competitors, Page teardown, Gap sheet + estimate check, Link gap → Outreach, Opportunities with V/C/E + evidence + dates + won't-do, one-page analysis); break-it lab with the intern's 11-error report from research (business vs search competitor, forum vs shop, estimate as fact, AI metrics, paraphrased copy, site: as count, retired operators, lab vs field, robots-ignoring crawl, outranking Amazon, cross-tool counts) with answer table; 5-criterion rubric (#4, #11 reinforced); 1 flowchart; 1 image prompt. Moz blog Ford example not quoted (unverified). Plus cheatsheets/m10-competitor-analysis.md with checklist and gap template. Module 10 complete.
 - 2026-11-09: seo-101 m10-l05 draft — Findings into priorities: built from research/m10 §8, §10; ProductPlan ICE quotes (multiply, definitions, 1-10 consistency, low hanging fruit, RICE formula), Gemini hallucination line, helpful-content AI effort line and 'No one can guarantee a #1 ranking' re-matched live. ICE origin left unnamed (contested); impact × effort labelled common practice. Reuses M03.L04 Value/Chance/Effort with Evidence + Source/date columns. New Opportunities tab (all rows scored, top 10 as hedged findings, one won't-do); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M10.L04; 3 glossary terms.
 - 2026-11-09: seo-101 m10-l04 draft — Backlink gap: built from research/m10 §1, §9 and M09.L03; quotes re-matched live (Moz Link Explorer 10/month + 'Competitor backlinks you're missing out on'; Ahrefs Backlink Checker free version; Ahrefs Free verification + 1K visible; Bing 2020 'any site, including similar sites'; spam policy buying links). Semrush blog backlink line didn't match live, so not used; Ahrefs free checker cap left as unpublished. New Link gap tab (query plan, their linking domains minus ours, intersect count, Earnable/Not for us/Scheme labels, 3–5 into Outreach); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M10.L03; 2 glossary terms.

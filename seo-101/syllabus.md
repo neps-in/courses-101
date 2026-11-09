@@ -16,7 +16,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) | L2 | — (#2 in depth) | 6 lessons + capstone |
 | M09 Off-Page SEO & Link Building | L2 | #11 | 5 lessons + capstone |
 | M10 Competitor Analysis | L2 | — | 5 lessons + capstone |
-| M11 Local SEO & Google Business Profile | L2 | #12 | — |
+| M11 Local SEO & Google Business Profile | L2 | #12 | 5 lessons + capstone |
 | M12 Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) | L3 | #13 | — |
 | M13 SEO Tools Mastery & WordPress SEO | L3 | — | — |
 | M14 Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search | L3 | #14 | — |
@@ -839,3 +839,75 @@ flowchart LR
 ### M10 Capstone — Competitor analysis and 10 opportunities
 - **File:** `capstones/m10-capstone.md` + `cheatsheets/m10-competitor-analysis.md`
 - A competitor analysis of 3 search competitors with 10 prioritised opportunities. **Break-it lab:** an intern's competitor "report" for Nila Coffee with 11 wrong conclusions (a business competitor as the search competitor, comparing a forum to a shop, estimates as facts, AI-invented metrics, a paraphrased copy, `site:` as a page count, retired operators, lab vs field speed, a robots-ignoring crawl, outranking Amazon, cross-tool link counts) to correct. Rubric: competitor choice, SERP and page reading, gap analysis, honest use of data, prioritisation and ethics (#4, #11).
+
+## M11 — Local SEO & Google Business Profile (L2)
+
+**Goal:** get a place-based business found in local results and maps. · NN #12 taught
+**Lessons:** planned from the outline's topics and the research notes in `research/m11-local-seo-gbp.md` (2026-11-09). The research's five-lesson split is kept. M01.L05 introduced the local pack; M08 covered GA4 and UTM tagging; M10.L01 introduced checking local results by location. These lessons build on them.
+**Planning notes from research:**
+- **Wording drift:** Google's ranking help now says "relevance, distance, and popularity" in its summary but keeps "Prominence" as a heading. Teach "prominence (Google now also calls it popularity)".
+- **Fast-changing features:** chat was removed (2024-07-31); business.site websites were retired (2024, secondary sources only); the Q&A help page is a 404 and the Q&A API was discontinued (2025-11-03); products and featured posts aren't offered in India. Teach "check your dashboard", and flag Q&A as the topic most likely to be out of date.
+- **Personas:** Nila's tasting room is a storefront; Kavya's studio is a storefront, but Google says businesses with class schedules "shouldn't provide hours"; Tomás's Lisbon shop is a storefront; Amara works online only, so she isn't eligible (a useful teaching case).
+- **Conflicts to teach:** keywords in names may seem to work (in surveys), but Google may suspend for it; showing an address may help, but service-area businesses must hide it. Teach the rules.
+- **Law:** FTC (2024) and CMA (2025) fake-review rules are quoted as examples; India's IS 19000:2022 is aimed at platforms and was voluntary at launch. Not legal advice.
+- **Don't quote:** Bing Places help (unreadable); third-party claims about an AI "Ask" replacing Q&A; Google's fake-review counts (not opened).
+
+```mermaid
+flowchart LR
+  %% alt: M11 lesson path: how local results work, set up and verify a profile, optimise it, earn and answer reviews, then keep one identity everywhere.
+  L1[L01 How local<br/>results work]:::cream --> L2[L02 Set up and<br/>verify a profile]:::sky
+  L2 --> L3[L03 Optimise<br/>the profile]:::sky
+  L3 --> L4[L04 Reviews, honestly<br/>and legally]:::blue
+  L4 --> L5[L05 One identity:<br/>NAP, pages, schema]:::blue
+  L5 --> C[M11 Capstone:<br/>profile audit and plans]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** first learn how local results are chosen and whether your business qualifies. Then set up and verify a Business Profile that follows Google's rules, and fill it in properly. Earn reviews honestly and reply well. Finally, make sure your name, address and phone match everywhere, including your website, other directories and maps. The capstone audits a real profile and plans citations and reviews.
+
+### M11.L01 — How Local Results Work (and Is Local SEO for You?)
+- **File:** `lessons/m11-l01-how-local-results-work.md` · **Prereqs:** M10.L05, M01.L05 · **Remediate to:** M01.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** relevance, distance and prominence (popularity), and that you can't pay for a better local ranking.
+  2. **Classify** a business as storefront, service-area, hybrid or not eligible, quoting Google's rule.
+  3. **Run** a manual local rank check from several places and log it.
+- **Hands-on idea:** an eligibility decision for your business, and a **Local rank log** with 3–5 searches from 4–6 places (or friends' screenshots).
+
+### M11.L02 — Set Up and Verify a Business Profile the Right Way
+- **File:** `lessons/m11-l02-gbp-setup-verification.md` · **Prereqs:** M11.L01 · **Remediate to:** M11.L01 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Follow** Google's name and address rules (no keywords, taglines or virtual offices).
+  2. **Choose** a verification route, and know what triggers re-verification.
+  3. **Set** ownership correctly: the business owns the profile; helpers get manager access.
+- **Hands-on idea:** a **Profile audit** tab checking name, address, phone and ownership against Google's guidelines, with the rule quoted for each fix.
+
+### M11.L03 — Optimise the Profile: Categories, Services, Hours, Photos, Posts
+- **File:** `lessons/m11-l03-gbp-optimisation.md` · **Prereqs:** M11.L02 · **Remediate to:** M11.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Pick** a primary category and a few true extras ("is a", not "has a").
+  2. **Complete** services or menu, description, attributes, hours (including festival hours) and real photos within the rules.
+  3. **Read** the Performance report, and tag the profile's website link for GA4.
+- **Hands-on idea:** a profile completeness checklist with fixes, a festival-hours plan, and a UTM-tagged website link checked in GA4.
+
+### M11.L04 — Reviews: Get Them Honestly, Reply Well, Stay Legal
+- **File:** `lessons/m11-l04-reviews.md` · **Prereqs:** M11.L03 · **Remediate to:** M11.L03 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Recognise** Google's banned review practices (incentives, gating, staff quotas, fake accounts) and their penalties.
+  2. **Build** an asking process that treats every customer the same.
+  3. **Write** replies for positive, mixed, negative and suspected-fake reviews, and report rather than argue.
+- **Hands-on idea:** a **Review kit**: review link and QR plan, one neutral asking script, and five reply templates checked against Google's tips.
+
+### M11.L05 — One Identity Everywhere: NAP, Citations, Local Pages, Schema, Bing and Apple
+- **File:** `lessons/m11-l05-nap-citations-local-pages.md` · **Prereqs:** M11.L04, M06.L03 · **Remediate to:** M11.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Audit** name, address, phone and URL across 10+ sources and fix mismatches (#12).
+  2. **Plan** location pages that help people, avoiding doorway pages and city-list stuffing.
+  3. **Write** basic LocalBusiness JSON-LD that matches the profile, and list the business on Bing and Apple.
+- **Hands-on idea:** a **NAP audit** sheet, a 10-source citation plan, and one location page draft with LocalBusiness JSON-LD (validated fully in M12).
+
+### M11 Capstone — Business Profile audit with citation and review plans
+- **File:** `capstones/m11-capstone.md` + `cheatsheets/m11-local-seo.md`
+- A Business Profile audit and fixes (Nila Coffee's tasting room for path B), with a 10-source citation plan, a review plan and a rank-check log. **Break-it lab:** a freelancer's draft profile for Nila Coffee with a keyword-stuffed name, wrong categories, three different phone numbers, a co-working address, banned review tactics, 20 city pages and self-serving review markup. Rubric: eligibility and setup, profile quality, reviews, one identity (#12), and honest tracking.
