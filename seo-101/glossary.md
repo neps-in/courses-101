@@ -3,6 +3,7 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **Attachment page** — a page WordPress creates for each uploaded file, showing just that file; disabled on new installs since 6.4, still on for upgraded sites unless redirected. [M13.L05]
 - **Bulk Export** — Screaming Frog's menu for exporting all instances of data across a crawl, such as every internal link pointing to a 404. [M13.L01]
 - **ccTLD** — a country-code top-level domain such as .in, .pt or .co.uk; a strong country signal but costly and limited to one country. [M12.L06]
 - **Citation (local)** — a mention of a business's name, address and phone on another site, such as a directory, map app, review site or social profile. [M11.L05]
@@ -175,6 +176,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **INP (Interaction to Next Paint)** — the Core Web Vital for responsiveness: the longest click, tap or key response in a visit (ignoring outliers); good is 200 ms or less. Replaced FID in March 2024. [M12.L01]
 - **Insights report** — Search Console's simple summary of top and trending pages, queries, countries and other traffic sources; rolling out and partly AI-powered. [M08.L01]
 - **Internal and external links** — internal links point to another page on your own site; external links point to a different site. [M02.L05]
+- **Internal search page** — a results page from a site's own search box (`/?s=…`); WordPress core adds noindex, so don't block it in robots.txt. [M13.L05]
 - **Internal stylesheet** — CSS in a `<style>` element in a page's `<head>`; it applies to that page only. [M02.L08]
 - **Internal traffic filter** — a GA4 data filter that removes your own team's visits; test it first, because once active its effect is permanent. [M08.L02]
 - **Intrinsic size** — an image file's real width and height in pixels; compare it with the rendered size in DevTools. [M04.L04]
@@ -248,6 +250,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Owned media** — channels you control, such as your website, blog and email list. [M01.L02]
 - **Padding** — the space inside an element's border, around its content. [M02.L09]
 - **Page builder** — a plugin, such as Elementor or Divi, that adds drag-and-drop page design; often adds extra markup and site-wide CSS and JavaScript. [M05.L04]
+- **Page cache** — stored copies of finished pages served to visitors for speed; can serve an old title or noindex until purged. [M13.L05]
 - **Page indexing report** — Search Console's Indexing → Pages report: how many URLs are indexed, and the reason each group isn't. Not indexed isn't necessarily bad. [M06.L06]
 - **Page teardown** — a side-by-side check of a competitor page and yours (title, headings, depth, evidence, rich results, speed, history), ending in changes that add value, not copies. [M10.L02]
 - **Page type** — the kind of page a result is, such as a guide, comparison list, product page, category page or location page. [M03.L01]
@@ -264,6 +267,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Pillar page** — a broad page on one subject that summarises it and links to narrower cluster posts; it never targets a long-tail phrase. An industry term, not a Google one. [M07.L01]
 - **Plain language** — writing your intended reader understands the first time: answer first, short sentences and paragraphs, everyday words, active voice. Specialists prefer it too. [M07.L03]
 - **Plugin (app)** — an add-on that gives a platform a new feature; WordPress says plugin, Shopify says app. [M02.L02]
+- **Plugin bloat** — plugins that slow a site or add unneeded output; judged by each plugin's weight, measured on staging, not by plugin count. [M13.L05]
 - **Post format** — the shape of a post that suits an intent, such as numbered steps for a how-to or a table for a comparison; chosen from what ranks. [M07.L02]
 - **Practice site** — a WordPress site for trying things safely, on your computer (Local), in your browser (Playground) or on hosting; only a hosted one is visible to Google. [M05.L01]
 - **Preserve log** — a DevTools Network setting that keeps requests across page loads, so you can see every hop of a redirect chain. [M13.L03]
