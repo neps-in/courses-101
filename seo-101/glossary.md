@@ -3,7 +3,6 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
-- **AI Mode** — Google's conversational search mode built on Search's index and ranking; counted in Performance → Web, and a follow-up question counts as a new query. [M14.L05]
 - **All-in-one SEO suite** — a paid platform (e.g. Ahrefs, Semrush, Moz Pro) with keyword research, backlink data, audits and rank tracking for any site; competitor figures are estimates. [M13.L06]
 - **Attachment page** — a page WordPress creates for each uploaded file, showing just that file; disabled on new installs since 6.4, still on for upgraded sites unless redirected. [M13.L05]
 - **Back button hijacking** — a site interfering with the browser's Back button so users can't return to where they came from; a spam policy (malicious practices) enforced from 15 June 2026. Often caused by ad or popup scripts. [M14.L04]
@@ -22,8 +21,9 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
 - **Ahrefs Free (formerly Ahrefs Webmaster Tools)** — Ahrefs' free tier for verified sites: backlinks (up to 1,000 at once, with link types), site audit and web analytics. [M09.L03]
 - **AI disclosure** — a short note telling readers how AI or automation helped make a page; Google suggests it when readers would "reasonably" expect it. Merchant Center requires labels on AI product data. [M07.L04]
-- **AI use statement** — a short, true site-wide note saying what AI is used for and what people always do (write, test, fact-check); pages get their own note when readers would wonder. [M14.L02]
+- **AI Mode** — Google's conversational search mode built on Search's index and ranking; counted in Performance → Web, and a follow-up question counts as a new query. [M14.L05]
 - **AI Overview** — an AI-written summary with links that Google shows on some searches; no special markup is needed to appear in one (Module 14). [M01.L05]
+- **AI use statement** — a short, true site-wide note saying what AI is used for and what people always do (write, test, fact-check); pages get their own note when readers would wonder. [M14.L02]
 - **Algorithmic change** — a ranking shift from Google's automated systems; no message is sent and there's no review to request. [M01.L06]
 - **Alt text** — the `alt` attribute of an image: a short text replacement read by screen readers and shown if the image fails to load. Use `alt=""` for decoration. [M02.L05]
 - **Anchor text (link text)** — the visible, clickable words of a link; it should be descriptive, concise and clear out of context. [M02.L05]
