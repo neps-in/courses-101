@@ -911,3 +911,85 @@ flowchart LR
 ### M11 Capstone — Business Profile audit with citation and review plans
 - **File:** `capstones/m11-capstone.md` + `cheatsheets/m11-local-seo.md`
 - A Business Profile audit and fixes (Nila Coffee's tasting room for path B), with a 10-source citation plan, a review plan and a rank-check log. **Break-it lab:** a freelancer's draft profile for Nila Coffee with a keyword-stuffed name, wrong categories, three different phone numbers, a co-working address, banned review tactics, 20 city pages and self-serving review markup. Rubric: eligibility and setup, profile quality, reviews, one identity (#12), and honest tracking.
+
+## M12 — Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) (L3)
+
+**Goal:** handle the technical topics that separate a basic site from a well-built one. · NN #13 taught (+ #7 reinforced)
+**Lessons:** planned from the outline's topics and the research notes in `research/m12-advanced-technical-seo.md` (2026-11-09). The research's six-lesson split is kept; international SEO, faceted navigation and crawl budget share L06, with crawl budget and logs as "go further". M01.L04 promised JavaScript rendering, M04.L04 promised the LCP image fixes, M06 covered status codes, canonicals and redirects, M10.L02 introduced PSI, and M11.L05 wrote LocalBusiness JSON-LD to validate here.
+**Planning notes from research:**
+- **Retired rich results:** FAQ ended 7 May 2026 (docs removed June 2026); HowTo ended in 2023; a June 2025 batch was phased out (Book Actions kept after all); Dataset is Dataset Search only. Recheck the list before publishing.
+- **Wording drift:** the CWV page now says CWV "aligns with what our core ranking systems seek to reward"; the "used by our ranking systems" line is on the page-experience page. Fix M01.L07's attribution during review.
+- **Thresholds:** teach PSI's inclusive ranges (≤2.5 s, ≤200 ms, ≤0.1) and use each tool's own label ("Needs improvement" vs Search Console's "Need improvement").
+- **URL Inspection HTML:** whether "View crawled page" shows raw or rendered HTML isn't settled in Google's text. Teach the safe comparison: View Source vs the live test or Rich Results Test's tested page.
+- **Docs moved:** faceted navigation, crawl budget and Googlebot verification now live under `developers.google.com/crawling/docs/`. Cite the new URLs.
+- **Don't quote:** validator.schema.org's own description (not readable), a CWV validation window length, other engines' hreflang docs, WooCommerce structured-data specifics, Screaming Frog Log File Analyser limits.
+- **Personas:** Nila's three templates (home, product, brew guide) for CWV and markup; Nila's `/en-in/`, `/ta-in/`, `/en-gb/` for hreflang; Tomás's filters for facets; Kavya's site as the "no hreflang needed" case.
+
+```mermaid
+flowchart LR
+  %% alt: M12 lesson path: read CWV field data, fix CWV, mobile and HTTPS baseline, JavaScript SEO, valid structured data, then international and facets.
+  L1[L01 Read CWV<br/>field data]:::cream --> L2[L02 Fix CWV:<br/>fix briefs]:::sky
+  L2 --> L3[L03 Mobile-first<br/>and HTTPS]:::sky
+  L3 --> L4[L04 JavaScript<br/>SEO]:::sky
+  L4 --> L5[L05 Valid, honest<br/>structured data]:::blue
+  L5 --> L6[L06 International,<br/>facets, crawl budget]:::blue
+  L6 --> C[M12 Capstone:<br/>advanced tech report]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start by reading real-user Core Web Vitals data, then turn it into fix briefs. Make sure the site is mobile-equivalent and fully HTTPS. Check what Google actually sees on JavaScript-heavy pages. Add structured data that's valid and matches the page. Finally, handle sites in several languages or countries, filter URLs, and (going further) crawl budget. The capstone is an advanced technical report.
+
+### M12.L01 — Core Web Vitals: Read Field Data First
+- **File:** `lessons/m12-l01-core-web-vitals-field-data.md` · **Prereqs:** M10.L02, M04.L04 · **Remediate to:** M10.L02 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Define** LCP, INP and CLS and their "good" thresholds at the 75th percentile.
+  2. **Distinguish** field data (CrUX) from lab data (Lighthouse), and explain "No data available".
+  3. **Read** PageSpeed Insights and the Search Console Core Web Vitals report for three templates.
+- **Hands-on idea:** a **CWV** tab: field and lab results for Nila's home, product and brew-guide templates, with the data source and date for each.
+
+### M12.L02 — Fixing Core Web Vitals: Causes and Fix Briefs
+- **File:** `lessons/m12-l02-fix-core-web-vitals.md` · **Prereqs:** M12.L01 · **Remediate to:** M12.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Diagnose** the likely cause of a poor LCP, INP or CLS from PSI's diagnostics.
+  2. **Apply** the core fixes: no lazy-loading the LCP image, `fetchpriority`, image dimensions, font and embed space, fewer third-party scripts.
+  3. **Write** a fix brief a developer or theme owner can act on.
+- **Hands-on idea:** a hero-image check in View Source and three **fix briefs** (one per template) using a template.
+
+### M12.L03 — Mobile-First and HTTPS: The Secure, Mobile Baseline
+- **File:** `lessons/m12-l03-mobile-first-https.md` · **Prereqs:** M12.L02, M06.L05 · **Remediate to:** M06.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Check** mobile and desktop parity for content, headings, meta and robots.
+  2. **Find** and fix mixed content, and confirm HTTP → HTTPS is a single 301.
+  3. **Explain** HSTS as a concept, and why preload is hard to undo.
+- **Hands-on idea:** a **Mobile + HTTPS** tab: a parity check on 3 pages and an HTTPS sweep of 5 pages with DevTools.
+
+### M12.L04 — JavaScript SEO: What Google Renders
+- **File:** `lessons/m12-l04-javascript-seo.md` · **Prereqs:** M12.L03, M01.L04 · **Remediate to:** M01.L04 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Compare** source HTML with rendered HTML using View Source and a Google testing tool.
+  2. **Spot** JavaScript traps: links without `<a href>`, content behind clicks or scrolls, `noindex` removed by script.
+  3. **Choose** a sensible rendering approach (server-side, static, client-side) and know dynamic rendering is a workaround.
+- **Hands-on idea:** a **JS rendering check** of one JS-heavy element, recording source / rendered / both / missing.
+
+### M12.L05 — Structured Data That's Valid and Honest
+- **File:** `lessons/m12-l05-structured-data-valid-honest.md` · **Prereqs:** M12.L04, M11.L05 · **Remediate to:** M11.L05 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Write** JSON-LD for Organization, Article, BreadcrumbList, Product and LocalBusiness that matches visible content.
+  2. **Validate** markup with the Rich Results Test and the Schema Markup Validator, and explain the difference.
+  3. **Identify** rich results Google has retired and self-serving review markup.
+- **Hands-on idea:** valid markup on 2 pages (a product and a brew-guide post), plus validating M11.L05's LocalBusiness block.
+
+### M12.L06 — International Sites, Faceted Navigation and Crawl Budget
+- **File:** `lessons/m12-l06-international-facets-crawl-budget.md` · **Prereqs:** M12.L05, M06.L03, M06.L02 · **Remediate to:** M06.L03 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Choose** a URL structure (ccTLD, subdomain, subfolder) for an international site.
+  2. **Write** a correct hreflang set with self-references, return links and x-default, and avoid locale redirects.
+  3. **Decide** which filter URLs to index or block, and when crawl budget and log files matter ("go further").
+- **Hands-on idea:** an hreflang set for Nila (or a "not needed" note), and a **facet map** for Tomás's filters.
+
+### M12 Capstone — Advanced technical report
+- **File:** `capstones/m12-capstone.md` + `cheatsheets/m12-advanced-technical.md`
+- An advanced technical report: CWV for 3 templates with fix briefs, a JavaScript rendering check, valid structured data on 2 pages, and an hreflang or international plan (or a "not needed" note), plus a #13 checklist. **Break-it lab:** Nila Coffee staging files with a failing Product markup, invisible FAQ markup, self-serving stars, a JS-only link, a lazy-loaded LCP image, `noindex` removed by script, mixed content, a broken hreflang set and a facet trap. Rubric: performance, mobile and HTTPS, rendering, structured data, international and crawl.
