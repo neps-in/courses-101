@@ -39,7 +39,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M03 | Capstone | M03 capstone — Keyword map | seo-101/capstones/m03-capstone.md | reviewed | 2026-11-08 |
 | M04 | L01 | Title Tags and Meta Descriptions: What Searchers See First | seo-101/lessons/m04-l01-titles-meta-descriptions.md | reviewed | 2026-11-09 |
 | M04 | L02 | Headings, URL Slugs and the Opening Paragraph | seo-101/lessons/m04-l02-headings-slugs-opening.md | reviewed | 2026-11-09 |
-| M04 | L03 | Writing for People: Natural Keywords, Synonyms and E-E-A-T Basics | seo-101/lessons/m04-l03-people-first-writing.md | todo | — |
+| M04 | L03 | Writing for People: Natural Keywords, Synonyms and E-E-A-T Basics | seo-101/lessons/m04-l03-people-first-writing.md | draft | 2026-11-09 |
 | M04 | L04 | Image SEO: File Names, Alt Text, Size and Format | seo-101/lessons/m04-l04-image-seo.md | todo | — |
 | M04 | L05 | Internal Links and Anchor Text | seo-101/lessons/m04-l05-internal-links-anchor-text.md | todo | — |
 | M04 | L06 | Shop Pages and Sharing: Product Pages, Category Pages and Open Graph | seo-101/lessons/m04-l06-shop-pages-open-graph.md | todo | — |
@@ -180,6 +180,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 m04-l03 draft — Writing for people: built from research/m04-on-page-seo.md §5–6; 39 quotes re-matched live (spam policies 2026-08-28, Starter Guide, helpful content 2026-10-05, E-E-A-T blog Dec 2022). Keyword density labelled myth (no Google source); synonym table from Starter Guide's charcuterie example; 8 self-assessment questions + Who/How/Why; fabricated-author warning (Oct 2026); E-E-A-T kept brief, builds on M01.L07, depth left to M14. New People-first check tab (stuffed-paragraph rewrite, GSC queries by page, question scoring); 2 flowcharts; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M04.L02; 3 glossary terms.
 - 2026-11-09: seo-101 m04-l02 reviewed. Fixed: Blogger redirect step no longer names an unconfirmed "Permanent" tick box. Checked: all quotes matched live today, alts ≤150, quiz letters 2/2/2/2 with no length flags, worked ratio numbers consistent with M04.L01.
 - 2026-11-09: seo-101 m04-l02 draft — Headings, slugs & opening: built from research/m04-on-page-seo.md §3–4 and m05 notes (WordPress old-slug code); quotes re-matched live (URL structure 2026-10-21, Starter Guide, helpful content 2026-10-05, ecommerce URLs, redirects, office hours Jul 2024, MDN, title links). Unverified Mueller multiple-H1 quote left out; no first-100-words rule labelled as such; lowercase labelled convention. Builds on M02.L04 (Console outline line) rather than repeating it. New Page outline tab; 2 flowcharts; 1 image prompt; planted product-page exercise; 8-question quiz incl. 1 review from M04.L01; 3 glossary terms.
 - 2026-11-09: seo-101 m04-l01 reviewed. Fixed: site-name trim now quotes Google ("already shown in the search result") instead of an unchecked layout claim; Blogger title step hedged to "usually" with a View Source check; Q6 options in code spans (stray \| escapes); clumsy site: cross-reference simplified. Quotes were matched live on 2026-11-09, so no new web checks.
