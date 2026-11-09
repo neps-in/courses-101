@@ -11,7 +11,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M03 Keyword Research | L1 | #4, #5 | 5 lessons + capstone |
 | M04 On-Page SEO | L1 | #6 | 6 lessons + capstone |
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | #3, #6 reinforced | 5 lessons + capstone |
-| M06 Technical SEO Fundamentals | L2 | #7, #8 | — |
+| M06 Technical SEO Fundamentals | L2 | #7, #8 | 6 lessons + capstone |
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | — |
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) | L2 | — (#2 in depth) | — |
 | M09 Off-Page SEO & Link Building | L2 | #11 | — |
@@ -448,3 +448,87 @@ flowchart LR
 ### M05 Capstone — Publish two pages and a post
 - **File:** `capstones/m05-capstone.md` + `cheatsheets/m05-wordpress-content.md`
 - Publish two optimised pages and one post from the keyword map on the practice or project site, with clean heading outlines, Post name permalinks, a category, useful alt text, internal links in and out, and a preview checked before publishing. **Break-it lab:** a planted page built like a heavy page-builder page, with headings used for styling, styled paragraphs as headings and a 4,000-pixel hero; find the problems with the Outline, View Source and DevTools, and fix the structure. Rubric: structure and headings, permalinks and URL safety, posts vs pages and archives, Module 4 applied, evidence.
+
+## M06 — Technical SEO Fundamentals (L2)
+
+**Goal:** make sure search engines can reach, read and index the pages you want, and skip the ones you don't. · NN #7, #8 taught
+**Lessons:** planned from the outline's topics and the research notes in `research/m06-technical-seo-fundamentals.md` (2026-11-08). The suggested six-lesson split is kept, with L06 as a tools lesson, so the capstone audit isn't a repeat. The live course has no lesson titles for this section, so there are no live post numbers yet. This is the first L2 (Practitioner) module: lessons can assume Modules 1–5.
+**Planning notes from research:**
+- **Docs moved:** Google moved its crawling docs (status codes, robots.txt) to `developers.google.com/crawling/docs/…`. Cite the new URLs, and recheck the old ones used in M01.L04 and M02.L02. The robots.txt spec was updated on 2026-10-23, and URL structure and "control what you share" on 2026-10-21, so recheck before quoting.
+- **Retired tools:** Google's robots.txt Tester was retired in late 2023 (announced November 2023; no exact date was confirmed). Use the Search Console **robots.txt report** and URL Inspection's "Crawl allowed?", plus Bing's robots.txt Tester for URL-level checks. Page indexing help still mentions the old tester and Lighthouse. Don't follow either (course rule: no Lighthouse runs).
+- **Course is stricter than Google:** Google says chains of "ideally no more than 3 and fewer than 5" hops. Non-negotiable #8 says single-hop. Say so plainly.
+- **Conflicts to teach carefully:** canonicals are "a hint, not a rule" (Google), whereas Screaming Frog says pages are "instructed to not index". Use Google's wording. Inspection tools and redirects: teach "inspect the final URL". Hop counts differ for pages (10) and robots.txt (at least 5). For 5xx errors, "hours are fine, days are risky".
+- **Label checks:** Page indexing reason names differ from common usage ("URL blocked by robots.txt", "URL marked 'noindex'"). Use the help-doc names and say labels may differ.
+- **Screaming Frog:** v25.1 (4 November 2026). The free version has a 500-URL limit, which clears the outline's "verify limit" flag. Free crawls can't be saved, so export CSVs. Whether **List mode** and the **Sitemaps** tab filters work in the free version isn't confirmed, so test before teaching or offer a manual alternative.
+- **IndexNow:** Bing, Yandex and others support it. No Google documentation was found; the only Google comment is from 2021. Present it as Bing-side only.
+- **New AI controls:** the robots meta tag page now mentions AI Overviews and AI Mode under `nosnippet`, and Search Console has a "Search generative AI control". Mention them only, and defer to M14 and Modern SEO 101.
+- **Paths:** Local and Playground sites can't be seen by Google. Search Console steps need a public site (paths A and C, or Blogger or hosting on path B). Screaming Frog can crawl a Local site by its local address, but it isn't tested, so offer Nila's planted pages as a fallback.
+
+```mermaid
+flowchart LR
+  %% alt: M06 lesson path: status codes, crawl and index controls, canonicals, sitemaps and IndexNow, redirects and structure, crawl tools, then the audit capstone.
+  L1[L01 Status codes<br/>& soft 404s]:::cream --> L2[L02 robots.txt vs<br/>noindex vs passwords]:::sky
+  L2 --> L3[L03 Canonicals &<br/>duplicates]:::sky
+  L3 --> L4[L04 Sitemaps<br/>& IndexNow]:::blue
+  L4 --> L5[L05 Redirects &<br/>site structure]:::blue
+  L5 --> L6[L06 Crawl tools &<br/>Page indexing]:::blue
+  L6 --> C[M06 Capstone:<br/>crawl & index audit]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start with what a server says about each page: its status code. Then learn the three ways to control crawling and indexing, and when to use each. Next, see how Google picks one URL among duplicates, and how sitemaps and IndexNow tell search engines what exists. Then handle moved pages with redirects, and shape the site so important pages are close to the home page. Finally, use crawlers and Search Console reports to find problems at scale. The capstone audits your whole site.
+
+### M06.L01 — Status Codes, Soft 404s and the "Can It Be Indexed?" Check
+- **File:** `lessons/m06-l01-status-codes-soft-404s.md` · **Prereqs:** M01.L04, M05.L05 · **Remediate to:** M01.L04 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Explain** what 2xx, 3xx, 4xx and 5xx codes mean to Google, including 404 vs 410 and short vs long server errors.
+  2. **Identify** soft 404s, and choose a fix (a real 404 or 410, a relevant redirect, or real content).
+  3. **Apply** the "can it be indexed?" checklist (non-negotiable #7) to a page.
+- **Hands-on idea:** a status-code safari in DevTools **Network** (home page, a made-up URL, an old slug, `/robots.txt`, a deleted product), recorded in a new **Status check** tab, then the indexability checklist run on one key page.
+
+### M06.L02 — Controlling Crawling and Indexing: robots.txt vs `noindex` vs Passwords
+- **File:** `lessons/m06-l02-robots-noindex-passwords.md` · **Prereqs:** M06.L01, M02.L02 · **Remediate to:** M02.L02 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Read** a robots.txt file using Google's rules (most specific rule wins, least restrictive on ties, wildcards, the 500 KiB limit).
+  2. **Choose** between robots.txt, `noindex` (meta or `X-Robots-Tag`) and password protection for a given page, using Google's table.
+  3. **Diagnose** the "blocked and noindexed" trap and an accidentally blocked live site.
+- **Hands-on idea:** a robots.txt reading drill with six URLs, confirmed in Bing's robots.txt Tester and URL Inspection's "Crawl allowed?"; then a "choose the tool" sheet for eight scenarios in a new **Crawl control** tab, and a check of the site's own `/robots.txt` and the WordPress **Search engine visibility** setting.
+
+### M06.L03 — Canonicals and Duplicate Content
+- **File:** `lessons/m06-l03-canonicals-duplicates.md` · **Prereqs:** M06.L02, M03.L05 · **Remediate to:** M03.L05 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Explain** how Google groups duplicate URLs and chooses a canonical, and why a canonical tag is "a hint, not a rule".
+  2. **Rank** canonical signals (redirects, `rel="canonical"`, sitemaps), and pick the right one for a case.
+  3. **Diagnose** "Google chose different canonical than user", and canonicals that point to redirected or `noindex` pages.
+- **Hands-on idea:** inspect three pages in URL Inspection and compare the user-declared and Google-selected canonicals; check `www`/non-`www`, `http`/`https`, trailing-slash and parameter versions of one URL in DevTools; record findings in a new **Canonical check** tab.
+
+### M06.L04 — XML Sitemaps and IndexNow
+- **File:** `lessons/m06-l04-sitemaps-indexnow.md` · **Prereqs:** M06.L03, M01.L08 · **Remediate to:** M01.L08 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Build** a clean sitemap that lists only indexable, canonical, 200-status URLs within Google's limits.
+  2. **Check** `lastmod` accuracy and the Sitemaps report status, knowing which tags Google ignores and that sitemap "ping" is gone.
+  3. **Set up** IndexNow for Bing and other participating engines, knowing Google doesn't support it.
+- **Hands-on idea:** audit `/wp-sitemap.xml` (or the plugin's sitemap): count URLs, check three random `lastmod` values against real edit dates, test five URLs for 200 and indexability, confirm the `Sitemap:` line in robots.txt and the Sitemaps report status, in a new **Sitemap audit** tab; optionally submit one URL through IndexNow and record the 200/202 response.
+
+### M06.L05 — Redirects, Site Structure and Crawl Depth
+- **File:** `lessons/m06-l05-redirects-site-structure.md` · **Prereqs:** M06.L04, M04.L05, M05.L05 · **Remediate to:** M05.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Choose** the right redirect (301/308 vs 302/307, server-side vs meta refresh or JavaScript), and avoid chains, loops and mass redirects to the home page.
+  2. **Build** a redirect map for changed URLs, and test that each old URL reaches its new one in a single hop (non-negotiable #8).
+  3. **Plan** a site structure where important pages are a few clicks from the home page, with no orphans.
+- **Hands-on idea:** a redirect map spreadsheet (Old URL, New URL, Type, Reason, Tested status, Date) for ten URLs from a pretend slug change, each tested in DevTools with **Preserve log**; then a click-depth sketch of the site's top pages, in a new **Redirect map** tab. WordPress learners add redirects with the Redirection plugin (WordPress 101 Module 5, Lesson 2).
+
+### M06.L06 — Crawl Your Site: Screaming Frog, Page Indexing and URL Inspection
+- **File:** `lessons/m06-l06-crawl-tools-page-indexing.md` · **Prereqs:** M06.L05 · **Remediate to:** M06.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Run** a free crawl (up to 500 URLs) and export the response codes, directives, canonicals and crawl depth.
+  2. **Read** the Page indexing report: sort each "not indexed" reason into intended or to fix, and use URL Inspection and **Validate fix**.
+  3. **Cross-check** the crawl with Bing Webmaster Tools Site Scan.
+- **Hands-on idea:** a first Screaming Frog crawl of the project site (or Nila's practice pages), exported to CSV and sorted by indexability; then Page indexing triage (intended vs fix) and one Bing Site Scan, compared in a new **Crawl findings** tab.
+
+### M06 Capstone — Crawl and indexing audit
+- **File:** `capstones/m06-capstone.md` + `cheatsheets/m06-technical-seo.md`
+- Audit the project site's crawlability and indexing, using the crawl, Page indexing, URL Inspection, the sitemap and robots.txt, and produce a prioritised fix list (impact × effort) with a redirect map for any URL changes. **Break-it lab:** a planted set of Nila pages with a `noindex` in an HTTP header, a robots.txt block on a `noindex` page, a three-hop redirect chain, a canonical pointing to a redirected URL, and a soft 404, found with DevTools, a crawl and URL Inspection. Rubric: indexability checks (#7), redirects (#8), canonicals and sitemaps, evidence, prioritisation.

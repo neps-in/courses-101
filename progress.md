@@ -50,7 +50,13 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M05 | L04 | Page Builders vs the Block Editor: When Each Makes Sense | seo-101/lessons/m05-l04-page-builders.md | draft | 2026-11-09 |
 | M05 | L05 | Publish, Update and Change URLs Safely (with Shopify and Wix Notes) | seo-101/lessons/m05-l05-publish-update-urls.md | draft | 2026-11-09 |
 | M05 | Capstone | M05 capstone — Publish two pages and a post | seo-101/capstones/m05-capstone.md | draft | 2026-11-09 |
-| M06 | — | Technical SEO Fundamentals (not yet planned) | — | todo | — |
+| M06 | L01 | Status Codes, Soft 404s and the "Can It Be Indexed?" Check | seo-101/lessons/m06-l01-status-codes-soft-404s.md | todo | — |
+| M06 | L02 | Controlling Crawling and Indexing: robots.txt vs noindex vs Passwords | seo-101/lessons/m06-l02-robots-noindex-passwords.md | todo | — |
+| M06 | L03 | Canonicals and Duplicate Content | seo-101/lessons/m06-l03-canonicals-duplicates.md | todo | — |
+| M06 | L04 | XML Sitemaps and IndexNow | seo-101/lessons/m06-l04-sitemaps-indexnow.md | todo | — |
+| M06 | L05 | Redirects, Site Structure and Crawl Depth | seo-101/lessons/m06-l05-redirects-site-structure.md | todo | — |
+| M06 | L06 | Crawl Your Site: Screaming Frog, Page Indexing and URL Inspection | seo-101/lessons/m06-l06-crawl-tools-page-indexing.md | todo | — |
+| M06 | Capstone | M06 capstone — Crawl and indexing audit | seo-101/capstones/m06-capstone.md | todo | — |
 | M07 | — | Content Strategy, SEO Writing & AI Content (not yet planned) | — | todo | — |
 | M08 | — | Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) (not yet planned) | — | todo | — |
 | M09 | — | Off-Page SEO & Link Building (not yet planned) | — | todo | — |
@@ -185,6 +191,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 plan M06 — 6 lessons + capstone from research/m06-technical-seo-fundamentals.md (suggested split kept; L06 made a tools lesson so the capstone audit isn't duplicated). Notes: Google crawling docs moved to /crawling/docs, robots.txt Tester retired, course stricter than Google on chains (#8 single-hop), canonical hint vs Screaming Frog wording, Page indexing label names, Screaming Frog v25.1 500-URL free limit (outline flag cleared), IndexNow not supported by Google, Local/Playground not visible to Google.
 - 2026-11-09: seo-101 m05 capstone draft — Publish two pages and a post + cheatsheets/m05-wordpress-content.md. Reinforces #3, #6. Set-up check, 2 pages + 1 post from the keyword map, clean blocks/Outline, Module 4 applied, preview/publish/schedule/revision, Publish check tab (status, one H1, sitemap, archive). Break-it lab: planted 'Wholesale for Cafés' (service published as a dated post in Uncategorized, second H1, bold fake heading, H5 small print x2, 4.9 MB Full Size hero with empty alt) + 2 traps (slogan as large paragraph, H2 after H3). 5-criterion rubric. Module 5 fully drafted.
 - 2026-11-09: seo-101 m05-l05 draft — Publish, update & change URLs: built from research/m05-wordpress-content.md §4, §9, §10; Google and Wix quotes re-matched live (byline dates, helpful content 2026-10-05, build sitemap, redirects, Wix blog SEO and 301 pages); 7.1 editor labels and _wp_old_slug code comments read from source. Shopify pages blocked curl (403); read via web-fetch agent instead (no UA spoofing), quotes confirmed there. 'Save' not 'Update' used; lastmod-moves-on-every-save labelled inference. New URL change test tab (post 301 / page 404 / draft 404 + Shopify/Wix predictions); 2 flowcharts; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M05.L04; 3 glossary terms.
 - 2026-11-09: seo-101 m05-l04 draft — Page builders vs block editor: built from research/m05-wordpress-content.md §8; 17 quotes re-matched live (Almanac 2025/2024 CMS, page experience 2026-09-22, Core Web Vitals, SER 2018 code-to-text and 2021 bloat reports, WP 7.0 post). No per-builder speed figure (labelled not measured); no Google doc names a builder; page experience framed as tie-breaker per Google; block-level CSS panel location not confirmed in 7.1 source so lesson points to Typography; lock-in labelled observed practice. No builder installed. New Builder check tab (heavy vs clean page in Playground); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M05.L03; 3 glossary terms.
