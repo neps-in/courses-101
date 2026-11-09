@@ -2,6 +2,7 @@
 
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
+- **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
 - **Above the fold** — the part of a page visible without scrolling; images here shouldn't be lazy-loaded. [M04.L04]
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
 - **AI Overview** — an AI-written summary with links that Google shows on some searches; no special markup is needed to appear in one (Module 14). [M01.L05]
@@ -96,6 +97,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **`<iframe>`** — an element that shows another document inside your page; give each one a descriptive `title`. [M02.L07]
 - **Impression** — in Search Console, a time your site appeared in search results; it isn't the total demand for a phrase. [M03.L03]
 - **Index** — a search engine's stored copy of the pages it has collected; search results come from the index, not from live websites. [M01.L03]
+- **Indexable page** — a page Google is able to index: status 200, crawl allowed, no `noindex`, a correct canonical. Indexable doesn't mean indexed. [M06.L01]
 - **Indexing** — a search engine analysing a page and deciding whether to store it in its index; not every crawled page is indexed. [M01.L04]
 - **Informational intent** — a search made to learn something, such as "how long does cold brew last". [M03.L01]
 - **Inline style** — CSS in a `style` attribute on one element; a last resort. [M02.L08]
@@ -198,6 +200,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Semantic HTML** — using elements that say what content is, such as `<nav>` or `<article>`, instead of generic `<div>`s. Good for accessibility, but Google's public comments say it isn't a ranking factor. [M02.L06]
 - **SEO (search engine optimisation)** — helping search engines understand your content and helping people find your site and decide to visit it from search results. [M01.L03]
 - **SERP feature** — any part of a results page beyond a plain text result, such as a featured snippet, local pack, image strip or ad. [M01.L05]
+- **Server error (5xx)** — a status code such as 500 or 503 meaning the server failed; Google slows crawling and retries, and drops pages if errors last for days. [M06.L01]
 - **Share preview** — the card an app shows for a shared link, built from the page's Open Graph tags or the app's own guess. [M04.L06]
 - **Shared hosting** — hosting where many sites use one server; low cost, and not an SEO problem by itself unless the server is slow or fails. [M02.L01]
 - **`site:` operator** — `site:example.com` shows results from one site only; a quick sample of what the engine has indexed, not an exact count. [M01.L03]
@@ -230,6 +233,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Transactional intent** — a search made to do something now, such as buy or book. [M03.L01]
 - **TTL (time to live)** — how long, in seconds, a DNS answer may be remembered before it is looked up again. [M02.L01]
 - **Types of SEO** — on-page (the content and code of the page itself), off-page (links, mentions and reviews from elsewhere) and technical (whether search engines can find, read and store the site). [M01.L03]
+- **URL Inspection** — the Search Console tool that shows how Google sees one URL (crawl allowed, indexing allowed, canonicals), with a live test. [M06.L01]
 - **URL parameter** — text after a `?` in a URL, such as `?p=123` or `?ref=home`, in `key=value` pairs; use as few as you can. [M04.L02]
 - **URL-prefix property** — a Search Console property covering only URLs that start with one exact prefix; several verification methods. [M01.L08]
 - **User agent** — the name a browser or crawler sends with each request (e.g. Googlebot); it can be faked, so verify crawlers by IP. [M01.L04]
