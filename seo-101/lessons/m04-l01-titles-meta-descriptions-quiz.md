@@ -54,10 +54,10 @@
 **Hint:** Look at Google's list of seven issues.
 
 ### Q6. Which is the best title for Nila's cold brew guide? *(O1 · scenario)*
-- a) Home \| Nila Coffee
-- b) Cold Brew, Cold Brew Coffee, Cold Brew Recipe, Best Cold Brew
-- c) Nila Coffee \| Nila Coffee Blog \| Coffee Guides \| Cold Brew
-- d) Cold Brew at Home: A Simple 12-Hour Guide \| Nila Coffee
+- a) `Home | Nila Coffee`
+- b) `Cold Brew, Cold Brew Coffee, Cold Brew Recipe, Best Cold Brew`
+- c) `Nila Coffee | Nila Coffee Blog | Coffee Guides | Cold Brew`
+- d) `Cold Brew at Home: A Simple 12-Hour Guide | Nila Coffee`
 
 **Answer:** d
 **Explanation:** It starts with the main phrase, says what's specific about the page, and ends with the brand once. The others are vague, stuffed, or bury the topic behind repeated brand names.

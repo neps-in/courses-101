@@ -88,7 +88,7 @@ Google lists the issues it adjusts for. The names are Google's, and the examples
 | Mismatch of writing system or language | The title's language differs from the page | An English title on a Tamil page |
 | Duplication of the site name | The site name repeats what's already shown | Google may drop "\| Nila Coffee", because the result already shows the site name |
 
-The last one isn't a problem for you to fix. Google shows a site name above the title link, so it may trim a repeated brand.
+The last one isn't a problem for you to fix. Google may drop the brand from the title link "if it's repetitive with the site name that's already shown in the search result".
 
 > **Under the hood: titles stay put, snippets move.** Since August 2021, Google says title links "generally will no longer" change with the search. Snippets still do. One page can show different grey text for "cold brew ratio" and "how long does cold brew last", because Google picks the part of the page that best matches each search.
 
@@ -126,7 +126,7 @@ You'll check how Google shows your pages now, then rewrite the titles and descri
 - **Path C (client site):** do Parts A–C. In Part D, give the client your table and let them make the changes, or make them only with written permission.
 
 **Part A — See how Google shows your pages (10 min)**
-1. In a private window, search `site:yourdomain.com`. Google documents this operator in Lesson 3.5's sources.
+1. In a private window, search `site:yourdomain.com`, as in Lesson 3.5.
 2. For your first ten results, copy the title link and the snippet into a new tab called **Titles**, with these columns: **URL**, **Title link (Google)**, **Snippet (Google)**, **`<title>` (page)**, **Meta description (page)**, **Rewritten?**, **Likely reason**.
    > 🖼️ **Image prompt:** A Google results page (1280×800) for a site: search showing several results from one small coffee website, with title links and snippets. Highlight one title link that differs from its page title with a 3px #F9B2D7 outline; blur any personal details.
    > **Alt text:** Search results for one website, with a rewritten title link highlighted.
@@ -152,7 +152,7 @@ You'll check how Google shows your pages now, then rewrite the titles and descri
 **Part D — Make the change (5 min)**
 1. Change the title and description on your platform. Use your **SEO access** tab from Lesson 2.2:
    - **WordPress:** in your SEO plugin's panel on the post or page (WordPress 101 Module 5 sets this up), edit the **SEO title** and **Meta description**.
-   - **Blogger:** the post title becomes the page title, and your theme decides how the blog name is added. Turn on **Enable search description** in **Settings**, then write each post's description in the post settings.
+   - **Blogger:** the post title is usually used as the page title, and your theme decides how the blog name is added, so check View Source after you publish. Turn on **Enable search description** in **Settings**, then write each post's description in the post settings.
    - **Other platforms:** look for a "search" or "SEO" setting on each page.
 2. Open the live page, view its source, and check that there's exactly one `<title>` and one description, both with your new text.
    **Expected:** one of each. Two titles or two descriptions mean a theme and a plugin are both adding them (see Troubleshooting).

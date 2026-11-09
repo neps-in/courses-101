@@ -37,7 +37,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M03 | L04 | Realistic Targets: Choosing Keywords a New Site Can Win | seo-101/lessons/m03-l04-realistic-targets.md | reviewed | 2026-11-06 |
 | M03 | L05 | Keyword Maps: Grouping Topics and Spotting Cannibalisation | seo-101/lessons/m03-l05-keyword-maps-cannibalisation.md | reviewed | 2026-11-08 |
 | M03 | Capstone | M03 capstone — Keyword map | seo-101/capstones/m03-capstone.md | reviewed | 2026-11-08 |
-| M04 | L01 | Title Tags and Meta Descriptions: What Searchers See First | seo-101/lessons/m04-l01-titles-meta-descriptions.md | draft | 2026-11-09 |
+| M04 | L01 | Title Tags and Meta Descriptions: What Searchers See First | seo-101/lessons/m04-l01-titles-meta-descriptions.md | reviewed | 2026-11-09 |
 | M04 | L02 | Headings, URL Slugs and the Opening Paragraph | seo-101/lessons/m04-l02-headings-slugs-opening.md | todo | — |
 | M04 | L03 | Writing for People: Natural Keywords, Synonyms and E-E-A-T Basics | seo-101/lessons/m04-l03-people-first-writing.md | todo | — |
 | M04 | L04 | Image SEO: File Names, Alt Text, Size and Format | seo-101/lessons/m04-l04-image-seo.md | todo | — |
@@ -180,6 +180,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 m04-l01 reviewed. Fixed: site-name trim now quotes Google ("already shown in the search result") instead of an unchecked layout claim; Blogger title step hedged to "usually" with a View Source check; Q6 options in code spans (stray \| escapes); clumsy site: cross-reference simplified. Quotes were matched live on 2026-11-09, so no new web checks.
 - 2026-11-09: seo-101 m04-l01 draft — Titles & meta descriptions: built from research/m04-on-page-seo.md; every quote re-matched against live pages (title-link 2025-12-10, snippet 2026-04-20, pagination, Starter Guide, 2009/2021 blog posts, Blogger Help, SER 23 Mar 2026); two research quotes that no longer match were dropped. Covers #6 with the paginated-sequence exception, title formulas by page type (rule of thumb), Google's 7 rewrite reasons with Nila examples, description as a pitch (2009 ranking line flagged as old), 2026 AI title test flagged. New Titles tab; 2 flowcharts; 2 image prompts; 7-case exercise; 8-question quiz incl. 1 review from M03.L05; 2 glossary terms.
 - 2026-11-09: seo-101 plan M04 — On-Page SEO: 6 lessons + capstone, from the outline and research/m04-on-page-seo.md (suggested split adopted). Planning notes in syllabus: #6 pagination exception, headings (Google vs MDN), no Google figures for density/length/placement, items to recheck (2026 AI title test, helpful-content rewrite, URL page, Bing guidelines), Blogger route for path B.
 - 2026-11-08: seo-101 m03-capstone reviewed. Fixed: lab answers for rows 5 and 8 now rest on planted results notes, not word clues (NN #4); fix 2 names /cold-brew-ratio and frees the product URL for fix 3; Notes column added to the map template (capstone + cheat sheet) to match task 6; answers note the fixed map leaves 3 quick wins (L04 mix). No new claims, so no web checks needed.
