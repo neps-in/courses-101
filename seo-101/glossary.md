@@ -3,6 +3,7 @@
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
 - **410 (Gone)** — a status code meaning a page was removed on purpose; Google treats it the same as a 404. [M06.L01]
+- **Citation (local)** — a mention of a business's name, address and phone on another site, such as a directory, map app, review site or social profile. [M11.L05]
 - **`datePublished` / `dateModified`** — structured data fields for when a page was first published and last significantly changed; they should match the visible dates. [M07.L05]
 - **Above the fold** — the part of a page visible without scrolling; images here shouldn't be lazy-loaded. [M04.L04]
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
@@ -186,6 +187,8 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Linkable asset** — a page people want to cite: original data, a tool, a chart, a clear guide or local information nobody else has. [M09.L04]
 - **Local pack** — a map with a few local businesses, shown for searches with local intent such as "near me" or a city name. [M01.L05]
 - **Local ranking factors** — Google's three main inputs for local results: relevance, distance and prominence (which Google now also calls popularity). [M11.L01]
+- **LocalBusiness markup** — structured data describing a business (name and address required; phone, URL and hours recommended); it must match the Business Profile. [M11.L05]
+- **Location page** — a page for one real place customers visit, with its address, hours, map and directions; not a copy made for every town. [M11.L05]
 - **Lock-in** — how hard it is to leave a platform and take your site with you. [M02.L02]
 - **`<main>`** — the element that holds the content unique to a page; a page can have only one visible `<main>`. [M02.L06]
 - **Long-tail phrase** — a specific search that few people make, with a clearer need; each gets little volume. An SEO term, not Google's. [M03.L02]
@@ -202,6 +205,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Mobile-first design** — writing a simple layout first, then adding styles for wider screens. [M02.L10]
 - **Mobile-first indexing** — Google using the mobile version of a site's content for indexing and ranking. [M02.L10]
 - **Nameserver** — the computer that holds a domain's official DNS records; NS records show which ones a domain uses. [M02.L01]
+- **NAP** — name, address and phone number of a business (an industry term); this course adds W for website. All listings should match one master version. [M11.L05]
 - **Natural link profile** — the mix of links a site gets without manipulation: mostly brand and descriptive anchors, some nofollow and ugc links, from relevant sites. [M09.L01]
 - **Navigational intent** — a search made to reach a specific site or page, such as "nila coffee contact". [M03.L01]
 - **Nesting** — putting HTML elements inside each other; the last one opened must be the first one closed. [M02.L03]
