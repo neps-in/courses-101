@@ -46,7 +46,7 @@
 ### Q5. A food magazine named Tomás's shop in a roundup without linking. What's the best approach? *(O3 · scenario)*
 - a) One polite email suggesting a link, with an easy no
 - b) Weekly emails until they add a link to the roundup
-- c) Ask them to add the anchor "best hardware shop in Pune"
+- c) Ask them to add the anchor "best hardware shop in Lisbon"
 - d) Report the magazine to Google for not linking to him
 
 **Answer:** a

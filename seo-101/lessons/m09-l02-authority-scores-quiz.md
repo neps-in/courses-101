@@ -33,7 +33,7 @@
 **Explanation:** Ahrefs' own answer: "Most likely, other websites gained a lot of backlinks." DR compares you with every other site in its database.
 **Hint:** Compared with whom?
 
-### Q4. Tomás is offered "guaranteed DA 50+ backlinks, ₹4,000 each". What should he do? *(O3 · scenario)*
+### Q4. Tomás is offered "guaranteed DA 50+ backlinks, €40 each". What should he do? *(O3 · scenario)*
 - a) Buy a few to test whether his rankings go up
 - b) Buy them, but only from sites in the coffee niche
 - c) Ask for DR 50+ instead, as Google prefers DR to DA

@@ -12,7 +12,7 @@
 3. **Find** reclaim opportunities: links to pages that now return 404, and unlinked mentions. *(O3)*
 
 ## Why it matters
-Kavya took over her studio's website from a previous agency. She has no idea what links they built. Tomás gets an email saying his site has "312 toxic backlinks" and needs an urgent clean-up for ₹25,000. Nila wonders why a magazine that wrote about her didn't link.
+Kavya took over her studio's website from a previous agency. She has no idea what links they built. Tomás gets an email saying his site has "312 toxic backlinks" and needs an urgent clean-up for €300. Nila wonders why a magazine that wrote about her didn't link.
 
 A backlink audit answers three practical questions: **Who links to us? Is anything risky we need to deal with? What easy links are we missing?** Most of the time, the answers are "a handful of real sites, nothing risky, and two or three quick wins". That's worth knowing before anyone sells you a clean-up, and before you start outreach in Lesson 9.4.
 

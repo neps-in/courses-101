@@ -4,7 +4,7 @@
 **Time:** ~16 min reading + ~35 min hands-on + ~10 min exercise · **Level:** L2 Practitioner · **Prereqs:** M09.L04, M01.L06 · **Remediate to:** M01.L06
 **Verified against:** Google Search Central "Spam policies for Google web search" (last updated 2026-08-28); Search Central blog "December 2022 link spam update" (14 December 2022); Search Console Help "Manual actions report" and "Disavow links to your site" (no dates shown); John Mueller's comments as reported by Search Engine Roundtable (May 2024) and Search Engine Journal (April 2025), all on 2026-11-09. Search Console's disavow and manual action screens weren't tested live.
 
-> ⚠️ **Freshness flag:** Google's spam policies were updated on 2026-08-28 and now also mention manipulating "generative AI responses". John Mueller said of the disavow tool in 2024: "At some point, I'm sure we'll remove it." Bing reportedly removed its own in 2023. Check the tool still exists before relying on it.
+> ⚠️ **Freshness flag:** Google's spam policies were last updated on 2026-08-28, and since 15 May 2026 they also apply to attempts to manipulate "generative AI responses". John Mueller said of the disavow tool in 2024: "At some point, I'm sure we'll remove it." Bing reportedly removed its own in 2023. Check the tool still exists before relying on it.
 
 ## Learning objectives
 1. **Recognise** every type of link spam in Google's policy (paid, exchanges, PBNs, widgets, footers, press-release anchors, ToS links, directories) and SpamBrain's "neutralise" effect. *(O1)*

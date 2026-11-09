@@ -12,7 +12,7 @@
 3. **Write** a one-page monthly report: headline, KPIs, winners and losers, changes made, caveats and next actions. *(O3)*
 
 ## Why it matters
-Amara's agency used to send clients a 14-page PDF every month: 40 charts, a keyword ranking table, and "average position improved from 18.4 to 16.9!" Clients skimmed it, didn't understand it, and one cancelled because "we can't tell if SEO is working." The client was right: the report never said.
+The agency Amara writes for used to send clients a 14-page PDF every month: 40 charts, a keyword ranking table, and "average position improved from 18.4 to 16.9!" Clients skimmed it, didn't understand it, and one cancelled because "we can't tell if SEO is working." The client was right: the report never said.
 
 A good monthly report answers three questions on one page: **Is SEO helping the business? What changed and why? What are we doing next?** It uses a handful of numbers tied to the goal you set in Lesson 1.1, compares them fairly, and is honest about what the data can't tell you. That honesty is what makes clients and bosses trust the next report.
 

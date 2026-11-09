@@ -12,7 +12,7 @@
 3. **Use** a score only to compare and shortlist prospects, never to buy links or disavow. *(O3)*
 
 ## Why it matters
-Tomás gets an email: "Boost your DA from 12 to 40 in 30 days! Guaranteed DA 50+ backlinks, ₹4,000 each." Kavya's agency proudly reports "Domain Rating up 3 points". Amara's client's SEO tool flags 60 links as "toxic" and suggests disavowing them all.
+Tomás gets an email: "Boost your DA from 12 to 40 in 30 days! Guaranteed DA 50+ backlinks, €40 each." Kavya's agency proudly reports "Domain Rating up 3 points". Amara's client's SEO tool flags 60 links as "toxic" and suggests disavowing them all.
 
 Each of these treats a third-party score as if it were Google's. It isn't. In Lesson 1.7 you learnt that "Domain Authority affects Google rankings" is a myth. This lesson shows *why*, using each vendor's own description, so you can explain it to a client and spend your time on what Google actually uses.
 
@@ -136,7 +136,7 @@ You'll look up your project site and three competitors in two tools and write wh
 
 ## Exercise
 **Task:** complete your **Authority scores** tab (Parts A–B). Then answer these. All details are illustrative.
-1. Tomás is offered "guaranteed DA 50+ backlinks" at ₹4,000 each. What two problems does this offer have?
+1. Tomás is offered "guaranteed DA 50+ backlinks" at €40 each. What two problems does this offer have?
 2. Kavya's agency reports "DR up 3 points this month". Is that a good KPI?
 3. Nila's DR fell from 12 to 10, and Search Console shows no lost links. What probably happened?
 4. Amara's tool says 60 links to her client are "toxic". Should she disavow them?
