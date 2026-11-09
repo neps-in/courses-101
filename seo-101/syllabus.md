@@ -13,7 +13,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | #3, #6 reinforced | 5 lessons + capstone |
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | 6 lessons + capstone |
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | 6 lessons + capstone |
-| M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) | L2 | — (#2 in depth) | — |
+| M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) | L2 | — (#2 in depth) | 6 lessons + capstone |
 | M09 Off-Page SEO & Link Building | L2 | #11 | — |
 | M10 Competitor Analysis | L2 | — | — |
 | M11 Local SEO & Google Business Profile | L2 | #12 | — |
@@ -614,3 +614,85 @@ flowchart LR
 ### M07 Capstone — 3-month content plan and two published posts
 - **File:** `capstones/m07-capstone.md` + `cheatsheets/m07-content-ai.md`
 - A 3-month content plan for the project site (1 pillar + cluster, calendar, internal-link plan) and 2 posts published from briefs, each with an edit and fact-check log and a publish-checklist pass. **Break-it lab:** an "AI draft" of Nila's cold brew guide with an invented statistic, a fake quote, the wrong intent (a "top 10 makers" listicle), a wrong steep time, a dead source link, AI leftovers and a fake PhD byline, found with exact-phrase search, the SERP, Nila's tested recipe, link clicks and a reverse-image search. Rubric: strategy and clusters (#5), briefs and intent (#4), writing quality (#6), fact-check log and AI use (#10), publish checklist (#9).
+
+## M08 — Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) (L2)
+
+**Goal:** measure SEO properly and turn data into decisions and reports. · NN #2 reinforced in depth
+**Lessons:** planned from the outline's topics and the research notes in `research/m08-analytics-reporting.md` (2026-11-09). The research's six-lesson split is kept. M01.L08 already set up Search Console, Bing, GA4, the link between them and 14-month retention, and M03.L05 taught Performance filters, regex and Compare; these lessons reference both and add only what's new. M01.L08 promised cookie consent "in Module 8"; L03 delivers it. M07's 4-week checks use L01, L02 and L06. The live course has no lesson titles for this section, so there are no live post numbers yet.
+**Planning notes from research:**
+- **Renamed and changed in 2026:** Looker Studio is now **Data Studio** (April 2026, datastudio.google.com). Google's tag snippet changed on 2026-11-06 (`gtm.js?id=…`; `gtag('config')` deprecated), so learners will see both the old and new snippets. GA4 "conversions" are **key events** (since 27 March 2024).
+- **New and partly rolling out:** Search Console's branded filter, query groups, generative AI performance report and AI control (worldwide 31 August 2026), and GA4's AI Assistant channel, Dashboards and hostname filters. Say "may not be available to everyone", and give a fallback (for example, a regex for branded queries).
+- **Labels not tested live:** all GA4 Admin paths come from help pages, and the pages disagree ("Data collection and modification" vs "Property Settings"). Hedge menu paths, and recheck them before quoting.
+- **Conflicts to teach:** Crawl stats works on Domain and root URL-prefix properties; advanced consent mode defaults ("set your own defaults; don't rely on the system default"); EEA vs EEA + UK + Switzerland; Tag ID vs Measurement ID vs Google tag ID (the same G- string).
+- **Don't quote:** Google's average-position formula (it has a typo); any Data Studio Pro price; `/g/collect` parameter meanings (not documented; label `tid` as observed); India's DPDP Act (not researched: tell learners to check local law).
+- **Course rules (no browser tests):** DevTools and Tag Assistant steps are for learners to run on their own sites; don't present Lighthouse or automated checks.
+- **Small sites:** consent-mode modelling and GA4 thresholding mean small sites often see gaps or hidden rows. Teach weekly or monthly views, not daily.
+
+```mermaid
+flowchart LR
+  %% alt: M08 lesson path: Search Console in depth, GA4 for SEO, consent and Tag Manager, why numbers differ, a Data Studio dashboard, then KPIs and a report.
+  L1[L01 Search Console<br/>in depth]:::cream --> L2[L02 GA4<br/>for SEO]:::sky
+  L2 --> L3[L03 Consent Mode<br/>& Tag Manager]:::sky
+  L3 --> L4[L04 Why the<br/>numbers differ]:::blue
+  L4 --> L5[L05 Data Studio<br/>dashboard]:::blue
+  L5 --> L6[L06 KPIs & an<br/>honest report]:::blue
+  L6 --> C[M08 Capstone:<br/>dashboard + report]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start with Search Console, which shows how Google sees and shows your site. Then use GA4 to see what visitors from search do on your site. Next, set up consent and Google Tag Manager so tracking is lawful and under your control. Then learn why the two tools never agree, and how to catch a broken tag. Bring both sources into one Data Studio dashboard. Finally, choose a few honest KPIs and write a one-page monthly report. The capstone builds the dashboard and the report for your project site.
+
+### M08.L01 — Search Console in Depth: Every Report, Links and Crawl Stats
+- **File:** `lessons/m08-l01-search-console-in-depth.md` · **Prereqs:** M01.L08, M03.L05, M06.L06 · **Remediate to:** M01.L08 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Describe** what each report in Search Console's current list is for, and what would make you worry in it.
+  2. **Use** Insights, the branded filter (or a regex fallback), query groups and annotations to answer an SEO question.
+  3. **Read** the Links report (a sample) and Crawl stats (Host status, response codes) without over-reading them.
+- **Hands-on idea:** a "what would make me worry?" tour of every report, a branded vs non-branded split, an annotation for an M07 publish date, and a Host status check, logged in a new **GSC tour** tab.
+
+### M08.L02 — GA4 for SEO: Organic Traffic, Landing Pages and Key Events
+- **File:** `lessons/m08-l02-ga4-for-seo.md` · **Prereqs:** M08.L01, M01.L08 · **Remediate to:** M01.L08 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Find** organic search traffic by channel, source/medium and landing page, including the Search Console collection.
+  2. **Mark** the right key events (a subscription, a sign-up) and read them per landing page.
+  3. **Set up** an internal-traffic filter (Testing, verified, then Active), and explain retention, thresholding and annotations.
+- **Hands-on idea:** a GA4 SEO view for the project site: organic landing pages with key events, one key event marked, internal traffic filtered (Testing → checked in Explore → Active), and an annotation, in a new **GA4 SEO view** tab.
+
+### M08.L03 — Consent Mode and Google Tag Manager Basics
+- **File:** `lessons/m08-l03-consent-gtm.md` · **Prereqs:** M08.L02 · **Remediate to:** M08.L02 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Explain** basic vs advanced consent mode, where Google requires consent signals, and why small sites rarely get modelled data.
+  2. **Install** Google Tag Manager once, with a single GA4 setup (no duplicate tags), and know which snippet version you're looking at.
+  3. **Build, preview and publish** one click event (a newsletter sign-up) with a named version.
+- **Hands-on idea:** decide the consent approach for the project site (with a "check your local law" step), then in GTM: one GA4 tag, a `sign_up` click event, Preview with Tag Assistant, confirm in DebugView, Submit with a version name; recorded in a new **Tracking setup** tab.
+
+### M08.L04 — Why the Numbers Don't Match (and How to Catch a Broken Tag)
+- **File:** `lessons/m08-l04-numbers-dont-match.md` · **Prereqs:** M08.L03 · **Remediate to:** M08.L03 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Explain** Google's documented reasons why Search Console clicks and GA4 sessions differ.
+  2. **Compare** the two fairly: same dates, same filters, weekly not daily, with time zones in mind.
+  3. **Diagnose** a duplicated GA4 tag, a wrong measurement ID and unpublished GTM changes with View Source, Tag Assistant, DevTools and DebugView.
+- **Hands-on idea:** a 4-week clicks vs sessions sheet with the gap explained, then a tag health check on the project site (count Google tags, check the G- ID, check GTM's published version) in a new **Tag health** tab.
+
+### M08.L05 — A Data Studio SEO Dashboard
+- **File:** `lessons/m08-l05-data-studio-dashboard.md` · **Prereqs:** M08.L04 · **Remediate to:** M08.L01 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Connect** Search Console (Site and URL impression tables) and GA4 to Data Studio, and know each source's data freshness.
+  2. **Build** a one-page dashboard: the core search metrics, organic landing pages with key events, a date control with comparison, and matching filters.
+  3. **Add** a changes log as annotations, and check each dashboard number against its source tool.
+- **Hands-on idea:** start from Google's template or a blank report, connect both sources, build five charts and a "Changes log" sheet table, and record each number's check against Search Console and GA4.
+
+### M08.L06 — KPIs and an Honest Monthly SEO Report
+- **File:** `lessons/m08-l06-kpis-monthly-report.md` · **Prereqs:** M08.L05, M01.L02 · **Remediate to:** M08.L05 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Choose** 3–5 KPIs tied to the business goal (non-branded clicks, key events from organic, pages indexed), and explain why average position and site-wide averages mislead.
+  2. **Find** winning and losing pages with like-for-like comparisons (year over year, matching weekdays).
+  3. **Write** a one-page monthly report: headline, KPIs, winners and losers, changes made, caveats and next actions.
+- **Hands-on idea:** a first monthly report for the project site, using the dashboard and the Content plan's 4-week checks, with an optional Bing box labelled "not comparable with Google".
+
+### M08 Capstone — SEO dashboard and monthly report
+- **File:** `capstones/m08-capstone.md` + `cheatsheets/m08-analytics-reporting.md`
+- A Data Studio dashboard and a one-page monthly SEO report for the project site, with a changes log and data caveats. **Break-it lab:** Nila's site after a "tracking upgrade": a GA4 tag installed twice (plugin + GTM), a wrong measurement ID in a GTM event tag, GTM changes left in Preview, the internal-traffic filter left in Testing, a missing key event, and a report comparing GSC "last 28 days" with GA4 "last month"; found with View Source, Tag Assistant, DevTools, DebugView and GA4 Admin. Rubric: measurement set-up (#2), Search Console use, GA4 and key events, dashboard accuracy, honest reporting.
