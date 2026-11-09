@@ -65,11 +65,11 @@
 
 ### Q7. Spot the error: "Our guide is 800 words, but the top result is 2,500. Google prefers long content, so we'll pad ours to 3,000." *(O2 · spot the error)*
 - a) Google prefers short content, so the guide should be cut to 300 words
-- b) Word count only matters for product pages, not for guides and posts
-- c) Google has no preferred length; more useful detail matters, not padding
+- b) Google has no preferred length; more useful detail matters, not padding
+- c) Word count only matters for product pages, not for guides and posts
 - d) The guide should match the top result exactly, at 2,500 words long
 
-**Answer:** c
+**Answer:** b
 **Explanation:** Google says "there's no magical word count target", and lists writing to a word count as a warning sign: "(No, we don't.)" Add length only when it adds something useful.
 **Hint:** Does Google have a preferred word count?
 
