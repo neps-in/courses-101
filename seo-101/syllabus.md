@@ -993,3 +993,84 @@ flowchart LR
 ### M12 Capstone — Advanced technical report
 - **File:** `capstones/m12-capstone.md` + `cheatsheets/m12-advanced-technical.md`
 - An advanced technical report: CWV for 3 templates with fix briefs, a JavaScript rendering check, valid structured data on 2 pages, and an hreflang or international plan (or a "not needed" note), plus a #13 checklist. **Break-it lab:** Nila Coffee staging files with a failing Product markup, invisible FAQ markup, self-serving stars, a JS-only link, a lazy-loaded LCP image, `noindex` removed by script, mixed content, a broken hreflang set and a facet trap. Rubric: performance, mobile and HTTPS, rendering, structured data, international and crawl.
+
+## M13 — SEO Tools Mastery & WordPress SEO (L3)
+
+**Goal:** use the free SEO toolkit like a professional, and configure WordPress for SEO end to end. · NN #7, #8, #9, #13 reinforced
+**Lessons:** planned from the outline's topics and the research notes in `research/m13-seo-tools-wordpress.md` (2026-11-09). The research's six-lesson split is kept, but the capstone is separate from L06 (paid tools). M06.L06 introduced Screaming Frog free, Page Indexing and URL Inspection; M05.L02 handled thin archives; M06.L04 sitemaps; M10.L02 crawl ethics; M12 the technical checks these tools automate.
+**Planning notes from research:**
+- **Free vs licence:** Screaming Frog's pricing page crosses out "Crawl Configuration" for free users, but doesn't itemise which settings still work (list mode, user agent). Don't state free availability of a setting without checking it in the app; teach licence features as a demo.
+- **Retired:** the Web Vitals Chrome extension (Chrome 132, January 2025); use DevTools Performance and PSI.
+- **Conflicts to teach:** attachment redirects to the file (core 6.4, Yoast) vs the parent post (Rank Math): either is fine if attachment pages aren't indexable. Free redirect managers differ by plugin. No supported "maximum number of plugins".
+- **Prices change:** Ahrefs, Semrush and Moz plans and prices vary by currency and change often; quote with currency and date, never in rupees unless the vendor shows it.
+- **Don't quote:** Yoast's "don't run two SEO plugins" page or core-sitemap claim, AIOSEO and Rank Math conflict docs (all 404), Bing Site Scan limits, non-vendor plugin comparisons, Lighthouse SEO audit list.
+- **Personas:** Nila's WordPress shop for plugin set-up and traps; Kavya's 40-page site as the "free is enough" case; Tomás and Amara as possible paid-tool users.
+
+```mermaid
+flowchart LR
+  %% alt: M13 lesson path: Screaming Frog in depth, second-opinion crawlers, DevTools, one SEO plugin, WordPress traps, then when paid tools are worth it.
+  L1[L01 Screaming<br/>Frog in depth]:::cream --> L2[L02 Ahrefs Free<br/>+ Bing Site Scan]:::sky
+  L2 --> L3[L03 DevTools<br/>and extensions]:::sky
+  L3 --> L4[L04 One SEO<br/>plugin, end to end]:::blue
+  L4 --> L5[L05 WordPress<br/>SEO traps]:::blue
+  L5 --> L6[L06 Paid tools:<br/>when worth it]:::sky
+  L6 --> C[M13 Capstone:<br/>plugin + audit exports]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** go deeper with Screaming Frog, then get a second opinion from Ahrefs' free Site Audit and Bing's Site Scan. Learn the browser's own tools for checking one page closely. Set up one SEO plugin properly, then clear out the WordPress-specific traps. Finally, decide when paid tools are worth the money. The capstone is a configured plugin plus two audit exports.
+
+### M13.L01 — Screaming Frog Like a Pro (Free First)
+- **File:** `lessons/m13-l01-screaming-frog-in-depth.md` · **Prereqs:** M06.L06, M10.L02 · **Remediate to:** M06.L06 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Map** what the free version does and what a licence adds.
+  2. **Run** a polite crawl and export the tabs you need before closing.
+  3. **Explain** licence features (JavaScript rendering, custom extraction, API connections, scheduling) and when they're worth it.
+- **Hands-on idea:** a crawl of the project site with exports (response codes, titles, meta, H1, canonicals, directives) and a **Screaming Frog settings by task** table.
+
+### M13.L02 — Second-Opinion Crawlers: Ahrefs Free Site Audit and Bing Site Scan
+- **File:** `lessons/m13-l02-ahrefs-bing-site-audits.md` · **Prereqs:** M13.L01, M01.L08 · **Remediate to:** M06.L06 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Set up** a verified Ahrefs Free project and a Bing Site Scan.
+  2. **Compare** findings across tools and explain why they differ.
+  3. **Prioritise** real issues over health scores.
+- **Hands-on idea:** run both audits, export issues, and build an **Issues** tab that merges three tools' findings with one priority column.
+
+### M13.L03 — Chrome DevTools and Extensions for SEO
+- **File:** `lessons/m13-l03-devtools-extensions.md` · **Prereqs:** M13.L02, M12.L04 · **Remediate to:** M12.L04 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Use** View Source, Elements, Disable JavaScript and Network (Preserve log) to check one page.
+  2. **Inspect** status codes, redirect chains, `X-Robots-Tag` and cache headers.
+  3. **Choose** extensions safely (trusted publisher, narrow permissions) and avoid retired ones.
+- **Hands-on idea:** a **One-page check** routine on 3 URLs, recorded in a tab.
+
+### M13.L04 — Choose ONE SEO Plugin and Configure It End to End
+- **File:** `lessons/m13-l04-seo-plugin-setup.md` · **Prereqs:** M13.L03, M05.L02, M06.L04 · **Remediate to:** M05.L02 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Choose** one plugin (Yoast SEO, Rank Math or AIOSEO) for a given site.
+  2. **Configure** titles and meta templates, sitemap, schema, breadcrumbs, archive `noindex` and redirects.
+  3. **Verify** the output in View Source, the Rich Results Test and Search Console.
+- **Hands-on idea:** configure one plugin on the practice site and complete an **SEO plugin set-up checklist**.
+
+### M13.L05 — WordPress-Specific SEO Traps
+- **File:** `lessons/m13-l05-wordpress-seo-traps.md` · **Prereqs:** M13.L04 · **Remediate to:** M13.L04 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Find** and fix attachment pages, thin archives and internal search pages.
+  2. **Detect** two SEO plugins or duplicate sitemaps from View Source.
+  3. **Manage** plugin bloat, page caching and image sizes with evidence, not plugin counts.
+- **Hands-on idea:** a **WordPress traps** sweep of the practice site with a crawl before and after fixes.
+
+### M13.L06 — Paid SEO Tools: When They're Worth It
+- **File:** `lessons/m13-l06-paid-tools.md` · **Prereqs:** M13.L05, M10.L05 · **Remediate to:** M13.L02 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **List** what free tools can't do (competitor data at scale, large or JavaScript crawls, scheduled monitoring).
+  2. **Compare** paid plans by need, with dated prices and currency.
+  3. **Decide** whether a given business should pay, and for what.
+- **Hands-on idea:** a **tool comparison table** and a one-paragraph buy/don't-buy decision for the project site.
+
+### M13 Capstone — Configured plugin and tool-based audit
+- **File:** `capstones/m13-capstone.md` + `cheatsheets/m13-tools-wordpress.md`
+- A configured SEO plugin (checklist and View Source proof) plus a tool-based audit: a Screaming Frog export and one other tool's export (Ahrefs Free or Bing Site Scan), merged into one prioritised issue list. **Break-it lab:** Nila Coffee staging with two SEO plugins active (duplicate tags and sitemaps), three sitemaps, indexed attachment pages, a stale cached `noindex`, an aggressive crawl configuration, a spoofed-Googlebot check, a JavaScript-injected H1, a health score hiding a `noindex`, the retired Web Vitals extension, a paid tool for a 40-page site, and "fewer plugins = faster". Rubric: tools, plugin set-up, WordPress traps, prioritisation, and ethics.
