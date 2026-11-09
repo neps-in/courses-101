@@ -77,7 +77,12 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M09 | L04 | Earning Links the Right Way | seo-101/lessons/m09-l04-earning-links.md | draft | 2026-11-09 |
 | M09 | L05 | Link Schemes, Penalties and Disavow | seo-101/lessons/m09-l05-link-schemes-disavow.md | draft | 2026-11-09 |
 | M09 | Capstone | M09 capstone — Backlink report and 3-month outreach plan | seo-101/capstones/m09-capstone.md | draft | 2026-11-09 |
-| M10 | — | Competitor Analysis (not yet planned) | — | todo | — |
+| M10 | L01 | Who Are Your Real Search Competitors? | seo-101/lessons/m10-l01-search-competitors.md | todo | — |
+| M10 | L02 | Reading the SERP and the Pages That Win | seo-101/lessons/m10-l02-serp-page-teardown.md | todo | — |
+| M10 | L03 | Keyword and Content Gaps with Free Tools | seo-101/lessons/m10-l03-keyword-content-gaps.md | todo | — |
+| M10 | L04 | The Backlink Gap | seo-101/lessons/m10-l04-backlink-gap.md | todo | — |
+| M10 | L05 | Turning Findings into Priorities | seo-101/lessons/m10-l05-competitor-priorities.md | todo | — |
+| M10 | Capstone | M10 capstone — Competitor analysis and 10 opportunities | seo-101/capstones/m10-capstone.md | todo | — |
 | M11 | — | Local SEO & Google Business Profile (not yet planned) | — | todo | — |
 | M12 | — | Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) (not yet planned) | — | todo | — |
 | M13 | — | SEO Tools Mastery & WordPress SEO (not yet planned) | — | todo | — |
@@ -208,6 +213,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09 — seo-101 plan M10: 5 lessons + capstone from research/m10-competitor-analysis.md (split kept); free-tool limits, retired operators (related:, cache:), estimates-as-estimates and copying ethics set as planning notes; reuses M03.L04 Value/Chance/Effort.
 - 2026-11-09: seo-101 m09-capstone draft — Backlink report and 3-month outreach plan: 6 tasks mapped to L01–L05 (Links 101, Authority scores, Backlink audit with 3 tools + reclaims, asset + 10 targets + 12-week calendar + 2 emails, link policy + Step 0 decision, one-page report); break-it lab with Nila's 16-row backlink list (6 fine, 3 ignore, 7 risky) and an inherited 'Unnatural links to your site' manual action (remove → disavow rest via URL-prefix property → reconsideration that explains, describes, documents); 5-criterion rubric (#11 assessed, #1 reinforced); 1 flowchart; 1 image prompt. Plus cheatsheets/m09-off-page-links.md with the link scheme checklist. Module 9 complete.
 - 2026-11-09: seo-101 m09-l05 draft — Link schemes, penalties, disavow: built from research/m09 §3–5; 41 quotes re-matched live (spam policies 2026-08-28 full link spam list + expired domains; Dec 2022 link spam update; GSC manual actions incl. both unnatural-links actions and reconsideration; disavow help incl. Step 0, file rules and Domain-property limit; SER Mueller 2024; SEJ Mueller 2025). TLD disavow not taught (undocumented); PBN labelled industry term. New Link schemes tab (5 offers matched to policy, 3-scenario disavow drill, practice disavow.txt not uploaded); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M09.L04; 4 glossary terms.
 - 2026-11-09: seo-101 m09-l04 draft — Earning links: built from research/m09 §8–10; 23 quotes re-matched live (Starter Guide promote section; 2017 large-scale article campaigns; link best practices; Do you need an SEO?; SER Mueller 2015/2018/2020/2025) + FTC CAN-SPAM headings and B2B line verified via fetch tool (site blocks curl; guide dated Aug 2023, edited Jan 2024). Broken-link building, unlinked mentions and digital PR labelled observed practice; 'commercial' status of link requests left as not legal advice. New Outreach tab (asset brief, 10 targets with reasons and methods, one email checked against an honesty checklist); 1 flowchart; 1 image prompt; 6-case exercise; 8-question quiz (2 per letter) incl. 1 review from M09.L03; 5 glossary terms.

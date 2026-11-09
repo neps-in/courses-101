@@ -15,7 +15,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | 6 lessons + capstone |
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Data Studio) | L2 | — (#2 in depth) | 6 lessons + capstone |
 | M09 Off-Page SEO & Link Building | L2 | #11 | 5 lessons + capstone |
-| M10 Competitor Analysis | L2 | — | — |
+| M10 Competitor Analysis | L2 | — | 5 lessons + capstone |
 | M11 Local SEO & Google Business Profile | L2 | #12 | — |
 | M12 Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) | L3 | #13 | — |
 | M13 SEO Tools Mastery & WordPress SEO | L3 | — | — |
@@ -767,3 +767,75 @@ flowchart LR
 ### M09 Capstone — Backlink report and 3-month outreach plan
 - **File:** `capstones/m09-capstone.md` + `cheatsheets/m09-off-page-links.md`
 - A backlink report for the project site (sources compared, links sorted, reclaim list) and a 3-month outreach plan with one linkable asset and 10 realistic targets. **Break-it lab:** Nila Coffee's 16-row backlink list to sort into fine / ignore / risky, plus an inherited "Unnatural links to your site" manual action to plan the fix for. Rubric: link understanding, audit accuracy, ethical earning (#11), outreach quality, spam and disavow judgement (#1).
+
+## M10 — Competitor Analysis (L2)
+
+**Goal:** learn from the sites that outrank you and find gaps you can realistically win. · NN #4, #11 reinforced
+**Lessons:** planned from the outline's topics and the research notes in `research/m10-competitor-analysis.md` (2026-11-09). The research's five-lesson split is kept. M01.L05 defined search competitors and taught `site:` and other operators; M03.L01 taught intent and "match the type, then be more useful"; M03.L04 taught the Value / Chance / Effort score; M09.L02–L03 covered authority scores and free backlink tools. These lessons reuse all of them, adding only what's new.
+**Planning notes from research:**
+- **Free tools only, with limits that change:** Moz Link Explorer "10 free queries per month"; Semrush about 10 reports a day in total (its docs and blog disagree: teach the pooled reading); Ahrefs free checkers (caps not published); Ahrefs Free for your own sites. Teach "plan your queries", and recheck limits before quoting.
+- **Retired operators:** `related:` (July 2023) and `cache:` (September 2024) are gone; use the Wayback Machine (linked from "About this page" since September 2024). Don't teach `info:`.
+- **Estimates are estimates:** quote Ahrefs ("can't be treated as the actual search traffic data of a website") and show learners their own Search Console clicks next to a tool's estimate. Vendor accuracy studies of rivals aren't neutral.
+- **Ethics:** copying with synonyms is scraping under the spam policy; respect robots.txt and keep any crawl small; AI summaries of competitors can hallucinate metrics.
+- **Conflicts to teach:** Semrush pooled vs per-tool limits; Ahrefs "works well for comparison" vs its own study's large errors; ICE's origin is contested (don't teach it as fact).
+- **Don't quote:** Similarweb accuracy articles (not readable); any Google definition of "search competitor" (none exists: label the course definition); copyright law text (not researched: say "copying risks copyright too; get advice for specifics").
+
+```mermaid
+flowchart LR
+  %% alt: M10 lesson path: find real search competitors, read the results and winning pages, find keyword and content gaps, find backlink gaps, then prioritise.
+  L1[L01 Real search<br/>competitors]:::cream --> L2[L02 Reading the<br/>SERP and pages]:::sky
+  L2 --> L3[L03 Keyword and<br/>content gaps]:::sky
+  L3 --> L4[L04 Backlink<br/>gap]:::blue
+  L4 --> L5[L05 Findings into<br/>priorities]:::blue
+  L5 --> C[M10 Capstone:<br/>3 competitors, 10 opportunities]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** first find out who really competes with you in search, which is often not your business rivals. Then read the results pages and the pages that win. Find the keywords and topics they cover that you don't, and the links they've earned that you could earn too. Finally, turn the findings into a short, honest list of priorities. The capstone analyses three competitors and ranks ten opportunities.
+
+### M10.L01 — Who Are Your Real Search Competitors?
+- **File:** `lessons/m10-l01-search-competitors.md` · **Prereqs:** M01.L05, M03.L04 · **Remediate to:** M01.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Distinguish** search competitors from business competitors, per topic cluster.
+  2. **Identify** 3 realistic search competitors from private-window results, ruling out giants with a low Chance score.
+  3. **Size up** each competitor with free checks (`site:` as a sample, a free competitive research tool), without treating estimates as facts.
+- **Hands-on idea:** record the top 5 results for 5 queries (2 shop, 2 blog, 1 local), label each result (business competitor, search-only competitor, giant), and choose 3 realistic search competitors in a new **Competitors** tab.
+
+### M10.L02 — Reading the SERP and the Pages That Win
+- **File:** `lessons/m10-l02-serp-page-teardown.md` · **Prereqs:** M10.L01, M03.L01 · **Remediate to:** M03.L01 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Record** page types, formats and SERP features for a query, and what they say about intent.
+  2. **Compare** a winning page with yours: title, headings, depth, first-hand evidence, schema (Rich Results Test), speed (PageSpeed Insights lab vs field) and history (Wayback Machine).
+  3. **Follow** ethical limits: no copying, respect robots.txt, keep any crawl small.
+- **Hands-on idea:** a page teardown of one competitor page that outranks yours, side by side with your page, in a new **Page teardown** tab, ending in three "be more useful" changes (not copies).
+
+### M10.L03 — Keyword and Content Gaps with Free Tools
+- **File:** `lessons/m10-l03-keyword-content-gaps.md` · **Prereqs:** M10.L02, M03.L05 · **Remediate to:** M03.L05 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Build** a topic list per competitor from `site:` searches and free keyword tools, budgeting limited queries.
+  2. **Compare** it with your own Search Console queries to find missing, weak and strong topics.
+  3. **Explain** why third-party traffic estimates are estimates, and check one against your own real clicks.
+- **Hands-on idea:** a **Gap sheet** (topic, you, competitors A–C, gap type, intent, evidence, source and date), plus an "estimate reality check" comparing a tool's estimate for your site with your Search Console clicks.
+
+### M10.L04 — The Backlink Gap
+- **File:** `lessons/m10-l04-backlink-gap.md` · **Prereqs:** M10.L03, M09.L03 · **Remediate to:** M09.L03 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Find** sites linking to competitors but not to you, with free tools (Bing Backlinks, Moz Link Explorer within its monthly limit, Ahrefs' free checker).
+  2. **Judge** which of those links you could earn honestly (relevant, editorial, open to you) and which you can't or shouldn't.
+  3. **Explain** why link counts differ between tools and what a gap can't tell you.
+- **Hands-on idea:** a **Link gap** tab with the top linking sites for 3 competitors, each marked earnable / not for us / scheme, feeding 3–5 new targets into the M09 Outreach tab.
+
+### M10.L05 — Turning Findings into Priorities
+- **File:** `lessons/m10-l05-competitor-priorities.md` · **Prereqs:** M10.L04, M03.L04 · **Remediate to:** M03.L04 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Score** opportunities with Value / Chance / Effort (from M03.L04), with evidence and a dated source for each.
+  2. **Compare** this with ICE and impact × effort, and choose one method for the project.
+  3. **Write** findings as honest, hedged statements, and check any AI summary against the tools.
+- **Hands-on idea:** a prioritised list of 10 opportunities from the Gap sheet, Page teardown and Link gap, each with a score, evidence and next action, plus one "we won't do this" item with the reason.
+
+### M10 Capstone — Competitor analysis and 10 opportunities
+- **File:** `capstones/m10-capstone.md` + `cheatsheets/m10-competitor-analysis.md`
+- A competitor analysis of 3 search competitors with 10 prioritised opportunities. **Break-it lab:** an intern's competitor "report" for Nila Coffee with 11 wrong conclusions (a business competitor as the search competitor, comparing a forum to a shop, estimates as facts, AI-invented metrics, a paraphrased copy, `site:` as a page count, retired operators, lab vs field speed, a robots-ignoring crawl, outranking Amazon, cross-tool link counts) to correct. Rubric: competitor choice, SERP and page reading, gap analysis, honest use of data, prioritisation and ethics (#4, #11).
