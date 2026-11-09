@@ -9,6 +9,10 @@ Argument: module number N (e.g. `/plan-module 1`). If missing, plan the first mo
 
 1. Read `progress.md` to find the active course, then `<course>/course-outline.md` and `course-framework.md`.
 2. Read `<course>/syllabus.md` if it exists so lessons don't overlap with planned modules.
+   Then read the module's research notes in `<course>/research/` (`mNN-*.md`) if they exist.
+   Use their suggested lesson split, freshness flags, conflicts and "Not found" gaps to shape the
+   lessons, and their break-it and hands-on ideas for the capstone. If there are no notes, say so in
+   the reply and suggest running research subagents first (see the course's memory on research).
 3. Split module N's topics into 3–6 lessons. Each lesson gets:
    - number and title (`M01.L01 — How search engines crawl, index and rank`)
    - slug for the file name

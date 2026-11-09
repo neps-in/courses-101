@@ -11,8 +11,11 @@ description: Draft the next todo lesson and its quiz for the active course, foll
      format from `course-framework.md` instead of a lesson.
 2. Read `<course>/course-outline.md`, `<course>/syllabus.md` (objectives for this lesson) and
    `course-framework.md` (templates). Skim the previous lesson so this one builds on it.
-3. Research anything that changes over time (Google guidance, AI search behaviour, tool
-   features, APIs) with web search and prefer primary sources. Note the check date in Further reading.
+3. Read the research notes for this lesson or its module in `<course>/research/` if they exist.
+   Recheck every quote you use against the live source before it goes in the lesson (notes can
+   be stale or come from a summarising fetch tool). Then research anything still missing or that
+   changes over time (Google guidance, AI search behaviour, tool features, APIs) with web search,
+   preferring primary sources. Note the check date in Further reading.
 4. Write the lesson to the file path in `progress.md` using the lesson template exactly:
    objectives, why it matters, core concept, Mermaid flowchart in the house palette,
    hands-on walkthrough with expected outputs, common mistakes, exercise, takeaways, further reading.
