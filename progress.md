@@ -44,7 +44,12 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M04 | L05 | Internal Links and Anchor Text | seo-101/lessons/m04-l05-internal-links-anchor-text.md | draft | 2026-11-09 |
 | M04 | L06 | Shop Pages and Sharing: Product Pages, Category Pages and Open Graph | seo-101/lessons/m04-l06-shop-pages-open-graph.md | draft | 2026-11-09 |
 | M04 | Capstone | M04 capstone — Optimise three pages | seo-101/capstones/m04-capstone.md | draft | 2026-11-09 |
-| M05 | — | WordPress for Content Creators (Content Creation & Page Builders) (not yet planned) | — | todo | — |
+| M05 | L01 | Your WordPress Practice Site: Set-up, Permalinks and Moving from Blogger | seo-101/lessons/m05-l01-wordpress-practice-site.md | todo | — |
+| M05 | L02 | Posts, Pages, Categories and Tags Without Thin Archives | seo-101/lessons/m05-l02-posts-pages-archives.md | todo | — |
+| M05 | L03 | Clean Structure in the Block Editor | seo-101/lessons/m05-l03-block-editor-structure.md | todo | — |
+| M05 | L04 | Page Builders vs the Block Editor: When Each Makes Sense | seo-101/lessons/m05-l04-page-builders.md | todo | — |
+| M05 | L05 | Publish, Update and Change URLs Safely (with Shopify and Wix Notes) | seo-101/lessons/m05-l05-publish-update-urls.md | todo | — |
+| M05 | Capstone | M05 capstone — Publish two pages and a post | seo-101/capstones/m05-capstone.md | todo | — |
 | M06 | — | Technical SEO Fundamentals (not yet planned) | — | todo | — |
 | M07 | — | Content Strategy, SEO Writing & AI Content (not yet planned) | — | todo | — |
 | M08 | — | Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) (not yet planned) | — | todo | — |
@@ -180,6 +185,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 plan M05 — 5 lessons + capstone from research/m05-wordpress-content.md (suggested split kept). Links to WordPress 101 for how-to; teaches SEO decisions only. Notes: 7.1 'Save' label, Playground Dock wording, 7.2 due 2026-12-08, WordPress-vs-Google permalink claim, archives not noindexed by core, no Google doc on page builders, lastmod inference, Shopify/Wix quotes to recheck live, Path B outline conflict flagged.
 - 2026-11-09: seo-101 m04 capstone draft — Optimise three pages + cheatsheets/m04-on-page-seo.md. Assesses #6 (reinforces #3, #4). Pick 3 map pages, 28-day Search Console baseline (Date range + Page filter), titles → H1/slug/opening → people-first → images/links/sharing, dated Optimise log, 4-week check booked 28 days after last change (compare-mode labels not tested live; hedged). Break-it lab: planted /cold-brew-ratio/ with 5 problems (duplicate title, boilerplate description, stuffed opening, oversized lazy top image with stuffed alt, orphan) and 2 traps (decorative alt="", paginated category sharing a title), found via View Source/find in page, sitemap vs Links report, URL Inspection, DevTools. 5-criterion rubric. Module 4 fully drafted.
 - 2026-11-09: seo-101 m04-l06 draft — Shop pages & Open Graph: built from research/m04-on-page-seo.md §9–10; 30+ quotes re-matched live (ecommerce hub 2025-12-10, site structure, URL structure, pagination, reviews, product structured data, ogp.me, Meta sharing guide at its new address, LinkedIn Help). Category copy length labelled not in Google's docs; product-page checklist labelled observed practice from the reviews guidance; Blogger OG tags observed on the official Blogger blog (no og:image on home). New Shop & share check tab; 2 flowcharts; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M04.L05; 5 glossary terms.
 - 2026-11-09: seo-101 m04-l05 draft — Internal links & anchor text: built from research/m04-on-page-seo.md §8 and §11; 25 quotes re-matched live (link best practices 2025-12-10, ecommerce site structure, Starter Guide, Links report help, office hours Jul 2024). 'Orphan page' labelled a tool term; link placement weighting labelled not in Google's docs; Links report sampling caveat drives a confirm-by-hand step; link plan from the keyword map (guide↔product) labelled observed practice. New Internal links tab (sitemap vs Links report); 3 flowcharts; 1 image prompt; 6-case exercise; 8-question quiz incl. 1 review from M04.L04; 3 glossary terms.

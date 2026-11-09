@@ -10,7 +10,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M02 Introduction to Web Development (HTML & CSS for content creators) | L1 | #3 | 10 lessons + capstone |
 | M03 Keyword Research | L1 | #4, #5 | 5 lessons + capstone |
 | M04 On-Page SEO | L1 | #6 | 6 lessons + capstone |
-| M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | — | — |
+| M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | #3, #6 reinforced | 5 lessons + capstone |
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | — |
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | — |
 | M08 Analytics, Tracking & Reporting (GSC, GA4, GTM, Looker Studio) | L2 | — (#2 in depth) | — |
@@ -374,3 +374,77 @@ flowchart LR
 ### M04 Capstone — Optimise three pages
 - **File:** `capstones/m04-capstone.md` + `cheatsheets/m04-on-page-seo.md`
 - Optimise three pages from the keyword map, with a before/after table (title, description, H1, opening, images, internal links) and a 4-week Search Console check booked: note clicks, impressions, CTR and average position for the 28 days before, and compare the same span afterwards. **Break-it lab:** a planted page with a duplicate title, a keyword-stuffed paragraph and no internal links pointing to it, found with View Source, find-in-page, a sitemap-versus-links check and URL Inspection. Rubric: titles and descriptions, intent match, people-first content, images and links, evidence and the booked check.
+
+## M05 — WordPress for Content Creators (Content Creation & Page Builders) (L1)
+
+**Goal:** publish well-structured pages and posts in WordPress, with or without a page builder, without hurting SEO. · NN #3, #6 reinforced
+**Lessons:** planned from the outline's topics and the research notes in `research/m05-wordpress-content.md` (2026-11-08). WordPress 101 already covers the how-to (M01–M05, M07). These lessons link to it and teach only the SEO decisions, so WordPress 101 graduates can skip to the capstone. The live course has no lesson titles for this section, so there are no live post numbers yet.
+**Planning notes from research:**
+- **Labels (WordPress 7.1):** the main button on a published post is **Save**, not "Update". Playground now uses the Dock, **Autosaved / Saved / Unsaved**, **Store permanently** and **Download as .zip**, and keeps only five autosaves. All labels come from 7.1 source or docs, not tested live. **WordPress 7.2 is due 2026-12-08**, so recheck editor labels if drafting or reviewing after that.
+- **Permalinks:** the WordPress screen says Post name "can help your posts rank higher". Google says URL-path keywords "have hardly any effect". Teach the Google line, and give readability as the reason for Post name.
+- **Tag and category archives:** core adds no `noindex` to archives and lists non-empty ones in `wp-sitemap.xml`. Google says some duplicate content "is normal". The only Google comment on tag pages is Mueller's from 2015 ("no default answer"), so flag it as dated. Frame thin tag pages as a usefulness problem, not a penalty.
+- **Page builders:** no Google page names any builder. The Web Almanac 2025 gives adoption shares and only qualitative speed statements, so don't claim a percentage slowdown. "Code-to-text ratio" is a myth (Mueller, 2018). Headings used for styling are mainly a structure and accessibility problem; Google says heading order "doesn't matter" for Search.
+- **Dates:** core's sitemap `lastmod` moves on any save. Google wants it to mean a "significant update". Teach "don't re-save old posts to look fresh" (inference from source, not tested).
+- **Other platforms:** Shopify ticks the redirect box when a handle changes. Wix redirects pages, but **not** blog posts. The quotes came through a fetch tool, so recheck them live before quoting.
+- **Path B:** Blogger learners move to WordPress in L01, by recreating 1–3 posts by hand. The Blogger Importer plugin is untested with the last three major releases. The outline's §3 still calls Path B a WordPress test site; reconcile it (flagged, not edited).
+- **No overlap with M04:** image alt text, sizes and lazy loading were taught in M04.L04, and anchor text in M04.L05. Here they're only applied inside blocks. Redirects in depth wait for M06.
+
+```mermaid
+flowchart LR
+  %% alt: M05 lesson path: practice site, posts and archives, block editor structure, page builders, publishing and URL changes, then the capstone.
+  L1[L01 Practice site<br/>& permalinks]:::cream --> L2[L02 Posts, pages<br/>& archives]:::sky
+  L2 --> L3[L03 Block editor<br/>structure]:::sky
+  L3 --> L4[L04 Page builders<br/>vs blocks]:::blue
+  L4 --> L5[L05 Publish & change<br/>URLs safely]:::blue
+  L5 --> C[M05 Capstone:<br/>publish 2 pages + 1 post]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** set up a WordPress practice site and its permalinks before writing anything. Then decide what's a post and what's a page, and keep category and tag archives useful. Next, build clean structure with blocks, and learn when a page builder is worth its cost. Finally, publish, update and change URLs without losing visitors. The capstone publishes two pages and a post, and fixes a page built badly.
+
+### M05.L01 — Your WordPress Practice Site: Set-up, Permalinks and Moving from Blogger
+- **File:** `lessons/m05-l01-wordpress-practice-site.md` · **Prereqs:** M01.L08, M02.L02 · **Remediate to:** M02.L02 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Choose** a practice site (Local, Playground or hosting), and explain why a Playground site can't be indexed by Google.
+  2. **Set** Post name permalinks before the first post, giving readability, not rankings, as the reason.
+  3. **Recreate** one to three posts from Blogger or your project site, and save a portable backup.
+- **Hands-on idea:** set up Local (or Playground with **Store permanently**), switch permalinks to **Post name**, recreate two posts by hand (Path B moves its Blogger posts), then **Download as .zip** or export, recording each step in a new **WordPress setup** tab.
+
+### M05.L02 — Posts, Pages, Categories and Tags Without Thin Archives
+- **File:** `lessons/m05-l02-posts-pages-archives.md` · **Prereqs:** M05.L01, M03.L05 · **Remediate to:** M03.L05 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Decide** whether each keyword-map topic is a post or a page.
+  2. **Organise** posts with one category each and a small, reused set of tags.
+  3. **Audit** the archive pages in `wp-sitemap.xml`, and decide for each tag whether to keep it, merge it or `noindex` it.
+- **Hands-on idea:** label every keyword-map row as post or page, then open the practice site's `wp-sitemap.xml`, list each category and tag archive with its post count, view the source of one archive to confirm core adds no `noindex`, and record decisions in a new **Archive check** tab.
+
+### M05.L03 — Clean Structure in the Block Editor
+- **File:** `lessons/m05-l03-block-editor-structure.md` · **Prereqs:** M02.L04, M04.L02 · **Remediate to:** M02.L04 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Build** a heading outline with the Heading block, and check it in **Document Overview > Outline** until no heading shows as incorrect.
+  2. **Use** lists, tables (with a header section and caption) and patterns for the jobs they're made for.
+  3. **Apply** Module 4 inside blocks: alt text or **Mark as decorative**, image resolution, and internal links with descriptive anchors.
+- **Hands-on idea:** paste a messy draft (bold lines as fake headings, an H4 "because it's smaller", a table made of spaces) into a post, fix it until the Outline is clean, and log before and after in a new **Outline check** tab.
+
+### M05.L04 — Page Builders vs the Block Editor: When Each Makes Sense
+- **File:** `lessons/m05-l04-page-builders.md` · **Prereqs:** M05.L03, M02.L09 · **Remediate to:** M05.L03 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Explain** the speed and markup cost of page builders, using dated data and without claiming more than it shows.
+  2. **Decide** between the block editor and a builder with a decision guide.
+  3. **Replace** headings used for styling with typography settings or block CSS, and compare the outline and page weight in DevTools.
+- **Hands-on idea:** in Playground, build one page with styled paragraphs as "headings", headings used for size, and a full-size hero image, then a clean version; compare View Source heading counts and the DevTools Network total in a new **Builder check** tab. Installing a free builder is an optional extension.
+
+### M05.L05 — Publish, Update and Change URLs Safely (with Shopify and Wix Notes)
+- **File:** `lessons/m05-l05-publish-update-urls.md` · **Prereqs:** M05.L04, M04.L02 · **Remediate to:** M04.L02 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Run** the publishing workflow (save draft, preview, publish or schedule, save), using revisions to undo mistakes.
+  2. **Show** honest published and updated dates, without changing dates to look fresh.
+  3. **Predict** and test what happens to an old URL after a slug change on WordPress (posts and pages), Shopify and Wix.
+- **Hands-on idea:** publish a post, change its slug and visit the old URL (expect a 301); repeat with a page (expect a 404); then predict the Shopify and Wix results from their help pages, recording everything in a new **URL change test** tab.
+
+### M05 Capstone — Publish two pages and a post
+- **File:** `capstones/m05-capstone.md` + `cheatsheets/m05-wordpress-content.md`
+- Publish two optimised pages and one post from the keyword map on the practice or project site, with clean heading outlines, Post name permalinks, a category, useful alt text, internal links in and out, and a preview checked before publishing. **Break-it lab:** a planted page built like a heavy page-builder page, with headings used for styling, styled paragraphs as headings and a 4,000-pixel hero; find the problems with the Outline, View Source and DevTools, and fix the structure. Rubric: structure and headings, permalinks and URL safety, posts vs pages and archives, Module 4 applied, evidence.
