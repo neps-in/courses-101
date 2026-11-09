@@ -37,7 +37,13 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M03 | L04 | Realistic Targets: Choosing Keywords a New Site Can Win | seo-101/lessons/m03-l04-realistic-targets.md | reviewed | 2026-11-06 |
 | M03 | L05 | Keyword Maps: Grouping Topics and Spotting Cannibalisation | seo-101/lessons/m03-l05-keyword-maps-cannibalisation.md | reviewed | 2026-11-08 |
 | M03 | Capstone | M03 capstone — Keyword map | seo-101/capstones/m03-capstone.md | reviewed | 2026-11-08 |
-| M04 | — | On-Page SEO (not yet planned) | — | todo | — |
+| M04 | L01 | Title Tags and Meta Descriptions: What Searchers See First | seo-101/lessons/m04-l01-titles-meta-descriptions.md | todo | — |
+| M04 | L02 | Headings, URL Slugs and the Opening Paragraph | seo-101/lessons/m04-l02-headings-slugs-opening.md | todo | — |
+| M04 | L03 | Writing for People: Natural Keywords, Synonyms and E-E-A-T Basics | seo-101/lessons/m04-l03-people-first-writing.md | todo | — |
+| M04 | L04 | Image SEO: File Names, Alt Text, Size and Format | seo-101/lessons/m04-l04-image-seo.md | todo | — |
+| M04 | L05 | Internal Links and Anchor Text | seo-101/lessons/m04-l05-internal-links-anchor-text.md | todo | — |
+| M04 | L06 | Shop Pages and Sharing: Product Pages, Category Pages and Open Graph | seo-101/lessons/m04-l06-shop-pages-open-graph.md | todo | — |
+| M04 | Capstone | M04 capstone — Optimise three pages | seo-101/capstones/m04-capstone.md | todo | — |
 | M05 | — | WordPress for Content Creators (Content Creation & Page Builders) (not yet planned) | — | todo | — |
 | M06 | — | Technical SEO Fundamentals (not yet planned) | — | todo | — |
 | M07 | — | Content Strategy, SEO Writing & AI Content (not yet planned) | — | todo | — |
@@ -174,6 +180,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-09: seo-101 plan M04 — On-Page SEO: 6 lessons + capstone, from the outline and research/m04-on-page-seo.md (suggested split adopted). Planning notes in syllabus: #6 pagination exception, headings (Google vs MDN), no Google figures for density/length/placement, items to recheck (2026 AI title test, helpful-content rewrite, URL page, Bing guidelines), Blogger route for path B.
 - 2026-11-08: seo-101 m03-capstone reviewed. Fixed: lab answers for rows 5 and 8 now rest on planted results notes, not word clues (NN #4); fix 2 names /cold-brew-ratio and frees the product URL for fix 3; Notes column added to the map template (capstone + cheat sheet) to match task 6; answers note the fixed map leaves 3 quick wins (L04 mix). No new claims, so no web checks needed.
 - 2026-11-08: seo-101 m03-capstone draft — Keyword map: 8 tasks (gather, read results, overlap, map of 15+ topics, priorities, site check, break-it, notes); planted Nila map with 5 problems (same-intent pair shown together, wrong intent/page type, URL used twice, 'coffee' as quick win, three word-order rows) and 2 traps (product + guide for one search; shared words but 1 shared result); 5-criterion rubric assessing #4 and #5; cheat sheet seo-101/cheatsheets/m03-keyword-research.md. Built only from M03.L01–L05 sources; no new claims.
 - 2026-11-08: seo-101 m03-l05 reviewed. Fixed: COUNTIF advice (Sheets Help: `?` and `*` are wildcards, so cut URLs before `?`; new troubleshooting row); penalty row now says duplicate, not similar, pages; split-links claim now cites Google's consolidation wording; fix flowchart's not-shown branch records the topic owner; Priority step covers New pages; Q3 explanation quotes Google's robots.txt and removal-tool lines. All quotes matched against saved source pages; no new web calls needed.

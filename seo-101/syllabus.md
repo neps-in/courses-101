@@ -9,7 +9,7 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M01 Marketing & SEO Foundations | L1 | #1, #2 | 8 lessons + capstone |
 | M02 Introduction to Web Development (HTML & CSS for content creators) | L1 | #3 | 10 lessons + capstone |
 | M03 Keyword Research | L1 | #4, #5 | 5 lessons + capstone |
-| M04 On-Page SEO | L1 | #6 | — |
+| M04 On-Page SEO | L1 | #6 | 6 lessons + capstone |
 | M05 WordPress for Content Creators (Content Creation & Page Builders) | L1 | — | — |
 | M06 Technical SEO Fundamentals | L2 | #7, #8 | — |
 | M07 Content Strategy, SEO Writing & AI Content | L2 | #9, #10 | — |
@@ -292,3 +292,85 @@ flowchart LR
 ### M03 Capstone — Keyword map
 - **File:** `capstones/m03-capstone.md` + `cheatsheets/m03-keyword-research.md`
 - A keyword map for at least 15 topics: topic → keywords → intent → page type → existing or new page → priority. **Break-it lab:** two planted pages that cannibalise each other. Rubric: intent accuracy, data honesty, one page per topic, realistic priorities, explanation of the fix.
+
+---
+
+## M04 — On-Page SEO (L1)
+
+**Goal:** make each page the clearest, most helpful match for its topic. · NN #6 (+ #3, #4 reinforced)
+**Lessons:** planned from the outline's topics and the research notes in `research/m04-on-page-seo.md` (2026-11-08). The live course has no lesson titles for this section, so there are no live post numbers yet.
+**Planning notes from research:**
+- **#6 and pagination:** Google says pages in a paginated series "don't need to follow" the unique-title advice. Teach #6 as applying to every indexable page with its own topic, with paginated category pages as the documented exception.
+- **Headings:** Google says heading order "doesn't matter" for Search, while MDN advises one H1 and no skipped levels. Keep the course's one-H1 rule for readers and accessibility (#3), and say plainly that it isn't a ranking rule.
+- **No Google figure for:** keyword density, "keyword in the first 100 words", title or description length, or link placement. Label any such advice as observed practice or myth.
+- **Recheck before drafting:** the March 2026 AI title-link test (secondary sources only), the helpful-content page (rewritten 2026-10-05), the URL structure page (updated 2026-10-21), and Bing's guidelines, which couldn't be read.
+- **Path B:** learners are still on Blogger until Module 5, so every hands-on step needs a Blogger route as well as WordPress.
+
+```mermaid
+flowchart LR
+  %% alt: M04 lesson path: titles and descriptions, headings and slugs, people-first writing, images, internal links, shop pages and sharing, then the capstone.
+  L1[L01 Titles &<br/>descriptions]:::cream --> L2[L02 Headings, slugs<br/>& opening]:::sky
+  L2 --> L3[L03 Writing<br/>for people]:::sky
+  L3 --> L4[L04 Image<br/>SEO]:::blue
+  L4 --> L5[L05 Internal links<br/>& anchor text]:::blue
+  L5 --> L6[L06 Shop pages<br/>& sharing]:::blue
+  L6 --> C[M04 Capstone:<br/>optimise 3 pages]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** start with what people see first in the results, the title and description. Then shape the page itself: its headings, its URL and its opening. Next, write for people, using natural words rather than repeated keywords. Then make images and internal links work, and finish with shop pages and how pages look when shared. The capstone applies all of this to three pages from your keyword map.
+
+### M04.L01 — Title Tags and Meta Descriptions: What Searchers See First
+- **File:** `lessons/m04-l01-titles-meta-descriptions.md` · **Prereqs:** M02.L03, M03.L05 · **Remediate to:** M02.L03 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Write** a unique, descriptive title for each page type (home, guide, product, category), with the brand placed concisely.
+  2. **Explain** why Google rewrites title links and snippets, and spot a rewrite on a real results page.
+  3. **Write** meta descriptions that pitch the page honestly, knowing they aren't a ranking factor.
+- **Hands-on idea:** run a `site:` search on your project site, compare each title link with the page's `<title>`, classify any rewrite against Google's documented reasons, and rewrite titles and descriptions for three keyword-map pages in a new **Titles** tab.
+
+### M04.L02 — Headings, URL Slugs and the Opening Paragraph
+- **File:** `lessons/m04-l02-headings-slugs-opening.md` · **Prereqs:** M04.L01, M02.L04 · **Remediate to:** M02.L04 · **Hands-on:** ~30 min
+- **Objectives:**
+  1. **Match** a page's H1 and outline to its title and its one intent.
+  2. **Create** short, readable, hyphenated slugs, and explain why changing a live URL needs a redirect.
+  3. **Write** an opening paragraph that answers the searcher's question first.
+- **Hands-on idea:** list the headings of one keyword-map page, check the H1 against its title, plan a clean slug (changing it only on a practice page), and rewrite the opening in a new **Page outline** tab.
+
+### M04.L03 — Writing for People: Natural Keywords, Synonyms and E-E-A-T Basics
+- **File:** `lessons/m04-l03-people-first-writing.md` · **Prereqs:** M04.L02, M03.L01 · **Remediate to:** M03.L01 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Use** a topic's main phrase, variants and synonyms naturally, and recognise keyword stuffing as Google's spam policy describes it.
+  2. **Assess** a page with Google's people-first self-assessment questions and "Who, How, Why".
+  3. **Explain** what E-E-A-T is and isn't (not a single ranking factor), with the full picture left to Module 14.
+- **Hands-on idea:** rewrite a planted, stuffed Nila paragraph using synonyms, then score one of your own pages against 8–10 self-assessment questions in a new **People-first check** tab.
+
+### M04.L04 — Image SEO: File Names, Alt Text, Size and Format
+- **File:** `lessons/m04-l04-image-seo.md` · **Prereqs:** M02.L05, M04.L03 · **Remediate to:** M02.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Name** image files and write alt text that describes each image in its context.
+  2. **Check** an image's real size and format against its displayed size, using the browser's DevTools.
+  3. **Choose** a suitable format and loading approach (WebP or AVIF, `width` and `height`, lazy loading below the fold only).
+- **Hands-on idea:** for three images on your project site, write alt text from weakest to best, find the heaviest image in DevTools, and plan a smaller version in a new **Image check** tab.
+
+### M04.L05 — Internal Links and Anchor Text
+- **File:** `lessons/m04-l05-internal-links-anchor-text.md` · **Prereqs:** M02.L05, M03.L05 · **Remediate to:** M02.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Write** anchor text that describes its target, avoiding generic, overlong and chained links.
+  2. **Find** pages with no internal links pointing to them, by comparing your sitemap with the links on your site.
+  3. **Plan** internal links between related keyword-map topics, such as from guides to products.
+- **Hands-on idea:** list your sitemap's URLs, check which have no internal links pointing to them, and plan two descriptive links for each one in a new **Internal links** tab.
+
+### M04.L06 — Shop Pages and Sharing: Product Pages, Category Pages and Open Graph
+- **File:** `lessons/m04-l06-shop-pages-open-graph.md` · **Prereqs:** M04.L01, M04.L05 · **Remediate to:** M04.L05 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Structure** category and product pages so each product has a crawlable link, and paginated pages have real URLs.
+  2. **Improve** a product page's content with details people need to decide.
+  3. **Add** Open Graph tags and check how a page looks when shared.
+- **Hands-on idea:** audit one category page and one product page (Nila's if your site isn't a shop), then add the Open Graph tags to a page and check its preview in a free sharing debugger, in a new **Shop & share check** tab. Blogger learners check the tags Blogger adds itself.
+
+### M04 Capstone — Optimise three pages
+- **File:** `capstones/m04-capstone.md` + `cheatsheets/m04-on-page-seo.md`
+- Optimise three pages from the keyword map, with a before/after table (title, description, H1, opening, images, internal links) and a 4-week Search Console check booked: note clicks, impressions, CTR and average position for the 28 days before, and compare the same span afterwards. **Break-it lab:** a planted page with a duplicate title, a keyword-stuffed paragraph and no internal links pointing to it, found with View Source, find-in-page, a sitemap-versus-links check and URL Inspection. Rubric: titles and descriptions, intent match, people-first content, images and links, evidence and the booked check.
