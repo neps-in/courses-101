@@ -2,6 +2,7 @@
 
 Plain-language definitions of terms used in the course. The lesson that introduces each term is in brackets.
 
+- **Above the fold** — the part of a page visible without scrolling; images here shouldn't be lazy-loaded. [M04.L04]
 - **Accordion** — a page element that opens and closes to show or hide more content; fine for Google if the content is in the HTML. [M02.L09]
 - **AI Overview** — an AI-written summary with links that Google shows on some searches; no special markup is needed to appear in one (Module 14). [M01.L05]
 - **Algorithmic change** — a ranking shift from Google's automated systems; no message is sent and there's no review to request. [M01.L06]
@@ -92,6 +93,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **Inline style** — CSS in a `style` attribute on one element; a last resort. [M02.L08]
 - **Internal and external links** — internal links point to another page on your own site; external links point to a different site. [M02.L05]
 - **Internal stylesheet** — CSS in a `<style>` element in a page's `<head>`; it applies to that page only. [M02.L08]
+- **Intrinsic size** — an image file's real width and height in pixels; compare it with the rendered size in DevTools. [M04.L04]
 - **IP address** — the number that identifies a computer on the internet, in IPv4 (`192.0.2.10`) or IPv6 (`2001:db8::10`) format. [M02.L01]
 - **Keyword** — a word or phrase that people search for. [M03.L02]
 - **Keyword cannibalisation** — an industry term for two or more of your pages competing for the same searches with the same intent; Google's docs don't use it, and two pages in one set of results isn't a problem by itself. [M03.L05]
@@ -154,6 +156,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **`rel` attribute** — describes a link's relationship to its destination: `sponsored` for paid links, `ugc` for user-posted links, `nofollow` for links you don't trust. Most links need none. [M02.L05]
 - **`rel="sponsored"`** — a link attribute that marks an ad or paid placement, so the link stays within Google's policies. [M01.L06]
 - **`rem`** — a CSS unit based on the root font size, usually 16px; text set in `rem` respects readers' font settings. [M02.L09]
+- **Rendered size** — how big an image is shown on the page; a file much bigger than this wastes download time. [M04.L04]
 - **Rendering** — running a page's code (including JavaScript) to build the page a visitor sees; Google renders with a recent version of Chrome. [M01.L04]
 - **Rented channel** — a channel you use but don't control, such as a social media profile; the platform sets the rules and the reach. [M01.L02]
 - **Request / response** — a browser or crawler asks a server for a URL (request); the server answers with a status code and, if it worked, the page's code (response). [M01.L04]
@@ -215,6 +218,7 @@ Plain-language definitions of terms used in the course. The lesson that introduc
 - **WCAG** — Web Content Accessibility Guidelines, the W3C's accessibility standard. [M02.L09]
 - **Web data stream** — the connection that sends data from a website into a GA4 property. [M01.L08]
 - **Web server** — the computer, the software, or both together, that stores a website and sends its files when asked. [M02.L01]
+- **WebP and AVIF** — newer image formats that usually make smaller files than JPEG or PNG at the same quality; Google Search supports both. [M04.L04]
 - **Website builder** — a hosted service that bundles an editor, templates and hosting, such as Wix or Squarespace. [M02.L02]
 - **White hat SEO** — improving a site for people, inside the search engines' rules. Industry slang, not Google's term. [M01.L06]
 - **YMYL (Your Money or Your Life)** — topics that could significantly affect health, finances, safety or society; Google gives E-E-A-T more weight here. [M01.L07]
