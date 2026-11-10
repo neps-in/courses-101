@@ -110,7 +110,13 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M14 | L05 | AI Search Orientation: AI Overviews, AI Mode and Your Controls | seo-101/lessons/m14-l05-ai-search-orientation.md | draft | 2026-11-10 |
 | M14 | L06 | Diagnosing a Traffic Drop | seo-101/lessons/m14-l06-diagnose-traffic-drop.md | draft | 2026-11-10 |
 | M14 | Capstone | M14 capstone — E-E-A-T and policy review plus traffic-drop playbook | seo-101/capstones/m14-capstone.md | draft | 2026-11-10 |
-| M15 | — | SEO Audit & Capstone Project (not yet planned) | — | todo | — |
+| M15 | L01 | Scoping an Audit and Setting the Baseline | seo-101/lessons/m15-l01-scope-baseline.md | todo | — |
+| M15 | L02 | Running the Audit in Order | seo-101/lessons/m15-l02-audit-in-order.md | todo | — |
+| M15 | L03 | Prioritising Findings and Writing the 90-Day Plan | seo-101/lessons/m15-l03-prioritise-90-day-plan.md | todo | — |
+| M15 | L04 | Client-Ready Report and Fix Tickets | seo-101/lessons/m15-l04-report-fix-tickets.md | todo | — |
+| M15 | L05 | Site Migrations and Redesigns | seo-101/lessons/m15-l05-migrations-redesigns.md | todo | — |
+| M15 | L06 | Pausing a Site, the Monthly Routine and Hiring Help | seo-101/lessons/m15-l06-pause-routine-hiring.md | todo | — |
+| M15 | Capstone | M15 final capstone — Full SEO audit and 90-day plan | seo-101/capstones/m15-capstone.md | todo | — |
 
 ## modern-seo
 
@@ -236,6 +242,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-11: seo-101 plan M15 — 6 lessons + final capstone from research/m15 (split kept: scope/baseline, audit order, prioritise + 90-day plan, report + tickets, migrations, pause/routine/hiring); notes on the course-rule audit order, one scoring system (Value / Chance / Effort), site-move doc's stale report names, redirects ≥1 year vs 180-day Change of Address window, owners-only and www caveats, pause codes, unquotable sources; three break-it labs; flowchart added; syllabus table counts for M12–M15 filled in.
 - 2026-11-10: seo-101 m14-capstone draft — E-E-A-T and policy review (rater lens, self-assessment + Who/How/Why, spam policy check + Manual actions/Security status, Updates tab, AI controls) plus a one-page traffic-drop playbook; 8 tasks; Lab A (5 Nila drops: consent-banner tracking break, monsoon seasonality, GSC impressions logging fix, theme noindex, May 2026 core update) and Lab B (10-item agency proposal for Tomás); 5-criterion rubric; cheatsheets/m14-modern-seo.md. Module 14 drafted. Next: `/plan-module 15` (needs research first).
 - 2026-11-10: seo-101 m14-l06 draft (lesson + 8-question quiz incl. 1 review from M14.L03; 3 glossary terms; five-question drop-tree flowchart; 3 image prompts, no images). Quotes rechecked against debugging-search-traffic-drops (2025-12-10) and Data anomalies (impressions logging fix May 13, 2025–April 27, 2026; FAQ rich results gone 7 May 2026). Illustrative Nila dataset: −270 clicks/week split −90 seasonal (cold brew, matches 2025) / −165 listicle after May 2026 core update / −15 noise. Trends step asks learners to record what Trends shows (not asserted). Next: M14 capstone.
 - 2026-11-10: seo-101 m14-l05 draft (lesson + 8-question quiz incl. 1 review from M12.L05; 4 glossary terms; control-choice flowchart; 2 image prompts, no images). Quotes rechecked against ai-features (2025-12-10), ai-optimization-guide (2026-07-10; mythbusting list, commodity content, RAG), robots meta tag (2026-03-24), common crawlers (2026-10-30; Google-Extended scope, AIPREF early 2027), control-what-you-share (2026-10-21) and Search Console Help (gen AI control: default Include, not a ranking signal, doesn't affect training; gen AI report impressions only; AI Overview/AI Mode counting). Googler second-hand quotes not used. Next: `/next-lesson` → M14.L06.

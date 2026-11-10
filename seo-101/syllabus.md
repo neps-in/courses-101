@@ -17,10 +17,10 @@ _Module names and order follow neps.in course 2566. Lessons are added per module
 | M09 Off-Page SEO & Link Building | L2 | #11 | 5 lessons + capstone |
 | M10 Competitor Analysis | L2 | — | 5 lessons + capstone |
 | M11 Local SEO & Google Business Profile | L2 | #12 | 5 lessons + capstone |
-| M12 Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) | L3 | #13 | — |
-| M13 SEO Tools Mastery & WordPress SEO | L3 | — | — |
-| M14 Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search | L3 | #14 | — |
-| M15 SEO Audit & Capstone Project | L3 | all (final capstone) | — |
+| M12 Advanced Technical SEO (Core Web Vitals, JS SEO, Schema, International) | L3 | #13 | 6 lessons + capstone |
+| M13 SEO Tools Mastery & WordPress SEO | L3 | — | 6 lessons + capstone |
+| M14 Modern SEO: E-E-A-T, Algorithms, Spam Policies & AI Search | L3 | #14 | 6 lessons + capstone |
+| M15 SEO Audit & Capstone Project | L3 | all (final capstone) | 6 lessons + final capstone |
 
 ---
 
@@ -1156,3 +1156,85 @@ flowchart LR
 ### M14 Capstone — E-E-A-T and policy review plus traffic-drop playbook
 - **File:** `capstones/m14-capstone.md` + `cheatsheets/m14-modern-seo.md`
 - An E-E-A-T and policy review of the project site (rater evidence, Who/How/Why, YMYL rating, spam-policy checklist, manual action and security status) and a one-page traffic-drop playbook. **Break-it labs:** (A) Nila's illustrative 40% drop dataset with variants (tracking error, seasonality, technical break, core update, reporting change, FAQ removal) to diagnose to the real cause; (B) Amara's agency proposal for Tomás with 10 policy problems (expired domain, scaled city pages, sponsored casino page, AI author photo, llms.txt, Google-Extended, back button script, subdomain move, panic rewrite, E-E-A-T score). Rubric: E-E-A-T evidence, policies, updates, AI controls, and diagnosis.
+
+## M15 — SEO Audit & Capstone Project (L3)
+
+**Goal:** run a complete, professional SEO audit and deliver it like a client project: scoped, in order, prioritised, written up with fix tickets, safe through migrations, and kept up by a monthly routine. · NN all (#1–#14 reinforced; #2 and #14 in depth)
+**Lessons:** planned from the outline's topics and the research notes in `research/m15-seo-audit-capstone.md` (2026-11-09). The research's 6-lesson split is kept: report writing gets its own lesson (L04) because "recommendations without evidence" and "no plan for checking fixes" are the outline's failure points, and pausing a site moves into L06 with the monthly routine and hiring help. Earlier lessons already taught the pieces: M06.L05 redirect map, M06.L06 crawl-and-index loop, M08 dashboard, report and annotations, M10.L05 Value / Chance / Effort, M13 tool audit and Issues tab, M14 drop playbook. M15 orders and packages them; it doesn't re-teach them.
+**Planning notes from research:**
+- **No Google audit process exists:** the 9-step order (indexing → crawling and status → architecture and internal links → on-page and content → page experience → structured data → links → local and international → E-E-A-T and policies) is a course rule, mapped to Search Essentials (technical requirements → best practices → spam policies). Say so.
+- **Prioritising:** keep one system, M10.L05's Value / Chance / Effort (Chance = confidence the fix helps), behind a "blocking" gate; show impact × effort only as a visual. Group crawl rows by template (200 rows → ~10 findings).
+- **Migrations:** site-move doc updated 2026-08-20 still names "Index Coverage" and the removed crawl-rate setting; teach Page indexing and "nothing to set". Redirects: teach "at least a year, ideally for good" (M06.L05); 180 days is only the Change of Address window. Small sites move all at once. Change of Address: owners only; doesn't cover www or other subdomains; don't use it for www ↔ non-www.
+- **Pausing:** 503 for a day or two, a 200 placeholder for longer; never 404, `noindex` or the Removals tool.
+- **Hiring an SEO:** "Do you need an SEO?" (updated 2026-06-05, includes a generative AI line); recheck before quoting.
+- **Don't quote:** Aleyda Solis' checklist (403), report-writing "3–5 bullets" (search snippet only), any Bing site move tool (not found), Googler migration comments only as trade-press reports.
+- **Personas:** Amara scopes and reports a client audit; Kavya audits her own site and pauses it for a retreat; Tomás receives a 213-issue agency audit; Nila moves domain (final capstone lab).
+
+```mermaid
+flowchart LR
+  %% alt: M15 lesson path: scope and baseline, audit in order, prioritise and plan, report and tickets, migrations, routine and hiring, then the final capstone.
+  L1[L01 Scope +<br/>baseline]:::cream --> L2[L02 Audit<br/>in order]:::sky
+  L2 --> L3[L03 Prioritise +<br/>90-day plan]:::sky
+  L3 --> L4[L04 Report +<br/>fix tickets]:::blue
+  L4 --> L5[L05 Migrations +<br/>redesigns]:::blue
+  L5 --> L6[L06 Pause, routine,<br/>hiring help]:::sky
+  L6 --> C[Final capstone:<br/>full audit + plan]:::pink
+
+  classDef cream fill:#FFF9D2,color:#000000,stroke:#111844
+  classDef sky   fill:#BFDDF0,color:#1F150C,stroke:#111844
+  classDef blue  fill:#8CC0EB,color:#111844,stroke:#111844
+  classDef pink  fill:#F9B2D7,color:#000000,stroke:#111844
+```
+**In words:** scope the audit and record a dated baseline, then run it in a fixed order from indexing to E-E-A-T and policies. Prioritise the findings into a 90-day plan, and write a client-ready report with testable fix tickets. Learn to protect a site through migrations and redesigns, then how to pause a site safely, keep a monthly routine and judge outside SEO help. The final capstone is a full audit of the project site with a 90-day plan, fixes made, a dashboard and a walkthrough.
+
+### M15.L01 — Scoping an Audit and Setting the Baseline
+- **File:** `lessons/m15-l01-scope-baseline.md` · **Prereqs:** M14.L06, M08.L06 · **Remediate to:** M08.L06 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Write** a scope statement: goal, KPIs, properties, date range, deliverables and what's out of scope.
+  2. **Set up** the right access for path A, B or C (Search Console Owner / Full / Restricted; least access needed).
+  3. **Record** a dated baseline before any change (#2).
+- **Hands-on idea:** a **Scope** tab and a **Baseline** tab (clicks, impressions, key events, indexed pages, CWV status, dated).
+
+### M15.L02 — Running the Audit in Order
+- **File:** `lessons/m15-l02-audit-in-order.md` · **Prereqs:** M15.L01, M13.L02, M06.L06 · **Remediate to:** M06.L06 · **Hands-on:** ~60 min
+- **Objectives:**
+  1. **Follow** the 9-step audit order and explain why indexing comes first.
+  2. **Use** the free tool for each step (Search Console, Screaming Frog free, PSI, Rich Results Test, Ahrefs Free, GBP check).
+  3. **Filter out** non-issues Google says not to focus on, and group symptoms by template.
+- **Hands-on idea:** an **Audit** tab, one row per finding (Step, Finding, Pages/template, Evidence, Source + date), built from a real crawl and Search Console.
+
+### M15.L03 — Prioritising Findings and Writing the 90-Day Plan
+- **File:** `lessons/m15-l03-prioritise-90-day-plan.md` · **Prereqs:** M15.L02, M10.L05 · **Remediate to:** M10.L05 · **Hands-on:** ~40 min
+- **Objectives:**
+  1. **Gate** blocking issues first, then score the rest with Value / Chance / Effort.
+  2. **Turn** a long crawl export into about ten findings by grouping by template.
+  3. **Build** a 90-day plan in three 30-day blocks, each fix with an "after" check date.
+- **Hands-on idea:** scored **Audit** tab, an impact × effort sketch, and a **90-day plan** tab.
+
+### M15.L04 — Client-Ready Report and Fix Tickets
+- **File:** `lessons/m15-l04-report-fix-tickets.md` · **Prereqs:** M15.L03, M08.L06 · **Remediate to:** M08.L06 · **Hands-on:** ~45 min
+- **Objectives:**
+  1. **Write** an executive summary and findings with evidence, sources and caveats.
+  2. **Write** fix tickets with background, work to be done and testable completion criteria.
+  3. **Check** a report against Google's "Do you need an SEO?" red flags.
+- **Hands-on idea:** a one-page **audit report** and three **fix tickets** testable with free tools (URL Inspection, Rich Results Test, `curl -I`, Screaming Frog list mode).
+
+### M15.L05 — Site Migrations and Redesigns
+- **File:** `lessons/m15-l05-migrations-redesigns.md` · **Prereqs:** M15.L04, M06.L05 · **Remediate to:** M06.L05 · **Hands-on:** ~50 min
+- **Objectives:**
+  1. **Classify** a change (URL changes: HTTPS, domain, paths; no URL changes: hosting, CDN) and change one thing at a time.
+  2. **Build** a one-to-one redirect map and pre-launch, launch and post-launch checklists.
+  3. **Decide** when to use Change of Address, and how long to keep redirects and the old domain.
+- **Hands-on idea:** a **redirect map dry run** from the sitemap and crawl, tested in Screaming Frog list mode, plus a **Migration checklist** tab and a Change of Address decision drill.
+
+### M15.L06 — Pausing a Site, the Monthly Routine and Hiring Help
+- **File:** `lessons/m15-l06-pause-routine-hiring.md` · **Prereqs:** M15.L05, M08.L06 · **Remediate to:** M08.L06 · **Hands-on:** ~35 min
+- **Objectives:**
+  1. **Choose** between limiting and disabling a site (503 briefly, 200 placeholder for longer; never 404, `noindex` or Removals).
+  2. **Set up** a monthly SEO routine and calendar that builds on the M08 report and dashboard.
+  3. **Evaluate** an SEO provider or proposal with Google's "Do you need an SEO?" questions.
+- **Hands-on idea:** a `curl -I` pause-mode check on the practice site, a **Monthly routine** calendar, and a proposal review.
+
+### M15 Final capstone — Full SEO audit and 90-day plan
+- **File:** `capstones/m15-capstone.md` + `cheatsheets/m15-seo-audit.md`
+- A full SEO audit of the project site (path A, B or C): scope, baseline, findings by the 9 steps with evidence, a prioritised 90-day plan, the fixes already made with before/after evidence, the Data Studio dashboard, and a short written or recorded walkthrough a site owner can follow. **Break-it labs:** (A) Nila's botched domain move (12 planted errors: home-page redirects, chains, 302s, staging `Disallow`, Change of Address without www, canonicals to the old domain, redesign in the same week, redirects dropped after 180 days, missing GA4 tag, unmoved PDFs, panic rollback); (B) Tomás's 213-issue agency audit to group, gate and turn into tickets; (C) Kavya's retreat closure done with 404s and Removals. Rubric covers non-negotiables #1–#14.
