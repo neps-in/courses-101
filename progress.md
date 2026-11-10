@@ -116,7 +116,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | M15 | L04 | Client-Ready Report and Fix Tickets | seo-101/lessons/m15-l04-report-fix-tickets.md | draft | 2026-11-11 |
 | M15 | L05 | Site Migrations and Redesigns | seo-101/lessons/m15-l05-migrations-redesigns.md | draft | 2026-11-11 |
 | M15 | L06 | Pausing a Site, the Monthly Routine and Hiring Help | seo-101/lessons/m15-l06-pause-routine-hiring.md | draft | 2026-11-11 |
-| M15 | Capstone | M15 final capstone — Full SEO audit and 90-day plan | seo-101/capstones/m15-capstone.md | todo | — |
+| M15 | Capstone | M15 final capstone — Full SEO audit and 90-day plan | seo-101/capstones/m15-capstone.md | draft | 2026-11-11 |
 
 ## modern-seo
 
@@ -242,6 +242,7 @@ neps.in course 2566 (structure source). Live posts listed in the syllabus.
 | Final | Capstone | Final capstone — Launch Week | webdev-101/capstones/final-capstone.md | published | 2026-11-03 |
 
 ## Log
+- 2026-11-11: seo-101 m15-capstone draft — final capstone (8 tasks: scope + baseline, nine-step audit, gate/score/90-day plan, 3+ tested fixes with before/after, report + tickets, dashboard + monthly routine, owner walkthrough; Labs A Nila's 12-mistake domain move, B Tomás's 213-row agency audit, C Kavya's closure) with report template, #1–#14 checklist, 7-criterion rubric (Good = Proficient), answers and course completion checkpoint; cheat sheet `cheatsheets/m15-seo-audit.md`. **All SEO 101 lessons and capstones now drafted.** Next: `/review-lesson` on all drafts, then the user runs `/code-review ultra`.
 - 2026-11-11: seo-101 m15-l06 draft (lesson + 8-question quiz incl. 1 review from M15.L05; 3 glossary terms; pause/routine/hiring flowchart; 3 image prompts, no images). Pause options table (limit functionality; 503 1–2 days with robots.txt 200; 200 placeholder; never 404/noindex/Removals; out of stock), monthly routine (steps 1, 2, 9 + report; quarterly/yearly), Google's interview questions plus tools/evidence/AEO-GEO lines and a proposal review drill. All quotes rechecked against the pause guide (2025-12-10), crawl-rate page (2026-10-06) and Do you need an SEO? (2026-06-05). Next: M15 final capstone + cheat sheet.
 - 2026-11-11: seo-101 m15-l05 draft (lesson + 8-question quiz incl. 1 review from M15.L04; 3 glossary terms; migration flowchart; 2 image prompts, no images). Change classification table, one-change-at-a-time, full old-URL list and 1:1 map, three-phase checklist, Change of Address rules (owners of both, www not included, don't chain, 180-day window), redirects ≥1 year vs 180 days, hosting moves. All quotes rechecked against the site-move guide (2026-08-20), hosting guide (2025-12-10) and Change of Address help; stale report names flagged. Drill item on subdomain→path replaced with a clear hosting case. Next: `/next-lesson` → M15.L06.
 - 2026-11-11: seo-101 m15-l04 draft (lesson + 8-question quiz incl. 1 review from M15.L03; 3 glossary terms; report-and-ticket flowchart; 2 image prompts, no images). Report template (one-page summary + supporting sections, "checked and fine"), ticket template (Background / Work to be done / Completion criteria from Sitebulb; acceptance criteria from SEJ, both observed practice), free-tool completion tests, red-flag check against Do you need an SEO? incl. AEO/GEO line. All quotes rechecked live. Next: `/next-lesson` → M15.L05.
